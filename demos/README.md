@@ -8,7 +8,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![barchart-demo](barchart-demo.svg)
 
-**Source:** [barchart-demo](https://github.com/tamboui/tamboui/blob/main/demos/barchart-demo/src/main/java/dev/tamboui/demo/BarChartDemo.java)
+**Source:** [barchart-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/barchart-demo/src/main/java/dev/tamboui/demo/BarChartDemo.java)
 
 ---
 
@@ -16,7 +16,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![basic-demo](basic-demo.svg)
 
-**Source:** [basic-demo](https://github.com/tamboui/tamboui/blob/main/demos/basic-demo/src/main/java/dev/tamboui/demo/Demo.java)
+**Source:** [basic-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/basic-demo/src/main/java/dev/tamboui/demo/Demo.java)
 
 ---
 
@@ -24,7 +24,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![block-demo](block-demo.svg)
 
-**Source:** [block-demo](https://github.com/tamboui/tamboui/blob/main/demos/block-demo/src/main/java/dev/tamboui/demo/BlockDemo.java)
+**Source:** [block-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/block-demo/src/main/java/dev/tamboui/demo/BlockDemo.java)
 
 ---
 
@@ -32,7 +32,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![calendar-demo](calendar-demo.svg)
 
-**Source:** [calendar-demo](https://github.com/tamboui/tamboui/blob/main/demos/calendar-demo/src/main/java/dev/tamboui/demo/CalendarDemo.java)
+**Source:** [calendar-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/calendar-demo/src/main/java/dev/tamboui/demo/CalendarDemo.java)
 
 ---
 
@@ -40,7 +40,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![canvas-demo](canvas-demo.svg)
 
-**Source:** [canvas-demo](https://github.com/tamboui/tamboui/blob/main/demos/canvas-demo/src/main/java/dev/tamboui/demo/CanvasDemo.java)
+**Source:** [canvas-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/canvas-demo/src/main/java/dev/tamboui/demo/CanvasDemo.java)
 
 ---
 
@@ -48,7 +48,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![chart-demo](chart-demo.svg)
 
-**Source:** [chart-demo](https://github.com/tamboui/tamboui/blob/main/demos/chart-demo/src/main/java/dev/tamboui/demo/ChartDemo.java)
+**Source:** [chart-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/chart-demo/src/main/java/dev/tamboui/demo/ChartDemo.java)
 
 ---
 
@@ -56,7 +56,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![collapsed-borders-demo](collapsed-borders-demo.svg)
 
-**Source:** [collapsed-borders-demo](https://github.com/tamboui/tamboui/blob/main/demos/collapsed-borders-demo/src/main/java/dev/tamboui/demo/CollapsedBordersDemo.java)
+**Source:** [collapsed-borders-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/collapsed-borders-demo/src/main/java/dev/tamboui/demo/CollapsedBordersDemo.java)
 
 ---
 
@@ -64,7 +64,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![colors-rgb-demo](colors-rgb-demo.svg)
 
-**Source:** [colors-rgb-demo](https://github.com/tamboui/tamboui/blob/main/demos/colors-rgb-demo/src/main/java/dev/tamboui/demo/ColorsRgbDemo.java)
+**Source:** [colors-rgb-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/colors-rgb-demo/src/main/java/dev/tamboui/demo/ColorsRgbDemo.java)
 
 ---
 
@@ -72,7 +72,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![gauge-demo](gauge-demo.svg)
 
-**Source:** [gauge-demo](https://github.com/tamboui/tamboui/blob/main/demos/gauge-demo/src/main/java/dev/tamboui/demo/GaugeDemo.java)
+**Source:** [gauge-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/gauge-demo/src/main/java/dev/tamboui/demo/GaugeDemo.java)
 
 ---
 
@@ -80,15 +80,13 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![hello-world-demo](hello-world-demo.svg)
 
-**Source:** [hello-world-demo](https://github.com/tamboui/tamboui/blob/main/demos/helloworld-demo/src/main/java/dev/tamboui/demo/HelloWorld.java)
-
 ---
 
 ### input-form-demo
 
 ![input-form-demo](input-form-demo.svg)
 
-**Source:** [input-form-demo](https://github.com/tamboui/tamboui/blob/main/demos/input-form-demo/src/main/java/dev/tamboui/demo/InputFormDemo.java)
+**Source:** [input-form-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/input-form-demo/src/main/java/dev/tamboui/demo/InputFormDemo.java)
 
 ---
 
@@ -96,7 +94,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![jtop-demo](jtop-demo.svg)
 
-**Source:** [jtop-demo](https://github.com/tamboui/tamboui/blob/main/demos/jtop-demo/src/main/java/dev/tamboui/demo/JTopDemo.java)
+**Source:** [jtop-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-toolkit/demos/jtop-demo/src/main/java/dev/tamboui/demo/JTopDemo.java)
 
 ---
 
@@ -104,7 +102,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![list-demo](list-demo.svg)
 
-**Source:** [list-demo](https://github.com/tamboui/tamboui/blob/main/demos/list-demo/src/main/java/dev/tamboui/demo/ListDemo.java)
+**Source:** [list-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/list-demo/src/main/java/dev/tamboui/demo/ListDemo.java)
 
 ---
 
@@ -112,7 +110,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![logo-demo](logo-demo.svg)
 
-**Source:** [logo-demo](https://github.com/tamboui/tamboui/blob/main/demos/logo-demo/src/main/java/dev/tamboui/demo/LogoDemo.java)
+**Source:** [logo-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-tui/demos/logo-demo/src/main/java/dev/tamboui/demo/LogoDemo.java)
 
 ---
 
@@ -120,7 +118,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![paragraph-demo](paragraph-demo.svg)
 
-**Source:** [paragraph-demo](https://github.com/tamboui/tamboui/blob/main/demos/paragraph-demo/src/main/java/dev/tamboui/demo/ParagraphDemo.java)
+**Source:** [paragraph-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/paragraph-demo/src/main/java/dev/tamboui/demo/ParagraphDemo.java)
 
 ---
 
@@ -128,7 +126,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![picocli-demo](picocli-demo.svg)
 
-**Source:** [picocli-demo](https://github.com/tamboui/tamboui/blob/main/demos/picocli-demo/src/main/java/dev/tamboui/demo/PicoCLIDemo.java)
+**Source:** [picocli-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-picocli/demos/picocli-demo/src/main/java/dev/tamboui/demo/PicoCLIDemo.java)
 
 ---
 
@@ -136,7 +134,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![scrollbar-demo](scrollbar-demo.svg)
 
-**Source:** [scrollbar-demo](https://github.com/tamboui/tamboui/blob/main/demos/scrollbar-demo/src/main/java/dev/tamboui/demo/ScrollbarDemo.java)
+**Source:** [scrollbar-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/scrollbar-demo/src/main/java/dev/tamboui/demo/ScrollbarDemo.java)
 
 ---
 
@@ -144,7 +142,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![sparkline-demo](sparkline-demo.svg)
 
-**Source:** [sparkline-demo](https://github.com/tamboui/tamboui/blob/main/demos/sparkline-demo/src/main/java/dev/tamboui/demo/SparklineDemo.java)
+**Source:** [sparkline-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/sparkline-demo/src/main/java/dev/tamboui/demo/SparklineDemo.java)
 
 ---
 
@@ -152,7 +150,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![table-demo](table-demo.svg)
 
-**Source:** [table-demo](https://github.com/tamboui/tamboui/blob/main/demos/table-demo/src/main/java/dev/tamboui/demo/TableDemo.java)
+**Source:** [table-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/table-demo/src/main/java/dev/tamboui/demo/TableDemo.java)
 
 ---
 
@@ -160,7 +158,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![tabs-demo](tabs-demo.svg)
 
-**Source:** [tabs-demo](https://github.com/tamboui/tamboui/blob/main/demos/tabs-demo/src/main/java/dev/tamboui/demo/TabsDemo.java)
+**Source:** [tabs-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/tabs-demo/src/main/java/dev/tamboui/demo/TabsDemo.java)
 
 ---
 
@@ -168,7 +166,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![todo-list-demo](todo-list-demo.svg)
 
-**Source:** [todo-list-demo](https://github.com/tamboui/tamboui/blob/main/demos/todo-list-demo/src/main/java/dev/tamboui/demo/TodoListDemo.java)
+**Source:** [todo-list-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-widgets/demos/todo-list-demo/src/main/java/dev/tamboui/demo/TodoListDemo.java)
 
 ---
 
@@ -176,7 +174,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![toolkit-demo](toolkit-demo.svg)
 
-**Source:** [toolkit-demo](https://github.com/tamboui/tamboui/blob/main/demos/toolkit-demo/src/main/java/dev/tamboui/demo/ToolkitDemo.java)
+**Source:** [toolkit-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-toolkit/demos/toolkit-demo/src/main/java/dev/tamboui/demo/ToolkitDemo.java)
 
 ---
 
@@ -184,7 +182,7 @@ This directory contains demo videos showcasing TamboUI widgets and features.
 
 ![tui-demo](tui-demo.svg)
 
-**Source:** [tui-demo](https://github.com/tamboui/tamboui/blob/main/demos/tui-demo/src/main/java/dev/tamboui/demo/TuiDemo.java)
+**Source:** [tui-demo](https://github.com/tamboui/tamboui/blob/main/tamboui-tui/demos/tui-demo/src/main/java/dev/tamboui/demo/TuiDemo.java)
 
 ---
 

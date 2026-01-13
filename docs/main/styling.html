@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>CSS Styling</title>
+<link rel="stylesheet" href="./_static/tamboui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="_static/highlight/styles/github-dark.min.css">
+<!-- Theme toggle script - runs early to prevent flash -->
+<script>
+(function() {
+    var theme = localStorage.getItem('tamboui-theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+})();
+</script>
+<!-- Asciinema Player for demo recordings -->
+<link rel="stylesheet" type="text/css" href="_static/asciinema/asciinema-player.css" />
+<script src="_static/asciinema/asciinema-player.min.js"></script>
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>CSS Styling</h1>
+<div class="details">
+<span id="revnumber">version 1.0.0-SNAPSHOT</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#why-use-css">Why Use CSS?</a></li>
+<li><a href="#the-styleengine">The StyleEngine</a></li>
+<li><a href="#tcss-format">TCSS Format</a>
+<ul class="sectlevel2">
+<li><a href="#variables">Variables</a></li>
+<li><a href="#selectors">Selectors</a></li>
+<li><a href="#nesting">Nesting</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#importance">Importance</a></li>
+</ul>
+</li>
+<li><a href="#applying-styles">Applying Styles</a>
+<ul class="sectlevel2">
+<li><a href="#with-toolkit-dsl">With Toolkit DSL</a></li>
+<li><a href="#with-toolkitrunner">With ToolkitRunner</a></li>
+<li><a href="#implementing-styleable">Implementing Styleable</a></li>
+</ul>
+</li>
+<li><a href="#theme-switching">Theme Switching</a></li>
+<li><a href="#example-theme-files">Example Theme Files</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TamboUI supports CSS-based styling as an alternative to programmatic style configuration.
+Instead of chaining <code>.bold().cyan().onBlue()</code> calls, you can define styles in external <code>.tcss</code> files and apply them via selectors.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="why-use-css"><a class="anchor" href="#why-use-css"></a><a class="link" href="#why-use-css">Why Use CSS?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Programmatic styling works well for simple cases:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">text("Hello").bold().cyan()
+panel("Title", content).rounded().borderColor(Color.BLUE)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But as applications grow, CSS offers advantages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Separation of concerns</strong> - styling lives outside your code</p>
+</li>
+<li>
+<p><strong>Theming</strong> - switch between light/dark themes at runtime</p>
+</li>
+<li>
+<p><strong>Designer-friendly</strong> - non-developers can adjust colors and spacing</p>
+</li>
+<li>
+<p><strong>Consistency</strong> - define styles once, apply everywhere via classes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-styleengine"><a class="anchor" href="#the-styleengine"></a><a class="link" href="#the-styleengine">The StyleEngine</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>StyleEngine</code> manages stylesheets and resolves styles for elements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">StyleEngine engine = StyleEngine.create();
+
+// Add inline CSS
+engine.addStylesheet("Panel { border-type: rounded; }");
+
+// Load named themes from classpath
+engine.loadStylesheet("dark", "/themes/dark.tcss");
+engine.loadStylesheet("light", "/themes/light.tcss");
+
+// Switch themes at runtime
+engine.setActiveStylesheet("dark");</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tcss-format"><a class="anchor" href="#tcss-format"></a><a class="link" href="#tcss-format">TCSS Format</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TamboUI uses <code>.tcss</code> (Textual CSS) files - a CSS dialect designed for terminal UIs.</p>
+</div>
+<div class="sect2">
+<h3 id="variables"><a class="anchor" href="#variables"></a><a class="link" href="#variables">Variables</a></h3>
+<div class="paragraph">
+<p>Define reusable values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">$bg-primary: black;
+$fg-primary: white;
+$accent: cyan;
+$border-color: dark-gray;
+
+Panel {
+    background: $bg-primary;
+    color: $fg-primary;
+    border-color: $border-color;
+}
+
+Panel:focus {
+    border-color: $accent;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selectors"><a class="anchor" href="#selectors"></a><a class="link" href="#selectors">Selectors</a></h3>
+<div class="paragraph">
+<p>Type selectors match element types:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel {
+    border-type: rounded;
+}
+
+Text {
+    color: white;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Class selectors match CSS classes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">.primary {
+    color: cyan;
+    text-style: bold;
+}
+
+.danger {
+    color: red;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ID selectors match specific elements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">#sidebar {
+    width: 30;
+    background: dark-gray;
+}
+
+#main-content {
+    padding: 1;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pseudo-class selectors match element state:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel:focus {
+    border-color: cyan;
+    border-type: double;
+}
+
+Button:hover {
+    text-style: bold;
+}
+
+ListContainer-item:selected {
+    background: blue;
+}
+
+ListContainer-item:nth-child(even) {
+    background: #1a1a1a;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Supported pseudo-classes: <code>:focus</code>, <code>:hover</code>, <code>:disabled</code>, <code>:active</code>, <code>:selected</code>, <code>:first-child</code>, <code>:last-child</code>, <code>:nth-child(even)</code>, <code>:nth-child(odd)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Compound selectors combine multiple conditions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel.primary#main {
+    border-color: cyan;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Descendant and child combinators:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Any Button inside a Panel */
+Panel Button {
+    color: white;
+}
+
+/* Direct child only */
+Panel &gt; Button {
+    text-style: bold;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nesting"><a class="anchor" href="#nesting"></a><a class="link" href="#nesting">Nesting</a></h3>
+<div class="paragraph">
+<p>Use <code>&amp;</code> for nested rules:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel {
+    border-type: rounded;
+    border-color: gray;
+
+    &amp;:focus {
+        border-color: cyan;
+        border-type: double;
+    }
+
+    &amp;.primary {
+        border-color: blue;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="properties"><a class="anchor" href="#properties"></a><a class="link" href="#properties">Properties</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Values</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>color</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Named colors, hex, rgb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>color: cyan;</code> <code>color: #ff5500;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>background</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Named colors, hex, rgb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>background: black;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>text-style</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bold, dim, italic, underlined, reversed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>text-style: bold;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>border-type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plain, rounded, double, thick</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>border-type: rounded;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>border-color</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Named colors, hex, rgb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>border-color: cyan;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>padding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single value or top right bottom left</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>padding: 1;</code> <code>padding: 1 2 1 2;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>text-align</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">left, center, right</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>text-align: center;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (columns)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width: 40;</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Named colors: <code>black</code>, <code>red</code>, <code>green</code>, <code>yellow</code>, <code>blue</code>, <code>magenta</code>, <code>cyan</code>, <code>white</code>, <code>gray</code>, <code>dark-gray</code>, and their bright variants.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importance"><a class="anchor" href="#importance"></a><a class="link" href="#importance">Importance</a></h3>
+<div class="paragraph">
+<p>Override specificity with <code>!important</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">.error {
+    color: red !important;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="applying-styles"><a class="anchor" href="#applying-styles"></a><a class="link" href="#applying-styles">Applying Styles</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="with-toolkit-dsl"><a class="anchor" href="#with-toolkit-dsl"></a><a class="link" href="#with-toolkit-dsl">With Toolkit DSL</a></h3>
+<div class="paragraph">
+<p>Elements automatically participate in CSS styling when you set IDs and classes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">panel("Settings",
+    text("Username").cssClass("label"),
+    textInput(usernameState).id("username-input"),
+    text("Password").cssClass("label"),
+    textInput(passwordState).id("password-input").cssClass("secret")
+)
+.id("settings-panel")
+.cssClass("primary")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="with-toolkitrunner"><a class="anchor" href="#with-toolkitrunner"></a><a class="link" href="#with-toolkitrunner">With ToolkitRunner</a></h3>
+<div class="paragraph">
+<p>Pass the StyleEngine when creating the runner:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">StyleEngine engine = StyleEngine.create();
+engine.loadStylesheet("dark", "/themes/dark.tcss");
+engine.setActiveStylesheet("dark");
+
+try (var runner = ToolkitRunner.builder()
+        .styleEngine(engine)
+        .build()) {
+    runner.run(() -&gt; myApp());
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="implementing-styleable"><a class="anchor" href="#implementing-styleable"></a><a class="link" href="#implementing-styleable">Implementing Styleable</a></h3>
+<div class="paragraph">
+<p>For custom widgets outside the Toolkit, implement the <code>Styleable</code> interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyWidget implements Widget, Styleable {
+    private String id;
+    private Set&lt;String&gt; classes = new HashSet&lt;&gt;();
+
+    @Override
+    public String styleType() {
+        return "MyWidget";  // Used for type selectors
+    }
+
+    @Override
+    public Optional&lt;String&gt; cssId() {
+        return Optional.ofNullable(id);
+    }
+
+    @Override
+    public Set&lt;String&gt; cssClasses() {
+        return classes;
+    }
+
+    @Override
+    public Optional&lt;Styleable&gt; cssParent() {
+        return Optional.empty();  // Or return parent for descendant selectors
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then resolve and apply styles:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CssStyleResolver resolved = engine.resolve(widget);
+
+Style style = Style.EMPTY;
+if (resolved.foreground() != null) {
+    style = style.fg(resolved.foreground());
+}
+if (resolved.background() != null) {
+    style = style.bg(resolved.background());
+}
+style = style.addModifiers(resolved.modifiers());</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="theme-switching"><a class="anchor" href="#theme-switching"></a><a class="link" href="#theme-switching">Theme Switching</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Switch themes at runtime:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@OnAction("toggleTheme")
+void onToggleTheme(Event event) {
+    String current = engine.getActiveStylesheet();
+    String next = "dark".equals(current) ? "light" : "dark";
+    engine.setActiveStylesheet(next);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listen for style changes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">engine.addChangeListener(() -&gt; {
+    // Styles changed, trigger redraw
+    requestRedraw();
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="example-theme-files"><a class="anchor" href="#example-theme-files"></a><a class="link" href="#example-theme-files">Example Theme Files</a></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">dark.tcss</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">$bg-primary: black;
+$fg-primary: white;
+$accent: cyan;
+$border-color: dark-gray;
+
+* {
+    color: $fg-primary;
+    background: $bg-primary;
+}
+
+Panel {
+    border-type: rounded;
+    border-color: $border-color;
+}
+
+Panel:focus {
+    border-color: $accent;
+    border-type: double;
+}
+
+.primary {
+    color: $accent;
+    text-style: bold;
+}
+
+.danger {
+    color: red;
+}
+
+.muted {
+    color: gray;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">light.tcss</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">$bg-primary: white;
+$fg-primary: black;
+$accent: blue;
+$border-color: gray;
+
+* {
+    color: $fg-primary;
+    background: $bg-primary;
+}
+
+Panel {
+    border-type: rounded;
+    border-color: $border-color;
+}
+
+Panel:focus {
+    border-color: $accent;
+    border-type: double;
+}
+
+.primary {
+    color: $accent;
+    text-style: bold;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="next-steps"><a class="anchor" href="#next-steps"></a><a class="link" href="#next-steps">Next Steps</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="api-levels.html">API Levels</a> - understanding the different abstraction layers</p>
+</li>
+<li>
+<p><a href="widgets.html">Widgets Reference</a> - available components to style</p>
+</li>
+<li>
+<p><a href="developer-guide.html">Developer Guide</a> - creating custom styleable widgets</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 1.0.0-SNAPSHOT<br>
+Last updated 2026-01-13 06:59:36 UTC
+</div>
+</div>
+<script src="_static/highlight/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
+<!-- Navigation data -->
+<script>
+var TAMBOUI_PAGES = [
+    { href: 'index.html', title: 'Home', short: 'Home' },
+    { href: 'getting-started.html', title: 'Getting Started', short: 'Getting Started' },
+    { href: 'core-concepts.html', title: 'Core Concepts', short: 'Core Concepts' },
+    { href: 'widgets.html', title: 'Widgets Reference', short: 'Widgets' },
+    { href: 'demos.html', title: 'Demo Gallery', short: 'Demos' },
+    { href: 'api-levels.html', title: 'API Levels', short: 'API Levels' },
+    { href: 'styling.html', title: 'CSS Styling', short: 'CSS Styling' },
+    { href: 'bindings.html', title: 'Bindings and Actions', short: 'Bindings' },
+    { href: 'mvc-architecture.html', title: 'MVC Model', short: 'MVC Model' },
+    { href: 'developer-guide.html', title: 'Developer Guide', short: 'Developer Guide' }
+];
+</script>
+
+<!-- Theme toggle and navigation enhancement -->
+<script>
+(function() {
+    'use strict';
+
+    // ===== Theme Toggle =====
+    function getTheme() {
+        return localStorage.getItem('tamboui-theme') || 'auto';
+    }
+
+    function setTheme(theme) {
+        localStorage.setItem('tamboui-theme', theme);
+        applyTheme(theme);
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+    }
+
+    function createThemeToggle() {
+        var header = document.getElementById('header');
+        if (!header) return;
+
+        var toggle = document.createElement('button');
+        toggle.className = 'theme-toggle';
+        toggle.setAttribute('aria-label', 'Toggle theme');
+        toggle.innerHTML = '<svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>';
+
+        toggle.addEventListener('click', function() {
+            var current = getTheme();
+            var next;
+            if (current === 'auto') {
+                next = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
+            } else if (current === 'dark') {
+                next = 'light';
+            } else {
+                next = 'dark';
+            }
+            setTheme(next);
+        });
+
+        // Insert before details element
+        var details = header.querySelector('.details');
+        if (details) {
+            header.insertBefore(toggle, details);
+        } else {
+            header.appendChild(toggle);
+        }
+    }
+
+    // ===== Cross-page Navigation =====
+    function getCurrentPage() {
+        var path = window.location.pathname;
+        var page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+        return page;
+    }
+
+    function createTopNavigation() {
+        var header = document.getElementById('header');
+        if (!header) return;
+
+        var currentPage = getCurrentPage();
+
+        // Create top navigation bar
+        var nav = document.createElement('nav');
+        nav.className = 'top-nav';
+
+        TAMBOUI_PAGES.forEach(function(page) {
+            var a = document.createElement('a');
+            a.href = page.href;
+            a.textContent = page.short;
+            if (page.href === currentPage) {
+                a.className = 'current';
+            }
+            nav.appendChild(a);
+        });
+
+        // Insert before theme toggle
+        var themeToggle = header.querySelector('.theme-toggle');
+        if (themeToggle) {
+            header.insertBefore(nav, themeToggle);
+        } else {
+            header.appendChild(nav);
+        }
+
+        // Create mobile navigation
+        createMobileNavigation(header, currentPage);
+    }
+
+    function createMobileNavigation(header, currentPage) {
+        // Create hamburger button
+        var toggle = document.createElement('button');
+        toggle.className = 'mobile-nav-toggle';
+        toggle.setAttribute('aria-label', 'Toggle navigation menu');
+        toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+
+        // Insert before theme toggle or at end of header
+        var themeToggle = header.querySelector('.theme-toggle');
+        if (themeToggle) {
+            header.insertBefore(toggle, themeToggle);
+        } else {
+            header.appendChild(toggle);
+        }
+
+        // Create mobile nav drawer
+        var mobileNav = document.createElement('nav');
+        mobileNav.className = 'mobile-nav';
+
+        TAMBOUI_PAGES.forEach(function(page) {
+            var a = document.createElement('a');
+            a.href = page.href;
+            a.textContent = page.title;
+            if (page.href === currentPage) {
+                a.className = 'current';
+            }
+            mobileNav.appendChild(a);
+        });
+
+        document.body.appendChild(mobileNav);
+
+        // Toggle mobile nav
+        toggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileNav.classList.toggle('open');
+            var isOpen = mobileNav.classList.contains('open');
+            toggle.innerHTML = isOpen
+                ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>'
+                : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+            if (!mobileNav.contains(e.target) && !toggle.contains(e.target)) {
+                mobileNav.classList.remove('open');
+                toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+            }
+        });
+    }
+
+    function createPrevNextNavigation() {
+        var content = document.getElementById('content');
+        var footer = document.getElementById('footer');
+        if (!content || !footer) return;
+
+        var currentPage = getCurrentPage();
+        var currentIndex = -1;
+
+        TAMBOUI_PAGES.forEach(function(page, index) {
+            if (page.href === currentPage) {
+                currentIndex = index;
+            }
+        });
+
+        if (currentIndex === -1) return;
+
+        var prev = currentIndex > 0 ? TAMBOUI_PAGES[currentIndex - 1] : null;
+        var next = currentIndex < TAMBOUI_PAGES.length - 1 ? TAMBOUI_PAGES[currentIndex + 1] : null;
+
+        if (!prev && !next) return;
+
+        var nav = document.createElement('nav');
+        nav.className = 'prev-next-nav';
+
+        if (prev) {
+            nav.innerHTML += '<a href="' + prev.href + '" class="prev"><span class="label">Previous</span><span class="title">' + prev.title + '</span></a>';
+        } else {
+            nav.innerHTML += '<span class="prev placeholder"></span>';
+        }
+
+        if (next) {
+            nav.innerHTML += '<a href="' + next.href + '" class="next"><span class="label">Next</span><span class="title">' + next.title + '</span></a>';
+        } else {
+            nav.innerHTML += '<span class="next placeholder"></span>';
+        }
+
+        // Insert before footer
+        footer.parentNode.insertBefore(nav, footer);
+    }
+
+    // ===== Initialize =====
+    document.addEventListener('DOMContentLoaded', function() {
+        createThemeToggle();
+        createTopNavigation();
+        createPrevNextNavigation();
+    });
+})();
+</script>
+</body>
+</html>

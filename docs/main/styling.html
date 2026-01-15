@@ -40,7 +40,12 @@
 <li><a href="#variables">Variables</a></li>
 <li><a href="#selectors">Selectors</a></li>
 <li><a href="#nesting">Nesting</a></li>
-<li><a href="#properties">Properties</a></li>
+<li><a href="#properties">Properties</a>
+<ul class="sectlevel3">
+<li><a href="#style-properties">Style Properties</a></li>
+<li><a href="#layout-properties">Layout Properties</a></li>
+</ul>
+</li>
 <li><a href="#importance">Importance</a></li>
 </ul>
 </li>
@@ -276,6 +281,8 @@ Panel &gt; Button {
 </div>
 <div class="sect2">
 <h3 id="properties"><a class="anchor" href="#properties"></a><a class="link" href="#properties">Properties</a></h3>
+<div class="sect3">
+<h4 id="style-properties"><a class="anchor" href="#style-properties"></a><a class="link" href="#style-properties">Style Properties</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -327,13 +334,211 @@ Panel &gt; Button {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>width</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (columns)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width: 40;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fit, fill</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width: fit;</code></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="layout-properties"><a class="anchor" href="#layout-properties"></a><a class="link" href="#layout-properties">Layout Properties</a></h4>
+<div class="paragraph">
+<p>These properties control how elements are sized and positioned within their containers.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Values</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>height</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constraint for vertical sizing (used by Column)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>height: 5;</code> <code>height: fill;</code> <code>height: 50%;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constraint for horizontal sizing (used by Row)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width: 10;</code> <code>width: fit;</code> <code>width: 25%;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flex positioning mode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flex: center;</code> <code>flex: space-between;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>spacing</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gap between children in cells</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>spacing: 1;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>margin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Margin around element (single value or top right bottom left)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>margin: 2;</code> <code>margin: 1 2 1 2;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>direction</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Layout direction for panels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>direction: horizontal;</code> <code>direction: vertical;</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="constraint-values"><a class="anchor" href="#constraint-values"></a><a class="link" href="#constraint-values">Constraint Values</a></h5>
+<div class="paragraph">
+<p>The <code>height</code> and <code>width</code> properties accept constraint values:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;number&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed size in cells (e.g., <code>height: 5;</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;number&gt;%</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Percentage of available space (e.g., <code>width: 50%;</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fill</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fill available space with weight 1 (e.g., <code>height: fill;</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fill(&lt;weight&gt;)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fill with specified weight (e.g., <code>height: fill(2);</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size to content (e.g., <code>width: fit;</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>min(&lt;value&gt;)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum size (e.g., <code>height: min(3);</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>max(&lt;value&gt;)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum size (e.g., <code>height: max(10);</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;n&gt;/&lt;d&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ratio (e.g., <code>width: 1/3;</code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="flex-values"><a class="anchor" href="#flex-values"></a><a class="link" href="#flex-values">Flex Values</a></h5>
+<div class="paragraph">
+<p>The <code>flex</code> property controls how remaining space is distributed:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>start</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position items at the start, remaining space at end</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>center</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Center items, distribute remaining space on both sides</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>end</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position items at the end, remaining space at start</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>space-between</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribute items with space between them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>space-around</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribute items with space around each</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>space-evenly</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribute items with equal space between and around</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="layout-example"><a class="anchor" href="#layout-example"></a><a class="link" href="#layout-example">Layout Example</a></h5>
+<div class="paragraph">
+<p>This example shows how to use CSS layout properties to create a centered footer:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Center the footer content */
+.footer-row {
+    flex: center;
+}
+
+/* Size text to content width, allowing flex to center */
+.footer-row .title {
+    width: fit;
+}
+
+.footer-row .dim {
+    width: fit;
+}
+
+/* Fixed heights for header/footer panels */
+.header-panel {
+    height: 3;
+}
+
+.footer-panel {
+    height: 3;
+}
+
+/* Main content fills remaining space */
+.main-content {
+    height: fill;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">column(
+    panel(header()).addClass("header-panel"),
+    panel(content()).addClass("main-content"),
+    panel(() -&gt; row(
+        text("Status: ").addClass("title"),
+        text("Ready").addClass("dim")
+    ).addClass("footer-row")).addClass("footer-panel")
+)</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Named colors: <code>black</code>, <code>red</code>, <code>green</code>, <code>yellow</code>, <code>blue</code>, <code>magenta</code>, <code>cyan</code>, <code>white</code>, <code>gray</code>, <code>dark-gray</code>, and their bright variants.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -566,7 +771,7 @@ Panel:focus {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-15 00:05:56 UTC
+Last updated 2026-01-15 11:31:32 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

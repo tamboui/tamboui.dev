@@ -36,6 +36,7 @@
 <li><a href="#ai-coding-assistant-demo">AI Coding Assistant Demo</a></li>
 <li><a href="#file-manager">File Manager</a></li>
 <li><a href="#flex-layout-demo">Flex Layout Demo</a></li>
+<li><a href="#form-table-layout-demo">Form &amp; Table Layout Demo</a></li>
 <li><a href="#inline-progress-demo">Inline Progress Demo</a></li>
 <li><a href="#listelement-demo">ListElement Demo</a></li>
 <li><a href="#module-path-demo">Module Path Demo</a></li>
@@ -88,6 +89,20 @@ AsciinemaPlayer.create('demos/filemanager-demo.cast', document.getElementById('p
 <div id="player-flex-demo" class="demo-player"></div>
 <script>
 AsciinemaPlayer.create('demos/flex-demo.cast', document.getElementById('player-flex-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="form-table-layout-demo"><a class="anchor" href="#form-table-layout-demo"></a><a class="link" href="#form-table-layout-demo">Form &amp; Table Layout Demo</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing form and table layouts with flex constraints</p>
+</div>
+<div id="player-form-table-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/form-table-demo.cast', document.getElementById('player-form-table-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>
@@ -153,7 +168,7 @@ AsciinemaPlayer.create('demos/rflex-demo.cast', document.getElementById('player-
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-15 11:31:32 UTC
+Last updated 2026-01-15 11:33:21 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

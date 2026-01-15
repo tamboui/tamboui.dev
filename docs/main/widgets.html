@@ -47,7 +47,11 @@
 </li>
 <li><a href="#selection-widgets">Selection Widgets</a>
 <ul class="sectlevel2">
-<li><a href="#listwidget">ListWidget</a></li>
+<li><a href="#listwidget">ListWidget</a>
+<ul class="sectlevel3">
+<li><a href="#listwidget-vs-listcontainer">ListWidget vs ListElement</a></li>
+</ul>
+</li>
 <li><a href="#table">Table</a></li>
 <li><a href="#tabs">Tabs</a></li>
 </ul>
@@ -288,7 +292,19 @@ paragraph.render(area, buffer);</code></pre>
 <div class="sect2">
 <h3 id="listwidget"><a class="anchor" href="#listwidget"></a><a class="link" href="#listwidget">ListWidget</a></h3>
 <div class="paragraph">
-<p>A scrollable list with selection:</p>
+<p>A low-level scrollable list widget with selection. This is part of the widgets layer and requires manual state management with <code>ListState</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>For Toolkit DSL users</strong>: Use <code>ListElement</code> instead (via <code>list()</code> factory method). It manages state internally and accepts any <code>StyledElement</code> as items. See <a href="#listwidget-vs-listcontainer">ListWidget vs ListElement</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -338,6 +354,81 @@ list.render(area, buffer, state);</code></pre>
 <p><code>state.selectLast(totalItems)</code> - Jump to last item</p>
 </li>
 </ul>
+</div>
+<div class="sect3">
+<h4 id="listwidget-vs-listcontainer"><a class="anchor" href="#listwidget-vs-listcontainer"></a><a class="link" href="#listwidget-vs-listcontainer">ListWidget vs ListElement</a></h4>
+<div class="paragraph">
+<p>TamboUI provides two list implementations at different API levels:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">ListWidget (widgets layer)</th>
+<th class="tableblock halign-left valign-top">ListElement (toolkit layer)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">State management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External <code>ListState</code> required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal state, no external state needed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ListItem</code> only (text + style)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>StyledElement</code> (text, rows, panels, etc.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direct widget rendering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toolkit DSL fluent API</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Best for</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom TuiRunner apps, fine-grained control</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ToolkitApp, declarative UIs</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>ListWidget</strong> is for low-level control when you need to manage state externally or are building custom rendering with <code>TuiRunner</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>ListElement</strong> is for Toolkit DSL users who want:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Internal state management (no <code>ListState</code> needed)</p>
+</li>
+<li>
+<p>Rich content (any <code>StyledElement</code> as items, not just text)</p>
+</li>
+<li>
+<p>Automatic event handling (UP/DOWN navigation built-in)</p>
+</li>
+<li>
+<p>Seamless integration with other toolkit elements</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Toolkit DSL - ListElement with rich content
+list()
+    .add(row(text("⭐").yellow(), text(" Featured Item")))
+    .add(text("Plain Item"))
+    .add(panel("Nested Panel", text("Content")).rounded())
+    .highlightColor(Color.CYAN)
+    .autoScroll()</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -740,8 +831,8 @@ text("Hello").bold().cyan()
 // Panel (Block)
 panel("Title", child1, child2).rounded().borderColor(Color.CYAN)
 
-// List
-list("Item 1", "Item 2", "Item 3").state(listState).highlightColor(Color.YELLOW)
+// List (manages its own state)
+list("Item 1", "Item 2", "Item 3").highlightColor(Color.YELLOW).autoScroll()
 
 // Table
 table()
@@ -772,7 +863,7 @@ column(top, middle, bottom).spacing(1)</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-15 00:02:27 UTC
+Last updated 2026-01-15 00:05:56 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

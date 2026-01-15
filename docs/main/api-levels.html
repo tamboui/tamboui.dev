@@ -566,18 +566,19 @@ panel("At most 50").max(50)</code></pre>
 <div class="sect2">
 <h3 id="stateful-widgets"><a class="anchor" href="#stateful-widgets"></a><a class="link" href="#stateful-widgets">Stateful Widgets</a></h3>
 <div class="paragraph">
-<p>Lists, tables, and inputs need state objects:</p>
+<p>Tables and text inputs need state objects. Lists manage their own state internally:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private ListState listState = new ListState();
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private ListElement&lt;?&gt; myList = list("Apple", "Banana", "Cherry")
+    .highlightColor(Color.CYAN)
+    .autoScroll();
+
 private TableState tableState = new TableState();
 private TextInputState inputState = new TextInputState();
 
 // In render():
-list("Apple", "Banana", "Cherry")
-    .state(listState)
-    .highlightColor(Color.CYAN)
+myList  // ListElement manages selection and scroll internally
 
 table()
     .header("Name", "Age")
@@ -587,6 +588,17 @@ table()
 
 textInput(inputState)
     .placeholder("Type here...")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ListElement provides methods for navigation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">myList.selectNext(itemCount);  // Move selection down
+myList.selectPrevious();       // Move selection up
+myList.selected();             // Get current selection index
+myList.selected(index);        // Set selection to specific index</code></pre>
 </div>
 </div>
 </div>
@@ -673,16 +685,16 @@ public class TodoApp extends ToolkitApp {
         "Learn TamboUI",
         "Build something cool"
     ));
-    private final ListState listState = new ListState();
+    private final ListElement&lt;?&gt; todoList = list()
+        .highlightColor(Color.CYAN)
+        .autoScroll();
 
     @Override
     protected Element render() {
         return panel("Todo",
             items.isEmpty()
                 ? text("Empty - press 'a' to add").dim()
-                : list(items.toArray(new String[0]))
-                    .state(listState)
-                    .highlightColor(Color.CYAN),
+                : todoList.items(items.toArray(new String[0])),
             spacer(),
             text("[a]dd [d]elete [q]uit").dim()
         )
@@ -698,15 +710,15 @@ public class TodoApp extends ToolkitApp {
             return EventResult.HANDLED;
         }
         if (event.isChar('d') &amp;&amp; !items.isEmpty()) {
-            items.remove(listState.selected());
+            items.remove(todoList.selected());
             return EventResult.HANDLED;
         }
         if (event.isDown()) {
-            listState.selectNext(items.size());
+            todoList.selectNext(items.size());
             return EventResult.HANDLED;
         }
         if (event.isUp()) {
-            listState.selectPrevious();
+            todoList.selectPrevious();
             return EventResult.HANDLED;
         }
         return EventResult.UNHANDLED;
@@ -920,7 +932,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-15 00:02:27 UTC
+Last updated 2026-01-15 00:05:56 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

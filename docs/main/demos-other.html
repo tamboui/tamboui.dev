@@ -35,8 +35,10 @@
 <ul class="sectlevel1">
 <li><a href="#ai-coding-assistant-demo">AI Coding Assistant Demo</a></li>
 <li><a href="#file-manager">File Manager</a></li>
+<li><a href="#flex-layout-demo">Flex Layout Demo</a></li>
 <li><a href="#inline-progress-demo">Inline Progress Demo</a></li>
 <li><a href="#module-path-demo">Module Path Demo</a></li>
+<li><a href="#ratatui-flex-layout-demo">Ratatui Flex Layout Demo</a></li>
 </ul>
 </div>
 </div>
@@ -77,6 +79,20 @@ AsciinemaPlayer.create('demos/filemanager-demo.cast', document.getElementById('p
 </div>
 </div>
 <div class="sect1">
+<h2 id="flex-layout-demo"><a class="anchor" href="#flex-layout-demo"></a><a class="link" href="#flex-layout-demo">Flex Layout Demo</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing Flex layout modes</p>
+</div>
+<div id="player-flex-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/flex-demo.cast', document.getElementById('player-flex-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
 <h2 id="inline-progress-demo"><a class="anchor" href="#inline-progress-demo"></a><a class="link" href="#inline-progress-demo">Inline Progress Demo</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -104,11 +120,25 @@ AsciinemaPlayer.create('demos/modular-demo.cast', document.getElementById('playe
 </script>
 </div>
 </div>
+<div class="sect1">
+<h2 id="ratatui-flex-layout-demo"><a class="anchor" href="#ratatui-flex-layout-demo"></a><a class="link" href="#ratatui-flex-layout-demo">Ratatui Flex Layout Demo</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing Flex layout modes (Ratatui&#8217;s Flex demo)</p>
+</div>
+<div id="player-rflex-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/rflex-demo.cast', document.getElementById('player-rflex-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-13 20:09:14 UTC
+Last updated 2026-01-15 00:02:27 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

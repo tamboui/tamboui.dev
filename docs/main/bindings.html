@@ -146,9 +146,10 @@ MouseTrigger.drag(MouseButton.LEFT)  // Dragging</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Bindings custom = BindingSets.standard()
     .toBuilder()
-    .bind("delete", KeyTrigger.ch('d'), KeyTrigger.key(KeyCode.DELETE))
-    .bind("save", KeyTrigger.ctrl('s'))
-    .bind("contextMenu", MouseTrigger.rightClick())
+    .bind(KeyTrigger.ch('d'), "delete")
+    .bind(KeyTrigger.key(KeyCode.DELETE), "delete")
+    .bind(KeyTrigger.ctrl('s'), "save")
+    .bind(MouseTrigger.rightClick(), "contextMenu")
     .build();</code></pre>
 </div>
 </div>
@@ -175,6 +176,18 @@ MouseTrigger.drag(MouseButton.LEFT)  // Dragging</code></pre>
     // Handle other events...
     return false;
 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Handlers can optionally receive the action name that triggered them:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Handler with action name (useful when same handler serves multiple actions)
+ActionHandler actions = new ActionHandler(bindings)
+    .on("red", (event, action) -&gt; setColor(action))
+    .on("blue", (event, action) -&gt; setColor(action))
+    .on("green", (event, action) -&gt; setColor(action));</code></pre>
 </div>
 </div>
 </div>
@@ -388,7 +401,7 @@ Modifiers use <code>Ctrl+</code>, <code>Alt+</code>, <code>Shift+</code> prefixe
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-16 20:25:09 UTC
+Last updated 2026-01-16 21:49:21 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

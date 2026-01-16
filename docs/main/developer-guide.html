@@ -280,8 +280,10 @@ var counter2 = new CounterCard().id("counter-2");
 // Define bindings
 var bindings = BindingSets.standard()
     .toBuilder()
-    .bind("increment", KeyTrigger.ch('+'), KeyTrigger.ch('='))
-    .bind("decrement", KeyTrigger.ch('-'), KeyTrigger.ch('_'))
+    .bind(KeyTrigger.ch('+'), "increment")
+    .bind(KeyTrigger.ch('='), "increment")
+    .bind(KeyTrigger.ch('-'), "decrement")
+    .bind(KeyTrigger.ch('_'), "decrement")
     .build();
 
 try (var runner = ToolkitRunner.builder()
@@ -393,7 +395,7 @@ try (var runner = ToolkitRunner.builder()
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-16 20:25:09 UTC
+Last updated 2026-01-16 21:49:21 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

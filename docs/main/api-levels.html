@@ -44,6 +44,7 @@
 <li><a href="#tuirunner">TuiRunner</a>
 <ul class="sectlevel2">
 <li><a href="#configuration">Configuration</a></li>
+<li><a href="#error-handling">Error Handling</a></li>
 <li><a href="#semantic-key-checks">Semantic Key Checks</a></li>
 <li><a href="#event-handling-patterns">Event Handling Patterns</a></li>
 <li><a href="#layout-in-the-renderer">Layout in the Renderer</a></li>
@@ -60,6 +61,7 @@
 <li><a href="#focus">Focus</a></li>
 <li><a href="#data-visualization">Data Visualization</a></li>
 <li><a href="#using-toolkitrunner-directly">Using ToolkitRunner Directly</a></li>
+<li><a href="#fault-tolerant-rendering">Fault-Tolerant Rendering</a></li>
 <li><a href="#example-todo-list">Example: Todo List</a></li>
 </ul>
 </li>
@@ -335,6 +337,88 @@ try (var tui = TuiRunner.create(config)) {
 </div>
 <div class="paragraph">
 <p>Tick events fire at the configured rate - useful for animations, clocks, or any periodic updates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="error-handling"><a class="anchor" href="#error-handling"></a><a class="link" href="#error-handling">Error Handling</a></h3>
+<div class="paragraph">
+<p>When exceptions occur during rendering, TuiRunner catches them and displays an error screen with the stack trace.
+By default, errors are shown in-app with options to scroll and dismiss:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Default: errors display in UI, press 'q' to quit
+try (var tui = TuiRunner.create()) {
+    tui.run(handler, renderer);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configure error handling behavior via <code>TuiConfig</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.tui.error.RenderErrorHandlers;
+
+// Log errors to a file and quit immediately
+var config = TuiConfig.builder()
+    .errorHandler(RenderErrorHandlers.logAndQuit(new PrintStream("/tmp/tui-errors.log")))
+    .build();
+
+// Write error details to a file, then show in-app error display
+var config = TuiConfig.builder()
+    .errorHandler(RenderErrorHandlers.writeToFile(Path.of("/tmp/crash.log")))
+    .build();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Available error handlers:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Handler</th>
+<th class="tableblock halign-left valign-top">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>displayAndQuit()</code> (default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows full-screen error display with scrollable stack trace, quit on 'q'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>logAndQuit(PrintStream)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logs error to stream, then exits immediately</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>writeToFile(Path)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Writes error to file, then shows in-app display</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>suppress()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logs warning and continues (use with caution)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Custom error handlers implement <code>RenderErrorHandler</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">var config = TuiConfig.builder()
+    .errorHandler((error, context) -&gt; {
+        // Log error details
+        context.errorOutput().println("Error: " + error.message());
+        error.cause().printStackTrace(context.errorOutput());
+        // Return the action to take
+        return ErrorAction.QUIT_IMMEDIATELY;
+    })
+    .build();</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -675,6 +759,54 @@ try (var runner = ToolkitRunner.create(config)) {
 </div>
 </div>
 <div class="sect2">
+<h3 id="fault-tolerant-rendering"><a class="anchor" href="#fault-tolerant-rendering"></a><a class="link" href="#fault-tolerant-rendering">Fault-Tolerant Rendering</a></h3>
+<div class="paragraph">
+<p>When enabled, fault-tolerant mode catches exceptions from individual elements and displays error placeholders instead of crashing the entire application.
+The rest of the UI continues to render normally.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var runner = ToolkitRunner.builder()
+        .faultTolerant(true)
+        .build()) {
+    runner.run(() -&gt; render());
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With fault-tolerant mode:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If an element throws during <code>render()</code>, an error placeholder is displayed in its area</p>
+</li>
+<li>
+<p>The error placeholder shows a red border with the exception type and message</p>
+</li>
+<li>
+<p>Other elements continue to render normally</p>
+</li>
+<li>
+<p>Useful for dashboards where one failing widget shouldn&#8217;t break the entire UI</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without fault-tolerant mode (default):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Exceptions propagate to <code>TuiRunner</code>, which displays a full-screen error</p>
+</li>
+<li>
+<p>This is the safer default for most applications</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="example-todo-list"><a class="anchor" href="#example-todo-list"></a><a class="link" href="#example-todo-list">Example: Todo List</a></h3>
 <div class="listingblock">
 <div class="content">
@@ -932,7 +1064,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-16 08:12:18 UTC
+Last updated 2026-01-16 13:33:43 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

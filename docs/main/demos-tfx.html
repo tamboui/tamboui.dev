@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Widgets Demos</title>
+<title>TFX Demos</title>
 <link rel="stylesheet" href="./_static/tamboui.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="_static/highlight/styles/github-dark.min.css">
@@ -26,31 +26,15 @@
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Widgets Demos</h1>
+<h1>TFX Demos</h1>
 <div class="details">
 <span id="revnumber">version 1.0.0-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#barchart">Barchart</a></li>
-<li><a href="#basic">Basic</a></li>
-<li><a href="#block">Block</a></li>
-<li><a href="#calendar">Calendar</a></li>
-<li><a href="#canvas">Canvas</a></li>
-<li><a href="#chart">Chart</a></li>
-<li><a href="#collapsed-borders">Collapsed Borders</a></li>
-<li><a href="#gauge">Gauge</a></li>
-<li><a href="#input-form">Input Form</a></li>
-<li><a href="#list">List</a></li>
-<li><a href="#paragraph">Paragraph</a></li>
-<li><a href="#rgb-colors">RGB Colors</a></li>
-<li><a href="#scrollbar">Scrollbar</a></li>
-<li><a href="#sparkline">Sparkline</a></li>
-<li><a href="#table">Table</a></li>
-<li><a href="#tabs">Tabs</a></li>
-<li><a href="#todo-list">Todo List</a></li>
-<li><a href="#wavetext">Wavetext</a></li>
+<li><a href="#tamboui-tfx-basic-effects-demo">TamboUI TFX Basic Effects Demo</a></li>
+<li><a href="#tamboui-tfx-demo">TamboUI TFX Demo</a></li>
 </ul>
 </div>
 </div>
@@ -63,252 +47,28 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="barchart"><a class="anchor" href="#barchart"></a><a class="link" href="#barchart">Barchart</a></h2>
+<h2 id="tamboui-tfx-basic-effects-demo"><a class="anchor" href="#tamboui-tfx-basic-effects-demo"></a><a class="link" href="#tamboui-tfx-basic-effects-demo">TamboUI TFX Basic Effects Demo</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Demo showcasing the BarChart widget</p>
+<p>Demo TUI application showcasing TamboUI effects</p>
 </div>
-<div id="player-barchart-demo" class="demo-player"></div>
+<div id="player-tfx-demo" class="demo-player"></div>
 <script>
-AsciinemaPlayer.create('demos/barchart-demo.cast', document.getElementById('player-barchart-demo'), {
+AsciinemaPlayer.create('demos/tfx-demo.cast', document.getElementById('player-tfx-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>
 </div>
 </div>
 <div class="sect1">
-<h2 id="basic"><a class="anchor" href="#basic"></a><a class="link" href="#basic">Basic</a></h2>
+<h2 id="tamboui-tfx-demo"><a class="anchor" href="#tamboui-tfx-demo"></a><a class="link" href="#tamboui-tfx-demo">TamboUI TFX Demo</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Demo TUI application using TamboUI</p>
+<p>Demo TUI application showcasing TamboUI effects</p>
 </div>
-<div id="player-basic-demo" class="demo-player"></div>
+<div id="player-tfx-basic-effects-demo" class="demo-player"></div>
 <script>
-AsciinemaPlayer.create('demos/basic-demo.cast', document.getElementById('player-basic-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="block"><a class="anchor" href="#block"></a><a class="link" href="#block">Block</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing Block widget</p>
-</div>
-<div id="player-block-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/block-demo.cast', document.getElementById('player-block-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="calendar"><a class="anchor" href="#calendar"></a><a class="link" href="#calendar">Calendar</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the Calendar widget for monthly calendar views</p>
-</div>
-<div id="player-calendar-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/calendar-demo.cast', document.getElementById('player-calendar-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="canvas"><a class="anchor" href="#canvas"></a><a class="link" href="#canvas">Canvas</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the Canvas widget for arbitrary shape drawing</p>
-</div>
-<div id="player-canvas-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/canvas-demo.cast', document.getElementById('player-canvas-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="chart"><a class="anchor" href="#chart"></a><a class="link" href="#chart">Chart</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the Chart widget for line/scatter plots</p>
-</div>
-<div id="player-chart-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/chart-demo.cast', document.getElementById('player-chart-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="collapsed-borders"><a class="anchor" href="#collapsed-borders"></a><a class="link" href="#collapsed-borders">Collapsed Borders</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing collapsed borders with Block widgets</p>
-</div>
-<div id="player-collapsed-borders-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/collapsed-borders-demo.cast', document.getElementById('player-collapsed-borders-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="gauge"><a class="anchor" href="#gauge"></a><a class="link" href="#gauge">Gauge</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing Gauge and LineGauge widgets</p>
-</div>
-<div id="player-gauge-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/gauge-demo.cast', document.getElementById('player-gauge-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="input-form"><a class="anchor" href="#input-form"></a><a class="link" href="#input-form">Input Form</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing Input Form with focus management</p>
-</div>
-<div id="player-input-form-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/input-form-demo.cast', document.getElementById('player-input-form-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="list"><a class="anchor" href="#list"></a><a class="link" href="#list">List</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing List widget</p>
-</div>
-<div id="player-list-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/list-demo.cast', document.getElementById('player-list-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="paragraph"><a class="anchor" href="#paragraph"></a><a class="link" href="#paragraph">Paragraph</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing Paragraph widget</p>
-</div>
-<div id="player-paragraph-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/paragraph-demo.cast', document.getElementById('player-paragraph-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="rgb-colors"><a class="anchor" href="#rgb-colors"></a><a class="link" href="#rgb-colors">RGB Colors</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing RGB color support</p>
-</div>
-<div id="player-colors-rgb-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/colors-rgb-demo.cast', document.getElementById('player-colors-rgb-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="scrollbar"><a class="anchor" href="#scrollbar"></a><a class="link" href="#scrollbar">Scrollbar</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the Scrollbar widget</p>
-</div>
-<div id="player-scrollbar-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/scrollbar-demo.cast', document.getElementById('player-scrollbar-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sparkline"><a class="anchor" href="#sparkline"></a><a class="link" href="#sparkline">Sparkline</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the Sparkline widget</p>
-</div>
-<div id="player-sparkline-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/sparkline-demo.cast', document.getElementById('player-sparkline-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="table"><a class="anchor" href="#table"></a><a class="link" href="#table">Table</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the Table widget</p>
-</div>
-<div id="player-table-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/table-demo.cast', document.getElementById('player-table-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="tabs"><a class="anchor" href="#tabs"></a><a class="link" href="#tabs">Tabs</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the Tabs widget</p>
-</div>
-<div id="player-tabs-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/tabs-demo.cast', document.getElementById('player-tabs-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="todo-list"><a class="anchor" href="#todo-list"></a><a class="link" href="#todo-list">Todo List</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing Todo List application</p>
-</div>
-<div id="player-todo-list-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/todo-list-demo.cast', document.getElementById('player-todo-list-demo'), {
-    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
-});
-</script>
-</div>
-</div>
-<div class="sect1">
-<h2 id="wavetext"><a class="anchor" href="#wavetext"></a><a class="link" href="#wavetext">Wavetext</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Demo showcasing the WaveText widget</p>
-</div>
-<div id="player-wavetext-demo" class="demo-player"></div>
-<script>
-AsciinemaPlayer.create('demos/wavetext-demo.cast', document.getElementById('player-wavetext-demo'), {
+AsciinemaPlayer.create('demos/tfx-basic-effects-demo.cast', document.getElementById('player-tfx-basic-effects-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>

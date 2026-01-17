@@ -39,6 +39,16 @@
 <ul class="sectlevel2">
 <li><a href="#variables">Variables</a></li>
 <li><a href="#selectors">Selectors</a></li>
+<li><a href="#targeting-elements-practical-examples">Targeting Elements: Practical Examples</a>
+<ul class="sectlevel3">
+<li><a href="#styling-elements-by-location">Styling elements by location</a></li>
+<li><a href="#styling-elements-by-type-and-class">Styling elements by type and class</a></li>
+<li><a href="#styling-based-on-state">Styling based on state</a></li>
+<li><a href="#combining-conditions">Combining conditions</a></li>
+<li><a href="#styling-child-components">Styling child components</a></li>
+<li><a href="#scoped-styling-with-selector-lists">Scoped styling with selector lists</a></li>
+</ul>
+</li>
 <li><a href="#nesting">Nesting</a></li>
 <li><a href="#properties">Properties</a>
 <ul class="sectlevel3">
@@ -230,12 +240,42 @@ ListElement-item:nth-child(even) {
 <p>Supported pseudo-classes: <code>:focus</code>, <code>:hover</code>, <code>:disabled</code>, <code>:active</code>, <code>:selected</code>, <code>:first-child</code>, <code>:last-child</code>, <code>:nth-child(even)</code>, <code>:nth-child(odd)</code>.</p>
 </div>
 <div class="paragraph">
-<p>Compound selectors combine multiple conditions:</p>
+<p>Compound selectors combine multiple conditions (no space between parts):</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel.primary#main {
     border-color: cyan;
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Whitespace matters in selectors:
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Text element WITH class "muted" (compound - no space) */
+Text.muted {
+    color: gray;
+}
+
+/* Element with class "muted" INSIDE a Text element (descendant - with space) */
+Text .muted {
+    color: gray;
+}
+
+/* Text element INSIDE an element with class "muted" */
+.muted Text {
+    color: gray;
 }</code></pre>
 </div>
 </div>
@@ -253,6 +293,370 @@ Panel Button {
 Panel &gt; Button {
     text-style: bold;
 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Selector lists (comma-separated) apply the same styles to multiple selectors:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Apply same styles to multiple selectors */
+.error, .warning, .danger {
+    text-style: bold;
+}
+
+Panel.primary, Panel.secondary {
+    border-type: rounded;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Attribute selectors match elements based on their attributes (title, label, placeholder):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Match elements with a specific attribute value */
+Panel[title="Settings"] {
+    border-color: cyan;
+}
+
+/* Match elements that have an attribute (any value) */
+Panel[title] {
+    border-type: double;
+}
+
+/* Starts with */
+Panel[title^="Test"] {
+    border-color: yellow;
+}
+
+/* Ends with */
+Panel[title$="Output"] {
+    border-color: green;
+}
+
+/* Contains */
+Panel[title*="Tree"] {
+    border-color: magenta;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Attribute selectors can be combined with other selectors:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Attribute selector with class */
+Panel.sidebar[title="Navigation"] {
+    border-color: cyan;
+    border-type: double;
+}
+
+/* Attribute selector with pseudo-class */
+TextInputElement[placeholder]:focus {
+    border-color: yellow;
+}
+
+/* Nested elements inside a panel with specific title */
+Panel[title="Settings"] TextInputElement {
+    border-type: rounded;
+}
+
+/* Direct child with attribute */
+Panel[title="Form"] &gt; TextInputElement[placeholder="Enter name..."] {
+    border-color: green;
+}
+
+/* Multiple attribute selectors */
+TextInputElement[title="Username"][placeholder] {
+    color: cyan;
+}
+
+/* Selector list with attribute selectors */
+Panel[title="Input"], Panel[title="Output"], Panel[title="Logs"] {
+    border-color: blue;
+}
+
+/* Style child elements based on parent's attribute */
+Panel[title^="Test"] GaugeElement {
+    color: yellow;
+}
+
+/* Combine with ID selector */
+#main-panel[title="Dashboard"] {
+    border-type: double;
+    border-color: cyan;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Elements expose the following attributes for CSS matching:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Available Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Panel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code>, <code>bottom-title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DialogElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ListElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TableElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TabsElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GaugeElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code>, <code>label</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LineGaugeElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>label</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SparklineElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ChartElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BarChartElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CalendarElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CanvasElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TextInputElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code>, <code>placeholder</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TextAreaElement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code>, <code>placeholder</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="targeting-elements-practical-examples"><a class="anchor" href="#targeting-elements-practical-examples"></a><a class="link" href="#targeting-elements-practical-examples">Targeting Elements: Practical Examples</a></h3>
+<div class="paragraph">
+<p>This section shows common patterns for targeting specific elements in your UI.</p>
+</div>
+<div class="sect3">
+<h4 id="styling-elements-by-location"><a class="anchor" href="#styling-elements-by-location"></a><a class="link" href="#styling-elements-by-location">Styling elements by location</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* All text elements inside the sidebar */
+#sidebar Text {
+    color: gray;
+}
+
+/* Only direct children of the sidebar */
+#sidebar &gt; Text {
+    text-style: bold;
+}
+
+/* Gauges inside any panel with class "metrics" */
+Panel.metrics GaugeElement {
+    color: green;
+}
+
+/* Text inside a list inside a panel */
+Panel ListElement Text {
+    color: cyan;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="styling-elements-by-type-and-class"><a class="anchor" href="#styling-elements-by-type-and-class"></a><a class="link" href="#styling-elements-by-type-and-class">Styling elements by type and class</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* All panels with "card" class */
+Panel.card {
+    border-type: rounded;
+    padding: 1;
+}
+
+/* Primary buttons vs danger buttons */
+Button.primary {
+    color: cyan;
+    text-style: bold;
+}
+
+Button.danger {
+    color: red;
+    text-style: bold;
+}
+
+/* Muted text anywhere */
+Text.muted {
+    color: gray;
+    text-style: dim;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="styling-based-on-state"><a class="anchor" href="#styling-based-on-state"></a><a class="link" href="#styling-based-on-state">Styling based on state</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Focused input fields */
+TextInputElement:focus {
+    border-color: cyan;
+}
+
+/* Selected items in any list */
+ListElement-item:selected {
+    background: blue;
+    text-style: bold;
+}
+
+/* Alternating row colors in tables */
+TableElement-row:nth-child(even) {
+    background: #1a1a1a;
+}
+
+/* First and last items */
+ListElement-item:first-child {
+    border-color: yellow;
+}
+
+ListElement-item:last-child {
+    border-color: yellow;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="combining-conditions"><a class="anchor" href="#combining-conditions"></a><a class="link" href="#combining-conditions">Combining conditions</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Focused panel with primary class */
+Panel.primary:focus {
+    border-color: cyan;
+    border-type: double;
+}
+
+/* Selected item inside a focused list */
+ListElement:focus ListElement-item:selected {
+    background: cyan;
+    color: black;
+}
+
+/* Specific element by ID when focused */
+#username-input:focus {
+    border-color: green;
+}
+
+/* Text with multiple classes */
+Text.title.large {
+    text-style: bold;
+    color: white;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="styling-child-components"><a class="anchor" href="#styling-child-components"></a><a class="link" href="#styling-child-components">Styling child components</a></h4>
+<div class="paragraph">
+<p>Many elements have styleable sub-components accessed via child selectors:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Style the filled portion of gauges */
+GaugeElement-filled {
+    color: green;
+}
+
+/* Style the unfilled portion of line gauges */
+LineGaugeElement-unfilled {
+    color: dark-gray;
+}
+
+/* Style list items */
+ListElement-item {
+    color: white;
+}
+
+/* Style selected tab */
+TabsElement-tab:selected {
+    text-style: bold reversed;
+}
+
+/* Style table header */
+TableElement-header {
+    text-style: bold;
+    color: cyan;
+}
+
+/* Style cursor in text input */
+TextInputElement-cursor {
+    text-style: reversed;
+    background: yellow;
+}
+
+/* Style placeholder text */
+TextInputElement-placeholder {
+    color: gray;
+    text-style: italic;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="scoped-styling-with-selector-lists"><a class="anchor" href="#scoped-styling-with-selector-lists"></a><a class="link" href="#scoped-styling-with-selector-lists">Scoped styling with selector lists</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Apply same border style to multiple panel types */
+#header, #footer, #sidebar {
+    border-type: rounded;
+    border-color: gray;
+}
+
+/* Multiple element types with same styling */
+GaugeElement, LineGaugeElement, SparklineElement {
+    color: cyan;
+}
+
+/* Multiple states */
+TextInputElement:focus, TextAreaElement:focus {
+    border-color: yellow;
+}
+
+/* Complex selector list */
+Panel.card Text.title,
+Panel.card Text.subtitle,
+DialogElement Text.title {
+    text-style: bold;
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -771,7 +1175,7 @@ Panel:focus {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-17 16:57:20 UTC
+Last updated 2026-01-17 17:23:00 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

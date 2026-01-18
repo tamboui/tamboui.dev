@@ -64,6 +64,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#addConstraint(dev.tamboui.layout.cassowary.CassowaryConstraint)" tabindex="0">addConstraint(CassowaryConstraint)</a></li>
+<li><a href="#addConstraints(java.lang.Iterable)" tabindex="0">addConstraints(Iterable)</a></li>
 <li><a href="#removeConstraint(dev.tamboui.layout.cassowary.CassowaryConstraint)" tabindex="0">removeConstraint(CassowaryConstraint)</a></li>
 <li><a href="#hasConstraint(dev.tamboui.layout.cassowary.CassowaryConstraint)" tabindex="0">hasConstraint(CassowaryConstraint)</a></li>
 <li><a href="#addEditVariable(dev.tamboui.layout.cassowary.Variable,dev.tamboui.layout.cassowary.Strength)" tabindex="0">addEditVariable(Variable, Strength)</a></li>
@@ -169,50 +170,55 @@ Fraction resolvedWidth = solver.valueOf(width);
 <div class="block">Adds a constraint to the solver.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEditVariable(dev.tamboui.layout.cassowary.Variable,dev.tamboui.layout.cassowary.Strength)" class="member-name-link">addEditVariable</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable,
- <a href="Strength.html" title="class in dev.tamboui.layout.cassowary">Strength</a>&nbsp;strength)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addConstraints(java.lang.Iterable)" class="member-name-link">addConstraints</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="CassowaryConstraint.html" title="class in dev.tamboui.layout.cassowary">CassowaryConstraint</a>&gt;&nbsp;constraintList)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds multiple constraints to the solver.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEditVariable(dev.tamboui.layout.cassowary.Variable,dev.tamboui.layout.cassowary.Strength)" class="member-name-link">addEditVariable</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable,
+ <a href="Strength.html" title="class in dev.tamboui.layout.cassowary">Strength</a>&nbsp;strength)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds an edit variable for interactive updates.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasConstraint(dev.tamboui.layout.cassowary.CassowaryConstraint)" class="member-name-link">hasConstraint</a><wbr>(<a href="CassowaryConstraint.html" title="class in dev.tamboui.layout.cassowary">CassowaryConstraint</a>&nbsp;constraint)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasConstraint(dev.tamboui.layout.cassowary.CassowaryConstraint)" class="member-name-link">hasConstraint</a><wbr>(<a href="CassowaryConstraint.html" title="class in dev.tamboui.layout.cassowary">CassowaryConstraint</a>&nbsp;constraint)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks if the solver contains a constraint.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEditVariable(dev.tamboui.layout.cassowary.Variable)" class="member-name-link">hasEditVariable</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEditVariable(dev.tamboui.layout.cassowary.Variable)" class="member-name-link">hasEditVariable</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks if a variable is an edit variable.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeConstraint(dev.tamboui.layout.cassowary.CassowaryConstraint)" class="member-name-link">removeConstraint</a><wbr>(<a href="CassowaryConstraint.html" title="class in dev.tamboui.layout.cassowary">CassowaryConstraint</a>&nbsp;constraint)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeConstraint(dev.tamboui.layout.cassowary.CassowaryConstraint)" class="member-name-link">removeConstraint</a><wbr>(<a href="CassowaryConstraint.html" title="class in dev.tamboui.layout.cassowary">CassowaryConstraint</a>&nbsp;constraint)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes a constraint from the solver.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEditVariable(dev.tamboui.layout.cassowary.Variable)" class="member-name-link">removeEditVariable</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEditVariable(dev.tamboui.layout.cassowary.Variable)" class="member-name-link">removeEditVariable</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes an edit variable.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Resets the solver to an empty state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#suggestValue(dev.tamboui.layout.cassowary.Variable,dev.tamboui.layout.Fraction)" class="member-name-link">suggestValue</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#suggestValue(dev.tamboui.layout.cassowary.Variable,dev.tamboui.layout.Fraction)" class="member-name-link">suggestValue</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable,
  <a href="../Fraction.html" title="class in dev.tamboui.layout">Fraction</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Suggests a new value for an edit variable.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateVariables()" class="member-name-link">updateVariables</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateVariables()" class="member-name-link">updateVariables</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Updates all variable values after constraint changes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Fraction.html" title="class in dev.tamboui.layout">Fraction</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#valueOf(dev.tamboui.layout.cassowary.Variable)" class="member-name-link">valueOf</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Fraction.html" title="class in dev.tamboui.layout">Fraction</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#valueOf(dev.tamboui.layout.cassowary.Variable)" class="member-name-link">valueOf</a><wbr>(<a href="Variable.html" title="class in dev.tamboui.layout.cassowary">Variable</a>&nbsp;variable)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the current value of a variable.</div>
 </div>
 </div>
@@ -261,6 +267,22 @@ Fraction resolvedWidth = solver.valueOf(width);
 <dt>Throws:</dt>
 <dd><code><a href="DuplicateConstraintException.html" title="class in dev.tamboui.layout.cassowary">DuplicateConstraintException</a></code> - if the constraint already exists</dd>
 <dd><code><a href="UnsatisfiableConstraintException.html" title="class in dev.tamboui.layout.cassowary">UnsatisfiableConstraintException</a></code> - if required and unsatisfiable</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addConstraints(java.lang.Iterable)">
+<h3>addConstraints</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addConstraints</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="CassowaryConstraint.html" title="class in dev.tamboui.layout.cassowary">CassowaryConstraint</a>&gt;&nbsp;constraintList)</span></div>
+<div class="block">Adds multiple constraints to the solver.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>constraintList</code> - the constraints to add</dd>
+<dt>Throws:</dt>
+<dd><code><a href="DuplicateConstraintException.html" title="class in dev.tamboui.layout.cassowary">DuplicateConstraintException</a></code> - if any constraint already exists</dd>
+<dd><code><a href="UnsatisfiableConstraintException.html" title="class in dev.tamboui.layout.cassowary">UnsatisfiableConstraintException</a></code> - if any required constraint is unsatisfiable</dd>
 </dl>
 </div>
 </section>

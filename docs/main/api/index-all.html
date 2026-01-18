@@ -2823,6 +2823,14 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Provides styling for specific dates in a <a href="dev/tamboui/widgets/calendar/Monthly.html" title="class in dev.tamboui.widgets.calendar"><code>Monthly</code></a> calendar.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/overlay/DebugOverlay.html" class="type-name-link" title="class in dev.tamboui.tui.overlay">DebugOverlay</a> - Class in <a href="dev/tamboui/tui/overlay/package-summary.html">dev.tamboui.tui.overlay</a></dt>
+<dd>
+<div class="block">Debug overlay that displays performance metrics and system information.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/overlay/DebugOverlay.html#%3Cinit%3E(java.lang.String,java.time.Duration,java.time.Duration)" class="member-name-link">DebugOverlay(String, Duration, Duration)</a> - Constructor for class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/DebugOverlay.html" title="class in dev.tamboui.tui.overlay">DebugOverlay</a></dt>
+<dd>
+<div class="block">Creates a new debug overlay.</div>
+</dd>
 <dt><a href="dev/tamboui/css/model/Rule.html#declarations()" class="member-name-link">declarations()</a> - Method in class dev.tamboui.css.model.<a href="dev/tamboui/css/model/Rule.html" title="class in dev.tamboui.css.model">Rule</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#DEFAULT_POLL_TIMEOUT" class="member-name-link">DEFAULT_POLL_TIMEOUT</a> - Static variable in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
@@ -4472,14 +4480,6 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#fpsOverlay(boolean)" class="member-name-link">fpsOverlay(boolean)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
 <dd>
 <div class="block">Enables or disables the FPS overlay.</div>
-</dd>
-<dt><a href="dev/tamboui/tui/overlay/FpsOverlay.html" class="type-name-link" title="class in dev.tamboui.tui.overlay">FpsOverlay</a> - Class in <a href="dev/tamboui/tui/overlay/package-summary.html">dev.tamboui.tui.overlay</a></dt>
-<dd>
-<div class="block">FPS overlay that displays performance metrics.</div>
-</dd>
-<dt><a href="dev/tamboui/tui/overlay/FpsOverlay.html#%3Cinit%3E(java.time.Duration,java.time.Duration)" class="member-name-link">FpsOverlay(Duration, Duration)</a> - Constructor for class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/FpsOverlay.html" title="class in dev.tamboui.tui.overlay">FpsOverlay</a></dt>
-<dd>
-<div class="block">Creates a new FPS overlay.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#fpsOverlayEnabled()" class="member-name-link">fpsOverlayEnabled()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
@@ -6226,7 +6226,7 @@ match.</div>
 <dd>
 <div class="block">Returns true if this orientation is vertical.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/overlay/FpsOverlay.html#isVisible()" class="member-name-link">isVisible()</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/FpsOverlay.html" title="class in dev.tamboui.tui.overlay">FpsOverlay</a></dt>
+<dt><a href="dev/tamboui/tui/overlay/DebugOverlay.html#isVisible()" class="member-name-link">isVisible()</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/DebugOverlay.html" title="class in dev.tamboui.tui.overlay">DebugOverlay</a></dt>
 <dd>
 <div class="block">Returns whether the overlay is currently visible.</div>
 </dd>
@@ -9110,7 +9110,7 @@ based on constraints.</div>
 <dd>
 <div class="block">Returns the reciprocal of this fraction.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/overlay/FpsOverlay.html#recordFrame()" class="member-name-link">recordFrame()</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/FpsOverlay.html" title="class in dev.tamboui.tui.overlay">FpsOverlay</a></dt>
+<dt><a href="dev/tamboui/tui/overlay/DebugOverlay.html#recordFrame()" class="member-name-link">recordFrame()</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/DebugOverlay.html" title="class in dev.tamboui.tui.overlay">DebugOverlay</a></dt>
 <dd>
 <div class="block">Records a frame render for FPS calculation.</div>
 </dd>
@@ -9336,9 +9336,9 @@ based on constraints.</div>
 <dd>
 <div class="block">Renders the user interface to the given frame.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/overlay/FpsOverlay.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect)" class="member-name-link">render(Frame, Rect)</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/FpsOverlay.html" title="class in dev.tamboui.tui.overlay">FpsOverlay</a></dt>
+<dt><a href="dev/tamboui/tui/overlay/DebugOverlay.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect)" class="member-name-link">render(Frame, Rect)</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/DebugOverlay.html" title="class in dev.tamboui.tui.overlay">DebugOverlay</a></dt>
 <dd>
-<div class="block">Renders the FPS overlay in the top-right corner.</div>
+<div class="block">Renders the debug overlay in the top-right corner.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/Element.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">render(Frame, Rect, RenderContext)</a> - Method in interface dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></dt>
 <dd>
@@ -12014,13 +12014,13 @@ from each line.</div>
 <dd>
 <div class="block">Converts this ratio to a Fraction for exact arithmetic.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/overlay/FpsOverlay.html#toggle()" class="member-name-link">toggle()</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/FpsOverlay.html" title="class in dev.tamboui.tui.overlay">FpsOverlay</a></dt>
+<dt><a href="dev/tamboui/tui/overlay/DebugOverlay.html#toggle()" class="member-name-link">toggle()</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/DebugOverlay.html" title="class in dev.tamboui.tui.overlay">DebugOverlay</a></dt>
 <dd>
-<div class="block">Toggles the visibility of the FPS overlay.</div>
+<div class="block">Toggles the visibility of the debug overlay.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/bindings/Actions.html#TOGGLE_FPS_OVERLAY" class="member-name-link">TOGGLE_FPS_OVERLAY</a> - Static variable in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/Actions.html" title="class in dev.tamboui.tui.bindings">Actions</a></dt>
+<dt><a href="dev/tamboui/tui/bindings/Actions.html#TOGGLE_DEBUG_OVERLAY" class="member-name-link">TOGGLE_DEBUG_OVERLAY</a> - Static variable in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/Actions.html" title="class in dev.tamboui.tui.bindings">Actions</a></dt>
 <dd>
-<div class="block">Toggle the FPS overlay.</div>
+<div class="block">Toggle the debug overlay.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/StyledElement.html#toggleClass(java.lang.String,boolean)" class="member-name-link">toggleClass(String, boolean)</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a></dt>
 <dd>

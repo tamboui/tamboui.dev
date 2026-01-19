@@ -294,7 +294,14 @@ in the UI and the application waits for user dismissal before quitting.</div>
 <h3>pollEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/Event.html" title="interface in dev.tamboui.tui.event">Event</a></span>&nbsp;<span class="element-name">pollEvent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;timeout)</span></div>
-<div class="block">Polls for the next event with the specified timeout.</div>
+<div class="block">Polls for the next event with the specified timeout.
+<p>
+Events are read from the unified event queue, which receives events
+from both the dedicated input reader thread (keyboard/mouse) and
+the scheduler thread (ticks/resize).
+<p>
+Input events (key/mouse) are prioritized over tick events to ensure
+UI responsiveness even when rendering is slow.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>timeout</code> - the maximum time to wait</dd>

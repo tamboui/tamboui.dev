@@ -314,7 +314,9 @@ List&lt;ElementInfo&gt; panelButtons = registry.queryAll("Panel Button");
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;attributes,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="ElementRegistry.ElementInfo.html" title="class in dev.tamboui.toolkit.element">ElementRegistry.ElementInfo</a>&nbsp;parent)</span></div>
-<div class="block">Registers an element with full information including parent.</div>
+<div class="block">Registers an element with full information including parent.
+<p>
+Must be called from the render thread.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>elementId</code> - the element ID (may be null)</dd>
@@ -451,7 +453,8 @@ This is a convenience method equivalent to <code>query("#" + elementId)</code>.<
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
 <div class="block">Clears all registered elements.
 <p>
-Should be called at the start of each render cycle.</div>
+Should be called at the start of each render cycle.
+Must be called from the render thread.</div>
 </div>
 </section>
 </li>

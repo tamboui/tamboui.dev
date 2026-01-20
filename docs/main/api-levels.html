@@ -49,6 +49,13 @@
 </ul>
 </li>
 <li><a href="#error-handling">Error Handling</a></li>
+<li><a href="#threading-model">Threading Model</a>
+<ul class="sectlevel3">
+<li><a href="#the-render-thread">The render thread</a></li>
+<li><a href="#updating-ui-from-background-threads">Updating UI from Background Threads</a></li>
+<li><a href="#scheduled-actions">Scheduled Actions</a></li>
+</ul>
+</li>
 <li><a href="#semantic-key-checks">Semantic Key Checks</a></li>
 <li><a href="#event-handling-patterns">Event Handling Patterns</a></li>
 <li><a href="#layout-in-the-renderer">Layout in the Renderer</a></li>
@@ -450,6 +457,107 @@ var config = TuiConfig.builder()
         return ErrorAction.QUIT_IMMEDIATELY;
     })
     .build();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="threading-model"><a class="anchor" href="#threading-model"></a><a class="link" href="#threading-model">Threading Model</a></h3>
+<div class="paragraph">
+<p>TamboUI uses a dedicated <strong>render thread model</strong> similar to other UI frameworks.
+All rendering and UI state modifications must happen on the render thread - the thread running <code>TuiRunner.run()</code>.</p>
+</div>
+<div class="paragraph">
+<p>This model provides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Thread safety</strong>: No locks needed in UI code since everything runs on one thread</p>
+</li>
+<li>
+<p><strong>Predictable behavior</strong>: UI updates happen in a well-defined order</p>
+</li>
+<li>
+<p><strong>Clear error reporting</strong>: Wrong-thread access throws <code>IllegalStateException</code> with diagnostic info</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="the-render-thread"><a class="anchor" href="#the-render-thread"></a><a class="link" href="#the-render-thread">The render thread</a></h4>
+<div class="paragraph">
+<p>When <code>TuiRunner.run()</code> starts, it marks the current thread as the render thread.
+All event handling and rendering callbacks execute on this thread.
+When <code>run()</code> exits, the render thread is cleared.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Check if on render thread
+if (runner.isRenderThread()) {
+    // Safe to modify UI state
+}
+
+// Or use the static utility
+if (RenderThread.isRenderThread()) {
+    // ...
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="updating-ui-from-background-threads"><a class="anchor" href="#updating-ui-from-background-threads"></a><a class="link" href="#updating-ui-from-background-threads">Updating UI from Background Threads</a></h4>
+<div class="paragraph">
+<p>To safely update UI state from background threads (network callbacks, timers, async tasks), use <code>runOnRenderThread()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// From a background thread:
+runner.runOnRenderThread(() -&gt; {
+    // This runs on the render thread
+    status = "Download complete";
+    // UI will redraw on next event
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If called from the render thread, the action executes immediately.
+If called from another thread, it&#8217;s queued and runs during the next event loop iteration.</p>
+</div>
+<div class="paragraph">
+<p>For actions that should always be deferred (even when on render thread), use <code>runLater()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Always queues, never executes immediately
+runner.runLater(() -&gt; {
+    // Runs after current event handling completes
+    processNextItem();
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="scheduled-actions"><a class="anchor" href="#scheduled-actions"></a><a class="link" href="#scheduled-actions">Scheduled Actions</a></h4>
+<div class="paragraph">
+<p>Scheduled actions via <code>ToolkitRunner.schedule()</code>, <code>scheduleRepeating()</code>, and <code>scheduleWithFixedDelay()</code> run on the scheduler thread.
+If they modify UI state, use <code>runOnRenderThread()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Action runs on scheduler thread - use runOnRenderThread for UI state
+runner.schedule(() -&gt; {
+    runner.runOnRenderThread(() -&gt; {
+        countdown--;
+    });
+}, Duration.ofSeconds(1));
+
+// Same pattern for repeating actions
+runner.scheduleRepeating(() -&gt; {
+    runner.runOnRenderThread(() -&gt; animationFrame++);
+}, Duration.ofMillis(16));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This explicit approach gives you control - you can do background work in the scheduled action and only post the UI update portion to the render thread.</p>
 </div>
 </div>
 </div>
@@ -1096,7 +1204,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-19 22:52:48 UTC
+Last updated 2026-01-20 00:12:01 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

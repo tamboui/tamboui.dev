@@ -68,6 +68,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#draw(java.util.function.Consumer)" tabindex="0">draw(Consumer)</a></li>
 <li><a href="#isRunning()" tabindex="0">isRunning()</a></li>
 <li><a href="#quit()" tabindex="0">quit()</a></li>
+<li><a href="#runOnRenderThread(java.lang.Runnable)" tabindex="0">runOnRenderThread(Runnable)</a></li>
+<li><a href="#runLater(java.lang.Runnable)" tabindex="0">runLater(Runnable)</a></li>
+<li><a href="#isRenderThread()" tabindex="0">isRenderThread()</a></li>
 <li><a href="#terminal()" tabindex="0">terminal()</a></li>
 <li><a href="#backend()" tabindex="0">backend()</a></li>
 <li><a href="#close()" tabindex="0">close()</a></li>
@@ -188,34 +191,49 @@ event parsing, and the main event loop.
 <div class="block">Draws the UI using the given renderer.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRunning()" class="member-name-link">isRunning</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRenderThread()" class="member-name-link">isRenderThread</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the current thread is the render thread.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRunning()" class="member-name-link">isRunning</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if the runner is still running.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/Event.html" title="interface in dev.tamboui.tui.event">Event</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pollEvent()" class="member-name-link">pollEvent</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/Event.html" title="interface in dev.tamboui.tui.event">Event</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pollEvent()" class="member-name-link">pollEvent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Polls for the next event without blocking.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/Event.html" title="interface in dev.tamboui.tui.event">Event</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pollEvent(java.time.Duration)" class="member-name-link">pollEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;timeout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/Event.html" title="interface in dev.tamboui.tui.event">Event</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pollEvent(java.time.Duration)" class="member-name-link">pollEvent</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;timeout)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Polls for the next event with the specified timeout.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Signals the runner to stop.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(dev.tamboui.tui.EventHandler,dev.tamboui.tui.Renderer)" class="member-name-link">run</a><wbr>(<a href="EventHandler.html" title="interface in dev.tamboui.tui">EventHandler</a>&nbsp;handler,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(dev.tamboui.tui.EventHandler,dev.tamboui.tui.Renderer)" class="member-name-link">run</a><wbr>(<a href="EventHandler.html" title="interface in dev.tamboui.tui">EventHandler</a>&nbsp;handler,
  <a href="Renderer.html" title="interface in dev.tamboui.tui">Renderer</a>&nbsp;renderer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Runs the main event loop with the given handler and renderer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../terminal/Terminal.html" title="class in dev.tamboui.terminal">Terminal</a><wbr>&lt;<a href="../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#terminal()" class="member-name-link">terminal</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runLater(java.lang.Runnable)" class="member-name-link">runLater</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Queues an action to be executed on the render thread.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runOnRenderThread(java.lang.Runnable)" class="member-name-link">runOnRenderThread</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Executes an action on the render thread.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../terminal/Terminal.html" title="class in dev.tamboui.terminal">Terminal</a><wbr>&lt;<a href="../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#terminal()" class="member-name-link">terminal</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the underlying terminal.</div>
 </div>
 </div>
@@ -357,6 +375,62 @@ UI responsiveness even when rendering is slow.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">quit</span>()</div>
 <div class="block">Signals the runner to stop.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="runOnRenderThread(java.lang.Runnable)">
+<h3>runOnRenderThread</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runOnRenderThread</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
+<div class="block">Executes an action on the render thread.
+<p>
+If called from the render thread, the action is executed immediately.
+If called from another thread, the action is queued for execution
+on the render thread.
+<p>
+This is the primary API for safely updating UI state from background threads:
+<pre><code>// From a background thread:
+runner.runOnRenderThread(() -&gt; {
+    updateState();
+    // UI will redraw on next event
+});
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>action</code> - the action to execute on the render thread</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="runLater(java.lang.Runnable)">
+<h3>runLater</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runLater</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
+<div class="block">Queues an action to be executed on the render thread.
+<p>
+Unlike <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a>, this method always queues
+the action even if called from the render thread. This is useful when
+you want to defer execution until after the current event handling
+completes.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>action</code> - the action to execute on the render thread</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isRenderThread()">
+<h3>isRenderThread</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRenderThread</span>()</div>
+<div class="block">Returns whether the current thread is the render thread.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if called from the render thread</dd>
+</dl>
 </div>
 </section>
 </li>

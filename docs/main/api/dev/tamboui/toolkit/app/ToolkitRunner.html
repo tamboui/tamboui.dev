@@ -71,6 +71,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#scheduleWithFixedDelay(java.lang.Runnable,java.time.Duration)" tabindex="0">scheduleWithFixedDelay(Runnable, Duration)</a></li>
 <li><a href="#focusManager()" tabindex="0">focusManager()</a></li>
 <li><a href="#eventRouter()" tabindex="0">eventRouter()</a></li>
+<li><a href="#runOnRenderThread(java.lang.Runnable)" tabindex="0">runOnRenderThread(Runnable)</a></li>
+<li><a href="#isRenderThread()" tabindex="0">isRenderThread()</a></li>
 <li><a href="#elementRegistry()" tabindex="0">elementRegistry()</a></li>
 <li><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" tabindex="0">styleEngine(StyleEngine)</a></li>
 <li><a href="#tuiRunner()" tabindex="0">tuiRunner()</a></li>
@@ -202,19 +204,29 @@ try (var runner = ToolkitRunner.create()) {
 <div class="block">Returns whether fault-tolerant rendering is enabled.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRunning()" class="member-name-link">isRunning</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRenderThread()" class="member-name-link">isRenderThread</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the current thread is the render thread.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRunning()" class="member-name-link">isRunning</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns whether the runner is still running.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#quit()" class="member-name-link">quit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Signals the runner to stop.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(java.util.function.Supplier)" class="member-name-link">run</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;elementSupplier)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(java.util.function.Supplier)" class="member-name-link">run</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;elementSupplier)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Runs the application with the given element supplier.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runOnRenderThread(java.lang.Runnable)" class="member-name-link">runOnRenderThread</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Executes an action on the render thread.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.ScheduledAction.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.ScheduledAction</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.lang.Runnable,java.time.Duration)" class="member-name-link">schedule</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action,
@@ -358,12 +370,13 @@ the rest of the UI to continue rendering.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;delay)</span></div>
 <div class="block">Schedules an action to run after a delay.
 <p>
-The action runs on a background thread. If the action modifies shared state,
-ensure proper synchronization. The UI will automatically redraw on the next
-tick event after the action completes.
+The action runs on the scheduler thread. If the action modifies UI state,
+use <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety:
 
 <pre><code>runner.schedule(() -&gt; {
-    message = "Delayed message!";
+    runner.runOnRenderThread(() -&gt; {
+        message = "Delayed message!";
+    });
 }, Duration.ofSeconds(2));
 </code></pre></div>
 <dl class="notes">
@@ -384,12 +397,11 @@ tick event after the action completes.
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;interval)</span></div>
 <div class="block">Schedules an action to run repeatedly at a fixed interval.
 <p>
-The action runs on a background thread. If the action modifies shared state,
-ensure proper synchronization. The UI will automatically redraw on each
-tick event.
+The action runs on the scheduler thread. If the action modifies UI state,
+use <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety.
 
 <pre><code>var repeating = runner.scheduleRepeating(() -&gt; {
-    counter++;
+    runner.runOnRenderThread(() -&gt; counter++);
 }, Duration.ofMillis(100));
 
 // Later, to stop:
@@ -415,7 +427,10 @@ repeating.cancel();
 <p>
 Unlike <a href="#scheduleRepeating(java.lang.Runnable,java.time.Duration)"><code>scheduleRepeating(Runnable, Duration)</code></a>, this waits for each execution to complete
 before scheduling the next one. This is useful when the action's duration
-is unpredictable and you want consistent spacing between runs.</div>
+is unpredictable and you want consistent spacing between runs.
+<p>
+The action runs on the scheduler thread. If the action modifies UI state,
+use <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - the action to run</dd>
@@ -441,6 +456,34 @@ is unpredictable and you want consistent spacing between runs.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventRouter.html" title="class in dev.tamboui.toolkit.event">EventRouter</a></span>&nbsp;<span class="element-name">eventRouter</span>()</div>
 <div class="block">Returns the event router.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="runOnRenderThread(java.lang.Runnable)">
+<h3>runOnRenderThread</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runOnRenderThread</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
+<div class="block">Executes an action on the render thread.
+<p>
+Delegates to <a href="../../tui/TuiRunner.html#runOnRenderThread(java.lang.Runnable)"><code>TuiRunner.runOnRenderThread(Runnable)</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>action</code> - the action to execute on the render thread</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isRenderThread()">
+<h3>isRenderThread</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRenderThread</span>()</div>
+<div class="block">Returns whether the current thread is the render thread.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if called from the render thread</dd>
+</dl>
 </div>
 </section>
 </li>

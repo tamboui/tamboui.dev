@@ -61,6 +61,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#create(int)" tabindex="0">create(int)</a></li>
 <li><a href="#create(int,int)" tabindex="0">create(int, int)</a></li>
+<li><a href="#withBackend(int,int,dev.tamboui.terminal.Backend)" tabindex="0">withBackend(int, int, Backend)</a></li>
 <li><a href="#clearOnClose()" tabindex="0">clearOnClose()</a></li>
 <li><a href="#render(java.util.function.BiConsumer)" tabindex="0">render(BiConsumer)</a></li>
 <li><a href="#setLine(int,java.lang.String)" tabindex="0">setLine(int, String)</a></li>
@@ -202,6 +203,13 @@ stays in place.
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the width of this display in characters.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withBackend(int,int,dev.tamboui.terminal.Backend)" class="member-name-link">withBackend</a><wbr>(int&nbsp;height,
+ int&nbsp;width,
+ <a href="../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a>&nbsp;backend)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an InlineDisplay using an existing backend.</div>
+</div>
 </div>
 </div>
 </div>
@@ -254,6 +262,29 @@ The width is automatically set to the terminal width.</div>
 <dd>a new InlineDisplay</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if terminal initialization fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="withBackend(int,int,dev.tamboui.terminal.Backend)">
+<h3>withBackend</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></span>&nbsp;<span class="element-name">withBackend</span><wbr><span class="parameters">(int&nbsp;height,
+ int&nbsp;width,
+ <a href="../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a>&nbsp;backend)</span>
+                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Creates an InlineDisplay using an existing backend. The InlineDisplay will not take ownership
+of the backend; callers should avoid invoking <a href="#close()"><code>close()</code></a> and instead call <a href="#release()"><code>release()</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>height</code> - the number of lines to reserve for the display area</dd>
+<dd><code>width</code> - the width of the display area in characters</dd>
+<dd><code>backend</code> - the backend to use for output</dd>
+<dt>Returns:</dt>
+<dd>a new InlineDisplay</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if initialization fails</dd>
 </dl>
 </div>
 </section>

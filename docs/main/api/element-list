@@ -1,9 +1,12 @@
+dev.tamboui
 dev.tamboui.annotations.bindings
 dev.tamboui.backend.jline3
 dev.tamboui.backend.panama
 dev.tamboui.backend.panama.unix
 dev.tamboui.backend.panama.windows
 dev.tamboui.buffer
+dev.tamboui.capability
+dev.tamboui.capability.core
 dev.tamboui.css
 dev.tamboui.css.cascade
 dev.tamboui.css.engine

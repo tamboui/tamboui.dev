@@ -1339,6 +1339,8 @@ a virtual terminal buffer.</div>
 <dd>
 <div class="block">A buffer that stores cells for a rectangular area.</div>
 </dd>
+<dt><a href="dev/tamboui/capability/CapabilityReportBuilder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReportBuilder.html" title="class in dev.tamboui.capability">CapabilityReportBuilder</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/cascade/CssStyleResolver.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.css.cascade.<a href="dev/tamboui/css/cascade/CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></dt>
 <dd>
 <div class="block">Builds the CssStyleResolver.</div>
@@ -1585,6 +1587,24 @@ a virtual terminal buffer.</div>
 <div class="block">A DSL wrapper for the Canvas widget.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/CanvasElement.html#%3Cinit%3E()" class="member-name-link">CanvasElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/capability/Capabilities.html" class="type-name-link" title="class in dev.tamboui.capability">Capabilities</a> - Class in <a href="dev/tamboui/capability/package-summary.html">dev.tamboui.capability</a></dt>
+<dd>
+<div class="block">Convenience entrypoints for capability inspection.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityProvider.html" class="type-name-link" title="interface in dev.tamboui.capability">CapabilityProvider</a> - Interface in <a href="dev/tamboui/capability/package-summary.html">dev.tamboui.capability</a></dt>
+<dd>
+<div class="block">Service-provider interface (SPI) for contributing capability information.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReport.html" class="type-name-link" title="class in dev.tamboui.capability">CapabilityReport</a> - Class in <a href="dev/tamboui/capability/package-summary.html">dev.tamboui.capability</a></dt>
+<dd>
+<div class="block">Aggregated capability information from all discovered <a href="dev/tamboui/capability/CapabilityProvider.html" title="interface in dev.tamboui.capability"><code>CapabilityProvider</code></a>s.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReportBuilder.html" class="type-name-link" title="class in dev.tamboui.capability">CapabilityReportBuilder</a> - Class in <a href="dev/tamboui/capability/package-summary.html">dev.tamboui.capability</a></dt>
+<dd>
+<div class="block">Builder for assembling a <a href="dev/tamboui/capability/CapabilityReport.html" title="class in dev.tamboui.capability"><code>CapabilityReport</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReportBuilder.html#%3Cinit%3E()" class="member-name-link">CapabilityReportBuilder()</a> - Constructor for class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReportBuilder.html" title="class in dev.tamboui.capability">CapabilityReportBuilder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/engine/StyleEngine.html#cascade-order-heading" class="search-tag-link">Cascade Order</a> - Section in class dev.tamboui.css.engine.StyleEngine</dt>
 <dd>&nbsp;</dd>
@@ -2332,6 +2352,14 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Creates a new drawing context.</div>
 </dd>
+<dt><a href="dev/tamboui/capability/CapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)" class="member-name-link">contribute(CapabilityReportBuilder)</a> - Method in interface dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityProvider.html" title="interface in dev.tamboui.capability">CapabilityProvider</a></dt>
+<dd>
+<div class="block">Contribute information to the capability report.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/core/CoreCapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)" class="member-name-link">contribute(CapabilityReportBuilder)</a> - Method in class dev.tamboui.capability.core.<a href="dev/tamboui/capability/core/CoreCapabilityProvider.html" title="class in dev.tamboui.capability.core">CoreCapabilityProvider</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/image/capability/ImageCapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)" class="member-name-link">contribute(CapabilityReportBuilder)</a> - Method in class dev.tamboui.image.capability.<a href="dev/tamboui/image/capability/ImageCapabilityProvider.html" title="class in dev.tamboui.image.capability">ImageCapabilityProvider</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/AlignmentConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/AlignmentConverter.html" title="class in dev.tamboui.style">AlignmentConverter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/ColorConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/ColorConverter.html" title="class in dev.tamboui.style">ColorConverter</a></dt>
@@ -2460,6 +2488,12 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Copies all triggers from another bindings instance.</div>
 </dd>
+<dt><a href="dev/tamboui/capability/core/CoreCapabilityProvider.html" class="type-name-link" title="class in dev.tamboui.capability.core">CoreCapabilityProvider</a> - Class in <a href="dev/tamboui/capability/core/package-summary.html">dev.tamboui.capability.core</a></dt>
+<dd>
+<div class="block">Core capability contributor: prints what core assumes/uses and what it can infer from the environment.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/core/CoreCapabilityProvider.html#%3Cinit%3E()" class="member-name-link">CoreCapabilityProvider()</a> - Constructor for class dev.tamboui.capability.core.<a href="dev/tamboui/capability/core/CoreCapabilityProvider.html" title="class in dev.tamboui.capability.core">CoreCapabilityProvider</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tfx/TFxMath.html#cos(float)" class="member-name-link">cos(float)</a> - Static method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxMath.html" title="class in dev.tamboui.tfx">TFxMath</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/jline3/JLineBackendProvider.html#create()" class="member-name-link">create()</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackendProvider.html" title="class in dev.tamboui.backend.jline3">JLineBackendProvider</a></dt>
@@ -2951,10 +2985,14 @@ compatible with Java 8.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/bindings/DefaultBindings.html#describeBindings(java.lang.String)" class="member-name-link">describeBindings(String)</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/DefaultBindings.html" title="class in dev.tamboui.tui.bindings">DefaultBindings</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/capability/Capabilities.html#detect()" class="member-name-link">detect()</a> - Static method in class dev.tamboui.capability.<a href="dev/tamboui/capability/Capabilities.html" title="class in dev.tamboui.capability">Capabilities</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/image/capability/TerminalImageCapabilities.html#detect()" class="member-name-link">detect()</a> - Static method in class dev.tamboui.image.capability.<a href="dev/tamboui/image/capability/TerminalImageCapabilities.html" title="class in dev.tamboui.image.capability">TerminalImageCapabilities</a></dt>
 <dd>
 <div class="block">Detects terminal capabilities from the current environment.</div>
 </dd>
+<dt><a href="dev/tamboui/package-summary.html">dev.tamboui</a> - package dev.tamboui</dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/annotations/bindings/package-summary.html">dev.tamboui.annotations.bindings</a> - package dev.tamboui.annotations.bindings</dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/jline3/package-summary.html">dev.tamboui.backend.jline3</a> - package dev.tamboui.backend.jline3</dt>
@@ -2966,6 +3004,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/backend/panama/windows/package-summary.html">dev.tamboui.backend.panama.windows</a> - package dev.tamboui.backend.panama.windows</dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/buffer/package-summary.html">dev.tamboui.buffer</a> - package dev.tamboui.buffer</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/capability/package-summary.html">dev.tamboui.capability</a> - package dev.tamboui.capability</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/capability/core/package-summary.html">dev.tamboui.capability.core</a> - package dev.tamboui.capability.core</dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/package-summary.html">dev.tamboui.css</a> - package dev.tamboui.css</dt>
 <dd>&nbsp;</dd>
@@ -3740,6 +3782,14 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Enters the alternate screen buffer.</div>
 </dd>
+<dt><a href="dev/tamboui/capability/CapabilityReportBuilder.html#env(java.lang.String,java.lang.String)" class="member-name-link">env(String, String)</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReportBuilder.html" title="class in dev.tamboui.capability">CapabilityReportBuilder</a></dt>
+<dd>
+<div class="block">Adds an environment key that should be printed (value resolved at print-time).</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReport.html#environmentBySource()" class="member-name-link">environmentBySource()</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></dt>
+<dd>
+<div class="block">Environment entries grouped by provider source.</div>
+</dd>
 <dt><a href="dev/tamboui/css/parser/Token.EOF.html#%3Cinit%3E(dev.tamboui.css.parser.Token.Position)" class="member-name-link">EOF(Token.Position)</a> - Constructor for class dev.tamboui.css.parser.<a href="dev/tamboui/css/parser/Token.EOF.html" title="class in dev.tamboui.css.parser">Token.EOF</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/cassowary/Relation.html#EQ" class="member-name-link">EQ</a> - Enum constant in enum class dev.tamboui.layout.cassowary.<a href="dev/tamboui/layout/cassowary/Relation.html" title="enum class in dev.tamboui.layout.cassowary">Relation</a></dt>
@@ -4152,6 +4202,20 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#faultTolerant(boolean)" class="member-name-link">faultTolerant(boolean)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
 <dd>
 <div class="block">Enables or disables fault-tolerant rendering.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReport.html#feature(java.lang.String,java.lang.String)" class="member-name-link">feature(String, String)</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReport.html#feature(java.lang.String,java.lang.String,java.lang.Class)" class="member-name-link">feature(String, String, Class)</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></dt>
+<dd>
+<div class="block">Looks up a feature by source and key, and returns it if it matches the requested type.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReportBuilder.html#feature(java.lang.String,java.lang.String,java.lang.Object)" class="member-name-link">feature(String, String, Object)</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReportBuilder.html" title="class in dev.tamboui.capability">CapabilityReportBuilder</a></dt>
+<dd>
+<div class="block">Adds a general capability/feature.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReport.html#featuresBySource()" class="member-name-link">featuresBySource()</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></dt>
+<dd>
+<div class="block">Free-form capability/features map, grouped by provider source.</div>
 </dd>
 <dt><a href="dev/tamboui/style/Style.html#fg()" class="member-name-link">fg()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Style.html" title="class in dev.tamboui.style">Style</a></dt>
 <dd>
@@ -5689,6 +5753,12 @@ match.</div>
 <dd>
 <div class="block">Builder for <a href="dev/tamboui/image/Image.html" title="class in dev.tamboui.image"><code>Image</code></a>.</div>
 </dd>
+<dt><a href="dev/tamboui/image/capability/ImageCapabilityProvider.html" class="type-name-link" title="class in dev.tamboui.image.capability">ImageCapabilityProvider</a> - Class in <a href="dev/tamboui/image/capability/package-summary.html">dev.tamboui.image.capability</a></dt>
+<dd>
+<div class="block">Capability contributor for <code>tamboui-image</code>.</div>
+</dd>
+<dt><a href="dev/tamboui/image/capability/ImageCapabilityProvider.html#%3Cinit%3E()" class="member-name-link">ImageCapabilityProvider()</a> - Constructor for class dev.tamboui.image.capability.<a href="dev/tamboui/image/capability/ImageCapabilityProvider.html" title="class in dev.tamboui.image.capability">ImageCapabilityProvider</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/image/ImageData.html" class="type-name-link" title="class in dev.tamboui.image">ImageData</a> - Class in <a href="dev/tamboui/image/package-summary.html">dev.tamboui.image</a></dt>
 <dd>
 <div class="block">Immutable holder for image pixel data.</div>
@@ -6876,6 +6946,14 @@ based on constraints.</div>
 <dd>
 <div class="block">Loads bindings from an input stream, starting with the given base bindings.</div>
 </dd>
+<dt><a href="dev/tamboui/util/SafeServiceLoader.html#load(java.lang.Class)" class="member-name-link">load(Class)</a> - Static method in class dev.tamboui.util.<a href="dev/tamboui/util/SafeServiceLoader.html" title="class in dev.tamboui.util">SafeServiceLoader</a></dt>
+<dd>
+<div class="block">Loads providers for the given service, skipping broken providers and continuing to try other providers.</div>
+</dd>
+<dt><a href="dev/tamboui/util/SafeServiceLoader.html#load(java.lang.Class,java.util.function.Consumer)" class="member-name-link">load(Class, Consumer)</a> - Static method in class dev.tamboui.util.<a href="dev/tamboui/util/SafeServiceLoader.html" title="class in dev.tamboui.util">SafeServiceLoader</a></dt>
+<dd>
+<div class="block">Loads providers for the given service, skipping broken providers and continuing to try other providers.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/bindings/BindingSets.html#load(java.nio.file.Path)" class="member-name-link">load(Path)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/BindingSets.html" title="class in dev.tamboui.tui.bindings">BindingSets</a></dt>
 <dd>
 <div class="block">Loads bindings from a properties file.</div>
@@ -6954,6 +7032,16 @@ based on constraints.</div>
 <dt><a href="dev/tamboui/style/AnsiColor.html#MAGENTA" class="member-name-link">MAGENTA</a> - Enum constant in enum class dev.tamboui.style.<a href="dev/tamboui/style/AnsiColor.html" title="enum class in dev.tamboui.style">AnsiColor</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.html#MAGENTA" class="member-name-link">MAGENTA</a> - Static variable in interface dev.tamboui.style.<a href="dev/tamboui/style/Color.html" title="interface in dev.tamboui.style">Color</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/capability/Capabilities.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class dev.tamboui.capability.<a href="dev/tamboui/capability/Capabilities.html" title="class in dev.tamboui.capability">Capabilities</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/Main.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class dev.tamboui.<a href="dev/tamboui/Main.html" title="class in dev.tamboui">Main</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/Main.html" class="type-name-link" title="class in dev.tamboui">Main</a> - Class in <a href="dev/tamboui/package-summary.html">dev.tamboui</a></dt>
+<dd>
+<div class="block">Main entry point for the TamboUI core jar.</div>
+</dd>
+<dt><a href="dev/tamboui/Main.html#%3Cinit%3E()" class="member-name-link">Main()</a> - Constructor for class dev.tamboui.<a href="dev/tamboui/Main.html" title="class in dev.tamboui">Main</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tfx/pattern/IdentityPattern.html#mapAlpha(float,int,int,dev.tamboui.layout.Rect)" class="member-name-link">mapAlpha(float, int, int, Rect)</a> - Method in class dev.tamboui.tfx.pattern.<a href="dev/tamboui/tfx/pattern/IdentityPattern.html" title="class in dev.tamboui.tfx.pattern">IdentityPattern</a></dt>
 <dd>&nbsp;</dd>
@@ -8792,6 +8880,10 @@ based on constraints.</div>
 <dd>
 <div class="block">Prints text at the specified canvas coordinates.</div>
 </dd>
+<dt><a href="dev/tamboui/capability/Capabilities.html#print(java.io.PrintStream)" class="member-name-link">print(PrintStream)</a> - Static method in class dev.tamboui.capability.<a href="dev/tamboui/capability/Capabilities.html" title="class in dev.tamboui.capability">Capabilities</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReport.html#print(java.io.PrintStream)" class="member-name-link">print(PrintStream)</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#println(dev.tamboui.text.Text)" class="member-name-link">println(Text)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
 <div class="block">Prints styled text above the status area.</div>
@@ -8847,6 +8939,14 @@ based on constraints.</div>
 <dt><a href="dev/tamboui/tfx/toolkit/ElementEffectRegistry.html#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry)" class="member-name-link">processEffects(TFxDuration, Buffer, Rect, ElementRegistry)</a> - Method in class dev.tamboui.tfx.toolkit.<a href="dev/tamboui/tfx/toolkit/ElementEffectRegistry.html" title="class in dev.tamboui.tfx.toolkit">ElementEffectRegistry</a></dt>
 <dd>
 <div class="block">Processes all active effects with dynamic area lookup.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReport.html#propertiesBySource()" class="member-name-link">propertiesBySource()</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></dt>
+<dd>
+<div class="block">Java/system properties (and similar) grouped by provider source.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/CapabilityReportBuilder.html#property(java.lang.String,java.lang.String)" class="member-name-link">property(String, String)</a> - Method in class dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityReportBuilder.html" title="class in dev.tamboui.capability">CapabilityReportBuilder</a></dt>
+<dd>
+<div class="block">Adds a property key that should be printed (value resolved at print-time).</div>
 </dd>
 <dt><a href="dev/tamboui/css/cascade/CssStyleResolver.Builder.html#property(java.lang.String,java.lang.String)" class="member-name-link">property(String, String)</a> - Method in class dev.tamboui.css.cascade.<a href="dev/tamboui/css/cascade/CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></dt>
 <dd>
@@ -9953,6 +10053,11 @@ based on constraints.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/panama/unix/LibC.html#SA_RESTART" class="member-name-link">SA_RESTART</a> - Static variable in class dev.tamboui.backend.panama.unix.<a href="dev/tamboui/backend/panama/unix/LibC.html" title="class in dev.tamboui.backend.panama.unix">LibC</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/util/SafeServiceLoader.html" class="type-name-link" title="class in dev.tamboui.util">SafeServiceLoader</a> - Class in <a href="dev/tamboui/util/package-summary.html">dev.tamboui.util</a></dt>
+<dd>
+<div class="block">ServiceLoader that is more resilient to errors by skipping broken providers
+and continuing to try other providers.</div>
+</dd>
 <dt><a href="dev/tamboui/image/ImageData.html#scaledDimensionsToFill(int,int)" class="member-name-link">scaledDimensionsToFill(int, int)</a> - Method in class dev.tamboui.image.<a href="dev/tamboui/image/ImageData.html" title="class in dev.tamboui.image">ImageData</a></dt>
 <dd>
 <div class="block">Calculates the scaled dimensions to fill the given bounds while preserving aspect ratio.</div>
@@ -10749,6 +10854,14 @@ based on constraints.</div>
 <dd>
 <div class="block">Creates a new solver exception with the given message and cause.</div>
 </dd>
+<dt><a href="dev/tamboui/capability/CapabilityProvider.html#source()" class="member-name-link">source()</a> - Method in interface dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityProvider.html" title="interface in dev.tamboui.capability">CapabilityProvider</a></dt>
+<dd>
+<div class="block">A stable, user-friendly source id for this provider.</div>
+</dd>
+<dt><a href="dev/tamboui/capability/core/CoreCapabilityProvider.html#source()" class="member-name-link">source()</a> - Method in class dev.tamboui.capability.core.<a href="dev/tamboui/capability/core/CoreCapabilityProvider.html" title="class in dev.tamboui.capability.core">CoreCapabilityProvider</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/image/capability/ImageCapabilityProvider.html#source()" class="member-name-link">source()</a> - Method in class dev.tamboui.image.capability.<a href="dev/tamboui/image/capability/ImageCapabilityProvider.html" title="class in dev.tamboui.image.capability">ImageCapabilityProvider</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/model/Rule.html#sourceOrder()" class="member-name-link">sourceOrder()</a> - Method in class dev.tamboui.css.model.<a href="dev/tamboui/css/model/Rule.html" title="class in dev.tamboui.css.model">Rule</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/Spacing.html#space(int)" class="member-name-link">space(int)</a> - Static method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Spacing.html" title="class in dev.tamboui.layout">Spacing</a></dt>
@@ -11339,6 +11452,10 @@ rectangular areas using block characters.</div>
 <dt><a href="dev/tamboui/toolkit/elements/CalendarElement.html#sundayFirst()" class="member-name-link">sundayFirst()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></dt>
 <dd>
 <div class="block">Sets the first day of week to Sunday.</div>
+</dd>
+<dt><a href="dev/tamboui/image/capability/TerminalImageCapabilities.html#supportedProtocols()" class="member-name-link">supportedProtocols()</a> - Method in class dev.tamboui.image.capability.<a href="dev/tamboui/image/capability/TerminalImageCapabilities.html" title="class in dev.tamboui.image.capability">TerminalImageCapabilities</a></dt>
+<dd>
+<div class="block">Returns all supported protocols.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/ElementRegistry.html#supported-selectors-heading" class="search-tag-link">Supported Selectors</a> - Section in class dev.tamboui.toolkit.element.ElementRegistry</dt>
 <dd>&nbsp;</dd>

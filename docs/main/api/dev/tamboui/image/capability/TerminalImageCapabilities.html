@@ -68,6 +68,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#withSupport(java.util.Set)" tabindex="0">withSupport(Set)</a></li>
 <li><a href="#bestSupport()" tabindex="0">bestSupport()</a></li>
 <li><a href="#supports(dev.tamboui.image.capability.TerminalImageProtocol)" tabindex="0">supports(TerminalImageProtocol)</a></li>
+<li><a href="#supportedProtocols()" tabindex="0">supportedProtocols()</a></li>
 <li><a href="#supportsNativeImages()" tabindex="0">supportsNativeImages()</a></li>
 <li><a href="#bestProtocol()" tabindex="0">bestProtocol()</a></li>
 <li><a href="#protocolFor(dev.tamboui.image.capability.TerminalImageProtocol)" tabindex="0">protocolFor(TerminalImageProtocol)</a></li>
@@ -151,22 +152,27 @@ ImageProtocol protocol = caps.bestProtocol();
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Forces re-detection of terminal capabilities.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supports(dev.tamboui.image.capability.TerminalImageProtocol)" class="member-name-link">supports</a><wbr>(<a href="TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a>&nbsp;support)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportedProtocols()" class="member-name-link">supportedProtocols</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if the specified protocol is supported.</div>
+<div class="block">Returns all supported protocols.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsNativeImages()" class="member-name-link">supportsNativeImages</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supports(dev.tamboui.image.capability.TerminalImageProtocol)" class="member-name-link">supports</a><wbr>(<a href="TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a>&nbsp;support)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns true if the specified protocol is supported.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsNativeImages()" class="member-name-link">supportsNativeImages</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if any native image protocol is supported.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TerminalImageCapabilities.html" title="class in dev.tamboui.image.capability">TerminalImageCapabilities</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withSupport(java.util.Set)" class="member-name-link">withSupport</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a>&gt;&nbsp;supportedProtocols)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TerminalImageCapabilities.html" title="class in dev.tamboui.image.capability">TerminalImageCapabilities</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withSupport(java.util.Set)" class="member-name-link">withSupport</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a>&gt;&nbsp;supportedProtocols)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates capabilities with explicitly specified support.</div>
 </div>
 </div>
@@ -258,6 +264,17 @@ Useful for testing or when environment detection is unreliable.</div>
 <dt>Returns:</dt>
 <dd>true if supported</dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="supportedProtocols()">
+<h3>supportedProtocols</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a>&gt;</span>&nbsp;<span class="element-name">supportedProtocols</span>()</div>
+<div class="block">Returns all supported protocols.
+<p>
+The returned set is immutable.</div>
 </div>
 </section>
 </li>

@@ -78,6 +78,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">BackendFactory</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Factory for creating <a href="Backend.html" title="interface in dev.tamboui.terminal"><code>Backend</code></a> instances using the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.
+
+This uses the <a href="../util/SafeServiceLoader.html" title="class in dev.tamboui.util"><code>SafeServiceLoader</code></a> to load the providers and skip providers that fails to load.
 <p>
 This factory discovers <a href="BackendProvider.html" title="interface in dev.tamboui.terminal"><code>BackendProvider</code></a> implementations on the classpath
 and uses them to create backend instances. When multiple providers are available,

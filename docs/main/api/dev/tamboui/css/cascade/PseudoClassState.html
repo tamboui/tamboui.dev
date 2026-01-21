@@ -66,7 +66,6 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,boolean,boolean)" tabindex="0">PseudoClassState(boolean, boolean, boolean, boolean, boolean, boolean, boolean)</a></li>
 <li><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,boolean,boolean,int)" tabindex="0">PseudoClassState(boolean, boolean, boolean, boolean, boolean, boolean, boolean, int)</a></li>
 </ol>
 </li>
@@ -76,6 +75,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#ofHovered()" tabindex="0">ofHovered()</a></li>
 <li><a href="#ofDisabled()" tabindex="0">ofDisabled()</a></li>
 <li><a href="#ofSelected()" tabindex="0">ofSelected()</a></li>
+<li><a href="#allMatch()" tabindex="0">allMatch()</a></li>
 <li><a href="#isFocused()" tabindex="0">isFocused()</a></li>
 <li><a href="#isHovered()" tabindex="0">isHovered()</a></li>
 <li><a href="#isDisabled()" tabindex="0">isDisabled()</a></li>
@@ -119,7 +119,16 @@ This is used during selector matching to determine if pseudo-class
 selectors like :focus, :hover, :disabled match the element.
 <p>
 For positional pseudo-classes like :nth-child(even), the nthChild field
-stores the 1-based position (0 means position is not set).</div>
+stores the 1-based position (0 means position is not set).
+<p>
+<b>Usage Context:</b>
+<ul>
+  <li><b>CSS Styling (during render):</b> All pseudo-classes work via
+      <code>RenderContext.childStyle()</code> which accepts position and state</li>
+  <li><b>TFX Effects (post-render):</b> Only <code>:focus</code> is supported
+      because it's tracked by FocusManager. Other pseudo-classes require
+      state/position info that isn't preserved after rendering.</li>
+</ul></div>
 </div>
 </section>
 <section class="summary">
@@ -149,19 +158,7 @@ stores the 1-based position (0 means position is not set).</div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,boolean,boolean)" class="member-name-link">PseudoClassState</a><wbr>(boolean&nbsp;focused,
- boolean&nbsp;hovered,
- boolean&nbsp;disabled,
- boolean&nbsp;active,
- boolean&nbsp;selected,
- boolean&nbsp;firstChild,
- boolean&nbsp;lastChild)</code></div>
-<div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use the constructor with nthChild parameter instead.</div>
-</div>
-</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,boolean,boolean,int)" class="member-name-link">PseudoClassState</a><wbr>(boolean&nbsp;focused,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,boolean,boolean,int)" class="member-name-link">PseudoClassState</a><wbr>(boolean&nbsp;focused,
  boolean&nbsp;hovered,
  boolean&nbsp;disabled,
  boolean&nbsp;active,
@@ -169,7 +166,7 @@ stores the 1-based position (0 means position is not set).</div>
  boolean&nbsp;firstChild,
  boolean&nbsp;lastChild,
  int&nbsp;nthChild)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -184,104 +181,109 @@ stores the 1-based position (0 means position is not set).</div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allMatch()" class="member-name-link">allMatch</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns a state with all pseudo-classes matching.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#has(java.lang.String)" class="member-name-link">has</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pseudoClass)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#has(java.lang.String)" class="member-name-link">has</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pseudoClass)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks if the given pseudo-class is active.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDisabled()" class="member-name-link">isDisabled</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFirstChild()" class="member-name-link">isFirstChild</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDisabled()" class="member-name-link">isDisabled</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocused()" class="member-name-link">isFocused</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFirstChild()" class="member-name-link">isFirstChild</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHovered()" class="member-name-link">isHovered</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocused()" class="member-name-link">isFocused</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLastChild()" class="member-name-link">isLastChild</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHovered()" class="member-name-link">isHovered</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelected()" class="member-name-link">isSelected</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLastChild()" class="member-name-link">isLastChild</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nthChild()" class="member-name-link">nthChild</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelected()" class="member-name-link">isSelected</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nthChild()" class="member-name-link">nthChild</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the 1-based child position, or 0 if not set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofDisabled()" class="member-name-link">ofDisabled</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a state with only the disabled flag set.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofFocused()" class="member-name-link">ofFocused</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofDisabled()" class="member-name-link">ofDisabled</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a state with only the focused flag set.</div>
+<div class="block">Returns a state with only the disabled flag set.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofHovered()" class="member-name-link">ofHovered</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofFocused()" class="member-name-link">ofFocused</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a state with only the hovered flag set.</div>
+<div class="block">Returns a state with only the focused flag set.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSelected()" class="member-name-link">ofSelected</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofHovered()" class="member-name-link">ofHovered</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a state with only the selected flag set.</div>
+<div class="block">Returns a state with only the hovered flag set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withActive(boolean)" class="member-name-link">withActive</a><wbr>(boolean&nbsp;active)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofSelected()" class="member-name-link">ofSelected</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns a state with only the selected flag set.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withActive(boolean)" class="member-name-link">withActive</a><wbr>(boolean&nbsp;active)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the active flag set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withDisabled(boolean)" class="member-name-link">withDisabled</a><wbr>(boolean&nbsp;disabled)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withDisabled(boolean)" class="member-name-link">withDisabled</a><wbr>(boolean&nbsp;disabled)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the disabled flag set.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFirstChild(boolean)" class="member-name-link">withFirstChild</a><wbr>(boolean&nbsp;firstChild)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFirstChild(boolean)" class="member-name-link">withFirstChild</a><wbr>(boolean&nbsp;firstChild)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the firstChild flag set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFocused(boolean)" class="member-name-link">withFocused</a><wbr>(boolean&nbsp;focused)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFocused(boolean)" class="member-name-link">withFocused</a><wbr>(boolean&nbsp;focused)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the focused flag set.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withHovered(boolean)" class="member-name-link">withHovered</a><wbr>(boolean&nbsp;hovered)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withHovered(boolean)" class="member-name-link">withHovered</a><wbr>(boolean&nbsp;hovered)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the hovered flag set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withLastChild(boolean)" class="member-name-link">withLastChild</a><wbr>(boolean&nbsp;lastChild)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withLastChild(boolean)" class="member-name-link">withLastChild</a><wbr>(boolean&nbsp;lastChild)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the lastChild flag set.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withNthChild(int)" class="member-name-link">withNthChild</a><wbr>(int&nbsp;nthChild)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withNthChild(int)" class="member-name-link">withNthChild</a><wbr>(int&nbsp;nthChild)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the nthChild position set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withSelected(boolean)" class="member-name-link">withSelected</a><wbr>(boolean&nbsp;selected)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withSelected(boolean)" class="member-name-link">withSelected</a><wbr>(boolean&nbsp;selected)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new state with the selected flag set.</div>
 </div>
 </div>
@@ -319,24 +321,6 @@ stores the 1-based position (0 means position is not set).</div>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(boolean,boolean,boolean,boolean,boolean,boolean,boolean)">
-<h3>PseudoClassState</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="element-name">PseudoClassState</span><wbr><span class="parameters">(boolean&nbsp;focused,
- boolean&nbsp;hovered,
- boolean&nbsp;disabled,
- boolean&nbsp;active,
- boolean&nbsp;selected,
- boolean&nbsp;firstChild,
- boolean&nbsp;lastChild)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use the constructor with nthChild parameter instead.</div>
-</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="&lt;init&gt;(boolean,boolean,boolean,boolean,boolean,boolean,boolean,int)">
 <h3>PseudoClassState</h3>
 <div class="horizontal-scroll">
@@ -364,7 +348,7 @@ stores the 1-based position (0 means position is not set).</div>
 <h3>ofFocused</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofFocused</span>()</div>
-<div class="block">Creates a state with only the focused flag set.</div>
+<div class="block">Returns a state with only the focused flag set.</div>
 </div>
 </section>
 </li>
@@ -373,7 +357,7 @@ stores the 1-based position (0 means position is not set).</div>
 <h3>ofHovered</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofHovered</span>()</div>
-<div class="block">Creates a state with only the hovered flag set.</div>
+<div class="block">Returns a state with only the hovered flag set.</div>
 </div>
 </section>
 </li>
@@ -382,7 +366,7 @@ stores the 1-based position (0 means position is not set).</div>
 <h3>ofDisabled</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofDisabled</span>()</div>
-<div class="block">Creates a state with only the disabled flag set.</div>
+<div class="block">Returns a state with only the disabled flag set.</div>
 </div>
 </section>
 </li>
@@ -391,7 +375,17 @@ stores the 1-based position (0 means position is not set).</div>
 <h3>ofSelected</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofSelected</span>()</div>
-<div class="block">Creates a state with only the selected flag set.</div>
+<div class="block">Returns a state with only the selected flag set.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="allMatch()">
+<h3>allMatch</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">allMatch</span>()</div>
+<div class="block">Returns a state with all pseudo-classes matching.
+Useful for lenient/structural matching where pseudo-class state should be ignored.</div>
 </div>
 </section>
 </li>

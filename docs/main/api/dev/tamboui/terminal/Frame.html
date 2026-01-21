@@ -68,6 +68,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#renderStatefulWidget(dev.tamboui.widget.StatefulWidget,dev.tamboui.layout.Rect,S)" tabindex="0">renderStatefulWidget(StatefulWidget, Rect, S)</a></li>
 <li><a href="#setCursorPosition(dev.tamboui.layout.Position)" tabindex="0">setCursorPosition(Position)</a></li>
 <li><a href="#setCursorPosition(int,int)" tabindex="0">setCursorPosition(int, int)</a></li>
+<li><a href="#setStyledAreaRegistry(dev.tamboui.style.StyledAreaRegistry)" tabindex="0">setStyledAreaRegistry(StyledAreaRegistry)</a></li>
+<li><a href="#pushContextKey(java.lang.String)" tabindex="0">pushContextKey(String)</a></li>
+<li><a href="#popContextKey()" tabindex="0">popContextKey()</a></li>
+<li><a href="#currentContextKey()" tabindex="0">currentContextKey()</a></li>
 </ol>
 </li>
 </ol>
@@ -112,39 +116,59 @@ Widgets are rendered to the frame's buffer.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the underlying buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Frame.html" title="class in dev.tamboui.terminal">Frame</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forTesting(dev.tamboui.buffer.Buffer)" class="member-name-link">forTesting</a><wbr>(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentContextKey()" class="member-name-link">currentContextKey</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the current context key (top of the stack).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Frame.html" title="class in dev.tamboui.terminal">Frame</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forTesting(dev.tamboui.buffer.Buffer)" class="member-name-link">forTesting</a><wbr>(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a frame for testing purposes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#height()" class="member-name-link">height</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#height()" class="member-name-link">height</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the terminal height.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;S&gt;&nbsp;void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderStatefulWidget(dev.tamboui.widget.StatefulWidget,dev.tamboui.layout.Rect,S)" class="member-name-link">renderStatefulWidget</a><wbr>(<a href="../widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;S&gt;&nbsp;widget,
- <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
- S&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Renders a stateful widget to the given area.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderWidget(dev.tamboui.widget.Widget,dev.tamboui.layout.Rect)" class="member-name-link">renderWidget</a><wbr>(<a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&nbsp;widget,
- <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#popContextKey()" class="member-name-link">popContextKey</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Renders a widget to the given area.</div>
+<div class="block">Pops the most recent context key from the stack.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCursorPosition(int,int)" class="member-name-link">setCursorPosition</a><wbr>(int&nbsp;x,
- int&nbsp;y)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pushContextKey(java.lang.String)" class="member-name-link">pushContextKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contextKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the cursor position using x and y coordinates.</div>
+<div class="block">Pushes a context key onto the stack.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;S&gt;&nbsp;void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderStatefulWidget(dev.tamboui.widget.StatefulWidget,dev.tamboui.layout.Rect,S)" class="member-name-link">renderStatefulWidget</a><wbr>(<a href="../widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;S&gt;&nbsp;widget,
+ <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+ S&nbsp;state)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Renders a stateful widget to the given area.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderWidget(dev.tamboui.widget.Widget,dev.tamboui.layout.Rect)" class="member-name-link">renderWidget</a><wbr>(<a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&nbsp;widget,
+ <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Renders a widget to the given area.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition</a><wbr>(<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&nbsp;position)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCursorPosition(int,int)" class="member-name-link">setCursorPosition</a><wbr>(int&nbsp;x,
+ int&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the cursor position using x and y coordinates.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition</a><wbr>(<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&nbsp;position)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the cursor position.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStyledAreaRegistry(dev.tamboui.style.StyledAreaRegistry)" class="member-name-link">setStyledAreaRegistry</a><wbr>(<a href="../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;registry)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the styled area registry for tracking styled content.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
@@ -298,6 +322,65 @@ after the frame is drawn.</div>
 <dt>Parameters:</dt>
 <dd><code>x</code> - the x coordinate</dd>
 <dd><code>y</code> - the y coordinate</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setStyledAreaRegistry(dev.tamboui.style.StyledAreaRegistry)">
+<h3>setStyledAreaRegistry</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setStyledAreaRegistry</span><wbr><span class="parameters">(<a href="../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;registry)</span></div>
+<div class="block">Sets the styled area registry for tracking styled content.
+<p>
+When set, styled content written to the buffer with Tags will be
+automatically registered in the registry for effect targeting.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>registry</code> - the registry, or null to disable tracking</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="pushContextKey(java.lang.String)">
+<h3>pushContextKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">pushContextKey</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contextKey)</span></div>
+<div class="block">Pushes a context key onto the stack.
+<p>
+The context key is used to associate styled areas with a parent context.
+Typically, this is called when entering an element's render scope with
+the element's ID as the context key.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contextKey</code> - the context key (typically an element ID)</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="popContextKey()">
+<h3>popContextKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">popContextKey</span>()</div>
+<div class="block">Pops the most recent context key from the stack.
+<p>
+This should be called when exiting an element's render scope.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="currentContextKey()">
+<h3>currentContextKey</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">currentContextKey</span>()</div>
+<div class="block">Returns the current context key (top of the stack).
+<p>
+This is used to associate styled areas with their containing element.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current context key, or null if no context is active</dd>
 </dl>
 </div>
 </section>

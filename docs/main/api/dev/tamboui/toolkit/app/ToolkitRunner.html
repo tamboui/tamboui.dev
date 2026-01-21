@@ -74,6 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#runOnRenderThread(java.lang.Runnable)" tabindex="0">runOnRenderThread(Runnable)</a></li>
 <li><a href="#isRenderThread()" tabindex="0">isRenderThread()</a></li>
 <li><a href="#elementRegistry()" tabindex="0">elementRegistry()</a></li>
+<li><a href="#styledAreaRegistry()" tabindex="0">styledAreaRegistry()</a></li>
 <li><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" tabindex="0">styleEngine(StyleEngine)</a></li>
 <li><a href="#tuiRunner()" tabindex="0">tuiRunner()</a></li>
 <li><a href="#close()" tabindex="0">close()</a></li>
@@ -246,14 +247,19 @@ try (var runner = ToolkitRunner.create()) {
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Schedules an action to run repeatedly with a fixed delay between runs.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine</a><wbr>(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styledAreaRegistry()" class="member-name-link">styledAreaRegistry</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the styled area registry for styled span lookups.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine</a><wbr>(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the style engine for CSS styling.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tuiRunner()" class="member-name-link">tuiRunner</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tuiRunner()" class="member-name-link">tuiRunner</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the underlying TuiRunner.</div>
 </div>
 </div>
@@ -496,6 +502,19 @@ Delegates to <a href="../../tui/TuiRunner.html#runOnRenderThread(java.lang.Runna
 <p>
 The registry is populated during rendering and can be used
 by effect systems to target elements by ID.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="styledAreaRegistry()">
+<h3>styledAreaRegistry</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a></span>&nbsp;<span class="element-name">styledAreaRegistry</span>()</div>
+<div class="block">Returns the styled area registry for styled span lookups.
+<p>
+The registry is populated during rendering when styled content with Tags
+is written to the buffer. It can be used by effect systems to target
+styled spans using CSS-like selectors.</div>
 </div>
 </section>
 </li>

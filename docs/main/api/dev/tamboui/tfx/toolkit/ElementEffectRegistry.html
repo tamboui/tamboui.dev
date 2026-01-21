@@ -70,7 +70,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#addEffectBySelector(java.lang.String,dev.tamboui.tfx.Effect)" tabindex="0">addEffectBySelector(String, Effect)</a></li>
 <li><a href="#addGlobalEffect(dev.tamboui.tfx.Effect)" tabindex="0">addGlobalEffect(Effect)</a></li>
 <li><a href="#expandSelectors(dev.tamboui.toolkit.element.ElementRegistry)" tabindex="0">expandSelectors(ElementRegistry)</a></li>
-<li><a href="#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry)" tabindex="0">processEffects(TFxDuration, Buffer, Rect, ElementRegistry)</a></li>
+<li><a href="#expandSelectors(dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry)" tabindex="0">expandSelectors(ElementRegistry, StyledAreaRegistry)</a></li>
+<li><a href="#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)" tabindex="0">processEffects(TFxDuration, Buffer, Rect, ElementRegistry, StyledAreaRegistry, FocusManager)</a></li>
 <li><a href="#isRunning()" tabindex="0">isRunning()</a></li>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#pendingCount()" tabindex="0">pendingCount()</a></li>
@@ -106,6 +107,22 @@ follow their target elements when the terminal resizes.
   <li><b>render thread:</b> All mutating operations must be called from the render thread</li>
   <li><b>No Coupling:</b> Does not require Element interface changes</li>
 </ul>
+<p>
+<b>Supported Pseudo-Classes:</b>
+<ul>
+  <li><code>:focus</code> - Matches elements that have focus (via FocusManager)</li>
+</ul>
+<p>
+<b>Limitations - Pseudo-classes NOT supported for effects:</b>
+<ul>
+  <li><code>:hover</code> - No mouse hover tracking in TUI</li>
+  <li><code>:disabled</code>, <code>:selected</code>, <code>:active</code> - Element state not tracked post-render</li>
+  <li><code>:first-child</code>, <code>:last-child</code>, <code>:nth-child()</code> - Sibling position not tracked</li>
+</ul>
+<p>
+Note: These pseudo-classes work for CSS styling during render (via <code>childStyle()</code>)
+but are not available for effect targeting because element state and position are not
+preserved in the ElementRegistry after rendering.
 <p>
 <b>Usage:</b>
 <pre><code>ElementEffectRegistry registry = new ElementEffectRegistry();
@@ -188,28 +205,36 @@ registry.processEffects(delta, buffer, fullArea, elementRegistry);
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Expands pending selector-based effects to individual effect instances.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRunning()" class="member-name-link">isRunning</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#expandSelectors(dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry)" class="member-name-link">expandSelectors</a><wbr>(<a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Expands pending selector-based effects to individual effect instances.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRunning()" class="member-name-link">isRunning</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns whether any effects are currently running.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pendingCount()" class="member-name-link">pendingCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pendingCount()" class="member-name-link">pendingCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the total number of pending effects.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry)" class="member-name-link">processEffects</a><wbr>(<a href="../TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;delta,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)" class="member-name-link">processEffects</a><wbr>(<a href="../TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;delta,
  <a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
- <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;registry)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Processes all active effects with dynamic area lookup.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runningCount()" class="member-name-link">runningCount</a>()</code></div>
+ <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry,
+ <a href="../../toolkit/focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of running effects (global + element-targeted).</div>
+<div class="block">Processes all active effects with dynamic area lookup from both registries.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runningCount()" class="member-name-link">runningCount</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the number of running effects (global + element-targeted + styled-area-targeted).</div>
 </div>
 </div>
 </div>
@@ -346,7 +371,7 @@ pending selector and creates effect copies for each match. The selector
 and its effect instances are then tracked for dynamic area lookup.
 <p>
 This should be called after rendering completes but before
-<a href="#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry)"><code>processEffects(TFxDuration, Buffer, Rect, ElementRegistry)</code></a>.</div>
+<a href="#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)"><code>processEffects(TFxDuration, Buffer, Rect, ElementRegistry, StyledAreaRegistry, FocusManager)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>registry</code> - the element registry containing element areas</dd>
@@ -355,19 +380,49 @@ This should be called after rendering completes but before
 </section>
 </li>
 <li>
-<section class="detail" id="processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry)">
+<section class="detail" id="expandSelectors(dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry)">
+<h3>expandSelectors</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">expandSelectors</span><wbr><span class="parameters">(<a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry)</span></div>
+<div class="block">Expands pending selector-based effects to individual effect instances.
+<p>
+This method queries both the ElementRegistry (for elements) and
+StyledAreaRegistry (for styled spans) to find all targets matching each
+pending selector. Effect copies are created for each match and tracked
+for dynamic area lookup.
+<p>
+This enables selectors like:
+<ul>
+  <li><code>.highlight</code> - matches both elements and spans with class "highlight"</li>
+  <li><code>#myPanel .highlight</code> - matches spans inside element #myPanel</li>
+  <li><code>Span.error</code> - matches only styled spans (type "Span")</li>
+</ul></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>elementRegistry</code> - the element registry containing element areas</dd>
+<dd><code>styledAreaRegistry</code> - the styled area registry (may be null)</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)">
 <h3>processEffects</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">processEffects</span><wbr><span class="parameters">(<a href="../TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;delta,
  <a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
- <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;registry)</span></div>
-<div class="block">Processes all active effects with dynamic area lookup.
+ <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry,
+ <a href="../../toolkit/focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager)</span></div>
+<div class="block">Processes all active effects with dynamic area lookup from both registries.
 <p>
-This processes global effects, ID-based effects, and selector-based effects.
-For ID-based and selector-based effects, the element areas are looked up
-each frame from the registry, so effects automatically follow elements
-when the terminal resizes.
+This processes global effects, ID-based effects, selector-based element effects,
+and selector-based styled area effects. Areas are looked up dynamically each
+frame, so effects automatically follow their targets when they move or resize.
+<p>
+Pseudo-class selectors like <code>:focus</code> are supported via the FocusManager.
 <p>
 Effects are automatically removed when complete.</div>
 <dl class="notes">
@@ -375,7 +430,9 @@ Effects are automatically removed when complete.</div>
 <dd><code>delta</code> - the time elapsed since the last frame</dd>
 <dd><code>buffer</code> - the buffer to apply effects to</dd>
 <dd><code>area</code> - the default area for global effects</dd>
-<dd><code>registry</code> - the element registry for area lookup</dd>
+<dd><code>elementRegistry</code> - the element registry for element area lookup</dd>
+<dd><code>styledAreaRegistry</code> - the styled area registry</dd>
+<dd><code>focusManager</code> - the focus manager for pseudo-class state</dd>
 </dl>
 </div>
 </section>
@@ -422,7 +479,7 @@ Must be called from the render thread.</div>
 <h3>runningCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">runningCount</span>()</div>
-<div class="block">Returns the number of running effects (global + element-targeted).</div>
+<div class="block">Returns the number of running effects (global + element-targeted + styled-area-targeted).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>running effect count</dd>

@@ -69,6 +69,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#descendant()" tabindex="0">descendant()</a></li>
 <li><a href="#specificity()" tabindex="0">specificity()</a></li>
 <li><a href="#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassState,java.util.List)" tabindex="0">matches(Styleable, PseudoClassState, List)</a></li>
+<li><a href="#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassStateProvider,java.util.List)" tabindex="0">matches(Styleable, PseudoClassStateProvider, List)</a></li>
 <li><a href="#toCss()" tabindex="0">toCss()</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
@@ -141,25 +142,33 @@ a descendant (child, grandchild, etc.) of a Panel.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassState,java.util.List)" class="member-name-link">matches</a><wbr>(<a href="../Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&nbsp;element,
- <a href="../cascade/PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a>&nbsp;state,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassStateProvider,java.util.List)" class="member-name-link">matches</a><wbr>(<a href="../Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&nbsp;element,
+ <a href="../cascade/PseudoClassStateProvider.html" title="interface in dev.tamboui.css.cascade">PseudoClassStateProvider</a>&nbsp;stateProvider,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&gt;&nbsp;ancestors)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Tests whether this selector matches the given element, using a state provider
+for dynamic pseudo-class resolution.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassState,java.util.List)" class="member-name-link">matches</a><wbr>(<a href="../Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&nbsp;element,
+ <a href="../cascade/PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a>&nbsp;state,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&gt;&nbsp;ancestors)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Tests whether this selector matches the given element.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#specificity()" class="member-name-link">specificity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#specificity()" class="member-name-link">specificity</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the specificity of this selector.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toCss()" class="member-name-link">toCss</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toCss()" class="member-name-link">toCss</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a CSS string representation of this selector.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -244,6 +253,36 @@ The value is computed as: (id * 100) + (class/pseudo * 10) + type</div>
 <dt>Parameters:</dt>
 <dd><code>element</code> - the element to test</dd>
 <dd><code>state</code> - the current pseudo-class state (focus, hover, etc.)</dd>
+<dd><code>ancestors</code> - the ancestor chain from root to parent (not including element)</dd>
+<dt>Returns:</dt>
+<dd>true if this selector matches the element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassStateProvider,java.util.List)">
+<h3>matches</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">matches</span><wbr><span class="parameters">(<a href="../Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&nbsp;element,
+ <a href="../cascade/PseudoClassStateProvider.html" title="interface in dev.tamboui.css.cascade">PseudoClassStateProvider</a>&nbsp;stateProvider,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&gt;&nbsp;ancestors)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Selector.html#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassStateProvider,java.util.List)">Selector</a></code></span></div>
+<div class="block">Tests whether this selector matches the given element, using a state provider
+for dynamic pseudo-class resolution.
+<p>
+This method is needed for descendant selectors like <code>#parent:focus .child</code>
+where the :focus pseudo-class must be evaluated on the ancestor element.
+<p>
+The default implementation delegates to <a href="Selector.html#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassState,java.util.List)"><code>Selector.matches(Styleable, PseudoClassState, List)</code></a>
+using the state from the provider for the target element. Combinator selectors
+(like DescendantSelector) override this to properly evaluate ancestor states.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Selector.html#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassStateProvider,java.util.List)">matches</a></code>&nbsp;in interface&nbsp;<code><a href="Selector.html" title="interface in dev.tamboui.css.selector">Selector</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>element</code> - the element to test</dd>
+<dd><code>stateProvider</code> - provides pseudo-class state for any element</dd>
 <dd><code>ancestors</code> - the ancestor chain from root to parent (not including element)</dd>
 <dt>Returns:</dt>
 <dd>true if this selector matches the element</dd>

@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#process(dev.tamboui.terminal.Frame,dev.tamboui.toolkit.element.ElementRegistry,java.time.Duration)" tabindex="0">process(Frame, ElementRegistry, Duration)</a></li>
+<li><a href="#process(dev.tamboui.terminal.Frame,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager,java.time.Duration)" tabindex="0">process(Frame, ElementRegistry, StyledAreaRegistry, FocusManager, Duration)</a></li>
 </ol>
 </li>
 </ol>
@@ -109,8 +109,10 @@ completes and element areas are registered in the ElementRegistry.</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#process(dev.tamboui.terminal.Frame,dev.tamboui.toolkit.element.ElementRegistry,java.time.Duration)" class="member-name-link">process</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#process(dev.tamboui.terminal.Frame,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager,java.time.Duration)" class="member-name-link">process</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
  <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry,
+ <a href="../focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;elapsed)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Processes the frame after rendering.</div>
@@ -130,17 +132,21 @@ completes and element areas are registered in the ElementRegistry.</div>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="process(dev.tamboui.terminal.Frame,dev.tamboui.toolkit.element.ElementRegistry,java.time.Duration)">
+<section class="detail" id="process(dev.tamboui.terminal.Frame,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager,java.time.Duration)">
 <h3>process</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">process</span><wbr><span class="parameters">(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
  <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry,
+ <a href="../focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;elapsed)</span></div>
 <div class="block">Processes the frame after rendering.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>frame</code> - the rendered frame</dd>
 <dd><code>elementRegistry</code> - the registry of rendered element areas</dd>
+<dd><code>styledAreaRegistry</code> - the registry of styled areas (for CSS targeting)</dd>
+<dd><code>focusManager</code> - the focus manager for pseudo-class state</dd>
 <dd><code>elapsed</code> - the time elapsed since the last frame (from TickEvent)</dd>
 </dl>
 </div>

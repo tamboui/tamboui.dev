@@ -64,6 +64,16 @@ loadScripts(document, 'script');</script>
 <li><a href="#text(java.lang.Object...)" tabindex="0">text(Object...)</a></li>
 <li><a href="#waveText(java.lang.String)" tabindex="0">waveText(String)</a></li>
 <li><a href="#waveText(java.lang.String,dev.tamboui.style.Color)" tabindex="0">waveText(String, Color)</a></li>
+<li><a href="#richText(dev.tamboui.text.Text)" tabindex="0">richText(Text)</a></li>
+<li><a href="#richText(java.lang.String)" tabindex="0">richText(String)</a></li>
+<li><a href="#richText()" tabindex="0">richText()</a></li>
+<li><a href="#richTextArea(dev.tamboui.text.Text)" tabindex="0">richTextArea(Text)</a></li>
+<li><a href="#richTextArea(java.lang.String)" tabindex="0">richTextArea(String)</a></li>
+<li><a href="#richTextArea()" tabindex="0">richTextArea()</a></li>
+<li><a href="#markupText(java.lang.String)" tabindex="0">markupText(String)</a></li>
+<li><a href="#markupText()" tabindex="0">markupText()</a></li>
+<li><a href="#markupTextArea(java.lang.String)" tabindex="0">markupTextArea(String)</a></li>
+<li><a href="#markupTextArea()" tabindex="0">markupTextArea()</a></li>
 <li><a href="#panel(java.lang.String,dev.tamboui.toolkit.element.Element...)" tabindex="0">panel(String, Element...)</a></li>
 <li><a href="#panel(dev.tamboui.toolkit.element.Element...)" tabindex="0">panel(Element...)</a></li>
 <li><a href="#panel()" tabindex="0">panel()</a></li>
@@ -312,6 +322,26 @@ panel("Title",
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a list with the given items.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/MarkupTextElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#markupText()" class="member-name-link">markupText</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty inline markup text element.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/MarkupTextElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#markupText(java.lang.String)" class="member-name-link">markupText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a simple inline markup text element that parses BBCode-style markup.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#markupTextArea()" class="member-name-link">markupTextArea</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty scrollable markup text area.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#markupTextArea(java.lang.String)" class="member-name-link">markupTextArea</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a scrollable markup text area that parses BBCode-style markup.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#max(int)" class="member-name-link">max</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -359,6 +389,36 @@ panel("Title",
  int&nbsp;denominator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a ratio constraint.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#richText()" class="member-name-link">richText</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty inline rich text element.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#richText(dev.tamboui.text.Text)" class="member-name-link">richText</a><wbr>(<a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a simple inline rich text element with styled text.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#richText(java.lang.String)" class="member-name-link">richText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a simple inline rich text element from a plain string.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#richTextArea()" class="member-name-link">richTextArea</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty scrollable rich text area.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#richTextArea(dev.tamboui.text.Text)" class="member-name-link">richTextArea</a><wbr>(<a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a scrollable rich text area with styled text.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#richTextArea(java.lang.String)" class="member-name-link">richTextArea</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a scrollable rich text area from a plain string.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/Row.html" title="class in dev.tamboui.toolkit.elements">Row</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#row()" class="member-name-link">row</a>()</code></div>
@@ -583,6 +643,182 @@ waveText("Thinking...").inverted()  // Bright peak on dim text
 <dd><code>color</code> - the base color</dd>
 <dt>Returns:</dt>
 <dd>a new wave text element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="richText(dev.tamboui.text.Text)">
+<h3>richText</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a></span>&nbsp;<span class="element-name">richText</span><wbr><span class="parameters">(<a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</span></div>
+<div class="block">Creates a simple inline rich text element with styled text.
+<p>
+For scrollable rich text with borders, use <a href="#richTextArea(dev.tamboui.text.Text)"><code>richTextArea(Text)</code></a>.
+<pre><code>Text styledText = Text.from(
+    Line.from(Span.styled("Hello", Style.EMPTY.bold()), Span.raw(" World"))
+);
+richText(styledText).centered()
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>text</code> - the styled text to display</dd>
+<dt>Returns:</dt>
+<dd>a new rich text element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="richText(java.lang.String)">
+<h3>richText</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a></span>&nbsp;<span class="element-name">richText</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</span></div>
+<div class="block">Creates a simple inline rich text element from a plain string.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>content</code> - the text content</dd>
+<dt>Returns:</dt>
+<dd>a new rich text element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="richText()">
+<h3>richText</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a></span>&nbsp;<span class="element-name">richText</span>()</div>
+<div class="block">Creates an empty inline rich text element.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty rich text element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="richTextArea(dev.tamboui.text.Text)">
+<h3>richTextArea</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a></span>&nbsp;<span class="element-name">richTextArea</span><wbr><span class="parameters">(<a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</span></div>
+<div class="block">Creates a scrollable rich text area with styled text.
+<p>
+Rich text areas support scrolling, borders, line numbers, and focus.
+<pre><code>richTextArea(styledText)
+    .showLineNumbers()
+    .scrollbar(ScrollBarPolicy.AS_NEEDED)
+    .rounded()
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>text</code> - the styled text to display</dd>
+<dt>Returns:</dt>
+<dd>a new rich text area element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="richTextArea(java.lang.String)">
+<h3>richTextArea</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a></span>&nbsp;<span class="element-name">richTextArea</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</span></div>
+<div class="block">Creates a scrollable rich text area from a plain string.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>content</code> - the text content</dd>
+<dt>Returns:</dt>
+<dd>a new rich text area element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="richTextArea()">
+<h3>richTextArea</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a></span>&nbsp;<span class="element-name">richTextArea</span>()</div>
+<div class="block">Creates an empty scrollable rich text area.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty rich text area element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="markupText(java.lang.String)">
+<h3>markupText</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/MarkupTextElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextElement</a></span>&nbsp;<span class="element-name">markupText</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup)</span></div>
+<div class="block">Creates a simple inline markup text element that parses BBCode-style markup.
+<p>
+For scrollable markup text with borders, use <a href="#markupTextArea(java.lang.String)"><code>markupTextArea(String)</code></a>.
+<p>
+Supported markup:
+<ul>
+  <li>Modifiers: <code>[bold]</code>, <code>[italic]</code>, <code>[underlined]</code>, <code>[dim]</code></li>
+  <li>Colors: <code>[red]</code>, <code>[green]</code>, <code>[blue]</code>, <code>[yellow]</code>, etc.</li>
+  <li>Hyperlinks: <code>[link=URL]text[/link]</code></li>
+  <li>Nested tags: <code>[red][bold]text[/bold][/red]</code></li>
+  <li>Escaped brackets: <code>[[</code> and <code>]]</code></li>
+</ul>
+<pre><code>markupText("This is [red]red[/red] and [bold]bold[/bold].")
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>markup</code> - the markup text to parse and display</dd>
+<dt>Returns:</dt>
+<dd>a new markup text element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="markupText()">
+<h3>markupText</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/MarkupTextElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextElement</a></span>&nbsp;<span class="element-name">markupText</span>()</div>
+<div class="block">Creates an empty inline markup text element.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty markup text element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="markupTextArea(java.lang.String)">
+<h3>markupTextArea</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></span>&nbsp;<span class="element-name">markupTextArea</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup)</span></div>
+<div class="block">Creates a scrollable markup text area that parses BBCode-style markup.
+<p>
+Markup text areas support scrolling, borders, and focus.
+<pre><code>markupTextArea("[bold]Hello[/bold] World")
+    .scrollbar(ScrollBarPolicy.AS_NEEDED)
+    .rounded()
+    .focusable()
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>markup</code> - the markup text to parse and display</dd>
+<dt>Returns:</dt>
+<dd>a new markup text area element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="markupTextArea()">
+<h3>markupTextArea</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></span>&nbsp;<span class="element-name">markupTextArea</span>()</div>
+<div class="block">Creates an empty scrollable markup text area.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty markup text area element</dd>
 </dl>
 </div>
 </section>

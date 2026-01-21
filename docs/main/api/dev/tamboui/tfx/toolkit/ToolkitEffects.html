@@ -72,7 +72,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isRunning()" tabindex="0">isRunning()</a></li>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#wrapHandler(dev.tamboui.tui.EventHandler)" tabindex="0">wrapHandler(EventHandler)</a></li>
-<li><a href="#wrapRenderer(dev.tamboui.tui.Renderer,dev.tamboui.toolkit.element.ElementRegistry)" tabindex="0">wrapRenderer(Renderer, ElementRegistry)</a></li>
+<li><a href="#wrapRenderer(dev.tamboui.tui.Renderer,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)" tabindex="0">wrapRenderer(Renderer, ElementRegistry, StyledAreaRegistry, FocusManager)</a></li>
 <li><a href="#asPostRenderProcessor()" tabindex="0">asPostRenderProcessor()</a></li>
 <li><a href="#registry()" tabindex="0">registry()</a></li>
 </ol>
@@ -219,8 +219,10 @@ try (TuiRunner runner = TuiRunner.create(config)) {
 <div class="block">Wraps an event handler to capture tick timing and force redraws.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../tui/Renderer.html" title="interface in dev.tamboui.tui">Renderer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapRenderer(dev.tamboui.tui.Renderer,dev.tamboui.toolkit.element.ElementRegistry)" class="member-name-link">wrapRenderer</a><wbr>(<a href="../../tui/Renderer.html" title="interface in dev.tamboui.tui">Renderer</a>&nbsp;renderer,
- <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapRenderer(dev.tamboui.tui.Renderer,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)" class="member-name-link">wrapRenderer</a><wbr>(<a href="../../tui/Renderer.html" title="interface in dev.tamboui.tui">Renderer</a>&nbsp;renderer,
+ <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry,
+ <a href="../../toolkit/focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Wraps a renderer to resolve and process effects after rendering.</div>
 </div>
@@ -389,23 +391,32 @@ The wrapper:
 </section>
 </li>
 <li>
-<section class="detail" id="wrapRenderer(dev.tamboui.tui.Renderer,dev.tamboui.toolkit.element.ElementRegistry)">
+<section class="detail" id="wrapRenderer(dev.tamboui.tui.Renderer,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)">
 <h3>wrapRenderer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../tui/Renderer.html" title="interface in dev.tamboui.tui">Renderer</a></span>&nbsp;<span class="element-name">wrapRenderer</span><wbr><span class="parameters">(<a href="../../tui/Renderer.html" title="interface in dev.tamboui.tui">Renderer</a>&nbsp;renderer,
- <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry)</span></div>
+ <a href="../../toolkit/element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry,
+ <a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a>&nbsp;styledAreaRegistry,
+ <a href="../../toolkit/focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager)</span></div>
 <div class="block">Wraps a renderer to resolve and process effects after rendering.
 <p>
 The wrapper:
 <ul>
   <li>Calls the wrapped renderer first</li>
-  <li>Expands pending selector effects to element instances</li>
+  <li>Expands pending selector effects to element and styled area instances</li>
   <li>Processes all active effects on the buffer with dynamic area lookup</li>
-</ul></div>
+</ul>
+<p>
+When a StyledAreaRegistry is provided, effects can target styled spans
+using CSS selectors like <code>.highlight</code> or <code>#myPanel .highlight</code>.
+<p>
+When a FocusManager is provided, pseudo-class selectors like <code>:focus</code> are supported.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>renderer</code> - the renderer to wrap</dd>
 <dd><code>elementRegistry</code> - the element registry containing element areas</dd>
+<dd><code>styledAreaRegistry</code> - the styled area registry</dd>
+<dd><code>focusManager</code> - the focus manager for pseudo-class state</dd>
 <dt>Returns:</dt>
 <dd>a wrapped renderer</dd>
 </dl>
@@ -423,6 +434,10 @@ This returns a processor that expands pending selector effects and
 processes all active effects on the buffer. Areas are looked up dynamically
 from the element registry each frame, so effects automatically follow
 elements when the terminal resizes.
+<p>
+When the Frame has a StyledAreaRegistry configured, effects can also target
+styled spans using CSS selectors like <code>.highlight</code> or
+<code>#myPanel .highlight</code>.
 <p>
 <b>Usage:</b>
 <pre><code>ToolkitEffects effects = new ToolkitEffects();

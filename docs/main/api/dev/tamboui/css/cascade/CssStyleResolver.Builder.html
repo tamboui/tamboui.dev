@@ -60,21 +60,21 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#set(dev.tamboui.style.PropertyDefinition,T)" tabindex="0">set(PropertyDefinition, T)</a></li>
+<li><a href="#setRaw(java.lang.String,java.lang.String)" tabindex="0">setRaw(String, String)</a></li>
 <li><a href="#foreground(dev.tamboui.style.Color)" tabindex="0">foreground(Color)</a></li>
 <li><a href="#background(dev.tamboui.style.Color)" tabindex="0">background(Color)</a></li>
 <li><a href="#addModifier(dev.tamboui.style.Modifier)" tabindex="0">addModifier(Modifier)</a></li>
 <li><a href="#addModifiers(java.util.Set)" tabindex="0">addModifiers(Set)</a></li>
-<li><a href="#padding(dev.tamboui.widgets.block.Padding)" tabindex="0">padding(Padding)</a></li>
+<li><a href="#padding(dev.tamboui.layout.Padding)" tabindex="0">padding(Padding)</a></li>
 <li><a href="#alignment(dev.tamboui.layout.Alignment)" tabindex="0">alignment(Alignment)</a></li>
 <li><a href="#borderType(dev.tamboui.widgets.block.BorderType)" tabindex="0">borderType(BorderType)</a></li>
-<li><a href="#width(dev.tamboui.style.Width)" tabindex="0">width(Width)</a></li>
+<li><a href="#width(dev.tamboui.layout.Constraint)" tabindex="0">width(Constraint)</a></li>
 <li><a href="#flex(dev.tamboui.layout.Flex)" tabindex="0">flex(Flex)</a></li>
 <li><a href="#direction(dev.tamboui.layout.Direction)" tabindex="0">direction(Direction)</a></li>
 <li><a href="#margin(dev.tamboui.layout.Margin)" tabindex="0">margin(Margin)</a></li>
 <li><a href="#spacing(java.lang.Integer)" tabindex="0">spacing(Integer)</a></li>
 <li><a href="#heightConstraint(dev.tamboui.layout.Constraint)" tabindex="0">heightConstraint(Constraint)</a></li>
-<li><a href="#widthConstraint(dev.tamboui.layout.Constraint)" tabindex="0">widthConstraint(Constraint)</a></li>
-<li><a href="#property(java.lang.String,java.lang.String)" tabindex="0">property(String, String)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -169,30 +169,31 @@ loadScripts(document, 'script');</script>
 <div class="block">Sets the margin.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#padding(dev.tamboui.widgets.block.Padding)" class="member-name-link">padding</a><wbr>(<a href="../../widgets/block/Padding.html" title="class in dev.tamboui.widgets.block">Padding</a>&nbsp;padding)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#padding(dev.tamboui.layout.Padding)" class="member-name-link">padding</a><wbr>(<a href="../../layout/Padding.html" title="class in dev.tamboui.layout">Padding</a>&nbsp;padding)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the padding.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#property(java.lang.String,java.lang.String)" class="member-name-link">property</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(dev.tamboui.style.PropertyDefinition,T)" class="member-name-link">set</a><wbr>(<a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;T&gt;&nbsp;property,
+ T&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds an additional property.</div>
+<div class="block">Sets a typed property value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spacing(java.lang.Integer)" class="member-name-link">spacing</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;spacing)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRaw(java.lang.String,java.lang.String)" class="member-name-link">setRaw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets a raw property value for lazy conversion.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spacing(java.lang.Integer)" class="member-name-link">spacing</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;spacing)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the spacing (gap between elements).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width(dev.tamboui.style.Width)" class="member-name-link">width</a><wbr>(<a href="../../style/Width.html" title="class in dev.tamboui.style">Width</a>&nbsp;width)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the width behavior.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#widthConstraint(dev.tamboui.layout.Constraint)" class="member-name-link">widthConstraint</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width(dev.tamboui.layout.Constraint)" class="member-name-link">width</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the width constraint (for horizontal layouts).</div>
+<div class="block">Sets the width constraint.</div>
 </div>
 </div>
 </div>
@@ -211,6 +212,47 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="set(dev.tamboui.style.PropertyDefinition,T)">
+<h3 id="set(dev.tamboui.style.PropertyDefinition,java.lang.Object)">set</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;T&gt;&nbsp;property,
+ T&nbsp;value)</span></div>
+<div class="block">Sets a typed property value.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><span id="set(dev.tamboui.style.PropertyDefinition,T)-type-param-T"><code>T</code> - the type of the property value</span></dd>
+<dt>Parameters:</dt>
+<dd><code>property</code> - the property definition</dd>
+<dd><code>value</code> - the property value</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setRaw(java.lang.String,java.lang.String)">
+<h3>setRaw</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">setRaw</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
+<div class="block">Sets a raw property value for lazy conversion.
+<p>
+Raw values are stored by property name and converted lazily when
+accessed via <a href="CssStyleResolver.html#get(dev.tamboui.style.PropertyDefinition)"><code>CssStyleResolver.get(PropertyDefinition)</code></a>.
+This enables widget-defined properties to be resolved from CSS
+without requiring the CSS engine to know all property definitions.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>propertyName</code> - the CSS property name</dd>
+<dd><code>value</code> - the raw CSS value (already variable-resolved)</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="foreground(dev.tamboui.style.Color)">
 <h3>foreground</h3>
@@ -272,10 +314,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="padding(dev.tamboui.widgets.block.Padding)">
+<section class="detail" id="padding(dev.tamboui.layout.Padding)">
 <h3>padding</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">padding</span><wbr><span class="parameters">(<a href="../../widgets/block/Padding.html" title="class in dev.tamboui.widgets.block">Padding</a>&nbsp;padding)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">padding</span><wbr><span class="parameters">(<a href="../../layout/Padding.html" title="class in dev.tamboui.layout">Padding</a>&nbsp;padding)</span></div>
 <div class="block">Sets the padding.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -317,14 +359,14 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="width(dev.tamboui.style.Width)">
+<section class="detail" id="width(dev.tamboui.layout.Constraint)">
 <h3>width</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">width</span><wbr><span class="parameters">(<a href="../../style/Width.html" title="class in dev.tamboui.style">Width</a>&nbsp;width)</span></div>
-<div class="block">Sets the width behavior.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">width</span><wbr><span class="parameters">(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</span></div>
+<div class="block">Sets the width constraint.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>width</code> - the width</dd>
+<dd><code>constraint</code> - the width constraint</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>
@@ -400,38 +442,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>constraint</code> - the height constraint</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="widthConstraint(dev.tamboui.layout.Constraint)">
-<h3>widthConstraint</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">widthConstraint</span><wbr><span class="parameters">(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</span></div>
-<div class="block">Sets the width constraint (for horizontal layouts).</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>constraint</code> - the width constraint</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="property(java.lang.String,java.lang.String)">
-<h3>property</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></span>&nbsp;<span class="element-name">property</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
-<div class="block">Adds an additional property.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>name</code> - the property name</dd>
-<dd><code>value</code> - the property value</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

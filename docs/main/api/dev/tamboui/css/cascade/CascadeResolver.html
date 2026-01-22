@@ -61,7 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">CascadeResolver()</a></li>
-<li><a href="#%3Cinit%3E(dev.tamboui.css.property.PropertyRegistry)" tabindex="0">CascadeResolver(PropertyRegistry)</a></li>
+<li><a href="#%3Cinit%3E(dev.tamboui.css.cascade.UnknownPropertyBehavior)" tabindex="0">CascadeResolver(UnknownPropertyBehavior)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -93,7 +93,10 @@ The cascade algorithm:
   <li>For equal specificity, later rules win (source order)</li>
   <li>!important declarations override all non-important</li>
   <li>Merge all matching declarations into a final style</li>
-</ol></div>
+</ol>
+<p>
+Unknown properties (those not registered in <a href="../../style/PropertyRegistry.html" title="class in dev.tamboui.style"><code>PropertyRegistry</code></a>) are handled
+according to the configured <a href="UnknownPropertyBehavior.html" title="enum class in dev.tamboui.css.cascade"><code>UnknownPropertyBehavior</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -108,11 +111,11 @@ The cascade algorithm:
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CascadeResolver</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new cascade resolver with the default property registry.</div>
+<div class="block">Creates a new cascade resolver with default behavior (IGNORE unknown properties).</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.css.property.PropertyRegistry)" class="member-name-link">CascadeResolver</a><wbr>(<a href="../property/PropertyRegistry.html" title="class in dev.tamboui.css.property">PropertyRegistry</a>&nbsp;propertyRegistry)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.css.cascade.UnknownPropertyBehavior)" class="member-name-link">CascadeResolver</a><wbr>(<a href="UnknownPropertyBehavior.html" title="enum class in dev.tamboui.css.cascade">UnknownPropertyBehavior</a>&nbsp;unknownPropertyBehavior)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a cascade resolver with a custom property registry.</div>
+<div class="block">Creates a new cascade resolver with the specified unknown property behavior.</div>
 </div>
 </div>
 </section>
@@ -159,16 +162,20 @@ The cascade algorithm:
 <h3>CascadeResolver</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CascadeResolver</span>()</div>
-<div class="block">Creates a new cascade resolver with the default property registry.</div>
+<div class="block">Creates a new cascade resolver with default behavior (IGNORE unknown properties).</div>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(dev.tamboui.css.property.PropertyRegistry)">
+<section class="detail" id="&lt;init&gt;(dev.tamboui.css.cascade.UnknownPropertyBehavior)">
 <h3>CascadeResolver</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CascadeResolver</span><wbr><span class="parameters">(<a href="../property/PropertyRegistry.html" title="class in dev.tamboui.css.property">PropertyRegistry</a>&nbsp;propertyRegistry)</span></div>
-<div class="block">Creates a cascade resolver with a custom property registry.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CascadeResolver</span><wbr><span class="parameters">(<a href="UnknownPropertyBehavior.html" title="enum class in dev.tamboui.css.cascade">UnknownPropertyBehavior</a>&nbsp;unknownPropertyBehavior)</span></div>
+<div class="block">Creates a new cascade resolver with the specified unknown property behavior.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>unknownPropertyBehavior</code> - how to handle unknown CSS properties</dd>
+</dl>
 </div>
 </section>
 </li>

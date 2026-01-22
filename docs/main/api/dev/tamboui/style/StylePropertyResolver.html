@@ -63,7 +63,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#get(dev.tamboui.style.PropertyKey)" tabindex="0">get(PropertyKey)</a></li>
+<li><a href="#get(dev.tamboui.style.PropertyDefinition)" tabindex="0">get(PropertyDefinition)</a></li>
+<li><a href="#resolve(dev.tamboui.style.PropertyDefinition,T)" tabindex="0">resolve(PropertyDefinition, T)</a></li>
 <li><a href="#empty()" tabindex="0">empty()</a></li>
 </ol>
 </li>
@@ -87,7 +88,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">StylePropertyResolver</span></div>
-<div class="block">A resolver for retrieving typed property values by key.
+<div class="block">A resolver for retrieving typed property values by definition.
 <p>
 This is the minimal abstraction that allows widgets to resolve style properties
 without depending on any specific styling system.
@@ -95,8 +96,8 @@ without depending on any specific styling system.
 Use <a href="#empty()"><code>empty()</code></a> when no styling is needed.
 
 <h2 id="usage-in-widgets--heading">Usage in widgets:</h2>
-<pre><code>public void render(Rect area, Buffer buffer, PropertyResolver resolver) {
-    Color borderColor = resolver.get(BORDER_COLOR).orElse(Color.WHITE);
+<pre><code>public void render(Rect area, Buffer buffer, StylePropertyResolver resolver) {
+    Color borderColor = resolver.resolve(StandardProperties.BORDER_COLOR, this.borderColor);
     // render with borderColor...
 }
 </code></pre></div>
@@ -109,7 +110,7 @@ Use <a href="#empty()"><code>empty()</code></a> when no styling is needed.
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -121,9 +122,15 @@ Use <a href="#empty()"><code>empty()</code></a> when no styling is needed.
 <div class="block">Returns an empty resolver that never resolves any properties.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(dev.tamboui.style.PropertyKey)" class="member-name-link">get</a><wbr>(<a href="PropertyKey.html" title="class in dev.tamboui.style">PropertyKey</a>&lt;T&gt;&nbsp;key)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(dev.tamboui.style.PropertyDefinition)" class="member-name-link">get</a><wbr>(<a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;T&gt;&nbsp;property)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Retrieves the value for the given property key.</div>
+<div class="block">Retrieves the value for the given property definition.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolve(dev.tamboui.style.PropertyDefinition,T)" class="member-name-link">resolve</a><wbr>(<a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;T&gt;&nbsp;property,
+ T&nbsp;programmaticValue)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Resolves the effective value for a property.</div>
 </div>
 </div>
 </div>
@@ -140,18 +147,44 @@ Use <a href="#empty()"><code>empty()</code></a> when no styling is needed.
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="get(dev.tamboui.style.PropertyKey)">
+<section class="detail" id="get(dev.tamboui.style.PropertyDefinition)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="PropertyKey.html" title="class in dev.tamboui.style">PropertyKey</a>&lt;T&gt;&nbsp;key)</span></div>
-<div class="block">Retrieves the value for the given property key.</div>
+<div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;T&gt;&nbsp;property)</span></div>
+<div class="block">Retrieves the value for the given property definition.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
-<dd><span id="get(dev.tamboui.style.PropertyKey)-type-param-T"><code>T</code> - the type of the property value</span></dd>
+<dd><span id="get(dev.tamboui.style.PropertyDefinition)-type-param-T"><code>T</code> - the type of the property value</span></dd>
 <dt>Parameters:</dt>
-<dd><code>key</code> - the property key</dd>
+<dd><code>property</code> - the property definition</dd>
 <dt>Returns:</dt>
 <dd>the property value, or empty if not found</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="resolve(dev.tamboui.style.PropertyDefinition,T)">
+<h3 id="resolve(dev.tamboui.style.PropertyDefinition,java.lang.Object)">resolve</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;T&gt;&nbsp;property,
+ T&nbsp;programmaticValue)</span></div>
+<div class="block">Resolves the effective value for a property.
+<p>
+Resolution order: <strong>programmatic → resolver → property default</strong>
+<ol>
+  <li>If <code>programmaticValue</code> is non-null, return it</li>
+  <li>Otherwise, try to resolve from this resolver</li>
+  <li>Otherwise, return <a href="PropertyDefinition.html#defaultValue()"><code>PropertyDefinition.defaultValue()</code></a></li>
+</ol></div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><span id="resolve(dev.tamboui.style.PropertyDefinition,T)-type-param-T"><code>T</code> - the type of the property value</span></dd>
+<dt>Parameters:</dt>
+<dd><code>property</code> - the property definition</dd>
+<dd><code>programmaticValue</code> - the value set programmatically, or null</dd>
+<dt>Returns:</dt>
+<dd>the resolved value (may be null if property has no default)</dd>
 </dl>
 </div>
 </section>

@@ -72,7 +72,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#title(dev.tamboui.text.Line)" tabindex="0">title(Line)</a></li>
 <li><a href="#bottomTitle(java.lang.String)" tabindex="0">bottomTitle(String)</a></li>
 <li><a href="#bottomTitle(dev.tamboui.text.Line)" tabindex="0">bottomTitle(Line)</a></li>
-<li><a href="#titleOverflow(dev.tamboui.widgets.text.Overflow)" tabindex="0">titleOverflow(Overflow)</a></li>
+<li><a href="#titleOverflow(dev.tamboui.style.Overflow)" tabindex="0">titleOverflow(Overflow)</a></li>
 <li><a href="#titleEllipsis()" tabindex="0">titleEllipsis()</a></li>
 <li><a href="#titleEllipsisStart()" tabindex="0">titleEllipsisStart()</a></li>
 <li><a href="#styleAttributes()" tabindex="0">styleAttributes()</a></li>
@@ -84,7 +84,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#borderColor(dev.tamboui.style.Color)" tabindex="0">borderColor(Color)</a></li>
 <li><a href="#focusedBorderColor(dev.tamboui.style.Color)" tabindex="0">focusedBorderColor(Color)</a></li>
 <li><a href="#padding(int)" tabindex="0">padding(int)</a></li>
-<li><a href="#padding(dev.tamboui.widgets.block.Padding)" tabindex="0">padding(Padding)</a></li>
+<li><a href="#padding(dev.tamboui.layout.Padding)" tabindex="0">padding(Padding)</a></li>
 <li><a href="#direction(dev.tamboui.layout.Direction)" tabindex="0">direction(Direction)</a></li>
 <li><a href="#horizontal()" tabindex="0">horizontal()</a></li>
 <li><a href="#vertical()" tabindex="0">vertical()</a></li>
@@ -256,7 +256,7 @@ Programmatic values override CSS values when both are set.</div>
 <div class="block">Sets uniform padding inside the panel.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#padding(dev.tamboui.widgets.block.Padding)" class="member-name-link">padding</a><wbr>(<a href="../../widgets/block/Padding.html" title="class in dev.tamboui.widgets.block">Padding</a>&nbsp;padding)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#padding(dev.tamboui.layout.Padding)" class="member-name-link">padding</a><wbr>(<a href="../../layout/Padding.html" title="class in dev.tamboui.layout">Padding</a>&nbsp;padding)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the padding inside the panel.</div>
 </div>
@@ -314,7 +314,7 @@ Programmatic values override CSS values when both are set.</div>
 <div class="block">Truncate title with ellipsis at start if it doesn't fit: "...ong title"</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#titleOverflow(dev.tamboui.widgets.text.Overflow)" class="member-name-link">titleOverflow</a><wbr>(<a href="../../widgets/text/Overflow.html" title="enum class in dev.tamboui.widgets.text">Overflow</a>&nbsp;overflow)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#titleOverflow(dev.tamboui.style.Overflow)" class="member-name-link">titleOverflow</a><wbr>(<a href="../../style/Overflow.html" title="enum class in dev.tamboui.style">Overflow</a>&nbsp;overflow)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the title overflow mode.</div>
 </div>
@@ -443,10 +443,10 @@ Example:
 </section>
 </li>
 <li>
-<section class="detail" id="titleOverflow(dev.tamboui.widgets.text.Overflow)">
+<section class="detail" id="titleOverflow(dev.tamboui.style.Overflow)">
 <h3>titleOverflow</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></span>&nbsp;<span class="element-name">titleOverflow</span><wbr><span class="parameters">(<a href="../../widgets/text/Overflow.html" title="enum class in dev.tamboui.widgets.text">Overflow</a>&nbsp;overflow)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></span>&nbsp;<span class="element-name">titleOverflow</span><wbr><span class="parameters">(<a href="../../style/Overflow.html" title="enum class in dev.tamboui.style">Overflow</a>&nbsp;overflow)</span></div>
 <div class="block">Sets the title overflow mode.</div>
 </div>
 </section>
@@ -574,10 +574,10 @@ no borders but still reserves space for them if borders are enabled.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="padding(dev.tamboui.widgets.block.Padding)">
+<section class="detail" id="padding(dev.tamboui.layout.Padding)">
 <h3>padding</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></span>&nbsp;<span class="element-name">padding</span><wbr><span class="parameters">(<a href="../../widgets/block/Padding.html" title="class in dev.tamboui.widgets.block">Padding</a>&nbsp;padding)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></span>&nbsp;<span class="element-name">padding</span><wbr><span class="parameters">(<a href="../../layout/Padding.html" title="class in dev.tamboui.layout">Padding</a>&nbsp;padding)</span></div>
 <div class="block">Sets the padding inside the panel.</div>
 </div>
 </section>

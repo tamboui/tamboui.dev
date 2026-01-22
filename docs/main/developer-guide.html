@@ -52,6 +52,14 @@
 <li><a href="#using-components">Using Components</a></li>
 </ul>
 </li>
+<li><a href="#css-property-support">CSS Property Support</a>
+<ul class="sectlevel2">
+<li><a href="#defining-custom-properties">Defining Custom Properties</a></li>
+<li><a href="#using-stylepropertyresolver">Using StylePropertyResolver</a></li>
+<li><a href="#using-standard-properties">Using Standard Properties</a></li>
+<li><a href="#inheritable-vs-non-inheritable">Inheritable vs Non-Inheritable</a></li>
+</ul>
+</li>
 <li><a href="#best-practices">Best Practices</a>
 <ul class="sectlevel2">
 <li><a href="#widget-design">Widget Design</a></li>
@@ -297,6 +305,196 @@ try (var runner = ToolkitRunner.builder()
 </div>
 </div>
 <div class="sect1">
+<h2 id="css-property-support"><a class="anchor" href="#css-property-support"></a><a class="link" href="#css-property-support">CSS Property Support</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Widgets can support CSS styling by accepting a <code>StylePropertyResolver</code> and using <code>PropertyDefinition</code> to define custom properties.</p>
+</div>
+<div class="sect2">
+<h3 id="defining-custom-properties"><a class="anchor" href="#defining-custom-properties"></a><a class="link" href="#defining-custom-properties">Defining Custom Properties</a></h3>
+<div class="paragraph">
+<p>Define custom properties as static constants using <code>PropertyDefinition</code> and register them with <code>PropertyRegistry</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.style.PropertyDefinition;
+import dev.tamboui.style.PropertyRegistry;
+import dev.tamboui.style.ColorConverter;
+import dev.tamboui.style.Color;
+
+public class MyGauge implements Widget {
+    // Define a custom property for the filled bar color
+    public static final PropertyDefinition&lt;Color&gt; BAR_COLOR =
+        PropertyDefinition.of("bar-color", ColorConverter.INSTANCE);
+
+    // Register the property so style resolvers recognize it
+    static {
+        PropertyRegistry.register(BAR_COLOR);
+    }
+
+    // ...
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For multiple properties, use <code>PropertyRegistry.registerAll(PROP1, PROP2, &#8230;&#8203;)</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Registering properties with <code>PropertyRegistry</code> is important because:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Style resolvers use the registry to validate property names</p>
+</li>
+<li>
+<p>Unregistered properties may trigger warnings or errors depending on configuration</p>
+</li>
+<li>
+<p>Registration enables the property converter to be used during style resolution</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This allows users to style your widget with CSS:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">MyGauge {
+    bar-color: green;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-stylepropertyresolver"><a class="anchor" href="#using-stylepropertyresolver"></a><a class="link" href="#using-stylepropertyresolver">Using StylePropertyResolver</a></h3>
+<div class="paragraph">
+<p>Widgets accept a <code>StylePropertyResolver</code> through their builder to resolve CSS values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyGauge implements Widget {
+    public static final PropertyDefinition&lt;Color&gt; BAR_COLOR =
+        PropertyDefinition.of("bar-color", ColorConverter.INSTANCE);
+
+    private final Color barColor;
+
+    private MyGauge(Builder builder) {
+        // Resolve: programmatic value → CSS value → property default
+        this.barColor = builder.resolveBarColor();
+    }
+
+    public static final class Builder {
+        private Color barColor;  // Programmatic value
+        private StylePropertyResolver styleResolver = StylePropertyResolver.empty();
+
+        public Builder barColor(Color color) {
+            this.barColor = color;
+            return this;
+        }
+
+        public Builder styleResolver(StylePropertyResolver resolver) {
+            this.styleResolver = resolver != null ? resolver : StylePropertyResolver.empty();
+            return this;
+        }
+
+        private Color resolveBarColor() {
+            return styleResolver.resolve(BAR_COLOR, barColor);
+        }
+
+        public MyGauge build() {
+            return new MyGauge(this);
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The resolution order is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Programmatic value</strong> - value set via builder method (e.g., <code>.barColor(Color.GREEN)</code>)</p>
+</li>
+<li>
+<p><strong>CSS value</strong> - value from the style resolver</p>
+</li>
+<li>
+<p><strong>Property default</strong> - value from <code>PropertyDefinition.defaultValue()</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-standard-properties"><a class="anchor" href="#using-standard-properties"></a><a class="link" href="#using-standard-properties">Using Standard Properties</a></h3>
+<div class="paragraph">
+<p>For common properties like <code>color</code> and <code>background</code>, use <code>StandardProperties</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.style.StandardProperties;
+
+// In your resolution method:
+Color bg = styleResolver.resolve(StandardProperties.BACKGROUND, this.background);
+Color fg = styleResolver.resolve(StandardProperties.COLOR, this.foreground);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inheritable-vs-non-inheritable"><a class="anchor" href="#inheritable-vs-non-inheritable"></a><a class="link" href="#inheritable-vs-non-inheritable">Inheritable vs Non-Inheritable</a></h3>
+<div class="paragraph">
+<p>Inheritance controls whether a property value flows from parent elements to children in the element tree.</p>
+</div>
+<div class="paragraph">
+<p><strong>Inheritable properties</strong> (like <code>color</code>) propagate down automatically:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel {
+    color: cyan;  /* All Text elements inside Panel inherit this */
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Non-inheritable properties</strong> (like <code>background</code>) apply only to the target element:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel {
+    background: gray;  /* Only Panel gets this, not its children */
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When defining your own properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <code>PropertyDefinition.of(&#8230;&#8203;)</code> for properties that should NOT inherit (most widget-specific properties like <code>bar-color</code>, <code>cursor-color</code>)</p>
+</li>
+<li>
+<p>Use <code>PropertyDefinition.builder(&#8230;&#8203;).inheritable().build()</code> for properties that SHOULD inherit (rare - typically only text-related properties)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Most widget-specific properties should be non-inheritable because they control aspects unique to that widget type.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="best-practices"><a class="anchor" href="#best-practices"></a><a class="link" href="#best-practices">Best Practices</a></h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -395,7 +593,7 @@ try (var runner = ToolkitRunner.builder()
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-21 21:30:17 UTC
+Last updated 2026-01-22 10:30:48 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

@@ -59,6 +59,20 @@
 <li><a href="#importance">Importance</a></li>
 </ul>
 </li>
+<li><a href="#the-property-system">The Property System</a>
+<ul class="sectlevel2">
+<li><a href="#propertydefinition">PropertyDefinition</a></li>
+<li><a href="#propertyregistry">PropertyRegistry</a></li>
+<li><a href="#standardproperties">StandardProperties</a></li>
+<li><a href="#property-inheritance">Property Inheritance</a>
+<ul class="sectlevel3">
+<li><a href="#inherited-properties">Inherited Properties</a></li>
+<li><a href="#non-inherited-properties">Non-Inherited Properties</a></li>
+</ul>
+</li>
+<li><a href="#widget-specific-properties">Widget-Specific Properties</a></li>
+</ul>
+</li>
 <li><a href="#applying-styles">Applying Styles</a>
 <ul class="sectlevel2">
 <li><a href="#with-toolkit-dsl">With Toolkit DSL</a></li>
@@ -961,6 +975,229 @@ DialogElement Text.title {
 </div>
 </div>
 <div class="sect1">
+<h2 id="the-property-system"><a class="anchor" href="#the-property-system"></a><a class="link" href="#the-property-system">The Property System</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TamboUI uses a typed property system where each CSS property is defined with its type, converter, and inheritance behavior.</p>
+</div>
+<div class="sect2">
+<h3 id="propertydefinition"><a class="anchor" href="#propertydefinition"></a><a class="link" href="#propertydefinition">PropertyDefinition</a></h3>
+<div class="paragraph">
+<p>A <code>PropertyDefinition&lt;T&gt;</code> bundles the property name with its converter and metadata:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Simple non-inheritable property
+public static final PropertyDefinition&lt;Color&gt; GAUGE_COLOR =
+    PropertyDefinition.of("gauge-color", ColorConverter.INSTANCE);
+
+// Inheritable property with default value
+public static final PropertyDefinition&lt;Color&gt; COLOR =
+    PropertyDefinition.builder("color", ColorConverter.INSTANCE)
+        .inheritable()
+        .build();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="propertyregistry"><a class="anchor" href="#propertyregistry"></a><a class="link" href="#propertyregistry">PropertyRegistry</a></h3>
+<div class="paragraph">
+<p>The <code>PropertyRegistry</code> is a registry where all property definitions must be registered for the style system to recognize them:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.style.PropertyRegistry;
+
+// Register a single property
+PropertyRegistry.register(MY_PROPERTY);
+
+// Register multiple properties at once
+PropertyRegistry.registerAll(PROPERTY_A, PROPERTY_B, PROPERTY_C);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When a widget defines custom properties, it should register them in a static initializer block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyWidget {
+    public static final PropertyDefinition&lt;Color&gt; BAR_COLOR = ...;
+    public static final PropertyDefinition&lt;Integer&gt; BAR_WIDTH = ...;
+
+    static {
+        PropertyRegistry.registerAll(BAR_COLOR, BAR_WIDTH);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unregistered properties may trigger warnings or errors depending on the style engine configuration.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="standardproperties"><a class="anchor" href="#standardproperties"></a><a class="link" href="#standardproperties">StandardProperties</a></h3>
+<div class="paragraph">
+<p>The <code>StandardProperties</code> class defines all built-in core properties. It serves as the central registry for properties that all widgets can use:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Inherits</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>color</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Color</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Foreground/text color</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>text-style</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set&lt;Modifier&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text modifiers (bold, dim, italic, etc.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>border-type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BorderType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Border style (plain, rounded, double, thick)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>background</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Color</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Background color</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>border-color</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Color</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Border color</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>padding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Padding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inner spacing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>margin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Margin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Outer spacing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width</code>, <code>height</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constraint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size constraints</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flex</code>, <code>direction</code>, <code>spacing</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Various</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Layout properties</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="property-inheritance"><a class="anchor" href="#property-inheritance"></a><a class="link" href="#property-inheritance">Property Inheritance</a></h3>
+<div class="paragraph">
+<p>In TamboUI, elements form a tree structure: a <code>Panel</code> contains <code>Text</code> elements, which may contain <code>Span</code> elements, and so on. <em>Inheritance</em> determines whether a property value automatically flows from a parent element to its children.</p>
+</div>
+<div class="sect3">
+<h4 id="inherited-properties"><a class="anchor" href="#inherited-properties"></a><a class="link" href="#inherited-properties">Inherited Properties</a></h4>
+<div class="paragraph">
+<p>When you set an inherited property on a parent, all descendants automatically receive that value unless they explicitly override it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel.sidebar {
+    color: cyan;        /* Inherited - flows to all children */
+    text-style: dim;    /* Inherited - flows to all children */
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// All text inside the sidebar automatically gets cyan + dim styling
+panel(() -&gt; column(
+    text("Menu"),           // cyan, dim (inherited from Panel)
+    text("Dashboard"),      // cyan, dim (inherited from Panel)
+    text("Settings").bold() // cyan, dim + bold (inherits color, adds bold)
+)).cssClass("sidebar")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The inherited properties are: <code>color</code>, <code>text-style</code>, <code>border-type</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="non-inherited-properties"><a class="anchor" href="#non-inherited-properties"></a><a class="link" href="#non-inherited-properties">Non-Inherited Properties</a></h4>
+<div class="paragraph">
+<p>Non-inherited properties only apply to the element they&#8217;re set on. Children must set these properties explicitly.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">Panel.sidebar {
+    background: dark-gray;  /* NOT inherited - only Panel gets this */
+    padding: 1;             /* NOT inherited - only Panel gets this */
+}
+
+/* Children need their own background if desired */
+Panel.sidebar Text {
+    background: black;      /* Must be set explicitly on Text */
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This matches standard CSS behavior: setting a background on a container doesn&#8217;t automatically give all its children that same background.</p>
+</div>
+<div class="paragraph">
+<p>The non-inherited properties include: <code>background</code>, <code>padding</code>, <code>margin</code>, <code>width</code>, <code>height</code>, <code>flex</code>, <code>direction</code>, <code>spacing</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="widget-specific-properties"><a class="anchor" href="#widget-specific-properties"></a><a class="link" href="#widget-specific-properties">Widget-Specific Properties</a></h3>
+<div class="paragraph">
+<p>Widgets can define their own properties for custom styling. For example, the <code>Gauge</code> widget defines:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static final PropertyDefinition&lt;Color&gt; GAUGE_COLOR =
+    PropertyDefinition.of("gauge-color", ColorConverter.INSTANCE);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This allows CSS like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">GaugeElement {
+    gauge-color: green;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the <a href="developer-guide.html">Developer Guide</a> for details on creating widgets with custom properties.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="applying-styles"><a class="anchor" href="#applying-styles"></a><a class="link" href="#applying-styles">Applying Styles</a></h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -1175,7 +1412,7 @@ Panel:focus {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-21 21:30:17 UTC
+Last updated 2026-01-22 10:30:48 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

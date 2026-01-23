@@ -777,6 +777,28 @@ column(
 )</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Control positioning with flex:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Flex;
+
+row(
+    text("Item 1"),
+    text("Item 2"),
+    text("Item 3")
+).flex(Flex.CENTER)  // Center items horizontally
+
+column(
+    panel("Top"),
+    panel("Bottom")
+).flex(Flex.SPACE_BETWEEN)  // Spread items vertically</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See <a href="styling.html#_flex_layout">Flex Layout</a> for detailed documentation on all flex modes and usage patterns.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="styling"><a class="anchor" href="#styling"></a><a class="link" href="#styling">Styling</a></h3>
@@ -1542,7 +1564,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-23 09:07:18 UTC
+Last updated 2026-01-23 11:52:15 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

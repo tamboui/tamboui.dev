@@ -87,6 +87,10 @@ The parser supports:
       <code>[dim]</code>, <code>[reversed]</code>, <code>[crossed-out]</code></li>
   <li>Built-in color tags: <code>[red]</code>, <code>[green]</code>, <code>[blue]</code>, <code>[yellow]</code>,
       <code>[cyan]</code>, <code>[magenta]</code>, <code>[white]</code>, <code>[black]</code>, <code>[gray]</code></li>
+  <li>True color tokens: <code>[#RGB]</code>, <code>[#RRGGBB]</code>, <code>[rgb(r,g,b)]</code> (spaces allowed)</li>
+  <li>Compound style specs: multiple tokens in a single tag, e.g.
+      <code>[bold #ff5733 on rgb(10, 20, 30)]text[/]</code>. Foreground/background tokens are parsed
+      using <a href="../style/ColorConverter.html" title="class in dev.tamboui.style"><code>ColorConverter</code></a> and modifiers are applied in addition to colors.</li>
   <li>Hyperlinks: <code>[link=URL]text[/link]</code></li>
   <li>Custom tags: resolved via a <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text"><code>MarkupParser.StyleResolver</code></a></li>
   <li>Escaped brackets: <code>[[</code> produces <code>[</code>, and <code>]]</code> produces <code>]</code></li>

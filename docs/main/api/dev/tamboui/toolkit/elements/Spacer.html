@@ -71,6 +71,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#withWeight(int)" tabindex="0">withWeight(int)</a></li>
 <li><a href="#percent(int)" tabindex="0">percent(int)</a></li>
 <li><a href="#constraint()" tabindex="0">constraint()</a></li>
+<li><a href="#preferredWidth()" tabindex="0">preferredWidth()</a></li>
+<li><a href="#preferredHeight()" tabindex="0">preferredHeight()</a></li>
 <li><a href="#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">render(Frame, Rect, RenderContext)</a></li>
 </ol>
 </li>
@@ -146,6 +148,16 @@ Useful for pushing elements apart or creating gaps.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the constraint to a percentage.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight()" class="member-name-link">preferredHeight</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the preferred height of this element in cells.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the preferred width of this element in cells.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">render</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
@@ -166,7 +178,7 @@ Useful for pushing elements apart or creating gaps.</div>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.toolkit.element.Element">Methods inherited from interface&nbsp;<a href="../element/Element.html#method-summary" title="interface in dev.tamboui.toolkit.element">Element</a></h3>
-<code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" title="handleKeyEvent(KeyEvent, boolean)">handleKeyEvent</a>, <a href="../element/Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" title="handleMouseEvent(MouseEvent)">handleMouseEvent</a>, <a href="../element/Element.html#id()" title="id()">id</a>, <a href="../element/Element.html#isDraggable()" title="isDraggable()">isDraggable</a>, <a href="../element/Element.html#isFocusable()" title="isFocusable()">isFocusable</a>, <a href="../element/Element.html#keyEventHandler()" title="keyEventHandler()">keyEventHandler</a>, <a href="../element/Element.html#mouseEventHandler()" title="mouseEventHandler()">mouseEventHandler</a>, <a href="../element/Element.html#preferredHeight()" title="preferredHeight()">preferredHeight</a>, <a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" title="preferredHeight(int, RenderContext)">preferredHeight</a>, <a href="../element/Element.html#preferredWidth()" title="preferredWidth()">preferredWidth</a>, <a href="../element/Element.html#renderedArea()" title="renderedArea()">renderedArea</a></code></div>
+<code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" title="handleKeyEvent(KeyEvent, boolean)">handleKeyEvent</a>, <a href="../element/Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" title="handleMouseEvent(MouseEvent)">handleMouseEvent</a>, <a href="../element/Element.html#id()" title="id()">id</a>, <a href="../element/Element.html#isDraggable()" title="isDraggable()">isDraggable</a>, <a href="../element/Element.html#isFocusable()" title="isFocusable()">isFocusable</a>, <a href="../element/Element.html#keyEventHandler()" title="keyEventHandler()">keyEventHandler</a>, <a href="../element/Element.html#mouseEventHandler()" title="mouseEventHandler()">mouseEventHandler</a>, <a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" title="preferredHeight(int, RenderContext)">preferredHeight</a>, <a href="../element/Element.html#renderedArea()" title="renderedArea()">renderedArea</a></code></div>
 </section>
 </li>
 </ul>
@@ -251,6 +263,40 @@ Used by container elements to determine sizing.</div>
 <dd><code><a href="../element/Element.html#constraint()">constraint</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
 <dt>Returns:</dt>
 <dd>the constraint, or null if the element should use default sizing</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="preferredWidth()">
+<h3>preferredWidth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../element/Element.html#preferredWidth()">preferredWidth</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
+<dt>Returns:</dt>
+<dd>the preferred width, or 0 if not applicable</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="preferredHeight()">
+<h3>preferredHeight</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
+<div class="block">Returns the preferred height of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../element/Element.html#preferredHeight()">preferredHeight</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
+<dt>Returns:</dt>
+<dd>the preferred height, or 0 if not applicable</dd>
 </dl>
 </div>
 </section>

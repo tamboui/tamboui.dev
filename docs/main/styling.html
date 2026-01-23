@@ -789,7 +789,7 @@ DialogElement Text.title {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>flex</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flex positioning mode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flex positioning mode - see <a href="#flex-layout">Flex Layout</a> below for details</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>flex: center;</code> <code>flex: space-between;</code></p></td>
 </tr>
 <tr>
@@ -862,48 +862,363 @@ DialogElement Text.title {
 </table>
 </div>
 <div class="sect4">
-<h5 id="flex-values"><a class="anchor" href="#flex-values"></a><a class="link" href="#flex-values">Flex Values</a></h5>
+<h5 id="flex-layout"><a class="anchor" href="#flex-layout"></a><a class="link" href="#flex-layout">Flex Layout</a></h5>
 <div class="paragraph">
-<p>The <code>flex</code> property controls how remaining space is distributed:</p>
+<p>Flex layout controls how remaining space is distributed among children in <code>Row</code> and <code>Column</code> containers. When children don&#8217;t fill the entire container (e.g., fixed-size elements in a large space), flex determines where they&#8217;re positioned and how gaps are distributed.</p>
 </div>
+<div class="sect5">
+<h6 id="understanding-flex"><a class="anchor" href="#understanding-flex"></a><a class="link" href="#understanding-flex">Understanding Flex</a></h6>
+<div class="paragraph">
+<p>Think of flex as answering: "What do I do with the extra space?"</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If your children have fixed sizes and don&#8217;t fill the container, flex positions them</p>
+</li>
+<li>
+<p>Row containers use flex horizontally (left-to-right)</p>
+</li>
+<li>
+<p>Column containers use flex vertically (top-to-bottom)</p>
+</li>
+<li>
+<p>Flex only affects distribution of <em>remaining</em> space after sizing constraints are applied</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="flex-modes"><a class="anchor" href="#flex-modes"></a><a class="link" href="#flex-modes">Flex Modes</a></h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Value</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Use Case</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>start</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position items at the start, remaining space at end</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pack items at the start, remaining space at end</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Left-aligned toolbars, top-aligned menus</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>center</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Center items, distribute remaining space on both sides</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Center items, equal space on both sides</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Centered dialogs, hero content</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>end</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position items at the end, remaining space at start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pack items at the end, remaining space at start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Right-aligned status indicators</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>space-between</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribute items with space between them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First/last items at edges, equal gaps between</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Navigation bars, spread-out controls</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>space-around</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribute items with space around each</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Equal space around each item (half-size at edges)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evenly distributed buttons</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>space-evenly</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribute items with equal space between and around</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Equal space everywhere including edges</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perfectly balanced layouts</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Run the interactive <code>flex-demo</code> to see all flex modes in action: <code>./run-demo.sh flex-demo</code>. Use arrow keys to cycle through modes and number keys (1-4) to switch between examples.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect5">
+<h6 id="programmatic-usage"><a class="anchor" href="#programmatic-usage"></a><a class="link" href="#programmatic-usage">Programmatic Usage</a></h6>
+<div class="paragraph">
+<p>Use flex with <code>Row</code> and <code>Column</code> elements in the Toolkit DSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Flex;
+import static dev.tamboui.toolkit.Toolkit.*;
+
+// Horizontal flex (Row)
+row(
+    panel(() -&gt; text("Left")).rounded().length(10),
+    panel(() -&gt; text("Center")).rounded().length(10),
+    panel(() -&gt; text("Right")).rounded().length(10)
+).flex(Flex.SPACE_BETWEEN)
+
+// Vertical flex (Column)
+column(
+    panel(() -&gt; text("Top")).rounded().length(3),
+    panel(() -&gt; text("Middle")).rounded().length(3),
+    panel(() -&gt; text("Bottom")).rounded().length(3)
+).flex(Flex.CENTER)
+
+// Nested layouts with different flex modes
+column(
+    row(
+        text("Item A").length(8),
+        text("Item B").length(8)
+    ).flex(Flex.START).length(3),
+
+    row(
+        text("Item C").length(8),
+        text("Item D").length(8)
+    ).flex(Flex.END).length(3)
+)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="css-usage"><a class="anchor" href="#css-usage"></a><a class="link" href="#css-usage">CSS Usage</a></h6>
+<div class="paragraph">
+<p>Set flex via the <code>flex</code> property:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Center toolbar items */
+.toolbar-row {
+    flex: center;
+}
+
+/* Space out menu items */
+.menu-row {
+    flex: space-between;
+}
+
+/* Pack footer content to the right */
+#footer-row {
+    flex: end;
+}
+
+/* Vertical centering in a column */
+.sidebar-column {
+    flex: center;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Elements pick up flex from CSS classes
+row(
+    text("New"),
+    text("Open"),
+    text("Save")
+).cssClass("toolbar-row")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="flex-vs-fill-understanding-the-difference"><a class="anchor" href="#flex-vs-fill-understanding-the-difference"></a><a class="link" href="#flex-vs-fill-understanding-the-difference">Flex vs Fill: Understanding the Difference</a></h6>
+<div class="paragraph">
+<p>This is a common point of confusion. They serve different purposes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>flex</code></strong>: Controls <em>where</em> items are positioned in remaining space</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Only affects positioning of items that don&#8217;t fill the container</p>
+</li>
+<li>
+<p>Applied to the container (Row/Column)</p>
+</li>
+<li>
+<p>Example: <code>row(&#8230;&#8203;).flex(Flex.CENTER)</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong><code>fill()</code></strong>: Controls <em>how much</em> space an item should consume</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Makes an item grow to take available space</p>
+</li>
+<li>
+<p>Applied to individual children</p>
+</li>
+<li>
+<p>Example: <code>text("grows").fill()</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WITHOUT fill() - flex positions fixed-size items
+row(
+    text("A").length(5),
+    text("B").length(5),
+    text("C").length(5)
+).flex(Flex.SPACE_BETWEEN)  // Items stay 5 wide, spread out
+
+// WITH fill() - item grows, flex has less effect
+row(
+    text("A").length(5),
+    text("B").fill(),          // Takes all remaining space
+    text("C").length(5)
+).flex(Flex.CENTER)            // Only affects tiny leftover gaps</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="practical-examples"><a class="anchor" href="#practical-examples"></a><a class="link" href="#practical-examples">Practical Examples</a></h6>
+<div class="paragraph">
+<p><strong>Centered Dialog</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">column(
+    panel("Confirm",
+        text("Are you sure?"),
+        row(
+            text("[ Yes ]").green(),
+            text("[ No ]").red()
+        ).flex(Flex.SPACE_AROUND).spacing(2)
+    ).rounded().length(10)
+).flex(Flex.CENTER)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Application Layout</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">column(
+    // Header: left-aligned title
+    row(
+        text("My App").bold(),
+        text("v1.0").dim()
+    ).flex(Flex.START).spacing(2).length(3),
+
+    // Content: fills available space
+    panel(() -&gt; text("Main content...")).fill(),
+
+    // Footer: spread items across
+    row(
+        text("Ready").green(),
+        text("Line 42, Col 15").dim(),
+        text("UTF-8").dim()
+    ).flex(Flex.SPACE_BETWEEN).length(1)
+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Toolbar with CSS</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">.toolbar {
+    flex: space-between;
+    spacing: 1;
+}
+
+.toolbar-left {
+    flex: start;
+}
+
+.toolbar-right {
+    flex: end;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Main toolbar with items spread across
+row(
+    text("File"),
+    text("Edit"),
+    text("View"),
+    text("Help")
+).cssClass("toolbar")
+
+// Toolbar section with items grouped left
+row(
+    text("New"),
+    text("Open")
+).cssClass("toolbar-left")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="flex-with-spacing"><a class="anchor" href="#flex-with-spacing"></a><a class="link" href="#flex-with-spacing">Flex with Spacing</a></h6>
+<div class="paragraph">
+<p>Flex and spacing work together. Spacing creates fixed gaps between items, then flex distributes any remaining space:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// spacing=1 creates 1-cell gaps, flex centers the whole group
+row(
+    text("A"),
+    text("B"),
+    text("C")
+).spacing(1).flex(Flex.CENTER)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="common-patterns"><a class="anchor" href="#common-patterns"></a><a class="link" href="#common-patterns">Common Patterns</a></h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Left-aligned button group
+row(
+    button("Save"),
+    button("Cancel")
+).flex(Flex.START).spacing(1)
+
+// Right-aligned status
+row(
+    text("Ready").green()
+).flex(Flex.END)
+
+// Split layout: title left, controls right
+row(
+    text("Settings").bold().length(20),
+    spacer(),  // Takes remaining space
+    button("OK").length(6),
+    button("Cancel").length(8)
+).flex(Flex.START).spacing(1)
+
+// Perfectly centered modal
+column(
+    spacer(),
+    row(
+        spacer(),
+        panel("Notice",
+            text("Operation completed")
+        ).rounded().length(30),
+        spacer()
+    ),
+    spacer()
+)</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect4">
 <h5 id="layout-example"><a class="anchor" href="#layout-example"></a><a class="link" href="#layout-example">Layout Example</a></h5>
@@ -1412,7 +1727,7 @@ Panel:focus {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-23 09:07:18 UTC
+Last updated 2026-01-23 11:52:15 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

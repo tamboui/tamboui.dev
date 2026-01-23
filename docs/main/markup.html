@@ -39,7 +39,7 @@
 <li><a href="#style-tags">Style Tags</a>
 <ul class="sectlevel3">
 <li><a href="#modifier-tags">Modifier Tags</a></li>
-<li><a href="#color-tags">Color Tags</a></li>
+<li><a href="#colors">Colors</a></li>
 </ul>
 </li>
 <li><a href="#implicit-close">Implicit Close</a></li>
@@ -167,57 +167,29 @@ Paragraph paragraph = new Paragraph(
 </table>
 </div>
 <div class="sect3">
-<h4 id="color-tags"><a class="anchor" href="#color-tags"></a><a class="link" href="#color-tags">Color Tags</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Tag</th>
-<th class="tableblock halign-left valign-top">Color</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[red]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Red foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[green]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Green foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[blue]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Blue foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[yellow]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yellow foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[cyan]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cyan foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[magenta]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Magenta foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[white]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">White foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[black]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Black foreground</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[gray]</code> / <code>[grey]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gray foreground</p></td>
-</tr>
-</tbody>
-</table>
+<h4 id="colors"><a class="anchor" href="#colors"></a><a class="link" href="#colors">Colors</a></h4>
+<div class="paragraph">
+<p>Colors can be specified the ways <code>ColorConverter</code> supports:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Named colors: <code>red</code>, <code>green</code>, <code>blue</code>, <code>yellow</code>, <code>cyan</code>, <code>magenta</code>, <code>white</code>, <code>black</code>, <code>gray</code>, etc.</p>
+</li>
+<li>
+<p>Hex colors: <code>#RGB</code>, <code>#RRGGBB</code></p>
+</li>
+<li>
+<p>RGB colors: <code>rgb(r,g,b)</code></p>
+</li>
+<li>
+<p>Indexed colors: <code>indexed(index)</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Only named colors are treated as tags/classes; explicit colors are not possible to be styled.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -611,7 +583,7 @@ Text code = MarkupParser.parse(
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-23 09:07:18 UTC
+Last updated 2026-01-23 11:52:15 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

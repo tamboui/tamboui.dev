@@ -45,7 +45,11 @@
 <ul class="sectlevel2">
 <li><a href="#rect">Rect</a></li>
 <li><a href="#constraints">Constraints</a></li>
-<li><a href="#layout">Layout</a></li>
+<li><a href="#layout">Layout</a>
+<ul class="sectlevel3">
+<li><a href="#flex-positioning">Flex Positioning</a></li>
+</ul>
+</li>
 <li><a href="#direction">Direction</a></li>
 <li><a href="#margin">Margin</a></li>
 </ul>
@@ -266,32 +270,127 @@ Position center = rect.center();</code></pre>
 <div class="sect2">
 <h3 id="layout"><a class="anchor" href="#layout"></a><a class="link" href="#layout">Layout</a></h3>
 <div class="paragraph">
-<p>A <code>Layout</code> splits an area according to constraints:</p>
+<p>A <code>Layout</code> divides a rectangular area into smaller areas based on constraints.</p>
+</div>
+<div class="paragraph">
+<p>The core operation is <code>split()</code>: it takes a <code>Rect</code> and returns a <code>List&lt;Rect&gt;</code> - one for each constraint. You then render widgets into those rectangles.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Layout layout = Layout.builder()
+    .direction(Direction.VERTICAL)
+    .constraints(
+        Constraint.length(3),   // First area: 3 cells tall
+        Constraint.fill()       // Second area: takes remaining space
+    )
+    .build();
+
+// Split a 80x24 area into two rectangles
+Rect area = new Rect(0, 0, 80, 24);
+List&lt;Rect&gt; areas = layout.split(area);
+
+// Result:
+// areas.get(0) = Rect(0, 0, 80, 3)   - header area
+// areas.get(1) = Rect(0, 3, 80, 21)  - content area</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Complete example with rendering:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Split vertically into header (3 lines) and content (rest)
-List&lt;Rect&gt; areas = Layout.builder()
+Layout layout = Layout.builder()
     .direction(Direction.VERTICAL)
     .constraints(
         Constraint.length(3),
         Constraint.fill()
     )
-    .build()
-    .split(frame.area());
+    .build();
 
+List&lt;Rect&gt; areas = layout.split(frame.area());
 Rect headerArea = areas.get(0);
 Rect contentArea = areas.get(1);
 
-// Split horizontally with percentages
-List&lt;Rect&gt; columns = Layout.builder()
+// Render widgets into the split areas
+Paragraph header = new Paragraph("Header Text");
+header.render(headerArea, frame.buffer());
+
+Paragraph content = new Paragraph("Main content goes here...");
+content.render(contentArea, frame.buffer());</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Layouts can be nested:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Split horizontally with percentages
+Layout horizontalLayout = Layout.builder()
     .direction(Direction.HORIZONTAL)
     .constraints(
         Constraint.percentage(30),
         Constraint.percentage(70)
     )
-    .build()
-    .split(contentArea);</code></pre>
+    .build();
+
+List&lt;Rect&gt; columns = horizontalLayout.split(contentArea);
+
+// Render sidebar and main area
+List sidebar = List.builder()
+    .items("Item 1", "Item 2", "Item 3")
+    .build();
+sidebar.render(columns.get(0), frame.buffer());
+
+Paragraph mainArea = new Paragraph("Main content");
+mainArea.render(columns.get(1), frame.buffer());</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="flex-positioning"><a class="anchor" href="#flex-positioning"></a><a class="link" href="#flex-positioning">Flex Positioning</a></h4>
+<div class="paragraph">
+<p>When layout children don&#8217;t fill the entire container (e.g., fixed-size elements in a large space), you can control how remaining space is distributed using <code>Flex</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Flex;
+
+// Center three fixed-width buttons in a toolbar
+Layout toolbar = Layout.builder()
+    .direction(Direction.HORIZONTAL)
+    .constraints(
+        Constraint.length(10),  // Button 1
+        Constraint.length(10),  // Button 2
+        Constraint.length(10)   // Button 3
+    )
+    .flex(Flex.CENTER)  // Center the buttons, space on both sides
+    .build();
+
+List&lt;Rect&gt; buttonAreas = toolbar.split(toolbarArea);
+renderButton("Save", buttonAreas.get(0), frame.buffer());
+renderButton("Cancel", buttonAreas.get(1), frame.buffer());
+renderButton("Help", buttonAreas.get(2), frame.buffer());
+
+// Spread menu items across a navigation bar
+Layout navbar = Layout.builder()
+    .direction(Direction.HORIZONTAL)
+    .constraints(
+        Constraint.length(8),   // "File"
+        Constraint.length(8)    // "Edit"
+    )
+    .flex(Flex.SPACE_BETWEEN)  // Push to edges with gap between
+    .build();
+
+List&lt;Rect&gt; menuAreas = navbar.split(navbarArea);
+renderMenuItem("File", menuAreas.get(0), frame.buffer());
+renderMenuItem("Edit", menuAreas.get(1), frame.buffer());</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Available flex modes: <code>START</code>, <code>CENTER</code>, <code>END</code>, <code>SPACE_BETWEEN</code>, <code>SPACE_AROUND</code>, <code>SPACE_EVENLY</code>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="styling.html#flex-layout">Flex Layout</a> in the CSS Styling guide for detailed documentation including CSS usage and practical examples.</p>
 </div>
 </div>
 </div>
@@ -592,7 +691,7 @@ if (event instanceof TickEvent) {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-23 09:07:18 UTC
+Last updated 2026-01-23 11:52:15 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

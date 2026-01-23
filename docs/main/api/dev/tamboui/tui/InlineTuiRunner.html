@@ -65,6 +65,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#pollEvent(java.time.Duration)" tabindex="0">pollEvent(Duration)</a></li>
 <li><a href="#println(java.lang.String)" tabindex="0">println(String)</a></li>
 <li><a href="#println(dev.tamboui.text.Text)" tabindex="0">println(Text)</a></li>
+<li><a href="#setContentHeight(int)" tabindex="0">setContentHeight(int)</a></li>
 <li><a href="#runOnRenderThread(java.lang.Runnable)" tabindex="0">runOnRenderThread(Runnable)</a></li>
 <li><a href="#runLater(java.lang.Runnable)" tabindex="0">runLater(Runnable)</a></li>
 <li><a href="#quit()" tabindex="0">quit()</a></li>
@@ -212,9 +213,14 @@ with the event handling capabilities of <a href="TuiRunner.html" title="class in
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Executes an action on the render thread.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setContentHeight(int)" class="member-name-link">setContentHeight</a><wbr>(int&nbsp;height)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the content height for the next draw.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the viewport width.</div>
 </div>
 </div>
@@ -328,6 +334,22 @@ The renderer is called to update the display when the handler returns true.</div
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>text</code> - the styled text to print</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setContentHeight(int)">
+<h3>setContentHeight</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setContentHeight</span><wbr><span class="parameters">(int&nbsp;height)</span></div>
+<div class="block">Sets the content height for the next draw.
+<p>
+This controls how many terminal lines are allocated for the inline display.
+Calling this before rendering allows the display to grow or shrink dynamically.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>height</code> - the desired content height in lines</dd>
 </dl>
 </div>
 </section>

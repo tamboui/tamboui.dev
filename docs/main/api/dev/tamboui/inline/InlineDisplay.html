@@ -64,7 +64,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#withBackend(int,int,dev.tamboui.terminal.Backend)" tabindex="0">withBackend(int, int, Backend)</a></li>
 <li><a href="#clearOnClose()" tabindex="0">clearOnClose()</a></li>
 <li><a href="#render(java.util.function.BiConsumer)" tabindex="0">render(BiConsumer)</a></li>
-<li><a href="#render(java.util.function.BiConsumer,int,int)" tabindex="0">render(BiConsumer, int, int)</a></li>
+<li><a href="#render(java.util.function.BiConsumer,int,int,int)" tabindex="0">render(BiConsumer, int, int, int)</a></li>
 <li><a href="#setLine(int,java.lang.String)" tabindex="0">setLine(int, String)</a></li>
 <li><a href="#setLine(int,dev.tamboui.text.Text)" tabindex="0">setLine(int, Text)</a></li>
 <li><a href="#println(java.lang.String)" tabindex="0">println(String)</a></li>
@@ -188,7 +188,8 @@ stays in place.
 <div class="block">Renders widgets to the display area.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(java.util.function.BiConsumer,int,int)" class="member-name-link">render</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>,<wbr><a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;&nbsp;renderer,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(java.util.function.BiConsumer,int,int,int)" class="member-name-link">render</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>,<wbr><a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;&nbsp;renderer,
+ int&nbsp;contentHeight,
  int&nbsp;cursorX,
  int&nbsp;cursorY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -326,10 +327,11 @@ The provided consumer receives the area and buffer to render into.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="render(java.util.function.BiConsumer,int,int)">
+<section class="detail" id="render(java.util.function.BiConsumer,int,int,int)">
 <h3>render</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>,<wbr><a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;&nbsp;renderer,
+ int&nbsp;contentHeight,
  int&nbsp;cursorX,
  int&nbsp;cursorY)</span></div>
 <div class="block">Renders widgets to the display area with explicit cursor positioning.
@@ -337,6 +339,7 @@ The provided consumer receives the area and buffer to render into.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>renderer</code> - the rendering function that populates the buffer</dd>
+<dd><code>contentHeight</code> - the desired height of the content in lines</dd>
 <dd><code>cursorX</code> - the x position for the cursor, or -1 to use default positioning</dd>
 <dd><code>cursorY</code> - the y position for the cursor, or -1 to use default positioning</dd>
 </dl>

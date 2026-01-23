@@ -80,6 +80,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#onResize(java.lang.Runnable)" tabindex="0">onResize(Runnable)</a></li>
 <li><a href="#read(int)" tabindex="0">read(int)</a></li>
 <li><a href="#peek(int)" tabindex="0">peek(int)</a></li>
+<li><a href="#insertLines(int)" tabindex="0">insertLines(int)</a></li>
+<li><a href="#deleteLines(int)" tabindex="0">deleteLines(int)</a></li>
+<li><a href="#moveCursorUp(int)" tabindex="0">moveCursorUp(int)</a></li>
+<li><a href="#moveCursorDown(int)" tabindex="0">moveCursorDown(int)</a></li>
+<li><a href="#moveCursorRight(int)" tabindex="0">moveCursorRight(int)</a></li>
+<li><a href="#moveCursorLeft(int)" tabindex="0">moveCursorLeft(int)</a></li>
+<li><a href="#eraseToEndOfLine()" tabindex="0">eraseToEndOfLine()</a></li>
+<li><a href="#carriageReturn()" tabindex="0">carriageReturn()</a></li>
 <li><a href="#close()" tabindex="0">close()</a></li>
 </ol>
 </li>
@@ -120,15 +128,25 @@ Implementations handle the actual terminal I/O.</div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Clears the terminal screen.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#carriageReturn()" class="member-name-link">carriageReturn</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Moves the cursor to the beginning of the current line (carriage return).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Clears the terminal screen.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Closes this backend and releases any resources.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#deleteLines(int)" class="member-name-link">deleteLines</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Deletes N lines at the current cursor position, pulling lines below up.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#disableMouseCapture()" class="member-name-link">disableMouseCapture</a>()</code></div>
@@ -160,25 +178,55 @@ Implementations handle the actual terminal I/O.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Enters the alternate screen buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flush()" class="member-name-link">flush</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#eraseToEndOfLine()" class="member-name-link">eraseToEndOfLine</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Erases from the cursor to the end of the line.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flush()" class="member-name-link">flush</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Flushes any buffered output to the terminal.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCursorPosition()" class="member-name-link">getCursorPosition</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCursorPosition()" class="member-name-link">getCursorPosition</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the current cursor position.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hideCursor()" class="member-name-link">hideCursor</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hideCursor()" class="member-name-link">hideCursor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Hides the cursor.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#insertLines(int)" class="member-name-link">insertLines</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Inserts N lines at the current cursor position, pushing existing lines down.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#leaveAlternateScreen()" class="member-name-link">leaveAlternateScreen</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Leaves the alternate screen buffer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#moveCursorDown(int)" class="member-name-link">moveCursorDown</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Moves the cursor down by N lines.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#moveCursorLeft(int)" class="member-name-link">moveCursorLeft</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Moves the cursor left by N columns.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#moveCursorRight(int)" class="member-name-link">moveCursorRight</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Moves the cursor right by N columns.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#moveCursorUp(int)" class="member-name-link">moveCursorUp</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Moves the cursor up by N lines.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#onResize(java.lang.Runnable)" class="member-name-link">onResize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;handler)</code></div>
@@ -562,6 +610,137 @@ This is a convenience method for protocols that work with ASCII escape sequences
 <dd>the character peeked, -1 for EOF, or -2 for timeout</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if an I/O error occurs</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="insertLines(int)">
+<h3>insertLines</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">insertLines</span><wbr><span class="parameters">(int&nbsp;n)</span>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Inserts N lines at the current cursor position, pushing existing lines down.
+The cursor position does not change.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>n</code> - the number of lines to insert</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="deleteLines(int)">
+<h3>deleteLines</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteLines</span><wbr><span class="parameters">(int&nbsp;n)</span>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Deletes N lines at the current cursor position, pulling lines below up.
+The cursor position does not change.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>n</code> - the number of lines to delete</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="moveCursorUp(int)">
+<h3>moveCursorUp</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorUp</span><wbr><span class="parameters">(int&nbsp;n)</span>
+                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Moves the cursor up by N lines. If the cursor is already at the top,
+this has no effect.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>n</code> - the number of lines to move up</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="moveCursorDown(int)">
+<h3>moveCursorDown</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorDown</span><wbr><span class="parameters">(int&nbsp;n)</span>
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Moves the cursor down by N lines. If the cursor is already at the bottom,
+this has no effect.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>n</code> - the number of lines to move down</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="moveCursorRight(int)">
+<h3>moveCursorRight</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorRight</span><wbr><span class="parameters">(int&nbsp;n)</span>
+                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Moves the cursor right by N columns. If the cursor is already at the
+rightmost position, this has no effect.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>n</code> - the number of columns to move right</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="moveCursorLeft(int)">
+<h3>moveCursorLeft</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorLeft</span><wbr><span class="parameters">(int&nbsp;n)</span>
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Moves the cursor left by N columns. If the cursor is already at the
+leftmost position, this has no effect.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>n</code> - the number of columns to move left</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="eraseToEndOfLine()">
+<h3>eraseToEndOfLine</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">eraseToEndOfLine</span>()
+                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Erases from the cursor to the end of the line.
+The cursor position does not change.</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="carriageReturn()">
+<h3>carriageReturn</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">carriageReturn</span>()
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Moves the cursor to the beginning of the current line (carriage return).</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
 </dl>
 </div>
 </section>

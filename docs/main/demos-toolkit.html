@@ -35,6 +35,7 @@
 <ul class="sectlevel1">
 <li><a href="#action-handler">Action Handler</a></li>
 <li><a href="#custom-component">Custom Component</a></li>
+<li><a href="#inline-display-mode-using-toolkit">Inline display mode using Toolkit</a></li>
 <li><a href="#jtop">JTop</a></li>
 <li><a href="#new-year">New Year</a></li>
 <li><a href="#text-area-with-rich-formatting">Text area with rich formatting</a></li>
@@ -74,6 +75,20 @@ AsciinemaPlayer.create('demos/action-handler-demo.cast', document.getElementById
 <div id="player-custom-component-demo" class="demo-player"></div>
 <script>
 AsciinemaPlayer.create('demos/custom-component-demo.cast', document.getElementById('player-custom-component-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="inline-display-mode-using-toolkit"><a class="anchor" href="#inline-display-mode-using-toolkit"></a><a class="link" href="#inline-display-mode-using-toolkit">Inline display mode using Toolkit</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing InlineApp and InlineToolkitRunner abstractions</p>
+</div>
+<div id="player-inline-toolkit-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/inline-toolkit-demo.cast', document.getElementById('player-inline-toolkit-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>
@@ -153,7 +168,7 @@ AsciinemaPlayer.create('demos/toolkit-demo.cast', document.getElementById('playe
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-22 10:36:41 UTC
+Last updated 2026-01-23 09:07:18 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

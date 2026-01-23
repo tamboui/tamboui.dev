@@ -86,6 +86,26 @@
 <li><a href="#inline-vs-alternate-screen">Inline vs Alternate Screen</a></li>
 </ul>
 </li>
+<li><a href="#inline-tui-runner">Inline TUI Runner</a>
+<ul class="sectlevel2">
+<li><a href="#basic-usage-2">Basic Usage</a></li>
+<li><a href="#configuration-2">Configuration</a></li>
+<li><a href="#printing-above-the-viewport">Printing Above the Viewport</a></li>
+<li><a href="#thread-safe-updates">Thread-Safe Updates</a></li>
+</ul>
+</li>
+<li><a href="#inline-toolkit">Inline Toolkit</a>
+<ul class="sectlevel2">
+<li><a href="#inlineapp-base-class">InlineApp Base Class</a></li>
+<li><a href="#configuration-3">Configuration</a></li>
+<li><a href="#printing-elements">Printing Elements</a></li>
+<li><a href="#handling-key-events">Handling Key Events</a></li>
+<li><a href="#text-input-in-inline-mode">Text Input in Inline Mode</a></li>
+<li><a href="#using-inlinetoolkitrunner-directly">Using InlineToolkitRunner Directly</a></li>
+<li><a href="#scopes-for-dynamic-regions">Scopes for Dynamic Regions</a></li>
+<li><a href="#inline-vs-full-screen-toolkit">Inline vs Full-Screen Toolkit</a></li>
+</ul>
+</li>
 <li><a href="#choosing-a-level">Choosing a Level</a></li>
 <li><a href="#next-steps">Next Steps</a></li>
 </ul>
@@ -135,7 +155,17 @@ At the highest level, the Toolkit DSL provides a declarative, component-based ap
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#inline-display-mode">Inline Display</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fixed status area that preserves terminal scroll history</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CLI tools, build progress, package managers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low-level inline control, custom rendering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#inline-tui-runner">Inline TUI Runner</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed event loop for inline displays with key/mouse handling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inline apps needing event handling without full Toolkit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#inline-toolkit">Inline Toolkit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declarative element-based inline displays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Most inline applications - NPM/Gradle-style progress UIs</p></td>
 </tr>
 </tbody>
 </table>
@@ -1158,6 +1188,314 @@ display.setLine(2, Text.from(Span.styled("No errors", Style.EMPTY.fg(Color.GREEN
 </div>
 </div>
 <div class="sect1">
+<h2 id="inline-tui-runner"><a class="anchor" href="#inline-tui-runner"></a><a class="link" href="#inline-tui-runner">Inline TUI Runner</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>InlineTuiRunner</code> adds a managed event loop to inline displays, similar to how <code>TuiRunner</code> works for full-screen apps.
+It handles keyboard and mouse events, tick-based animations, and thread-safe updates.</p>
+</div>
+<div class="sect2">
+<h3 id="basic-usage-2"><a class="anchor" href="#basic-usage-2"></a><a class="link" href="#basic-usage-2">Basic Usage</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var runner = InlineTuiRunner.create(4)) {
+    runner.run(
+        // Event handler
+        event -&gt; {
+            if (event instanceof KeyEvent key &amp;&amp; key.character() == 'q') {
+                runner.quit();
+                return EventResult.HANDLED;
+            }
+            return EventResult.UNHANDLED;
+        },
+        // Renderer
+        frame -&gt; {
+            var gauge = Gauge.builder()
+                .ratio(progress / 100.0)
+                .build();
+            gauge.render(frame.area(), frame.buffer());
+        }
+    );
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration-2"><a class="anchor" href="#configuration-2"></a><a class="link" href="#configuration-2">Configuration</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">var config = InlineTuiConfig.builder(4)  // 4 lines
+    .tickRate(Duration.ofMillis(50))     // For animations
+    .clearOnClose(true)                   // Clear viewport on exit
+    .build();
+
+try (var runner = InlineTuiRunner.create(config)) {
+    // ...
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="printing-above-the-viewport"><a class="anchor" href="#printing-above-the-viewport"></a><a class="link" href="#printing-above-the-viewport">Printing Above the Viewport</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Plain text
+runner.println("Task completed!");
+
+// Styled text
+runner.println(Text.from(
+    Span.styled("✓ ", Style.EMPTY.fg(Color.GREEN)),
+    Span.raw("Build successful")
+));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thread-safe-updates"><a class="anchor" href="#thread-safe-updates"></a><a class="link" href="#thread-safe-updates">Thread-Safe Updates</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Run code on the render thread
+runner.runOnRenderThread(() -&gt; {
+    progress = newValue;
+});
+
+// Schedule for later
+runner.runLater(() -&gt; {
+    cleanup();
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="inline-toolkit"><a class="anchor" href="#inline-toolkit"></a><a class="link" href="#inline-toolkit">Inline Toolkit</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Inline Toolkit provides the same declarative, element-based API as the full Toolkit DSL, but for inline displays.
+This is the recommended approach for most inline applications.</p>
+</div>
+<div class="sect2">
+<h3 id="inlineapp-base-class"><a class="anchor" href="#inlineapp-base-class"></a><a class="link" href="#inlineapp-base-class">InlineApp Base Class</a></h3>
+<div class="paragraph">
+<p>The easiest way to create an inline application:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyProgressApp extends InlineApp {
+
+    private double progress = 0.0;
+
+    public static void main(String[] args) throws Exception {
+        new MyProgressApp().run();
+    }
+
+    @Override
+    protected int height() {
+        return 3;  // Reserve 3 lines
+    }
+
+    @Override
+    protected Element render() {
+        return column(
+            text("Installing packages...").bold(),
+            gauge(progress).green(),
+            text(String.format("%.0f%% complete", progress * 100)).dim()
+        );
+    }
+
+    @Override
+    protected void onStart() {
+        // Schedule periodic updates
+        runner().scheduleRepeating(() -&gt; {
+            runner().runOnRenderThread(() -&gt; {
+                progress += 0.01;
+                if (progress &gt;= 1.0) quit();
+            });
+        }, Duration.ofMillis(50));
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration-3"><a class="anchor" href="#configuration-3"></a><a class="link" href="#configuration-3">Configuration</a></h3>
+<div class="paragraph">
+<p>Override <code>configure()</code> to customize behavior:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
+protected InlineTuiConfig configure(int height) {
+    return InlineTuiConfig.builder(height)
+        .tickRate(Duration.ofMillis(30))  // Faster for smooth animations
+        .clearOnClose(false)               // Keep output visible
+        .build();
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="printing-elements"><a class="anchor" href="#printing-elements"></a><a class="link" href="#printing-elements">Printing Elements</a></h3>
+<div class="paragraph">
+<p>Print styled content above the viewport:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Print a styled element
+println(row(
+    text("✓ ").green().fit(),
+    text("lodash").fit(),
+    text("@4.17.21").dim().fit()
+).flex(Flex.START));
+
+// Print plain text
+println("Step completed");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="handling-key-events"><a class="anchor" href="#handling-key-events"></a><a class="link" href="#handling-key-events">Handling Key Events</a></h3>
+<div class="paragraph">
+<p>Use focusable elements or global key handlers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
+protected Element render() {
+    return column(
+        text("Continue? [Y/n]").cyan(),
+        spacer()
+    )
+    .focusable()
+    .onKeyEvent(event -&gt; {
+        if (event.character() == 'y' || event.character() == 'Y') {
+            startNextPhase();
+            return EventResult.HANDLED;
+        } else if (event.character() == 'n') {
+            quit();
+            return EventResult.HANDLED;
+        }
+        return EventResult.UNHANDLED;
+    });
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="text-input-in-inline-mode"><a class="anchor" href="#text-input-in-inline-mode"></a><a class="link" href="#text-input-in-inline-mode">Text Input in Inline Mode</a></h3>
+<div class="paragraph">
+<p>Text inputs work with proper focus management:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private final TextInputState nameState = new TextInputState();
+
+@Override
+protected Element render() {
+    return column(
+        row(
+            text("Name: ").bold().fit(),
+            textInput(nameState)
+                .id("name-input")
+                .placeholder("Enter name...")
+                .constraint(Constraint.length(20))
+                .onSubmit(this::handleSubmit)
+        ).flex(Flex.START),
+        text("[Enter] Submit  [Tab] Next field").dim()
+    );
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-inlinetoolkitrunner-directly"><a class="anchor" href="#using-inlinetoolkitrunner-directly"></a><a class="link" href="#using-inlinetoolkitrunner-directly">Using InlineToolkitRunner Directly</a></h3>
+<div class="paragraph">
+<p>For more control, use <code>InlineToolkitRunner</code> with a render function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var runner = InlineToolkitRunner.create(3)) {
+    runner.run(() -&gt; column(
+        waveText("Processing...").cyan(),
+        gauge(progress),
+        text("Please wait").dim()
+    ));
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scopes-for-dynamic-regions"><a class="anchor" href="#scopes-for-dynamic-regions"></a><a class="link" href="#scopes-for-dynamic-regions">Scopes for Dynamic Regions</a></h3>
+<div class="paragraph">
+<p>Use <code>scope()</code> to create collapsible regions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private boolean downloading = true;
+
+@Override
+protected Element render() {
+    return column(
+        text("Package Installation").bold(),
+
+        // This section collapses when downloading becomes false
+        scope(downloading,
+            row(text("file1.zip: "), gauge(progress1)),
+            row(text("file2.zip: "), gauge(progress2))
+        ),
+
+        text(downloading ? "Downloading..." : "Complete!").dim()
+    );
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When <code>downloading</code> becomes <code>false</code>, the scope collapses to zero height and the layout adjusts automatically.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inline-vs-full-screen-toolkit"><a class="anchor" href="#inline-vs-full-screen-toolkit"></a><a class="link" href="#inline-vs-full-screen-toolkit">Inline vs Full-Screen Toolkit</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">InlineApp / InlineToolkitRunner</th>
+<th class="tableblock halign-left valign-top">App / ToolkitRunner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Screen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inline (preserves scroll)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternate screen (full takeover)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed (specified lines)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dynamic (full terminal)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Output</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>println()</code> scrolls above</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No scrolling output</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use case</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Progress, status, forms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Full interactive applications</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="choosing-a-level"><a class="anchor" href="#choosing-a-level"></a><a class="link" href="#choosing-a-level">Choosing a Level</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1204,7 +1542,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-22 10:36:41 UTC
+Last updated 2026-01-23 09:07:18 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

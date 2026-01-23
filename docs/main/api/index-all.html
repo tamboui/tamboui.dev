@@ -97,6 +97,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">String constants for common semantic actions.</div>
 </dd>
+<dt><a href="dev/tamboui/internal/record/RecordingConfig.html#active()" class="member-name-link">active()</a> - Static method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a></dt>
+<dd>
+<div class="block">Returns the active recording config, or null if not recording.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Fraction.html#add(dev.tamboui.layout.Fraction)" class="member-name-link">add(Fraction)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Fraction.html" title="class in dev.tamboui.layout">Fraction</a></dt>
 <dd>
 <div class="block">Returns the sum of this fraction and another.</div>
@@ -477,8 +481,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/tamboui/internal/record/AnsiTerminalCapture.html" class="type-name-link" title="class in dev.tamboui.internal.record">AnsiTerminalCapture</a> - Class in <a href="dev/tamboui/internal/record/package-summary.html">dev.tamboui.internal.record</a></dt>
 <dd>
-<div class="block">Captures System.out output by parsing ANSI escape sequences and maintaining
-a virtual terminal buffer.</div>
+<div class="block">Captures raw bytes written to System.out for recording inline demos.</div>
 </dd>
 <dt><a href="dev/tamboui/style/Color.html#ansiToRgb(dev.tamboui.style.AnsiColor)" class="member-name-link">ansiToRgb(AnsiColor)</a> - Static method in interface dev.tamboui.style.<a href="dev/tamboui/style/Color.html" title="interface in dev.tamboui.style">Color</a></dt>
 <dd>
@@ -969,13 +972,25 @@ a virtual terminal buffer.</div>
 <dd>
 <div class="block">Returns the bindings associated with this event.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#bindings()" class="member-name-link">bindings()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns the key bindings for semantic action matching.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#bindings()" class="member-name-link">bindings()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
 <div class="block">Returns the bindings used for semantic action matching.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#bindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">bindings(Bindings)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Sets the key bindings.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#bindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">bindings(Bindings)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
 <dd>
 <div class="block">Sets the bindings to use for action matching.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#bindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">bindings(Bindings)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Sets the key bindings for semantic action matching.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#bindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">bindings(Bindings)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
 <dd>
@@ -1531,6 +1546,10 @@ a virtual terminal buffer.</div>
 <dd>
 <div class="block">Builds the property definition.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Builds and returns a configured InlineToolkitRunner.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
 <dd>
 <div class="block">Builds and returns a configured ToolkitRunner.</div>
@@ -1538,6 +1557,10 @@ a virtual terminal buffer.</div>
 <dt><a href="dev/tamboui/tui/bindings/Bindings.Builder.html#build()" class="member-name-link">build()</a> - Method in interface dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/Bindings.Builder.html" title="interface in dev.tamboui.tui.bindings">Bindings.Builder</a></dt>
 <dd>
 <div class="block">Builds the bindings.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Builds the configuration.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
 <dd>
@@ -1710,6 +1733,14 @@ a virtual terminal buffer.</div>
 <dt><a href="dev/tamboui/widgets/wavetext/WaveText.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.widgets.wavetext.<a href="dev/tamboui/widgets/wavetext/WaveText.html" title="class in dev.tamboui.widgets.wavetext">WaveText</a></dt>
 <dd>
 <div class="block">Creates a new builder for WaveText.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#builder(int)" class="member-name-link">builder(int)</a> - Static method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Returns a builder for configuring an InlineToolkitRunner.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#builder(int)" class="member-name-link">builder(int)</a> - Static method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns a builder for creating custom configurations.</div>
 </dd>
 <dt><a href="dev/tamboui/style/PropertyDefinition.html#builder(java.lang.String,dev.tamboui.style.PropertyConverter)" class="member-name-link">builder(String, PropertyConverter)</a> - Static method in class dev.tamboui.style.<a href="dev/tamboui/style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a></dt>
 <dd>
@@ -2036,6 +2067,10 @@ a virtual terminal buffer.</div>
 <dd>
 <div class="block">Returns the list of children (for subclass access).</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#children(dev.tamboui.toolkit.element.Element...)" class="member-name-link">children(Element...)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>
+<div class="block">Adds child elements to this scope.</div>
+</dd>
 <dt><a href="dev/tamboui/css/selector/ChildSelector.html" class="type-name-link" title="class in dev.tamboui.css.selector">ChildSelector</a> - Class in <a href="dev/tamboui/css/selector/package-summary.html">dev.tamboui.css.selector</a></dt>
 <dd>
 <div class="block">A child combinator selector that matches direct children.</div>
@@ -2158,6 +2193,10 @@ a virtual terminal buffer.</div>
 <dd>
 <div class="block">Clears the cache for the current thread.</div>
 </dd>
+<dt><a href="dev/tamboui/terminal/Frame.html#clearCursor()" class="member-name-link">clearCursor()</a> - Method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a></dt>
+<dd>
+<div class="block">Clears the cursor position, hiding the cursor.</div>
+</dd>
 <dt><a href="dev/tamboui/tfx/tui/TfxIntegration.html#clearEffects()" class="member-name-link">clearEffects()</a> - Method in class dev.tamboui.tfx.tui.<a href="dev/tamboui/tfx/tui/TfxIntegration.html" title="class in dev.tamboui.tfx.tui">TfxIntegration</a></dt>
 <dd>
 <div class="block">Clears all effects.</div>
@@ -2172,7 +2211,19 @@ a virtual terminal buffer.</div>
 </dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#clearOnClose()" class="member-name-link">clearOnClose()</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
-<div class="block">Configures the display to clear the status area when closed.</div>
+<div class="block">Configures the display to clear the display area when closed.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#clearOnClose()" class="member-name-link">clearOnClose()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns whether the display should be cleared when closed.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#clearOnClose(boolean)" class="member-name-link">clearOnClose(boolean)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Configures whether to clear the display when closed.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#clearOnClose(boolean)" class="member-name-link">clearOnClose(boolean)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Configures whether to clear the display when closed.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/table/TableState.html#clearSelection()" class="member-name-link">clearSelection()</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/TableState.html" title="class in dev.tamboui.widgets.table">TableState</a></dt>
 <dd>
@@ -2228,7 +2279,11 @@ a virtual terminal buffer.</div>
 <dd>
 <div class="block">Closes the terminal and releases resources.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/TuiRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></dt>
 <dd>&nbsp;</dd>
@@ -2441,6 +2496,10 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Returns the TUI configuration for this application.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#configure(int)" class="member-name-link">configure(int)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Returns the TUI configuration for this application.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/bindings/Actions.html#CONFIRM" class="member-name-link">CONFIRM</a> - Static variable in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/Actions.html" title="class in dev.tamboui.tui.bindings">Actions</a></dt>
 <dd>
 <div class="block">Confirm (Enter only).</div>
@@ -2480,6 +2539,8 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/toolkit/element/StyledElement.html#constraint()" class="member-name-link">constraint()</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/DialogElement.html#constraint()" class="member-name-link">constraint()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#constraint()" class="member-name-link">constraint()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/LazyElement.html#constraint()" class="member-name-link">constraint()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/LazyElement.html" title="class in dev.tamboui.toolkit.elements">LazyElement</a></dt>
 <dd>&nbsp;</dd>
@@ -2787,6 +2848,14 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Creates an InlineDisplay with the specified height.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#create(int)" class="member-name-link">create(int)</a> - Static method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Creates an InlineToolkitRunner with the specified height.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#create(int)" class="member-name-link">create(int)</a> - Static method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Creates an InlineTuiRunner with the specified height and default configuration.</div>
+</dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#create(int,int)" class="member-name-link">create(int, int)</a> - Static method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
 <div class="block">Creates an InlineDisplay with the specified height and width.</div>
@@ -2801,6 +2870,14 @@ compatible with Java 8.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/SlidingWindowAlpha.html#create(dev.tamboui.tfx.Motion,dev.tamboui.layout.Rect,float,float)" class="member-name-link">create(Motion, Rect, float, float)</a> - Static method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/SlidingWindowAlpha.html" title="class in dev.tamboui.tfx">SlidingWindowAlpha</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#create(dev.tamboui.tui.InlineTuiConfig)" class="member-name-link">create(InlineTuiConfig)</a> - Static method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Creates an InlineToolkitRunner with the specified configuration.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#create(dev.tamboui.tui.InlineTuiConfig)" class="member-name-link">create(InlineTuiConfig)</a> - Static method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Creates an InlineTuiRunner with the specified configuration.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#create(dev.tamboui.tui.TuiConfig)" class="member-name-link">create(TuiConfig)</a> - Static method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
 <div class="block">Creates a ToolkitRunner with the specified configuration.</div>
@@ -2995,8 +3072,16 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Sets the cursor color programmatically.</div>
 </dd>
+<dt><a href="dev/tamboui/terminal/Frame.html#cursorPosition()" class="member-name-link">cursorPosition()</a> - Method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a></dt>
+<dd>
+<div class="block">Returns the cursor position if set.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/input/TextInputState.html#cursorPosition()" class="member-name-link">cursorPosition()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/TextInputElement.html#cursorRequiresFocus(boolean)" class="member-name-link">cursorRequiresFocus(boolean)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></dt>
+<dd>
+<div class="block">Sets whether the cursor requires focus to be displayed.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/input/TextAreaState.html#cursorRow()" class="member-name-link">cursorRow()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/TextAreaElement.html#cursorStyle(dev.tamboui.style.Style)" class="member-name-link">cursorStyle(Style)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></dt>
@@ -3158,11 +3243,19 @@ compatible with Java 8.</div>
 </dd>
 <dt><a href="dev/tamboui/css/model/Rule.html#declarations()" class="member-name-link">declarations()</a> - Method in class dev.tamboui.css.model.<a href="dev/tamboui/css/model/Rule.html" title="class in dev.tamboui.css.model">Rule</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#DEFAULT_POLL_TIMEOUT" class="member-name-link">DEFAULT_POLL_TIMEOUT</a> - Static variable in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Default poll timeout for reading events (40ms).</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#DEFAULT_POLL_TIMEOUT" class="member-name-link">DEFAULT_POLL_TIMEOUT</a> - Static variable in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#DEFAULT_RESIZE_GRACE_PERIOD" class="member-name-link">DEFAULT_RESIZE_GRACE_PERIOD</a> - Static variable in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
 <div class="block">Default grace period for resize events (250ms).</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#DEFAULT_TICK_RATE" class="member-name-link">DEFAULT_TICK_RATE</a> - Static variable in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Default tick rate for animations (40ms, ~25fps).</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#DEFAULT_TICK_TIMEOUT" class="member-name-link">DEFAULT_TICK_TIMEOUT</a> - Static variable in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>&nbsp;</dd>
@@ -3193,6 +3286,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/widgets/chart/Axis.html#defaults()" class="member-name-link">defaults()</a> - Static method in class dev.tamboui.widgets.chart.<a href="dev/tamboui/widgets/chart/Axis.html" title="class in dev.tamboui.widgets.chart">Axis</a></dt>
 <dd>
 <div class="block">Creates an axis with default settings.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#defaults(int)" class="member-name-link">defaults(int)</a> - Static method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Creates a default configuration for the given height.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/CalendarElement.html#defaultStyle(dev.tamboui.style.Style)" class="member-name-link">defaultStyle(Style)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></dt>
 <dd>
@@ -3770,6 +3867,10 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Draws a frame using the provided rendering function.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#draw(java.util.function.Consumer)" class="member-name-link">draw(Consumer)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Draws the UI using the given renderer.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiRunner.html#draw(java.util.function.Consumer)" class="member-name-link">draw(Consumer)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></dt>
 <dd>
 <div class="block">Draws the UI using the given renderer.</div>
@@ -3862,6 +3963,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/toolkit/elements/ErrorPlaceholder.html#elementId()" class="member-name-link">elementId()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ErrorPlaceholder.html" title="class in dev.tamboui.toolkit.elements">ErrorPlaceholder</a></dt>
 <dd>
 <div class="block">Returns the ID of the element that failed, if available.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#elementRegistry()" class="member-name-link">elementRegistry()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Returns the element registry.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#elementRegistry()" class="member-name-link">elementRegistry()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
@@ -4363,6 +4468,10 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Result of handling an event.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#eventRouter()" class="member-name-link">eventRouter()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Returns the event router.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#eventRouter()" class="member-name-link">eventRouter()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
 <div class="block">Returns the event router.</div>
@@ -4384,6 +4493,8 @@ compatible with Java 8.</div>
 <div class="block">Merges symbols only if an exact composite unicode character exists.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/logo/Logo.html#examples-heading" class="search-tag-link">Examples</a> - Section in class dev.tamboui.widgets.logo.Logo</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#example-usage-heading" class="search-tag-link">Example Usage</a> - Section in class dev.tamboui.toolkit.elements.InlineScopeElement</dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/error/RenderError.html#exceptionType()" class="member-name-link">exceptionType()</a> - Method in class dev.tamboui.tui.error.<a href="dev/tamboui/tui/error/RenderError.html" title="class in dev.tamboui.tui.error">RenderError</a></dt>
 <dd>
@@ -4819,6 +4930,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/toolkit/focus/FocusManager.html#focusedId()" class="member-name-link">focusedId()</a> - Method in class dev.tamboui.toolkit.focus.<a href="dev/tamboui/toolkit/focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a></dt>
 <dd>
 <div class="block">Returns the ID of the currently focused element.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#focusManager()" class="member-name-link">focusManager()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Returns the focus manager.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#focusManager()" class="member-name-link">focusManager()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
@@ -5258,6 +5373,10 @@ match.</div>
 <dd>
 <div class="block">Gets the current cursor position.</div>
 </dd>
+<dt><a href="dev/tamboui/internal/record/AnsiTerminalCapture.html#getHeight()" class="member-name-link">getHeight()</a> - Static method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/AnsiTerminalCapture.html" title="class in dev.tamboui.internal.record">AnsiTerminalCapture</a></dt>
+<dd>
+<div class="block">Returns the configured height, or 24 if not installed.</div>
+</dd>
 <dt><a href="dev/tamboui/backend/panama/unix/LibC.html#getLastErrno()" class="member-name-link">getLastErrno()</a> - Static method in class dev.tamboui.backend.panama.unix.<a href="dev/tamboui/backend/panama/unix/LibC.html" title="class in dev.tamboui.backend.panama.unix">LibC</a></dt>
 <dd>
 <div class="block">Returns the errno from the last failed ioctl call.</div>
@@ -5329,6 +5448,10 @@ match.</div>
 <dt><a href="dev/tamboui/picocli/TuiMixin.html#getTickRateMs()" class="member-name-link">getTickRateMs()</a> - Method in class dev.tamboui.picocli.<a href="dev/tamboui/picocli/TuiMixin.html" title="class in dev.tamboui.picocli">TuiMixin</a></dt>
 <dd>
 <div class="block">Returns the tick rate in milliseconds, or 0 if ticks are disabled.</div>
+</dd>
+<dt><a href="dev/tamboui/internal/record/AnsiTerminalCapture.html#getWidth()" class="member-name-link">getWidth()</a> - Static method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/AnsiTerminalCapture.html" title="class in dev.tamboui.internal.record">AnsiTerminalCapture</a></dt>
+<dd>
+<div class="block">Returns the configured width, or 80 if not installed.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/event/GlobalEventHandler.html" class="type-name-link" title="interface in dev.tamboui.toolkit.event">GlobalEventHandler</a> - Interface in <a href="dev/tamboui/toolkit/event/package-summary.html">dev.tamboui.toolkit.event</a></dt>
 <dd>
@@ -5438,6 +5561,10 @@ match.</div>
 <div class="block">Handles a render error.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/event/GlobalEventHandler.html#handle(dev.tamboui.tui.event.Event)" class="member-name-link">handle(Event)</a> - Method in interface dev.tamboui.toolkit.event.<a href="dev/tamboui/toolkit/event/GlobalEventHandler.html" title="interface in dev.tamboui.toolkit.event">GlobalEventHandler</a></dt>
+<dd>
+<div class="block">Handles an event.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineEventHandler.html#handle(dev.tamboui.tui.event.Event,dev.tamboui.tui.InlineTuiRunner)" class="member-name-link">handle(Event, InlineTuiRunner)</a> - Method in interface dev.tamboui.tui.<a href="dev/tamboui/tui/InlineEventHandler.html" title="interface in dev.tamboui.tui">InlineEventHandler</a></dt>
 <dd>
 <div class="block">Handles an event.</div>
 </dd>
@@ -5771,8 +5898,20 @@ match.</div>
 <dd>
 <div class="block">Returns the height (number of lines).</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Returns the height of the inline display in lines.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/event/ResizeEvent.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/ResizeEvent.html" title="class in dev.tamboui.tui.event">ResizeEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns the height of the inline display in lines.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Returns the viewport height.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/canvas/shapes/Rectangle.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.widgets.canvas.shapes.<a href="dev/tamboui/widgets/canvas/shapes/Rectangle.html" title="class in dev.tamboui.widgets.canvas.shapes">Rectangle</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/list/ListItem.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.widgets.list.<a href="dev/tamboui/widgets/list/ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a></dt>
@@ -5819,6 +5958,10 @@ match.</div>
 </dd>
 <dt><a href="dev/tamboui/style/Modifier.html#HIDDEN" class="member-name-link">HIDDEN</a> - Enum constant in enum class dev.tamboui.style.<a href="dev/tamboui/style/Modifier.html" title="enum class in dev.tamboui.style">Modifier</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#hide()" class="member-name-link">hide()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>
+<div class="block">Hides this scope (sets visibility to false).</div>
+</dd>
 <dt><a href="dev/tamboui/backend/jline3/JLineBackend.html#hideCursor()" class="member-name-link">hideCursor()</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackend.html" title="class in dev.tamboui.backend.jline3">JLineBackend</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/panama/PanamaBackend.html#hideCursor()" class="member-name-link">hideCursor()</a> - Method in class dev.tamboui.backend.panama.<a href="dev/tamboui/backend/panama/PanamaBackend.html" title="class in dev.tamboui.backend.panama">PanamaBackend</a></dt>
@@ -6192,9 +6335,55 @@ match.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/bindings/processor/OnActionProcessor.html#init(javax.annotation.processing.ProcessingEnvironment)" class="member-name-link">init(ProcessingEnvironment)</a> - Method in class dev.tamboui.tui.bindings.processor.<a href="dev/tamboui/tui/bindings/processor/OnActionProcessor.html" title="class in dev.tamboui.tui.bindings.processor">OnActionProcessor</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/terminal/BackendFactory.html#initRecording()" class="member-name-link">initRecording()</a> - Static method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/BackendFactory.html" title="class in dev.tamboui.terminal">BackendFactory</a></dt>
+<dd>
+<div class="block">Initializes recording if enabled via system properties.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html" class="type-name-link" title="class in dev.tamboui.toolkit.app">InlineApp</a> - Class in <a href="dev/tamboui/toolkit/app/package-summary.html">dev.tamboui.toolkit.app</a></dt>
+<dd>
+<div class="block">Base class for inline DSL-based TUI applications.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#%3Cinit%3E()" class="member-name-link">InlineApp()</a> - Constructor for class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html" class="type-name-link" title="class in dev.tamboui.inline">InlineDisplay</a> - Class in <a href="dev/tamboui/inline/package-summary.html">dev.tamboui.inline</a></dt>
 <dd>
 <div class="block">Manages a fixed-height inline display area for Gradle/NPM-style progress UX.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineEventHandler.html" class="type-name-link" title="interface in dev.tamboui.tui">InlineEventHandler</a> - Interface in <a href="dev/tamboui/tui/package-summary.html">dev.tamboui.tui</a></dt>
+<dd>
+<div class="block">Functional interface for handling inline TUI events.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">A scope element that can show/hide its content dynamically.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#%3Cinit%3E()" class="member-name-link">InlineScopeElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>
+<div class="block">Creates an empty scope element.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">InlineScopeElement(Element...)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>
+<div class="block">Creates a scope element with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" class="type-name-link" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a> - Class in <a href="dev/tamboui/toolkit/app/package-summary.html">dev.tamboui.toolkit.app</a></dt>
+<dd>
+<div class="block">Element-based inline runner - no manual rendering.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" class="type-name-link" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a> - Class in <a href="dev/tamboui/toolkit/app/package-summary.html">dev.tamboui.toolkit.app</a></dt>
+<dd>
+<div class="block">Builder for <a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app"><code>InlineToolkitRunner</code></a> instances.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html" class="type-name-link" title="class in dev.tamboui.tui">InlineTuiConfig</a> - Class in <a href="dev/tamboui/tui/package-summary.html">dev.tamboui.tui</a></dt>
+<dd>
+<div class="block">Configuration options for <a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui"><code>InlineTuiRunner</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" class="type-name-link" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a> - Class in <a href="dev/tamboui/tui/package-summary.html">dev.tamboui.tui</a></dt>
+<dd>
+<div class="block">Builder for <a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui"><code>InlineTuiConfig</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html" class="type-name-link" title="class in dev.tamboui.tui">InlineTuiRunner</a> - Class in <a href="dev/tamboui/tui/package-summary.html">dev.tamboui.tui</a></dt>
+<dd>
+<div class="block">Event loop for inline displays.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/Rect.html#inner(dev.tamboui.layout.Margin)" class="member-name-link">inner(Margin)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
@@ -6502,6 +6691,10 @@ match.</div>
 <dd>
 <div class="block">Returns true if this store has no styled dates.</div>
 </dd>
+<dt><a href="dev/tamboui/internal/record/RecordingConfig.html#isEnabled()" class="member-name-link">isEnabled()</a> - Static method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a></dt>
+<dd>
+<div class="block">Checks if recording is enabled via system properties.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/event/KeyEvent.html#isEnd()" class="member-name-link">isEnd()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
 <dd>
 <div class="block">Returns true if this is an "end" navigation event according to the bindings.</div>
@@ -6748,7 +6941,15 @@ match.</div>
 <dd>
 <div class="block">Returns whether any effects are currently running.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#isRunning()" class="member-name-link">isRunning()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Returns whether the runner is still running.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#isRunning()" class="member-name-link">isRunning()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
+<dd>
+<div class="block">Returns whether the runner is still running.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#isRunning()" class="member-name-link">isRunning()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
 <dd>
 <div class="block">Returns whether the runner is still running.</div>
 </dd>
@@ -6793,6 +6994,10 @@ match.</div>
 <dt><a href="dev/tamboui/widgets/scrollbar/ScrollbarOrientation.html#isVertical()" class="member-name-link">isVertical()</a> - Method in enum class dev.tamboui.widgets.scrollbar.<a href="dev/tamboui/widgets/scrollbar/ScrollbarOrientation.html" title="enum class in dev.tamboui.widgets.scrollbar">ScrollbarOrientation</a></dt>
 <dd>
 <div class="block">Returns true if this orientation is vertical.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#isVisible()" class="member-name-link">isVisible()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>
+<div class="block">Returns whether this scope is currently visible.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/overlay/DebugOverlay.html#isVisible()" class="member-name-link">isVisible()</a> - Method in class dev.tamboui.tui.overlay.<a href="dev/tamboui/tui/overlay/DebugOverlay.html" title="class in dev.tamboui.tui.overlay">DebugOverlay</a></dt>
 <dd>
@@ -6936,6 +7141,8 @@ match.</div>
 <dd>
 <div class="block">Handler for key events on an element.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#key-features-heading" class="search-tag-link">Key Features</a> - Section in class dev.tamboui.toolkit.elements.InlineScopeElement</dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/element/StyledElement.html#keyHandler" class="member-name-link">keyHandler</a> - Variable in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/event/KeyModifiers.html" class="type-name-link" title="class in dev.tamboui.tui.event">KeyModifiers</a> - Class in <a href="dev/tamboui/tui/event/package-summary.html">dev.tamboui.tui.event</a></dt>
@@ -7410,7 +7617,7 @@ based on constraints.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/internal/record/RecordingConfig.html#load()" class="member-name-link">load()</a> - Static method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a></dt>
 <dd>
-<div class="block">Loads recording configuration from system properties.</div>
+<div class="block">Loads recording configuration from system properties and installs capture.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/bindings/BindingSets.html#load(java.io.InputStream)" class="member-name-link">load(InputStream)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/BindingSets.html" title="class in dev.tamboui.tui.bindings">BindingSets</a></dt>
 <dd>
@@ -8343,6 +8550,14 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Unhides text.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#noTick()" class="member-name-link">noTick()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Disables tick events.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#noTick()" class="member-name-link">noTick()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Disables tick events.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#noTick()" class="member-name-link">noTick()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
 <dd>
 <div class="block">Disables automatic tick events.</div>
@@ -8756,9 +8971,17 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Registers a handler to be called when the terminal is resized.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#onStart()" class="member-name-link">onStart()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Called when the application starts, before the first render.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitApp.html#onStart()" class="member-name-link">onStart()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitApp.html" title="class in dev.tamboui.toolkit.app">ToolkitApp</a></dt>
 <dd>
 <div class="block">Called when the application starts, before the first render.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#onStop()" class="member-name-link">onStop()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Called when the application is about to stop.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitApp.html#onStop()" class="member-name-link">onStop()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitApp.html" title="class in dev.tamboui.toolkit.app">ToolkitApp</a></dt>
 <dd>
@@ -8767,6 +8990,10 @@ for dynamic pseudo-class resolution.</div>
 <dt><a href="dev/tamboui/css/engine/StyleEngine.StyleChangeListener.html#onStyleChange()" class="member-name-link">onStyleChange()</a> - Method in interface dev.tamboui.css.engine.<a href="dev/tamboui/css/engine/StyleEngine.StyleChangeListener.html" title="interface in dev.tamboui.css.engine">StyleEngine.StyleChangeListener</a></dt>
 <dd>
 <div class="block">Called when the active stylesheet changes.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/TextInputElement.html#onSubmit(java.lang.Runnable)" class="member-name-link">onSubmit(Runnable)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></dt>
+<dd>
+<div class="block">Sets a callback to be invoked when Enter is pressed.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/TextAreaElement.html#onTextChange(dev.tamboui.toolkit.elements.TextAreaElement.TextChangeListener)" class="member-name-link">onTextChange(TextAreaElement.TextChangeListener)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></dt>
 <dd>
@@ -9391,6 +9618,10 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Polls for the next event without blocking.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#pollEvent(java.time.Duration)" class="member-name-link">pollEvent(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Polls for the next event with the specified timeout.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiRunner.html#pollEvent(java.time.Duration)" class="member-name-link">pollEvent(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></dt>
 <dd>
 <div class="block">Polls for the next event with the specified timeout.</div>
@@ -9407,9 +9638,21 @@ for dynamic pseudo-class resolution.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/panama/unix/LibC.html#POLLPRI" class="member-name-link">POLLPRI</a> - Static variable in class dev.tamboui.backend.panama.unix.<a href="dev/tamboui/backend/panama/unix/LibC.html" title="class in dev.tamboui.backend.panama.unix">LibC</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#pollTimeout()" class="member-name-link">pollTimeout()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns the poll timeout for reading events.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#pollTimeout()" class="member-name-link">pollTimeout()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
 <div class="block">Returns the poll timeout for reading events.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#pollTimeout(java.time.Duration)" class="member-name-link">pollTimeout(Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Sets the poll timeout.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#pollTimeout(java.time.Duration)" class="member-name-link">pollTimeout(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Sets the timeout for polling events.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#pollTimeout(java.time.Duration)" class="member-name-link">pollTimeout(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
 <dd>
@@ -9507,6 +9750,8 @@ for dynamic pseudo-class resolution.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/Column.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Column.html" title="class in dev.tamboui.toolkit.elements">Column</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/MarkupTextAreaElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Panel.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></dt>
@@ -9569,11 +9814,39 @@ for dynamic pseudo-class resolution.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#println(dev.tamboui.text.Text)" class="member-name-link">println(Text)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
-<div class="block">Prints styled text above the status area.</div>
+<div class="block">Prints styled text above the display area.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#println(dev.tamboui.text.Text)" class="member-name-link">println(Text)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Prints styled text above the viewport.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#println(dev.tamboui.text.Text)" class="member-name-link">println(Text)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Prints styled text above the viewport.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#println(dev.tamboui.toolkit.element.Element)" class="member-name-link">println(Element)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Prints an element above the viewport as a single line.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#println(dev.tamboui.toolkit.element.Element)" class="member-name-link">println(Element)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Prints an element above the viewport as a single line.</div>
 </dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#println(java.lang.String)" class="member-name-link">println(String)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
-<div class="block">Prints a line of text above the status area.</div>
+<div class="block">Prints a line of text above the display area.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#println(java.lang.String)" class="member-name-link">println(String)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Prints a plain text message above the viewport.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#println(java.lang.String)" class="member-name-link">println(String)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Prints a plain text message above the viewport.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#println(java.lang.String)" class="member-name-link">println(String)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Prints a plain text message above the viewport.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/PostRenderProcessor.html#process(dev.tamboui.terminal.Frame)" class="member-name-link">process(Frame)</a> - Method in interface dev.tamboui.tui.<a href="dev/tamboui/tui/PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a></dt>
 <dd>
@@ -9783,6 +10056,14 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Quintic easing - out</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#quit()" class="member-name-link">quit()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Signals the application to quit.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#quit()" class="member-name-link">quit()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Signals the runner to stop.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitApp.html#quit()" class="member-name-link">quit()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitApp.html" title="class in dev.tamboui.toolkit.app">ToolkitApp</a></dt>
 <dd>
 <div class="block">Signals the application to quit.</div>
@@ -9792,6 +10073,10 @@ inheritance behavior, and optional default value.</div>
 <div class="block">Signals the runner to stop.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/error/ErrorContext.html#quit()" class="member-name-link">quit()</a> - Method in interface dev.tamboui.tui.error.<a href="dev/tamboui/tui/error/ErrorContext.html" title="interface in dev.tamboui.tui.error">ErrorContext</a></dt>
+<dd>
+<div class="block">Signals the runner to stop.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#quit()" class="member-name-link">quit()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
 <dd>
 <div class="block">Signals the runner to stop.</div>
 </dd>
@@ -10100,6 +10385,10 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Returns a new style with the given modifier removed (subtracted).</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#render()" class="member-name-link">render()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Renders the application UI.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitApp.html#render()" class="member-name-link">render()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitApp.html" title="class in dev.tamboui.toolkit.app">ToolkitApp</a></dt>
 <dd>
 <div class="block">Renders the application UI.</div>
@@ -10202,7 +10491,11 @@ inheritance behavior, and optional default value.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#render(java.util.function.BiConsumer)" class="member-name-link">render(BiConsumer)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
-<div class="block">Renders widgets to the status area.</div>
+<div class="block">Renders widgets to the display area.</div>
+</dd>
+<dt><a href="dev/tamboui/inline/InlineDisplay.html#render(java.util.function.BiConsumer,int,int)" class="member-name-link">render(BiConsumer, int, int)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
+<dd>
+<div class="block">Renders widgets to the display area with explicit cursor positioning.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/DefaultRenderContext.html#renderChild(dev.tamboui.toolkit.element.Element,dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect)" class="member-name-link">renderChild(Element, Frame, Rect)</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/DefaultRenderContext.html" title="class in dev.tamboui.toolkit.element">DefaultRenderContext</a></dt>
 <dd>&nbsp;</dd>
@@ -10229,6 +10522,8 @@ inheritance behavior, and optional default value.</div>
 <dt><a href="dev/tamboui/toolkit/elements/DialogElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/GaugeElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/LineGaugeElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></dt>
 <dd>&nbsp;</dd>
@@ -10790,6 +11085,10 @@ inheritance behavior, and optional default value.</div>
 </dd>
 <dt><a href="dev/tamboui/css/model/Stylesheet.html#rules()" class="member-name-link">rules()</a> - Method in class dev.tamboui.css.model.<a href="dev/tamboui/css/model/Stylesheet.html" title="class in dev.tamboui.css.model">Stylesheet</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#run()" class="member-name-link">run()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Runs the application.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitApp.html#run()" class="member-name-link">run()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitApp.html" title="class in dev.tamboui.toolkit.app">ToolkitApp</a></dt>
 <dd>
 <div class="block">Runs the application.</div>
@@ -10808,13 +11107,29 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Runs the main event loop with the given handler and renderer.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#run(dev.tamboui.tui.InlineEventHandler,dev.tamboui.tui.Renderer)" class="member-name-link">run(InlineEventHandler, Renderer)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Runs the main event loop with the given handler and renderer.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#run(java.util.function.Supplier)" class="member-name-link">run(Supplier)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Runs the application with the given element supplier.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#run(java.util.function.Supplier)" class="member-name-link">run(Supplier)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
 <div class="block">Runs the application with the given element supplier.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#runLater(java.lang.Runnable)" class="member-name-link">runLater(Runnable)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Queues an action to be executed on the render thread.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiRunner.html#runLater(java.lang.Runnable)" class="member-name-link">runLater(Runnable)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></dt>
 <dd>
 <div class="block">Queues an action to be executed on the render thread.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineApp.html#runner()" class="member-name-link">runner()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineApp.html" title="class in dev.tamboui.toolkit.app">InlineApp</a></dt>
+<dd>
+<div class="block">Returns the current runner, or null if not running.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitApp.html#runner()" class="member-name-link">runner()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitApp.html" title="class in dev.tamboui.toolkit.app">ToolkitApp</a></dt>
 <dd>
@@ -10836,7 +11151,15 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Returns the number of running effects (global + element-targeted + styled-area-targeted).</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#runOnRenderThread(java.lang.Runnable)" class="member-name-link">runOnRenderThread(Runnable)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Executes an action on the render thread.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#runOnRenderThread(java.lang.Runnable)" class="member-name-link">runOnRenderThread(Runnable)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
+<dd>
+<div class="block">Executes an action on the render thread.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#runOnRenderThread(java.lang.Runnable)" class="member-name-link">runOnRenderThread(Runnable)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
 <dd>
 <div class="block">Executes an action on the render thread.</div>
 </dd>
@@ -10884,9 +11207,17 @@ and continuing to try other providers.</div>
 <dd>
 <div class="block">Renders individual points without connecting lines.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#schedule(java.lang.Runnable,java.time.Duration)" class="member-name-link">schedule(Runnable, Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Schedules an action to run after a delay.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#schedule(java.lang.Runnable,java.time.Duration)" class="member-name-link">schedule(Runnable, Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
 <div class="block">Schedules an action to run after a delay.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#scheduleRepeating(java.lang.Runnable,java.time.Duration)" class="member-name-link">scheduleRepeating(Runnable, Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Schedules an action to run repeatedly at a fixed interval.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#scheduleRepeating(java.lang.Runnable,java.time.Duration)" class="member-name-link">scheduleRepeating(Runnable, Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
@@ -10895,6 +11226,14 @@ and continuing to try other providers.</div>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#scheduleWithFixedDelay(java.lang.Runnable,java.time.Duration)" class="member-name-link">scheduleWithFixedDelay(Runnable, Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
 <div class="block">Schedules an action to run repeatedly with a fixed delay between runs.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#scope(boolean,dev.tamboui.toolkit.element.Element...)" class="member-name-link">scope(boolean, Element...)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates an inline scope element with the given visibility and children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#scope(dev.tamboui.toolkit.element.Element...)" class="member-name-link">scope(Element...)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates an inline scope element with the given children.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/error/ErrorDisplay.Builder.html#scroll(int)" class="member-name-link">scroll(int)</a> - Method in class dev.tamboui.widgets.error.<a href="dev/tamboui/widgets/error/ErrorDisplay.Builder.html" title="class in dev.tamboui.widgets.error">ErrorDisplay.Builder</a></dt>
 <dd>
@@ -11424,11 +11763,11 @@ and continuing to try other providers.</div>
 </dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#setLine(int,dev.tamboui.text.Text)" class="member-name-link">setLine(int, Text)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
-<div class="block">Sets a single line of styled text in the status area.</div>
+<div class="block">Sets a single line of styled text in the display area.</div>
 </dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#setLine(int,java.lang.String)" class="member-name-link">setLine(int, String)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
-<div class="block">Sets a single line of text in the status area.</div>
+<div class="block">Sets a single line of text in the display area.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/Shader.html#setLoopMode(dev.tamboui.tfx.LoopMode)" class="member-name-link">setLoopMode(LoopMode)</a> - Method in interface dev.tamboui.tfx.<a href="dev/tamboui/tfx/Shader.html" title="interface in dev.tamboui.tfx">Shader</a></dt>
 <dd>
@@ -11537,6 +11876,10 @@ and continuing to try other providers.</div>
 <dt><a href="dev/tamboui/tui/bindings/MouseTrigger.html#shiftClick()" class="member-name-link">shiftClick()</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/MouseTrigger.html" title="class in dev.tamboui.tui.bindings">MouseTrigger</a></dt>
 <dd>
 <div class="block">Creates a trigger for Shift+left click.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#show()" class="member-name-link">show()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>
+<div class="block">Shows this scope (sets visibility to true).</div>
 </dd>
 <dt><a href="dev/tamboui/backend/jline3/JLineBackend.html#showCursor()" class="member-name-link">showCursor()</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackend.html" title="class in dev.tamboui.backend.jline3">JLineBackend</a></dt>
 <dd>&nbsp;</dd>
@@ -12327,6 +12670,14 @@ rectangular areas using block characters.</div>
 <dd>
 <div class="block">Returns the style engine, if configured.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine(StyleEngine)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Sets the style engine for CSS styling.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine(StyleEngine)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Sets the style engine for CSS styling.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine(StyleEngine)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
 <dd>
 <div class="block">Sets the style engine for CSS styling.</div>
@@ -12966,9 +13317,21 @@ rectangular areas using block characters.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/TickEvent.html#%3Cinit%3E(long,java.time.Duration)" class="member-name-link">TickEvent(long, Duration)</a> - Constructor for class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/TickEvent.html" title="class in dev.tamboui.tui.event">TickEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#tickRate()" class="member-name-link">tickRate()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns the tick interval for animations.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#tickRate()" class="member-name-link">tickRate()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
 <div class="block">Returns the tick interval, or null if ticks are disabled.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#tickRate(java.time.Duration)" class="member-name-link">tickRate(Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Sets the tick interval for animations.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#tickRate(java.time.Duration)" class="member-name-link">tickRate(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Sets the tick interval for animations.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#tickRate(java.time.Duration)" class="member-name-link">tickRate(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
 <dd>
@@ -12977,6 +13340,10 @@ rectangular areas using block characters.</div>
 <dt><a href="dev/tamboui/tui/TuiRunner.Builder.html#tickRate(java.time.Duration)" class="member-name-link">tickRate(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.Builder.html" title="class in dev.tamboui.tui">TuiRunner.Builder</a></dt>
 <dd>
 <div class="block">Sets the interval between tick events.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#ticksEnabled()" class="member-name-link">ticksEnabled()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns whether tick events are enabled.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#ticksEnabled()" class="member-name-link">ticksEnabled()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
@@ -13647,6 +14014,8 @@ from each line.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/event/TickEvent.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/TickEvent.html" title="class in dev.tamboui.tui.event">TickEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/barchart/BarChart.BarSet.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.widgets.barchart.<a href="dev/tamboui/widgets/barchart/BarChart.BarSet.html" title="class in dev.tamboui.widgets.barchart">BarChart.BarSet</a></dt>
@@ -13758,6 +14127,10 @@ from each line.</div>
 <dt><a href="dev/tamboui/picocli/TuiCommand.html#tuiOptions()" class="member-name-link">tuiOptions()</a> - Method in class dev.tamboui.picocli.<a href="dev/tamboui/picocli/TuiCommand.html" title="class in dev.tamboui.picocli">TuiCommand</a></dt>
 <dd>
 <div class="block">Returns the TUI options mixin.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#tuiRunner()" class="member-name-link">tuiRunner()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Returns the underlying InlineTuiRunner.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#tuiRunner()" class="member-name-link">tuiRunner()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
@@ -14492,6 +14865,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">Vim-style binding set with hjkl navigation.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#visible(boolean)" class="member-name-link">visible(boolean)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
+<dd>
+<div class="block">Sets the visibility of this scope.</div>
+</dd>
 <dt><a href="dev/tamboui/backend/panama/unix/LibC.html#VMIN" class="member-name-link">VMIN</a> - Static variable in class dev.tamboui.backend.panama.unix.<a href="dev/tamboui/backend/panama/unix/LibC.html" title="class in dev.tamboui.backend.panama.unix">LibC</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/panama/unix/PlatformConstants.html#VMIN" class="member-name-link">VMIN</a> - Static variable in class dev.tamboui.backend.panama.unix.<a href="dev/tamboui/backend/panama/unix/PlatformConstants.html" title="class in dev.tamboui.backend.panama.unix">PlatformConstants</a></dt>
@@ -14641,6 +15018,10 @@ the order they are declared.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/ResizeEvent.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/ResizeEvent.html" title="class in dev.tamboui.tui.event">ResizeEvent</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Returns the viewport width.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/canvas/shapes/Rectangle.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.widgets.canvas.shapes.<a href="dev/tamboui/widgets/canvas/shapes/Rectangle.html" title="class in dev.tamboui.widgets.canvas.shapes">Rectangle</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/table/Cell.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Cell.html" title="class in dev.tamboui.widgets.table">Cell</a></dt>

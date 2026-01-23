@@ -79,10 +79,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#placeholderColor(dev.tamboui.style.Color)" tabindex="0">placeholderColor(Color)</a></li>
 <li><a href="#cursorStyle(dev.tamboui.style.Style)" tabindex="0">cursorStyle(Style)</a></li>
 <li><a href="#showCursor(boolean)" tabindex="0">showCursor(boolean)</a></li>
+<li><a href="#cursorRequiresFocus(boolean)" tabindex="0">cursorRequiresFocus(boolean)</a></li>
 <li><a href="#title(java.lang.String)" tabindex="0">title(String)</a></li>
 <li><a href="#rounded()" tabindex="0">rounded()</a></li>
 <li><a href="#borderColor(dev.tamboui.style.Color)" tabindex="0">borderColor(Color)</a></li>
 <li><a href="#styleAttributes()" tabindex="0">styleAttributes()</a></li>
+<li><a href="#onSubmit(java.lang.Runnable)" tabindex="0">onSubmit(Runnable)</a></li>
 <li><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" tabindex="0">handleKeyEvent(KeyEvent, boolean)</a></li>
 <li><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">renderContent(Frame, Rect, RenderContext)</a></li>
 </ol>
@@ -178,20 +180,30 @@ take precedence over CSS styles.</div>
 <div class="block">Sets the border color.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cursorStyle(dev.tamboui.style.Style)" class="member-name-link">cursorStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cursorRequiresFocus(boolean)" class="member-name-link">cursorRequiresFocus</a><wbr>(boolean&nbsp;requiresFocus)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets whether the cursor requires focus to be displayed.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cursorStyle(dev.tamboui.style.Style)" class="member-name-link">cursorStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the cursor style.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent</a><wbr>(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent</a><wbr>(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
  boolean&nbsp;focused)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Handles a key event for text input.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusable()" class="member-name-link">isFocusable</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusable()" class="member-name-link">isFocusable</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">TextInputElement is always focusable to receive keyboard input.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onSubmit(java.lang.Runnable)" class="member-name-link">onSubmit</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;onSubmit)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets a callback to be invoked when Enter is pressed.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#placeholder(java.lang.String)" class="member-name-link">placeholder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;placeholder)</code></div>
@@ -376,6 +388,26 @@ take precedence over CSS styles.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="cursorRequiresFocus(boolean)">
+<h3>cursorRequiresFocus</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></span>&nbsp;<span class="element-name">cursorRequiresFocus</span><wbr><span class="parameters">(boolean&nbsp;requiresFocus)</span></div>
+<div class="block">Sets whether the cursor requires focus to be displayed.
+<p>
+When <code>true</code> (default), the cursor is only shown when this element is focused.
+When <code>false</code>, the cursor is shown whenever <a href="#showCursor(boolean)"><code>showCursor(boolean)</code></a> is true,
+regardless of focus state. This is useful when the text input is inside a focusable
+container that handles key events manually.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>requiresFocus</code> - true to require focus for cursor display</dd>
+<dt>Returns:</dt>
+<dd>this element for chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="title(java.lang.String)">
 <h3>title</h3>
 <div class="horizontal-scroll">
@@ -432,6 +464,23 @@ Common attributes include:
 </section>
 </li>
 <li>
+<section class="detail" id="onSubmit(java.lang.Runnable)">
+<h3>onSubmit</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></span>&nbsp;<span class="element-name">onSubmit</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;onSubmit)</span></div>
+<div class="block">Sets a callback to be invoked when Enter is pressed.
+<p>
+Use this for form submission or to move to the next field.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>onSubmit</code> - the callback to invoke on Enter</dd>
+<dt>Returns:</dt>
+<dd>this element for chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">
 <h3>handleKeyEvent</h3>
 <div class="horizontal-scroll">
@@ -440,6 +489,7 @@ Common attributes include:
 <div class="block">Handles a key event for text input.
 <p>
 Handles: character input, backspace, delete, left/right arrows, home/end.
+Enter triggers the onSubmit callback if set.
 Only processes events when focused.</div>
 <dl class="notes">
 <dt>Specified by:</dt>

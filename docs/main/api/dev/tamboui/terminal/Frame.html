@@ -68,6 +68,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#renderStatefulWidget(dev.tamboui.widget.StatefulWidget,dev.tamboui.layout.Rect,S)" tabindex="0">renderStatefulWidget(StatefulWidget, Rect, S)</a></li>
 <li><a href="#setCursorPosition(dev.tamboui.layout.Position)" tabindex="0">setCursorPosition(Position)</a></li>
 <li><a href="#setCursorPosition(int,int)" tabindex="0">setCursorPosition(int, int)</a></li>
+<li><a href="#cursorPosition()" tabindex="0">cursorPosition()</a></li>
+<li><a href="#clearCursor()" tabindex="0">clearCursor()</a></li>
 <li><a href="#setStyledAreaRegistry(dev.tamboui.style.StyledAreaRegistry)" tabindex="0">setStyledAreaRegistry(StyledAreaRegistry)</a></li>
 <li><a href="#pushContextKey(java.lang.String)" tabindex="0">pushContextKey(String)</a></li>
 <li><a href="#popContextKey()" tabindex="0">popContextKey()</a></li>
@@ -116,10 +118,20 @@ Widgets are rendered to the frame's buffer.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the underlying buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentContextKey()" class="member-name-link">currentContextKey</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearCursor()" class="member-name-link">clearCursor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Clears the cursor position, hiding the cursor.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#currentContextKey()" class="member-name-link">currentContextKey</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the current context key (top of the stack).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cursorPosition()" class="member-name-link">cursorPosition</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the cursor position if set.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Frame.html" title="class in dev.tamboui.terminal">Frame</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#forTesting(dev.tamboui.buffer.Buffer)" class="member-name-link">forTesting</a><wbr>(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer)</code></div>
@@ -323,6 +335,28 @@ after the frame is drawn.</div>
 <dd><code>x</code> - the x coordinate</dd>
 <dd><code>y</code> - the y coordinate</dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="cursorPosition()">
+<h3>cursorPosition</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&gt;</span>&nbsp;<span class="element-name">cursorPosition</span>()</div>
+<div class="block">Returns the cursor position if set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the cursor position, or empty if not set</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="clearCursor()">
+<h3>clearCursor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearCursor</span>()</div>
+<div class="block">Clears the cursor position, hiding the cursor.</div>
 </div>
 </section>
 </li>

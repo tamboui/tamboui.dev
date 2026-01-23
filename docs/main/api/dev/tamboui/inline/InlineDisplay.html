@@ -64,6 +64,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#withBackend(int,int,dev.tamboui.terminal.Backend)" tabindex="0">withBackend(int, int, Backend)</a></li>
 <li><a href="#clearOnClose()" tabindex="0">clearOnClose()</a></li>
 <li><a href="#render(java.util.function.BiConsumer)" tabindex="0">render(BiConsumer)</a></li>
+<li><a href="#render(java.util.function.BiConsumer,int,int)" tabindex="0">render(BiConsumer, int, int)</a></li>
 <li><a href="#setLine(int,java.lang.String)" tabindex="0">setLine(int, String)</a></li>
 <li><a href="#setLine(int,dev.tamboui.text.Text)" tabindex="0">setLine(int, Text)</a></li>
 <li><a href="#println(java.lang.String)" tabindex="0">println(String)</a></li>
@@ -98,7 +99,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <p>
 InlineDisplay reserves a number of lines at the current cursor position and
 allows rendering widgets to that area. Content can be printed above the display
-area using <a href="#println(java.lang.String)"><code>println(String)</code></a>, which scrolls output while the status area
+area using <a href="#println(java.lang.String)"><code>println(String)</code></a>, which scrolls output while the display area
 stays in place.
 
 <p>Unlike full TUI runners, InlineDisplay does NOT:
@@ -145,7 +146,7 @@ stays in place.
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearOnClose()" class="member-name-link">clearOnClose</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Configures the display to clear the status area when closed.</div>
+<div class="block">Configures the display to clear the display area when closed.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
@@ -169,12 +170,12 @@ stays in place.
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#println(dev.tamboui.text.Text)" class="member-name-link">println</a><wbr>(<a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Prints styled text above the status area.</div>
+<div class="block">Prints styled text above the display area.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#println(java.lang.String)" class="member-name-link">println</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Prints a line of text above the status area.</div>
+<div class="block">Prints a line of text above the display area.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#release()" class="member-name-link">release</a>()</code></div>
@@ -184,30 +185,37 @@ stays in place.
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(java.util.function.BiConsumer)" class="member-name-link">render</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>,<wbr><a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;&nbsp;renderer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Renders widgets to the status area.</div>
+<div class="block">Renders widgets to the display area.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLine(int,dev.tamboui.text.Text)" class="member-name-link">setLine</a><wbr>(int&nbsp;line,
- <a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(java.util.function.BiConsumer,int,int)" class="member-name-link">render</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>,<wbr><a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;&nbsp;renderer,
+ int&nbsp;cursorX,
+ int&nbsp;cursorY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets a single line of styled text in the status area.</div>
+<div class="block">Renders widgets to the display area with explicit cursor positioning.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLine(int,java.lang.String)" class="member-name-link">setLine</a><wbr>(int&nbsp;line,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLine(int,dev.tamboui.text.Text)" class="member-name-link">setLine</a><wbr>(int&nbsp;line,
+ <a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets a single line of text in the status area.</div>
+<div class="block">Sets a single line of styled text in the display area.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLine(int,java.lang.String)" class="member-name-link">setLine</a><wbr>(int&nbsp;line,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets a single line of text in the display area.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the width of this display in characters.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withBackend(int,int,dev.tamboui.terminal.Backend)" class="member-name-link">withBackend</a><wbr>(int&nbsp;height,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withBackend(int,int,dev.tamboui.terminal.Backend)" class="member-name-link">withBackend</a><wbr>(int&nbsp;height,
  int&nbsp;width,
  <a href="../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a>&nbsp;backend)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an InlineDisplay using an existing backend.</div>
 </div>
 </div>
@@ -294,8 +302,8 @@ of the backend; callers should avoid invoking <a href="#close()"><code>close()</
 <h3>clearOnClose</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></span>&nbsp;<span class="element-name">clearOnClose</span>()</div>
-<div class="block">Configures the display to clear the status area when closed.
-By default, the status area content remains visible after close.</div>
+<div class="block">Configures the display to clear the display area when closed.
+By default, the display area content remains visible after close.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>this display for chaining</dd>
@@ -308,11 +316,29 @@ By default, the status area content remains visible after close.</div>
 <h3>render</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>,<wbr><a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;&nbsp;renderer)</span></div>
-<div class="block">Renders widgets to the status area.
-The provided consumer receives the display area and buffer to render into.</div>
+<div class="block">Renders widgets to the display area.
+The provided consumer receives the area and buffer to render into.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>renderer</code> - the rendering function that populates the buffer</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="render(java.util.function.BiConsumer,int,int)">
+<h3>render</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">render</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>,<wbr><a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;&nbsp;renderer,
+ int&nbsp;cursorX,
+ int&nbsp;cursorY)</span></div>
+<div class="block">Renders widgets to the display area with explicit cursor positioning.
+The provided consumer receives the area and buffer to render into.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>renderer</code> - the rendering function that populates the buffer</dd>
+<dd><code>cursorX</code> - the x position for the cursor, or -1 to use default positioning</dd>
+<dd><code>cursorY</code> - the y position for the cursor, or -1 to use default positioning</dd>
 </dl>
 </div>
 </section>
@@ -323,7 +349,7 @@ The provided consumer receives the display area and buffer to render into.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLine</span><wbr><span class="parameters">(int&nbsp;line,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</span></div>
-<div class="block">Sets a single line of text in the status area.
+<div class="block">Sets a single line of text in the display area.
 This is a convenience method for simple text updates without widgets.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -339,7 +365,7 @@ This is a convenience method for simple text updates without widgets.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLine</span><wbr><span class="parameters">(int&nbsp;line,
  <a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</span></div>
-<div class="block">Sets a single line of styled text in the status area.</div>
+<div class="block">Sets a single line of styled text in the display area.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>line</code> - the line index (0-based, must be less than height)</dd>
@@ -353,8 +379,8 @@ This is a convenience method for simple text updates without widgets.</div>
 <h3>println</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">println</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</span></div>
-<div class="block">Prints a line of text above the status area.
-The text scrolls up as new lines are added, while the status area
+<div class="block">Prints a line of text above the display area.
+The text scrolls up as new lines are added, while the display area
 stays in place at the bottom.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -368,7 +394,7 @@ stays in place at the bottom.</div>
 <h3>println</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">println</span><wbr><span class="parameters">(<a href="../text/Text.html" title="class in dev.tamboui.text">Text</a>&nbsp;text)</span></div>
-<div class="block">Prints styled text above the status area.</div>
+<div class="block">Prints styled text above the display area.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>text</code> - the styled text to print</dd>
@@ -382,7 +408,7 @@ stays in place at the bottom.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">release</span>()</div>
 <div class="block">Explicitly releases the display before close().
-Moves the cursor below the status area and optionally clears it.</div>
+Moves the cursor below the display area and optionally clears it.</div>
 </div>
 </section>
 </li>

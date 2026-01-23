@@ -62,6 +62,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#install(dev.tamboui.internal.record.RecordingConfig)" tabindex="0">install(RecordingConfig)</a></li>
 <li><a href="#uninstall()" tabindex="0">uninstall()</a></li>
 <li><a href="#isInstalled()" tabindex="0">isInstalled()</a></li>
+<li><a href="#getWidth()" tabindex="0">getWidth()</a></li>
+<li><a href="#getHeight()" tabindex="0">getHeight()</a></li>
 <li><a href="#write(int)" tabindex="0">write(int)</a></li>
 <li><a href="#write(byte%5B%5D,int,int)" tabindex="0">write(byte[], int, int)</a></li>
 <li><a href="#flush()" tabindex="0">flush()</a></li>
@@ -89,9 +91,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">AnsiTerminalCapture</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a></span></div>
-<div class="block">Captures System.out output by parsing ANSI escape sequences and maintaining
-a virtual terminal buffer. Used for recording inline demos that write directly
-to System.out rather than using Backend.draw().
+<div class="block">Captures raw bytes written to System.out for recording inline demos.
+Instead of parsing ANSI sequences into a virtual buffer, this captures
+the raw byte stream and replays it directly in the cast file.
+<p>
+This approach provides perfect fidelity - the cast file contains exactly
+what was written to stdout, and the asciinema player interprets the
+ANSI sequences correctly.
 <p>
 This is an internal API and not part of the public contract.</div>
 </div>
@@ -115,6 +121,16 @@ This is an internal API and not part of the public contract.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flush()" class="member-name-link">flush</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getHeight()" class="member-name-link">getHeight</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns the configured height, or 24 if not installed.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getWidth()" class="member-name-link">getWidth</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns the configured width, or 80 if not installed.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#install(dev.tamboui.internal.record.RecordingConfig)" class="member-name-link">install</a><wbr>(<a href="RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a>&nbsp;config)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -125,7 +141,7 @@ This is an internal API and not part of the public contract.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns true if capture is currently installed.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;dev.tamboui.internal.record.RawFrame&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#uninstall()" class="member-name-link">uninstall</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Uninstalls the capture and restores original System.out.</div>
@@ -176,9 +192,9 @@ Does nothing if already installed or if config is null.</div>
 <section class="detail" id="uninstall()">
 <h3>uninstall</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&gt;</span>&nbsp;<span class="element-name">uninstall</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;dev.tamboui.internal.record.RawFrame&gt;</span>&nbsp;<span class="element-name">uninstall</span>()</div>
 <div class="block">Uninstalls the capture and restores original System.out.
-Returns the captured frames, or empty list if not installed.</div>
+Returns the captured raw frames, or empty list if not installed.</div>
 </div>
 </section>
 </li>
@@ -188,6 +204,24 @@ Returns the captured frames, or empty list if not installed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInstalled</span>()</div>
 <div class="block">Returns true if capture is currently installed.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getWidth()">
+<h3>getWidth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getWidth</span>()</div>
+<div class="block">Returns the configured width, or 80 if not installed.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getHeight()">
+<h3>getHeight</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getHeight</span>()</div>
+<div class="block">Returns the configured height, or 24 if not installed.</div>
 </div>
 </section>
 </li>

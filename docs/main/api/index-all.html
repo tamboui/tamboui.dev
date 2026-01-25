@@ -2051,6 +2051,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/ChartElement.html#%3Cinit%3E()" class="member-name-link">ChartElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/text/CharWidth.html" class="type-name-link" title="class in dev.tamboui.text">CharWidth</a> - Class in <a href="dev/tamboui/text/package-summary.html">dev.tamboui.text</a></dt>
+<dd>
+<div class="block">Utility for determining the display width of Unicode code points in a terminal.</div>
+</dd>
 <dt><a href="dev/tamboui/tfx/TFxDuration.html#checkedSub(dev.tamboui.tfx.TFxDuration)" class="member-name-link">checkedSub(TFxDuration)</a> - Method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></dt>
 <dd>
 <div class="block">Subtracts another duration, returning null if the result would be negative.</div>
@@ -2699,6 +2703,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/style/StyledAreaInfo.html#contextKey()" class="member-name-link">contextKey()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/StyledAreaInfo.html" title="class in dev.tamboui.style">StyledAreaInfo</a></dt>
 <dd>
 <div class="block">Returns the context key for this styled area.</div>
+</dd>
+<dt><a href="dev/tamboui/buffer/Cell.html#CONTINUATION" class="member-name-link">CONTINUATION</a> - Static variable in class dev.tamboui.buffer.<a href="dev/tamboui/buffer/Cell.html" title="class in dev.tamboui.buffer">Cell</a></dt>
+<dd>
+<div class="block">A continuation cell placeholder for the trailing column(s) of a wide character.</div>
 </dd>
 <dt><a href="dev/tamboui/capability/CapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)" class="member-name-link">contribute(CapabilityReportBuilder)</a> - Method in interface dev.tamboui.capability.<a href="dev/tamboui/capability/CapabilityProvider.html" title="interface in dev.tamboui.capability">CapabilityProvider</a></dt>
 <dd>
@@ -6661,6 +6669,10 @@ match.</div>
 <dd>
 <div class="block">Returns true if this expression has no terms (only a constant).</div>
 </dd>
+<dt><a href="dev/tamboui/buffer/Cell.html#isContinuation()" class="member-name-link">isContinuation()</a> - Method in class dev.tamboui.buffer.<a href="dev/tamboui/buffer/Cell.html" title="class in dev.tamboui.buffer">Cell</a></dt>
+<dd>
+<div class="block">Returns whether this cell is a continuation placeholder for a wide character.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/event/KeyEvent.html#isCtrlC()" class="member-name-link">isCtrlC()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
 <dd>
 <div class="block">Returns true if this is a Ctrl+C event (common quit signal).</div>
@@ -8697,6 +8709,10 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Creates a circle centered at (x, y) with the given radius and color.</div>
 </dd>
+<dt><a href="dev/tamboui/text/CharWidth.html#of(int)" class="member-name-link">of(int)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
+<dd>
+<div class="block">Returns the display width (0, 1, or 2) of a Unicode code point.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Rect.html#of(int,int)" class="member-name-link">of(int, int)</a> - Static method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
 <div class="block">Creates a rectangle at origin with the given size.</div>
@@ -8788,6 +8804,10 @@ for dynamic pseudo-class resolution.</div>
 <dt><a href="dev/tamboui/style/Tags.html#of(java.lang.String)" class="member-name-link">of(String)</a> - Static method in class dev.tamboui.style.<a href="dev/tamboui/style/Tags.html" title="class in dev.tamboui.style">Tags</a></dt>
 <dd>
 <div class="block">Creates a Tags instance with a single tag.</div>
+</dd>
+<dt><a href="dev/tamboui/text/CharWidth.html#of(java.lang.String)" class="member-name-link">of(String)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
+<dd>
+<div class="block">Returns the total display width of a string.</div>
 </dd>
 <dt><a href="dev/tamboui/style/Tags.html#of(java.lang.String...)" class="member-name-link">of(String...)</a> - Static method in class dev.tamboui.style.<a href="dev/tamboui/style/Tags.html" title="class in dev.tamboui.style">Tags</a></dt>
 <dd>
@@ -12876,6 +12896,15 @@ rectangular areas using block characters.</div>
 <dd>
 <div class="block">Returns the modifiers explicitly removed from this style.</div>
 </dd>
+<dt><a href="dev/tamboui/text/CharWidth.html#substringByWidth(java.lang.String,int)" class="member-name-link">substringByWidth(String, int)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
+<dd>
+<div class="block">Returns a substring that fits within the given display width,
+respecting code point boundaries.</div>
+</dd>
+<dt><a href="dev/tamboui/text/CharWidth.html#substringByWidthFromEnd(java.lang.String,int)" class="member-name-link">substringByWidthFromEnd(String, int)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
+<dd>
+<div class="block">Returns a substring starting from the end that fits within the given display width.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Fraction.html#subtract(dev.tamboui.layout.Fraction)" class="member-name-link">subtract(Fraction)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Fraction.html" title="class in dev.tamboui.layout">Fraction</a></dt>
 <dd>
 <div class="block">Returns the difference of this fraction and another.</div>
@@ -15098,7 +15127,7 @@ the order they are declared.</div>
 </dd>
 <dt><a href="dev/tamboui/text/Span.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.text.<a href="dev/tamboui/text/Span.html" title="class in dev.tamboui.text">Span</a></dt>
 <dd>
-<div class="block">Returns the display width of this span (simplified - counts code points).</div>
+<div class="block">Returns the display width of this span in terminal columns.</div>
 </dd>
 <dt><a href="dev/tamboui/text/Text.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.text.<a href="dev/tamboui/text/Text.html" title="class in dev.tamboui.text">Text</a></dt>
 <dd>

@@ -244,7 +244,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the display width of this span (simplified - counts code points).</div>
+<div class="block">Returns the display width of this span in terminal columns.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Span.html" title="class in dev.tamboui.text">Span</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#yellow()" class="member-name-link">yellow</a>()</code></div>
@@ -326,8 +326,8 @@ The masked value will be used as the content.</div>
 <h3>width</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">width</span>()</div>
-<div class="block">Returns the display width of this span (simplified - counts code points).
-For proper Unicode width handling, a library like ICU4J would be needed.</div>
+<div class="block">Returns the display width of this span in terminal columns.
+Wide characters (CJK, emoji) count as 2, combining marks as 0.</div>
 </div>
 </section>
 </li>

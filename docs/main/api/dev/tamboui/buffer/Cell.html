@@ -62,6 +62,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#field-detail" tabindex="0">Field Details</a>
 <ol class="toc-list">
 <li><a href="#EMPTY" tabindex="0">EMPTY</a></li>
+<li><a href="#CONTINUATION" tabindex="0">CONTINUATION</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -78,6 +79,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#style(dev.tamboui.style.Style)" tabindex="0">style(Style)</a></li>
 <li><a href="#patchStyle(dev.tamboui.style.Style)" tabindex="0">patchStyle(Style)</a></li>
 <li><a href="#mergeSymbol(java.lang.String,dev.tamboui.symbols.merge.MergeStrategy)" tabindex="0">mergeSymbol(String, MergeStrategy)</a></li>
+<li><a href="#isContinuation()" tabindex="0">isContinuation()</a></li>
 <li><a href="#isEmpty()" tabindex="0">isEmpty()</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
@@ -114,8 +116,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
-<div class="col-second even-row-color"><code><a href="#EMPTY" class="member-name-link">EMPTY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-second even-row-color"><code><a href="#CONTINUATION" class="member-name-link">CONTINUATION</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">A continuation cell placeholder for the trailing column(s) of a wide character.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#EMPTY" class="member-name-link">EMPTY</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -151,35 +158,40 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mergeSymbol(java.lang.String,dev.tamboui.symbols.merge.MergeStrategy)" class="member-name-link">mergeSymbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;otherSymbol,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isContinuation()" class="member-name-link">isContinuation</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether this cell is a continuation placeholder for a wide character.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mergeSymbol(java.lang.String,dev.tamboui.symbols.merge.MergeStrategy)" class="member-name-link">mergeSymbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;otherSymbol,
  <a href="../symbols/merge/MergeStrategy.html" title="enum class in dev.tamboui.symbols.merge">MergeStrategy</a>&nbsp;strategy)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Merges this cell's symbol with another symbol using the given merge strategy.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#patchStyle(dev.tamboui.style.Style)" class="member-name-link">patchStyle</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;patch)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#patchStyle(dev.tamboui.style.Style)" class="member-name-link">patchStyle</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;patch)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../style/Style.html" title="class in dev.tamboui.style">Style</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style()" class="member-name-link">style</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../style/Style.html" title="class in dev.tamboui.style">Style</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style()" class="member-name-link">style</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style(dev.tamboui.style.Style)" class="member-name-link">style</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style(dev.tamboui.style.Style)" class="member-name-link">style</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbol()" class="member-name-link">symbol</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbol()" class="member-name-link">symbol</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbol(java.lang.String)" class="member-name-link">symbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbol(java.lang.String)" class="member-name-link">symbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -202,6 +214,17 @@ loadScripts(document, 'script');</script>
 <h3>EMPTY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></span>&nbsp;<span class="element-name">EMPTY</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="CONTINUATION">
+<h3>CONTINUATION</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></span>&nbsp;<span class="element-name">CONTINUATION</span></div>
+<div class="block">A continuation cell placeholder for the trailing column(s) of a wide character.
+Wide characters (CJK, emoji) occupy 2 terminal columns; the second column
+is filled with this cell. Renderers must skip continuation cells.</div>
 </div>
 </section>
 </li>
@@ -292,6 +315,19 @@ Returns a new cell with the merged symbol.</div>
 <dd><code>strategy</code> - the merge strategy to use</dd>
 <dt>Returns:</dt>
 <dd>a new cell with the merged symbol</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isContinuation()">
+<h3>isContinuation</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isContinuation</span>()</div>
+<div class="block">Returns whether this cell is a continuation placeholder for a wide character.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this is a continuation cell</dd>
 </dl>
 </div>
 </section>

@@ -130,6 +130,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#scrollbar(dev.tamboui.widgets.scrollbar.ScrollbarState)" tabindex="0">scrollbar(ScrollbarState)</a></li>
 <li><a href="#scrollbar(int,int,int)" tabindex="0">scrollbar(int, int, int)</a></li>
 <li><a href="#scrollbar()" tabindex="0">scrollbar()</a></li>
+<li><a href="#widget(T)" tabindex="0">widget(T)</a></li>
 <li><a href="#handleTextInputKey(dev.tamboui.widgets.input.TextInputState,dev.tamboui.tui.event.KeyEvent)" tabindex="0">handleTextInputKey(TextInputState, KeyEvent)</a></li>
 </ol>
 </li>
@@ -547,6 +548,11 @@ panel("Title",
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wave text element with the given text and color.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;<br><a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#widget(T)" class="member-name-link">widget</a><wbr>(T&nbsp;widget)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Wraps any low-level <a href="../widget/Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> as a <a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements"><code>GenericWidgetElement</code></a>.</div>
 </div>
 </div>
 </div>
@@ -1656,6 +1662,38 @@ This allows using styled elements directly:
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new scrollbar element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="widget(T)">
+<h3 id="widget(dev.tamboui.widget.Widget)">widget</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T extends <a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;</span>
+<span class="return-type"><a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a>&lt;T&gt;</span>&nbsp;<span class="element-name">widget</span><wbr><span class="parameters">(T&nbsp;widget)</span></div>
+<div class="block">Wraps any low-level <a href="../widget/Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> as a <a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements"><code>GenericWidgetElement</code></a>.
+<p>
+This is useful when you need to use a widget that doesn't have a dedicated
+element wrapper, allowing it to participate in the toolkit's styling and layout system.
+<pre><code>widget(someWidget)
+    .fg(Color.RED)
+    .addClass("custom-class")
+    .fill()
+</code></pre>
+<p>
+Note: The styling applied to this element affects the element itself but may not
+propagate to the wrapped widget's internal rendering, as the widget renders directly
+to the buffer.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><span id="widget(T)-type-param-T"><code>T</code> - the type of the widget</span></dd>
+<dt>Parameters:</dt>
+<dd><code>widget</code> - the widget to wrap</dd>
+<dt>Returns:</dt>
+<dd>a new generic widget element</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if widget is null</dd>
 </dl>
 </div>
 </section>

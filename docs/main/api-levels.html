@@ -71,6 +71,7 @@
 <li><a href="#event-handling">Event Handling</a></li>
 <li><a href="#focus">Focus</a></li>
 <li><a href="#data-visualization">Data Visualization</a></li>
+<li><a href="#wrapping-low-level-widgets">Wrapping Low-Level Widgets</a></li>
 <li><a href="#using-toolkitrunner-directly">Using ToolkitRunner Directly</a></li>
 <li><a href="#fault-tolerant-rendering">Fault-Tolerant Rendering</a></li>
 <li><a href="#example-todo-list">Example: Todo List</a></li>
@@ -933,6 +934,62 @@ barChart(10, 20, 30)
 </div>
 </div>
 <div class="sect2">
+<h3 id="wrapping-low-level-widgets"><a class="anchor" href="#wrapping-low-level-widgets"></a><a class="link" href="#wrapping-low-level-widgets">Wrapping Low-Level Widgets</a></h3>
+<div class="paragraph">
+<p>If you have a custom widget or a widget that doesn&#8217;t yet have a dedicated Toolkit element, you can wrap it with <code>widget()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Wrap any Widget for use in the Toolkit DSL
+widget(myCustomWidget)
+    .addClass("custom")
+    .fill()
+
+// Use in layouts like any other element
+row(
+    widget(customWidget1).fill(),
+    widget(customWidget2).fill()
+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is only useful when:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have a custom widget without a dedicated element wrapper</p>
+</li>
+<li>
+<p>You want quick integration of a widget into the Toolkit DSL</p>
+</li>
+<li>
+<p>You need to apply layout constraints, CSS classes, or event handlers to a widget</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Limitations:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Styling does not propagate</strong> - Colors and modifiers set on the element don&#8217;t affect the widget&#8217;s internal rendering.
+The widget renders directly to the buffer using its own styling logic.</p>
+</li>
+<li>
+<p><strong>No CSS child selectors</strong> - GenericWidgetElement has no sub-components that can be styled via CSS.</p>
+</li>
+<li>
+<p><strong>No preferred size</strong> - The element doesn&#8217;t know the widget&#8217;s size requirements, so the container must specify constraints.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For full styling support, consider creating a dedicated element wrapper for your widget type (see <code>TextElement</code> or <code>GaugeElement</code> as examples).</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="using-toolkitrunner-directly"><a class="anchor" href="#using-toolkitrunner-directly"></a><a class="link" href="#using-toolkitrunner-directly">Using ToolkitRunner Directly</a></h3>
 <div class="paragraph">
 <p><code>ToolkitApp</code> is convenient, but <code>ToolkitRunner</code> gives more control:</p>
@@ -1566,7 +1623,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-25 21:10:29 UTC
+Last updated 2026-01-25 21:51:28 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

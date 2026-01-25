@@ -14,6 +14,7 @@ dev.tamboui.css.model
 dev.tamboui.css.parser
 dev.tamboui.css.property
 dev.tamboui.css.selector
+dev.tamboui.export
 dev.tamboui.image
 dev.tamboui.image.capability
 dev.tamboui.image.protocol

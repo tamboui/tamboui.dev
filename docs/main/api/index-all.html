@@ -2055,6 +2055,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Utility for determining the display width of Unicode code points in a terminal.</div>
 </dd>
+<dt><a href="dev/tamboui/text/CharWidth.TruncatePosition.html" class="type-name-link" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a> - Enum Class in <a href="dev/tamboui/text/package-summary.html">dev.tamboui.text</a></dt>
+<dd>
+<div class="block">Truncation position for ellipsis.</div>
+</dd>
 <dt><a href="dev/tamboui/tfx/TFxDuration.html#checkedSub(dev.tamboui.tfx.TFxDuration)" class="member-name-link">checkedSub(TFxDuration)</a> - Method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></dt>
 <dd>
 <div class="block">Subtracts another duration, returning null if the result would be negative.</div>
@@ -2661,6 +2665,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/css/selector/AttributeSelector.Operator.html#CONTAINS" class="member-name-link">CONTAINS</a> - Enum constant in enum class dev.tamboui.css.selector.<a href="dev/tamboui/css/selector/AttributeSelector.Operator.html" title="enum class in dev.tamboui.css.selector">AttributeSelector.Operator</a></dt>
 <dd>
 <div class="block">Contains</div>
+</dd>
+<dt><a href="dev/tamboui/text/MarkupParser.html#containsEmojiCodes(java.lang.String)" class="member-name-link">containsEmojiCodes(String)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.html" title="class in dev.tamboui.text">MarkupParser</a></dt>
+<dd>
+<div class="block">Returns true if the given text contains any emoji codes.</div>
 </dd>
 <dt><a href="dev/tamboui/text/Span.html#content()" class="member-name-link">content()</a> - Method in class dev.tamboui.text.<a href="dev/tamboui/text/Span.html" title="class in dev.tamboui.text">Span</a></dt>
 <dd>&nbsp;</dd>
@@ -4082,6 +4090,12 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Emacs-style binding set with Ctrl+n/p/f/b navigation.</div>
 </dd>
+<dt><a href="dev/tamboui/text/Emoji.html" class="type-name-link" title="class in dev.tamboui.text">Emoji</a> - Class in <a href="dev/tamboui/text/package-summary.html">dev.tamboui.text</a></dt>
+<dd>
+<div class="block">Replaces emoji codes (e.g.</div>
+</dd>
+<dt><a href="dev/tamboui/text/Emoji.html#emojis()" class="member-name-link">emojis()</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/Emoji.html" title="class in dev.tamboui.text">Emoji</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/cascade/CssStyleResolver.html#empty()" class="member-name-link">empty()</a> - Static method in class dev.tamboui.css.cascade.<a href="dev/tamboui/css/cascade/CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a></dt>
 <dd>
 <div class="block">Creates an empty resolved style.</div>
@@ -4185,6 +4199,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/layout/Flex.html#END" class="member-name-link">END</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/Flex.html" title="enum class in dev.tamboui.layout">Flex</a></dt>
 <dd>
 <div class="block">Pack elements to the end.</div>
+</dd>
+<dt><a href="dev/tamboui/text/CharWidth.TruncatePosition.html#END" class="member-name-link">END</a> - Enum constant in enum class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a></dt>
+<dd>
+<div class="block">Truncate at end: "Hello..."</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/KeyCode.html#END" class="member-name-link">END</a> - Enum constant in enum class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a></dt>
 <dd>&nbsp;</dd>
@@ -7910,6 +7928,10 @@ based on constraints.</div>
 <dd>
 <div class="block">Parses BBCode-style markup text and converts it to styled <a href="dev/tamboui/text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a> objects.</div>
 </dd>
+<dt><a href="dev/tamboui/text/MarkupParser.EmojiResolver.html" class="type-name-link" title="interface in dev.tamboui.text">MarkupParser.EmojiResolver</a> - Interface in <a href="dev/tamboui/text/package-summary.html">dev.tamboui.text</a></dt>
+<dd>
+<div class="block">Functional interface for resolving string expansion of emoji codes/names.</div>
+</dd>
 <dt><a href="dev/tamboui/text/MarkupParser.StyleResolver.html" class="type-name-link" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a> - Interface in <a href="dev/tamboui/text/package-summary.html">dev.tamboui.text</a></dt>
 <dd>
 <div class="block">Functional interface for resolving custom tag styles.</div>
@@ -8122,6 +8144,10 @@ for dynamic pseudo-class resolution.</div>
 <dt><a href="dev/tamboui/tui/error/RenderError.html#message()" class="member-name-link">message()</a> - Method in class dev.tamboui.tui.error.<a href="dev/tamboui/tui/error/RenderError.html" title="class in dev.tamboui.tui.error">RenderError</a></dt>
 <dd>
 <div class="block">Returns the error message from the cause, or the class name if no message.</div>
+</dd>
+<dt><a href="dev/tamboui/text/CharWidth.TruncatePosition.html#MIDDLE" class="member-name-link">MIDDLE</a> - Enum constant in enum class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a></dt>
+<dd>
+<div class="block">Truncate in middle: "Hel...rld"</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/MouseButton.html#MIDDLE" class="member-name-link">MIDDLE</a> - Enum constant in enum class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/MouseButton.html" title="enum class in dev.tamboui.tui.event">MouseButton</a></dt>
 <dd>
@@ -9436,6 +9462,12 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Parses markup text with custom style resolution.</div>
 </dd>
+<dt><a href="dev/tamboui/text/MarkupParser.html#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,boolean)" class="member-name-link">parse(String, MarkupParser.StyleResolver, boolean)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.html" title="class in dev.tamboui.text">MarkupParser</a></dt>
+<dd>
+<div class="block">Parses markup text with custom style resolution and emoji replacement control.</div>
+</dd>
+<dt><a href="dev/tamboui/text/MarkupParser.html#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,dev.tamboui.text.MarkupParser.EmojiResolver)" class="member-name-link">parse(String, MarkupParser.StyleResolver, MarkupParser.EmojiResolver)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.html" title="class in dev.tamboui.text">MarkupParser</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/engine/StyleEngine.html#parseColor(java.lang.String)" class="member-name-link">parseColor(String)</a> - Method in class dev.tamboui.css.engine.<a href="dev/tamboui/css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a></dt>
 <dd>
 <div class="block">Parses a CSS color value string into a Color.</div>
@@ -10721,6 +10753,12 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Replaces the previous symbol with the next one.</div>
 </dd>
+<dt><a href="dev/tamboui/text/MarkupParser.html#replaceEmoji(java.lang.String)" class="member-name-link">replaceEmoji(String)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.html" title="class in dev.tamboui.text">MarkupParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/text/MarkupParser.html#replaceEmoji(java.lang.String,dev.tamboui.text.MarkupParser.EmojiResolver)" class="member-name-link">replaceEmoji(String, MarkupParser.EmojiResolver)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.html" title="class in dev.tamboui.text">MarkupParser</a></dt>
+<dd>
+<div class="block">Replaces emoji codes in text with Unicode emoji characters.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/cassowary/Strength.html#REQUIRED" class="member-name-link">REQUIRED</a> - Static variable in class dev.tamboui.layout.cassowary.<a href="dev/tamboui/layout/cassowary/Strength.html" title="class in dev.tamboui.layout.cassowary">Strength</a></dt>
 <dd>
 <div class="block">Required constraints must be satisfied.</div>
@@ -10824,6 +10862,10 @@ inheritance behavior, and optional default value.</div>
 <dt><a href="dev/tamboui/style/StylePropertyResolver.html#resolve(dev.tamboui.style.PropertyDefinition,T)" class="member-name-link">resolve(PropertyDefinition, T)</a> - Method in interface dev.tamboui.style.<a href="dev/tamboui/style/StylePropertyResolver.html" title="interface in dev.tamboui.style">StylePropertyResolver</a></dt>
 <dd>
 <div class="block">Resolves the effective value for a property.</div>
+</dd>
+<dt><a href="dev/tamboui/text/MarkupParser.EmojiResolver.html#resolve(java.lang.String)" class="member-name-link">resolve(String)</a> - Method in interface dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.EmojiResolver.html" title="interface in dev.tamboui.text">MarkupParser.EmojiResolver</a></dt>
+<dd>
+<div class="block">Resolves a string expansion for the given tag name.</div>
 </dd>
 <dt><a href="dev/tamboui/text/MarkupParser.StyleResolver.html#resolve(java.lang.String)" class="member-name-link">resolve(String)</a> - Method in interface dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a></dt>
 <dd>
@@ -12473,6 +12515,10 @@ and continuing to try other providers.</div>
 <dd>
 <div class="block">Pack elements to the start.</div>
 </dd>
+<dt><a href="dev/tamboui/text/CharWidth.TruncatePosition.html#START" class="member-name-link">START</a> - Enum constant in enum class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a></dt>
+<dd>
+<div class="block">Truncate at start: "...World"</div>
+</dd>
 <dt><a href="dev/tamboui/tfx/EffectTimer.html#started()" class="member-name-link">started()</a> - Method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></dt>
 <dd>
 <div class="block">Returns true if the timer has started (i.e., remaining != total).</div>
@@ -12899,7 +12945,7 @@ rectangular areas using block characters.</div>
 <dt><a href="dev/tamboui/text/CharWidth.html#substringByWidth(java.lang.String,int)" class="member-name-link">substringByWidth(String, int)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
 <dd>
 <div class="block">Returns a substring that fits within the given display width,
-respecting code point boundaries.</div>
+respecting code point and grapheme cluster boundaries.</div>
 </dd>
 <dt><a href="dev/tamboui/text/CharWidth.html#substringByWidthFromEnd(java.lang.String,int)" class="member-name-link">substringByWidthFromEnd(String, int)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
 <dd>
@@ -14219,6 +14265,14 @@ from each line.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/bindings/DefaultBindings.html#triggersFor(java.lang.String)" class="member-name-link">triggersFor(String)</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/DefaultBindings.html" title="class in dev.tamboui.tui.bindings">DefaultBindings</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/text/CharWidth.html#truncateWithEllipsis(java.lang.String,int,dev.tamboui.text.CharWidth.TruncatePosition)" class="member-name-link">truncateWithEllipsis(String, int, CharWidth.TruncatePosition)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
+<dd>
+<div class="block">Truncates a string to fit within the given display width, adding an ellipsis.</div>
+</dd>
+<dt><a href="dev/tamboui/text/CharWidth.html#truncateWithEllipsis(java.lang.String,int,java.lang.String,dev.tamboui.text.CharWidth.TruncatePosition)" class="member-name-link">truncateWithEllipsis(String, int, String, CharWidth.TruncatePosition)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.html" title="class in dev.tamboui.text">CharWidth</a></dt>
+<dd>
+<div class="block">Truncates a string to fit within the given display width, adding a custom ellipsis.</div>
+</dd>
 <dt><a href="dev/tamboui/picocli/TuiCommand.html" class="type-name-link" title="class in dev.tamboui.picocli">TuiCommand</a> - Class in <a href="dev/tamboui/picocli/package-summary.html">dev.tamboui.picocli</a></dt>
 <dd>
 <div class="block">Base class for PicoCLI commands that run TUI applications.</div>
@@ -14558,6 +14612,10 @@ and <a href="dev/tamboui/css/cascade/UnknownPropertyBehavior.html#FAIL"><code>Un
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
+<dt><a href="dev/tamboui/text/CharWidth.TruncatePosition.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
 <dt><a href="dev/tamboui/tfx/ExpandDirection.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class dev.tamboui.tfx.<a href="dev/tamboui/tfx/ExpandDirection.html" title="enum class in dev.tamboui.tfx">ExpandDirection</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
@@ -14722,6 +14780,11 @@ the order they are declared.</div>
 <div class="block">Returns the set of tag values.</div>
 </dd>
 <dt><a href="dev/tamboui/symbols/merge/MergeStrategy.html#values()" class="member-name-link">values()</a> - Static method in enum class dev.tamboui.symbols.merge.<a href="dev/tamboui/symbols/merge/MergeStrategy.html" title="enum class in dev.tamboui.symbols.merge">MergeStrategy</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="dev/tamboui/text/CharWidth.TruncatePosition.html#values()" class="member-name-link">values()</a> - Static method in enum class dev.tamboui.text.<a href="dev/tamboui/text/CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>

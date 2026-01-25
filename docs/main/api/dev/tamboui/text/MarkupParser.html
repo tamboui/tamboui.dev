@@ -62,6 +62,11 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#parse(java.lang.String)" tabindex="0">parse(String)</a></li>
 <li><a href="#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver)" tabindex="0">parse(String, MarkupParser.StyleResolver)</a></li>
+<li><a href="#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,boolean)" tabindex="0">parse(String, MarkupParser.StyleResolver, boolean)</a></li>
+<li><a href="#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,dev.tamboui.text.MarkupParser.EmojiResolver)" tabindex="0">parse(String, MarkupParser.StyleResolver, MarkupParser.EmojiResolver)</a></li>
+<li><a href="#replaceEmoji(java.lang.String)" tabindex="0">replaceEmoji(String)</a></li>
+<li><a href="#replaceEmoji(java.lang.String,dev.tamboui.text.MarkupParser.EmojiResolver)" tabindex="0">replaceEmoji(String, MarkupParser.EmojiResolver)</a></li>
+<li><a href="#containsEmojiCodes(java.lang.String)" tabindex="0">containsEmojiCodes(String)</a></li>
 </ol>
 </li>
 </ol>
@@ -95,6 +100,7 @@ The parser supports:
   <li>Custom tags: resolved via a <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text"><code>MarkupParser.StyleResolver</code></a></li>
   <li>Escaped brackets: <code>[[</code> produces <code>[</code>, and <code>]]</code> produces <code>]</code></li>
   <li>Nested tags: <code>[red][bold]text[/bold][/red]</code></li>
+  <li>Emoji codes: <code>:smiley:</code>, <code>:warning:</code>, <code>:success:</code>, etc. (replaced with Unicode emoji)</li>
 </ul>
 <p>
 Example usage:
@@ -129,8 +135,13 @@ Unclosed tags apply their style to the remaining content.</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="MarkupParser.StyleResolver.html" class="type-name-link" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a></code></div>
+<div class="col-second even-row-color"><code><a href="MarkupParser.EmojiResolver.html" class="type-name-link" title="interface in dev.tamboui.text">MarkupParser.EmojiResolver</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Functional interface for resolving string expansion of emoji codes/names.</div>
+</div>
+<div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="MarkupParser.StyleResolver.html" class="type-name-link" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Functional interface for resolving custom tag styles.</div>
 </div>
 </div>
@@ -147,16 +158,42 @@ Unclosed tags apply their style to the remaining content.</div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Text.html" title="class in dev.tamboui.text">Text</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#containsEmojiCodes(java.lang.String)" class="member-name-link">containsEmojiCodes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Parses markup text using only built-in styles.</div>
+<div class="block">Returns true if the given text contains any emoji codes.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Text.html" title="class in dev.tamboui.text">Text</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup,
- <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a>&nbsp;resolver)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Parses markup text using only built-in styles.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Text.html" title="class in dev.tamboui.text">Text</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup,
+ <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a>&nbsp;resolver)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Parses markup text with custom style resolution.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Text.html" title="class in dev.tamboui.text">Text</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,boolean)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup,
+ <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a>&nbsp;resolver,
+ boolean&nbsp;emoji)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Parses markup text with custom style resolution and emoji replacement control.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Text.html" title="class in dev.tamboui.text">Text</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,dev.tamboui.text.MarkupParser.EmojiResolver)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup,
+ <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a>&nbsp;resolver,
+ <a href="MarkupParser.EmojiResolver.html" title="interface in dev.tamboui.text">MarkupParser.EmojiResolver</a>&nbsp;emojiResolver)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#replaceEmoji(java.lang.String)" class="member-name-link">replaceEmoji</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;emoji)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#replaceEmoji(java.lang.String,dev.tamboui.text.MarkupParser.EmojiResolver)" class="member-name-link">replaceEmoji</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
+ <a href="MarkupParser.EmojiResolver.html" title="interface in dev.tamboui.text">MarkupParser.EmojiResolver</a>&nbsp;resolver)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Replaces emoji codes in text with Unicode emoji characters.</div>
 </div>
 </div>
 </div>
@@ -182,7 +219,8 @@ Unclosed tags apply their style to the remaining content.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Text.html" title="class in dev.tamboui.text">Text</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup)</span></div>
 <div class="block">Parses markup text using only built-in styles.
 <p>
-Custom tags are rendered as plain text (the tag markers are preserved).</div>
+Custom tags are rendered as plain text (the tag markers are preserved).
+Emoji codes (e.g. <code>:smiley:</code>, <code>:warning:</code>) are replaced with Unicode emoji characters.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>markup</code> - the markup text to parse</dd>
@@ -198,13 +236,82 @@ Custom tags are rendered as plain text (the tag markers are preserved).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Text.html" title="class in dev.tamboui.text">Text</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup,
  <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a>&nbsp;resolver)</span></div>
-<div class="block">Parses markup text with custom style resolution.</div>
+<div class="block">Parses markup text with custom style resolution.
+Emoji codes (e.g. <code>:smiley:</code>, <code>:warning:</code>) are replaced with Unicode emoji characters.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>markup</code> - the markup text to parse</dd>
 <dd><code>resolver</code> - optional resolver for custom tags</dd>
 <dt>Returns:</dt>
 <dd>the parsed styled text</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,boolean)">
+<h3>parse</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Text.html" title="class in dev.tamboui.text">Text</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup,
+ <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a>&nbsp;resolver,
+ boolean&nbsp;emoji)</span></div>
+<div class="block">Parses markup text with custom style resolution and emoji replacement control.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>markup</code> - the markup text to parse</dd>
+<dd><code>resolver</code> - optional resolver for custom tags</dd>
+<dd><code>emoji</code> - whether to replace emoji codes (e.g. <code>:smiley:</code>) with Unicode characters</dd>
+<dt>Returns:</dt>
+<dd>the parsed styled text</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver,dev.tamboui.text.MarkupParser.EmojiResolver)">
+<h3>parse</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Text.html" title="class in dev.tamboui.text">Text</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;markup,
+ <a href="MarkupParser.StyleResolver.html" title="interface in dev.tamboui.text">MarkupParser.StyleResolver</a>&nbsp;resolver,
+ <a href="MarkupParser.EmojiResolver.html" title="interface in dev.tamboui.text">MarkupParser.EmojiResolver</a>&nbsp;emojiResolver)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="replaceEmoji(java.lang.String)">
+<h3>replaceEmoji</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">replaceEmoji</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;emoji)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="replaceEmoji(java.lang.String,dev.tamboui.text.MarkupParser.EmojiResolver)">
+<h3>replaceEmoji</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">replaceEmoji</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
+ <a href="MarkupParser.EmojiResolver.html" title="interface in dev.tamboui.text">MarkupParser.EmojiResolver</a>&nbsp;resolver)</span></div>
+<div class="block">Replaces emoji codes in text with Unicode emoji characters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>text</code> - text that may contain emoji codes</dd>
+<dt>Returns:</dt>
+<dd>text with emoji codes replaced</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="containsEmojiCodes(java.lang.String)">
+<h3>containsEmojiCodes</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">containsEmojiCodes</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
+<div class="block">Returns true if the given text contains any emoji codes.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>text</code> - text to check</dd>
+<dt>Returns:</dt>
+<dd>true if text contains emoji codes</dd>
 </dl>
 </div>
 </section>

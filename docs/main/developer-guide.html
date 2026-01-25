@@ -60,6 +60,24 @@
 <li><a href="#inheritable-vs-non-inheritable">Inheritable vs Non-Inheritable</a></li>
 </ul>
 </li>
+<li><a href="#unicode-and-display-width-handling">Unicode and Display Width Handling</a>
+<ul class="sectlevel2">
+<li><a href="#the-problem">The Problem</a></li>
+<li><a href="#charwidth-utilities">CharWidth Utilities</a></li>
+<li><a href="#common-patterns">Common Patterns</a>
+<ul class="sectlevel3">
+<li><a href="#width-calculation">Width Calculation</a></li>
+<li><a href="#text-truncation">Text Truncation</a></li>
+<li><a href="#position-tracking">Position Tracking</a></li>
+<li><a href="#centering-text">Centering Text</a></li>
+<li><a href="#truncation-with-ellipsis">Truncation with Ellipsis</a></li>
+</ul>
+</li>
+<li><a href="#ellipsis-truncation-positions">Ellipsis Truncation Positions</a></li>
+<li><a href="#zwj-sequence-safety">ZWJ Sequence Safety</a></li>
+<li><a href="#reference-implementation">Reference Implementation</a></li>
+</ul>
+</li>
 <li><a href="#best-practices">Best Practices</a>
 <ul class="sectlevel2">
 <li><a href="#widget-design">Widget Design</a></li>
@@ -495,6 +513,240 @@ Color fg = styleResolver.resolve(StandardProperties.COLOR, this.foreground);</co
 </div>
 </div>
 <div class="sect1">
+<h2 id="unicode-and-display-width-handling"><a class="anchor" href="#unicode-and-display-width-handling"></a><a class="link" href="#unicode-and-display-width-handling">Unicode and Display Width Handling</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Terminal display width differs from Java string length.
+Always use <code>CharWidth</code> utilities for width calculations when rendering text.</p>
+</div>
+<div class="sect2">
+<h3 id="the-problem"><a class="anchor" href="#the-problem"></a><a class="link" href="#the-problem">The Problem</a></h3>
+<div class="paragraph">
+<p>Java&#8217;s <code>String.length()</code> returns the number of UTF-16 code units, not terminal display columns:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top"><code>length()</code></th>
+<th class="tableblock halign-left valign-top">Display Width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ASCII</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"A"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CJK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"世"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Emoji</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"🔥"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ZWJ Emoji</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"👨‍🦲"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag Emoji</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"🇬🇱"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Using <code>length()</code> or <code>substring()</code> for display calculations causes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ZWJ emoji like "👨‍🦲" to display as "👨?" (truncated mid-sequence)</p>
+</li>
+<li>
+<p>CJK characters to overflow cells (width 2 treated as width 1)</p>
+</li>
+<li>
+<p>Incorrect cursor positioning and alignment</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="charwidth-utilities"><a class="anchor" href="#charwidth-utilities"></a><a class="link" href="#charwidth-utilities">CharWidth Utilities</a></h3>
+<div class="paragraph">
+<p>The <code>CharWidth</code> class provides display-width-aware string operations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.text.CharWidth;
+
+// Get display width of a string
+int width = CharWidth.of("Hello 世界 🔥");  // Returns 14, not 11
+
+// Get display width of a code point
+int cpWidth = CharWidth.of(0x4E16);  // Returns 2 (CJK character)
+
+// Truncate to fit display width (preserves grapheme clusters)
+String truncated = CharWidth.substringByWidth("Hello 👨‍🦲 World", 8);  // "Hello 👨‍🦲"
+
+// Truncate from the end
+String suffix = CharWidth.substringByWidthFromEnd("Hello World", 5);  // "World"
+
+// Truncate with ellipsis
+String ellipsized = CharWidth.truncateWithEllipsis(
+    "Very long text here",
+    10,
+    CharWidth.TruncatePosition.END
+);  // "Very lo..."</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="common-patterns"><a class="anchor" href="#common-patterns"></a><a class="link" href="#common-patterns">Common Patterns</a></h3>
+<div class="sect3">
+<h4 id="width-calculation"><a class="anchor" href="#width-calculation"></a><a class="link" href="#width-calculation">Width Calculation</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - breaks emoji and CJK
+int width = text.length();
+
+// CORRECT - respects display width
+int width = CharWidth.of(text);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="text-truncation"><a class="anchor" href="#text-truncation"></a><a class="link" href="#text-truncation">Text Truncation</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - may break mid-grapheme cluster
+String truncated = text.substring(0, maxWidth);
+
+// CORRECT - preserves grapheme boundaries
+String truncated = CharWidth.substringByWidth(text, maxWidth);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="position-tracking"><a class="anchor" href="#position-tracking"></a><a class="link" href="#position-tracking">Position Tracking</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - position drift with wide characters
+int col = x;
+buffer.setString(col, y, text, style);
+col += text.length();
+
+// CORRECT - use display width
+int col = x;
+buffer.setString(col, y, text, style);
+col += CharWidth.of(text);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="centering-text"><a class="anchor" href="#centering-text"></a><a class="link" href="#centering-text">Centering Text</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - misaligned with CJK/emoji
+int labelX = x + (width - label.length()) / 2;
+
+// CORRECT - proper centering
+int labelX = x + (width - CharWidth.of(label)) / 2;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truncation-with-ellipsis"><a class="anchor" href="#truncation-with-ellipsis"></a><a class="link" href="#truncation-with-ellipsis">Truncation with Ellipsis</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - char count, not display width
+if (text.length() &gt; maxWidth) {
+    text = text.substring(0, maxWidth - 3) + "...";
+}
+
+// CORRECT - using CharWidth utilities
+text = CharWidth.truncateWithEllipsis(text, maxWidth, CharWidth.TruncatePosition.END);
+
+// Or manually:
+if (CharWidth.of(text) &gt; maxWidth) {
+    int ellipsisWidth = CharWidth.of("...");
+    text = CharWidth.substringByWidth(text, maxWidth - ellipsisWidth) + "...";
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ellipsis-truncation-positions"><a class="anchor" href="#ellipsis-truncation-positions"></a><a class="link" href="#ellipsis-truncation-positions">Ellipsis Truncation Positions</a></h3>
+<div class="paragraph">
+<p><code>CharWidth.truncateWithEllipsis()</code> supports three positions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">String text = "Hello World Example";
+
+// END: "Hello Wor..."
+CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.END);
+
+// START: "...d Example"
+CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.START);
+
+// MIDDLE: "Hell...ample"
+CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.MIDDLE);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also use a custom ellipsis string:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CharWidth.truncateWithEllipsis(text, 12, "…", CharWidth.TruncatePosition.END);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="zwj-sequence-safety"><a class="anchor" href="#zwj-sequence-safety"></a><a class="link" href="#zwj-sequence-safety">ZWJ Sequence Safety</a></h3>
+<div class="paragraph">
+<p>Zero-Width Joiner (ZWJ) sequences combine multiple code points into a single visible glyph.
+<code>CharWidth.substringByWidth()</code> automatically preserves these sequences:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// "👨‍🦲" is: man (👨) + ZWJ + bald (🦲) = 5 code units, 2 display columns
+
+// Safe truncation - won't break mid-sequence
+String result = CharWidth.substringByWidth("A👨‍🦲B", 3);
+// Returns "A👨‍🦲" (width 3), not "A👨" (broken sequence showing "?")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reference-implementation"><a class="anchor" href="#reference-implementation"></a><a class="link" href="#reference-implementation">Reference Implementation</a></h3>
+<div class="paragraph">
+<p>See <code>Paragraph.java</code> for a complete example of correct CharWidth usage in a widget that handles text wrapping and truncation.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="best-practices"><a class="anchor" href="#best-practices"></a><a class="link" href="#best-practices">Best Practices</a></h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -512,6 +764,9 @@ Color fg = styleResolver.resolve(StandardProperties.COLOR, this.foreground);</co
 </li>
 <li>
 <p>Handle edge cases (empty area, no data)</p>
+</li>
+<li>
+<p>Always use <code>CharWidth</code> for text width calculations (see <a href="#unicode-and-display-width-handling">Unicode and Display Width Handling</a>)</p>
 </li>
 </ul>
 </div>
@@ -585,6 +840,12 @@ Color fg = styleResolver.resolve(StandardProperties.COLOR, this.foreground);</co
 <li>
 <p><code>tamboui-core/src/main/java/dev/tamboui/buffer/</code> - Buffer and Cell</p>
 </li>
+<li>
+<p><code>tamboui-core/src/main/java/dev/tamboui/text/CharWidth.java</code> - Unicode display width utilities</p>
+</li>
+<li>
+<p><code>tamboui-widgets/src/main/java/dev/tamboui/widgets/paragraph/Paragraph.java</code> - Reference implementation for CharWidth usage</p>
+</li>
 </ul>
 </div>
 </div>
@@ -593,7 +854,7 @@ Color fg = styleResolver.resolve(StandardProperties.COLOR, this.foreground);</co
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-25 07:30:33 UTC
+Last updated 2026-01-25 15:19:51 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

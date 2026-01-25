@@ -467,7 +467,14 @@ Returns the x position after the last character written.
 <p>
 This method patches the style of existing cells rather than replacing them,
 preserving background colors and other style attributes that were previously set.
-This matches the behavior of ratatui.rs.</div>
+This matches the behavior of ratatui.rs.
+<p>
+Handles grapheme clusters correctly:
+<ul>
+  <li>ZWJ sequences: characters after ZWJ are appended to the preceding cell</li>
+  <li>Regional Indicator pairs: combined into a single 2-wide cell</li>
+  <li>Skin tone modifiers: appended to preceding cell (zero-width)</li>
+</ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>x</code> - the x coordinate</dd>

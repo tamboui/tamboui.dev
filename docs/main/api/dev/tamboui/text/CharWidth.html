@@ -56,6 +56,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
+<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
@@ -63,6 +64,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#of(java.lang.String)" tabindex="0">of(String)</a></li>
 <li><a href="#substringByWidth(java.lang.String,int)" tabindex="0">substringByWidth(String, int)</a></li>
 <li><a href="#substringByWidthFromEnd(java.lang.String,int)" tabindex="0">substringByWidthFromEnd(String, int)</a></li>
+<li><a href="#truncateWithEllipsis(java.lang.String,int,dev.tamboui.text.CharWidth.TruncatePosition)" tabindex="0">truncateWithEllipsis(String, int, CharWidth.TruncatePosition)</a></li>
+<li><a href="#truncateWithEllipsis(java.lang.String,int,java.lang.String,dev.tamboui.text.CharWidth.TruncatePosition)" tabindex="0">truncateWithEllipsis(String, int, String, CharWidth.TruncatePosition)</a></li>
 </ol>
 </li>
 </ol>
@@ -95,6 +98,23 @@ for supplementary plane characters.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="CharWidth.TruncatePosition.html" class="type-name-link" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Truncation position for ellipsis.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -121,13 +141,28 @@ for supplementary plane characters.</div>
  int&nbsp;maxWidth)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a substring that fits within the given display width,
-respecting code point boundaries.</div>
+respecting code point and grapheme cluster boundaries.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#substringByWidthFromEnd(java.lang.String,int)" class="member-name-link">substringByWidthFromEnd</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  int&nbsp;maxWidth)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a substring starting from the end that fits within the given display width.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#truncateWithEllipsis(java.lang.String,int,dev.tamboui.text.CharWidth.TruncatePosition)" class="member-name-link">truncateWithEllipsis</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ int&nbsp;maxWidth,
+ <a href="CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a>&nbsp;position)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Truncates a string to fit within the given display width, adding an ellipsis.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#truncateWithEllipsis(java.lang.String,int,java.lang.String,dev.tamboui.text.CharWidth.TruncatePosition)" class="member-name-link">truncateWithEllipsis</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ int&nbsp;maxWidth,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ellipsis,
+ <a href="CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a>&nbsp;position)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Truncates a string to fit within the given display width, adding a custom ellipsis.</div>
 </div>
 </div>
 </div>
@@ -166,7 +201,14 @@ respecting code point boundaries.</div>
 <h3>of</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span></div>
-<div class="block">Returns the total display width of a string.</div>
+<div class="block">Returns the total display width of a string.
+<p>
+Handles grapheme clusters correctly:
+<ul>
+  <li>ZWJ sequences (e.g., 👨‍👦): width 2 for the combined glyph</li>
+  <li>Regional Indicator pairs (flags, e.g., 🇫🇷): width 2</li>
+  <li>Skin tone modifiers: zero-width (added to base emoji)</li>
+</ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the string to measure</dd>
@@ -183,9 +225,11 @@ respecting code point boundaries.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">substringByWidth</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  int&nbsp;maxWidth)</span></div>
 <div class="block">Returns a substring that fits within the given display width,
-respecting code point boundaries.
+respecting code point and grapheme cluster boundaries.
 <p>
-If a wide character would exceed maxWidth, it is not included.</div>
+If a wide character would exceed maxWidth, it is not included.
+ZWJ sequences are kept intact - truncation happens at the last
+safe break point before the ZWJ sequence if it wouldn't fit.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the source string</dd>
@@ -209,6 +253,48 @@ If a wide character would exceed maxWidth, it is not included.</div>
 <dd><code>maxWidth</code> - the maximum display width in columns</dd>
 <dt>Returns:</dt>
 <dd>a suffix substring fitting within maxWidth columns</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="truncateWithEllipsis(java.lang.String,int,dev.tamboui.text.CharWidth.TruncatePosition)">
+<h3>truncateWithEllipsis</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">truncateWithEllipsis</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ int&nbsp;maxWidth,
+ <a href="CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a>&nbsp;position)</span></div>
+<div class="block">Truncates a string to fit within the given display width, adding an ellipsis.
+<p>
+Uses the default ellipsis ("...").</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - the source string</dd>
+<dd><code>maxWidth</code> - the maximum display width in columns (must be at least ellipsis width)</dd>
+<dd><code>position</code> - where to place the ellipsis</dd>
+<dt>Returns:</dt>
+<dd>the truncated string with ellipsis, or the original if it fits</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="truncateWithEllipsis(java.lang.String,int,java.lang.String,dev.tamboui.text.CharWidth.TruncatePosition)">
+<h3>truncateWithEllipsis</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">truncateWithEllipsis</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ int&nbsp;maxWidth,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ellipsis,
+ <a href="CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a>&nbsp;position)</span></div>
+<div class="block">Truncates a string to fit within the given display width, adding a custom ellipsis.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - the source string</dd>
+<dd><code>maxWidth</code> - the maximum display width in columns (must be at least ellipsis width)</dd>
+<dd><code>ellipsis</code> - the ellipsis string to use (e.g., "...", "…", "&gt;&gt;")</dd>
+<dd><code>position</code> - where to place the ellipsis</dd>
+<dt>Returns:</dt>
+<dd>the truncated string with ellipsis, or the original if it fits</dd>
 </dl>
 </div>
 </section>

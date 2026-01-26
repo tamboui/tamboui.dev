@@ -699,7 +699,10 @@ Format: 8 quoted strings (top-h, bottom-h, left-v, right-v, tl, tr, bl, br).</di
 to the given resolver for CSS-inheritable properties not set in this resolver.
 <p>
 Per CSS semantics, only certain properties inherit from parent to child.
-The inheritance behavior is defined per-property in <a href="../../style/PropertyDefinition.html#isInheritable()"><code>PropertyDefinition.isInheritable()</code></a>.</div>
+The inheritance behavior is defined per-property in <a href="../../style/PropertyDefinition.html#isInheritable()"><code>PropertyDefinition.isInheritable()</code></a>.
+<p>
+Additionally, this method handles the <code>inherit</code> keyword: properties
+explicitly requesting parent's value.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>fallback</code> - the fallback resolver for missing inheritable properties</dd>

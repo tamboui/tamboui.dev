@@ -61,6 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#enum-constant-detail" tabindex="0">Enum Constant Details</a>
 <ol class="toc-list">
+<li><a href="#NORMAL" tabindex="0">NORMAL</a></li>
 <li><a href="#BOLD" tabindex="0">BOLD</a></li>
 <li><a href="#DIM" tabindex="0">DIM</a></li>
 <li><a href="#ITALIC" tabindex="0">ITALIC</a></li>
@@ -77,7 +78,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#values()" tabindex="0">values()</a></li>
 <li><a href="#valueOf(java.lang.String)" tabindex="0">valueOf(String)</a></li>
 <li><a href="#code()" tabindex="0">code()</a></li>
-<li><a href="#resetCode()" tabindex="0">resetCode()</a></li>
+<li><a href="#implicitStyleName()" tabindex="0">implicitStyleName()</a></li>
 </ol>
 </li>
 </ol>
@@ -133,14 +134,16 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="#ITALIC" class="member-name-link">ITALIC</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#RAPID_BLINK" class="member-name-link">RAPID_BLINK</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#NORMAL" class="member-name-link">NORMAL</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#REVERSED" class="member-name-link">REVERSED</a></code></div>
+<div class="col-first even-row-color"><code><a href="#RAPID_BLINK" class="member-name-link">RAPID_BLINK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="#SLOW_BLINK" class="member-name-link">SLOW_BLINK</a></code></div>
+<div class="col-first odd-row-color"><code><a href="#REVERSED" class="member-name-link">REVERSED</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="#UNDERLINED" class="member-name-link">UNDERLINED</a></code></div>
+<div class="col-first even-row-color"><code><a href="#SLOW_BLINK" class="member-name-link">SLOW_BLINK</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="#UNDERLINED" class="member-name-link">UNDERLINED</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -160,10 +163,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the ANSI SGR code to enable this modifier.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetCode()" class="member-name-link">resetCode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#implicitStyleName()" class="member-name-link">implicitStyleName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the ANSI SGR code to disable this modifier.</div>
+<div class="block">Returns the implicit style name for this modifier.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
@@ -196,6 +199,14 @@ the order they are declared.</div>
 <section class="constant-details" id="enum-constant-detail">
 <h2>Enum Constant Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="NORMAL">
+<h3>NORMAL</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a></span>&nbsp;<span class="element-name">NORMAL</span></div>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="BOLD">
 <h3>BOLD</h3>
@@ -321,11 +332,18 @@ not permitted.)</div>
 </section>
 </li>
 <li>
-<section class="detail" id="resetCode()">
-<h3>resetCode</h3>
+<section class="detail" id="implicitStyleName()">
+<h3>implicitStyleName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">resetCode</span>()</div>
-<div class="block">Returns the ANSI SGR code to disable this modifier.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">implicitStyleName</span>()</div>
+<div class="block">Returns the implicit style name for this modifier.
+<p>
+Maps each modifier to the conventional style name used
+for style resolution (e.g., BOLD → "bold", CROSSED_OUT → "strikethrough").</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the style name</dd>
+</dl>
 </div>
 </section>
 </li>

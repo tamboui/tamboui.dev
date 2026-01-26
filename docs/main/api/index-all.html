@@ -2414,6 +2414,10 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">256-color palette index (0-255).</div>
 </dd>
+<dt><a href="dev/tamboui/style/Color.Named.html" class="type-name-link" title="class in dev.tamboui.style">Color.Named</a> - Class in <a href="dev/tamboui/style/package-summary.html">dev.tamboui.style</a></dt>
+<dd>
+<div class="block">A named color reference that maps to a style resolver class.</div>
+</dd>
 <dt><a href="dev/tamboui/style/Color.Reset.html" class="type-name-link" title="class in dev.tamboui.style">Color.Reset</a> - Class in <a href="dev/tamboui/style/package-summary.html">dev.tamboui.style</a></dt>
 <dd>
 <div class="block">Reset to default terminal color.</div>
@@ -3346,6 +3350,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/widgets/calendar/Monthly.html#defaultStyle(dev.tamboui.style.Style)" class="member-name-link">defaultStyle(Style)</a> - Method in class dev.tamboui.widgets.calendar.<a href="dev/tamboui/widgets/calendar/Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></dt>
 <dd>
 <div class="block">Returns a new calendar with the default date style.</div>
+</dd>
+<dt><a href="dev/tamboui/style/Color.Named.html#defaultValue()" class="member-name-link">defaultValue()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Named.html" title="class in dev.tamboui.style">Color.Named</a></dt>
+<dd>
+<div class="block">Returns the default color value.</div>
 </dd>
 <dt><a href="dev/tamboui/style/PropertyDefinition.html#defaultValue()" class="member-name-link">defaultValue()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a></dt>
 <dd>
@@ -4389,6 +4397,8 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/style/Color.Ansi.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Ansi.html" title="class in dev.tamboui.style">Color.Ansi</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.Indexed.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Indexed.html" title="class in dev.tamboui.style">Color.Indexed</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/style/Color.Named.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Named.html" title="class in dev.tamboui.style">Color.Named</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.Reset.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Reset.html" title="class in dev.tamboui.style">Color.Reset</a></dt>
 <dd>&nbsp;</dd>
@@ -5868,6 +5878,8 @@ match.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.Indexed.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Indexed.html" title="class in dev.tamboui.style">Color.Indexed</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/style/Color.Named.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Named.html" title="class in dev.tamboui.style">Color.Named</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.Reset.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Reset.html" title="class in dev.tamboui.style">Color.Reset</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.Rgb.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Rgb.html" title="class in dev.tamboui.style">Color.Rgb</a></dt>
@@ -6406,6 +6418,14 @@ match.</div>
 <dt><a href="dev/tamboui/image/ImageScaling.html" class="type-name-link" title="enum class in dev.tamboui.image">ImageScaling</a> - Enum Class in <a href="dev/tamboui/image/package-summary.html">dev.tamboui.image</a></dt>
 <dd>
 <div class="block">Defines how an image should be scaled to fit the available terminal area.</div>
+</dd>
+<dt><a href="dev/tamboui/style/Modifier.html#implicitStyleName()" class="member-name-link">implicitStyleName()</a> - Method in enum class dev.tamboui.style.<a href="dev/tamboui/style/Modifier.html" title="enum class in dev.tamboui.style">Modifier</a></dt>
+<dd>
+<div class="block">Returns the implicit style name for this modifier.</div>
+</dd>
+<dt><a href="dev/tamboui/style/Style.html#implicitStyleNames()" class="member-name-link">implicitStyleNames()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Style.html" title="class in dev.tamboui.style">Style</a></dt>
+<dd>
+<div class="block">Returns the style names implied by this style's Named colors and modifiers.</div>
 </dd>
 <dt><a href="dev/tamboui/css/model/PropertyValue.html#important()" class="member-name-link">important()</a> - Method in class dev.tamboui.css.model.<a href="dev/tamboui/css/model/PropertyValue.html" title="class in dev.tamboui.css.model">PropertyValue</a></dt>
 <dd>&nbsp;</dd>
@@ -8529,6 +8549,10 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Returns the name of this variable.</div>
 </dd>
+<dt><a href="dev/tamboui/style/Color.Named.html#name()" class="member-name-link">name()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Named.html" title="class in dev.tamboui.style">Color.Named</a></dt>
+<dd>
+<div class="block">Returns the CSS class name for this color.</div>
+</dd>
 <dt><a href="dev/tamboui/style/PropertyDefinition.html#name()" class="member-name-link">name()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a></dt>
 <dd>
 <div class="block">Returns the property name.</div>
@@ -8611,6 +8635,10 @@ for dynamic pseudo-class resolution.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/StandardProperties.html#NAME_WIDTH" class="member-name-link">NAME_WIDTH</a> - Static variable in class dev.tamboui.style.<a href="dev/tamboui/style/StandardProperties.html" title="class in dev.tamboui.style">StandardProperties</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/style/Color.Named.html#%3Cinit%3E(java.lang.String,dev.tamboui.style.Color)" class="member-name-link">Named(String, Color)</a> - Constructor for class dev.tamboui.style.<a href="dev/tamboui/style/Color.Named.html" title="class in dev.tamboui.style">Color.Named</a></dt>
+<dd>
+<div class="block">Creates a named color.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Fraction.html#NEG_ONE" class="member-name-link">NEG_ONE</a> - Static variable in class dev.tamboui.layout.<a href="dev/tamboui/layout/Fraction.html" title="class in dev.tamboui.layout">Fraction</a></dt>
 <dd>
 <div class="block">The fraction representing negative one (-1/1).</div>
@@ -8719,6 +8747,8 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Returns a no-op registry that ignores all registrations.</div>
 </dd>
+<dt><a href="dev/tamboui/style/Modifier.html#NORMAL" class="member-name-link">NORMAL</a> - Enum constant in enum class dev.tamboui.style.<a href="dev/tamboui/style/Modifier.html" title="enum class in dev.tamboui.style">Modifier</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/gauge/LineGauge.html#NORMAL" class="member-name-link">NORMAL</a> - Static variable in class dev.tamboui.widgets.gauge.<a href="dev/tamboui/widgets/gauge/LineGauge.html" title="class in dev.tamboui.widgets.gauge">LineGauge</a></dt>
 <dd>
 <div class="block">Line character set using thin lines.</div>
@@ -10913,10 +10943,6 @@ inheritance behavior, and optional default value.</div>
 <dt><a href="dev/tamboui/terminal/AnsiStringBuilder.html#RESET" class="member-name-link">RESET</a> - Static variable in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/AnsiStringBuilder.html" title="class in dev.tamboui.terminal">AnsiStringBuilder</a></dt>
 <dd>
 <div class="block">ANSI reset sequence that clears all formatting.</div>
-</dd>
-<dt><a href="dev/tamboui/style/Modifier.html#resetCode()" class="member-name-link">resetCode()</a> - Method in enum class dev.tamboui.style.<a href="dev/tamboui/style/Modifier.html" title="enum class in dev.tamboui.style">Modifier</a></dt>
-<dd>
-<div class="block">Returns the ANSI SGR code to disable this modifier.</div>
 </dd>
 <dt><a href="dev/tamboui/image/ImageData.html#resize(int,int)" class="member-name-link">resize(int, int)</a> - Method in class dev.tamboui.image.<a href="dev/tamboui/image/ImageData.html" title="class in dev.tamboui.image">ImageData</a></dt>
 <dd>
@@ -14126,6 +14152,8 @@ from each line.</div>
 <dd>
 <div class="block">Creates a diagonal pattern from top-right to bottom-left.</div>
 </dd>
+<dt><a href="dev/tamboui/style/Color.Named.html#toRgb()" class="member-name-link">toRgb()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Named.html" title="class in dev.tamboui.style">Color.Named</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.html#toRgb()" class="member-name-link">toRgb()</a> - Method in interface dev.tamboui.style.<a href="dev/tamboui/style/Color.html" title="interface in dev.tamboui.style">Color</a></dt>
 <dd>
 <div class="block">Converts this color to RGB.</div>
@@ -14249,6 +14277,8 @@ from each line.</div>
 <dt><a href="dev/tamboui/style/Color.Ansi.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Ansi.html" title="class in dev.tamboui.style">Color.Ansi</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.Indexed.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Indexed.html" title="class in dev.tamboui.style">Color.Indexed</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/style/Color.Named.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Named.html" title="class in dev.tamboui.style">Color.Named</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.Reset.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Color.Reset.html" title="class in dev.tamboui.style">Color.Reset</a></dt>
 <dd>&nbsp;</dd>

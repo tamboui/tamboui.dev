@@ -102,7 +102,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="Color.Ansi.html" title="class in dev.tamboui.style">Color.Ansi</a>, <a href="Color.Indexed.html" title="class in dev.tamboui.style">Color.Indexed</a>, <a href="Color.Reset.html" title="class in dev.tamboui.style">Color.Reset</a>, <a href="Color.Rgb.html" title="class in dev.tamboui.style">Color.Rgb</a></code></dd>
+<dd><code><a href="Color.Ansi.html" title="class in dev.tamboui.style">Color.Ansi</a>, <a href="Color.Indexed.html" title="class in dev.tamboui.style">Color.Indexed</a>, <a href="Color.Named.html" title="class in dev.tamboui.style">Color.Named</a>, <a href="Color.Reset.html" title="class in dev.tamboui.style">Color.Reset</a>, <a href="Color.Rgb.html" title="class in dev.tamboui.style">Color.Rgb</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -132,13 +132,18 @@ loadScripts(document, 'script');</script>
 <div class="block">256-color palette index (0-255).</div>
 </div>
 <div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Color.Reset.html" class="type-name-link" title="class in dev.tamboui.style">Color.Reset</a></code></div>
+<div class="col-second even-row-color"><code><a href="Color.Named.html" class="type-name-link" title="class in dev.tamboui.style">Color.Named</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Reset to default terminal color.</div>
+<div class="block">A named color reference that maps to a style resolver class.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="Color.Rgb.html" class="type-name-link" title="class in dev.tamboui.style">Color.Rgb</a></code></div>
+<div class="col-second odd-row-color"><code><a href="Color.Reset.html" class="type-name-link" title="class in dev.tamboui.style">Color.Reset</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Reset to default terminal color.</div>
+</div>
+<div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="Color.Rgb.html" class="type-name-link" title="class in dev.tamboui.style">Color.Rgb</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">RGB true color (24-bit).</div>
 </div>
 </div>
@@ -480,7 +485,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Converts this color to RGB.
 <p>
 ANSI and indexed colors are converted using standard terminal color palettes.
-Reset colors default to white.</div>
+Named colors delegate to their default value. Reset colors default to white.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the RGB representation of this color</dd>

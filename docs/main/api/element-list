@@ -22,6 +22,11 @@ dev.tamboui.inline
 dev.tamboui.internal.record
 dev.tamboui.layout
 dev.tamboui.layout.cassowary
+dev.tamboui.layout.columns
+dev.tamboui.layout.dock
+dev.tamboui.layout.flow
+dev.tamboui.layout.grid
+dev.tamboui.layout.stack
 dev.tamboui.picocli
 dev.tamboui.style
 dev.tamboui.symbols.merge

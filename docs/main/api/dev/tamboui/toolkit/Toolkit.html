@@ -81,6 +81,21 @@ loadScripts(document, 'script');</script>
 <li><a href="#row()" tabindex="0">row()</a></li>
 <li><a href="#column(dev.tamboui.toolkit.element.Element...)" tabindex="0">column(Element...)</a></li>
 <li><a href="#column()" tabindex="0">column()</a></li>
+<li><a href="#columns(dev.tamboui.toolkit.element.Element...)" tabindex="0">columns(Element...)</a></li>
+<li><a href="#columns()" tabindex="0">columns()</a></li>
+<li><a href="#columns(java.util.Collection)" tabindex="0">columns(Collection)</a></li>
+<li><a href="#columns(java.util.function.Supplier)" tabindex="0">columns(Supplier)</a></li>
+<li><a href="#grid(dev.tamboui.toolkit.element.Element...)" tabindex="0">grid(Element...)</a></li>
+<li><a href="#grid()" tabindex="0">grid()</a></li>
+<li><a href="#grid(java.util.Collection)" tabindex="0">grid(Collection)</a></li>
+<li><a href="#grid(java.util.function.Supplier)" tabindex="0">grid(Supplier)</a></li>
+<li><a href="#dock()" tabindex="0">dock()</a></li>
+<li><a href="#stack(dev.tamboui.toolkit.element.Element...)" tabindex="0">stack(Element...)</a></li>
+<li><a href="#stack()" tabindex="0">stack()</a></li>
+<li><a href="#stack(java.util.Collection)" tabindex="0">stack(Collection)</a></li>
+<li><a href="#flow(dev.tamboui.toolkit.element.Element...)" tabindex="0">flow(Element...)</a></li>
+<li><a href="#flow()" tabindex="0">flow()</a></li>
+<li><a href="#flow(java.util.Collection)" tabindex="0">flow(Collection)</a></li>
 <li><a href="#dialog(java.lang.String,dev.tamboui.toolkit.element.Element...)" tabindex="0">dialog(String, Element...)</a></li>
 <li><a href="#dialog(dev.tamboui.toolkit.element.Element...)" tabindex="0">dialog(Element...)</a></li>
 <li><a href="#dialog()" tabindex="0">dialog()</a></li>
@@ -231,6 +246,26 @@ panel("Title",
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a column with lazy content.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#columns()" class="member-name-link">columns</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty columns layout.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#columns(dev.tamboui.toolkit.element.Element...)" class="member-name-link">columns</a><wbr>(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a multi-column grid layout.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#columns(java.util.Collection)" class="member-name-link">columns</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a multi-column grid layout from a collection.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#columns(java.util.function.Supplier)" class="member-name-link">columns</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;contentSupplier)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a columns layout with lazy content.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dialog()" class="member-name-link">dialog</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -247,15 +282,35 @@ panel("Title",
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a dialog with a title and children.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fill()" class="member-name-link">fill</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dock()" class="member-name-link">dock</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a fill constraint with weight 1.</div>
+<div class="block">Creates an empty dock layout.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fill(int)" class="member-name-link">fill</a><wbr>(int&nbsp;weight)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fill()" class="member-name-link">fill</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a fill constraint with weight 1.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fill(int)" class="member-name-link">fill</a><wbr>(int&nbsp;weight)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a fill constraint with the given weight.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#flow()" class="member-name-link">flow</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty flow layout.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#flow(dev.tamboui.toolkit.element.Element...)" class="member-name-link">flow</a><wbr>(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a flow layout with the given children.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#flow(java.util.Collection)" class="member-name-link">flow</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a flow layout from a collection.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#gauge()" class="member-name-link">gauge</a>()</code></div>
@@ -271,6 +326,26 @@ panel("Title",
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#gauge(int)" class="member-name-link">gauge</a><wbr>(int&nbsp;percent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a gauge with the given percentage (0-100).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#grid()" class="member-name-link">grid</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty grid layout.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#grid(dev.tamboui.toolkit.element.Element...)" class="member-name-link">grid</a><wbr>(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a CSS Grid-inspired grid layout.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#grid(java.util.Collection)" class="member-name-link">grid</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a grid layout from a collection.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#grid(java.util.function.Supplier)" class="member-name-link">grid</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;contentSupplier)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a grid layout with lazy content.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#handleTextInputKey(dev.tamboui.widgets.input.TextInputState,dev.tamboui.tui.event.KeyEvent)" class="member-name-link">handleTextInputKey</a><wbr>(<a href="../widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&nbsp;state,
@@ -483,75 +558,90 @@ panel("Title",
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a sparkline with the given data values.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#table()" class="member-name-link">table</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack()" class="member-name-link">stack</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an empty stack layout.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack(dev.tamboui.toolkit.element.Element...)" class="member-name-link">stack</a><wbr>(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a stack layout with the given children.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack(java.util.Collection)" class="member-name-link">stack</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a stack layout from a collection.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#table()" class="member-name-link">table</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an empty table.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs()" class="member-name-link">tabs</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs()" class="member-name-link">tabs</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates empty tabs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.lang.String...)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;titles)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates tabs with the given titles.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.util.List)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;titles)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.lang.String...)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;titles)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates tabs with the given titles.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.util.List)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;titles)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a text element from any value (uses toString).</div>
+<div class="block">Creates tabs with the given titles.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object...)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a text element with multiple values concatenated.</div>
+<div class="block">Creates a text element from any value (uses toString).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.String)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object...)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a text element with multiple values concatenated.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.String)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text element with the given content.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea()" class="member-name-link">textArea</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea()" class="member-name-link">textArea</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text area with a new state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea(dev.tamboui.widgets.input.TextAreaState)" class="member-name-link">textArea</a><wbr>(<a href="../widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a>&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea(dev.tamboui.widgets.input.TextAreaState)" class="member-name-link">textArea</a><wbr>(<a href="../widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a>&nbsp;state)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text area with the given state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput()" class="member-name-link">textInput</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput()" class="member-name-link">textInput</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text input with a new state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(dev.tamboui.widgets.input.TextInputState)" class="member-name-link">textInput</a><wbr>(<a href="../widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&nbsp;state)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(dev.tamboui.widgets.input.TextInputState)" class="member-name-link">textInput</a><wbr>(<a href="../widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&nbsp;state)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text input with the given state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wave text element with the given text.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String,dev.tamboui.style.Color)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String,dev.tamboui.style.Color)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wave text element with the given text and color.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;<br><a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#widget(T)" class="member-name-link">widget</a><wbr>(T&nbsp;widget)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;<br><a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#widget(T)" class="member-name-link">widget</a><wbr>(T&nbsp;widget)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Wraps any low-level <a href="../widget/Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> as a <a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements"><code>GenericWidgetElement</code></a>.</div>
 </div>
 </div>
@@ -926,6 +1016,234 @@ Markup text areas support scrolling, borders, and focus.
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new empty column</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="columns(dev.tamboui.toolkit.element.Element...)">
+<h3>columns</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></span>&nbsp;<span class="element-name">columns</span><wbr><span class="parameters">(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
+<div class="block">Creates a multi-column grid layout.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new columns layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="columns()">
+<h3>columns</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></span>&nbsp;<span class="element-name">columns</span>()</div>
+<div class="block">Creates an empty columns layout.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty columns layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="columns(java.util.Collection)">
+<h3>columns</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></span>&nbsp;<span class="element-name">columns</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</span></div>
+<div class="block">Creates a multi-column grid layout from a collection.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new columns layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="columns(java.util.function.Supplier)">
+<h3>columns</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></span>&nbsp;<span class="element-name">columns</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;contentSupplier)</span></div>
+<div class="block">Creates a columns layout with lazy content.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contentSupplier</code> - the supplier that provides the content</dd>
+<dt>Returns:</dt>
+<dd>a new columns layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="grid(dev.tamboui.toolkit.element.Element...)">
+<h3>grid</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">grid</span><wbr><span class="parameters">(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
+<div class="block">Creates a CSS Grid-inspired grid layout.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new grid layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="grid()">
+<h3>grid</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">grid</span>()</div>
+<div class="block">Creates an empty grid layout.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty grid layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="grid(java.util.Collection)">
+<h3>grid</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">grid</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</span></div>
+<div class="block">Creates a grid layout from a collection.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new grid layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="grid(java.util.function.Supplier)">
+<h3>grid</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">grid</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;contentSupplier)</span></div>
+<div class="block">Creates a grid layout with lazy content.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contentSupplier</code> - the supplier that provides the content</dd>
+<dt>Returns:</dt>
+<dd>a new grid layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="dock()">
+<h3>dock</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></span>&nbsp;<span class="element-name">dock</span>()</div>
+<div class="block">Creates an empty dock layout.
+<p>
+Regions are added via named methods:
+<pre><code>dock()
+    .top(text("Header"))
+    .bottom(text("Footer"))
+    .left(text("Sidebar"))
+    .center(text("Content"))
+</code></pre></div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new dock layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="stack(dev.tamboui.toolkit.element.Element...)">
+<h3>stack</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></span>&nbsp;<span class="element-name">stack</span><wbr><span class="parameters">(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
+<div class="block">Creates a stack layout with the given children.
+<p>
+Children render on top of each other (painter's algorithm).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new stack layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="stack()">
+<h3>stack</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></span>&nbsp;<span class="element-name">stack</span>()</div>
+<div class="block">Creates an empty stack layout.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty stack layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="stack(java.util.Collection)">
+<h3>stack</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></span>&nbsp;<span class="element-name">stack</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</span></div>
+<div class="block">Creates a stack layout from a collection.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new stack layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="flow(dev.tamboui.toolkit.element.Element...)">
+<h3>flow</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></span>&nbsp;<span class="element-name">flow</span><wbr><span class="parameters">(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
+<div class="block">Creates a flow layout with the given children.
+<p>
+Children flow left-to-right and wrap to the next line
+when exceeding the available width.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new flow layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="flow()">
+<h3>flow</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></span>&nbsp;<span class="element-name">flow</span>()</div>
+<div class="block">Creates an empty flow layout.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty flow layout</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="flow(java.util.Collection)">
+<h3>flow</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></span>&nbsp;<span class="element-name">flow</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</span></div>
+<div class="block">Creates a flow layout from a collection.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements</dd>
+<dt>Returns:</dt>
+<dd>a new flow layout</dd>
 </dl>
 </div>
 </section>

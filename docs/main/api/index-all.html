@@ -293,9 +293,17 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Advances the tick by the given amount.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#align(dev.tamboui.layout.Rect,int,int)" class="member-name-link">align(Rect, int, int)</a> - Method in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Computes the aligned sub-rect for a child within a container.</div>
+</dd>
 <dt><a href="dev/tamboui/css/cascade/CssStyleResolver.html#alignment()" class="member-name-link">alignment()</a> - Method in class dev.tamboui.css.cascade.<a href="dev/tamboui/css/cascade/CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a></dt>
 <dd>
 <div class="block">Returns the text alignment, if set.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.html#alignment()" class="member-name-link">alignment()</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.html" title="class in dev.tamboui.layout.stack">Stack</a></dt>
+<dd>
+<div class="block">Returns the alignment for this stack.</div>
 </dd>
 <dt><a href="dev/tamboui/text/Line.html#alignment()" class="member-name-link">alignment()</a> - Method in class dev.tamboui.text.<a href="dev/tamboui/text/Line.html" title="class in dev.tamboui.text">Line</a></dt>
 <dd>&nbsp;</dd>
@@ -335,6 +343,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/paragraph/Paragraph.Builder.html#alignment(dev.tamboui.layout.Alignment)" class="member-name-link">alignment(Alignment)</a> - Method in class dev.tamboui.widgets.paragraph.<a href="dev/tamboui/widgets/paragraph/Paragraph.Builder.html" title="class in dev.tamboui.widgets.paragraph">Paragraph.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.Builder.html#alignment(dev.tamboui.layout.ContentAlignment)" class="member-name-link">alignment(ContentAlignment)</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.Builder.html" title="class in dev.tamboui.layout.stack">Stack.Builder</a></dt>
+<dd>
+<div class="block">Sets how children are aligned within the stack.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#alignment(dev.tamboui.layout.ContentAlignment)" class="member-name-link">alignment(ContentAlignment)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>
+<div class="block">Sets how children are aligned within the stack.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Alignment.html" class="type-name-link" title="enum class in dev.tamboui.layout">Alignment</a> - Enum Class in <a href="dev/tamboui/layout/package-summary.html">dev.tamboui.layout</a></dt>
 <dd>
 <div class="block">Alignment for text and widget content.</div>
@@ -1364,11 +1380,27 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the bottom edge (exclusive).</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#bottom(dev.tamboui.toolkit.element.Element)" class="member-name-link">bottom(Element)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the bottom region element.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#bottom(dev.tamboui.widget.Widget)" class="member-name-link">bottom(Widget)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the bottom region widget.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/block/Borders.html#BOTTOM" class="member-name-link">BOTTOM</a> - Enum constant in enum class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/Borders.html" title="enum class in dev.tamboui.widgets.block">Borders</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/chart/LegendPosition.html#BOTTOM" class="member-name-link">BOTTOM</a> - Enum constant in enum class dev.tamboui.widgets.chart.<a href="dev/tamboui/widgets/chart/LegendPosition.html" title="enum class in dev.tamboui.widgets.chart">LegendPosition</a></dt>
 <dd>
 <div class="block">Bottom center</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#BOTTOM_CENTER" class="member-name-link">BOTTOM_CENTER</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Bottom center.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#BOTTOM_LEFT" class="member-name-link">BOTTOM_LEFT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Bottom-left corner.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/chart/LegendPosition.html#BOTTOM_LEFT" class="member-name-link">BOTTOM_LEFT</a> - Enum constant in enum class dev.tamboui.widgets.chart.<a href="dev/tamboui/widgets/chart/LegendPosition.html" title="enum class in dev.tamboui.widgets.chart">LegendPosition</a></dt>
 <dd>
@@ -1380,6 +1412,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/tamboui/widgets/block/Borders.html#BOTTOM_ONLY" class="member-name-link">BOTTOM_ONLY</a> - Static variable in enum class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/Borders.html" title="enum class in dev.tamboui.widgets.block">Borders</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#BOTTOM_RIGHT" class="member-name-link">BOTTOM_RIGHT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Bottom-right corner.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/chart/LegendPosition.html#BOTTOM_RIGHT" class="member-name-link">BOTTOM_RIGHT</a> - Enum constant in enum class dev.tamboui.widgets.chart.<a href="dev/tamboui/widgets/chart/LegendPosition.html" title="enum class in dev.tamboui.widgets.chart">LegendPosition</a></dt>
 <dd>
 <div class="block">Bottom right corner</div>
@@ -1391,6 +1427,14 @@ loadScripts(document, 'script');</script>
 <dt><a href="dev/tamboui/widgets/list/ListDirection.html#BOTTOM_TO_TOP" class="member-name-link">BOTTOM_TO_TOP</a> - Enum constant in enum class dev.tamboui.widgets.list.<a href="dev/tamboui/widgets/list/ListDirection.html" title="enum class in dev.tamboui.widgets.list">ListDirection</a></dt>
 <dd>
 <div class="block">Render items from bottom to top.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#bottomHeight(dev.tamboui.layout.Constraint)" class="member-name-link">bottomHeight(Constraint)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the height constraint for the bottom region.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#bottomHeight(dev.tamboui.layout.Constraint)" class="member-name-link">bottomHeight(Constraint)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the height constraint for the bottom region.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/block/BorderSet.html#bottomHorizontal()" class="member-name-link">bottomHorizontal()</a> - Method in class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/BorderSet.html" title="class in dev.tamboui.widgets.block">BorderSet</a></dt>
 <dd>&nbsp;</dd>
@@ -1556,6 +1600,26 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Builds the image widget.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Builds the <a href="dev/tamboui/layout/columns/Columns.html" title="class in dev.tamboui.layout.columns"><code>Columns</code></a> widget.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Builds the <a href="dev/tamboui/layout/dock/Dock.html" title="class in dev.tamboui.layout.dock"><code>Dock</code></a> widget.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.Builder.html" title="class in dev.tamboui.layout.flow">Flow.Builder</a></dt>
+<dd>
+<div class="block">Builds the <a href="dev/tamboui/layout/flow/Flow.html" title="class in dev.tamboui.layout.flow"><code>Flow</code></a> widget.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Builds the <a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid"><code>Grid</code></a> widget.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.Builder.html" title="class in dev.tamboui.layout.stack">Stack.Builder</a></dt>
+<dd>
+<div class="block">Builds the <a href="dev/tamboui/layout/stack/Stack.html" title="class in dev.tamboui.layout.stack"><code>Stack</code></a> widget.</div>
+</dd>
 <dt><a href="dev/tamboui/style/PropertyDefinition.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/PropertyDefinition.Builder.html" title="class in dev.tamboui.style">PropertyDefinition.Builder</a></dt>
 <dd>
 <div class="block">Builds the property definition.</div>
@@ -1665,6 +1729,26 @@ loadScripts(document, 'script');</script>
 <dt><a href="dev/tamboui/image/Image.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.image.<a href="dev/tamboui/image/Image.html" title="class in dev.tamboui.image">Image</a></dt>
 <dd>
 <div class="block">Creates a new image builder.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.html" title="class in dev.tamboui.layout.columns">Columns</a></dt>
+<dd>
+<div class="block">Creates a new builder.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.html" title="class in dev.tamboui.layout.dock">Dock</a></dt>
+<dd>
+<div class="block">Creates a new builder.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.html" title="class in dev.tamboui.layout.flow">Flow</a></dt>
+<dd>
+<div class="block">Creates a new builder.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid">Grid</a></dt>
+<dd>
+<div class="block">Creates a new builder.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.html" title="class in dev.tamboui.layout.stack">Stack</a></dt>
+<dd>
+<div class="block">Creates a new builder.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#builder()" class="member-name-link">builder()</a> - Static method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
@@ -1997,11 +2081,31 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Creates a radial pattern centered at the middle of the area.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#center(dev.tamboui.toolkit.element.Element)" class="member-name-link">center(Element)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the center region element.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#center(dev.tamboui.widget.Widget)" class="member-name-link">center(Widget)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the center region widget.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Alignment.html#CENTER" class="member-name-link">CENTER</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/Alignment.html" title="enum class in dev.tamboui.layout">Alignment</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#CENTER" class="member-name-link">CENTER</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Center (both horizontal and vertical).</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Flex.html#CENTER" class="member-name-link">CENTER</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/Flex.html" title="enum class in dev.tamboui.layout">Flex</a></dt>
 <dd>
 <div class="block">Center elements.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#CENTER_LEFT" class="member-name-link">CENTER_LEFT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Center-left.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#CENTER_RIGHT" class="member-name-link">CENTER_RIGHT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Center-right.</div>
 </dd>
 <dt><a href="dev/tamboui/text/Line.html#centered()" class="member-name-link">centered()</a> - Method in class dev.tamboui.text.<a href="dev/tamboui/text/Line.html" title="class in dev.tamboui.text">Line</a></dt>
 <dd>&nbsp;</dd>
@@ -2100,6 +2204,30 @@ loadScripts(document, 'script');</script>
 <dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#children(dev.tamboui.toolkit.element.Element...)" class="member-name-link">children(Element...)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
 <dd>
 <div class="block">Adds child elements to this scope.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#children(dev.tamboui.widget.Widget...)" class="member-name-link">children(Widget...)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets the children widgets.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#children(dev.tamboui.widget.Widget...)" class="member-name-link">children(Widget...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the children widgets.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.Builder.html#children(dev.tamboui.widget.Widget...)" class="member-name-link">children(Widget...)</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.Builder.html" title="class in dev.tamboui.layout.stack">Stack.Builder</a></dt>
+<dd>
+<div class="block">Sets the children widgets.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#children(java.util.List)" class="member-name-link">children(List)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets the children widgets from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#children(java.util.List)" class="member-name-link">children(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the children widgets from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.Builder.html#children(java.util.List)" class="member-name-link">children(List)</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.Builder.html" title="class in dev.tamboui.layout.stack">Stack.Builder</a></dt>
+<dd>
+<div class="block">Sets the children widgets from a list.</div>
 </dd>
 <dt><a href="dev/tamboui/css/selector/ChildSelector.html" class="type-name-link" title="class in dev.tamboui.css.selector">ChildSelector</a> - Class in <a href="dev/tamboui/css/selector/package-summary.html">dev.tamboui.css.selector</a></dt>
 <dd>
@@ -2472,9 +2600,101 @@ compatible with Java 8.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Column.html#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">Column(Element...)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Column.html" title="class in dev.tamboui.toolkit.elements">Column</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#COLUMN_COUNT" class="member-name-link">COLUMN_COUNT</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the number of columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/ColumnOrder.html#COLUMN_FIRST" class="member-name-link">COLUMN_FIRST</a> - Enum constant in enum class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/ColumnOrder.html" title="enum class in dev.tamboui.layout.columns">ColumnOrder</a></dt>
+<dd>
+<div class="block">Items fill top-to-bottom, then left-to-right.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#COLUMN_ORDER" class="member-name-link">COLUMN_ORDER</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the column ordering mode.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#columnConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">columnConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the width constraints for columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#columnConstraints(java.util.List)" class="member-name-link">columnConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the width constraints for columns from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#columnCount(int)" class="member-name-link">columnCount(int)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets the number of columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#columnCount(int)" class="member-name-link">columnCount(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the number of columns.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#columnCount(int)" class="member-name-link">columnCount(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Sets an explicit column count, overriding auto-detection.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#columnFirst()" class="member-name-link">columnFirst()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Convenience method to set column-first ordering.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/ColumnOrder.html" class="type-name-link" title="enum class in dev.tamboui.layout.columns">ColumnOrder</a> - Enum Class in <a href="dev/tamboui/layout/columns/package-summary.html">dev.tamboui.layout.columns</a></dt>
+<dd>
+<div class="block">Controls the ordering of children within a <a href="dev/tamboui/layout/columns/Columns.html" title="class in dev.tamboui.layout.columns"><code>Columns</code></a> layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">ColumnOrderConverter</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">Converts string values to <a href="dev/tamboui/layout/columns/ColumnOrder.html" title="enum class in dev.tamboui.layout.columns"><code>ColumnOrder</code></a> enum values.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Rect.html#columns()" class="member-name-link">columns()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
 <div class="block">Returns an iterator over columns in this rectangle.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html#columns()" class="member-name-link">columns()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements">GridSize</a></dt>
+<dd>
+<div class="block">Returns the number of columns.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#columns()" class="member-name-link">columns()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates an empty columns layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html#columns(int)" class="member-name-link">columns(int)</a> - Static method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements">GridSize</a></dt>
+<dd>
+<div class="block">Creates a grid size with explicit columns and auto rows.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#columns(dev.tamboui.toolkit.element.Element...)" class="member-name-link">columns(Element...)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a multi-column grid layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#columns(java.util.Collection)" class="member-name-link">columns(Collection)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a multi-column grid layout from a collection.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#columns(java.util.function.Supplier)" class="member-name-link">columns(Supplier)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a columns layout with lazy content.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.html" class="type-name-link" title="class in dev.tamboui.layout.columns">Columns</a> - Class in <a href="dev/tamboui/layout/columns/package-summary.html">dev.tamboui.layout.columns</a></dt>
+<dd>
+<div class="block">A grid layout widget that arranges children into columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html" class="type-name-link" title="class in dev.tamboui.layout.columns">Columns.Builder</a> - Class in <a href="dev/tamboui/layout/columns/package-summary.html">dev.tamboui.layout.columns</a></dt>
+<dd>
+<div class="block">Builder for <a href="dev/tamboui/layout/columns/Columns.html" title="class in dev.tamboui.layout.columns"><code>Columns</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">A multi-column grid layout container that arranges children into columns.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#%3Cinit%3E()" class="member-name-link">ColumnsElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Creates an empty columns layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">ColumnsElement(Element...)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Creates a columns layout with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#%3Cinit%3E(java.util.Collection)" class="member-name-link">ColumnsElement(Collection)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Creates a columns layout with the given children.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/TableElement.html#columnSpacing(int)" class="member-name-link">columnSpacing(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></dt>
 <dd>
@@ -2483,6 +2703,14 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/widgets/table/Table.Builder.html#columnSpacing(int)" class="member-name-link">columnSpacing(int)</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></dt>
 <dd>
 <div class="block">Sets the spacing between columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#columnWidths(dev.tamboui.layout.Constraint...)" class="member-name-link">columnWidths(Constraint...)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets the width constraints for columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#columnWidths(java.util.List)" class="member-name-link">columnWidths(List)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets the width constraints for columns from a list.</div>
 </dd>
 <dt><a href="dev/tamboui/css/parser/Token.Comma.html#%3Cinit%3E(dev.tamboui.css.parser.Token.Position)" class="member-name-link">Comma(Token.Position)</a> - Constructor for class dev.tamboui.css.parser.<a href="dev/tamboui/css/parser/Token.Comma.html" title="class in dev.tamboui.css.parser">Token.Comma</a></dt>
 <dd>&nbsp;</dd>
@@ -2640,6 +2868,10 @@ compatible with Java 8.</div>
 </dd>
 <dt><a href="dev/tamboui/css/property/ConstraintConverter.html#%3Cinit%3E()" class="member-name-link">ConstraintConverter()</a> - Constructor for class dev.tamboui.css.property.<a href="dev/tamboui/css/property/ConstraintConverter.html" title="class in dev.tamboui.css.property">ConstraintConverter</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">ConstraintListConverter</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">Converts a space-separated string of constraint tokens to a <code>List&lt;Constraint&gt;</code>.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Layout.html#constraints()" class="member-name-link">constraints()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Layout.html" title="class in dev.tamboui.layout">Layout</a></dt>
 <dd>
 <div class="block">Returns the constraints for the split.</div>
@@ -2704,6 +2936,18 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Returns the content of this cell.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#CONTENT_ALIGN" class="member-name-link">CONTENT_ALIGN</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the content alignment.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html" class="type-name-link" title="enum class in dev.tamboui.layout">ContentAlignment</a> - Enum Class in <a href="dev/tamboui/layout/package-summary.html">dev.tamboui.layout</a></dt>
+<dd>
+<div class="block">Defines 2D alignment for positioning a child within a container area.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignmentConverter.html" class="type-name-link" title="class in dev.tamboui.layout">ContentAlignmentConverter</a> - Class in <a href="dev/tamboui/layout/package-summary.html">dev.tamboui.layout</a></dt>
+<dd>
+<div class="block">Converts string values to <a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout"><code>ContentAlignment</code></a> enum values.</div>
+</dd>
 <dt><a href="dev/tamboui/style/RichTextState.html#contentHeight()" class="member-name-link">contentHeight()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/RichTextState.html" title="class in dev.tamboui.style">RichTextState</a></dt>
 <dd>
 <div class="block">Returns the total content height in lines.</div>
@@ -2746,6 +2990,8 @@ compatible with Java 8.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/ConstraintConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/ConstraintConverter.html" title="class in dev.tamboui.layout">ConstraintConverter</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignmentConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignmentConverter.html" title="class in dev.tamboui.layout">ContentAlignmentConverter</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/DirectionConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/DirectionConverter.html" title="class in dev.tamboui.layout">DirectionConverter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/FlexConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/FlexConverter.html" title="class in dev.tamboui.layout">FlexConverter</a></dt>
@@ -2777,6 +3023,14 @@ compatible with Java 8.</div>
 <div class="block">Converts a string value to the target type using this definition's converter.</div>
 </dd>
 <dt><a href="dev/tamboui/style/StringConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/StringConverter.html" title="class in dev.tamboui.style">StringConverter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html" title="class in dev.tamboui.toolkit.elements">ColumnOrderConverter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html" title="class in dev.tamboui.toolkit.elements">ConstraintListConverter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSizeConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSizeConverter.html" title="class in dev.tamboui.toolkit.elements">GridSizeConverter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GutterConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GutterConverter.html" title="class in dev.tamboui.toolkit.elements">GutterConverter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/block/BorderTypeConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/BorderTypeConverter.html" title="class in dev.tamboui.widgets.block">BorderTypeConverter</a></dt>
 <dd>&nbsp;</dd>
@@ -2877,6 +3131,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/terminal/BackendProvider.html#create()" class="member-name-link">create()</a> - Method in interface dev.tamboui.terminal.<a href="dev/tamboui/terminal/BackendProvider.html" title="interface in dev.tamboui.terminal">BackendProvider</a></dt>
 <dd>
 <div class="block">Creates a new backend instance.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#create()" class="member-name-link">create()</a> - Static method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
+<dd>
+<div class="block">Creates an InlineToolkitRunner with an initial height of 1.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#create()" class="member-name-link">create()</a> - Static method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>
@@ -3473,6 +3731,16 @@ compatible with Java 8.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/cassowary/package-summary.html">dev.tamboui.layout.cassowary</a> - package dev.tamboui.layout.cassowary</dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/columns/package-summary.html">dev.tamboui.layout.columns</a> - package dev.tamboui.layout.columns</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/dock/package-summary.html">dev.tamboui.layout.dock</a> - package dev.tamboui.layout.dock</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/flow/package-summary.html">dev.tamboui.layout.flow</a> - package dev.tamboui.layout.flow</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a> - package dev.tamboui.layout.grid</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/stack/package-summary.html">dev.tamboui.layout.stack</a> - package dev.tamboui.layout.stack</dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/picocli/package-summary.html">dev.tamboui.picocli</a> - package dev.tamboui.picocli</dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/package-summary.html">dev.tamboui.style</a> - package dev.tamboui.style</dt>
@@ -3788,6 +4056,46 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/widgets/tabs/Tabs.Builder.html#divider(java.lang.String)" class="member-name-link">divider(String)</a> - Method in class dev.tamboui.widgets.tabs.<a href="dev/tamboui/widgets/tabs/Tabs.Builder.html" title="class in dev.tamboui.widgets.tabs">Tabs.Builder</a></dt>
 <dd>
 <div class="block">Sets the divider between tabs.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#dock()" class="member-name-link">dock()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates an empty dock layout.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.html" class="type-name-link" title="class in dev.tamboui.layout.dock">Dock</a> - Class in <a href="dev/tamboui/layout/dock/package-summary.html">dev.tamboui.layout.dock</a></dt>
+<dd>
+<div class="block">A 5-region dock layout widget that arranges children into top, bottom,
+left, right, and center regions — the most common TUI application structure
+(header + sidebar + content + footer).</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#DOCK_BOTTOM_HEIGHT" class="member-name-link">DOCK_BOTTOM_HEIGHT</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the bottom region height.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#DOCK_LEFT_WIDTH" class="member-name-link">DOCK_LEFT_WIDTH</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the left region width.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#DOCK_RIGHT_WIDTH" class="member-name-link">DOCK_RIGHT_WIDTH</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the right region width.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#DOCK_TOP_HEIGHT" class="member-name-link">DOCK_TOP_HEIGHT</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the top region height.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html" class="type-name-link" title="class in dev.tamboui.layout.dock">Dock.Builder</a> - Class in <a href="dev/tamboui/layout/dock/package-summary.html">dev.tamboui.layout.dock</a></dt>
+<dd>
+<div class="block">Builder for <a href="dev/tamboui/layout/dock/Dock.html" title="class in dev.tamboui.layout.dock"><code>Dock</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">DockElement</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">A 5-region dock layout element that arranges children into top, bottom,
+left, right, and center regions — the most common TUI application structure
+(header + sidebar + content + footer).</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#%3Cinit%3E()" class="member-name-link">DockElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Creates an empty dock layout.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/Effect.html#done()" class="member-name-link">done()</a> - Method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/Effect.html" title="class in dev.tamboui.tfx">Effect</a></dt>
 <dd>
@@ -4432,6 +4740,10 @@ compatible with Java 8.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/element/ChildPosition.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/ChildPosition.html" title="class in dev.tamboui.toolkit.element">ChildPosition</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements">GridSize</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/bindings/MouseTrigger.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/MouseTrigger.html" title="class in dev.tamboui.tui.bindings">MouseTrigger</a></dt>
@@ -4929,6 +5241,14 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Sets the flex layout mode.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets how remaining space is distributed among columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets how remaining space is distributed.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Layout.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Layout.html" title="class in dev.tamboui.layout">Layout</a></dt>
 <dd>
 <div class="block">Sets how remaining space is distributed.</div>
@@ -4937,9 +5257,18 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Sets how remaining space is distributed among children.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Sets how remaining space is distributed among columns.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/DialogElement.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></dt>
 <dd>
 <div class="block">Sets the flex layout mode for positioning children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets how remaining space is distributed when grid constraints
+don't fill the available area.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/Panel.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></dt>
 <dd>
@@ -4981,6 +5310,52 @@ compatible with Java 8.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/TFxMath.html#floor(float)" class="member-name-link">floor(float)</a> - Static method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxMath.html" title="class in dev.tamboui.tfx">TFxMath</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#flow()" class="member-name-link">flow()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates an empty flow layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#flow(dev.tamboui.toolkit.element.Element...)" class="member-name-link">flow(Element...)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a flow layout with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#flow(java.util.Collection)" class="member-name-link">flow(Collection)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a flow layout from a collection.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.html" class="type-name-link" title="class in dev.tamboui.layout.flow">Flow</a> - Class in <a href="dev/tamboui/layout/flow/package-summary.html">dev.tamboui.layout.flow</a></dt>
+<dd>
+<div class="block">A wrap layout widget where items flow left-to-right and wrap to the
+next line when exceeding the available width.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#FLOW_ROW_SPACING" class="member-name-link">FLOW_ROW_SPACING</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">CSS property definition for vertical spacing between rows.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.Builder.html" class="type-name-link" title="class in dev.tamboui.layout.flow">Flow.Builder</a> - Class in <a href="dev/tamboui/layout/flow/package-summary.html">dev.tamboui.layout.flow</a></dt>
+<dd>
+<div class="block">Builder for <a href="dev/tamboui/layout/flow/Flow.html" title="class in dev.tamboui.layout.flow"><code>Flow</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">FlowElement</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">A wrap layout element where children flow left-to-right and wrap to the
+next line when exceeding the available width.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#%3Cinit%3E()" class="member-name-link">FlowElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">Creates an empty flow layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">FlowElement(Element...)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">Creates a flow layout with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#%3Cinit%3E(java.util.Collection)" class="member-name-link">FlowElement(Collection)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">Creates a flow layout with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/FlowItem.html" class="type-name-link" title="class in dev.tamboui.layout.flow">FlowItem</a> - Class in <a href="dev/tamboui/layout/flow/package-summary.html">dev.tamboui.layout.flow</a></dt>
+<dd>
+<div class="block">An item in a <a href="dev/tamboui/layout/flow/Flow.html" title="class in dev.tamboui.layout.flow"><code>Flow</code></a> layout with explicit width and height.</div>
+</dd>
 <dt><a href="dev/tamboui/backend/jline3/JLineBackend.html#flush()" class="member-name-link">flush()</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackend.html" title="class in dev.tamboui.backend.jline3">JLineBackend</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/panama/PanamaBackend.html#flush()" class="member-name-link">flush()</a> - Method in class dev.tamboui.backend.panama.<a href="dev/tamboui/backend/panama/PanamaBackend.html" title="class in dev.tamboui.backend.panama">PanamaBackend</a></dt>
@@ -5627,8 +6002,92 @@ match.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Color.html#GREEN" class="member-name-link">GREEN</a> - Static variable in interface dev.tamboui.style.<a href="dev/tamboui/style/Color.html" title="interface in dev.tamboui.style">Color</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#grid()" class="member-name-link">grid()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates an empty grid layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#grid(dev.tamboui.toolkit.element.Element...)" class="member-name-link">grid(Element...)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a CSS Grid-inspired grid layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#grid(java.util.Collection)" class="member-name-link">grid(Collection)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a grid layout from a collection.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#grid(java.util.function.Supplier)" class="member-name-link">grid(Supplier)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a grid layout with lazy content.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.html" class="type-name-link" title="class in dev.tamboui.layout.grid">Grid</a> - Class in <a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a></dt>
+<dd>
+<div class="block">A CSS Grid-inspired layout widget that arranges children into a grid
+with explicit control over grid dimensions, per-column/per-row sizing
+constraints, and gutter spacing.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#GRID_COLUMNS" class="member-name-link">GRID_COLUMNS</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">CSS property definition for per-column constraints.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#GRID_GUTTER" class="member-name-link">GRID_GUTTER</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the gutter spacing.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#GRID_ROWS" class="member-name-link">GRID_ROWS</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">CSS property definition for per-row constraints.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#GRID_SIZE" class="member-name-link">GRID_SIZE</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">CSS property definition for the grid size.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html" class="type-name-link" title="class in dev.tamboui.layout.grid">Grid.Builder</a> - Class in <a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a></dt>
+<dd>
+<div class="block">Builder for <a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid"><code>Grid</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gridColumns(dev.tamboui.layout.Constraint...)" class="member-name-link">gridColumns(Constraint...)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets per-column width constraints.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">GridElement</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">A CSS Grid-inspired layout container that arranges children into a grid
+with explicit control over grid dimensions, per-column/per-row sizing
+constraints, and gutter spacing.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#%3Cinit%3E()" class="member-name-link">GridElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Creates an empty grid layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">GridElement(Element...)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Creates a grid layout with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#%3Cinit%3E(java.util.Collection)" class="member-name-link">GridElement(Collection)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Creates a grid layout with the given children.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/canvas/Painter.GridPoint.html#%3Cinit%3E(int,int)" class="member-name-link">GridPoint(int, int)</a> - Constructor for class dev.tamboui.widgets.canvas.<a href="dev/tamboui/widgets/canvas/Painter.GridPoint.html" title="class in dev.tamboui.widgets.canvas">Painter.GridPoint</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gridRows(dev.tamboui.layout.Constraint...)" class="member-name-link">gridRows(Constraint...)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets per-row height constraints.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gridSize(int)" class="member-name-link">gridSize(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets the number of columns (rows auto-derived from children count).</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gridSize(int,int)" class="member-name-link">gridSize(int, int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets the grid dimensions (columns and rows).</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">GridSize</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">Immutable value object holding grid dimensions (columns and rows).</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSizeConverter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">GridSizeConverter</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">Converts CSS string values to <a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements"><code>GridSize</code></a> objects.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/BarChartElement.html#group(dev.tamboui.widgets.barchart.BarGroup)" class="member-name-link">group(BarGroup)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/BarChartElement.html" title="class in dev.tamboui.toolkit.elements">BarChartElement</a></dt>
 <dd>
 <div class="block">Adds a bar group.</div>
@@ -5648,6 +6107,23 @@ match.</div>
 <dt><a href="dev/tamboui/toolkit/elements/BarChartElement.html#groups(java.util.List)" class="member-name-link">groups(List)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/BarChartElement.html" title="class in dev.tamboui.toolkit.elements">BarChartElement</a></dt>
 <dd>
 <div class="block">Adds bar groups from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gutter(int)" class="member-name-link">gutter(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets uniform gutter spacing between cells.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gutter(int,int)" class="member-name-link">gutter(int, int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets asymmetric gutter spacing between cells.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">Gutter</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">Immutable value object holding horizontal and vertical gutter spacing
+for grid layouts.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GutterConverter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">GutterConverter</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">Converts CSS string values to <a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements"><code>Gutter</code></a> objects.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:H">H</h2>
@@ -5722,6 +6198,8 @@ match.</div>
 <dd>
 <div class="block">Handles key events for the dialog.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent(KeyEvent, boolean)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/LazyElement.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent(KeyEvent, boolean)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/LazyElement.html" title="class in dev.tamboui.toolkit.elements">LazyElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/ListElement.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent(KeyEvent, boolean)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a></dt>
@@ -5751,6 +6229,8 @@ match.</div>
 <div class="block">Handles a mouse event on this element.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/StyledElement.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" class="member-name-link">handleMouseEvent(MouseEvent)</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" class="member-name-link">handleMouseEvent(MouseEvent)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/LazyElement.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" class="member-name-link">handleMouseEvent(MouseEvent)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/LazyElement.html" title="class in dev.tamboui.toolkit.elements">LazyElement</a></dt>
 <dd>&nbsp;</dd>
@@ -5912,6 +6392,10 @@ match.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/element/ChildPosition.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/ChildPosition.html" title="class in dev.tamboui.toolkit.element">ChildPosition</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements">GridSize</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/bindings/MouseTrigger.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/MouseTrigger.html" title="class in dev.tamboui.tui.bindings">MouseTrigger</a></dt>
@@ -6004,6 +6488,10 @@ match.</div>
 </dd>
 <dt><a href="dev/tamboui/internal/record/RecordingConfig.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/flow/FlowItem.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/FlowItem.html" title="class in dev.tamboui.layout.flow">FlowItem</a></dt>
+<dd>
+<div class="block">Returns the item height in cells.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Rect.html#height()" class="member-name-link">height()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
 <div class="block">Returns the height.</div>
@@ -6222,6 +6710,10 @@ match.</div>
 <dd>
 <div class="block">Sets the layout direction to horizontal.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html#horizontal()" class="member-name-link">horizontal()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a></dt>
+<dd>
+<div class="block">Returns the horizontal gutter (between columns).</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Panel.html#horizontal()" class="member-name-link">horizontal()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></dt>
 <dd>
 <div class="block">Sets the layout direction to horizontal.</div>
@@ -6265,6 +6757,14 @@ match.</div>
 <dt><a href="dev/tamboui/widgets/scrollbar/ScrollbarOrientation.html#HORIZONTAL_TOP" class="member-name-link">HORIZONTAL_TOP</a> - Enum constant in enum class dev.tamboui.widgets.scrollbar.<a href="dev/tamboui/widgets/scrollbar/ScrollbarOrientation.html" title="enum class in dev.tamboui.widgets.scrollbar">ScrollbarOrientation</a></dt>
 <dd>
 <div class="block">Horizontal scrollbar at the top of the content area.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#horizontalGutter(int)" class="member-name-link">horizontalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the horizontal gutter between columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.Builder.html#horizontalSpacing(int)" class="member-name-link">horizontalSpacing(int)</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.Builder.html" title="class in dev.tamboui.layout.flow">Flow.Builder</a></dt>
+<dd>
+<div class="block">Sets the horizontal gap between items on the same row.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/ScrollbarElement.html#horizontalTop()" class="member-name-link">horizontalTop()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ScrollbarElement.html" title="class in dev.tamboui.toolkit.elements">ScrollbarElement</a></dt>
 <dd>
@@ -6605,6 +7105,10 @@ match.</div>
 <dd>
 <div class="block">Singleton instance of the constraint converter.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/ContentAlignmentConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignmentConverter.html" title="class in dev.tamboui.layout">ContentAlignmentConverter</a></dt>
+<dd>
+<div class="block">Singleton instance of the content alignment converter.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/DirectionConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.layout.<a href="dev/tamboui/layout/DirectionConverter.html" title="class in dev.tamboui.layout">DirectionConverter</a></dt>
 <dd>
 <div class="block">Singleton instance of the direction converter.</div>
@@ -6655,6 +7159,22 @@ match.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/pattern/IdentityPattern.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.tfx.pattern.<a href="dev/tamboui/tfx/pattern/IdentityPattern.html" title="class in dev.tamboui.tfx.pattern">IdentityPattern</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html" title="class in dev.tamboui.toolkit.elements">ColumnOrderConverter</a></dt>
+<dd>
+<div class="block">Singleton instance of the column order converter.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html" title="class in dev.tamboui.toolkit.elements">ConstraintListConverter</a></dt>
+<dd>
+<div class="block">Singleton instance.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSizeConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSizeConverter.html" title="class in dev.tamboui.toolkit.elements">GridSizeConverter</a></dt>
+<dd>
+<div class="block">Singleton instance.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GutterConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GutterConverter.html" title="class in dev.tamboui.toolkit.elements">GutterConverter</a></dt>
+<dd>
+<div class="block">Singleton instance.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/block/BorderTypeConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/BorderTypeConverter.html" title="class in dev.tamboui.widgets.block">BorderTypeConverter</a></dt>
 <dd>
 <div class="block">Singleton instance of the border type converter.</div>
@@ -7192,6 +7712,14 @@ indicating the child wants to explicitly inherit from parent.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/style/Modifier.html#ITALIC" class="member-name-link">ITALIC</a> - Enum constant in enum class dev.tamboui.style.<a href="dev/tamboui/style/Modifier.html" title="enum class in dev.tamboui.style">Modifier</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.Builder.html#item(dev.tamboui.widget.Widget,int)" class="member-name-link">item(Widget, int)</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.Builder.html" title="class in dev.tamboui.layout.flow">Flow.Builder</a></dt>
+<dd>
+<div class="block">Adds an item with the given widget and width (height defaults to 1).</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.Builder.html#item(dev.tamboui.widget.Widget,int,int)" class="member-name-link">item(Widget, int, int)</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.Builder.html" title="class in dev.tamboui.layout.flow">Flow.Builder</a></dt>
+<dd>
+<div class="block">Adds an item with the given widget, width, and height.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/ListElement.html#itemRenderer(java.util.function.Function)" class="member-name-link">itemRenderer(Function)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a></dt>
 <dd>
 <div class="block">Sets the renderer function for converting data items to styled elements.</div>
@@ -7203,6 +7731,10 @@ indicating the child wants to explicitly inherit from parent.</div>
 <dt><a href="dev/tamboui/toolkit/elements/ListElement.html#items(java.lang.String...)" class="member-name-link">items(String...)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a></dt>
 <dd>
 <div class="block">Sets the list items from strings.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.Builder.html#items(java.util.List)" class="member-name-link">items(List)</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.Builder.html" title="class in dev.tamboui.layout.flow">Flow.Builder</a></dt>
+<dd>
+<div class="block">Sets the items from a list.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/list/ListWidget.Builder.html#items(java.util.List)" class="member-name-link">items(List)</a> - Method in class dev.tamboui.widgets.list.<a href="dev/tamboui/widgets/list/ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></dt>
 <dd>&nbsp;</dd>
@@ -7500,6 +8032,14 @@ based on constraints.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/paragraph/Paragraph.Builder.html#left()" class="member-name-link">left()</a> - Method in class dev.tamboui.widgets.paragraph.<a href="dev/tamboui/widgets/paragraph/Paragraph.Builder.html" title="class in dev.tamboui.widgets.paragraph">Paragraph.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#left(dev.tamboui.toolkit.element.Element)" class="member-name-link">left(Element)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the left region element.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#left(dev.tamboui.widget.Widget)" class="member-name-link">left(Widget)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the left region widget.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Alignment.html#LEFT" class="member-name-link">LEFT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/Alignment.html" title="enum class in dev.tamboui.layout">Alignment</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/event/KeyCode.html#LEFT" class="member-name-link">LEFT</a> - Enum constant in enum class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a></dt>
@@ -7533,6 +8073,14 @@ based on constraints.</div>
 <dt><a href="dev/tamboui/widgets/block/BorderSet.Builder.html#leftVertical(java.lang.String)" class="member-name-link">leftVertical(String)</a> - Method in class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/BorderSet.Builder.html" title="class in dev.tamboui.widgets.block">BorderSet.Builder</a></dt>
 <dd>
 <div class="block">Sets the left vertical border character.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#leftWidth(dev.tamboui.layout.Constraint)" class="member-name-link">leftWidth(Constraint)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the width constraint for the left region.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#leftWidth(dev.tamboui.layout.Constraint)" class="member-name-link">leftWidth(Constraint)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the width constraint for the left region.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/ChartElement.html#legendPosition(dev.tamboui.widgets.chart.LegendPosition)" class="member-name-link">legendPosition(LegendPosition)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></dt>
 <dd>
@@ -7937,6 +8485,22 @@ based on constraints.</div>
 <dd>
 <div class="block">Sets uniform margin around the column.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#margin(int)" class="member-name-link">margin(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Sets uniform margin around the columns layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#margin(int)" class="member-name-link">margin(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets uniform margin around the dock layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#margin(int)" class="member-name-link">margin(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">Sets uniform margin around the flow layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#margin(int)" class="member-name-link">margin(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets uniform margin around the grid layout.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Panel.html#margin(int)" class="member-name-link">margin(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></dt>
 <dd>
 <div class="block">Sets uniform margin around the panel.</div>
@@ -7944,6 +8508,10 @@ based on constraints.</div>
 <dt><a href="dev/tamboui/toolkit/elements/Row.html#margin(int)" class="member-name-link">margin(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Row.html" title="class in dev.tamboui.toolkit.elements">Row</a></dt>
 <dd>
 <div class="block">Sets uniform margin around the row.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#margin(int)" class="member-name-link">margin(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>
+<div class="block">Sets uniform margin around the stack layout.</div>
 </dd>
 <dt><a href="dev/tamboui/css/cascade/CssStyleResolver.Builder.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.css.cascade.<a href="dev/tamboui/css/cascade/CssStyleResolver.Builder.html" title="class in dev.tamboui.css.cascade">CssStyleResolver.Builder</a></dt>
 <dd>
@@ -7957,6 +8525,22 @@ based on constraints.</div>
 <dd>
 <div class="block">Sets the margin around the column.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Sets the margin around the columns layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the margin around the dock layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">Sets the margin around the flow layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Sets the margin around the grid layout.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Panel.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></dt>
 <dd>
 <div class="block">Sets the margin around the panel.</div>
@@ -7964,6 +8548,10 @@ based on constraints.</div>
 <dt><a href="dev/tamboui/toolkit/elements/Row.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Row.html" title="class in dev.tamboui.toolkit.elements">Row</a></dt>
 <dd>
 <div class="block">Sets the margin around the row.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#margin(dev.tamboui.layout.Margin)" class="member-name-link">margin(Margin)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>
+<div class="block">Sets the margin around the stack layout.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/Margin.html" class="type-name-link" title="class in dev.tamboui.layout">Margin</a> - Class in <a href="dev/tamboui/layout/package-summary.html">dev.tamboui.layout</a></dt>
 <dd>
@@ -8870,6 +9458,14 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Creates a ChildPosition for the given index within a collection of the given size.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html#of(int,int)" class="member-name-link">of(int, int)</a> - Static method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements">GridSize</a></dt>
+<dd>
+<div class="block">Creates a grid size with explicit columns and rows.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html#of(int,int)" class="member-name-link">of(int, int)</a> - Static method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a></dt>
+<dd>
+<div class="block">Creates a gutter with different horizontal and vertical spacing.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/event/ResizeEvent.html#of(int,int)" class="member-name-link">of(int, int)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/ResizeEvent.html" title="class in dev.tamboui.tui.event">ResizeEvent</a></dt>
 <dd>
 <div class="block">Creates a resize event with the given dimensions.</div>
@@ -8929,6 +9525,14 @@ for dynamic pseudo-class resolution.</div>
 <dt><a href="dev/tamboui/tui/bindings/MouseTrigger.html#of(dev.tamboui.tui.event.MouseEventKind,dev.tamboui.tui.event.MouseButton,boolean,boolean,boolean)" class="member-name-link">of(MouseEventKind, MouseButton, boolean, boolean, boolean)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/MouseTrigger.html" title="class in dev.tamboui.tui.bindings">MouseTrigger</a></dt>
 <dd>
 <div class="block">Creates a mouse trigger with all parameters specified.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/FlowItem.html#of(dev.tamboui.widget.Widget,int)" class="member-name-link">of(Widget, int)</a> - Static method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/FlowItem.html" title="class in dev.tamboui.layout.flow">FlowItem</a></dt>
+<dd>
+<div class="block">Creates a flow item with the given widget and width (height defaults to 1).</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/FlowItem.html#of(dev.tamboui.widget.Widget,int,int)" class="member-name-link">of(Widget, int, int)</a> - Static method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/FlowItem.html" title="class in dev.tamboui.layout.flow">FlowItem</a></dt>
+<dd>
+<div class="block">Creates a flow item with the given widget, width, and height.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/barchart/BarGroup.html#of(dev.tamboui.widgets.barchart.Bar...)" class="member-name-link">of(Bar...)</a> - Static method in class dev.tamboui.widgets.barchart.<a href="dev/tamboui/widgets/barchart/BarGroup.html" title="class in dev.tamboui.widgets.barchart">BarGroup</a></dt>
 <dd>
@@ -9277,6 +9881,14 @@ for dynamic pseudo-class resolution.</div>
 <dt><a href="dev/tamboui/toolkit/event/EventResult.html#or(dev.tamboui.toolkit.event.EventResult)" class="member-name-link">or(EventResult)</a> - Method in enum class dev.tamboui.toolkit.event.<a href="dev/tamboui/toolkit/event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></dt>
 <dd>
 <div class="block">Combines two results, returning HANDLED if either is HANDLED.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#order(dev.tamboui.layout.columns.ColumnOrder)" class="member-name-link">order(ColumnOrder)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets the ordering mode for children in the grid.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#order(dev.tamboui.layout.columns.ColumnOrder)" class="member-name-link">order(ColumnOrder)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Sets the ordering mode for children in the grid.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/scrollbar/Scrollbar.html#orientation()" class="member-name-link">orientation()</a> - Method in class dev.tamboui.widgets.scrollbar.<a href="dev/tamboui/widgets/scrollbar/Scrollbar.html" title="class in dev.tamboui.widgets.scrollbar">Scrollbar</a></dt>
 <dd>
@@ -10001,6 +10613,14 @@ for dynamic pseudo-class resolution.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/Column.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Column.html" title="class in dev.tamboui.toolkit.elements">Column</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/MarkupTextAreaElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></dt>
@@ -10011,6 +10631,8 @@ for dynamic pseudo-class resolution.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Row.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Row.html" title="class in dev.tamboui.toolkit.elements">Row</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/TextElement.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight(int, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/element/Element.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in interface dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></dt>
@@ -10019,7 +10641,15 @@ for dynamic pseudo-class resolution.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/Column.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Column.html" title="class in dev.tamboui.toolkit.elements">Column</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/DialogElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/MarkupTextElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/MarkupTextElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextElement</a></dt>
 <dd>&nbsp;</dd>
@@ -10030,6 +10660,8 @@ for dynamic pseudo-class resolution.</div>
 <dt><a href="dev/tamboui/toolkit/elements/Row.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Row.html" title="class in dev.tamboui.toolkit.elements">Row</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Spacer.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Spacer.html" title="class in dev.tamboui.toolkit.elements">Spacer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/TabsElement.html#preferredWidth()" class="member-name-link">preferredWidth()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></dt>
 <dd>&nbsp;</dd>
@@ -10095,7 +10727,7 @@ for dynamic pseudo-class resolution.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#println(dev.tamboui.toolkit.element.Element)" class="member-name-link">println(Element)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
 <dd>
-<div class="block">Prints an element above the viewport as a single line.</div>
+<div class="block">Prints an element above the viewport.</div>
 </dd>
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#println(java.lang.String)" class="member-name-link">println(String)</a> - Method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
@@ -10688,6 +11320,16 @@ inheritance behavior, and optional default value.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/image/Image.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render(Rect, Buffer)</a> - Method in class dev.tamboui.image.<a href="dev/tamboui/image/Image.html" title="class in dev.tamboui.image">Image</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render(Rect, Buffer)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.html" title="class in dev.tamboui.layout.columns">Columns</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render(Rect, Buffer)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.html" title="class in dev.tamboui.layout.dock">Dock</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render(Rect, Buffer)</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.html" title="class in dev.tamboui.layout.flow">Flow</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render(Rect, Buffer)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid">Grid</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render(Rect, Buffer)</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.html" title="class in dev.tamboui.layout.stack">Stack</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widget/Widget.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render(Rect, Buffer)</a> - Method in interface dev.tamboui.widget.<a href="dev/tamboui/widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></dt>
 <dd>
 <div class="block">Renders this widget to the given buffer area.</div>
@@ -10794,11 +11436,19 @@ inheritance behavior, and optional default value.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Column.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Column.html" title="class in dev.tamboui.toolkit.elements">Column</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/DialogElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/GaugeElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/GenericWidgetElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/InlineScopeElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></dt>
 <dd>&nbsp;</dd>
@@ -10821,6 +11471,8 @@ inheritance behavior, and optional default value.</div>
 <dt><a href="dev/tamboui/toolkit/elements/ScrollbarElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ScrollbarElement.html" title="class in dev.tamboui.toolkit.elements">ScrollbarElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/SparklineElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/TableElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent(Frame, Rect, RenderContext)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></dt>
 <dd>&nbsp;</dd>
@@ -11016,6 +11668,10 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Resolves a style for a sub-component following the priority: explicit &gt; CSS &gt; default.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/columns/ColumnOrder.html#resolveIndex(int,int,int,int)" class="member-name-link">resolveIndex(int, int, int, int)</a> - Method in enum class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/ColumnOrder.html" title="enum class in dev.tamboui.layout.columns">ColumnOrder</a></dt>
+<dd>
+<div class="block">Resolves the child index for a given grid position based on this ordering mode.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/element/DefaultRenderContext.html#resolveStyle(dev.tamboui.css.Styleable)" class="member-name-link">resolveStyle(Styleable)</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/DefaultRenderContext.html" title="class in dev.tamboui.toolkit.element">DefaultRenderContext</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/element/RenderContext.html#resolveStyle(dev.tamboui.css.Styleable)" class="member-name-link">resolveStyle(Styleable)</a> - Method in interface dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a></dt>
@@ -11184,6 +11840,14 @@ inheritance behavior, and optional default value.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/paragraph/Paragraph.Builder.html#right()" class="member-name-link">right()</a> - Method in class dev.tamboui.widgets.paragraph.<a href="dev/tamboui/widgets/paragraph/Paragraph.Builder.html" title="class in dev.tamboui.widgets.paragraph">Paragraph.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#right(dev.tamboui.toolkit.element.Element)" class="member-name-link">right(Element)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the right region element.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#right(dev.tamboui.widget.Widget)" class="member-name-link">right(Widget)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the right region widget.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Alignment.html#RIGHT" class="member-name-link">RIGHT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/Alignment.html" title="enum class in dev.tamboui.layout">Alignment</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/event/KeyCode.html#RIGHT" class="member-name-link">RIGHT</a> - Enum constant in enum class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a></dt>
@@ -11229,6 +11893,14 @@ inheritance behavior, and optional default value.</div>
 <dt><a href="dev/tamboui/widgets/block/BorderSet.Builder.html#rightVertical(java.lang.String)" class="member-name-link">rightVertical(String)</a> - Method in class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/BorderSet.Builder.html" title="class in dev.tamboui.widgets.block">BorderSet.Builder</a></dt>
 <dd>
 <div class="block">Sets the right vertical border character.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#rightWidth(dev.tamboui.layout.Constraint)" class="member-name-link">rightWidth(Constraint)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the width constraint for the right region.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#rightWidth(dev.tamboui.layout.Constraint)" class="member-name-link">rightWidth(Constraint)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the width constraint for the right region.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/TFxMath.html#round(float)" class="member-name-link">round(float)</a> - Static method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxMath.html" title="class in dev.tamboui.tfx">TFxMath</a></dt>
 <dd>&nbsp;</dd>
@@ -11330,9 +12002,33 @@ inheritance behavior, and optional default value.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Row.html#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">Row(Element...)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Row.html" title="class in dev.tamboui.toolkit.elements">Row</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/columns/ColumnOrder.html#ROW_FIRST" class="member-name-link">ROW_FIRST</a> - Enum constant in enum class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/ColumnOrder.html" title="enum class in dev.tamboui.layout.columns">ColumnOrder</a></dt>
+<dd>
+<div class="block">Items fill left-to-right, then top-to-bottom.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#rowConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">rowConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the height constraints for rows.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#rowConstraints(java.util.List)" class="member-name-link">rowConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the height constraints for rows from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#rowHeights(int...)" class="member-name-link">rowHeights(int...)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets explicit row heights.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#rowHeights(int...)" class="member-name-link">rowHeights(int...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets explicit row heights.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Rect.html#rows()" class="member-name-link">rows()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
 <div class="block">Returns an iterator over rows in this rectangle.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html#rows()" class="member-name-link">rows()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements">GridSize</a></dt>
+<dd>
+<div class="block">Returns the number of rows (0 means auto-derive from children count).</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/table/Table.html#rows()" class="member-name-link">rows()</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Table.html" title="class in dev.tamboui.widgets.table">Table</a></dt>
 <dd>
@@ -11353,6 +12049,10 @@ inheritance behavior, and optional default value.</div>
 <dt><a href="dev/tamboui/widgets/table/Table.Builder.html#rows(java.util.List)" class="member-name-link">rows(List)</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></dt>
 <dd>
 <div class="block">Sets the data rows.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#rowSpacing(int)" class="member-name-link">rowSpacing(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">Sets the vertical spacing between wrapped rows.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/table/Table.Builder.html#rowStyleResolver(java.util.function.BiFunction)" class="member-name-link">rowStyleResolver(BiFunction)</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></dt>
 <dd>
@@ -12488,6 +13188,10 @@ and continuing to try other providers.</div>
 <dd>
 <div class="block">Returns the spacing between areas.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#spacing(int)" class="member-name-link">spacing(int)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
+<dd>
+<div class="block">Sets the spacing between columns in cells.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Layout.html#spacing(int)" class="member-name-link">spacing(int)</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Layout.html" title="class in dev.tamboui.layout">Layout</a></dt>
 <dd>
 <div class="block">Sets the spacing (in cells) between split areas.</div>
@@ -12496,9 +13200,17 @@ and continuing to try other providers.</div>
 <dd>
 <div class="block">Sets the spacing between children.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/ColumnsElement.html#spacing(int)" class="member-name-link">spacing(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a></dt>
+<dd>
+<div class="block">Sets the spacing between columns.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/DialogElement.html#spacing(int)" class="member-name-link">spacing(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></dt>
 <dd>
 <div class="block">Sets the spacing (gap) between children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#spacing(int)" class="member-name-link">spacing(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
+<dd>
+<div class="block">Sets the horizontal spacing between items on the same row.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/Panel.html#spacing(int)" class="member-name-link">spacing(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></dt>
 <dd>
@@ -12636,6 +13348,44 @@ and continuing to try other providers.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/TFxMath.html#sqrt(float)" class="member-name-link">sqrt(float)</a> - Static method in class dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxMath.html" title="class in dev.tamboui.tfx">TFxMath</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#stack()" class="member-name-link">stack()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates an empty stack layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#stack(dev.tamboui.toolkit.element.Element...)" class="member-name-link">stack(Element...)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a stack layout with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/Toolkit.html#stack(java.util.Collection)" class="member-name-link">stack(Collection)</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
+<dd>
+<div class="block">Creates a stack layout from a collection.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.html" class="type-name-link" title="class in dev.tamboui.layout.stack">Stack</a> - Class in <a href="dev/tamboui/layout/stack/package-summary.html">dev.tamboui.layout.stack</a></dt>
+<dd>
+<div class="block">An overlapping layers widget where children render on top of each other
+using a painter's algorithm (last child on top).</div>
+</dd>
+<dt><a href="dev/tamboui/layout/stack/Stack.Builder.html" class="type-name-link" title="class in dev.tamboui.layout.stack">Stack.Builder</a> - Class in <a href="dev/tamboui/layout/stack/package-summary.html">dev.tamboui.layout.stack</a></dt>
+<dd>
+<div class="block">Builder for <a href="dev/tamboui/layout/stack/Stack.html" title="class in dev.tamboui.layout.stack"><code>Stack</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">StackElement</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">An overlapping layers layout element where children render on top of each
+other using a painter's algorithm (last child on top).</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#%3Cinit%3E()" class="member-name-link">StackElement()</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>
+<div class="block">Creates an empty stack layout.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">StackElement(Element...)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>
+<div class="block">Creates a stack layout with the given children.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/StackElement.html#%3Cinit%3E(java.util.Collection)" class="member-name-link">StackElement(Collection)</a> - Constructor for class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></dt>
+<dd>
+<div class="block">Creates a stack layout with the given children.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/bindings/BindingSets.html#standard()" class="member-name-link">standard()</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/BindingSets.html" title="class in dev.tamboui.tui.bindings">BindingSets</a></dt>
 <dd>
 <div class="block">Standard binding set using only arrow keys and standard keys.</div>
@@ -12741,6 +13491,10 @@ and continuing to try other providers.</div>
 <dt><a href="dev/tamboui/image/ImageScaling.html#STRETCH" class="member-name-link">STRETCH</a> - Enum constant in enum class dev.tamboui.image.<a href="dev/tamboui/image/ImageScaling.html" title="enum class in dev.tamboui.image">ImageScaling</a></dt>
 <dd>
 <div class="block">Stretch the image to exactly fill the bounds.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#STRETCH" class="member-name-link">STRETCH</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Stretch to fill the entire container.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/effects/StretchShader.html" class="type-name-link" title="class in dev.tamboui.tfx.effects">StretchShader</a> - Class in <a href="dev/tamboui/tfx/effects/package-summary.html">dev.tamboui.tfx.effects</a></dt>
 <dd>
@@ -14094,11 +14848,27 @@ from each line.</div>
 <dd>
 <div class="block">Returns the top edge (same as <a href="dev/tamboui/layout/Rect.html#y()"><code>Rect.y()</code></a>).</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#top(dev.tamboui.toolkit.element.Element)" class="member-name-link">top(Element)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the top region element.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#top(dev.tamboui.widget.Widget)" class="member-name-link">top(Widget)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the top region widget.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/block/Borders.html#TOP" class="member-name-link">TOP</a> - Enum constant in enum class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/Borders.html" title="enum class in dev.tamboui.widgets.block">Borders</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/widgets/chart/LegendPosition.html#TOP" class="member-name-link">TOP</a> - Enum constant in enum class dev.tamboui.widgets.chart.<a href="dev/tamboui/widgets/chart/LegendPosition.html" title="enum class in dev.tamboui.widgets.chart">LegendPosition</a></dt>
 <dd>
 <div class="block">Top center</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#TOP_CENTER" class="member-name-link">TOP_CENTER</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Top center.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#TOP_LEFT" class="member-name-link">TOP_LEFT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Top-left corner.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/chart/LegendPosition.html#TOP_LEFT" class="member-name-link">TOP_LEFT</a> - Enum constant in enum class dev.tamboui.widgets.chart.<a href="dev/tamboui/widgets/chart/LegendPosition.html" title="enum class in dev.tamboui.widgets.chart">LegendPosition</a></dt>
 <dd>
@@ -14110,6 +14880,10 @@ from each line.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/block/Borders.html#TOP_ONLY" class="member-name-link">TOP_ONLY</a> - Static variable in enum class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/Borders.html" title="enum class in dev.tamboui.widgets.block">Borders</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#TOP_RIGHT" class="member-name-link">TOP_RIGHT</a> - Enum constant in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Top-right corner.</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/chart/LegendPosition.html#TOP_RIGHT" class="member-name-link">TOP_RIGHT</a> - Enum constant in enum class dev.tamboui.widgets.chart.<a href="dev/tamboui/widgets/chart/LegendPosition.html" title="enum class in dev.tamboui.widgets.chart">LegendPosition</a></dt>
 <dd>
 <div class="block">Top right corner (default)</div>
@@ -14121,6 +14895,14 @@ from each line.</div>
 <dt><a href="dev/tamboui/widgets/list/ListDirection.html#TOP_TO_BOTTOM" class="member-name-link">TOP_TO_BOTTOM</a> - Enum constant in enum class dev.tamboui.widgets.list.<a href="dev/tamboui/widgets/list/ListDirection.html" title="enum class in dev.tamboui.widgets.list">ListDirection</a></dt>
 <dd>
 <div class="block">Render items from top to bottom (default).</div>
+</dd>
+<dt><a href="dev/tamboui/layout/dock/Dock.Builder.html#topHeight(dev.tamboui.layout.Constraint)" class="member-name-link">topHeight(Constraint)</a> - Method in class dev.tamboui.layout.dock.<a href="dev/tamboui/layout/dock/Dock.Builder.html" title="class in dev.tamboui.layout.dock">Dock.Builder</a></dt>
+<dd>
+<div class="block">Sets the height constraint for the top region.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/DockElement.html#topHeight(dev.tamboui.layout.Constraint)" class="member-name-link">topHeight(Constraint)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></dt>
+<dd>
+<div class="block">Sets the height constraint for the top region.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/block/BorderSet.html#topHorizontal()" class="member-name-link">topHorizontal()</a> - Method in class dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/BorderSet.html" title="class in dev.tamboui.widgets.block">BorderSet</a></dt>
 <dd>&nbsp;</dd>
@@ -14315,6 +15097,10 @@ from each line.</div>
 <dt><a href="dev/tamboui/toolkit/element/ChildPosition.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/ChildPosition.html" title="class in dev.tamboui.toolkit.element">ChildPosition</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/element/StyledSpan.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledSpan.html" title="class in dev.tamboui.toolkit.element">StyledSpan</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridSize.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSize.html" title="class in dev.tamboui.toolkit.elements">GridSize</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
 <dd>&nbsp;</dd>
@@ -14567,6 +15353,10 @@ from each line.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/Padding.html#uniform(int)" class="member-name-link">uniform(int)</a> - Static method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Padding.html" title="class in dev.tamboui.layout">Padding</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html#uniform(int)" class="member-name-link">uniform(int)</a> - Static method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a></dt>
+<dd>
+<div class="block">Creates a gutter with uniform spacing in both directions.</div>
+</dd>
 <dt><a href="dev/tamboui/internal/record/AnsiTerminalCapture.html#uninstall()" class="member-name-link">uninstall()</a> - Static method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/AnsiTerminalCapture.html" title="class in dev.tamboui.internal.record">AnsiTerminalCapture</a></dt>
 <dd>
 <div class="block">Uninstalls the capture and restores original System.out.</div>
@@ -14745,6 +15535,14 @@ and <a href="dev/tamboui/css/cascade/UnknownPropertyBehavior.html#FAIL"><code>Un
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/columns/ColumnOrder.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/ColumnOrder.html" title="enum class in dev.tamboui.layout.columns">ColumnOrder</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Direction.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/Direction.html" title="enum class in dev.tamboui.layout">Direction</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
@@ -14907,6 +15705,16 @@ the order they are declared.</div>
 the order they are declared.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/cassowary/Relation.html#values()" class="member-name-link">values()</a> - Static method in enum class dev.tamboui.layout.cassowary.<a href="dev/tamboui/layout/cassowary/Relation.html" title="enum class in dev.tamboui.layout.cassowary">Relation</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/columns/ColumnOrder.html#values()" class="member-name-link">values()</a> - Static method in enum class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/ColumnOrder.html" title="enum class in dev.tamboui.layout.columns">ColumnOrder</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/ContentAlignment.html#values()" class="member-name-link">values()</a> - Static method in enum class dev.tamboui.layout.<a href="dev/tamboui/layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
@@ -15141,6 +15949,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">Sets the layout direction to vertical.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/Gutter.html#vertical()" class="member-name-link">vertical()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a></dt>
+<dd>
+<div class="block">Returns the vertical gutter (between rows).</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/Panel.html#vertical()" class="member-name-link">vertical()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></dt>
 <dd>
 <div class="block">Sets the layout direction to vertical.</div>
@@ -15181,9 +15993,17 @@ the order they are declared.</div>
 <dd>
 <div class="block">Vertical scrollbar on the right side of the content area.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#verticalGutter(int)" class="member-name-link">verticalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Sets the vertical gutter between rows.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/ScrollbarElement.html#verticalLeft()" class="member-name-link">verticalLeft()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ScrollbarElement.html" title="class in dev.tamboui.toolkit.elements">ScrollbarElement</a></dt>
 <dd>
 <div class="block">Sets vertical left-aligned orientation.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/flow/Flow.Builder.html#verticalSpacing(int)" class="member-name-link">verticalSpacing(int)</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.Builder.html" title="class in dev.tamboui.layout.flow">Flow.Builder</a></dt>
+<dd>
+<div class="block">Sets the vertical gap between rows.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/Margin.html#verticalTotal()" class="member-name-link">verticalTotal()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Margin.html" title="class in dev.tamboui.layout">Margin</a></dt>
 <dd>
@@ -15322,6 +16142,10 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/parser/Token.Whitespace.html#%3Cinit%3E(java.lang.String,dev.tamboui.css.parser.Token.Position)" class="member-name-link">Whitespace(String, Token.Position)</a> - Constructor for class dev.tamboui.css.parser.<a href="dev/tamboui/css/parser/Token.Whitespace.html" title="class in dev.tamboui.css.parser">Token.Whitespace</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/flow/FlowItem.html#widget()" class="member-name-link">widget()</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/FlowItem.html" title="class in dev.tamboui.layout.flow">FlowItem</a></dt>
+<dd>
+<div class="block">Returns the widget.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/GenericWidgetElement.html#widget()" class="member-name-link">widget()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a></dt>
 <dd>
 <div class="block">Returns the wrapped widget.</div>
@@ -15352,6 +16176,10 @@ the order they are declared.</div>
 </dd>
 <dt><a href="dev/tamboui/internal/record/RecordingConfig.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/flow/FlowItem.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/FlowItem.html" title="class in dev.tamboui.layout.flow">FlowItem</a></dt>
+<dd>
+<div class="block">Returns the item width in cells.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/Rect.html#width()" class="member-name-link">width()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
 <div class="block">Returns the width.</div>

@@ -37,8 +37,10 @@
 <li><a href="#compact-source-file">Compact Source File</a></li>
 <li><a href="#custom-component">Custom Component</a></li>
 <li><a href="#emoji">Emoji</a></li>
+<li><a href="#emoji-list">Emoji List</a></li>
 <li><a href="#inline-display-mode-using-toolkit">Inline display mode using Toolkit</a></li>
 <li><a href="#jtop">JTop</a></li>
+<li><a href="#layout">Layout</a></li>
 <li><a href="#new-year">New Year</a></li>
 <li><a href="#text-area-with-rich-formatting">Text area with rich formatting</a></li>
 <li><a href="#textarea">Textarea</a></li>
@@ -111,6 +113,20 @@ AsciinemaPlayer.create('demos/emoji-demo.cast', document.getElementById('player-
 </div>
 </div>
 <div class="sect1">
+<h2 id="emoji-list"><a class="anchor" href="#emoji-list"></a><a class="link" href="#emoji-list">Emoji List</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Emoji list displayed using Columns (similar to Textual&#8217;s Emoji demo)</p>
+</div>
+<div id="player-emoji-list-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/emoji-list-demo.cast', document.getElementById('player-emoji-list-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
 <h2 id="inline-display-mode-using-toolkit"><a class="anchor" href="#inline-display-mode-using-toolkit"></a><a class="link" href="#inline-display-mode-using-toolkit">Inline display mode using Toolkit</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -133,6 +149,20 @@ AsciinemaPlayer.create('demos/inline-toolkit-demo.cast', document.getElementById
 <div id="player-jtop-demo" class="demo-player"></div>
 <script>
 AsciinemaPlayer.create('demos/jtop-demo.cast', document.getElementById('player-jtop-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="layout"><a class="anchor" href="#layout"></a><a class="link" href="#layout">Layout</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing dynamic layout switching between Flow, Dock, Grid, and Columns</p>
+</div>
+<div id="player-layout-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/layout-demo.cast', document.getElementById('player-layout-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>
@@ -198,7 +228,7 @@ AsciinemaPlayer.create('demos/toolkit-demo.cast', document.getElementById('playe
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-26 22:24:46 UTC
+Last updated 2026-01-27 08:20:34 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

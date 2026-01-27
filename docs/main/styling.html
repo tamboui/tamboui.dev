@@ -807,6 +807,66 @@ DialogElement Text.title {
 <td class="tableblock halign-left valign-top"><p class="tableblock">Layout direction for panels</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>direction: horizontal;</code> <code>direction: vertical;</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>column-count</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of columns in ColumnsElement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>column-count: 3;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>column-order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordering mode for ColumnsElement children</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>column-order: row-first;</code> <code>column-order: column-first;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grid dimensions for GridElement — columns only or columns and rows</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-size: 3;</code> <code>grid-size: 3 4;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-columns</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Per-column width constraints for GridElement (space-separated, cycles when fewer than columns)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-columns: fill fill(2) 20;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-rows</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Per-row height constraints for GridElement (space-separated, cycles when fewer than rows)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-rows: 2 3;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-gutter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gutter spacing for GridElement — uniform or horizontal/vertical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>grid-gutter: 2;</code> <code>grid-gutter: 1 2;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-top-height</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Height constraint for DockElement top region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-top-height: 3;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-bottom-height</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Height constraint for DockElement bottom region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-bottom-height: 3;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-left-width</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Width constraint for DockElement left region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-left-width: 20;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-right-width</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Width constraint for DockElement right region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dock-right-width: fill;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content-align</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content alignment for StackElement children</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content-align: center;</code> <code>content-align: top-left;</code> <code>content-align: stretch;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flow-row-spacing</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertical spacing between rows in FlowElement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flow-row-spacing: 1;</code></p></td>
+</tr>
 </tbody>
 </table>
 <div class="sect4">
@@ -841,6 +901,10 @@ DialogElement Text.title {
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>fill(&lt;weight&gt;)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fill with specified weight (e.g., <code>height: fill(2);</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;n&gt;fr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fractional unit — alias for <code>fill(&lt;n&gt;)</code> (e.g., <code>1fr</code> is <code>fill(1)</code>, <code>2fr</code> is <code>fill(2)</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>fit</code></p></td>
@@ -1727,7 +1791,7 @@ Panel:focus {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-26 22:24:46 UTC
+Last updated 2026-01-27 08:20:34 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

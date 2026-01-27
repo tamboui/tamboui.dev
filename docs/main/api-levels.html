@@ -745,7 +745,7 @@ public class MyApp extends ToolkitApp {
 </div>
 </div>
 <div class="paragraph">
-<p>The static import <code>dev.tamboui.toolkit.Toolkit.*</code> gives you all the element factories: <code>text()</code>, <code>panel()</code>, <code>row()</code>, <code>column()</code>, <code>list()</code>, <code>table()</code>, and more.</p>
+<p>The static import <code>dev.tamboui.toolkit.Toolkit.*</code> gives you all the element factories: <code>text()</code>, <code>panel()</code>, <code>row()</code>, <code>column()</code>, <code>columns()</code>, <code>list()</code>, <code>table()</code>, and more.</p>
 </div>
 <div class="sect2">
 <h3 id="layout"><a class="anchor" href="#layout"></a><a class="link" href="#layout">Layout</a></h3>
@@ -765,6 +765,28 @@ column(
     text("Footer")
 )</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>For multi-column grid layouts, use <code>columns()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Auto-detects column count based on available width and child widths
+columns(item1, item2, item3, item4, item5, item6)
+    .spacing(1)
+
+// Explicit column count
+columns(item1, item2, item3, item4)
+    .columnCount(2)
+
+// Column-first ordering (fills top-to-bottom, then left-to-right)
+columns(item1, item2, item3, item4)
+    .columnCount(2)
+    .columnFirst()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CSS properties for columns: <code>column-count</code>, <code>column-order</code> ("row-first" or "column-first"), <code>spacing</code>, <code>margin</code>, <code>flex</code>.</p>
 </div>
 <div class="paragraph">
 <p>Use <code>spacer()</code> to push things apart:</p>
@@ -1623,7 +1645,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-26 22:24:46 UTC
+Last updated 2026-01-27 08:20:34 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

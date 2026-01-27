@@ -34,14 +34,18 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#ai-coding-assistant-demo">AI Coding Assistant Demo</a></li>
+<li><a href="#dock-layout">Dock Layout</a></li>
 <li><a href="#error-handling-demo">Error Handling Demo</a></li>
 <li><a href="#file-manager">File Manager</a></li>
 <li><a href="#flex-layout-demo">Flex Layout Demo</a></li>
+<li><a href="#flow-layout">Flow Layout</a></li>
 <li><a href="#form-table-layout-demo">Form &amp; Table Layout Demo</a></li>
+<li><a href="#grid-layout">Grid Layout</a></li>
 <li><a href="#inline-display-mode-using-low-level-api-demo">Inline display mode using low level API demo</a></li>
 <li><a href="#listelement-demo">ListElement Demo</a></li>
 <li><a href="#module-path-demo">Module Path Demo</a></li>
 <li><a href="#ratatui-flex-layout-demo">Ratatui Flex Layout Demo</a></li>
+<li><a href="#stack-layout">Stack Layout</a></li>
 </ul>
 </div>
 </div>
@@ -62,6 +66,20 @@
 <div id="player-fakodex-demo" class="demo-player"></div>
 <script>
 AsciinemaPlayer.create('demos/fakodex-demo.cast', document.getElementById('player-fakodex-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dock-layout"><a class="anchor" href="#dock-layout"></a><a class="link" href="#dock-layout">Dock Layout</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing the Dock layout with 5-region layout</p>
+</div>
+<div id="player-dock-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/dock-demo.cast', document.getElementById('player-dock-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>
@@ -110,6 +128,20 @@ AsciinemaPlayer.create('demos/flex-demo.cast', document.getElementById('player-f
 </div>
 </div>
 <div class="sect1">
+<h2 id="flow-layout"><a class="anchor" href="#flow-layout"></a><a class="link" href="#flow-layout">Flow Layout</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing the Flow layout with wrap layout</p>
+</div>
+<div id="player-flow-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/flow-demo.cast', document.getElementById('player-flow-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
 <h2 id="form-table-layout-demo"><a class="anchor" href="#form-table-layout-demo"></a><a class="link" href="#form-table-layout-demo">Form &amp; Table Layout Demo</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -118,6 +150,20 @@ AsciinemaPlayer.create('demos/flex-demo.cast', document.getElementById('player-f
 <div id="player-form-table-demo" class="demo-player"></div>
 <script>
 AsciinemaPlayer.create('demos/form-table-demo.cast', document.getElementById('player-form-table-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="grid-layout"><a class="anchor" href="#grid-layout"></a><a class="link" href="#grid-layout">Grid Layout</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing Grid layout with CSS Grid-inspired layout</p>
+</div>
+<div id="player-grid-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/grid-demo.cast', document.getElementById('player-grid-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>
@@ -179,11 +225,25 @@ AsciinemaPlayer.create('demos/rflex-demo.cast', document.getElementById('player-
 </script>
 </div>
 </div>
+<div class="sect1">
+<h2 id="stack-layout"><a class="anchor" href="#stack-layout"></a><a class="link" href="#stack-layout">Stack Layout</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showcasing the Stack layout with overlapping layers</p>
+</div>
+<div id="player-stack-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/stack-demo.cast', document.getElementById('player-stack-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-26 22:24:46 UTC
+Last updated 2026-01-27 08:20:34 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

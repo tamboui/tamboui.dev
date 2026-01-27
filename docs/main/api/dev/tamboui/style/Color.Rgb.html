@@ -71,6 +71,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#r()" tabindex="0">r()</a></li>
 <li><a href="#g()" tabindex="0">g()</a></li>
 <li><a href="#b()" tabindex="0">b()</a></li>
+<li><a href="#toAnsiForeground()" tabindex="0">toAnsiForeground()</a></li>
+<li><a href="#toAnsiBackground()" tabindex="0">toAnsiBackground()</a></li>
+<li><a href="#toAnsiUnderline()" tabindex="0">toAnsiUnderline()</a></li>
+<li><a href="#toRgb()" tabindex="0">toRgb()</a></li>
 <li><a href="#fromHex(java.lang.String)" tabindex="0">fromHex(String)</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
@@ -179,6 +183,26 @@ implements <a href="Color.html" title="interface in dev.tamboui.style">Color</a>
 <div class="block">Returns the red component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toAnsiBackground()" class="member-name-link">toAnsiBackground</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts this color to an ANSI background color code.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toAnsiForeground()" class="member-name-link">toAnsiForeground</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts this color to an ANSI foreground color code.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toAnsiUnderline()" class="member-name-link">toAnsiUnderline</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts this color to an ANSI underline color code.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Color.Rgb.html" title="class in dev.tamboui.style">Color.Rgb</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toRgb()" class="member-name-link">toRgb</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts this color to RGB.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
@@ -187,9 +211,6 @@ implements <a href="Color.html" title="interface in dev.tamboui.style">Color</a>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-dev.tamboui.style.Color">Methods inherited from interface&nbsp;<a href="Color.html#method-summary" title="interface in dev.tamboui.style">Color</a></h3>
-<code><a href="Color.html#toRgb()" title="toRgb()">toRgb</a></code></div>
 </section>
 </li>
 </ul>
@@ -250,6 +271,77 @@ implements <a href="Color.html" title="interface in dev.tamboui.style">Color</a>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">b</span>()</div>
 <div class="block">Returns the blue component.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toAnsiForeground()">
+<h3>toAnsiForeground</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toAnsiForeground</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Color.html#toAnsiForeground()">Color</a></code></span></div>
+<div class="block">Converts this color to an ANSI foreground color code.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Color.html#toAnsiForeground()">toAnsiForeground</a></code>&nbsp;in interface&nbsp;<code><a href="Color.html" title="interface in dev.tamboui.style">Color</a></code></dd>
+<dt>Returns:</dt>
+<dd>the ANSI code string (without CSI prefix or 'm' suffix),
+        or empty string if not applicable</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toAnsiBackground()">
+<h3>toAnsiBackground</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toAnsiBackground</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Color.html#toAnsiBackground()">Color</a></code></span></div>
+<div class="block">Converts this color to an ANSI background color code.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Color.html#toAnsiBackground()">toAnsiBackground</a></code>&nbsp;in interface&nbsp;<code><a href="Color.html" title="interface in dev.tamboui.style">Color</a></code></dd>
+<dt>Returns:</dt>
+<dd>the ANSI code string (without CSI prefix or 'm' suffix),
+        or empty string if not applicable</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toAnsiUnderline()">
+<h3>toAnsiUnderline</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toAnsiUnderline</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Color.html#toAnsiUnderline()">Color</a></code></span></div>
+<div class="block">Converts this color to an ANSI underline color code.
+Note that underline colors are only supported by some terminal emulators.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Color.html#toAnsiUnderline()">toAnsiUnderline</a></code>&nbsp;in interface&nbsp;<code><a href="Color.html" title="interface in dev.tamboui.style">Color</a></code></dd>
+<dt>Returns:</dt>
+<dd>the ANSI code string (without CSI prefix or 'm' suffix),
+        or empty string if the color type doesn't support underline coloring</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toRgb()">
+<h3>toRgb</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Color.Rgb.html" title="class in dev.tamboui.style">Color.Rgb</a></span>&nbsp;<span class="element-name">toRgb</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Color.html#toRgb()">Color</a></code></span></div>
+<div class="block">Converts this color to RGB.
+<p>
+ANSI and indexed colors are converted using standard terminal color palettes.
+Named colors delegate to their default value. Reset colors default to white.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Color.html#toRgb()">toRgb</a></code>&nbsp;in interface&nbsp;<code><a href="Color.html" title="interface in dev.tamboui.style">Color</a></code></dd>
+<dt>Returns:</dt>
+<dd>the RGB representation of this color</dd>
+</dl>
 </div>
 </section>
 </li>

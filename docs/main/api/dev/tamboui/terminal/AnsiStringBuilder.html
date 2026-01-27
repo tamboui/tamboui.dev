@@ -66,9 +66,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#styleToAnsi(dev.tamboui.style.Style)" tabindex="0">styleToAnsi(Style)</a></li>
-<li><a href="#colorToAnsiForeground(dev.tamboui.style.Color)" tabindex="0">colorToAnsiForeground(Color)</a></li>
-<li><a href="#colorToAnsiBackground(dev.tamboui.style.Color)" tabindex="0">colorToAnsiBackground(Color)</a></li>
-<li><a href="#underlineColorToAnsi(dev.tamboui.style.Color)" tabindex="0">underlineColorToAnsi(Color)</a></li>
 <li><a href="#hyperlinkStart(dev.tamboui.style.Hyperlink)" tabindex="0">hyperlinkStart(Hyperlink)</a></li>
 <li><a href="#hyperlinkEnd()" tabindex="0">hyperlinkEnd()</a></li>
 </ol>
@@ -130,16 +127,6 @@ System.out.print(ansi + "Hello, World!" + AnsiStringBuilder.RESET);
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#colorToAnsiBackground(dev.tamboui.style.Color)" class="member-name-link">colorToAnsiBackground</a><wbr>(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts a <a href="../style/Color.html" title="interface in dev.tamboui.style"><code>Color</code></a> to an ANSI background color code.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#colorToAnsiForeground(dev.tamboui.style.Color)" class="member-name-link">colorToAnsiForeground</a><wbr>(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts a <a href="../style/Color.html" title="interface in dev.tamboui.style"><code>Color</code></a> to an ANSI foreground color code.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hyperlinkEnd()" class="member-name-link">hyperlinkEnd</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Generates an OSC8 escape sequence to end a hyperlink.</div>
@@ -153,11 +140,6 @@ System.out.print(ansi + "Hello, World!" + AnsiStringBuilder.RESET);
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#styleToAnsi(dev.tamboui.style.Style)" class="member-name-link">styleToAnsi</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a <a href="../style/Style.html" title="class in dev.tamboui.style"><code>Style</code></a> to an ANSI SGR (Select Graphic Rendition) escape sequence.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#underlineColorToAnsi(dev.tamboui.style.Color)" class="member-name-link">underlineColorToAnsi</a><wbr>(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts a <a href="../style/Color.html" title="interface in dev.tamboui.style"><code>Color</code></a> to an ANSI underline color code.</div>
 </div>
 </div>
 </div>
@@ -214,53 +196,6 @@ and the 'm' terminator.</div>
 <dd><code>style</code> - the style to convert</dd>
 <dt>Returns:</dt>
 <dd>an ANSI escape sequence representing the style</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="colorToAnsiForeground(dev.tamboui.style.Color)">
-<h3>colorToAnsiForeground</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">colorToAnsiForeground</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
-<div class="block">Converts a <a href="../style/Color.html" title="interface in dev.tamboui.style"><code>Color</code></a> to an ANSI foreground color code.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>color</code> - the color to convert</dd>
-<dt>Returns:</dt>
-<dd>the ANSI code string (without CSI prefix or 'm' suffix)</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="colorToAnsiBackground(dev.tamboui.style.Color)">
-<h3>colorToAnsiBackground</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">colorToAnsiBackground</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
-<div class="block">Converts a <a href="../style/Color.html" title="interface in dev.tamboui.style"><code>Color</code></a> to an ANSI background color code.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>color</code> - the color to convert</dd>
-<dt>Returns:</dt>
-<dd>the ANSI code string (without CSI prefix or 'm' suffix)</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="underlineColorToAnsi(dev.tamboui.style.Color)">
-<h3>underlineColorToAnsi</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">underlineColorToAnsi</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
-<div class="block">Converts a <a href="../style/Color.html" title="interface in dev.tamboui.style"><code>Color</code></a> to an ANSI underline color code.
-Note that underline colors are only supported by some terminal emulators.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>color</code> - the color to convert</dd>
-<dt>Returns:</dt>
-<dd>the ANSI code string (without CSI prefix or 'm' suffix),
-        or empty string if the color type doesn't support underline coloring</dd>
 </dl>
 </div>
 </section>

@@ -79,6 +79,7 @@
 <li><a href="#keyevent">KeyEvent</a></li>
 <li><a href="#mouseevent">MouseEvent</a></li>
 <li><a href="#tickevent">TickEvent</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
 </ul>
 </li>
 <li><a href="#next-steps">Next Steps</a></li>
@@ -661,6 +662,37 @@ if (event instanceof TickEvent) {
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="exceptions"><a class="anchor" href="#exceptions"></a><a class="link" href="#exceptions">Exceptions</a></h3>
+<div class="paragraph">
+<p>TamboUI tries to enforce a clear, consistent exception hierarchy for framework errors.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All framework exceptions extend <code>TamboUIException</code> (<code>dev.tamboui.error.TamboUIException</code>). This is a <code>RuntimeException</code>.</p>
+</li>
+<li>
+<p>Terminal I/O errors are wrapped in <code>RuntimeIOException</code> (<code>dev.tamboui.error.RuntimeIOException</code>), to avoid having to catch <code>IOException</code> which often are non-recoverable.</p>
+</li>
+<li>
+<p>Backend (non-I/O) errors use <code>BackendException</code> (<code>dev.tamboui.terminal.BackendException</code>).</p>
+</li>
+<li>
+<p>TUI framework errors use <code>TuiException</code> (<code>dev.tamboui.tui.TuiException</code>).</p>
+</li>
+<li>
+<p>For invalid parameters or state, Java standard exceptions such as <code>IllegalArgumentException</code> or <code>IllegalStateException</code> are used.</p>
+</li>
+<li>
+<p>Domain-specific exception types (e.g., <code>SolverException</code> for layout, <code>CssParseException</code> for CSS parsing) are used where possible.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>TamboUI&#8217;s <code>TuiRunner</code> also provides centralized error handling: all exceptions during rendering and event handling are passed to a configurable <code>RenderErrorHandler</code>. The default behavior displays errors (with stack traces) in the UI for easier debugging.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -691,7 +723,7 @@ if (event instanceof TickEvent) {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-28 15:24:39 UTC
+Last updated 2026-01-28 15:45:48 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

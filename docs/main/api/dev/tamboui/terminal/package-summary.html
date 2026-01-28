@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
@@ -95,36 +95,40 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Backend interface for terminal operations.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="BackendFactory.html" title="class in dev.tamboui.terminal">BackendFactory</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="BackendException.html" title="class in dev.tamboui.terminal">BackendException</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab5">
+<div class="block">Exception for backend errors.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="BackendFactory.html" title="class in dev.tamboui.terminal">BackendFactory</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Factory for creating <a href="Backend.html" title="interface in dev.tamboui.terminal"><code>Backend</code></a> instances using the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BackendProvider.html" title="interface in dev.tamboui.terminal">BackendProvider</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BackendProvider.html" title="interface in dev.tamboui.terminal">BackendProvider</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Service provider interface for creating <a href="Backend.html" title="interface in dev.tamboui.terminal"><code>Backend</code></a> instances.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CompletedFrame.html" title="class in dev.tamboui.terminal">CompletedFrame</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CompletedFrame.html" title="class in dev.tamboui.terminal">CompletedFrame</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Represents a completed frame after rendering.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Frame.html" title="class in dev.tamboui.terminal">Frame</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Frame.html" title="class in dev.tamboui.terminal">Frame</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A frame represents a single render cycle.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="FrameInternal.html" title="class in dev.tamboui.terminal">FrameInternal</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="FrameInternal.html" title="class in dev.tamboui.terminal">FrameInternal</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Utility class exposing internal Frame capabilities.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="Mode2027Status.html" title="enum class in dev.tamboui.terminal">Mode2027Status</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Mode2027Status.html" title="enum class in dev.tamboui.terminal">Mode2027Status</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Represents the status of Mode 2027 (grapheme cluster mode) support in a terminal.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Mode2027Support.html" title="class in dev.tamboui.terminal">Mode2027Support</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Mode2027Support.html" title="class in dev.tamboui.terminal">Mode2027Support</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Utility class for Mode 2027 (grapheme cluster mode) terminal support.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Terminal.html" title="class in dev.tamboui.terminal">Terminal</a>&lt;B extends <a href="Backend.html" title="interface in dev.tamboui.terminal">Backend</a>&gt;</div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Terminal.html" title="class in dev.tamboui.terminal">Terminal</a>&lt;B extends <a href="Backend.html" title="interface in dev.tamboui.terminal">Backend</a>&gt;</div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">The main terminal abstraction.</div>
 </div>
 </div>

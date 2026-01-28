@@ -193,8 +193,11 @@ Does nothing if already installed or if config is null.</div>
 <h3>uninstall</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;dev.tamboui.internal.record.RawFrame&gt;</span>&nbsp;<span class="element-name">uninstall</span>()</div>
-<div class="block">Uninstalls the capture and restores original System.out.
-Returns the captured raw frames, or empty list if not installed.</div>
+<div class="block">Uninstalls the capture and restores original System.out.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the captured raw frames, or empty list if not installed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -204,6 +207,10 @@ Returns the captured raw frames, or empty list if not installed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInstalled</span>()</div>
 <div class="block">Returns true if capture is currently installed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if capture is installed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -213,6 +220,10 @@ Returns the captured raw frames, or empty list if not installed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getWidth</span>()</div>
 <div class="block">Returns the configured width, or 80 if not installed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the terminal width in columns</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -222,6 +233,10 @@ Returns the captured raw frames, or empty list if not installed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getHeight</span>()</div>
 <div class="block">Returns the configured height, or 24 if not installed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the terminal height in rows</dd>
+</dl>
 </div>
 </section>
 </li>

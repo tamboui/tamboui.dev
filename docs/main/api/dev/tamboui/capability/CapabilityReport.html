@@ -106,7 +106,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#feature(java.lang.String,java.lang.String)" class="member-name-link">feature</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Looks up a feature value by source and key.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#feature(java.lang.String,java.lang.String,java.lang.Class)" class="member-name-link">feature</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
@@ -121,7 +123,9 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print(java.io.PrintStream)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;out)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Prints this capability report to the given stream.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#propertiesBySource()" class="member-name-link">propertiesBySource</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -152,6 +156,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Environment entries grouped by provider source.
 <p>
 Each list entry is an environment variable name (value is resolved at print-time).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>unmodifiable map of source to environment variable names</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -163,6 +171,10 @@ Each list entry is an environment variable name (value is resolved at print-time
 <div class="block">Java/system properties (and similar) grouped by provider source.
 <p>
 Each list entry is a property name (value is resolved at print-time).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>unmodifiable map of source to property names</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -174,6 +186,10 @@ Each list entry is a property name (value is resolved at print-time).</div>
 <div class="block">Free-form capability/features map, grouped by provider source.
 <p>
 Keys SHOULD use dotted notation to create stable namespaces, e.g. <code>image.protocol.kitty</code>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>unmodifiable map of source to feature key-value pairs</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -183,6 +199,14 @@ Keys SHOULD use dotted notation to create stable namespaces, e.g. <code>image.pr
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">feature</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span></div>
+<div class="block">Looks up a feature value by source and key.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>source</code> - source id (e.g. <code>tamboui-core</code>)</dd>
+<dd><code>key</code> - key within the source feature map</dd>
+<dt>Returns:</dt>
+<dd>the feature value if present</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -212,6 +236,11 @@ Keys SHOULD use dotted notation to create stable namespaces, e.g. <code>image.pr
 <h3>print</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;out)</span></div>
+<div class="block">Prints this capability report to the given stream.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>out</code> - the output stream</dd>
+</dl>
 </div>
 </section>
 </li>

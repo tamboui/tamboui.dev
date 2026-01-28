@@ -162,12 +162,18 @@ Programmatic values override CSS values when both are set.
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">DialogElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new dialog element with default settings.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.toolkit.element.Element...)" class="member-name-link">DialogElement</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a new dialog element with the given children.</div>
+</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,dev.tamboui.toolkit.element.Element...)" class="member-name-link">DialogElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
  <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new dialog element with the given title and children.</div>
+</div>
 </div>
 </section>
 </li>
@@ -324,6 +330,7 @@ Programmatic values override CSS values when both are set.
 <h3>DialogElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DialogElement</span>()</div>
+<div class="block">Creates a new dialog element with default settings.</div>
 </div>
 </section>
 </li>
@@ -333,6 +340,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DialogElement</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
  <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
+<div class="block">Creates a new dialog element with the given title and children.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the dialog title</dd>
+<dd><code>children</code> - the child elements to display in the dialog</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -341,6 +354,11 @@ Programmatic values override CSS values when both are set.
 <h3>DialogElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DialogElement</span><wbr><span class="parameters">(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
+<div class="block">Creates a new dialog element with the given children.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>children</code> - the child elements to display in the dialog</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -358,6 +376,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the dialog title.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the dialog title</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -367,6 +391,10 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Sets the border type to rounded.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -376,6 +404,10 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">doubleBorder</span>()</div>
 <div class="block">Sets the border type to double.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -385,6 +417,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">borderType</span><wbr><span class="parameters">(<a href="../../widgets/block/BorderType.html" title="enum class in dev.tamboui.widgets.block">BorderType</a>&nbsp;type)</span></div>
 <div class="block">Sets the border type.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the border type</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -394,6 +432,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -403,6 +447,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">width</span><wbr><span class="parameters">(int&nbsp;width)</span></div>
 <div class="block">Sets a fixed width for the dialog.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>width</code> - the fixed width in cells</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -412,6 +462,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">height</span><wbr><span class="parameters">(int&nbsp;height)</span></div>
 <div class="block">Sets a fixed height for the dialog.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>height</code> - the fixed height in cells</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -421,6 +477,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">minWidth</span><wbr><span class="parameters">(int&nbsp;minWidth)</span></div>
 <div class="block">Sets the minimum width for the dialog.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>minWidth</code> - the minimum width in cells</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -430,6 +492,12 @@ Programmatic values override CSS values when both are set.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">padding</span><wbr><span class="parameters">(int&nbsp;padding)</span></div>
 <div class="block">Sets the padding around content for width calculation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>padding</code> - the padding in cells</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

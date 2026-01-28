@@ -95,6 +95,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public static final class </span><span class="element-name type-name-label">LineGauge.Builder</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Builder for <a href="LineGauge.html" title="class in dev.tamboui.widgets.gauge"><code>LineGauge</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -117,7 +118,9 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LineGauge.html" title="class in dev.tamboui.widgets.gauge">LineGauge</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Builds the line gauge.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filledColor(dev.tamboui.style.Color)" class="member-name-link">filledColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -202,6 +205,10 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">percent</span><wbr><span class="parameters">(int&nbsp;percent)</span></div>
 <div class="block">Sets the progress as a percentage (0-100).</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>percent</code> - the progress percentage (0-100)</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if percent is not in range 0-100</dd>
 </dl>
@@ -215,6 +222,10 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">ratio</span><wbr><span class="parameters">(double&nbsp;ratio)</span></div>
 <div class="block">Sets the progress as a ratio (0.0-1.0).</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ratio</code> - the progress ratio (0.0-1.0)</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if ratio is not in range 0.0-1.0</dd>
 </dl>
@@ -227,6 +238,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">label</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</span></div>
 <div class="block">Sets the label displayed before the gauge line.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the label text</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -236,6 +253,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">label</span><wbr><span class="parameters">(<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>&nbsp;label)</span></div>
 <div class="block">Sets the label displayed before the gauge line.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the label as a styled line</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -245,6 +268,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">label</span><wbr><span class="parameters">(<a href="../../text/Span.html" title="class in dev.tamboui.text">Span</a>&nbsp;span)</span></div>
 <div class="block">Sets the label displayed before the gauge line.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>span</code> - the label as a styled span</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -254,6 +283,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">style</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the overall style for the widget.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the widget style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -263,6 +298,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">filledStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;filledStyle)</span></div>
 <div class="block">Sets the style for the filled portion of the gauge.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filledStyle</code> - the filled portion style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -272,6 +313,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">unfilledStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;unfilledStyle)</span></div>
 <div class="block">Sets the style for the unfilled portion of the gauge.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>unfilledStyle</code> - the unfilled portion style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -281,6 +328,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.Builder.html" title="class in dev.tamboui.widgets.gauge">LineGauge.Builder</a></span>&nbsp;<span class="element-name">lineSet</span><wbr><span class="parameters">(<a href="LineGauge.LineSet.html" title="class in dev.tamboui.widgets.gauge">LineGauge.LineSet</a>&nbsp;lineSet)</span></div>
 <div class="block">Sets the line character set to use.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>lineSet</code> - the line character set</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -358,6 +411,11 @@ This takes precedence over values from the style resolver.</div>
 <h3>build</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGauge.html" title="class in dev.tamboui.widgets.gauge">LineGauge</a></span>&nbsp;<span class="element-name">build</span>()</div>
+<div class="block">Builds the line gauge.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the new line gauge</dd>
+</dl>
 </div>
 </section>
 </li>

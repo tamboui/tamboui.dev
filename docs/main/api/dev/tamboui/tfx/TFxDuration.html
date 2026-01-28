@@ -162,7 +162,9 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></code></div>
 <div class="col-second even-row-color"><code><a href="#ZERO" class="member-name-link">ZERO</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">A duration of zero milliseconds.</div>
+</div>
 </div>
 </section>
 </li>
@@ -273,6 +275,7 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <h3>ZERO</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">ZERO</span></div>
+<div class="block">A duration of zero milliseconds.</div>
 </div>
 </section>
 </li>
@@ -290,6 +293,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">fromMillis</span><wbr><span class="parameters">(long&nbsp;milliseconds)</span></div>
 <div class="block">Creates a duration from milliseconds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>milliseconds</code> - the number of milliseconds (must be non-negative)</dd>
+<dt>Returns:</dt>
+<dd>a new duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -299,6 +308,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">fromSecs</span><wbr><span class="parameters">(long&nbsp;seconds)</span></div>
 <div class="block">Creates a duration from seconds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>seconds</code> - the number of seconds</dd>
+<dt>Returns:</dt>
+<dd>a new duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -308,6 +323,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">fromSecsF32</span><wbr><span class="parameters">(float&nbsp;seconds)</span></div>
 <div class="block">Creates a duration from fractional seconds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>seconds</code> - the number of seconds as a float</dd>
+<dt>Returns:</dt>
+<dd>a new duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -317,6 +338,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">fromJavaDuration</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;duration)</span></div>
 <div class="block">Converts from java.time.Duration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>duration</code> - the Java duration to convert</dd>
+<dt>Returns:</dt>
+<dd>a new TFxDuration equivalent to the given Java duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -326,6 +353,10 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">asMillis</span>()</div>
 <div class="block">Returns the duration in milliseconds.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the duration in milliseconds</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -335,6 +366,10 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">asSecsF32</span>()</div>
 <div class="block">Returns the duration in seconds as a float.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the duration in seconds</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -344,6 +379,10 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></span>&nbsp;<span class="element-name">toJavaDuration</span>()</div>
 <div class="block">Converts to java.time.Duration.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the equivalent java.time.Duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -353,6 +392,10 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isZero</span>()</div>
 <div class="block">Returns true if this duration is zero.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if this duration is zero</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -362,6 +405,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">checkedSub</span><wbr><span class="parameters">(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;other)</span></div>
 <div class="block">Subtracts another duration, returning null if the result would be negative.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>other</code> - the duration to subtract</dd>
+<dt>Returns:</dt>
+<dd>the result of the subtraction, or <code>null</code> if the result would be negative</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -371,6 +420,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;other)</span></div>
 <div class="block">Adds another duration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>other</code> - the duration to add</dd>
+<dt>Returns:</dt>
+<dd>a new duration representing the sum</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -380,6 +435,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">sub</span><wbr><span class="parameters">(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;other)</span></div>
 <div class="block">Subtracts another duration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>other</code> - the duration to subtract</dd>
+<dt>Returns:</dt>
+<dd>a new duration representing the difference</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -389,6 +450,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">mul</span><wbr><span class="parameters">(long&nbsp;scalar)</span></div>
 <div class="block">Multiplies this duration by a scalar.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scalar</code> - the multiplier</dd>
+<dt>Returns:</dt>
+<dd>a new duration representing the product</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -398,6 +465,12 @@ when needed (e.g., for TuiConfig tick rates).</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">mul</span><wbr><span class="parameters">(float&nbsp;scalar)</span></div>
 <div class="block">Multiplies this duration by a float scalar.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scalar</code> - the float multiplier</dd>
+<dt>Returns:</dt>
+<dd>a new duration representing the product</dd>
+</dl>
 </div>
 </section>
 </li>

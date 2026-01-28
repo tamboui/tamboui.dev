@@ -163,7 +163,9 @@ Styles are immutable and composable.</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="Style.html" title="class in dev.tamboui.style">Style</a></code></div>
 <div class="col-second even-row-color"><code><a href="#EMPTY" class="member-name-link">EMPTY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">An empty style with no colors or modifiers set.</div>
+</div>
 </div>
 </section>
 </li>
@@ -180,14 +182,18 @@ Styles are immutable and composable.</div>
  <a href="Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;underlineColor,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;addModifiers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;subModifiers)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a style with the given colors and modifiers.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.style.Color,dev.tamboui.style.Color,dev.tamboui.style.Color,java.util.EnumSet,java.util.EnumSet,java.util.Map)" class="member-name-link">Style</a><wbr>(<a href="Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;fg,
  <a href="Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;bg,
  <a href="Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;underlineColor,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;addModifiers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;subModifiers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;extensions)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a style with the given colors, modifiers, and extensions.</div>
+</div>
 </div>
 </section>
 </li>
@@ -506,6 +512,7 @@ Styles are immutable and composable.</div>
 <h3>EMPTY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">EMPTY</span></div>
+<div class="block">An empty style with no colors or modifiers set.</div>
 </div>
 </section>
 </li>
@@ -526,6 +533,15 @@ Styles are immutable and composable.</div>
  <a href="Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;underlineColor,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;addModifiers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;subModifiers)</span></div>
+<div class="block">Creates a style with the given colors and modifiers.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>fg</code> - the foreground color, or null</dd>
+<dd><code>bg</code> - the background color, or null</dd>
+<dd><code>underlineColor</code> - the underline color, or null</dd>
+<dd><code>addModifiers</code> - the modifiers to add</dd>
+<dd><code>subModifiers</code> - the modifiers to subtract</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -539,6 +555,16 @@ Styles are immutable and composable.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;addModifiers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&nbsp;subModifiers,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&nbsp;extensions)</span></div>
+<div class="block">Creates a style with the given colors, modifiers, and extensions.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>fg</code> - the foreground color, or null</dd>
+<dd><code>bg</code> - the background color, or null</dd>
+<dd><code>underlineColor</code> - the underline color, or null</dd>
+<dd><code>addModifiers</code> - the modifiers to add</dd>
+<dd><code>subModifiers</code> - the modifiers to subtract</dd>
+<dd><code>extensions</code> - the extensions map</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -556,6 +582,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">create</span>()</div>
 <div class="block">Creates a new style builder.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty style</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -580,6 +610,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">black</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#BLACK"><code>Color.BLACK</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with black foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -589,6 +623,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">red</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#RED"><code>Color.RED</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with red foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -598,6 +636,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">green</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#GREEN"><code>Color.GREEN</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with green foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -607,6 +649,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">yellow</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#YELLOW"><code>Color.YELLOW</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with yellow foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -616,6 +662,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">blue</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#BLUE"><code>Color.BLUE</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with blue foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -625,6 +675,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">magenta</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#MAGENTA"><code>Color.MAGENTA</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with magenta foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -634,6 +688,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">cyan</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#CYAN"><code>Color.CYAN</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with cyan foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -643,6 +701,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">white</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#WHITE"><code>Color.WHITE</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with white foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -652,6 +714,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">gray</span>()</div>
 <div class="block">Shorthand for <a href="#fg(dev.tamboui.style.Color)"><code>fg(Color)</code></a> with <a href="Color.html#GRAY"><code>Color.GRAY</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with gray foreground</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -676,6 +742,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onBlack</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#BLACK"><code>Color.BLACK</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with black background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -685,6 +755,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onRed</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#RED"><code>Color.RED</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with red background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -694,6 +768,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onGreen</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#GREEN"><code>Color.GREEN</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with green background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -703,6 +781,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onYellow</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#YELLOW"><code>Color.YELLOW</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with yellow background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -712,6 +794,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onBlue</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#BLUE"><code>Color.BLUE</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with blue background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -721,6 +807,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onMagenta</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#MAGENTA"><code>Color.MAGENTA</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with magenta background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -730,6 +820,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onCyan</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#CYAN"><code>Color.CYAN</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with cyan background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -739,6 +833,10 @@ Styles are immutable and composable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">onWhite</span>()</div>
 <div class="block">Shorthand for <a href="#bg(dev.tamboui.style.Color)"><code>bg(Color)</code></a> with <a href="Color.html#WHITE"><code>Color.WHITE</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with white background</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -764,6 +862,12 @@ Styles are immutable and composable.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">addModifier</span><wbr><span class="parameters">(<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&nbsp;modifier)</span></div>
 <div class="block">Returns a new style with the given modifier enabled.
 If the modifier was previously removed (subtracted), it is added back.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>modifier</code> - the modifier to enable</dd>
+<dt>Returns:</dt>
+<dd>a new style with the modifier enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -774,6 +878,12 @@ If the modifier was previously removed (subtracted), it is added back.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">removeModifier</span><wbr><span class="parameters">(<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&nbsp;modifier)</span></div>
 <div class="block">Returns a new style with the given modifier removed (subtracted).
 If the modifier was previously added, it is removed.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>modifier</code> - the modifier to remove</dd>
+<dt>Returns:</dt>
+<dd>a new style with the modifier removed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -783,6 +893,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">bold</span>()</div>
 <div class="block">Enables bold text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with bold enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -792,6 +906,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">notBold</span>()</div>
 <div class="block">Disables bold text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with bold disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -801,6 +919,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">dim</span>()</div>
 <div class="block">Enables dim text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with dim enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -810,6 +932,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">notDim</span>()</div>
 <div class="block">Disables dim text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with dim disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -819,6 +945,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">italic</span>()</div>
 <div class="block">Enables italic text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with italic enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -828,6 +958,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">notItalic</span>()</div>
 <div class="block">Disables italic text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with italic disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -837,6 +971,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">underlined</span>()</div>
 <div class="block">Enables underline.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with underline enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -846,6 +984,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">notUnderlined</span>()</div>
 <div class="block">Disables underline.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with underline disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -855,6 +997,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">slowBlink</span>()</div>
 <div class="block">Enables slow blink.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with slow blink enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -864,6 +1010,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">rapidBlink</span>()</div>
 <div class="block">Enables rapid blink.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with rapid blink enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -873,6 +1023,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">reversed</span>()</div>
 <div class="block">Enables reverse video.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with reverse video enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -882,6 +1036,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">notReversed</span>()</div>
 <div class="block">Disables reverse video.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with reverse video disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -891,6 +1049,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">hidden</span>()</div>
 <div class="block">Hides text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with hidden enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -900,6 +1062,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">notHidden</span>()</div>
 <div class="block">Unhides text.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with hidden disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -909,6 +1075,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">crossedOut</span>()</div>
 <div class="block">Enables strikethrough.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with strikethrough enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -918,6 +1088,10 @@ If the modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">notCrossedOut</span>()</div>
 <div class="block">Disables strikethrough.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new style with strikethrough disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1060,6 +1234,10 @@ values where they are set; null values in <code>other</code> leave the current v
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;</span>&nbsp;<span class="element-name">effectiveModifiers</span>()</div>
 <div class="block">Returns the effective set of modifiers (add - sub).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the effective modifiers</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1069,6 +1247,10 @@ values where they are set; null values in <code>other</code> leave the current v
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Color.html" title="interface in dev.tamboui.style">Color</a>&gt;</span>&nbsp;<span class="element-name">fg</span>()</div>
 <div class="block">Returns the foreground color if set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the foreground color, or empty if not set</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1078,6 +1260,10 @@ values where they are set; null values in <code>other</code> leave the current v
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Color.html" title="interface in dev.tamboui.style">Color</a>&gt;</span>&nbsp;<span class="element-name">bg</span>()</div>
 <div class="block">Returns the background color if set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the background color, or empty if not set</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1087,6 +1273,10 @@ values where they are set; null values in <code>other</code> leave the current v
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Color.html" title="interface in dev.tamboui.style">Color</a>&gt;</span>&nbsp;<span class="element-name">underlineColor</span>()</div>
 <div class="block">Returns the underline color if set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the underline color, or empty if not set</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1096,6 +1286,10 @@ values where they are set; null values in <code>other</code> leave the current v
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;</span>&nbsp;<span class="element-name">addModifiers</span>()</div>
 <div class="block">Returns the modifiers explicitly added to this style.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the added modifiers</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -1105,6 +1299,10 @@ values where they are set; null values in <code>other</code> leave the current v
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;</span>&nbsp;<span class="element-name">subModifiers</span>()</div>
 <div class="block">Returns the modifiers explicitly removed from this style.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the subtracted modifiers</dd>
+</dl>
 </div>
 </section>
 </li>

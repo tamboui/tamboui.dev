@@ -126,7 +126,9 @@ Example: <code>.error { color: red; text-style: bold; }</code></div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="PropertyValue.html" title="class in dev.tamboui.css.model">PropertyValue</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#declarations()" class="member-name-link">declarations</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the property declarations of this rule.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -135,10 +137,14 @@ Example: <code>.error { color: red; text-style: bold; }</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../selector/Selector.html" title="interface in dev.tamboui.css.selector">Selector</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selector()" class="member-name-link">selector</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the selector that determines which elements this rule applies to.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sourceOrder()" class="member-name-link">sourceOrder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the order in which this rule appeared in the stylesheet.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#specificity()" class="member-name-link">specificity</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -194,6 +200,11 @@ Example: <code>.error { color: red; text-style: bold; }</code></div>
 <h3>selector</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../selector/Selector.html" title="interface in dev.tamboui.css.selector">Selector</a></span>&nbsp;<span class="element-name">selector</span>()</div>
+<div class="block">Returns the selector that determines which elements this rule applies to.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the selector</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -202,6 +213,11 @@ Example: <code>.error { color: red; text-style: bold; }</code></div>
 <h3>declarations</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="PropertyValue.html" title="class in dev.tamboui.css.model">PropertyValue</a>&gt;</span>&nbsp;<span class="element-name">declarations</span>()</div>
+<div class="block">Returns the property declarations of this rule.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>an unmodifiable map of property name to value</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -210,6 +226,11 @@ Example: <code>.error { color: red; text-style: bold; }</code></div>
 <h3>sourceOrder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">sourceOrder</span>()</div>
+<div class="block">Returns the order in which this rule appeared in the stylesheet.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the source order index</dd>
+</dl>
 </div>
 </section>
 </li>

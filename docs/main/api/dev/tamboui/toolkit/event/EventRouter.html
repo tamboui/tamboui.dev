@@ -286,6 +286,11 @@ does not add a duplicate entry.
 <p>
 Elements are also registered in the <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element"><code>ElementRegistry</code></a>
 for CSS-like queries by external systems (like effects).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - the element to register</dd>
+<dd><code>area</code> - the element's rendered area</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -324,6 +329,10 @@ Global handlers are called after element routing if the event wasn't handled.</d
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDragging</span>()</div>
 <div class="block">Returns whether a drag operation is in progress.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if a drag is in progress</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -333,6 +342,10 @@ Global handlers are called after element routing if the event wasn't handled.</d
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></span>&nbsp;<span class="element-name">draggingElement</span>()</div>
 <div class="block">Returns the element being dragged.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the element being dragged, or null if no drag is in progress</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -342,6 +355,10 @@ Global handlers are called after element routing if the event wasn't handled.</d
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">elementCount</span>()</div>
 <div class="block">Returns the number of registered elements (for debugging).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the number of registered elements</dd>
+</dl>
 </div>
 </section>
 </li>

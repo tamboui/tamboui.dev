@@ -206,6 +206,12 @@ implements <a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader<
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DissolveShader.html" title="class in dev.tamboui.tfx.effects">DissolveShader</a></span>&nbsp;<span class="element-name">dissolve</span><wbr><span class="parameters">(<a href="../EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</span></div>
 <div class="block">Creates a dissolve shader that dissolves text over time.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>timer</code> - the effect timer controlling the dissolve duration</dd>
+<dt>Returns:</dt>
+<dd>a new dissolve shader</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -216,6 +222,13 @@ implements <a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader<
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DissolveShader.html" title="class in dev.tamboui.tfx.effects">DissolveShader</a></span>&nbsp;<span class="element-name">dissolveTo</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style,
  <a href="../EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</span></div>
 <div class="block">Creates a dissolve shader that dissolves to a specific style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the target style for dissolved cells</dd>
+<dd><code>timer</code> - the effect timer controlling the dissolve duration</dd>
+<dt>Returns:</dt>
+<dd>a new dissolve shader with the specified target style</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -229,6 +242,8 @@ implements <a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader<
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#name()">name</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Returns:</dt>
+<dd>the shader name</dd>
 </dl>
 </div>
 </section>
@@ -296,6 +311,8 @@ default <a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#done()">done</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the effect has completed</dd>
 </dl>
 </div>
 </section>
@@ -310,6 +327,8 @@ default <a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#area()">area</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Returns:</dt>
+<dd>the effect area, or null if not set</dd>
 </dl>
 </div>
 </section>
@@ -324,6 +343,8 @@ default <a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#setArea(dev.tamboui.layout.Rect)">setArea</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>area</code> - the rectangular area for the effect</dd>
 </dl>
 </div>
 </section>
@@ -338,6 +359,8 @@ default <a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#timer()">timer</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Returns:</dt>
+<dd>the effect timer, or null if none</dd>
 </dl>
 </div>
 </section>
@@ -354,6 +377,8 @@ This is used internally for timer updates.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#mutableTimer()">mutableTimer</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Returns:</dt>
+<dd>the mutable effect timer, or null if none</dd>
 </dl>
 </div>
 </section>
@@ -368,6 +393,8 @@ This is used internally for timer updates.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#cellFilter()">cellFilter</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Returns:</dt>
+<dd>the cell filter, or null if none</dd>
 </dl>
 </div>
 </section>
@@ -382,6 +409,8 @@ This is used internally for timer updates.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#setCellFilter(dev.tamboui.tfx.CellFilter)">setCellFilter</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>filter</code> - the cell filter to apply</dd>
 </dl>
 </div>
 </section>
@@ -398,6 +427,8 @@ This is used for effect composition and cloning.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#copy()">copy</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
+<dt>Returns:</dt>
+<dd>a copy of this shader</dd>
 </dl>
 </div>
 </section>

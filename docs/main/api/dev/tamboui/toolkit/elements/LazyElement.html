@@ -117,7 +117,9 @@ panel("Counter", () -&gt; text("Count: " + count))
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.function.Supplier)" class="member-name-link">LazyElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;supplier)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new lazy element with the given supplier.</div>
+</div>
 </div>
 </section>
 </li>
@@ -210,6 +212,11 @@ panel("Counter", () -&gt; text("Count: " + count))
 <h3>LazyElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LazyElement</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;supplier)</span></div>
+<div class="block">Creates a new lazy element with the given supplier.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>supplier</code> - the supplier that produces the element on each render</dd>
+</dl>
 </div>
 </section>
 </li>

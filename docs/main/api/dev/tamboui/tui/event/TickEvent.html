@@ -113,7 +113,9 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(long,java.time.Duration)" class="member-name-link">TickEvent</a><wbr>(long&nbsp;frameCount,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;elapsed)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a tick event with the given frame count and elapsed time.</div>
+</div>
 </div>
 </section>
 </li>
@@ -130,7 +132,9 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elapsed()" class="member-name-link">elapsed</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the time elapsed since the last tick.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elapsedMillis()" class="member-name-link">elapsedMillis</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -146,7 +150,9 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#frameCount()" class="member-name-link">frameCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the total number of frames elapsed.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -182,6 +188,12 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TickEvent</span><wbr><span class="parameters">(long&nbsp;frameCount,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;elapsed)</span></div>
+<div class="block">Creates a tick event with the given frame count and elapsed time.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>frameCount</code> - the total number of frames elapsed</dd>
+<dd><code>elapsed</code> - the time elapsed since the last tick</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -200,6 +212,13 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TickEvent.html" title="class in dev.tamboui.tui.event">TickEvent</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(long&nbsp;frameCount,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;elapsed)</span></div>
 <div class="block">Creates a tick event with the given frame count and elapsed time.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>frameCount</code> - the total number of frames elapsed</dd>
+<dd><code>elapsed</code> - the time elapsed since the last tick</dd>
+<dt>Returns:</dt>
+<dd>a new tick event</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -209,6 +228,10 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">elapsedMillis</span>()</div>
 <div class="block">Returns the elapsed time in milliseconds.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>elapsed milliseconds since the last tick</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -218,6 +241,10 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">elapsedSeconds</span>()</div>
 <div class="block">Returns the elapsed time in seconds as a double.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>elapsed seconds since the last tick</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -226,6 +253,11 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <h3>frameCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">frameCount</span>()</div>
+<div class="block">Returns the total number of frames elapsed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the frame count</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -234,6 +266,11 @@ via <a href="../TuiConfig.html#tickRate()"><code>TuiConfig.tickRate()</code></a>
 <h3>elapsed</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></span>&nbsp;<span class="element-name">elapsed</span>()</div>
+<div class="block">Returns the time elapsed since the last tick.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the elapsed duration</dd>
+</dl>
 </div>
 </section>
 </li>

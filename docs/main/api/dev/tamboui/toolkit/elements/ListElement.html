@@ -109,7 +109,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ListElement" class="title">Class ListElement&lt;<span id="type-param-T">T</span>&gt;</h1>
+<h1 title="Class ListElement" class="title">Class ListElement&lt;T&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance"><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">dev.tamboui.toolkit.element.StyledElement</a>&lt;<a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;T&gt;&gt;
@@ -117,6 +117,10 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><span id="type-param-T"><code>T</code> - the type of data items backing each list entry</span></dd>
+</dl>
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a>, <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -201,15 +205,21 @@ CSS selectors:
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ListElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates an empty list element.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.toolkit.element.StyledElement...)" class="member-name-link">ListElement</a><wbr>(<a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;?&gt;...&nbsp;items)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a list container with styled element items.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String...)" class="member-name-link">ListElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;items)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a list element with the given string items.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.List)" class="member-name-link">ListElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;items)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a list element with the given string items.</div>
+</div>
 </div>
 </section>
 </li>
@@ -419,6 +429,7 @@ CSS selectors:
 <h3>ListElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ListElement</span>()</div>
+<div class="block">Creates an empty list element.</div>
 </div>
 </section>
 </li>
@@ -427,6 +438,11 @@ CSS selectors:
 <h3>ListElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ListElement</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;items)</span></div>
+<div class="block">Creates a list element with the given string items.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>items</code> - the text items</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -435,6 +451,11 @@ CSS selectors:
 <h3>ListElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ListElement</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;items)</span></div>
+<div class="block">Creates a list element with the given string items.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>items</code> - the text items</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -568,6 +589,12 @@ CSS selectors:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">highlightStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the highlight style for selected items.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the highlight style</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -577,6 +604,12 @@ CSS selectors:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">highlightColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the highlight color for selected items.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the highlight color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -586,6 +619,12 @@ CSS selectors:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">highlightSymbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
 <div class="block">Sets the symbol displayed before the selected item.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - the highlight symbol</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -595,6 +634,12 @@ CSS selectors:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the title.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the list title</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -604,6 +649,10 @@ CSS selectors:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Uses rounded borders.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -613,6 +662,12 @@ CSS selectors:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

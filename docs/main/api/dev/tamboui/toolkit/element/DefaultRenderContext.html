@@ -336,6 +336,10 @@ The ElementRegistry is obtained from the EventRouter.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DefaultRenderContext.html" title="class in dev.tamboui.toolkit.element">DefaultRenderContext</a></span>&nbsp;<span class="element-name">createEmpty</span>()</div>
 <div class="block">Creates an empty context for simple rendering without focus management.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new empty render context</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -358,6 +362,10 @@ The ElementRegistry is obtained from the EventRouter.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&gt;</span>&nbsp;<span class="element-name">styleEngine</span>()</div>
 <div class="block">Returns the style engine, if configured.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the style engine, or empty if not configured</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -630,6 +638,10 @@ Example usage:
 <div class="block">Returns the focus manager.
 <p>
 Internal use only.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the focus manager</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -641,6 +653,10 @@ Internal use only.</div>
 <div class="block">Returns the event router.
 <p>
 Internal use only.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the event router</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -734,6 +750,10 @@ Internal use only - called by StyledElement.render().</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&gt;</span>&nbsp;<span class="element-name">currentElement</span>()</div>
 <div class="block">Returns the current element being rendered, if any.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current element, or empty if no element is being rendered</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -746,6 +766,10 @@ Internal use only - called by StyledElement.render().</div>
 <p>
 This allows child elements to access CSS properties from their parent elements
 that are not part of the Style cascade (e.g., border-type).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current CSS resolver, or empty if none is active</dd>
+</dl>
 </div>
 </section>
 </li>

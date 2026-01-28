@@ -56,13 +56,7 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E()" tabindex="0">CellFilter()</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#all()" tabindex="0">all()</a></li>
@@ -144,19 +138,6 @@ skip cells that don't match the filter criteria.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CellFilter</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -265,22 +246,6 @@ skip cells that don't match the filter criteria.</div>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;()">
-<h3>CellFilter</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CellFilter</span>()</div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -292,6 +257,10 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">all</span>()</div>
 <div class="block">Selects every cell in the area (no filtering).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a filter that matches all cells</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -301,6 +270,10 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">none</span>()</div>
 <div class="block">Selects no cells.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a filter that matches no cells</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -310,6 +283,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">area</span><wbr><span class="parameters">(<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
 <div class="block">Selects cells within the specified rectangular area.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>area</code> - the rectangular area to match</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells within the area</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -319,6 +298,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">fgColor</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Selects cells with a matching foreground color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the foreground color to match</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells with the specified foreground color</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -328,6 +313,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">bgColor</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Selects cells with a matching background color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the background color to match</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells with the specified background color</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -337,6 +328,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">inner</span><wbr><span class="parameters">(<a href="../layout/Margin.html" title="class in dev.tamboui.layout">Margin</a>&nbsp;margin)</span></div>
 <div class="block">Selects cells within the inner margin of the area.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>margin</code> - the margin defining the inner region</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells within the inner margin</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -346,6 +343,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">outer</span><wbr><span class="parameters">(<a href="../layout/Margin.html" title="class in dev.tamboui.layout">Margin</a>&nbsp;margin)</span></div>
 <div class="block">Selects cells outside the inner margin of the area (border region).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>margin</code> - the margin defining the outer region</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells outside the inner margin</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -355,6 +358,10 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">text</span>()</div>
 <div class="block">Selects cells containing textual content.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a filter that matches cells containing text</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -364,6 +371,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">allOf</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a>&gt;&nbsp;filters)</span></div>
 <div class="block">Selects cells that match ALL of the given filters (logical AND).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filters</code> - the filters to combine</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells matching all given filters</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -373,6 +386,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">anyOf</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a>&gt;&nbsp;filters)</span></div>
 <div class="block">Selects cells that match ANY of the given filters (logical OR).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filters</code> - the filters to combine</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells matching any given filter</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -382,6 +401,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">noneOf</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a>&gt;&nbsp;filters)</span></div>
 <div class="block">Selects cells that match NONE of the given filters (logical NOR).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filters</code> - the filters to combine</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells matching none of the given filters</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -391,6 +416,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">not</span><wbr><span class="parameters">(<a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a>&nbsp;filter)</span></div>
 <div class="block">Inverts the result of the given filter (logical NOT).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filter</code> - the filter to invert</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells not matching the given filter</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -400,6 +431,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">positionFn</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Selects cells using a custom position-based predicate function.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>predicate</code> - the position predicate to evaluate</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells whose position satisfies the predicate</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -409,6 +446,12 @@ skip cells that don't match the filter criteria.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">evalCell</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;<a href="../buffer/Cell.html" title="class in dev.tamboui.buffer">Cell</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Selects cells using a custom cell-content-based predicate function.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>predicate</code> - the cell predicate to evaluate</dd>
+<dt>Returns:</dt>
+<dd>a filter that matches cells satisfying the predicate</dd>
+</dl>
 </div>
 </section>
 </li>

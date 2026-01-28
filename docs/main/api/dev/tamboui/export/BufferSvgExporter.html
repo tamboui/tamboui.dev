@@ -160,13 +160,13 @@ This exporter treats the buffer as a fixed-width grid of cells and generates:
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#exportSvg(dev.tamboui.buffer.Buffer)" class="member-name-link">exportSvg</a><wbr>(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Exports the given buffer to SVG.</div>
+<div class="block">Exports the given buffer to SVG with default options.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#exportSvg(dev.tamboui.buffer.Buffer,dev.tamboui.export.BufferSvgExporter.Options)" class="member-name-link">exportSvg</a><wbr>(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
  <a href="BufferSvgExporter.Options.html" title="class in dev.tamboui.export">BufferSvgExporter.Options</a>&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Exports the given buffer to SVG with options.</div>
+<div class="block">Exports the given buffer to SVG with the specified options.</div>
 </div>
 </div>
 </div>
@@ -215,7 +215,13 @@ This exporter treats the buffer as a fixed-width grid of cells and generates:
 <h3>exportSvg</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">exportSvg</span><wbr><span class="parameters">(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer)</span></div>
-<div class="block">Exports the given buffer to SVG.</div>
+<div class="block">Exports the given buffer to SVG with default options.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>buffer</code> - the buffer to export</dd>
+<dt>Returns:</dt>
+<dd>the SVG string</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -225,7 +231,14 @@ This exporter treats the buffer as a fixed-width grid of cells and generates:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">exportSvg</span><wbr><span class="parameters">(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
  <a href="BufferSvgExporter.Options.html" title="class in dev.tamboui.export">BufferSvgExporter.Options</a>&nbsp;options)</span></div>
-<div class="block">Exports the given buffer to SVG with options.</div>
+<div class="block">Exports the given buffer to SVG with the specified options.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>buffer</code> - the buffer to export</dd>
+<dd><code>options</code> - export options (title, theme, format, etc.)</dd>
+<dt>Returns:</dt>
+<dd>the SVG string</dd>
+</dl>
 </div>
 </section>
 </li>

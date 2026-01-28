@@ -108,7 +108,9 @@ implements <a href="../../widget/StatefulWidget.html" title="interface in dev.ta
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="TextInput.Builder.html" class="type-name-link" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Builder for <a href="TextInput.html" title="class in dev.tamboui.widgets.input"><code>TextInput</code></a>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -147,7 +149,9 @@ implements <a href="../../widget/StatefulWidget.html" title="interface in dev.ta
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TextInput.Builder.html" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#builder()" class="member-name-link">builder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a new text input builder.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,dev.tamboui.widgets.input.TextInputState)" class="member-name-link">render</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
@@ -215,6 +219,11 @@ CSS property name: <code>placeholder-color</code></div>
 <h3>builder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TextInput.Builder.html" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
+<div class="block">Creates a new text input builder.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new Builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -230,6 +239,10 @@ CSS property name: <code>placeholder-color</code></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../widget/StatefulWidget.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,S)">render</a></code>&nbsp;in interface&nbsp;<code><a href="../../widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;<a href="TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>area</code> - the area to render into</dd>
+<dd><code>buffer</code> - the buffer to render to</dd>
+<dd><code>state</code> - the widget state</dd>
 </dl>
 </div>
 </section>
@@ -244,6 +257,13 @@ CSS property name: <code>placeholder-color</code></div>
  <a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame)</span></div>
 <div class="block">Renders the widget and sets the cursor position on the frame.
 Call this instead of render() when this input is focused.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>area</code> - the area to render in</dd>
+<dd><code>buffer</code> - the buffer to render to</dd>
+<dd><code>state</code> - the text input state</dd>
+<dd><code>frame</code> - the frame for cursor positioning</dd>
+</dl>
 </div>
 </section>
 </li>

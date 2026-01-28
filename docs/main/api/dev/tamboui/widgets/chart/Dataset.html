@@ -210,6 +210,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Dataset.Builder.html" title="class in dev.tamboui.widgets.chart">Dataset.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
 <div class="block">Creates a new dataset builder.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -219,6 +223,12 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Dataset.html" title="class in dev.tamboui.widgets.chart">Dataset</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(double[][]&nbsp;data)</span></div>
 <div class="block">Creates a dataset with just data points.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the data points as [x, y] pairs</dd>
+<dt>Returns:</dt>
+<dd>a new dataset</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -229,6 +239,13 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Dataset.html" title="class in dev.tamboui.widgets.chart">Dataset</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  double[][]&nbsp;data)</span></div>
 <div class="block">Creates a named dataset with data points.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - the dataset name</dd>
+<dd><code>data</code> - the data points as [x, y] pairs</dd>
+<dt>Returns:</dt>
+<dd>a new dataset</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -238,6 +255,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>&gt;</span>&nbsp;<span class="element-name">name</span>()</div>
 <div class="block">Returns the dataset name.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the dataset name, or empty if not set</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -247,6 +268,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double[][]</span>&nbsp;<span class="element-name">data</span>()</div>
 <div class="block">Returns the data points as [x, y] pairs.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the data points array</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -256,6 +281,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
 <div class="block">Returns the number of data points.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the number of data points</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -265,6 +294,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Dataset.Marker.html" title="enum class in dev.tamboui.widgets.chart">Dataset.Marker</a></span>&nbsp;<span class="element-name">marker</span>()</div>
 <div class="block">Returns the marker type.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the marker type</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -274,6 +307,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GraphType.html" title="enum class in dev.tamboui.widgets.chart">GraphType</a></span>&nbsp;<span class="element-name">graphType</span>()</div>
 <div class="block">Returns the graph type.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the graph type</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -283,6 +320,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">style</span>()</div>
 <div class="block">Returns the style.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the style, or <a href="../../style/Style.html#EMPTY"><code>Style.EMPTY</code></a> if not set</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -292,6 +333,10 @@ Contains data points (x, y coordinates) and rendering configuration.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasName</span>()</div>
 <div class="block">Returns true if this dataset has a name.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if this dataset has a name</dd>
+</dl>
 </div>
 </section>
 </li>

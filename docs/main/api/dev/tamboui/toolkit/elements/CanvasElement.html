@@ -139,7 +139,9 @@ Draws arbitrary shapes on a coordinate system.
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CanvasElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new canvas element with default bounds and Braille marker.</div>
+</div>
 </div>
 </section>
 </li>
@@ -267,6 +269,7 @@ Draws arbitrary shapes on a coordinate system.
 <h3>CanvasElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CanvasElement</span>()</div>
+<div class="block">Creates a new canvas element with default bounds and Braille marker.</div>
 </div>
 </section>
 </li>
@@ -285,6 +288,13 @@ Draws arbitrary shapes on a coordinate system.
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">xBounds</span><wbr><span class="parameters">(double&nbsp;min,
  double&nbsp;max)</span></div>
 <div class="block">Sets the X-axis bounds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>min</code> - the minimum X value</dd>
+<dd><code>max</code> - the maximum X value</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -295,6 +305,13 @@ Draws arbitrary shapes on a coordinate system.
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">yBounds</span><wbr><span class="parameters">(double&nbsp;min,
  double&nbsp;max)</span></div>
 <div class="block">Sets the Y-axis bounds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>min</code> - the minimum Y value</dd>
+<dd><code>max</code> - the maximum Y value</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -307,6 +324,15 @@ Draws arbitrary shapes on a coordinate system.
  double&nbsp;yMin,
  double&nbsp;yMax)</span></div>
 <div class="block">Sets both axis bounds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>xMin</code> - the minimum X value</dd>
+<dd><code>xMax</code> - the maximum X value</dd>
+<dd><code>yMin</code> - the minimum Y value</dd>
+<dd><code>yMax</code> - the maximum Y value</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -316,6 +342,12 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">marker</span><wbr><span class="parameters">(<a href="../../widgets/canvas/Marker.html" title="enum class in dev.tamboui.widgets.canvas">Marker</a>&nbsp;marker)</span></div>
 <div class="block">Sets the marker type for rendering points.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>marker</code> - the marker type</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -325,6 +357,10 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">braille</span>()</div>
 <div class="block">Uses Braille marker (highest resolution).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -334,6 +370,10 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">halfBlock</span>()</div>
 <div class="block">Uses half-block marker.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -343,6 +383,10 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">dot</span>()</div>
 <div class="block">Uses dot marker.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -352,6 +396,10 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">block</span>()</div>
 <div class="block">Uses block marker.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -361,6 +409,12 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">backgroundColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the background color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the background color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -370,6 +424,12 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">paint</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../widgets/canvas/Context.html" title="class in dev.tamboui.widgets.canvas">Context</a>&gt;&nbsp;callback)</span></div>
 <div class="block">Sets the paint callback for drawing shapes.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>callback</code> - the paint callback receiving a drawing context</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -379,6 +439,12 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the title.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the canvas title</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -388,6 +454,10 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Uses rounded borders.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -397,6 +467,12 @@ Draws arbitrary shapes on a coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

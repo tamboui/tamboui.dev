@@ -143,7 +143,9 @@ Displays data in rows and columns.
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">TableElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new empty table element.</div>
+</div>
 </div>
 </section>
 </li>
@@ -291,6 +293,7 @@ Displays data in rows and columns.
 <h3>TableElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TableElement</span>()</div>
+<div class="block">Creates a new empty table element.</div>
 </div>
 </section>
 </li>
@@ -309,6 +312,12 @@ Displays data in rows and columns.
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">header</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;cells)</span></div>
 <div class="block">Sets the header row from strings.
 The header style will be resolved from CSS (TableElement-header) or use default bold.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cells</code> - the header cell values</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -318,6 +327,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">header</span><wbr><span class="parameters">(<a href="../../widgets/table/Row.html" title="class in dev.tamboui.widgets.table">Row</a>&nbsp;header)</span></div>
 <div class="block">Sets the header row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>header</code> - the header row</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -327,6 +342,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">footer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;cells)</span></div>
 <div class="block">Sets the footer row from strings.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cells</code> - the footer cell values</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -336,6 +357,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">footer</span><wbr><span class="parameters">(<a href="../../widgets/table/Row.html" title="class in dev.tamboui.widgets.table">Row</a>&nbsp;footer)</span></div>
 <div class="block">Sets the footer row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>footer</code> - the footer row</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -345,6 +372,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">row</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;cells)</span></div>
 <div class="block">Adds a row from strings.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cells</code> - the row cell values</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -354,6 +387,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">row</span><wbr><span class="parameters">(<a href="../../widgets/table/Row.html" title="class in dev.tamboui.widgets.table">Row</a>&nbsp;row)</span></div>
 <div class="block">Adds a row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>row</code> - the row to add</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -363,6 +402,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">rows</span><wbr><span class="parameters">(<a href="../../widgets/table/Row.html" title="class in dev.tamboui.widgets.table">Row</a>...&nbsp;rows)</span></div>
 <div class="block">Sets all rows.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rows</code> - the rows to set</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -372,6 +417,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">rows</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../widgets/table/Row.html" title="class in dev.tamboui.widgets.table">Row</a>&gt;&nbsp;rows)</span></div>
 <div class="block">Sets all rows from a list.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rows</code> - the rows to set</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -381,6 +432,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">widths</span><wbr><span class="parameters">(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>...&nbsp;widths)</span></div>
 <div class="block">Sets the column width constraints.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>widths</code> - the width constraints</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -390,6 +447,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">widths</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&gt;&nbsp;widths)</span></div>
 <div class="block">Sets the column width constraints from a list.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>widths</code> - the width constraints</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -399,6 +462,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">state</span><wbr><span class="parameters">(<a href="../../widgets/table/TableState.html" title="class in dev.tamboui.widgets.table">TableState</a>&nbsp;state)</span></div>
 <div class="block">Sets the table state for selection tracking.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>state</code> - the table state</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -408,6 +477,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">highlightStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the highlight style for selected rows.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the highlight style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -417,6 +492,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">highlightColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the highlight color for selected rows.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the highlight color</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -426,6 +507,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">highlightSymbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
 <div class="block">Sets the symbol displayed before the selected row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - the highlight symbol</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -435,6 +522,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">columnSpacing</span><wbr><span class="parameters">(int&nbsp;spacing)</span></div>
 <div class="block">Sets the spacing between columns.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>spacing</code> - the column spacing</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -444,6 +537,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the title.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the table title</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -453,6 +552,10 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Uses rounded borders.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -462,6 +565,12 @@ The header style will be resolved from CSS (TableElement-header) or use default 
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>

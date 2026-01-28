@@ -110,13 +110,19 @@ This is an internal API and not part of the public contract.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configFile()" class="member-name-link">configFile</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the config file path, or null if loaded from system properties.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fps()" class="member-name-link">fps</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the frames per second.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#height()" class="member-name-link">height</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the recording height in rows.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isEnabled()" class="member-name-link">isEnabled</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -129,7 +135,9 @@ This is an internal API and not part of the public contract.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#maxDurationMs()" class="member-name-link">maxDurationMs</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the maximum recording duration in milliseconds.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.nio.file.Path,int,int,int,int)" class="member-name-link">of</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;outputPath,
  int&nbsp;fps,
@@ -141,10 +149,14 @@ This is an internal API and not part of the public contract.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#outputPath()" class="member-name-link">outputPath</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the output file path.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the recording width in columns.</div>
+</div>
 </div>
 </div>
 </div>
@@ -183,6 +195,10 @@ output is captured from the start, not just after the first Backend is created.<
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a></span>&nbsp;<span class="element-name">active</span>()</div>
 <div class="block">Returns the active recording config, or null if not recording.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the active config, or null</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -210,6 +226,16 @@ This does NOT install the capture - use <a href="#load()"><code>load()</code></a
  int&nbsp;width,
  int&nbsp;height)</span></div>
 <div class="block">Creates a config with explicit values (used by TuiRunner for config file support).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>outputPath</code> - the output file path</dd>
+<dd><code>fps</code> - the frames per second</dd>
+<dd><code>maxDurationMs</code> - the maximum recording duration in milliseconds</dd>
+<dd><code>width</code> - the recording width in columns</dd>
+<dd><code>height</code> - the recording height in rows</dd>
+<dt>Returns:</dt>
+<dd>a new recording config</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -218,6 +244,11 @@ This does NOT install the capture - use <a href="#load()"><code>load()</code></a
 <h3>outputPath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">outputPath</span>()</div>
+<div class="block">Returns the output file path.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the output path</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -226,6 +257,11 @@ This does NOT install the capture - use <a href="#load()"><code>load()</code></a
 <h3>fps</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">fps</span>()</div>
+<div class="block">Returns the frames per second.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the FPS</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -234,6 +270,11 @@ This does NOT install the capture - use <a href="#load()"><code>load()</code></a
 <h3>maxDurationMs</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">maxDurationMs</span>()</div>
+<div class="block">Returns the maximum recording duration in milliseconds.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the maximum duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -242,6 +283,11 @@ This does NOT install the capture - use <a href="#load()"><code>load()</code></a
 <h3>width</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">width</span>()</div>
+<div class="block">Returns the recording width in columns.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the width</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -250,6 +296,11 @@ This does NOT install the capture - use <a href="#load()"><code>load()</code></a
 <h3>height</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">height</span>()</div>
+<div class="block">Returns the recording height in rows.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the height</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -258,6 +309,11 @@ This does NOT install the capture - use <a href="#load()"><code>load()</code></a
 <h3>configFile</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a></span>&nbsp;<span class="element-name">configFile</span>()</div>
+<div class="block">Returns the config file path, or null if loaded from system properties.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the config file path, or null</dd>
+</dl>
 </div>
 </section>
 </li>

@@ -282,6 +282,10 @@ if you need custom timer handling (e.g., for effects that don't use timers).
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
 <div class="block">Returns the name of this shader.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the shader name</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -338,6 +342,10 @@ default <a href="#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">done</span>()</div>
 <div class="block">Returns true if the shader effect is done.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the effect has completed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -347,6 +355,10 @@ default <a href="#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">running</span>()</div>
 <div class="block">Returns true if the shader is still running.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the effect is still running</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -356,6 +368,10 @@ default <a href="#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></span>&nbsp;<span class="element-name">area</span>()</div>
 <div class="block">Returns the area where the shader effect is applied, or null if not set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the effect area, or null if not set</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -365,6 +381,10 @@ default <a href="#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setArea</span><wbr><span class="parameters">(<a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
 <div class="block">Sets the area where the shader effect will be applied.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>area</code> - the rectangular area for the effect</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -374,6 +394,10 @@ default <a href="#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">timer</span>()</div>
 <div class="block">Returns the timer associated with this shader effect, or null if none.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the effect timer, or null if none</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -385,6 +409,10 @@ default <a href="#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,
 <div class="block">Returns a mutable timer if available, or null if none.
 <p>
 This is used internally for timer updates.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the mutable effect timer, or null if none</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -394,6 +422,10 @@ This is used internally for timer updates.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a></span>&nbsp;<span class="element-name">cellFilter</span>()</div>
 <div class="block">Returns the cell filter for this shader, or null if none.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the cell filter, or null if none</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -403,6 +435,10 @@ This is used internally for timer updates.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCellFilter</span><wbr><span class="parameters">(<a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a>&nbsp;filter)</span></div>
 <div class="block">Sets the cell filter for this shader.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filter</code> - the cell filter to apply</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -412,6 +448,10 @@ This is used internally for timer updates.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="TFxColorSpace.html" title="enum class in dev.tamboui.tfx">TFxColorSpace</a></span>&nbsp;<span class="element-name">colorSpace</span>()</div>
 <div class="block">Returns the color space for this shader, or null if not applicable.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the color space, or null if not applicable</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -421,6 +461,10 @@ This is used internally for timer updates.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setColorSpace</span><wbr><span class="parameters">(<a href="TFxColorSpace.html" title="enum class in dev.tamboui.tfx">TFxColorSpace</a>&nbsp;colorSpace)</span></div>
 <div class="block">Sets the color space for this shader.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>colorSpace</code> - the color space to use for interpolation</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -430,6 +474,10 @@ This is used internally for timer updates.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="pattern/Pattern.html" title="interface in dev.tamboui.tfx.pattern">Pattern</a></span>&nbsp;<span class="element-name">pattern</span>()</div>
 <div class="block">Returns the pattern for this shader, or null if not applicable.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the spatial pattern, or null if not applicable</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -439,6 +487,10 @@ This is used internally for timer updates.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPattern</span><wbr><span class="parameters">(<a href="pattern/Pattern.html" title="interface in dev.tamboui.tfx.pattern">Pattern</a>&nbsp;pattern)</span></div>
 <div class="block">Sets the pattern for this shader.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pattern</code> - the spatial pattern to use</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -479,6 +531,10 @@ for available modes.</div>
 <div class="block">Creates a copy of this shader.
 <p>
 This is used for effect composition and cloning.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a copy of this shader</dd>
+</dl>
 </div>
 </section>
 </li>

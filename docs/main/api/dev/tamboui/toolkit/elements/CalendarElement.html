@@ -140,9 +140,13 @@ Displays a calendar grid for a month.
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CalendarElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new calendar element for the current month.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.time.LocalDate)" class="member-name-link">CalendarElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a new calendar element for the month of the given date.</div>
+</div>
 </div>
 </section>
 </li>
@@ -280,6 +284,7 @@ Displays a calendar grid for a month.
 <h3>CalendarElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CalendarElement</span>()</div>
+<div class="block">Creates a new calendar element for the current month.</div>
 </div>
 </section>
 </li>
@@ -288,6 +293,11 @@ Displays a calendar grid for a month.
 <h3>CalendarElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CalendarElement</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</span></div>
+<div class="block">Creates a new calendar element for the month of the given date.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>date</code> - the date determining which month to display</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -305,6 +315,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">date</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;date)</span></div>
 <div class="block">Sets the display date (determines which month to show).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>date</code> - the date determining which month to display</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -314,6 +330,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">dateStyler</span><wbr><span class="parameters">(<a href="../../widgets/calendar/DateStyler.html" title="interface in dev.tamboui.widgets.calendar">DateStyler</a>&nbsp;styler)</span></div>
 <div class="block">Sets the date styler for customizing individual dates.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>styler</code> - the date styler callback</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -323,6 +345,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">highlightToday</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Highlights today with the given color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the highlight color for today</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -332,6 +360,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">highlightToday</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Highlights today with the given style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the highlight style for today</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -341,6 +375,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">showMonthHeader</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Shows the month header with the given style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the month header style</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -350,6 +390,10 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">showMonthHeader</span>()</div>
 <div class="block">Shows the month header with bold style.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -359,6 +403,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">showWeekdaysHeader</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Shows the weekdays header with the given style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the weekdays header style</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -368,6 +418,10 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">showWeekdaysHeader</span>()</div>
 <div class="block">Shows the weekdays header with cyan color.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -377,6 +431,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">showSurrounding</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Shows surrounding days (from previous/next month) with the given style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the surrounding days style</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -386,6 +446,10 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">showSurrounding</span>()</div>
 <div class="block">Shows surrounding days with dim style.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -395,6 +459,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">defaultStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the default date style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the default style for dates</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -404,6 +474,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">firstDayOfWeek</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/DayOfWeek.html" title="class or interface in java.time" class="external-link">DayOfWeek</a>&nbsp;day)</span></div>
 <div class="block">Sets the first day of the week.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>day</code> - the first day of the week</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -413,6 +489,10 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">sundayFirst</span>()</div>
 <div class="block">Sets the first day of week to Sunday.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -422,6 +502,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the title.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the calendar title</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -431,6 +517,10 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Uses rounded borders.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -440,6 +530,12 @@ Displays a calendar grid for a month.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CalendarElement.html" title="class in dev.tamboui.toolkit.elements">CalendarElement</a></span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

@@ -99,6 +99,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public static final class </span><span class="element-name type-name-label">Table.Builder</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Builder for <a href="Table.html" title="class in dev.tamboui.widgets.table"><code>Table</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -131,7 +132,9 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Table.html" title="class in dev.tamboui.widgets.table">Table</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Builds the table.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#columnSpacing(int)" class="member-name-link">columnSpacing</a><wbr>(int&nbsp;spacing)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -225,6 +228,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">rows</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Row.html" title="class in dev.tamboui.widgets.table">Row</a>&gt;&nbsp;rows)</span></div>
 <div class="block">Sets the data rows.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rows</code> - the rows to display</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -234,6 +243,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">rows</span><wbr><span class="parameters">(<a href="Row.html" title="class in dev.tamboui.widgets.table">Row</a>...&nbsp;rows)</span></div>
 <div class="block">Sets the data rows.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rows</code> - the rows to display</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -243,6 +258,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">addRow</span><wbr><span class="parameters">(<a href="Row.html" title="class in dev.tamboui.widgets.table">Row</a>&nbsp;row)</span></div>
 <div class="block">Adds a row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>row</code> - the row to add</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -254,6 +275,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Sets the column width constraints.
 <p>
 This is required - columns will have 0 width without constraints.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>widths</code> - the column width constraints</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -263,6 +290,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">widths</span><wbr><span class="parameters">(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>...&nbsp;widths)</span></div>
 <div class="block">Sets the column width constraints.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>widths</code> - the column width constraints</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -272,6 +305,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">header</span><wbr><span class="parameters">(<a href="Row.html" title="class in dev.tamboui.widgets.table">Row</a>&nbsp;header)</span></div>
 <div class="block">Sets the header row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>header</code> - the header row</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -281,6 +320,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">footer</span><wbr><span class="parameters">(<a href="Row.html" title="class in dev.tamboui.widgets.table">Row</a>&nbsp;footer)</span></div>
 <div class="block">Sets the footer row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>footer</code> - the footer row</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -290,6 +335,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">block</span><wbr><span class="parameters">(<a href="../block/Block.html" title="class in dev.tamboui.widgets.block">Block</a>&nbsp;block)</span></div>
 <div class="block">Wraps the table in a block.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>block</code> - the block to wrap in</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -299,6 +350,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">style</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the base style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the base style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -308,6 +365,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">highlightStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the style for the selected row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the highlight style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -317,6 +380,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">highlightSymbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
 <div class="block">Sets the symbol displayed before the selected row.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - the highlight symbol</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -326,6 +395,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">columnSpacing</span><wbr><span class="parameters">(int&nbsp;spacing)</span></div>
 <div class="block">Sets the spacing between columns.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>spacing</code> - the column spacing</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -335,6 +410,12 @@ This is required - columns will have 0 width without constraints.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></span>&nbsp;<span class="element-name">highlightSpacing</span><wbr><span class="parameters">(<a href="Table.HighlightSpacing.html" title="enum class in dev.tamboui.widgets.table">Table.HighlightSpacing</a>&nbsp;spacing)</span></div>
 <div class="block">Sets when to allocate space for the highlight symbol.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>spacing</code> - the highlight spacing mode</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -414,6 +495,11 @@ styling like alternating row colors.</div>
 <h3>build</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Table.html" title="class in dev.tamboui.widgets.table">Table</a></span>&nbsp;<span class="element-name">build</span>()</div>
+<div class="block">Builds the table.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new Table</dd>
+</dl>
 </div>
 </section>
 </li>

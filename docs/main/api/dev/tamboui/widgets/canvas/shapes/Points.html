@@ -122,7 +122,9 @@ context.draw(new Points(coords, Color.YELLOW));
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(double%5B%5D%5B%5D,dev.tamboui.style.Color)" class="member-name-link">Points</a><wbr>(double[][]&nbsp;coords,
  <a href="../../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a points shape from coordinate pairs and a color.</div>
+</div>
 </div>
 </section>
 </li>
@@ -139,10 +141,14 @@ context.draw(new Points(coords, Color.YELLOW));
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../style/Color.html" title="interface in dev.tamboui.style">Color</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#color()" class="member-name-link">color</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the color for all points.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double[][]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#coords()" class="member-name-link">coords</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the coordinate pairs.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(dev.tamboui.widgets.canvas.Painter)" class="member-name-link">draw</a><wbr>(<a href="../Painter.html" title="class in dev.tamboui.widgets.canvas">Painter</a>&nbsp;painter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -193,6 +199,12 @@ context.draw(new Points(coords, Color.YELLOW));
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Points</span><wbr><span class="parameters">(double[][]&nbsp;coords,
  <a href="../../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
+<div class="block">Creates a points shape from coordinate pairs and a color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>coords</code> - the coordinate pairs (each sub-array is [x, y])</dd>
+<dd><code>color</code> - the color for all points</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -211,6 +223,13 @@ context.draw(new Points(coords, Color.YELLOW));
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Points.html" title="class in dev.tamboui.widgets.canvas.shapes">Points</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(double[][]&nbsp;coords,
  <a href="../../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Creates a points shape from coordinate pairs and a color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>coords</code> - the coordinate pairs (each sub-array is [x, y])</dd>
+<dd><code>color</code> - the color for all points</dd>
+<dt>Returns:</dt>
+<dd>a new Points shape</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -259,6 +278,11 @@ to grid positions and to paint colored points.</div>
 <h3>coords</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double[][]</span>&nbsp;<span class="element-name">coords</span>()</div>
+<div class="block">Returns the coordinate pairs.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the coordinate pairs</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -267,6 +291,11 @@ to grid positions and to paint colored points.</div>
 <h3>color</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../style/Color.html" title="interface in dev.tamboui.style">Color</a></span>&nbsp;<span class="element-name">color</span>()</div>
+<div class="block">Returns the color for all points.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the color</dd>
+</dl>
 </div>
 </section>
 </li>

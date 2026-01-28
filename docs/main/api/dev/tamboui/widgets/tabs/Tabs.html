@@ -124,7 +124,9 @@ frame.renderStatefulWidget(tabs, area, state);
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="Tabs.Builder.html" class="type-name-link" title="class in dev.tamboui.widgets.tabs">Tabs.Builder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Builder for <a href="Tabs.html" title="class in dev.tamboui.widgets.tabs"><code>Tabs</code></a>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -158,7 +160,9 @@ frame.renderStatefulWidget(tabs, area, state);
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Tabs.Builder.html" title="class in dev.tamboui.widgets.tabs">Tabs.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#builder()" class="member-name-link">builder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a new tabs builder.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Tabs.html" title="class in dev.tamboui.widgets.tabs">Tabs</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#from(dev.tamboui.text.Line...)" class="member-name-link">from</a><wbr>(<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>...&nbsp;titles)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -227,6 +231,11 @@ CSS property name: <code>highlight-color</code></div>
 <h3>builder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Tabs.Builder.html" title="class in dev.tamboui.widgets.tabs">Tabs.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
+<div class="block">Creates a new tabs builder.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new Builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -236,6 +245,12 @@ CSS property name: <code>highlight-color</code></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Tabs.html" title="class in dev.tamboui.widgets.tabs">Tabs</a></span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;titles)</span></div>
 <div class="block">Creates tabs from string titles.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>titles</code> - the tab titles</dd>
+<dt>Returns:</dt>
+<dd>a new Tabs</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -245,6 +260,12 @@ CSS property name: <code>highlight-color</code></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Tabs.html" title="class in dev.tamboui.widgets.tabs">Tabs</a></span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>...&nbsp;titles)</span></div>
 <div class="block">Creates tabs from line titles.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>titles</code> - the tab titles</dd>
+<dt>Returns:</dt>
+<dd>a new Tabs</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -254,6 +275,10 @@ CSS property name: <code>highlight-color</code></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
 <div class="block">Returns the number of tabs.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the tab count</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -263,6 +288,10 @@ CSS property name: <code>highlight-color</code></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>&gt;</span>&nbsp;<span class="element-name">titles</span>()</div>
 <div class="block">Returns the tab titles.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the titles</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -278,6 +307,10 @@ CSS property name: <code>highlight-color</code></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../widget/StatefulWidget.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,S)">render</a></code>&nbsp;in interface&nbsp;<code><a href="../../widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;<a href="TabsState.html" title="class in dev.tamboui.widgets.tabs">TabsState</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>area</code> - the area to render into</dd>
+<dd><code>buffer</code> - the buffer to render to</dd>
+<dd><code>state</code> - the widget state</dd>
 </dl>
 </div>
 </section>

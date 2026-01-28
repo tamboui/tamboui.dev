@@ -133,7 +133,9 @@ different approach to spatial mapping that works better with the pattern system.
  <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  float&nbsp;progress,
  float&nbsp;gradientLength)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a new sliding window alpha calculator.</div>
+</div>
 </div>
 </div>
 </div>
@@ -159,6 +161,16 @@ different approach to spatial mapping that works better with the pattern system.
  <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  float&nbsp;progress,
  float&nbsp;gradientLength)</span></div>
+<div class="block">Creates a new sliding window alpha calculator.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>direction</code> - the direction of the sliding window</dd>
+<dd><code>area</code> - the rectangular area to apply the effect to</dd>
+<dd><code>progress</code> - the global animation progress (0.0 to 1.0)</dd>
+<dd><code>gradientLength</code> - the width of the gradient transition zone</dd>
+<dt>Returns:</dt>
+<dd>a new sliding window alpha calculator</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -168,6 +180,12 @@ different approach to spatial mapping that works better with the pattern system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">alpha</span><wbr><span class="parameters">(<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&nbsp;position)</span></div>
 <div class="block">Calculates the alpha value for a given position.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>position</code> - the position to calculate alpha for</dd>
+<dt>Returns:</dt>
+<dd>the alpha value (0.0 to 1.0) for the given position</dd>
+</dl>
 </div>
 </section>
 </li>

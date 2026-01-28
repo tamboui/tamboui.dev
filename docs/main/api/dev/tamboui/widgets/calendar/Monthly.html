@@ -239,6 +239,10 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">ofCurrentMonth</span>()</div>
 <div class="block">Creates a calendar for the current month with no special styling.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new Monthly calendar for the current month</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -249,6 +253,13 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Monthly.Builder.html" title="class in dev.tamboui.widgets.calendar">Monthly.Builder</a></span>&nbsp;<span class="element-name">builder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link">LocalDate</a>&nbsp;displayDate,
  <a href="DateStyler.html" title="interface in dev.tamboui.widgets.calendar">DateStyler</a>&nbsp;dateStyler)</span></div>
 <div class="block">Creates a builder for a calendar displaying the given month.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>displayDate</code> - the date determining which month to display</dd>
+<dd><code>dateStyler</code> - the styler for individual dates</dd>
+<dt>Returns:</dt>
+<dd>a new Builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -258,6 +269,12 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">showMonthHeader</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Returns a new calendar with the month header shown.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the style for the month header</dd>
+<dt>Returns:</dt>
+<dd>a new Monthly with the month header enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -267,6 +284,12 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">showWeekdaysHeader</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Returns a new calendar with the weekdays header shown.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the style for the weekdays header</dd>
+<dt>Returns:</dt>
+<dd>a new Monthly with the weekdays header enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -279,6 +302,12 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <p>
 Surrounding days are days from the previous/next month that
 appear in the calendar grid.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the style for surrounding days</dd>
+<dt>Returns:</dt>
+<dd>a new Monthly with surrounding days enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -288,6 +317,12 @@ appear in the calendar grid.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">defaultStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Returns a new calendar with the default date style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the default style for dates</dd>
+<dt>Returns:</dt>
+<dd>a new Monthly with the given default style</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -297,6 +332,12 @@ appear in the calendar grid.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">block</span><wbr><span class="parameters">(<a href="../block/Block.html" title="class in dev.tamboui.widgets.block">Block</a>&nbsp;block)</span></div>
 <div class="block">Returns a new calendar wrapped in a block.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>block</code> - the block to wrap the calendar in</dd>
+<dt>Returns:</dt>
+<dd>a new Monthly wrapped in the given block</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -306,6 +347,12 @@ appear in the calendar grid.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">firstDayOfWeek</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/DayOfWeek.html" title="class or interface in java.time" class="external-link">DayOfWeek</a>&nbsp;dayOfWeek)</span></div>
 <div class="block">Returns a new calendar with the given first day of week.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dayOfWeek</code> - the first day of the week</dd>
+<dt>Returns:</dt>
+<dd>a new Monthly with the given first day of week</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -320,6 +367,9 @@ appear in the calendar grid.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../widget/Widget.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)">render</a></code>&nbsp;in interface&nbsp;<code><a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>area</code> - the rectangular area to render into</dd>
+<dd><code>buffer</code> - the buffer to write cells to</dd>
 </dl>
 </div>
 </section>

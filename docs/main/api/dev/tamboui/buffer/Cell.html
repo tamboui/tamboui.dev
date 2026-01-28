@@ -122,7 +122,9 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#EMPTY" class="member-name-link">EMPTY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">An empty cell containing a single space with no style.</div>
+</div>
 </div>
 </section>
 </li>
@@ -136,7 +138,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,dev.tamboui.style.Style)" class="member-name-link">Cell</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol,
  <a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a cell with the given symbol and style.</div>
+</div>
 </div>
 </section>
 </li>
@@ -164,7 +168,9 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether this cell is empty (single space with no style).</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mergeSymbol(java.lang.String,dev.tamboui.symbols.merge.MergeStrategy)" class="member-name-link">mergeSymbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;otherSymbol,
  <a href="../symbols/merge/MergeStrategy.html" title="enum class in dev.tamboui.symbols.merge">MergeStrategy</a>&nbsp;strategy)</code></div>
@@ -173,22 +179,34 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#patchStyle(dev.tamboui.style.Style)" class="member-name-link">patchStyle</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;patch)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a new cell with this cell's style patched by the given style.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the empty cell singleton.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../style/Style.html" title="class in dev.tamboui.style">Style</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style()" class="member-name-link">style</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the visual style of this cell.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style(dev.tamboui.style.Style)" class="member-name-link">style</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a new cell with the given style and this cell's symbol.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbol()" class="member-name-link">symbol</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the symbol displayed in this cell.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbol(java.lang.String)" class="member-name-link">symbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a new cell with the given symbol and this cell's style.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -214,6 +232,7 @@ loadScripts(document, 'script');</script>
 <h3>EMPTY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></span>&nbsp;<span class="element-name">EMPTY</span></div>
+<div class="block">An empty cell containing a single space with no style.</div>
 </div>
 </section>
 </li>
@@ -242,6 +261,12 @@ is filled with this cell. Renderers must skip continuation cells.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Cell</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol,
  <a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
+<div class="block">Creates a cell with the given symbol and style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - the character or grapheme cluster displayed in this cell</dd>
+<dd><code>style</code> - the visual style</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -258,6 +283,11 @@ is filled with this cell. Renderers must skip continuation cells.</div>
 <h3>symbol</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">symbol</span>()</div>
+<div class="block">Returns the symbol displayed in this cell.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the character or grapheme cluster</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -266,6 +296,11 @@ is filled with this cell. Renderers must skip continuation cells.</div>
 <h3>style</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../style/Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">style</span>()</div>
+<div class="block">Returns the visual style of this cell.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the style</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -274,6 +309,11 @@ is filled with this cell. Renderers must skip continuation cells.</div>
 <h3>reset</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></span>&nbsp;<span class="element-name">reset</span>()</div>
+<div class="block">Returns the empty cell singleton.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><a href="#EMPTY"><code>EMPTY</code></a></dd>
+</dl>
 </div>
 </section>
 </li>
@@ -282,6 +322,13 @@ is filled with this cell. Renderers must skip continuation cells.</div>
 <h3>symbol</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></span>&nbsp;<span class="element-name">symbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
+<div class="block">Returns a new cell with the given symbol and this cell's style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - the new symbol</dd>
+<dt>Returns:</dt>
+<dd>a new cell</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -290,6 +337,13 @@ is filled with this cell. Renderers must skip continuation cells.</div>
 <h3>style</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></span>&nbsp;<span class="element-name">style</span><wbr><span class="parameters">(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
+<div class="block">Returns a new cell with the given style and this cell's symbol.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the new style</dd>
+<dt>Returns:</dt>
+<dd>a new cell</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -298,6 +352,13 @@ is filled with this cell. Renderers must skip continuation cells.</div>
 <h3>patchStyle</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Cell.html" title="class in dev.tamboui.buffer">Cell</a></span>&nbsp;<span class="element-name">patchStyle</span><wbr><span class="parameters">(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;patch)</span></div>
+<div class="block">Returns a new cell with this cell's style patched by the given style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>patch</code> - the style patch to apply</dd>
+<dt>Returns:</dt>
+<dd>a new cell with the patched style</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -337,6 +398,11 @@ Returns a new cell with the merged symbol.</div>
 <h3>isEmpty</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
+<div class="block">Returns whether this cell is empty (single space with no style).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this cell equals <a href="#EMPTY"><code>EMPTY</code></a></dd>
+</dl>
 </div>
 </section>
 </li>

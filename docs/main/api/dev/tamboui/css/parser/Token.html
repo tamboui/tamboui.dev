@@ -210,7 +210,9 @@ uses to construct the CSS AST.</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.css.parser.Token.Position)" class="member-name-link">Token</a><wbr>(<a href="Token.Position.html" title="class in dev.tamboui.css.parser">Token.Position</a>&nbsp;position)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a token at the given source position.</div>
+</div>
 </div>
 </section>
 </li>
@@ -257,6 +259,11 @@ uses to construct the CSS AST.</div>
 <h3>Token</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">Token</span><wbr><span class="parameters">(<a href="Token.Position.html" title="class in dev.tamboui.css.parser">Token.Position</a>&nbsp;position)</span></div>
+<div class="block">Creates a token at the given source position.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>position</code> - the position in the source</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -274,6 +281,10 @@ uses to construct the CSS AST.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Token.Position.html" title="class in dev.tamboui.css.parser">Token.Position</a></span>&nbsp;<span class="element-name">position</span>()</div>
 <div class="block">Returns the position of this token in the source.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the source position</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -285,6 +296,10 @@ uses to construct the CSS AST.</div>
 <div class="block">Returns whether this token was preceded by whitespace in the source.
 This is used to distinguish between compound selectors (Panel.class)
 and descendant selectors (Panel Button).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if preceded by whitespace</dd>
+</dl>
 </div>
 </section>
 </li>

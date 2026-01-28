@@ -152,11 +152,17 @@ take precedence over CSS styles.</div>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">LineGaugeElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a line gauge with zero progress.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(double)" class="member-name-link">LineGaugeElement</a><wbr>(double&nbsp;ratio)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a line gauge with the given progress ratio.</div>
+</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">LineGaugeElement</a><wbr>(int&nbsp;percent)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a line gauge with the given progress percentage.</div>
+</div>
 </div>
 </section>
 </li>
@@ -264,6 +270,7 @@ take precedence over CSS styles.</div>
 <h3>LineGaugeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LineGaugeElement</span>()</div>
+<div class="block">Creates a line gauge with zero progress.</div>
 </div>
 </section>
 </li>
@@ -272,6 +279,11 @@ take precedence over CSS styles.</div>
 <h3>LineGaugeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LineGaugeElement</span><wbr><span class="parameters">(double&nbsp;ratio)</span></div>
+<div class="block">Creates a line gauge with the given progress ratio.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ratio</code> - the progress ratio (0.0 to 1.0)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -280,6 +292,11 @@ take precedence over CSS styles.</div>
 <h3>LineGaugeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LineGaugeElement</span><wbr><span class="parameters">(int&nbsp;percent)</span></div>
+<div class="block">Creates a line gauge with the given progress percentage.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>percent</code> - the progress percentage (0 to 100)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -297,6 +314,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">ratio</span><wbr><span class="parameters">(double&nbsp;ratio)</span></div>
 <div class="block">Sets the progress as a ratio (0.0-1.0).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ratio</code> - the progress ratio</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -309,6 +332,10 @@ take precedence over CSS styles.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#percent(int)">percent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>percent</code> - the percentage value</dd>
+<dt>Returns:</dt>
+<dd>this element for chaining</dd>
 </dl>
 </div>
 </section>
@@ -319,6 +346,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">label</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</span></div>
 <div class="block">Sets the label displayed before the gauge line.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the label text</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -328,6 +361,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">filledStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the style for the filled portion.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the filled style</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -337,6 +376,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">filledColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the color for the filled portion.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the filled color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -346,6 +391,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">unfilledStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the style for the unfilled portion.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the unfilled style</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -355,6 +406,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">unfilledColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the color for the unfilled portion.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the unfilled color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -364,6 +421,10 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">thick</span>()</div>
 <div class="block">Uses thick line characters.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -373,6 +434,10 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">doubleLine</span>()</div>
 <div class="block">Uses double line characters.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -382,6 +447,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LineGaugeElement.html" title="class in dev.tamboui.toolkit.elements">LineGaugeElement</a></span>&nbsp;<span class="element-name">lineSet</span><wbr><span class="parameters">(<a href="../../widgets/gauge/LineGauge.LineSet.html" title="class in dev.tamboui.widgets.gauge">LineGauge.LineSet</a>&nbsp;lineSet)</span></div>
 <div class="block">Sets the line character set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>lineSet</code> - the line character set to use</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

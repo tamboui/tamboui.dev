@@ -205,6 +205,10 @@ on the global animation progress.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="RadialPattern.html" title="class in dev.tamboui.tfx.pattern">RadialPattern</a></span>&nbsp;<span class="element-name">center</span>()</div>
 <div class="block">Creates a radial pattern centered at the middle of the area.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new radial pattern centered at (0.5, 0.5)</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -219,6 +223,8 @@ on the global animation progress.</div>
 <dt>Parameters:</dt>
 <dd><code>centerX</code> - Center X position (0.0-1.0)</dd>
 <dd><code>centerY</code> - Center Y position (0.0-1.0)</dd>
+<dt>Returns:</dt>
+<dd>a new radial pattern with the specified center</dd>
 </dl>
 </div>
 </section>
@@ -236,6 +242,8 @@ on the global animation progress.</div>
 <dd><code>centerX</code> - Center X position (0.0-1.0)</dd>
 <dd><code>centerY</code> - Center Y position (0.0-1.0)</dd>
 <dd><code>transitionWidth</code> - Width of the gradient transition zone in terminal cells</dd>
+<dt>Returns:</dt>
+<dd>a new radial pattern with the specified center and transition width</dd>
 </dl>
 </div>
 </section>
@@ -246,6 +254,12 @@ on the global animation progress.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="RadialPattern.html" title="class in dev.tamboui.tfx.pattern">RadialPattern</a></span>&nbsp;<span class="element-name">withTransitionWidth</span><wbr><span class="parameters">(float&nbsp;width)</span></div>
 <div class="block">Creates a new pattern with a different transition width.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>width</code> - the new transition width in terminal cells</dd>
+<dt>Returns:</dt>
+<dd>a new radial pattern with the specified transition width</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -256,6 +270,13 @@ on the global animation progress.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="RadialPattern.html" title="class in dev.tamboui.tfx.pattern">RadialPattern</a></span>&nbsp;<span class="element-name">withCenter</span><wbr><span class="parameters">(float&nbsp;centerX,
  float&nbsp;centerY)</span></div>
 <div class="block">Creates a new pattern with a different center point.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>centerX</code> - the new center X position (0.0-1.0)</dd>
+<dd><code>centerY</code> - the new center Y position (0.0-1.0)</dd>
+<dt>Returns:</dt>
+<dd>a new radial pattern with the specified center point</dd>
+</dl>
 </div>
 </section>
 </li>

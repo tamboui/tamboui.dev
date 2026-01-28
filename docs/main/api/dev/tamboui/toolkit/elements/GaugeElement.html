@@ -150,11 +150,17 @@ take precedence over CSS styles.</div>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">GaugeElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new gauge element with zero progress.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(double)" class="member-name-link">GaugeElement</a><wbr>(double&nbsp;ratio)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a new gauge element with the given progress ratio.</div>
+</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">GaugeElement</a><wbr>(int&nbsp;percent)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new gauge element with the given percentage.</div>
+</div>
 </div>
 </section>
 </li>
@@ -257,6 +263,7 @@ take precedence over CSS styles.</div>
 <h3>GaugeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GaugeElement</span>()</div>
+<div class="block">Creates a new gauge element with zero progress.</div>
 </div>
 </section>
 </li>
@@ -265,6 +272,11 @@ take precedence over CSS styles.</div>
 <h3>GaugeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GaugeElement</span><wbr><span class="parameters">(double&nbsp;ratio)</span></div>
+<div class="block">Creates a new gauge element with the given progress ratio.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ratio</code> - the progress ratio between 0.0 and 1.0</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -273,6 +285,11 @@ take precedence over CSS styles.</div>
 <h3>GaugeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GaugeElement</span><wbr><span class="parameters">(int&nbsp;percent)</span></div>
+<div class="block">Creates a new gauge element with the given percentage.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>percent</code> - the progress percentage between 0 and 100</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -290,6 +307,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">ratio</span><wbr><span class="parameters">(double&nbsp;ratio)</span></div>
 <div class="block">Sets the progress as a ratio (0.0-1.0).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ratio</code> - the progress ratio</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -302,6 +325,10 @@ take precedence over CSS styles.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#percent(int)">percent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>percent</code> - the percentage value</dd>
+<dt>Returns:</dt>
+<dd>this element for chaining</dd>
 </dl>
 </div>
 </section>
@@ -312,6 +339,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">label</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</span></div>
 <div class="block">Sets the label displayed in the gauge.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the label text</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -321,6 +354,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">gaugeStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Sets the style for the filled portion.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the gauge style</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -330,6 +369,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">gaugeColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the color for the filled portion.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the gauge color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -339,6 +384,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">useUnicode</span><wbr><span class="parameters">(boolean&nbsp;useUnicode)</span></div>
 <div class="block">Enables or disables unicode block characters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>useUnicode</code> - <code>true</code> to use unicode block characters</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -348,6 +399,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the title for the gauge's border.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the gauge title</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -357,6 +414,10 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Sets rounded borders.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -366,6 +427,12 @@ take precedence over CSS styles.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

@@ -144,7 +144,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#DEFAULT_POLL_TIMEOUT" class="member-name-link">DEFAULT_POLL_TIMEOUT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Default poll timeout in milliseconds.</div>
+</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#DEFAULT_RESIZE_GRACE_PERIOD" class="member-name-link">DEFAULT_RESIZE_GRACE_PERIOD</a></code></div>
 <div class="col-last odd-row-color">
@@ -152,7 +154,9 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#DEFAULT_TICK_TIMEOUT" class="member-name-link">DEFAULT_TICK_TIMEOUT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Default tick rate in milliseconds.</div>
+</div>
 </div>
 </section>
 </li>
@@ -177,7 +181,9 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput,
  boolean&nbsp;fpsOverlayEnabled,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&gt;&nbsp;postRenderProcessors)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new TUI configuration with the specified options.</div>
+</div>
 </div>
 </section>
 </li>
@@ -308,6 +314,7 @@ loadScripts(document, 'script');</script>
 <h3>DEFAULT_POLL_TIMEOUT</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_POLL_TIMEOUT</span></div>
+<div class="block">Default poll timeout in milliseconds.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -324,6 +331,7 @@ loadScripts(document, 'script');</script>
 <h3>DEFAULT_TICK_TIMEOUT</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_TICK_TIMEOUT</span></div>
+<div class="block">Default tick rate in milliseconds.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -378,6 +386,25 @@ This ensures resize events are processed within a reasonable time even when tick
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput,
  boolean&nbsp;fpsOverlayEnabled,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&gt;&nbsp;postRenderProcessors)</span></div>
+<div class="block">Creates a new TUI configuration with the specified options.
+<p>
+Prefer using <a href="#builder()"><code>builder()</code></a> or <a href="#defaults()"><code>defaults()</code></a> instead of this constructor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rawMode</code> - whether to enable raw terminal mode</dd>
+<dd><code>alternateScreen</code> - whether to use the alternate screen buffer</dd>
+<dd><code>hideCursor</code> - whether to hide the cursor</dd>
+<dd><code>mouseCapture</code> - whether to capture mouse events</dd>
+<dd><code>pollTimeout</code> - timeout for polling events</dd>
+<dd><code>tickRate</code> - interval between tick events, or null to disable</dd>
+<dd><code>resizeGracePeriod</code> - grace period for resize events, or null to disable</dd>
+<dd><code>shutdownHook</code> - whether to register a JVM shutdown hook</dd>
+<dd><code>bindings</code> - the key/mouse bindings for semantic actions</dd>
+<dd><code>errorHandler</code> - the handler for render errors</dd>
+<dd><code>errorOutput</code> - the output stream for error logging</dd>
+<dd><code>fpsOverlayEnabled</code> - whether to show the FPS overlay</dd>
+<dd><code>postRenderProcessors</code> - list of post-render processors</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -398,6 +425,10 @@ This ensures resize events are processed within a reasonable time even when tick
 <p>
 By default, tick events are generated every 100ms to ensure periodic UI refresh.
 Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</code></a> to disable automatic ticking.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the default TUI configuration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -422,6 +453,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
 <div class="block">Returns a new builder with default values.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -431,6 +466,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">ticksEnabled</span>()</div>
 <div class="block">Returns true if tick events are enabled.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if tick rate is configured</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -440,6 +479,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">rawMode</span>()</div>
 <div class="block">Returns whether raw mode is enabled.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if raw mode is enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -449,6 +492,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">alternateScreen</span>()</div>
 <div class="block">Returns whether the alternate screen buffer is used.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the alternate screen buffer is used</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -458,6 +505,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hideCursor</span>()</div>
 <div class="block">Returns whether the cursor should be hidden.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the cursor is hidden</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -467,6 +518,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">mouseCapture</span>()</div>
 <div class="block">Returns whether mouse capture is enabled.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if mouse capture is enabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -476,6 +531,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></span>&nbsp;<span class="element-name">pollTimeout</span>()</div>
 <div class="block">Returns the poll timeout for reading events.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the poll timeout duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -485,6 +544,10 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></span>&nbsp;<span class="element-name">tickRate</span>()</div>
 <div class="block">Returns the tick interval, or null if ticks are disabled.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the tick rate duration, or null</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -511,6 +574,10 @@ ticks are disabled or have a long interval.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shutdownHook</span>()</div>
 <div class="block">Returns whether a shutdown hook is registered to restore the terminal.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if a shutdown hook is registered</dd>
+</dl>
 </div>
 </section>
 </li>

@@ -121,7 +121,9 @@ visual progression with 8 extra fractional parts per cell.
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="Gauge.Builder.html" class="type-name-link" title="class in dev.tamboui.widgets.gauge">Gauge.Builder</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Builder for <a href="Gauge.html" title="class in dev.tamboui.widgets.gauge"><code>Gauge</code></a>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -155,7 +157,9 @@ visual progression with 8 extra fractional parts per cell.
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Gauge.Builder.html" title="class in dev.tamboui.widgets.gauge">Gauge.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#builder()" class="member-name-link">builder</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a new gauge builder.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Gauge.html" title="class in dev.tamboui.widgets.gauge">Gauge</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#percent(int)" class="member-name-link">percent</a><wbr>(int&nbsp;percent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -213,6 +217,11 @@ CSS property name: <code>gauge-color</code></div>
 <h3>builder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Gauge.Builder.html" title="class in dev.tamboui.widgets.gauge">Gauge.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
+<div class="block">Creates a new gauge builder.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -222,6 +231,12 @@ CSS property name: <code>gauge-color</code></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Gauge.html" title="class in dev.tamboui.widgets.gauge">Gauge</a></span>&nbsp;<span class="element-name">percent</span><wbr><span class="parameters">(int&nbsp;percent)</span></div>
 <div class="block">Creates a gauge with the given percentage (0-100).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>percent</code> - the progress percentage (0-100)</dd>
+<dt>Returns:</dt>
+<dd>a new gauge</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -231,6 +246,12 @@ CSS property name: <code>gauge-color</code></div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Gauge.html" title="class in dev.tamboui.widgets.gauge">Gauge</a></span>&nbsp;<span class="element-name">ratio</span><wbr><span class="parameters">(double&nbsp;ratio)</span></div>
 <div class="block">Creates a gauge with the given ratio (0.0-1.0).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ratio</code> - the progress ratio (0.0-1.0)</dd>
+<dt>Returns:</dt>
+<dd>a new gauge</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -245,6 +266,9 @@ CSS property name: <code>gauge-color</code></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../widget/Widget.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)">render</a></code>&nbsp;in interface&nbsp;<code><a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>area</code> - the rectangular area to render into</dd>
+<dd><code>buffer</code> - the buffer to write cells to</dd>
 </dl>
 </div>
 </section>

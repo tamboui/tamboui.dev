@@ -148,7 +148,9 @@ loadScripts(document, 'script');</script>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(boolean,boolean,boolean)" class="member-name-link">KeyModifiers</a><wbr>(boolean&nbsp;ctrl,
  boolean&nbsp;alt,
  boolean&nbsp;shift)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new KeyModifiers instance with the specified modifier flags.</div>
+</div>
 </div>
 </section>
 </li>
@@ -165,10 +167,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#alt()" class="member-name-link">alt</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the Alt modifier is active.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ctrl()" class="member-name-link">ctrl</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the Ctrl modifier is active.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -194,7 +200,9 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shift()" class="member-name-link">shift</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the Shift modifier is active.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -266,6 +274,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">KeyModifiers</span><wbr><span class="parameters">(boolean&nbsp;ctrl,
  boolean&nbsp;alt,
  boolean&nbsp;shift)</span></div>
+<div class="block">Creates a new KeyModifiers instance with the specified modifier flags.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ctrl</code> - true if Ctrl is pressed</dd>
+<dd><code>alt</code> - true if Alt is pressed</dd>
+<dd><code>shift</code> - true if Shift is pressed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -285,6 +300,14 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;alt,
  boolean&nbsp;shift)</span></div>
 <div class="block">Creates modifiers with the specified flags.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ctrl</code> - true if Ctrl is pressed</dd>
+<dd><code>alt</code> - true if Alt is pressed</dd>
+<dd><code>shift</code> - true if Shift is pressed</dd>
+<dt>Returns:</dt>
+<dd>the key modifiers instance</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -293,6 +316,11 @@ loadScripts(document, 'script');</script>
 <h3>ctrl</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">ctrl</span>()</div>
+<div class="block">Returns whether the Ctrl modifier is active.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if Ctrl is pressed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -301,6 +329,11 @@ loadScripts(document, 'script');</script>
 <h3>alt</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">alt</span>()</div>
+<div class="block">Returns whether the Alt modifier is active.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if Alt is pressed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -309,6 +342,11 @@ loadScripts(document, 'script');</script>
 <h3>shift</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shift</span>()</div>
+<div class="block">Returns whether the Shift modifier is active.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if Shift is pressed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -318,6 +356,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
 <div class="block">Returns true if no modifiers are pressed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if no modifiers are active</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -327,6 +369,10 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasAny</span>()</div>
 <div class="block">Returns true if any modifier is pressed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if at least one modifier is active</dd>
+</dl>
 </div>
 </section>
 </li>

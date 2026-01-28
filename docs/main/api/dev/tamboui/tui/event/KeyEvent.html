@@ -642,6 +642,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCtrl</span>()</div>
 <div class="block">Returns true if Ctrl modifier was pressed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if Ctrl was held</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -651,6 +655,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasAlt</span>()</div>
 <div class="block">Returns true if Alt modifier was pressed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if Alt was held</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -660,6 +668,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasShift</span>()</div>
 <div class="block">Returns true if Shift modifier was pressed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if Shift was held</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -669,6 +681,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCtrlC</span>()</div>
 <div class="block">Returns true if this is a Ctrl+C event (common quit signal).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if Ctrl+C was pressed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -678,6 +694,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a></span>&nbsp;<span class="element-name">code</span>()</div>
 <div class="block">Returns the key code.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the key code</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -687,6 +707,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a></span>&nbsp;<span class="element-name">modifiers</span>()</div>
 <div class="block">Returns the modifier state.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the modifier state</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -696,6 +720,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">char</span>&nbsp;<span class="element-name">character</span>()</div>
 <div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code> otherwise.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the character value</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -705,6 +733,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a></span>&nbsp;<span class="element-name">bindings</span>()</div>
 <div class="block">Returns the bindings associated with this event.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the bindings</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -742,6 +774,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUp</span>()</div>
 <div class="block">Returns true if this is an "up" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the move-up action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -751,6 +787,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDown</span>()</div>
 <div class="block">Returns true if this is a "down" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the move-down action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -760,6 +800,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isLeft</span>()</div>
 <div class="block">Returns true if this is a "left" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the move-left action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -769,6 +813,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRight</span>()</div>
 <div class="block">Returns true if this is a "right" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the move-right action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -778,6 +826,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPageUp</span>()</div>
 <div class="block">Returns true if this is a "page up" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the page-up action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -787,6 +839,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPageDown</span>()</div>
 <div class="block">Returns true if this is a "page down" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the page-down action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -796,6 +852,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHome</span>()</div>
 <div class="block">Returns true if this is a "home" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the home action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -805,6 +865,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEnd</span>()</div>
 <div class="block">Returns true if this is an "end" navigation event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the end action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -814,6 +878,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSelect</span>()</div>
 <div class="block">Returns true if this is a "select" event (Enter or Space) according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the select action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -823,6 +891,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isConfirm</span>()</div>
 <div class="block">Returns true if this is a "confirm" event (Enter) according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the confirm action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -832,6 +904,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCancel</span>()</div>
 <div class="block">Returns true if this is a "cancel" event (Escape) according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the cancel action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -841,6 +917,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isQuit</span>()</div>
 <div class="block">Returns true if this is a "quit" event according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the quit action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -850,6 +930,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFocusNext</span>()</div>
 <div class="block">Returns true if this is a "focus next" event (Tab) according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the focus-next action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -859,6 +943,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFocusPrevious</span>()</div>
 <div class="block">Returns true if this is a "focus previous" event (Shift+Tab) according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the focus-previous action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -868,6 +956,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDeleteBackward</span>()</div>
 <div class="block">Returns true if this is a "delete backward" event (Backspace) according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the delete-backward action</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -877,6 +969,10 @@ if (event.matches("myApp.customAction")) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDeleteForward</span>()</div>
 <div class="block">Returns true if this is a "delete forward" event (Delete) according to the bindings.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if this event triggers the delete-forward action</dd>
+</dl>
 </div>
 </section>
 </li>

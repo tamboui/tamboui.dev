@@ -100,7 +100,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CapabilityReportBuilder</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new empty builder.</div>
+</div>
 </div>
 </section>
 </li>
@@ -117,7 +119,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Builds the capability report from the accumulated data.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CapabilityReportBuilder.html" title="class in dev.tamboui.capability">CapabilityReportBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#env(java.lang.String,java.lang.String)" class="member-name-link">env</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></div>
@@ -159,6 +163,7 @@ loadScripts(document, 'script');</script>
 <h3>CapabilityReportBuilder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CapabilityReportBuilder</span>()</div>
+<div class="block">Creates a new empty builder.</div>
 </div>
 </section>
 </li>
@@ -179,6 +184,13 @@ loadScripts(document, 'script');</script>
 <div class="block">Adds an environment key that should be printed (value resolved at print-time).
 <p>
 Prefer using environment variable names as keys.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>source</code> - the provider source name</dd>
+<dd><code>key</code> - the environment variable name</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -191,6 +203,13 @@ Prefer using environment variable names as keys.</div>
 <div class="block">Adds a property key that should be printed (value resolved at print-time).
 <p>
 Prefer using property names as keys (e.g. <code>java.version</code>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>source</code> - the provider source name</dd>
+<dd><code>key</code> - the system property name</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -202,6 +221,14 @@ Prefer using property names as keys (e.g. <code>java.version</code>).</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</span></div>
 <div class="block">Adds a general capability/feature. Keys SHOULD use dotted notation to create stable namespaces.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>source</code> - the provider source name</dd>
+<dd><code>key</code> - the feature key (prefer dotted notation)</dd>
+<dd><code>value</code> - the feature value</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -210,6 +237,11 @@ Prefer using property names as keys (e.g. <code>java.version</code>).</div>
 <h3>build</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CapabilityReport.html" title="class in dev.tamboui.capability">CapabilityReport</a></span>&nbsp;<span class="element-name">build</span>()</div>
+<div class="block">Builds the capability report from the accumulated data.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the assembled capability report</dd>
+</dl>
 </div>
 </section>
 </li>

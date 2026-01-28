@@ -111,9 +111,13 @@ Useful for pushing elements apart or creating gaps.</div>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Spacer</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a spacer that fills available space.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">Spacer</a><wbr>(int&nbsp;length)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a spacer with a fixed length.</div>
+</div>
 </div>
 </section>
 </li>
@@ -195,6 +199,7 @@ Useful for pushing elements apart or creating gaps.</div>
 <h3>Spacer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Spacer</span>()</div>
+<div class="block">Creates a spacer that fills available space.</div>
 </div>
 </section>
 </li>
@@ -203,6 +208,11 @@ Useful for pushing elements apart or creating gaps.</div>
 <h3>Spacer</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Spacer</span><wbr><span class="parameters">(int&nbsp;length)</span></div>
+<div class="block">Creates a spacer with a fixed length.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>length</code> - the fixed length in cells</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -220,6 +230,10 @@ Useful for pushing elements apart or creating gaps.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Spacer.html" title="class in dev.tamboui.toolkit.elements">Spacer</a></span>&nbsp;<span class="element-name">fill</span>()</div>
 <div class="block">Creates a spacer that fills available space.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new fill spacer</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -229,6 +243,12 @@ Useful for pushing elements apart or creating gaps.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Spacer.html" title="class in dev.tamboui.toolkit.elements">Spacer</a></span>&nbsp;<span class="element-name">length</span><wbr><span class="parameters">(int&nbsp;length)</span></div>
 <div class="block">Creates a spacer with a fixed length.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>length</code> - the fixed length in cells</dd>
+<dt>Returns:</dt>
+<dd>a new fixed-length spacer</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -238,6 +258,12 @@ Useful for pushing elements apart or creating gaps.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Spacer.html" title="class in dev.tamboui.toolkit.elements">Spacer</a></span>&nbsp;<span class="element-name">withWeight</span><wbr><span class="parameters">(int&nbsp;weight)</span></div>
 <div class="block">Sets the constraint to fill available space with given weight.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>weight</code> - the fill weight</dd>
+<dt>Returns:</dt>
+<dd>this spacer</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -247,6 +273,12 @@ Useful for pushing elements apart or creating gaps.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Spacer.html" title="class in dev.tamboui.toolkit.elements">Spacer</a></span>&nbsp;<span class="element-name">percent</span><wbr><span class="parameters">(int&nbsp;percent)</span></div>
 <div class="block">Sets the constraint to a percentage.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>percent</code> - the percentage of available space (0 to 100)</dd>
+<dt>Returns:</dt>
+<dd>this spacer</dd>
+</dl>
 </div>
 </section>
 </li>

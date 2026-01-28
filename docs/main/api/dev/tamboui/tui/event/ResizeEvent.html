@@ -111,7 +111,9 @@ typically due to the user resizing the terminal window.</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int)" class="member-name-link">ResizeEvent</a><wbr>(int&nbsp;width,
  int&nbsp;height)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a resize event with the given dimensions.</div>
+</div>
 </div>
 </section>
 </li>
@@ -134,7 +136,9 @@ typically due to the user resizing the terminal window.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#height()" class="member-name-link">height</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the new terminal height in rows.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResizeEvent.html" title="class in dev.tamboui.tui.event">ResizeEvent</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(int,int)" class="member-name-link">of</a><wbr>(int&nbsp;width,
  int&nbsp;height)</code></div>
@@ -146,7 +150,9 @@ typically due to the user resizing the terminal window.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width()" class="member-name-link">width</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the new terminal width in columns.</div>
+</div>
 </div>
 </div>
 </div>
@@ -170,6 +176,12 @@ typically due to the user resizing the terminal window.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ResizeEvent</span><wbr><span class="parameters">(int&nbsp;width,
  int&nbsp;height)</span></div>
+<div class="block">Creates a resize event with the given dimensions.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>width</code> - the new terminal width in columns</dd>
+<dd><code>height</code> - the new terminal height in rows</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -188,6 +200,13 @@ typically due to the user resizing the terminal window.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResizeEvent.html" title="class in dev.tamboui.tui.event">ResizeEvent</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;width,
  int&nbsp;height)</span></div>
 <div class="block">Creates a resize event with the given dimensions.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>width</code> - the new terminal width in columns</dd>
+<dd><code>height</code> - the new terminal height in rows</dd>
+<dt>Returns:</dt>
+<dd>a new resize event</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -196,6 +215,11 @@ typically due to the user resizing the terminal window.</div>
 <h3>width</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">width</span>()</div>
+<div class="block">Returns the new terminal width in columns.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the width</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -204,6 +228,11 @@ typically due to the user resizing the terminal window.</div>
 <h3>height</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">height</span>()</div>
+<div class="block">Returns the new terminal height in rows.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the height</dd>
+</dl>
 </div>
 </section>
 </li>

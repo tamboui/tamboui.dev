@@ -57,13 +57,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
 <li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
-<ol class="toc-list">
-<li><a href="#%3Cinit%3E()" tabindex="0">Spacing()</a></li>
-</ol>
-</li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#from(int)" tabindex="0">from(int)</a></li>
@@ -121,19 +115,6 @@ Can represent either positive spacing (space between segments) or negative spaci
 </div>
 </section>
 </li>
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<li>
-<section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Spacing</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -177,22 +158,6 @@ Can represent either positive spacing (space between segments) or negative spaci
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<li>
-<section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;()">
-<h3>Spacing</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Spacing</span>()</div>
-</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
@@ -205,6 +170,12 @@ Can represent either positive spacing (space between segments) or negative spaci
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Spacing.html" title="class in dev.tamboui.layout">Spacing</a></span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
 <div class="block">Creates spacing from an integer value.
 Negative values create overlap, non-negative values create space.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - the spacing value</dd>
+<dt>Returns:</dt>
+<dd>a new spacing instance</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -214,6 +185,12 @@ Negative values create overlap, non-negative values create space.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Spacing.html" title="class in dev.tamboui.layout">Spacing</a></span>&nbsp;<span class="element-name">space</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
 <div class="block">Creates spacing with a fixed number of cells between segments.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - the number of cells</dd>
+<dt>Returns:</dt>
+<dd>a new space spacing</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -223,6 +200,12 @@ Negative values create overlap, non-negative values create space.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Spacing.html" title="class in dev.tamboui.layout">Spacing</a></span>&nbsp;<span class="element-name">overlap</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
 <div class="block">Creates overlap with a fixed number of overlapping cells.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - the number of overlapping cells</dd>
+<dt>Returns:</dt>
+<dd>a new overlap spacing</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -233,6 +216,10 @@ Negative values create overlap, non-negative values create space.</div>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">value</span>()</div>
 <div class="block">Returns the spacing value as an integer.
 Positive for space, negative for overlap.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the spacing value</dd>
+</dl>
 </div>
 </section>
 </li>

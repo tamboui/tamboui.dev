@@ -137,7 +137,9 @@ Plots datasets in a cartesian coordinate system.
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ChartElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a new chart element with default settings.</div>
+</div>
 </div>
 </section>
 </li>
@@ -253,6 +255,7 @@ Plots datasets in a cartesian coordinate system.
 <h3>ChartElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ChartElement</span>()</div>
+<div class="block">Creates a new chart element with default settings.</div>
 </div>
 </section>
 </li>
@@ -270,6 +273,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">dataset</span><wbr><span class="parameters">(<a href="../../widgets/chart/Dataset.html" title="class in dev.tamboui.widgets.chart">Dataset</a>&nbsp;dataset)</span></div>
 <div class="block">Adds a dataset.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dataset</code> - the dataset to add</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -279,6 +288,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">datasets</span><wbr><span class="parameters">(<a href="../../widgets/chart/Dataset.html" title="class in dev.tamboui.widgets.chart">Dataset</a>...&nbsp;datasets)</span></div>
 <div class="block">Sets all datasets.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>datasets</code> - the datasets to set</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -288,6 +303,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">datasets</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../widgets/chart/Dataset.html" title="class in dev.tamboui.widgets.chart">Dataset</a>&gt;&nbsp;datasets)</span></div>
 <div class="block">Sets all datasets from a list.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>datasets</code> - the datasets to set</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -297,6 +318,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">xAxis</span><wbr><span class="parameters">(<a href="../../widgets/chart/Axis.html" title="class in dev.tamboui.widgets.chart">Axis</a>&nbsp;xAxis)</span></div>
 <div class="block">Sets the X-axis configuration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>xAxis</code> - the X-axis configuration</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -306,6 +333,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">yAxis</span><wbr><span class="parameters">(<a href="../../widgets/chart/Axis.html" title="class in dev.tamboui.widgets.chart">Axis</a>&nbsp;yAxis)</span></div>
 <div class="block">Sets the Y-axis configuration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>yAxis</code> - the Y-axis configuration</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -318,6 +351,15 @@ Plots datasets in a cartesian coordinate system.
  double&nbsp;yMin,
  double&nbsp;yMax)</span></div>
 <div class="block">Sets both axis bounds.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>xMin</code> - the minimum X value</dd>
+<dd><code>xMax</code> - the maximum X value</dd>
+<dd><code>yMin</code> - the minimum Y value</dd>
+<dd><code>yMax</code> - the maximum Y value</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -327,6 +369,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">legendPosition</span><wbr><span class="parameters">(<a href="../../widgets/chart/LegendPosition.html" title="enum class in dev.tamboui.widgets.chart">LegendPosition</a>&nbsp;position)</span></div>
 <div class="block">Sets the legend position.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>position</code> - the legend position</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -336,6 +384,10 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">hideLegend</span>()</div>
 <div class="block">Hides the legend.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -345,6 +397,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the title.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the chart title</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -354,6 +412,10 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Uses rounded borders.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -363,6 +425,12 @@ Plots datasets in a cartesian coordinate system.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ChartElement.html" title="class in dev.tamboui.toolkit.elements">ChartElement</a></span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

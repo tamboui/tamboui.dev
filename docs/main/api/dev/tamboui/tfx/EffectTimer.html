@@ -270,6 +270,13 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">fromMs</span><wbr><span class="parameters">(long&nbsp;milliseconds,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
 <div class="block">Creates a new EffectTimer with the specified duration in milliseconds and interpolation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>milliseconds</code> - the duration in milliseconds</dd>
+<dd><code>interpolation</code> - the interpolation function to apply</dd>
+<dt>Returns:</dt>
+<dd>a new EffectTimer instance</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -280,6 +287,13 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;duration,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
 <div class="block">Creates a new EffectTimer with the specified duration and interpolation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>duration</code> - the total duration</dd>
+<dd><code>interpolation</code> - the interpolation function to apply</dd>
+<dt>Returns:</dt>
+<dd>a new EffectTimer instance</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -289,6 +303,12 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;duration)</span></div>
 <div class="block">Creates a new EffectTimer with the specified duration and Linear interpolation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>duration</code> - the total duration</dd>
+<dt>Returns:</dt>
+<dd>a new EffectTimer instance with Linear interpolation</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -333,6 +353,10 @@ Loop mode controls what happens when the timer completes:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">reversed</span>()</div>
 <div class="block">Returns a new timer with reversed direction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new timer with the reverse flag toggled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -342,6 +366,10 @@ Loop mode controls what happens when the timer completes:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isReversed</span>()</div>
 <div class="block">Returns true if the timer is reversed.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the timer is playing in reverse</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -355,6 +383,10 @@ Loop mode controls what happens when the timer completes:
 This preserves the visual curve shape when used with effects that reverse at
 construction time. Unlike reversed(), which flips both direction and interpolation
 type, mirrored() flips the interpolation to compensate for the reversed direction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new timer with reversed direction and flipped interpolation</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -364,6 +396,10 @@ type, mirrored() flips the interpolation to compensate for the reversed directio
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">started</span>()</div>
 <div class="block">Returns true if the timer has started (i.e., remaining != total).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the timer has started processing</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -395,6 +431,10 @@ type, mirrored() flips the interpolation to compensate for the reversed directio
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">remaining</span>()</div>
 <div class="block">Returns the remaining duration.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the remaining duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -404,6 +444,10 @@ type, mirrored() flips the interpolation to compensate for the reversed directio
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">duration</span>()</div>
 <div class="block">Returns the total duration.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the total duration</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -439,6 +483,10 @@ when it completes:
 <p>
 For looping timers (<a href="LoopMode.html#LOOP"><code>LoopMode.LOOP</code></a> and <a href="LoopMode.html#PING_PONG"><code>LoopMode.PING_PONG</code></a>),
 this method always returns false since looping timers never complete on their own.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the timer has completed</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -448,6 +496,10 @@ this method always returns false since looping timers never complete on their ow
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a></span>&nbsp;<span class="element-name">interpolation</span>()</div>
 <div class="block">Returns the interpolation method.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the interpolation function</dd>
+</dl>
 </div>
 </section>
 </li>

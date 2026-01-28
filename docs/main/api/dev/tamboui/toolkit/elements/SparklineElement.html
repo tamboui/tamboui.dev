@@ -137,13 +137,21 @@ Displays data trends in a compact form using bar characters.
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">SparklineElement</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a sparkline element with no data.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int...)" class="member-name-link">SparklineElement</a><wbr>(int...&nbsp;data)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a sparkline element with the given integer data values.</div>
+</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(long...)" class="member-name-link">SparklineElement</a><wbr>(long...&nbsp;data)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a sparkline element with the given data values.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.Collection)" class="member-name-link">SparklineElement</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;&nbsp;data)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a sparkline element with data values from a collection.</div>
+</div>
 </div>
 </section>
 </li>
@@ -266,6 +274,7 @@ Displays data trends in a compact form using bar characters.
 <h3>SparklineElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SparklineElement</span>()</div>
+<div class="block">Creates a sparkline element with no data.</div>
 </div>
 </section>
 </li>
@@ -274,6 +283,11 @@ Displays data trends in a compact form using bar characters.
 <h3>SparklineElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SparklineElement</span><wbr><span class="parameters">(long...&nbsp;data)</span></div>
+<div class="block">Creates a sparkline element with the given data values.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the data values</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -282,6 +296,11 @@ Displays data trends in a compact form using bar characters.
 <h3>SparklineElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SparklineElement</span><wbr><span class="parameters">(int...&nbsp;data)</span></div>
+<div class="block">Creates a sparkline element with the given integer data values.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the data values as integers</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -290,6 +309,11 @@ Displays data trends in a compact form using bar characters.
 <h3>SparklineElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SparklineElement</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;&nbsp;data)</span></div>
+<div class="block">Creates a sparkline element with data values from a collection.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the data values as a collection of numbers</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -307,6 +331,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">data</span><wbr><span class="parameters">(long...&nbsp;data)</span></div>
 <div class="block">Sets the data values.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the data values</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -316,6 +346,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">data</span><wbr><span class="parameters">(int...&nbsp;data)</span></div>
 <div class="block">Sets the data values from integers.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the data values as integers</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -325,6 +361,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">data</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;&nbsp;data)</span></div>
 <div class="block">Sets the data values from a collection.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the data values as a collection of numbers</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -334,6 +376,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">max</span><wbr><span class="parameters">(long&nbsp;max)</span></div>
 <div class="block">Sets the maximum value for scaling.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>max</code> - the maximum value</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -343,6 +391,10 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">autoMax</span>()</div>
 <div class="block">Uses auto-scaling based on data maximum.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -352,6 +404,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">color</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the sparkline color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the sparkline color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -361,6 +419,10 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">threeLevels</span>()</div>
 <div class="block">Uses three-level bar set (coarser display).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -370,6 +432,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">barSet</span><wbr><span class="parameters">(<a href="../../widgets/sparkline/Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a>&nbsp;barSet)</span></div>
 <div class="block">Sets the bar character set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>barSet</code> - the bar character set</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -379,6 +447,10 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">rightToLeft</span>()</div>
 <div class="block">Renders data from right to left.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -388,6 +460,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">direction</span><wbr><span class="parameters">(<a href="../../widgets/sparkline/Sparkline.RenderDirection.html" title="enum class in dev.tamboui.widgets.sparkline">Sparkline.RenderDirection</a>&nbsp;direction)</span></div>
 <div class="block">Sets the render direction.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>direction</code> - the render direction</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -397,6 +475,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">title</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</span></div>
 <div class="block">Sets the title.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>title</code> - the sparkline title</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -406,6 +490,10 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">rounded</span>()</div>
 <div class="block">Uses rounded borders.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -415,6 +503,12 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a></span>&nbsp;<span class="element-name">borderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the border color.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the border color</dd>
+<dt>Returns:</dt>
+<dd>this element</dd>
+</dl>
 </div>
 </section>
 </li>

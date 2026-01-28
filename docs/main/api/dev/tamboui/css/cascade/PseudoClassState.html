@@ -166,7 +166,9 @@ stores the 1-based position (0 means position is not set).
  boolean&nbsp;firstChild,
  boolean&nbsp;lastChild,
  int&nbsp;nthChild)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a pseudo-class state with the given flags.</div>
+</div>
 </div>
 </section>
 </li>
@@ -199,25 +201,39 @@ stores the 1-based position (0 means position is not set).
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the element is being activated.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDisabled()" class="member-name-link">isDisabled</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the element is disabled.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFirstChild()" class="member-name-link">isFirstChild</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the element is the first child of its parent.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocused()" class="member-name-link">isFocused</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the element has keyboard focus.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHovered()" class="member-name-link">isHovered</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the mouse is over the element.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLastChild()" class="member-name-link">isLastChild</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the element is the last child of its parent.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelected()" class="member-name-link">isSelected</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the element is selected.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nthChild()" class="member-name-link">nthChild</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -332,6 +348,18 @@ stores the 1-based position (0 means position is not set).
  boolean&nbsp;firstChild,
  boolean&nbsp;lastChild,
  int&nbsp;nthChild)</span></div>
+<div class="block">Creates a pseudo-class state with the given flags.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>focused</code> - whether the element has keyboard focus</dd>
+<dd><code>hovered</code> - whether the mouse is over the element</dd>
+<dd><code>disabled</code> - whether the element is disabled</dd>
+<dd><code>active</code> - whether the element is being activated</dd>
+<dd><code>selected</code> - whether the element is selected</dd>
+<dd><code>firstChild</code> - whether the element is the first child of its parent</dd>
+<dd><code>lastChild</code> - whether the element is the last child of its parent</dd>
+<dd><code>nthChild</code> - the 1-based child position, or 0 if not set</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -349,6 +377,10 @@ stores the 1-based position (0 means position is not set).
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofFocused</span>()</div>
 <div class="block">Returns a state with only the focused flag set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a focused pseudo-class state</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -358,6 +390,10 @@ stores the 1-based position (0 means position is not set).
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofHovered</span>()</div>
 <div class="block">Returns a state with only the hovered flag set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a hovered pseudo-class state</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -367,6 +403,10 @@ stores the 1-based position (0 means position is not set).
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofDisabled</span>()</div>
 <div class="block">Returns a state with only the disabled flag set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a disabled pseudo-class state</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -376,6 +416,10 @@ stores the 1-based position (0 means position is not set).
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">ofSelected</span>()</div>
 <div class="block">Returns a state with only the selected flag set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a selected pseudo-class state</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -386,6 +430,10 @@ stores the 1-based position (0 means position is not set).
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">allMatch</span>()</div>
 <div class="block">Returns a state with all pseudo-classes matching.
 Useful for lenient/structural matching where pseudo-class state should be ignored.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a pseudo-class state with all flags set to true</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -394,6 +442,11 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <h3>isFocused</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFocused</span>()</div>
+<div class="block">Returns whether the element has keyboard focus.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if focused</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -402,6 +455,11 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <h3>isHovered</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHovered</span>()</div>
+<div class="block">Returns whether the mouse is over the element.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if hovered</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -410,6 +468,11 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <h3>isDisabled</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDisabled</span>()</div>
+<div class="block">Returns whether the element is disabled.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if disabled</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -418,6 +481,11 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <h3>isActive</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isActive</span>()</div>
+<div class="block">Returns whether the element is being activated.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if active</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -426,6 +494,11 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <h3>isSelected</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSelected</span>()</div>
+<div class="block">Returns whether the element is selected.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if selected</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -434,6 +507,11 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <h3>isFirstChild</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFirstChild</span>()</div>
+<div class="block">Returns whether the element is the first child of its parent.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if first child</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -442,6 +520,11 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <h3>isLastChild</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isLastChild</span>()</div>
+<div class="block">Returns whether the element is the last child of its parent.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> if last child</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -451,6 +534,10 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">nthChild</span>()</div>
 <div class="block">Returns the 1-based child position, or 0 if not set.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the child position</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -460,6 +547,12 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">withFocused</span><wbr><span class="parameters">(boolean&nbsp;focused)</span></div>
 <div class="block">Returns a new state with the focused flag set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>focused</code> - the focused flag value</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated flag</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -469,6 +562,12 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">withHovered</span><wbr><span class="parameters">(boolean&nbsp;hovered)</span></div>
 <div class="block">Returns a new state with the hovered flag set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>hovered</code> - the hovered flag value</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated flag</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -478,6 +577,12 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">withDisabled</span><wbr><span class="parameters">(boolean&nbsp;disabled)</span></div>
 <div class="block">Returns a new state with the disabled flag set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>disabled</code> - the disabled flag value</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated flag</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -487,6 +592,12 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">withActive</span><wbr><span class="parameters">(boolean&nbsp;active)</span></div>
 <div class="block">Returns a new state with the active flag set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>active</code> - the active flag value</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated flag</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -496,6 +607,12 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">withSelected</span><wbr><span class="parameters">(boolean&nbsp;selected)</span></div>
 <div class="block">Returns a new state with the selected flag set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>selected</code> - the selected flag value</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated flag</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -505,6 +622,12 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">withFirstChild</span><wbr><span class="parameters">(boolean&nbsp;firstChild)</span></div>
 <div class="block">Returns a new state with the firstChild flag set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>firstChild</code> - the firstChild flag value</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated flag</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -514,6 +637,12 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">withLastChild</span><wbr><span class="parameters">(boolean&nbsp;lastChild)</span></div>
 <div class="block">Returns a new state with the lastChild flag set.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>lastChild</code> - the lastChild flag value</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated flag</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -526,6 +655,8 @@ Useful for lenient/structural matching where pseudo-class state should be ignore
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>nthChild</code> - the 1-based child position</dd>
+<dt>Returns:</dt>
+<dd>a new state with the updated position</dd>
 </dl>
 </div>
 </section>

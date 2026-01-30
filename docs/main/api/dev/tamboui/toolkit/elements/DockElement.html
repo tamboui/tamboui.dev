@@ -75,9 +75,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#top(dev.tamboui.toolkit.element.Element)" tabindex="0">top(Element)</a></li>
+<li><a href="#top(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" tabindex="0">top(Element, Constraint)</a></li>
 <li><a href="#bottom(dev.tamboui.toolkit.element.Element)" tabindex="0">bottom(Element)</a></li>
+<li><a href="#bottom(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" tabindex="0">bottom(Element, Constraint)</a></li>
 <li><a href="#left(dev.tamboui.toolkit.element.Element)" tabindex="0">left(Element)</a></li>
+<li><a href="#left(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" tabindex="0">left(Element, Constraint)</a></li>
 <li><a href="#right(dev.tamboui.toolkit.element.Element)" tabindex="0">right(Element)</a></li>
+<li><a href="#right(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" tabindex="0">right(Element, Constraint)</a></li>
 <li><a href="#center(dev.tamboui.toolkit.element.Element)" tabindex="0">center(Element)</a></li>
 <li><a href="#topHeight(dev.tamboui.layout.Constraint)" tabindex="0">topHeight(Constraint)</a></li>
 <li><a href="#bottomHeight(dev.tamboui.layout.Constraint)" tabindex="0">bottomHeight(Constraint)</a></li>
@@ -214,30 +218,42 @@ dock()
 <div class="block">Sets the bottom region element.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bottomHeight(dev.tamboui.layout.Constraint)" class="member-name-link">bottomHeight</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bottom(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" class="member-name-link">bottom</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;height)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the height constraint for the bottom region.</div>
+<div class="block">Sets the bottom region element with a height constraint.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#center(dev.tamboui.toolkit.element.Element)" class="member-name-link">center</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bottomHeight(dev.tamboui.layout.Constraint)" class="member-name-link">bottomHeight</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the center region element.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent</a><wbr>(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
- boolean&nbsp;focused)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Handles a key event on this element.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" class="member-name-link">handleMouseEvent</a><wbr>(<a href="../../tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a>&nbsp;event)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Handles a mouse event on this element.</div>
+<div class="block">Sets the height constraint for the bottom region.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#left(dev.tamboui.toolkit.element.Element)" class="member-name-link">left</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#center(dev.tamboui.toolkit.element.Element)" class="member-name-link">center</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the center region element.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent</a><wbr>(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
+ boolean&nbsp;focused)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Handles a key event on this element.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" class="member-name-link">handleMouseEvent</a><wbr>(<a href="../../tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a>&nbsp;event)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Handles a mouse event on this element.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#left(dev.tamboui.toolkit.element.Element)" class="member-name-link">left</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the left region element.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#left(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" class="member-name-link">left</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;width)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the left region element with a width constraint.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#leftWidth(dev.tamboui.layout.Constraint)" class="member-name-link">leftWidth</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
@@ -278,14 +294,26 @@ dock()
 <div class="block">Sets the right region element.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rightWidth(dev.tamboui.layout.Constraint)" class="member-name-link">rightWidth</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#right(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" class="member-name-link">right</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;width)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the width constraint for the right region.</div>
+<div class="block">Sets the right region element with a width constraint.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#top(dev.tamboui.toolkit.element.Element)" class="member-name-link">top</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rightWidth(dev.tamboui.layout.Constraint)" class="member-name-link">rightWidth</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the width constraint for the right region.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#top(dev.tamboui.toolkit.element.Element)" class="member-name-link">top</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the top region element.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#top(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)" class="member-name-link">top</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;height)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the top region element with a height constraint.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#topHeight(dev.tamboui.layout.Constraint)" class="member-name-link">topHeight</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;constraint)</code></div>
@@ -395,6 +423,23 @@ dock()
 </section>
 </li>
 <li>
+<section class="detail" id="top(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)">
+<h3>top</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></span>&nbsp;<span class="element-name">top</span><wbr><span class="parameters">(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;height)</span></div>
+<div class="block">Sets the top region element with a height constraint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - the top element (e.g., a header bar)</dd>
+<dd><code>height</code> - the height constraint for this region</dd>
+<dt>Returns:</dt>
+<dd>this dock for method chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="bottom(dev.tamboui.toolkit.element.Element)">
 <h3>bottom</h3>
 <div class="horizontal-scroll">
@@ -403,6 +448,23 @@ dock()
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>element</code> - the bottom element (e.g., a status bar)</dd>
+<dt>Returns:</dt>
+<dd>this dock for method chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bottom(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)">
+<h3>bottom</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></span>&nbsp;<span class="element-name">bottom</span><wbr><span class="parameters">(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;height)</span></div>
+<div class="block">Sets the bottom region element with a height constraint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - the bottom element (e.g., a status bar)</dd>
+<dd><code>height</code> - the height constraint for this region</dd>
 <dt>Returns:</dt>
 <dd>this dock for method chaining</dd>
 </dl>
@@ -425,6 +487,23 @@ dock()
 </section>
 </li>
 <li>
+<section class="detail" id="left(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)">
+<h3>left</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></span>&nbsp;<span class="element-name">left</span><wbr><span class="parameters">(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;width)</span></div>
+<div class="block">Sets the left region element with a width constraint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - the left element (e.g., a sidebar)</dd>
+<dd><code>width</code> - the width constraint for this region</dd>
+<dt>Returns:</dt>
+<dd>this dock for method chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="right(dev.tamboui.toolkit.element.Element)">
 <h3>right</h3>
 <div class="horizontal-scroll">
@@ -433,6 +512,23 @@ dock()
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>element</code> - the right element (e.g., a side panel)</dd>
+<dt>Returns:</dt>
+<dd>this dock for method chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="right(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Constraint)">
+<h3>right</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DockElement.html" title="class in dev.tamboui.toolkit.elements">DockElement</a></span>&nbsp;<span class="element-name">right</span><wbr><span class="parameters">(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+ <a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&nbsp;width)</span></div>
+<div class="block">Sets the right region element with a width constraint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - the right element (e.g., a side panel)</dd>
+<dd><code>width</code> - the width constraint for this region</dd>
 <dt>Returns:</dt>
 <dd>this dock for method chaining</dd>
 </dl>

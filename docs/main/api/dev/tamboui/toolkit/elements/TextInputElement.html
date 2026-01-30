@@ -72,6 +72,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#isFocusable()" tabindex="0">isFocusable()</a></li>
+<li><a href="#focusable(boolean)" tabindex="0">focusable(boolean)</a></li>
 <li><a href="#state(dev.tamboui.widgets.input.TextInputState)" tabindex="0">state(TextInputState)</a></li>
 <li><a href="#text(java.lang.String)" tabindex="0">text(String)</a></li>
 <li><a href="#placeholder(java.lang.String)" tabindex="0">placeholder(String)</a></li>
@@ -83,6 +84,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#title(java.lang.String)" tabindex="0">title(String)</a></li>
 <li><a href="#rounded()" tabindex="0">rounded()</a></li>
 <li><a href="#borderColor(dev.tamboui.style.Color)" tabindex="0">borderColor(Color)</a></li>
+<li><a href="#focusedBorderColor(dev.tamboui.style.Color)" tabindex="0">focusedBorderColor(Color)</a></li>
+<li><a href="#preferredWidth()" tabindex="0">preferredWidth()</a></li>
+<li><a href="#preferredHeight()" tabindex="0">preferredHeight()</a></li>
 <li><a href="#styleAttributes()" tabindex="0">styleAttributes()</a></li>
 <li><a href="#onSubmit(java.lang.Runnable)" tabindex="0">onSubmit(Runnable)</a></li>
 <li><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" tabindex="0">handleKeyEvent(KeyEvent, boolean)</a></li>
@@ -145,7 +149,7 @@ take precedence over CSS styles.</div>
 <h2>Field Summary</h2>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-dev.tamboui.toolkit.element.StyledElement">Fields inherited from class&nbsp;<a href="../element/StyledElement.html#field-summary" title="class in dev.tamboui.toolkit.element">StyledElement</a></h3>
-<code><a href="../element/StyledElement.html#cssClasses">cssClasses</a>, <a href="../element/StyledElement.html#cssParent">cssParent</a>, <a href="../element/StyledElement.html#draggable">draggable</a>, <a href="../element/StyledElement.html#dragHandler">dragHandler</a>, <a href="../element/StyledElement.html#elementId">elementId</a>, <a href="../element/StyledElement.html#focusable">focusable</a>, <a href="../element/StyledElement.html#keyHandler">keyHandler</a>, <a href="../element/StyledElement.html#lastRenderedArea">lastRenderedArea</a>, <a href="../element/StyledElement.html#layoutConstraint">layoutConstraint</a>, <a href="../element/StyledElement.html#mouseHandler">mouseHandler</a>, <a href="../element/StyledElement.html#style">style</a>, <a href="../element/StyledElement.html#styleAttrs">styleAttrs</a></code></div>
+<code><a href="../element/StyledElement.html#cssClasses">cssClasses</a>, <a href="../element/StyledElement.html#cssParent">cssParent</a>, <a href="../element/StyledElement.html#draggable">draggable</a>, <a href="../element/StyledElement.html#dragHandler">dragHandler</a>, <a href="../element/StyledElement.html#elementId">elementId</a>, <a href="../element/StyledElement.html#keyHandler">keyHandler</a>, <a href="../element/StyledElement.html#lastRenderedArea">lastRenderedArea</a>, <a href="../element/StyledElement.html#layoutConstraint">layoutConstraint</a>, <a href="../element/StyledElement.html#mouseHandler">mouseHandler</a>, <a href="../element/StyledElement.html#style">style</a>, <a href="../element/StyledElement.html#styleAttrs">styleAttrs</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -193,6 +197,16 @@ take precedence over CSS styles.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the cursor style.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#focusable(boolean)" class="member-name-link">focusable</a><wbr>(boolean&nbsp;focusable)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets whether this text input is focusable.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#focusedBorderColor(dev.tamboui.style.Color)" class="member-name-link">focusedBorderColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the border color when focused.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent</a><wbr>(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
  boolean&nbsp;focused)</code></div>
@@ -202,7 +216,7 @@ take precedence over CSS styles.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusable()" class="member-name-link">isFocusable</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">TextInputElement is always focusable to receive keyboard input.</div>
+<div class="block">Returns whether this text input is focusable.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onSubmit(java.lang.Runnable)" class="member-name-link">onSubmit</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;onSubmit)</code></div>
@@ -223,6 +237,16 @@ take precedence over CSS styles.</div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#placeholderStyle(dev.tamboui.style.Style)" class="member-name-link">placeholderStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the placeholder style.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight()" class="member-name-link">preferredHeight</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the preferred height of this element in cells.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the preferred width of this element in cells.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
@@ -266,13 +290,13 @@ take precedence over CSS styles.</div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.toolkit.element.StyledElement">Methods inherited from class&nbsp;<a href="../element/StyledElement.html#method-summary" title="class in dev.tamboui.toolkit.element">StyledElement</a></h3>
-<code><a href="../element/StyledElement.html#addClass(java.lang.String...)" title="addClass(String...)">addClass</a>, <a href="../element/StyledElement.html#attr(java.lang.String,java.lang.String)" title="attr(String, String)">attr</a>, <a href="../element/StyledElement.html#bg(dev.tamboui.style.Color)" title="bg(Color)">bg</a>, <a href="../element/StyledElement.html#black()" title="black()">black</a>, <a href="../element/StyledElement.html#blue()" title="blue()">blue</a>, <a href="../element/StyledElement.html#bold()" title="bold()">bold</a>, <a href="../element/StyledElement.html#constraint()" title="constraint()">constraint</a>, <a href="../element/StyledElement.html#constraint(dev.tamboui.layout.Constraint)" title="constraint(Constraint)">constraint</a>, <a href="../element/StyledElement.html#crossedOut()" title="crossedOut()">crossedOut</a>, <a href="../element/StyledElement.html#cssClasses()" title="cssClasses()">cssClasses</a>, <a href="../element/StyledElement.html#cssId()" title="cssId()">cssId</a>, <a href="../element/StyledElement.html#cssParent()" title="cssParent()">cssParent</a>, <a href="../element/StyledElement.html#cssParent(dev.tamboui.css.Styleable)" title="cssParent(Styleable)">cssParent</a>, <a href="../element/StyledElement.html#cyan()" title="cyan()">cyan</a>, <a href="../element/StyledElement.html#dim()" title="dim()">dim</a>, <a href="../element/StyledElement.html#draggable(java.util.function.BiConsumer)" title="draggable(BiConsumer)">draggable</a>, <a href="../element/StyledElement.html#dragHandler()" title="dragHandler()">dragHandler</a>, <a href="../element/StyledElement.html#fg(dev.tamboui.style.Color)" title="fg(Color)">fg</a>, <a href="../element/StyledElement.html#fill()" title="fill()">fill</a>, <a href="../element/StyledElement.html#fill(int)" title="fill(int)">fill</a>, <a href="../element/StyledElement.html#fit()" title="fit()">fit</a>, <a href="../element/StyledElement.html#focusable()" title="focusable()">focusable</a>, <a href="../element/StyledElement.html#focusable(boolean)" title="focusable(boolean)">focusable</a>, <a href="../element/StyledElement.html#getStyle()" title="getStyle()">getStyle</a>, <a href="../element/StyledElement.html#gray()" title="gray()">gray</a>, <a href="../element/StyledElement.html#green()" title="green()">green</a>, <a href="../element/StyledElement.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" title="handleMouseEvent(MouseEvent)">handleMouseEvent</a>, <a href="../element/StyledElement.html#id()" title="id()">id</a>, <a href="../element/StyledElement.html#id(java.lang.String)" title="id(String)">id</a>, <a href="../element/StyledElement.html#isDraggable()" title="isDraggable()">isDraggable</a>, <a href="../element/StyledElement.html#italic()" title="italic()">italic</a>, <a href="../element/StyledElement.html#keyEventHandler()" title="keyEventHandler()">keyEventHandler</a>, <a href="../element/StyledElement.html#length(int)" title="length(int)">length</a>, <a href="../element/StyledElement.html#magenta()" title="magenta()">magenta</a>, <a href="../element/StyledElement.html#max(int)" title="max(int)">max</a>, <a href="../element/StyledElement.html#min(int)" title="min(int)">min</a>, <a href="../element/StyledElement.html#mouseEventHandler()" title="mouseEventHandler()">mouseEventHandler</a>, <a href="../element/StyledElement.html#onAction(dev.tamboui.tui.bindings.ActionHandler)" title="onAction(ActionHandler)">onAction</a>, <a href="../element/StyledElement.html#onBlack()" title="onBlack()">onBlack</a>, <a href="../element/StyledElement.html#onBlue()" title="onBlue()">onBlue</a>, <a href="../element/StyledElement.html#onCyan()" title="onCyan()">onCyan</a>, <a href="../element/StyledElement.html#onDrag(dev.tamboui.toolkit.event.DragHandler)" title="onDrag(DragHandler)">onDrag</a>, <a href="../element/StyledElement.html#onGreen()" title="onGreen()">onGreen</a>, <a href="../element/StyledElement.html#onKeyEvent(dev.tamboui.toolkit.event.KeyEventHandler)" title="onKeyEvent(KeyEventHandler)">onKeyEvent</a>, <a href="../element/StyledElement.html#onMagenta()" title="onMagenta()">onMagenta</a>, <a href="../element/StyledElement.html#onMouseEvent(dev.tamboui.toolkit.event.MouseEventHandler)" title="onMouseEvent(MouseEventHandler)">onMouseEvent</a>, <a href="../element/StyledElement.html#onRed()" title="onRed()">onRed</a>, <a href="../element/StyledElement.html#onWhite()" title="onWhite()">onWhite</a>, <a href="../element/StyledElement.html#onYellow()" title="onYellow()">onYellow</a>, <a href="../element/StyledElement.html#percent(int)" title="percent(int)">percent</a>, <a href="../element/StyledElement.html#red()" title="red()">red</a>, <a href="../element/StyledElement.html#removeClass(java.lang.String)" title="removeClass(String)">removeClass</a>, <a href="../element/StyledElement.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" title="render(Frame, Rect, RenderContext)">render</a>, <a href="../element/StyledElement.html#renderedArea()" title="renderedArea()">renderedArea</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.css.cascade.PseudoClassState,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, PseudoClassState, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#reversed()" title="reversed()">reversed</a>, <a href="../element/StyledElement.html#self()" title="self()">self</a>, <a href="../element/StyledElement.html#style(dev.tamboui.style.Style)" title="style(Style)">style</a>, <a href="../element/StyledElement.html#styleResolver(dev.tamboui.toolkit.element.RenderContext)" title="styleResolver(RenderContext)">styleResolver</a>, <a href="../element/StyledElement.html#toggleClass(java.lang.String,boolean)" title="toggleClass(String, boolean)">toggleClass</a>, <a href="../element/StyledElement.html#underlined()" title="underlined()">underlined</a>, <a href="../element/StyledElement.html#white()" title="white()">white</a>, <a href="../element/StyledElement.html#yellow()" title="yellow()">yellow</a></code></div>
+<code><a href="../element/StyledElement.html#addClass(java.lang.String...)" title="addClass(String...)">addClass</a>, <a href="../element/StyledElement.html#attr(java.lang.String,java.lang.String)" title="attr(String, String)">attr</a>, <a href="../element/StyledElement.html#bg(dev.tamboui.style.Color)" title="bg(Color)">bg</a>, <a href="../element/StyledElement.html#black()" title="black()">black</a>, <a href="../element/StyledElement.html#blue()" title="blue()">blue</a>, <a href="../element/StyledElement.html#bold()" title="bold()">bold</a>, <a href="../element/StyledElement.html#constraint()" title="constraint()">constraint</a>, <a href="../element/StyledElement.html#constraint(dev.tamboui.layout.Constraint)" title="constraint(Constraint)">constraint</a>, <a href="../element/StyledElement.html#crossedOut()" title="crossedOut()">crossedOut</a>, <a href="../element/StyledElement.html#cssClasses()" title="cssClasses()">cssClasses</a>, <a href="../element/StyledElement.html#cssId()" title="cssId()">cssId</a>, <a href="../element/StyledElement.html#cssParent()" title="cssParent()">cssParent</a>, <a href="../element/StyledElement.html#cssParent(dev.tamboui.css.Styleable)" title="cssParent(Styleable)">cssParent</a>, <a href="../element/StyledElement.html#cyan()" title="cyan()">cyan</a>, <a href="../element/StyledElement.html#dim()" title="dim()">dim</a>, <a href="../element/StyledElement.html#draggable(java.util.function.BiConsumer)" title="draggable(BiConsumer)">draggable</a>, <a href="../element/StyledElement.html#dragHandler()" title="dragHandler()">dragHandler</a>, <a href="../element/StyledElement.html#fg(dev.tamboui.style.Color)" title="fg(Color)">fg</a>, <a href="../element/StyledElement.html#fill()" title="fill()">fill</a>, <a href="../element/StyledElement.html#fill(int)" title="fill(int)">fill</a>, <a href="../element/StyledElement.html#fit()" title="fit()">fit</a>, <a href="../element/StyledElement.html#focusable()" title="focusable()">focusable</a>, <a href="../element/StyledElement.html#getStyle()" title="getStyle()">getStyle</a>, <a href="../element/StyledElement.html#gray()" title="gray()">gray</a>, <a href="../element/StyledElement.html#green()" title="green()">green</a>, <a href="../element/StyledElement.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" title="handleMouseEvent(MouseEvent)">handleMouseEvent</a>, <a href="../element/StyledElement.html#id()" title="id()">id</a>, <a href="../element/StyledElement.html#id(java.lang.String)" title="id(String)">id</a>, <a href="../element/StyledElement.html#isDraggable()" title="isDraggable()">isDraggable</a>, <a href="../element/StyledElement.html#italic()" title="italic()">italic</a>, <a href="../element/StyledElement.html#keyEventHandler()" title="keyEventHandler()">keyEventHandler</a>, <a href="../element/StyledElement.html#length(int)" title="length(int)">length</a>, <a href="../element/StyledElement.html#magenta()" title="magenta()">magenta</a>, <a href="../element/StyledElement.html#max(int)" title="max(int)">max</a>, <a href="../element/StyledElement.html#min(int)" title="min(int)">min</a>, <a href="../element/StyledElement.html#mouseEventHandler()" title="mouseEventHandler()">mouseEventHandler</a>, <a href="../element/StyledElement.html#onAction(dev.tamboui.tui.bindings.ActionHandler)" title="onAction(ActionHandler)">onAction</a>, <a href="../element/StyledElement.html#onBlack()" title="onBlack()">onBlack</a>, <a href="../element/StyledElement.html#onBlue()" title="onBlue()">onBlue</a>, <a href="../element/StyledElement.html#onCyan()" title="onCyan()">onCyan</a>, <a href="../element/StyledElement.html#onDrag(dev.tamboui.toolkit.event.DragHandler)" title="onDrag(DragHandler)">onDrag</a>, <a href="../element/StyledElement.html#onGreen()" title="onGreen()">onGreen</a>, <a href="../element/StyledElement.html#onKeyEvent(dev.tamboui.toolkit.event.KeyEventHandler)" title="onKeyEvent(KeyEventHandler)">onKeyEvent</a>, <a href="../element/StyledElement.html#onMagenta()" title="onMagenta()">onMagenta</a>, <a href="../element/StyledElement.html#onMouseEvent(dev.tamboui.toolkit.event.MouseEventHandler)" title="onMouseEvent(MouseEventHandler)">onMouseEvent</a>, <a href="../element/StyledElement.html#onRed()" title="onRed()">onRed</a>, <a href="../element/StyledElement.html#onWhite()" title="onWhite()">onWhite</a>, <a href="../element/StyledElement.html#onYellow()" title="onYellow()">onYellow</a>, <a href="../element/StyledElement.html#percent(int)" title="percent(int)">percent</a>, <a href="../element/StyledElement.html#red()" title="red()">red</a>, <a href="../element/StyledElement.html#removeClass(java.lang.String)" title="removeClass(String)">removeClass</a>, <a href="../element/StyledElement.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" title="render(Frame, Rect, RenderContext)">render</a>, <a href="../element/StyledElement.html#renderedArea()" title="renderedArea()">renderedArea</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.css.cascade.PseudoClassState,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, PseudoClassState, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#reversed()" title="reversed()">reversed</a>, <a href="../element/StyledElement.html#self()" title="self()">self</a>, <a href="../element/StyledElement.html#style(dev.tamboui.style.Style)" title="style(Style)">style</a>, <a href="../element/StyledElement.html#styleResolver(dev.tamboui.toolkit.element.RenderContext)" title="styleResolver(RenderContext)">styleResolver</a>, <a href="../element/StyledElement.html#toggleClass(java.lang.String,boolean)" title="toggleClass(String, boolean)">toggleClass</a>, <a href="../element/StyledElement.html#underlined()" title="underlined()">underlined</a>, <a href="../element/StyledElement.html#white()" title="white()">white</a>, <a href="../element/StyledElement.html#yellow()" title="yellow()">yellow</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.toolkit.element.Element">Methods inherited from interface&nbsp;<a href="../element/Element.html#method-summary" title="interface in dev.tamboui.toolkit.element">Element</a></h3>
-<code><a href="../element/Element.html#preferredHeight()" title="preferredHeight()">preferredHeight</a>, <a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" title="preferredHeight(int, RenderContext)">preferredHeight</a>, <a href="../element/Element.html#preferredWidth()" title="preferredWidth()">preferredWidth</a></code></div>
+<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" title="preferredHeight(int, RenderContext)">preferredHeight</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.css.Styleable">Methods inherited from interface&nbsp;<a href="../../css/Styleable.html#method-summary" title="interface in dev.tamboui.css">Styleable</a></h3>
 <code><a href="../../css/Styleable.html#styleType()" title="styleType()">styleType</a></code></div>
@@ -322,14 +346,45 @@ take precedence over CSS styles.</div>
 <h3>isFocusable</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFocusable</span>()</div>
-<div class="block">TextInputElement is always focusable to receive keyboard input.</div>
+<div class="block">Returns whether this text input is focusable.
+<p>
+By default, text inputs are focusable to receive keyboard input.
+Use <a href="#focusable(boolean)"><code>focusable(boolean)</code></a> to disable focusability for display-only inputs.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#isFocusable()">isFocusable</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#isFocusable()">isFocusable</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>always returns true</dd>
+<dd>true if focusable (default), false if disabled via <a href="#focusable(boolean)"><code>focusable(boolean)</code></a></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="focusable(boolean)">
+<h3>focusable</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></span>&nbsp;<span class="element-name">focusable</span><wbr><span class="parameters">(boolean&nbsp;focusable)</span></div>
+<div class="block">Sets whether this text input is focusable.
+<p>
+By default, text inputs are focusable. Set to <code>false</code> for display-only
+inputs that should not participate in TAB navigation or receive keyboard events.
+This is useful when the text input is used to display read-only data within
+a container that handles its own key events.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../element/StyledElement.html#focusable(boolean)">focusable</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>focusable</code> - true to make focusable (default), false to disable</dd>
+<dt>Returns:</dt>
+<dd>this element for chaining</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="../element/StyledElement.html#focusable()">for more details on focusability</a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -498,6 +553,54 @@ container that handles key events manually.</div>
 <dd><code>color</code> - the border color</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="focusedBorderColor(dev.tamboui.style.Color)">
+<h3>focusedBorderColor</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></span>&nbsp;<span class="element-name">focusedBorderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
+<div class="block">Sets the border color when focused.
+<p>
+When set, this color overrides the normal border color when the element has focus.
+If not set, CSS <code>:focus</code> pseudo-class can be used to style the focused border.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>color</code> - the focused border color</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="preferredWidth()">
+<h3>preferredWidth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the preferred width, or 0 if not applicable</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="preferredHeight()">
+<h3>preferredHeight</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
+<div class="block">Returns the preferred height of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the preferred height, or 0 if not applicable</dd>
 </dl>
 </div>
 </section>

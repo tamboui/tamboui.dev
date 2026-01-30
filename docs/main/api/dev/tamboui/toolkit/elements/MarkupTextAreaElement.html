@@ -96,6 +96,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#ensureLineVisible(int)" tabindex="0">ensureLineVisible(int)</a></li>
 <li><a href="#state()" tabindex="0">state()</a></li>
 <li><a href="#parsedText()" tabindex="0">parsedText()</a></li>
+<li><a href="#preferredWidth()" tabindex="0">preferredWidth()</a></li>
 <li><a href="#constraint()" tabindex="0">constraint()</a></li>
 <li><a href="#preferredHeight()" tabindex="0">preferredHeight()</a></li>
 <li><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">preferredHeight(int, RenderContext)</a></li>
@@ -325,81 +326,86 @@ effects.addEffectBySelector(".fx", Fx.fadeTo(...).pingPong());
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the preferred height of this element given an available width and render context.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the preferred width of this element in cells.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Renders the content of this element.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#right()" class="member-name-link">right</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#right()" class="member-name-link">right</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Aligns text to the right.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rounded()" class="member-name-link">rounded</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rounded()" class="member-name-link">rounded</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Uses rounded borders.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar()" class="member-name-link">scrollbar</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar()" class="member-name-link">scrollbar</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables a scrollbar (always visible).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.toolkit.elements.MarkupTextAreaElement.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="MarkupTextAreaElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">MarkupTextAreaElement.ScrollBarPolicy</a>&nbsp;policy)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.toolkit.elements.MarkupTextAreaElement.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="MarkupTextAreaElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">MarkupTextAreaElement.ScrollBarPolicy</a>&nbsp;policy)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar policy.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.toolkit.elements.RichTextAreaElement.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="RichTextAreaElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">RichTextAreaElement.ScrollBarPolicy</a>&nbsp;policy)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.toolkit.elements.RichTextAreaElement.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="RichTextAreaElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">RichTextAreaElement.ScrollBarPolicy</a>&nbsp;policy)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar policy using RichTextAreaElement's policy type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarThumbColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarThumbColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarThumbColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarThumbColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar thumb color.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarTrackColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarTrackColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarTrackColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarTrackColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar track color.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollToLine(int)" class="member-name-link">scrollToLine</a><wbr>(int&nbsp;line)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollToLine(int)" class="member-name-link">scrollToLine</a><wbr>(int&nbsp;line)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Scrolls to show the specified line.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showLineNumbers()" class="member-name-link">showLineNumbers</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showLineNumbers()" class="member-name-link">showLineNumbers</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables line numbers.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showLineNumbers(boolean)" class="member-name-link">showLineNumbers</a><wbr>(boolean&nbsp;show)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showLineNumbers(boolean)" class="member-name-link">showLineNumbers</a><wbr>(boolean&nbsp;show)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets whether to show line numbers.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../style/RichTextState.html" title="class in dev.tamboui.style">RichTextState</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#state()" class="member-name-link">state</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../style/RichTextState.html" title="class in dev.tamboui.style">RichTextState</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#state()" class="member-name-link">state</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the internal scroll state for programmatic control.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the title.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapCharacter()" class="member-name-link">wrapCharacter</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapCharacter()" class="member-name-link">wrapCharacter</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Convenience method to wrap at character boundaries.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapWord()" class="member-name-link">wrapWord</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MarkupTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapWord()" class="member-name-link">wrapWord</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Convenience method to wrap at word boundaries.</div>
 </div>
 </div>
@@ -411,9 +417,6 @@ effects.addEffectBySelector(".fx", Fx.fadeTo(...).pingPong());
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-dev.tamboui.toolkit.element.Element">Methods inherited from interface&nbsp;<a href="../element/Element.html#method-summary" title="interface in dev.tamboui.toolkit.element">Element</a></h3>
-<code><a href="../element/Element.html#preferredWidth()" title="preferredWidth()">preferredWidth</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.css.Styleable">Methods inherited from interface&nbsp;<a href="../../css/Styleable.html#method-summary" title="interface in dev.tamboui.css">Styleable</a></h3>
 <code><a href="../../css/Styleable.html#styleType()" title="styleType()">styleType</a></code></div>
@@ -852,6 +855,21 @@ effects.addEffectBySelector(".fx", Fx.fadeTo(...).pingPong());
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the parsed text</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="preferredWidth()">
+<h3>preferredWidth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the preferred width, or 0 if not applicable</dd>
 </dl>
 </div>
 </section>

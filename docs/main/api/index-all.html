@@ -631,6 +631,28 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Selects cells within the specified rectangular area.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#area(java.lang.String,dev.tamboui.toolkit.element.Element)" class="member-name-link">area(String, Element)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Assigns an element to a named area.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#area(java.lang.String,dev.tamboui.widget.Widget)" class="member-name-link">area(String, Widget)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
+<dd>
+<div class="block">Assigns a widget to a named area.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#%3Cinit%3E(int,int,int,int)" class="member-name-link">AreaBounds(int, int, int, int)</a> - Constructor for class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>
+<div class="block">Creates area bounds.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#areaCount()" class="member-name-link">areaCount()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Returns the number of named areas.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.html#area-mode-example-heading" class="search-tag-link">Area Mode Example</a> - Section in class dev.tamboui.layout.grid.Grid</dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#areaNames()" class="member-name-link">areaNames()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Returns all defined area names in declaration order.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/ListElement.ScrollBarPolicy.html#AS_NEEDED" class="member-name-link">AS_NEEDED</a> - Enum constant in enum class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ListElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">ListElement.ScrollBarPolicy</a></dt>
 <dd>
 <div class="block">Show the scrollbar only when content exceeds the viewport.</div>
@@ -1622,6 +1644,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Sets both axis bounds.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#boundsFor(java.lang.String)" class="member-name-link">boundsFor(String)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Returns the bounds for a named area.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/CanvasElement.html#braille()" class="member-name-link">braille()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/CanvasElement.html" title="class in dev.tamboui.toolkit.elements">CanvasElement</a></dt>
 <dd>
 <div class="block">Uses Braille marker (highest resolution).</div>
@@ -1750,7 +1776,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Builds the <a href="dev/tamboui/layout/flow/Flow.html" title="class in dev.tamboui.layout.flow"><code>Flow</code></a> widget.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
+<dd>
+<div class="block">Builds the <a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid"><code>Grid</code></a> widget.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#build()" class="member-name-link">build()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
 <dd>
 <div class="block">Builds the <a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid"><code>Grid</code></a> widget.</div>
 </dd>
@@ -2417,7 +2447,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#children(dev.tamboui.widget.Widget...)" class="member-name-link">children(Widget...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
 <dd>
-<div class="block">Sets the children widgets.</div>
+<div class="block">Creates a children-based grid layout with sequential placement.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/stack/Stack.Builder.html#children(dev.tamboui.widget.Widget...)" class="member-name-link">children(Widget...)</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.Builder.html" title="class in dev.tamboui.layout.stack">Stack.Builder</a></dt>
 <dd>
@@ -2429,12 +2459,14 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#children(java.util.List)" class="member-name-link">children(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
 <dd>
-<div class="block">Sets the children widgets from a list.</div>
+<div class="block">Creates a children-based grid layout with sequential placement.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/stack/Stack.Builder.html#children(java.util.List)" class="member-name-link">children(List)</a> - Method in class dev.tamboui.layout.stack.<a href="dev/tamboui/layout/stack/Stack.Builder.html" title="class in dev.tamboui.layout.stack">Stack.Builder</a></dt>
 <dd>
 <div class="block">Sets the children widgets from a list.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.html#children-mode-example-heading" class="search-tag-link">Children Mode Example</a> - Section in class dev.tamboui.layout.grid.Grid</dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/css/selector/ChildSelector.html" class="type-name-link" title="class in dev.tamboui.css.selector">ChildSelector</a> - Class in <a href="dev/tamboui/css/selector/package-summary.html">dev.tamboui.css.selector</a></dt>
 <dd>
 <div class="block">A child combinator selector that matches direct children.</div>
@@ -2810,6 +2842,10 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Returns the 1-based column number.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#column()" class="member-name-link">column()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>
+<div class="block">Returns the start column (0-based).</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/Toolkit.html#column()" class="member-name-link">column()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
 <dd>
 <div class="block">Creates an empty column.</div>
@@ -2846,11 +2882,19 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">CSS property definition for the column ordering mode.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#columnConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">columnConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#columnConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">columnConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
 <dd>
 <div class="block">Sets the width constraints for columns.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#columnConstraints(java.util.List)" class="member-name-link">columnConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#columnConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">columnConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
+<dd>
+<div class="block">Sets the width constraints for columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#columnConstraints(java.util.List)" class="member-name-link">columnConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
+<dd>
+<div class="block">Sets the width constraints for columns from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#columnConstraints(java.util.List)" class="member-name-link">columnConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
 <dd>
 <div class="block">Sets the width constraints for columns from a list.</div>
 </dd>
@@ -2858,7 +2902,7 @@ compatible with Java 8.</div>
 <dd>
 <div class="block">Sets the number of columns.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#columnCount(int)" class="member-name-link">columnCount(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#columnCount(int)" class="member-name-link">columnCount(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
 <dd>
 <div class="block">Sets the number of columns.</div>
 </dd>
@@ -2877,6 +2921,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">ColumnOrderConverter</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
 <dd>
 <div class="block">Converts string values to <a href="dev/tamboui/layout/columns/ColumnOrder.html" title="enum class in dev.tamboui.layout.columns"><code>ColumnOrder</code></a> enum values.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#columns()" class="member-name-link">columns()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Returns the number of columns in the grid template.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/Rect.html#columns()" class="member-name-link">columns()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
@@ -2937,6 +2985,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/widgets/table/Table.Builder.html#columnSpacing(int)" class="member-name-link">columnSpacing(int)</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></dt>
 <dd>
 <div class="block">Sets the spacing between columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#columnSpan()" class="member-name-link">columnSpan()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>
+<div class="block">Returns the number of columns spanned.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#columnWidths(dev.tamboui.layout.Constraint...)" class="member-name-link">columnWidths(Constraint...)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
 <dd>
@@ -3277,6 +3329,8 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ColumnOrderConverter.html" title="class in dev.tamboui.toolkit.elements">ColumnOrderConverter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html" title="class in dev.tamboui.toolkit.elements">ConstraintListConverter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridAreaConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridAreaConverter.html" title="class in dev.tamboui.toolkit.elements">GridAreaConverter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/toolkit/elements/GridSizeConverter.html#convert(java.lang.String)" class="member-name-link">convert(String)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridSizeConverter.html" title="class in dev.tamboui.toolkit.elements">GridSizeConverter</a></dt>
 <dd>&nbsp;</dd>
@@ -4874,6 +4928,10 @@ left, right, and center regions — the most common TUI application structure
 <dd>
 <div class="block">An empty style with no colors or modifiers set.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#EMPTY_CELL" class="member-name-link">EMPTY_CELL</a> - Static variable in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Represents an empty cell in the area template.</div>
+</dd>
 <dt><a href="dev/tamboui/terminal/Mode2027Support.html#enable(dev.tamboui.terminal.Backend)" class="member-name-link">enable(Backend)</a> - Static method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/Mode2027Support.html" title="class in dev.tamboui.terminal">Mode2027Support</a></dt>
 <dd>
 <div class="block">Enables Mode 2027 grapheme cluster mode on the terminal.</div>
@@ -4963,6 +5021,14 @@ left, right, and center regions — the most common TUI application structure
 <dt><a href="dev/tamboui/tui/bindings/Actions.html#END" class="member-name-link">END</a> - Static variable in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/Actions.html" title="class in dev.tamboui.tui.bindings">Actions</a></dt>
 <dd>
 <div class="block">Go to end (End, vim 'G', emacs Alt+&gt;, etc.).</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#endColumn()" class="member-name-link">endColumn()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>
+<div class="block">Returns the end column (exclusive).</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#endRow()" class="member-name-link">endRow()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>
+<div class="block">Returns the end row (exclusive).</div>
 </dd>
 <dt><a href="dev/tamboui/css/selector/AttributeSelector.Operator.html#ENDS_WITH" class="member-name-link">ENDS_WITH</a> - Enum constant in enum class dev.tamboui.css.selector.<a href="dev/tamboui/css/selector/AttributeSelector.Operator.html" title="enum class in dev.tamboui.css.selector">AttributeSelector.Operator</a></dt>
 <dd>
@@ -5693,7 +5759,11 @@ left, right, and center regions — the most common TUI application structure
 <dd>
 <div class="block">Sets how remaining space is distributed among columns.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
+<dd>
+<div class="block">Sets how remaining space is distributed.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex(Flex)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
 <dd>
 <div class="block">Sets how remaining space is distributed.</div>
 </dd>
@@ -6576,9 +6646,41 @@ constraints, and gutter spacing.</div>
 <dd>
 <div class="block">CSS property definition for the grid size.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#GRID_TEMPLATE_AREAS" class="member-name-link">GRID_TEMPLATE_AREAS</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">CSS property definition for grid-template-areas.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" class="type-name-link" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a> - Class in <a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a></dt>
+<dd>
+<div class="block">Builder for area-based grid layouts.</div>
+</dd>
 <dt><a href="dev/tamboui/layout/grid/Grid.Builder.html" class="type-name-link" title="class in dev.tamboui.layout.grid">Grid.Builder</a> - Class in <a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a></dt>
 <dd>
-<div class="block">Builder for <a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid"><code>Grid</code></a>.</div>
+<div class="block">Initial builder for <a href="dev/tamboui/layout/grid/Grid.html" title="class in dev.tamboui.layout.grid"><code>Grid</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" class="type-name-link" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a> - Class in <a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a></dt>
+<dd>
+<div class="block">Builder for children-based grid layouts.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html" class="type-name-link" title="class in dev.tamboui.layout.grid">GridArea</a> - Class in <a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a></dt>
+<dd>
+<div class="block">Parses and validates CSS grid-template-areas style layout definitions.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" class="type-name-link" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a> - Class in <a href="dev/tamboui/layout/grid/package-summary.html">dev.tamboui.layout.grid</a></dt>
+<dd>
+<div class="block">Bounds of a named area within the grid.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridAreaConverter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">GridAreaConverter</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
+<dd>
+<div class="block">Converts CSS grid-template-areas value to <a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid"><code>GridArea</code></a>.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#gridAreas(java.lang.String...)" class="member-name-link">gridAreas(String...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dd>
+<div class="block">Creates an area-based grid layout using CSS grid-template-areas style.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gridAreas(java.lang.String...)" class="member-name-link">gridAreas(String...)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
+<dd>
+<div class="block">Defines the grid layout using CSS grid-template-areas style strings.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/GridElement.html#gridColumns(dev.tamboui.layout.Constraint...)" class="member-name-link">gridColumns(Constraint...)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></dt>
 <dd>
@@ -7326,7 +7428,11 @@ for grid layouts.</div>
 <dd>
 <div class="block">Horizontal scrollbar at the top of the content area.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#horizontalGutter(int)" class="member-name-link">horizontalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#horizontalGutter(int)" class="member-name-link">horizontalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
+<dd>
+<div class="block">Sets the horizontal gutter between columns.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#horizontalGutter(int)" class="member-name-link">horizontalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
 <dd>
 <div class="block">Sets the horizontal gutter between columns.</div>
 </dd>
@@ -7810,6 +7916,10 @@ for grid layouts.</div>
 <div class="block">Singleton instance of the column order converter.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/ConstraintListConverter.html" title="class in dev.tamboui.toolkit.elements">ConstraintListConverter</a></dt>
+<dd>
+<div class="block">Singleton instance.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/GridAreaConverter.html#INSTANCE" class="member-name-link">INSTANCE</a> - Static variable in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GridAreaConverter.html" title="class in dev.tamboui.toolkit.elements">GridAreaConverter</a></dt>
 <dd>
 <div class="block">Singleton instance.</div>
 </dd>
@@ -11171,6 +11281,10 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Parses markup text using only built-in styles.</div>
 </dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#parse(java.lang.String...)" class="member-name-link">parse(String...)</a> - Static method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Parses area template strings into a GridArea.</div>
+</dd>
 <dt><a href="dev/tamboui/text/MarkupParser.html#parse(java.lang.String,dev.tamboui.text.MarkupParser.StyleResolver)" class="member-name-link">parse(String, MarkupParser.StyleResolver)</a> - Static method in class dev.tamboui.text.<a href="dev/tamboui/text/MarkupParser.html" title="class in dev.tamboui.text">MarkupParser</a></dt>
 <dd>
 <div class="block">Parses markup text with custom style resolution.</div>
@@ -13122,6 +13236,10 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Routes an event to the appropriate element(s).</div>
 </dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#row()" class="member-name-link">row()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>
+<div class="block">Returns the start row (0-based).</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/Toolkit.html#row()" class="member-name-link">row()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
 <dd>
 <div class="block">Creates an empty row.</div>
@@ -13162,21 +13280,37 @@ inheritance behavior, and optional default value.</div>
 <dd>
 <div class="block">Items fill left-to-right, then top-to-bottom.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#rowConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">rowConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#rowConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">rowConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
 <dd>
 <div class="block">Sets the height constraints for rows.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#rowConstraints(java.util.List)" class="member-name-link">rowConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#rowConstraints(dev.tamboui.layout.Constraint...)" class="member-name-link">rowConstraints(Constraint...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
+<dd>
+<div class="block">Sets the height constraints for rows.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#rowConstraints(java.util.List)" class="member-name-link">rowConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
 <dd>
 <div class="block">Sets the height constraints for rows from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#rowConstraints(java.util.List)" class="member-name-link">rowConstraints(List)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
+<dd>
+<div class="block">Sets the height constraints for rows from a list.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#rowCount(int)" class="member-name-link">rowCount(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
+<dd>
+<div class="block">Sets the number of rows.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/columns/Columns.Builder.html#rowHeights(int...)" class="member-name-link">rowHeights(int...)</a> - Method in class dev.tamboui.layout.columns.<a href="dev/tamboui/layout/columns/Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></dt>
 <dd>
 <div class="block">Sets explicit row heights.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#rowHeights(int...)" class="member-name-link">rowHeights(int...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#rowHeights(int...)" class="member-name-link">rowHeights(int...)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
 <dd>
 <div class="block">Sets explicit row heights.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#rows()" class="member-name-link">rows()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Returns the number of rows in the grid template.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/Rect.html#rows()" class="member-name-link">rows()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></dt>
 <dd>
@@ -13209,6 +13343,10 @@ inheritance behavior, and optional default value.</div>
 <dt><a href="dev/tamboui/toolkit/elements/FlowElement.html#rowSpacing(int)" class="member-name-link">rowSpacing(int)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></dt>
 <dd>
 <div class="block">Sets the vertical spacing between wrapped rows.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#rowSpan()" class="member-name-link">rowSpan()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>
+<div class="block">Returns the number of rows spanned.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/table/Table.Builder.html#rowStyleResolver(java.util.function.BiFunction)" class="member-name-link">rowStyleResolver(BiFunction)</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Table.Builder.html" title="class in dev.tamboui.widgets.table">Table.Builder</a></dt>
 <dd>
@@ -16510,6 +16648,8 @@ from each line.</div>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/Fraction.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Fraction.html" title="class in dev.tamboui.layout">Fraction</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.AreaBounds.html" title="class in dev.tamboui.layout.grid">GridArea.AreaBounds</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/Margin.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Margin.html" title="class in dev.tamboui.layout">Margin</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/layout/Padding.html#toString()" class="member-name-link">toString()</a> - Method in class dev.tamboui.layout.<a href="dev/tamboui/layout/Padding.html" title="class in dev.tamboui.layout">Padding</a></dt>
@@ -16625,6 +16765,10 @@ from each line.</div>
 <dt><a href="dev/tamboui/widgets/table/Row.html#totalHeight()" class="member-name-link">totalHeight()</a> - Method in class dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Row.html" title="class in dev.tamboui.widgets.table">Row</a></dt>
 <dd>
 <div class="block">Returns the total height including bottom margin.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/GridArea.html#toTemplates()" class="member-name-link">toTemplates()</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></dt>
+<dd>
+<div class="block">Returns the row templates that were used to create this GridArea.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/scrollbar/Scrollbar.SymbolSet.html#track()" class="member-name-link">track()</a> - Method in class dev.tamboui.widgets.scrollbar.<a href="dev/tamboui/widgets/scrollbar/Scrollbar.SymbolSet.html" title="class in dev.tamboui.widgets.scrollbar">Scrollbar.SymbolSet</a></dt>
 <dd>
@@ -17529,7 +17673,11 @@ the order they are declared.</div>
 <dd>
 <div class="block">Vertical scrollbar on the right side of the content area.</div>
 </dd>
-<dt><a href="dev/tamboui/layout/grid/Grid.Builder.html#verticalGutter(int)" class="member-name-link">verticalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.Builder.html" title="class in dev.tamboui.layout.grid">Grid.Builder</a></dt>
+<dt><a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html#verticalGutter(int)" class="member-name-link">verticalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.AreaBuilder.html" title="class in dev.tamboui.layout.grid">Grid.AreaBuilder</a></dt>
+<dd>
+<div class="block">Sets the vertical gutter between rows.</div>
+</dd>
+<dt><a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html#verticalGutter(int)" class="member-name-link">verticalGutter(int)</a> - Method in class dev.tamboui.layout.grid.<a href="dev/tamboui/layout/grid/Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></dt>
 <dd>
 <div class="block">Sets the vertical gutter between rows.</div>
 </dd>

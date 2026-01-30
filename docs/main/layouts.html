@@ -35,7 +35,12 @@
 <ul class="sectlevel1">
 <li><a href="#layout-overview">Layout Overview</a></li>
 <li><a href="#columns">Columns</a></li>
-<li><a href="#grid">Grid</a></li>
+<li><a href="#grid">Grid</a>
+<ul class="sectlevel2">
+<li><a href="#children-mode">Children Mode</a></li>
+<li><a href="#area-mode-grid-template-areas">Area Mode (Grid Template Areas)</a></li>
+</ul>
+</li>
 <li><a href="#dock">Dock</a></li>
 <li><a href="#stack">Stack</a></li>
 <li><a href="#flow">Flow</a></li>
@@ -198,6 +203,24 @@ The widget-level <code>Columns</code> requires an explicit column count. For aut
 <p>A CSS Grid-inspired layout widget that arranges children into a grid with explicit control over grid dimensions, per-column/per-row sizing constraints, and gutter spacing.
 Unlike <code>Columns</code> (which uses ordering modes and spacing), <code>Grid</code> provides independent horizontal and vertical gutter, per-column width constraints, per-row height constraints, and constraint cycling when fewer constraints than grid dimensions (matching Textual behavior).</p>
 </div>
+<div class="paragraph">
+<p>Grid supports two mutually exclusive modes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Children mode</strong>: Sequential placement using <code>children()</code> and <code>columnCount()</code></p>
+</li>
+<li>
+<p><strong>Area mode</strong>: Template-based placement using <code>gridAreas()</code> and <code>area()</code> (CSS grid-template-areas style)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The staged builder pattern ensures compile-time safety — you cannot mix modes.</p>
+</div>
+<div class="sect2">
+<h3 id="children-mode"><a class="anchor" href="#children-mode"></a><a class="link" href="#children-mode">Children Mode</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Grid grid = Grid.builder()
@@ -211,7 +234,7 @@ grid.render(area, buffer);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Builder options:</p>
+<p>ChildrenBuilder options:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -220,6 +243,9 @@ grid.render(area, buffer);</code></pre>
 </li>
 <li>
 <p><code>columnCount(int)</code> - Number of columns (defaults to 1)</p>
+</li>
+<li>
+<p><code>rowCount(int)</code> - Optional maximum rows (validates children fit within columns × rows)</p>
 </li>
 <li>
 <p><code>horizontalGutter(int)</code> - Gap between columns in cells (default: 0)</p>
@@ -272,6 +298,107 @@ Grid uniform = Grid.builder()
     .build();</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="area-mode-grid-template-areas"><a class="anchor" href="#area-mode-grid-template-areas"></a><a class="link" href="#area-mode-grid-template-areas">Area Mode (Grid Template Areas)</a></h3>
+<div class="paragraph">
+<p>Area mode uses CSS <code>grid-template-areas</code> style templates for defining layouts where cells can span multiple rows and columns.
+Named areas must form contiguous rectangles — L-shapes and disconnected regions are rejected with a <code>LayoutException</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// "Holy grail" layout with spanning regions
+Grid layout = Grid.builder()
+    .gridAreas("header header header",
+               "nav    main   main",
+               "nav    main   main",
+               "footer footer footer")
+    .area("header", headerWidget)
+    .area("nav", navWidget)
+    .area("main", mainWidget)
+    .area("footer", footerWidget)
+    .horizontalGutter(1)
+    .verticalGutter(1)
+    .build();
+
+layout.render(area, buffer);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>AreaBuilder options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>gridAreas(String&#8230;&#8203;)</code> - Row templates defining named areas (use <code>.</code> for empty cells)</p>
+</li>
+<li>
+<p><code>area(String, Widget)</code> - Assign a widget to a named area</p>
+</li>
+<li>
+<p><code>horizontalGutter(int)</code> - Gap between columns (default: 0)</p>
+</li>
+<li>
+<p><code>verticalGutter(int)</code> - Gap between rows (default: 0)</p>
+</li>
+<li>
+<p><code>flex(Flex)</code> - How remaining space is distributed (default: <code>Flex.START</code>)</p>
+</li>
+<li>
+<p><code>columnConstraints(Constraint&#8230;&#8203;)</code> - Per-column width constraints</p>
+</li>
+<li>
+<p><code>rowConstraints(Constraint&#8230;&#8203;)</code> - Per-row height constraints</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Template rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Each row is a space-separated list of area names</p>
+</li>
+<li>
+<p>All rows must have the same number of columns</p>
+</li>
+<li>
+<p>Area names must start with a letter (alphanumeric and underscores allowed)</p>
+</li>
+<li>
+<p>Use <code>.</code> (dot) for empty cells</p>
+</li>
+<li>
+<p>Named areas must form contiguous rectangles</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Dashboard with 2x2 spanning main area
+Grid dashboard = Grid.builder()
+    .gridAreas("A A B",
+               "A A C",
+               "D D D")
+    .area("A", mainPanel)    // 2x2 span
+    .area("B", sidePanel1)
+    .area("C", sidePanel2)
+    .area("D", statusBar)    // full-width span
+    .horizontalGutter(1)
+    .verticalGutter(1)
+    .build();
+
+// Empty cells with dot notation
+Grid sparse = Grid.builder()
+    .gridAreas("A . B",
+               ". C .")
+    .area("A", widget1)
+    .area("B", widget2)
+    .area("C", widget3)
+    .build();</code></pre>
+</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -279,10 +406,23 @@ Grid uniform = Grid.builder()
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The widget-level <code>Grid</code> requires an explicit column count. For auto-sizing based on child count (<code>ceil(sqrt(n))</code> columns) and CSS property support, use <code>GridElement</code> in the Toolkit DSL (via the <code>grid()</code> factory method).
+Areas without assigned widgets render as empty space. Assigning a widget to an undefined area throws <code>LayoutException</code>.
 </td>
 </tr>
 </table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The widget-level <code>Grid</code> requires an explicit column count or grid areas template. For auto-sizing based on child count (<code>ceil(sqrt(n))</code> columns) and CSS property support, use <code>GridElement</code> in the Toolkit DSL (via the <code>grid()</code> factory method).
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -452,6 +592,18 @@ grid(header, content, sidebar, footer)
     .gridColumns(Constraint.length(20), Constraint.fill())
     .gutter(1, 0)
 
+// Grid with template areas (CSS grid-template-areas style)
+grid()
+    .gridAreas("header header header",
+               "nav    main   main",
+               "nav    main   main",
+               "footer footer footer")
+    .area("header", text("Header").bold())
+    .area("nav", list("Nav 1", "Nav 2"))
+    .area("main", text("Main Content"))
+    .area("footer", text("Footer").dim())
+    .gutter(1)
+
 // 5-region dock layout
 dock()
     .top(text("Header").bold())
@@ -480,7 +632,7 @@ flow(tag1, tag2, tag3, tag4, tag5)
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-30 11:49:47 UTC
+Last updated 2026-01-30 14:00:52 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

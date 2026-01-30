@@ -65,6 +65,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#GRID_COLUMNS" tabindex="0">GRID_COLUMNS</a></li>
 <li><a href="#GRID_ROWS" tabindex="0">GRID_ROWS</a></li>
 <li><a href="#GRID_GUTTER" tabindex="0">GRID_GUTTER</a></li>
+<li><a href="#GRID_TEMPLATE_AREAS" tabindex="0">GRID_TEMPLATE_AREAS</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -85,6 +86,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#margin(dev.tamboui.layout.Margin)" tabindex="0">margin(Margin)</a></li>
 <li><a href="#margin(int)" tabindex="0">margin(int)</a></li>
 <li><a href="#flex(dev.tamboui.layout.Flex)" tabindex="0">flex(Flex)</a></li>
+<li><a href="#gridAreas(java.lang.String...)" tabindex="0">gridAreas(String...)</a></li>
+<li><a href="#area(java.lang.String,dev.tamboui.toolkit.element.Element)" tabindex="0">area(String, Element)</a></li>
 <li><a href="#preferredWidth()" tabindex="0">preferredWidth()</a></li>
 <li><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">preferredHeight(int, RenderContext)</a></li>
 <li><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">renderContent(Frame, Rect, RenderContext)</a></li>
@@ -176,6 +179,11 @@ grid(text("A"), text("B"), text("C"), text("D")).gridSize(2).gutter(1)
 <div class="col-last odd-row-color">
 <div class="block">CSS property definition for the grid size.</div>
 </div>
+<div class="col-first even-row-color"><code>static final <a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a><wbr>&lt;<a href="../../layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#GRID_TEMPLATE_AREAS" class="member-name-link">GRID_TEMPLATE_AREAS</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">CSS property definition for grid-template-areas.</div>
+</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-dev.tamboui.toolkit.element.ContainerElement">Fields inherited from class&nbsp;<a href="../element/ContainerElement.html#field-summary" title="class in dev.tamboui.toolkit.element">ContainerElement</a></h3>
@@ -220,10 +228,21 @@ grid(text("A"), text("B"), text("C"), text("D")).gridSize(2).gutter(1)
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex</a><wbr>(<a href="../../layout/Flex.html" title="enum class in dev.tamboui.layout">Flex</a>&nbsp;flex)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#area(java.lang.String,dev.tamboui.toolkit.element.Element)" class="member-name-link">area</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;areaName,
+ <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Assigns an element to a named area.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex</a><wbr>(<a href="../../layout/Flex.html" title="enum class in dev.tamboui.layout">Flex</a>&nbsp;flex)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets how remaining space is distributed when grid constraints
 don't fill the available area.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridAreas(java.lang.String...)" class="member-name-link">gridAreas</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;rowTemplates)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Defines the grid layout using CSS grid-template-areas style strings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridColumns(dev.tamboui.layout.Constraint...)" class="member-name-link">gridColumns</a><wbr>(<a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>...&nbsp;constraints)</code></div>
@@ -347,6 +366,21 @@ don't fill the available area.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="Gutter.html" title="class in dev.tamboui.toolkit.elements">Gutter</a>&gt;</span>&nbsp;<span class="element-name">GRID_GUTTER</span></div>
 <div class="block">CSS property definition for the gutter spacing.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="GRID_TEMPLATE_AREAS">
+<h3>GRID_TEMPLATE_AREAS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../../layout/grid/GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a>&gt;</span>&nbsp;<span class="element-name">GRID_TEMPLATE_AREAS</span></div>
+<div class="block">CSS property definition for grid-template-areas.
+<p>
+Value format: semicolon-separated rows or quoted strings.
+<ul>
+  <li>Semicolon format: <code>"A A B; A A C; D D D"</code></li>
+  <li>Quoted format: <code>"A A B" "A A C" "D D D"</code></li>
+</ul></div>
 </div>
 </section>
 </li>
@@ -547,6 +581,62 @@ don't fill the available area.</div>
 <li><a href="../../layout/Flex.html" title="enum class in dev.tamboui.layout"><code>Flex</code></a></li>
 </ul>
 </dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="gridAreas(java.lang.String...)">
+<h3>gridAreas</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">gridAreas</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;rowTemplates)</span></div>
+<div class="block">Defines the grid layout using CSS grid-template-areas style strings.
+<p>
+Each string represents a row. Area names are space-separated tokens.
+Use "." for empty cells. Area names must form contiguous rectangles.
+<p>
+When using area-based layout, use <a href="#area(java.lang.String,dev.tamboui.toolkit.element.Element)"><code>area(String, Element)</code></a> to assign
+elements to named areas instead of adding children directly.
+<pre><code>grid()
+    .gridAreas("header header header",
+               "nav    main   main",
+               "nav    main   main",
+               "footer footer footer")
+    .area("header", text("Header"))
+    .area("nav", menu)
+    .area("main", content)
+    .area("footer", statusBar)
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rowTemplates</code> - the row templates</dd>
+<dt>Returns:</dt>
+<dd>this grid for method chaining</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../layout/LayoutException.html" title="class in dev.tamboui.layout">LayoutException</a></code> - if the template is invalid</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="area(java.lang.String,dev.tamboui.toolkit.element.Element)">
+<h3>area</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">area</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;areaName,
+ <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</span></div>
+<div class="block">Assigns an element to a named area.
+<p>
+Must be called after <a href="#gridAreas(java.lang.String...)"><code>gridAreas(String...)</code></a>.
+Areas without assigned elements render as empty space.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>areaName</code> - the area name from the template</dd>
+<dd><code>element</code> - the element to place in that area</dd>
+<dt>Returns:</dt>
+<dd>this grid for method chaining</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if gridAreas() was not called first</dd>
+<dd><code><a href="../../layout/LayoutException.html" title="class in dev.tamboui.layout">LayoutException</a></code> - if the area name is not defined in the template</dd>
 </dl>
 </div>
 </section>

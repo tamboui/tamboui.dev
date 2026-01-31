@@ -69,6 +69,7 @@ dev.tamboui.widgets.logo
 dev.tamboui.widgets.paragraph
 dev.tamboui.widgets.scrollbar
 dev.tamboui.widgets.sparkline
+dev.tamboui.widgets.spinner
 dev.tamboui.widgets.table
 dev.tamboui.widgets.tabs
 dev.tamboui.widgets.wavetext

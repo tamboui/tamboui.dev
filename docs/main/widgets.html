@@ -67,6 +67,15 @@
 <li><a href="#calendar">Calendar</a></li>
 </ul>
 </li>
+<li><a href="#animated-widgets">Animated Widgets</a>
+<ul class="sectlevel2">
+<li><a href="#spinner">Spinner</a>
+<ul class="sectlevel3">
+<li><a href="#css-properties">CSS Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#input-widgets">Input Widgets</a>
 <ul class="sectlevel2">
 <li><a href="#textinput">TextInput</a></li>
@@ -77,7 +86,7 @@
 <li><a href="#scrollbar">Scrollbar</a></li>
 </ul>
 </li>
-<li><a href="#using-widgets-with-toolkit-dsl">Using Widgets with Toolkit DSL</a></li>
+<li><a href="#toolkit-dsl">Using Widgets with Toolkit DSL</a></li>
 </ul>
 </div>
 </div>
@@ -165,6 +174,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#calendar">Calendar</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stateless</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Monthly calendar with date styling</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#spinner">Spinner</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Animated loading indicator</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#scrollbar">Scrollbar</a></p></td>
@@ -719,6 +733,142 @@ calendar.render(area, buffer);</code></pre>
 </div>
 </div>
 <div class="sect1">
+<h2 id="animated-widgets"><a class="anchor" href="#animated-widgets"></a><a class="link" href="#animated-widgets">Animated Widgets</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="spinner"><a class="anchor" href="#spinner"></a><a class="link" href="#spinner">Spinner</a></h3>
+<div class="paragraph">
+<p>An animated loading indicator that cycles through frame characters:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create spinner with built-in style
+Spinner spinner = Spinner.builder()
+    .spinnerStyle(SpinnerStyle.DOTS)
+    .style(Style.EMPTY.fg(Color.CYAN))
+    .build();
+
+// Or with custom frames
+Spinner spinner = Spinner.builder()
+    .frames("*", "+", "x", "+")
+    .build();
+
+// Or with a custom frame set
+Spinner spinner = Spinner.builder()
+    .frameSet(SpinnerFrameSet.of("⠋", "⠙", "⠹", "⠸"))
+    .build();
+
+// Create state and render
+SpinnerState state = new SpinnerState();
+spinner.render(area, buffer, state);
+
+// Advance state on each tick
+state.advance();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Built-in styles:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SpinnerStyle.DOTS</code> - Braille dot pattern</p>
+</li>
+<li>
+<p><code>SpinnerStyle.LINE</code> - Classic <code>-\|/</code></p>
+</li>
+<li>
+<p><code>SpinnerStyle.ARC</code> - Quarter-circle characters</p>
+</li>
+<li>
+<p><code>SpinnerStyle.CIRCLE</code> - Clock-position circle</p>
+</li>
+<li>
+<p><code>SpinnerStyle.BOUNCING_BAR</code> - Bouncing bar <code>[=== ]</code></p>
+</li>
+<li>
+<p><code>SpinnerStyle.TOGGLE</code> - Two-state toggle</p>
+</li>
+<li>
+<p><code>SpinnerStyle.GAUGE</code> - Horizontal block fill (<code>▏▎▍▌▋▊▉█</code>)</p>
+</li>
+<li>
+<p><code>SpinnerStyle.VERTICAL_GAUGE</code> - Vertical bar growth (<code>▁▂▃▄▅▆▇█</code>)</p>
+</li>
+<li>
+<p><code>SpinnerStyle.ARROWS</code> - Rotating arrow directions</p>
+</li>
+<li>
+<p><code>SpinnerStyle.CLOCK</code> - Clock face emoji (🕐🕑&#8230;&#8203;)</p>
+</li>
+<li>
+<p><code>SpinnerStyle.MOON</code> - Moon phase emoji (🌑🌒&#8230;&#8203;)</p>
+</li>
+<li>
+<p><code>SpinnerStyle.SQUARE_CORNERS</code> - Rotating square corners</p>
+</li>
+<li>
+<p><code>SpinnerStyle.GROWING_DOTS</code> - Braille dots filling</p>
+</li>
+<li>
+<p><code>SpinnerStyle.BOUNCING_BALL</code> - Bouncing ball in braille</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="css-properties"><a class="anchor" href="#css-properties"></a><a class="link" href="#css-properties">CSS Properties</a></h4>
+<div class="paragraph">
+<p>Spinner style and frames can be configured via CSS:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Use a predefined style */
+.loading-spinner {
+    spinner-style: line;
+    color: cyan;
+}
+
+/* Use custom animation frames */
+.custom-spinner {
+    spinner-frames: "⠋" "⠙" "⠹" "⠸" "⠼" "⠴" "⠦" "⠧";
+}
+
+/* spinner-frames overrides spinner-style when both are set */
+.fancy-spinner {
+    spinner-style: dots;
+    spinner-frames: "*" "+" "x" "+";  /* This takes precedence */
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Programmatic styles set via <code>spinnerStyle()</code>, <code>frameSet()</code>, or <code>frames()</code> take precedence over CSS styles.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>For Toolkit DSL users</strong>: Use <code>SpinnerElement</code> via <code>spinner()</code> factory methods. It manages state internally and advances automatically on each render. See <a href="#toolkit-dsl">Using Widgets with Toolkit DSL</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="input-widgets"><a class="anchor" href="#input-widgets"></a><a class="link" href="#input-widgets">Input Widgets</a></h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -819,7 +969,7 @@ scrollbar.render(area, buffer, state);</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="using-widgets-with-toolkit-dsl"><a class="anchor" href="#using-widgets-with-toolkit-dsl"></a><a class="link" href="#using-widgets-with-toolkit-dsl">Using Widgets with Toolkit DSL</a></h2>
+<h2 id="toolkit-dsl"><a class="anchor" href="#toolkit-dsl"></a><a class="link" href="#toolkit-dsl">Using Widgets with Toolkit DSL</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Toolkit DSL provides fluent factories for all widgets:</p>
@@ -849,6 +999,17 @@ gauge(0.75).label("Loading...").gaugeColor(Color.GREEN)
 // Sparkline
 sparkline(1, 4, 2, 8, 5).color(Color.CYAN)
 
+// Spinner (manages its own state, advances each render)
+spinner().cyan()
+spinner(SpinnerStyle.LINE, "Loading...").green()
+
+// Tree (expand/collapse, keyboard navigation, lazy loading)
+tree(
+    TreeNode.of("Root",
+        TreeNode.of("Child 1"),
+        TreeNode.of("Child 2"))
+).highlightColor(Color.CYAN).rounded().scrollbar()
+
 // TextInput
 textInput(inputState).placeholder("Enter name...")
 
@@ -869,7 +1030,7 @@ column(top, middle, bottom).spacing(1)</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-01-30 14:00:52 UTC
+Last updated 2026-01-31 22:01:03 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

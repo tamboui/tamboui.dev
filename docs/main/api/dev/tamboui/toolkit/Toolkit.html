@@ -145,6 +145,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#scrollbar(dev.tamboui.widgets.scrollbar.ScrollbarState)" tabindex="0">scrollbar(ScrollbarState)</a></li>
 <li><a href="#scrollbar(int,int,int)" tabindex="0">scrollbar(int, int, int)</a></li>
 <li><a href="#scrollbar()" tabindex="0">scrollbar()</a></li>
+<li><a href="#spinner()" tabindex="0">spinner()</a></li>
+<li><a href="#spinner(dev.tamboui.widgets.spinner.SpinnerStyle)" tabindex="0">spinner(SpinnerStyle)</a></li>
+<li><a href="#spinner(java.lang.String)" tabindex="0">spinner(String)</a></li>
+<li><a href="#spinner(dev.tamboui.widgets.spinner.SpinnerStyle,java.lang.String)" tabindex="0">spinner(SpinnerStyle, String)</a></li>
 <li><a href="#widget(T)" tabindex="0">widget(T)</a></li>
 <li><a href="#handleTextInputKey(dev.tamboui.widgets.input.TextInputState,dev.tamboui.tui.event.KeyEvent)" tabindex="0">handleTextInputKey(TextInputState, KeyEvent)</a></li>
 </ol>
@@ -557,6 +561,27 @@ panel("Title",
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sparkline(java.util.Collection)" class="member-name-link">sparkline</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;&nbsp;data)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a sparkline with the given data values.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spinner()" class="member-name-link">spinner</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a spinner with the default DOTS style.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spinner(dev.tamboui.widgets.spinner.SpinnerStyle)" class="member-name-link">spinner</a><wbr>(<a href="../widgets/spinner/SpinnerStyle.html" title="enum class in dev.tamboui.widgets.spinner">SpinnerStyle</a>&nbsp;style)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a spinner with the given style.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spinner(dev.tamboui.widgets.spinner.SpinnerStyle,java.lang.String)" class="member-name-link">spinner</a><wbr>(<a href="../widgets/spinner/SpinnerStyle.html" title="enum class in dev.tamboui.widgets.spinner">SpinnerStyle</a>&nbsp;style,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a spinner with the given style and label.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spinner(java.lang.String)" class="member-name-link">spinner</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a spinner with a label (DOTS style).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack()" class="member-name-link">stack</a>()</code></div>
@@ -1980,6 +2005,66 @@ This allows using styled elements directly:
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new scrollbar element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="spinner()">
+<h3>spinner</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></span>&nbsp;<span class="element-name">spinner</span>()</div>
+<div class="block">Creates a spinner with the default DOTS style.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new spinner element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="spinner(dev.tamboui.widgets.spinner.SpinnerStyle)">
+<h3>spinner</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></span>&nbsp;<span class="element-name">spinner</span><wbr><span class="parameters">(<a href="../widgets/spinner/SpinnerStyle.html" title="enum class in dev.tamboui.widgets.spinner">SpinnerStyle</a>&nbsp;style)</span></div>
+<div class="block">Creates a spinner with the given style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the spinner style</dd>
+<dt>Returns:</dt>
+<dd>a new spinner element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="spinner(java.lang.String)">
+<h3>spinner</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></span>&nbsp;<span class="element-name">spinner</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</span></div>
+<div class="block">Creates a spinner with a label (DOTS style).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the label text</dd>
+<dt>Returns:</dt>
+<dd>a new spinner element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="spinner(dev.tamboui.widgets.spinner.SpinnerStyle,java.lang.String)">
+<h3>spinner</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></span>&nbsp;<span class="element-name">spinner</span><wbr><span class="parameters">(<a href="../widgets/spinner/SpinnerStyle.html" title="enum class in dev.tamboui.widgets.spinner">SpinnerStyle</a>&nbsp;style,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</span></div>
+<div class="block">Creates a spinner with the given style and label.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the spinner style</dd>
+<dd><code>label</code> - the label text</dd>
+<dt>Returns:</dt>
+<dd>a new spinner element</dd>
 </dl>
 </div>
 </section>

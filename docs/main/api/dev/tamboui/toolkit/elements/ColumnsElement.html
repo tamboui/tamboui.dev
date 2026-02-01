@@ -112,27 +112,32 @@ loadScripts(document, 'script');</script>
 <div class="block">A multi-column grid layout container that arranges children into columns.
 <p>
 The column count is auto-calculated from the available width and the maximum
-preferred width of children, or can be set explicitly via <a href="#columnCount(int)"><code>columnCount(int)</code></a>.
+preferred width of children, or can be set explicitly via
+<a href="#columnCount(int)"><code>columnCount(int)</code></a>.
 <p>
 Items can be ordered row-first (default) or column-first:
 <ul>
-  <li>Row-first: items fill left-to-right, then top-to-bottom (like reading text)</li>
-  <li>Column-first: items fill top-to-bottom, then left-to-right (like newspaper columns)</li>
+<li>Row-first: items fill left-to-right, then top-to-bottom (like reading
+text)</li>
+<li>Column-first: items fill top-to-bottom, then left-to-right (like
+newspaper columns)</li>
 </ul>
 <p>
-All layout properties can be set via CSS or programmatically.
-Programmatic values override CSS values when both are set.
+All layout properties can be set via CSS or programmatically. Programmatic
+values override CSS values when both are set.
 <p>
 Supported CSS properties:
 <ul>
-  <li><code>flex</code> — "start", "center", "end", "space-between", "space-around", "space-evenly"</li>
-  <li><code>spacing</code> — gap between columns in cells</li>
-  <li><code>margin</code> — margin around the columns</li>
-  <li><code>column-count</code> — explicit number of columns</li>
-  <li><code>column-order</code> — "row-first" or "column-first"</li>
+<li><code>flex</code> — "start", "center", "end", "space-between", "space-around",
+"space-evenly"</li>
+<li><code>spacing</code> — gap between columns in cells</li>
+<li><code>margin</code> — margin around the columns</li>
+<li><code>column-count</code> — explicit number of columns</li>
+<li><code>column-order</code> — "row-first" or "column-first"</li>
 </ul>
 <p>
 Example usage:
+
 <pre>
 columns(text("A"), text("B"), text("C"), text("D")).columnCount(2).spacing(1)
 </pre></div>
@@ -236,7 +241,8 @@ columns(text("A"), text("B"), text("C"), text("D")).columnCount(2).spacing(1)
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element given an available width and render context.</div>
+<div class="block">Returns the preferred height of this element given an available width and
+render context.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
@@ -486,8 +492,8 @@ Equivalent to <code>order(ColumnOrder.COLUMN_FIRST)</code>.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells. Used when the element
+has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -502,13 +508,16 @@ Used when the element has a <a href="../../layout/Constraint.Fit.html" title="cl
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element given an available width and render context.
+<div class="block">Returns the preferred height of this element given an available width and
+render context.
 <p>
 This is useful for elements that may wrap content (like text) where the
 height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via CSS.
+height calculation where properties like <code>text-overflow</code> may be set via
+CSS.
 <p>
-When context is null, implementations should use programmatic property values only.</div>
+When context is null, implementations should use programmatic property values
+only.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>availableWidth</code> - the available width in cells</dd>
@@ -529,9 +538,9 @@ When context is null, implementations should use programmatic property values on
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering.
-The current style (CSS + inline, merged with parent styles) is available
-via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering. The
+current style (CSS + inline, merged with parent styles) is available via
+<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="ColumnsElement.html" title="class in dev.tamboui.toolkit.elements">ColumnsElement</a>&gt;</code></dd>

@@ -96,12 +96,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Configuration options for <a href="InlineTuiRunner.html" title="class in dev.tamboui.tui"><code>InlineTuiRunner</code></a>.
 <p>
 Unlike <a href="TuiConfig.html" title="class in dev.tamboui.tui"><code>TuiConfig</code></a>, this configuration is tailored for inline displays
-that stay within the normal terminal flow (no alternate screen, cursor stays visible).
+that stay within the normal terminal flow (no alternate screen, cursor stays
+visible).
 
-<pre><code>InlineTuiConfig config = InlineTuiConfig.builder(4)
-    .tickRate(Duration.ofMillis(50))  // For animations
-    .clearOnClose(true)
-    .build();
+<pre><code>InlineTuiConfig config = InlineTuiConfig.builder(4).tickRate(Duration.ofMillis(50)) // For
+                                                                                    // animations
+        .clearOnClose(true).build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -276,10 +276,10 @@ that stay within the normal terminal flow (no alternate screen, cursor stays vis
 <p>
 Defaults:
 <ul>
-  <li>Tick rate: 40ms (~25fps, suitable for animations)</li>
-  <li>Poll timeout: 40ms</li>
-  <li>Clear on close: false</li>
-  <li>Bindings: defaults</li>
+<li>Tick rate: 40ms (~25fps, suitable for animations)</li>
+<li>Poll timeout: 40ms</li>
+<li>Clear on close: false</li>
+<li>Bindings: defaults</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>

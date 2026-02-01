@@ -129,10 +129,13 @@ resolved through the underlying <a href="../../widgets/block/Block.html" title="
 <p>
 Layout properties can be set via CSS or programmatically:
 <ul>
-  <li><code>direction</code> - Layout direction: "horizontal"/"row" or "vertical"/"column"</li>
-  <li><code>flex</code> - Flex positioning mode: "start", "center", "end", "space-between", "space-around", "space-evenly"</li>
-  <li><code>margin</code> - Margin around the panel: single value or CSS-style shorthand</li>
-  <li><code>spacing</code> - Gap between children in cells</li>
+<li><code>direction</code> - Layout direction: "horizontal"/"row" or
+"vertical"/"column"</li>
+<li><code>flex</code> - Flex positioning mode: "start", "center", "end",
+"space-between", "space-around", "space-evenly"</li>
+<li><code>margin</code> - Margin around the panel: single value or CSS-style
+shorthand</li>
+<li><code>spacing</code> - Gap between children in cells</li>
 </ul>
 <p>
 Programmatic values override CSS values when both are set.</div>
@@ -271,7 +274,8 @@ Programmatic values override CSS values when both are set.</div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element given an available width and render context.</div>
+<div class="block">Returns the preferred height of this element given an available width and
+render context.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
@@ -432,6 +436,7 @@ Programmatic values override CSS values when both are set.</div>
 <div class="block">Sets the panel title with styled text.
 <p>
 Example:
+
 <pre><code>panel(...)
     .title(Line.from(
         Span.styled("Rich ", Style.EMPTY.fg(Color.CYAN).bold()),
@@ -527,15 +532,15 @@ Example:
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleAttributes()">Styleable</a></code></span></div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements
-based on their style attributes. This method returns a map of
-attribute names to their values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
+their style attributes. This method returns a map of attribute names to their
+values.
 <p>
 Common attributes include:
 <ul>
-  <li><code>title</code> - the element's title</li>
-  <li><code>label</code> - the element's label</li>
-  <li><code>placeholder</code> - the element's placeholder text</li>
+<li><code>title</code> - the element's title</li>
+<li><code>label</code> - the element's label</li>
+<li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -543,7 +548,8 @@ Common attributes include:
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#styleAttributes()">styleAttributes</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be
+        empty)</dd>
 </dl>
 </div>
 </section>
@@ -609,8 +615,8 @@ Common attributes include:
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></span>&nbsp;<span class="element-name">borderless</span>()</div>
 <div class="block">Makes this panel borderless.
 <p>
-This sets the border type to <a href="../../widgets/block/BorderType.html#NONE"><code>BorderType.NONE</code></a>, which renders
-no borders but still reserves space for them if borders are enabled.</div>
+This sets the border type to <a href="../../widgets/block/BorderType.html#NONE"><code>BorderType.NONE</code></a>, which renders no
+borders but still reserves space for them if borders are enabled.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>this panel for chaining</dd>
@@ -796,14 +802,14 @@ Can also be set via CSS <code>spacing</code> property.</div>
 <p>
 When enabled, the constraint is computed dynamically based on:
 <ul>
-  <li>Border overhead: 2 rows (top and bottom borders)</li>
-  <li>Padding overhead: vertical padding if set</li>
-  <li>Children height: sum of child heights (1 row each by default,
-      or the length from their constraint if specified)</li>
+<li>Border overhead: 2 rows (top and bottom borders)</li>
+<li>Padding overhead: vertical padding if set</li>
+<li>Children height: sum of child heights (1 row each by default, or the
+length from their constraint if specified)</li>
 </ul>
 <p>
-The height is computed when <a href="#constraint()"><code>constraint()</code></a> is called, so children
-can be added before or after calling this method.</div>
+The height is computed when <a href="#constraint()"><code>constraint()</code></a> is called, so children can
+be added before or after calling this method.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#fit()">fit</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a>&gt;</code></dd>
@@ -819,8 +825,8 @@ can be added before or after calling this method.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></span>&nbsp;<span class="element-name">constraint</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#constraint()">Element</a></code></span></div>
-<div class="block">Returns the layout constraint for this element, if any.
-Used by container elements to determine sizing.</div>
+<div class="block">Returns the layout constraint for this element, if any. Used by container
+elements to determine sizing.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#constraint()">constraint</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -838,8 +844,8 @@ Used by container elements to determine sizing.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells. Used when the element
+has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -854,13 +860,16 @@ Used when the element has a <a href="../../layout/Constraint.Fit.html" title="cl
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element given an available width and render context.
+<div class="block">Returns the preferred height of this element given an available width and
+render context.
 <p>
 This is useful for elements that may wrap content (like text) where the
 height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via CSS.
+height calculation where properties like <code>text-overflow</code> may be set via
+CSS.
 <p>
-When context is null, implementations should use programmatic property values only.</div>
+When context is null, implementations should use programmatic property values
+only.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>availableWidth</code> - the available width in cells</dd>
@@ -881,9 +890,9 @@ When context is null, implementations should use programmatic property values on
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering.
-The current style (CSS + inline, merged with parent styles) is available
-via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering. The
+current style (CSS + inline, merged with parent styles) is available via
+<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a>&gt;</code></dd>

@@ -88,23 +88,18 @@ loadScripts(document, 'script');</script>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
 <div class="block">A sparkline widget for displaying data trends in a compact form.
 <p>
-Sparklines are small, word-sized graphics that show data trends.
-Each data point is rendered as a bar using Unicode block characters
-with varying heights based on the value.
+Sparklines are small, word-sized graphics that show data trends. Each data
+point is rendered as a bar using Unicode block characters with varying
+heights based on the value.
 
 <pre><code>// Simple sparkline with data
-Sparkline sparkline = Sparkline.builder()
-    .data(1, 2, 3, 4, 5, 4, 3, 2, 1)
-    .style(Style.EMPTY.fg(Color.CYAN))
-    .build();
+Sparkline sparkline = Sparkline.builder().data(1, 2, 3, 4, 5, 4, 3, 2, 1)
+        .style(Style.EMPTY.fg(Color.CYAN)).build();
 
 // With block wrapper and custom max
-Sparkline sparkline2 = Sparkline.builder()
-    .data(dataArray)
-    .max(100)
-    .block(Block.bordered().title(Title.from("CPU Usage")))
-    .barSet(Sparkline.BarSet.THREE_LEVELS)
-    .build();
+Sparkline sparkline2 = Sparkline.builder().data(dataArray).max(100)
+        .block(Block.bordered().title(Title.from("CPU Usage")))
+        .barSet(Sparkline.BarSet.THREE_LEVELS).build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>

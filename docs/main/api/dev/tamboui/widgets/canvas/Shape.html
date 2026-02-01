@@ -84,8 +84,8 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">Shape</span></div>
 <div class="block">A shape that can be drawn on a <a href="Canvas.html" title="class in dev.tamboui.widgets.canvas"><code>Canvas</code></a>.
 <p>
-Implement this interface to create custom shapes that can be
-rendered using the Canvas widget's drawing infrastructure.
+Implement this interface to create custom shapes that can be rendered using
+the Canvas widget's drawing infrastructure.
 
 <pre><code>public class Cross implements Shape {
     private final double x, y, size;
@@ -95,13 +95,11 @@ rendered using the Canvas widget's drawing infrastructure.
     public void draw(Painter painter) {
         // Draw horizontal line
         for (double dx = -size; dx &lt;= size; dx += 0.5) {
-            painter.getPoint(x + dx, y).ifPresent(p -&gt;
-                painter.paint(p.x(), p.y(), color));
+            painter.getPoint(x + dx, y).ifPresent(p -&gt; painter.paint(p.x(), p.y(), color));
         }
         // Draw vertical line
         for (double dy = -size; dy &lt;= size; dy += 0.5) {
-            painter.getPoint(x, y + dy).ifPresent(p -&gt;
-                painter.paint(p.x(), p.y(), color));
+            painter.getPoint(x, y + dy).ifPresent(p -&gt; painter.paint(p.x(), p.y(), color));
         }
     }
 }
@@ -156,8 +154,8 @@ rendered using the Canvas widget's drawing infrastructure.
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(<a href="Painter.html" title="class in dev.tamboui.widgets.canvas">Painter</a>&nbsp;painter)</span></div>
 <div class="block">Draws this shape using the provided painter.
 <p>
-The painter provides methods to convert canvas coordinates
-to grid positions and to paint colored points.</div>
+The painter provides methods to convert canvas coordinates to grid positions
+and to paint colored points.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>painter</code> - the painter to use for drawing</dd>

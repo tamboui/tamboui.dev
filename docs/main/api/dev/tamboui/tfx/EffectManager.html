@@ -91,19 +91,24 @@ loadScripts(document, 'script');</script>
 <p>
 The EffectManager is responsible for:
 <ul>
-  <li><b>Effect Storage:</b> Maintaining a collection of active effects</li>
-  <li><b>Frame Processing:</b> Processing all effects each frame with the elapsed time</li>
-  <li><b>Lifecycle Management:</b> Automatically removing completed effects</li>
-  <li><b>Performance Optimization:</b> Providing <a href="#isRunning()"><code>isRunning()</code></a> to optimize render loops</li>
+<li><b>Effect Storage:</b> Maintaining a collection of active effects</li>
+<li><b>Frame Processing:</b> Processing all effects each frame with the
+elapsed time</li>
+<li><b>Lifecycle Management:</b> Automatically removing completed
+effects</li>
+<li><b>Performance Optimization:</b> Providing <a href="#isRunning()"><code>isRunning()</code></a> to
+optimize render loops</li>
 </ul>
 <p>
 <b>Design Philosophy:</b>
 <p>
-The EffectManager follows a "fire and forget" pattern. Once an effect is added,
-it will be processed automatically each frame until completion, at which point it
-is removed. This eliminates the need for manual effect lifecycle management.
+The EffectManager follows a "fire and forget" pattern. Once an effect is
+added, it will be processed automatically each frame until completion, at
+which point it is removed. This eliminates the need for manual effect
+lifecycle management.
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>EffectManager manager = new EffectManager();
 
 // Add effects
@@ -234,8 +239,8 @@ The effect will be processed each frame until it is complete.</div>
 <div class="block">Returns whether there are any active effects currently being managed.
 <p>
 This method is useful for optimizing render loops: if <code>isRunning()</code>
-returns <code>false</code> and there are no other state changes, the UI redraw
-can be skipped.</div>
+returns <code>false</code> and there are no other state changes, the UI redraw can
+be skipped.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if there are active effects, false otherwise</dd>
@@ -252,9 +257,8 @@ can be skipped.</div>
  <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
 <div class="block">Processes all active effects for the given duration.
 <p>
-This method should be called each frame in your render loop. It will:
-1. Process each effect for the specified duration
-2. Remove completed effects</div>
+This method should be called each frame in your render loop. It will: 1.
+Process each effect for the specified duration 2. Remove completed effects</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The time elapsed since the last frame</dd>

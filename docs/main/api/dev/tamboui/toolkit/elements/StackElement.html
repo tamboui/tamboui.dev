@@ -107,26 +107,25 @@ loadScripts(document, 'script');</script>
 <div class="block">An overlapping layers layout element where children render on top of each
 other using a painter's algorithm (last child on top).
 <p>
-Essential for dialogs, popups, floating overlays, and any scenario
-where UI elements need to overlap.
+Essential for dialogs, popups, floating overlays, and any scenario where UI
+elements need to overlap.
 <p>
-All layout properties can be set via CSS or programmatically.
-Programmatic values override CSS values when both are set.
+All layout properties can be set via CSS or programmatically. Programmatic
+values override CSS values when both are set.
 <p>
 Supported CSS properties:
 <ul>
-  <li><code>content-align</code> — how children are aligned within the stack
-      (default: <code>stretch</code>)</li>
-  <li><code>margin</code> — margin around the stack layout</li>
-  <li><code>background</code> — background color fill</li>
+<li><code>content-align</code> — how children are aligned within the stack
+(default: <code>stretch</code>)</li>
+<li><code>margin</code> — margin around the stack layout</li>
+<li><code>background</code> — background color fill</li>
 </ul>
 <p>
 Example usage:
+
 <pre>
-stack(
-    text("Background").fill(),
-    panel("Dialog", text("Content")).rounded()
-).alignment(ContentAlignment.CENTER)
+stack(text("Background").fill(), panel("Dialog", text("Content")).rounded())
+        .alignment(ContentAlignment.CENTER)
 </pre></div>
 </div>
 </section>
@@ -208,7 +207,8 @@ stack(
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element given an available width and render context.</div>
+<div class="block">Returns the preferred height of this element given an available width and
+render context.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
@@ -318,8 +318,8 @@ stack(
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></span>&nbsp;<span class="element-name">alignment</span><wbr><span class="parameters">(<a href="../../layout/ContentAlignment.html" title="enum class in dev.tamboui.layout">ContentAlignment</a>&nbsp;alignment)</span></div>
 <div class="block">Sets how children are aligned within the stack.
 <p>
-Default is <a href="../../layout/ContentAlignment.html#STRETCH"><code>ContentAlignment.STRETCH</code></a> which fills
-children to the full area.</div>
+Default is <a href="../../layout/ContentAlignment.html#STRETCH"><code>ContentAlignment.STRETCH</code></a> which fills children to the full
+area.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>alignment</code> - the alignment mode</dd>
@@ -365,8 +365,8 @@ children to the full area.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells. Used when the element
+has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -381,13 +381,16 @@ Used when the element has a <a href="../../layout/Constraint.Fit.html" title="cl
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element given an available width and render context.
+<div class="block">Returns the preferred height of this element given an available width and
+render context.
 <p>
 This is useful for elements that may wrap content (like text) where the
 height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via CSS.
+height calculation where properties like <code>text-overflow</code> may be set via
+CSS.
 <p>
-When context is null, implementations should use programmatic property values only.</div>
+When context is null, implementations should use programmatic property values
+only.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>availableWidth</code> - the available width in cells</dd>
@@ -408,9 +411,9 @@ When context is null, implementations should use programmatic property values on
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering.
-The current style (CSS + inline, merged with parent styles) is available
-via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering. The
+current style (CSS + inline, merged with parent styles) is available via
+<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a>&gt;</code></dd>

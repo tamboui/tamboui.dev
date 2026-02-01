@@ -100,50 +100,54 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="TFxColorSpace.html" title="enum class in dev.tamboui.tfx">TFxColorSpace</a>&gt;</span></div>
 <div class="block">Defines the color space used for color interpolation in effects.
 <p>
-Color spaces determine how colors are interpolated between start and end values.
-Different color spaces produce different visual results, particularly when transitioning
-between colors with different hues or saturation levels.
+Color spaces determine how colors are interpolated between start and end
+values. Different color spaces produce different visual results, particularly
+when transitioning between colors with different hues or saturation levels.
 <p>
 <b>Design Philosophy:</b>
 <p>
-Color space selection balances performance and perceptual quality. RGB is fastest
-but can produce perceptually non-uniform transitions (e.g., muddy gray midpoints).
-HSL and HSV provide better perceptual uniformity at the cost of additional computation.
+Color space selection balances performance and perceptual quality. RGB is
+fastest but can produce perceptually non-uniform transitions (e.g., muddy
+gray midpoints). HSL and HSV provide better perceptual uniformity at the cost
+of additional computation.
 <p>
 <b>Color Space Characteristics:</b>
 <ul>
-  <li><b>RGB:</b> Linear interpolation in RGB space. Fastest but can produce
-      perceptually incorrect transitions, especially between saturated colors.</li>
-  <li><b>HSL:</b> Interpolation in Hue-Saturation-Lightness space. Default choice
-      providing good balance of performance and perceptual quality. Produces smooth
-      hue transitions and maintains saturation better than RGB.</li>
-  <li><b>HSV:</b> Interpolation in Hue-Saturation-Value space. Similar to HSL but
-      with a different perceptual model. Value represents brightness differently
-      than Lightness in HSL.</li>
+<li><b>RGB:</b> Linear interpolation in RGB space. Fastest but can produce
+perceptually incorrect transitions, especially between saturated colors.</li>
+<li><b>HSL:</b> Interpolation in Hue-Saturation-Lightness space. Default
+choice providing good balance of performance and perceptual quality. Produces
+smooth hue transitions and maintains saturation better than RGB.</li>
+<li><b>HSV:</b> Interpolation in Hue-Saturation-Value space. Similar to HSL
+but with a different perceptual model. Value represents brightness
+differently than Lightness in HSL.</li>
 </ul>
 <p>
 <b>When to Use Each:</b>
 <ul>
-  <li><b>RGB:</b> Use for performance-critical scenarios or when interpolating
-      between similar colors where perceptual differences are minimal</li>
-  <li><b>HSL:</b> Use as default for most fade effects, especially when transitioning
-      between colors with different hues</li>
-  <li><b>HSV:</b> Use when you need a different perceptual model than HSL, or
-      when transitioning between colors where Value is more important than Lightness</li>
+<li><b>RGB:</b> Use for performance-critical scenarios or when interpolating
+between similar colors where perceptual differences are minimal</li>
+<li><b>HSL:</b> Use as default for most fade effects, especially when
+transitioning between colors with different hues</li>
+<li><b>HSV:</b> Use when you need a different perceptual model than HSL, or
+when transitioning between colors where Value is more important than
+Lightness</li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>// Use HSL for smooth hue transitions (default)
 Effect fade = Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut)
-    .withColorSpace(TFxColorSpace.HSL);
+        .withColorSpace(TFxColorSpace.HSL);
 
 // Use RGB for performance
 Effect fastFade = Fx.fadeToFg(Color.CYAN, 2000, Interpolation.Linear)
-    .withColorSpace(TFxColorSpace.RGB);
+        .withColorSpace(TFxColorSpace.RGB);
 </code></pre>
 <p>
-This enum also provides utility methods for creating colors from HSL and HSV values,
-which can be useful for creating color palettes or converting between color representations.</div>
+This enum also provides utility methods for creating colors from HSL and HSV
+values, which can be useful for creating color palettes or converting between
+color representations.</div>
 </div>
 </section>
 <section class="summary">
@@ -390,9 +394,8 @@ not permitted.)</div>
 <dt>Parameters:</dt>
 <dd><code>color</code> - The color to convert</dd>
 <dt>Returns:</dt>
-<dd>An array [hue, saturation, lightness] where:
-        - hue is in degrees (0-360)
-        - saturation and lightness are percentages (0-100)</dd>
+<dd>An array [hue, saturation, lightness] where: - hue is in degrees
+        (0-360) - saturation and lightness are percentages (0-100)</dd>
 </dl>
 </div>
 </section>
@@ -407,8 +410,7 @@ not permitted.)</div>
 <dt>Parameters:</dt>
 <dd><code>color</code> - The color to convert</dd>
 <dt>Returns:</dt>
-<dd>An array [hue, saturation, value] where:
-        - hue is in degrees (0-360)
+<dd>An array [hue, saturation, value] where: - hue is in degrees (0-360)
         - saturation and value are percentages (0-100)</dd>
 </dl>
 </div>

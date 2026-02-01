@@ -92,8 +92,8 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Detects and caches terminal image capabilities.
 <p>
-Detection is performed using environment variables to identify the terminal emulator.
-This approach is fast (no I/O) and works in most cases.
+Detection is performed using environment variables to identify the terminal
+emulator. This approach is fast (no I/O) and works in most cases.
 
 <pre><code>TerminalImageCapabilities caps = TerminalImageCapabilities.detect();
 ImageProtocol protocol = caps.bestProtocol();
@@ -101,16 +101,43 @@ ImageProtocol protocol = caps.bestProtocol();
 
 <h2 id="terminal-detection-heading">Terminal Detection</h2>
 <table>
-  <caption>Environment variable to protocol mapping</caption>
-  <tr><th>Environment</th><th>Protocol</th></tr>
-  <tr><td>KITTY_WINDOW_ID</td><td>Kitty</td></tr>
-  <tr><td>TERM=xterm-kitty</td><td>Kitty</td></tr>
-  <tr><td>TERM=xterm-ghostty</td><td>Kitty</td></tr>
-  <tr><td>WEZTERM_PANE</td><td>Kitty</td></tr>
-  <tr><td>ITERM_SESSION_ID</td><td>iTerm2</td></tr>
-  <tr><td>TERM=rio</td><td>iTerm2, Sixel</td></tr>
-  <tr><td>KONSOLE_VERSION</td><td>Sixel</td></tr>
-  <tr><td>TERM contains mlterm</td><td>Sixel</td></tr>
+<caption>Environment variable to protocol mapping</caption>
+<tr>
+<th>Environment</th>
+<th>Protocol</th>
+</tr>
+<tr>
+<td>KITTY_WINDOW_ID</td>
+<td>Kitty</td>
+</tr>
+<tr>
+<td>TERM=xterm-kitty</td>
+<td>Kitty</td>
+</tr>
+<tr>
+<td>TERM=xterm-ghostty</td>
+<td>Kitty</td>
+</tr>
+<tr>
+<td>WEZTERM_PANE</td>
+<td>Kitty</td>
+</tr>
+<tr>
+<td>ITERM_SESSION_ID</td>
+<td>iTerm2</td>
+</tr>
+<tr>
+<td>TERM=rio</td>
+<td>iTerm2, Sixel</td>
+</tr>
+<tr>
+<td>KONSOLE_VERSION</td>
+<td>Sixel</td>
+</tr>
+<tr>
+<td>TERM contains mlterm</td>
+<td>Sixel</td>
+</tr>
 </table></div>
 </div>
 </section>

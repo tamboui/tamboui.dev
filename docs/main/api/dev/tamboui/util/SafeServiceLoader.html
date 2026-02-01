@@ -82,16 +82,14 @@ loadScripts(document, 'script');</script>
 and continuing to try other providers.
 
 It will skip providers that fail due to service configuration issues, newer
-classfile versions,
-or linkage problems (missing deps / binary incompatibilities), and continues
-trying to
-locate other providers. Has a stop-gap to prevent (theoretical possible)
-infinite loop.
+classfile versions, or linkage problems (missing deps / binary
+incompatibilities), and continues trying to locate other providers. Has a
+stop-gap to prevent (theoretical possible) infinite loop.
 
-This works on Java 8+ relying on the ServiceLoader API that states:
-"If an error is thrown then subsequent invocations of the iterator will make
-a best effort to locate and instantiate the next available provider, but in
-general such recovery cannot be guaranteed."</div>
+This works on Java 8+ relying on the ServiceLoader API that states: "If an
+error is thrown then subsequent invocations of the iterator will make a best
+effort to locate and instantiate the next available provider, but in general
+such recovery cannot be guaranteed."</div>
 </div>
 </section>
 <section class="summary">
@@ -110,13 +108,15 @@ general such recovery cannot be guaranteed."</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;S&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.Class)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;S&gt;&nbsp;service)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Loads providers for the given service, skipping broken providers and continuing to try other providers.</div>
+<div class="block">Loads providers for the given service, skipping broken providers and
+continuing to try other providers.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;S&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.Class,java.util.function.Consumer)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;S&gt;&nbsp;service,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&nbsp;onError)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Loads providers for the given service, skipping broken providers and continuing to try other providers.</div>
+<div class="block">Loads providers for the given service, skipping broken providers and
+continuing to try other providers.</div>
 </div>
 </div>
 </div>
@@ -141,13 +141,15 @@ general such recovery cannot be guaranteed."</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;S&gt;&nbsp;service,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&nbsp;onError)</span></div>
-<div class="block">Loads providers for the given service, skipping broken providers and continuing to try other providers.</div>
+<div class="block">Loads providers for the given service, skipping broken providers and
+continuing to try other providers.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="load(java.lang.Class,java.util.function.Consumer)-type-param-S"><code>S</code> - service type</span></dd>
 <dt>Parameters:</dt>
 <dd><code>service</code> - the SPI interface/class</dd>
-<dd><code>onError</code> - optional sink for errors encountered while iterating/instantiating providers</dd>
+<dd><code>onError</code> - optional sink for errors encountered while iterating/instantiating
+           providers</dd>
 <dt>Returns:</dt>
 <dd>list of successfully instantiated providers (no duplicates)</dd>
 </dl>
@@ -159,7 +161,8 @@ general such recovery cannot be guaranteed."</div>
 <h3>load</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;S&gt;&nbsp;service)</span></div>
-<div class="block">Loads providers for the given service, skipping broken providers and continuing to try other providers.</div>
+<div class="block">Loads providers for the given service, skipping broken providers and
+continuing to try other providers.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="load(java.lang.Class)-type-param-S"><code>S</code> - service type</span></dd>

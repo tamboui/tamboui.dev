@@ -94,26 +94,18 @@ loadScripts(document, 'script');</script>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
 <div class="block">A bar chart widget for displaying grouped data.
 <p>
-Supports both vertical (default) and horizontal bar orientations,
-with customizable bar widths, gaps, and styling.
+Supports both vertical (default) and horizontal bar orientations, with
+customizable bar widths, gaps, and styling.
 
 <pre><code>// Simple bar chart with values
-BarChart chart = BarChart.builder()
-    .data(BarGroup.of(10, 20, 30, 40))
-    .build();
+BarChart chart = BarChart.builder().data(BarGroup.of(10, 20, 30, 40)).build();
 
 // Grouped bar chart with labels
 BarChart chart2 = BarChart.builder()
-    .data(
-        BarGroup.of("Q1", Bar.of(100, "Jan"), Bar.of(150, "Feb")),
-        BarGroup.of("Q2", Bar.of(120, "Mar"), Bar.of(180, "Apr"))
-    )
-    .barWidth(3)
-    .barGap(1)
-    .groupGap(2)
-    .barStyle(Style.EMPTY.fg(Color.CYAN))
-    .block(Block.bordered().title(Title.from("Sales")))
-    .build();
+        .data(BarGroup.of("Q1", Bar.of(100, "Jan"), Bar.of(150, "Feb")),
+                BarGroup.of("Q2", Bar.of(120, "Mar"), Bar.of(180, "Apr")))
+        .barWidth(3).barGap(1).groupGap(2).barStyle(Style.EMPTY.fg(Color.CYAN))
+        .block(Block.bordered().title(Title.from("Sales"))).build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>

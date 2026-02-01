@@ -94,12 +94,12 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Efficient byte array builder optimized for terminal output.
 <p>
-This class is designed for the common case of ASCII escape sequences
-mixed with UTF-8 cell symbols. It avoids the overhead of StringBuilder
-followed by String.getBytes() by building the byte array directly.
+This class is designed for the common case of ASCII escape sequences mixed
+with UTF-8 cell symbols. It avoids the overhead of StringBuilder followed by
+String.getBytes() by building the byte array directly.
 <p>
-ASCII operations (escape sequences, integers) write bytes directly.
-UTF-8 operations (cell symbols) encode only when necessary.</div>
+ASCII operations (escape sequences, integers) write bytes directly. UTF-8
+operations (cell symbols) encode only when necessary.</div>
 </div>
 </section>
 <section class="summary">
@@ -270,9 +270,9 @@ This is equivalent to appending ESC followed by '['.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteArrayBuilder.html" title="class in dev.tamboui.backend.panama">ByteArrayBuilder</a></span>&nbsp;<span class="element-name">appendAscii</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span></div>
 <div class="block">Appends an ASCII string without charset encoding.
 <p>
-This method assumes the string contains only ASCII characters (0-127).
-It is faster than <a href="#appendUtf8(java.lang.String)"><code>appendUtf8(String)</code></a> for escape sequences
-and other ASCII-only content.</div>
+This method assumes the string contains only ASCII characters (0-127). It is
+faster than <a href="#appendUtf8(java.lang.String)"><code>appendUtf8(String)</code></a> for escape sequences and other
+ASCII-only content.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the ASCII string to append</dd>
@@ -289,8 +289,8 @@ and other ASCII-only content.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteArrayBuilder.html" title="class in dev.tamboui.backend.panama">ByteArrayBuilder</a></span>&nbsp;<span class="element-name">appendInt</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
 <div class="block">Appends a non-negative integer as ASCII digits.
 <p>
-This method converts the integer directly to ASCII digit bytes
-without creating intermediate String objects.</div>
+This method converts the integer directly to ASCII digit bytes without
+creating intermediate String objects.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - the non-negative integer to append</dd>
@@ -307,11 +307,11 @@ without creating intermediate String objects.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteArrayBuilder.html" title="class in dev.tamboui.backend.panama">ByteArrayBuilder</a></span>&nbsp;<span class="element-name">appendUtf8</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span></div>
 <div class="block">Appends a UTF-8 encoded string.
 <p>
-Use this method for cell symbols which may contain multi-byte
-UTF-8 characters (box-drawing, CJK, emoji, etc.).
+Use this method for cell symbols which may contain multi-byte UTF-8
+characters (box-drawing, CJK, emoji, etc.).
 <p>
-Optimized for the common case of ASCII-only strings to avoid
-the overhead of <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#getBytes(java.nio.charset.Charset)" title="class or interface in java.lang" class="external-link"><code>String.getBytes(java.nio.charset.Charset)</code></a>.</div>
+Optimized for the common case of ASCII-only strings to avoid the overhead of
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#getBytes(java.nio.charset.Charset)" title="class or interface in java.lang" class="external-link"><code>String.getBytes(java.nio.charset.Charset)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the string to append as UTF-8</dd>
@@ -328,8 +328,8 @@ the overhead of <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">buffer</span>()</div>
 <div class="block">Returns the internal buffer.
 <p>
-The returned array may be larger than the actual content.
-Use <a href="#length()"><code>length()</code></a> to determine the valid data length.</div>
+The returned array may be larger than the actual content. Use
+<a href="#length()"><code>length()</code></a> to determine the valid data length.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the internal byte array</dd>
@@ -357,8 +357,8 @@ Use <a href="#length()"><code>length()</code></a> to determine the valid data le
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">reset</span>()</div>
 <div class="block">Resets the builder for reuse.
 <p>
-This method clears the position but retains the allocated buffer
-for efficient reuse across frames.</div>
+This method clears the position but retains the allocated buffer for
+efficient reuse across frames.</div>
 </div>
 </section>
 </li>
@@ -369,8 +369,8 @@ for efficient reuse across frames.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">toByteArray</span>()</div>
 <div class="block">Creates a new byte array containing only the valid data.
 <p>
-This method allocates a new array. For zero-copy writes,
-use <a href="#buffer()"><code>buffer()</code></a> with <a href="#length()"><code>length()</code></a> instead.</div>
+This method allocates a new array. For zero-copy writes, use
+<a href="#buffer()"><code>buffer()</code></a> with <a href="#length()"><code>length()</code></a> instead.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new byte array with the buffer contents</dd>

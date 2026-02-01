@@ -85,7 +85,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Protocol for rendering images to a terminal.
 <p>
 Implementations may render images using character-based approximations
-(half-blocks, Braille patterns) or native terminal protocols (Sixel, Kitty, iTerm2).</div>
+(half-blocks, Braille patterns) or native terminal protocols (Sixel, Kitty,
+iTerm2).</div>
 </div>
 </section>
 <section class="summary">
@@ -171,14 +172,15 @@ Implementations may render images using character-based approximations
      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Renders the image to the given terminal area.
 <p>
-Character-based protocols write directly to the buffer.
-Native protocols write to the raw output stream.</div>
+Character-based protocols write directly to the buffer. Native protocols
+write to the raw output stream.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>image</code> - the image data to render</dd>
 <dd><code>area</code> - the terminal area (in character cells) to render into</dd>
 <dd><code>buffer</code> - the buffer for character-based rendering</dd>
-<dd><code>rawOutput</code> - the output stream for native protocol escape sequences (may be null)</dd>
+<dd><code>rawOutput</code> - the output stream for native protocol escape sequences (may be
+           null)</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if writing to rawOutput fails</dd>
 </dl>
@@ -192,8 +194,9 @@ Native protocols write to the raw output stream.</div>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">requiresRawOutput</span>()</div>
 <div class="block">Returns true if this protocol requires raw byte output.
 <p>
-Character-based protocols (half-block, braille) return false and use the buffer.
-Native protocols (Sixel, Kitty, iTerm2) return true and use rawOutput.</div>
+Character-based protocols (half-block, braille) return false and use the
+buffer. Native protocols (Sixel, Kitty, iTerm2) return true and use
+rawOutput.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if raw output is required</dd>
@@ -210,9 +213,9 @@ Native protocols (Sixel, Kitty, iTerm2) return true and use rawOutput.</div>
 <p>
 This indicates how many "virtual pixels" each terminal cell can represent:
 <ul>
-  <li>Half-block: 1x2 (1 column, 2 rows per cell)</li>
-  <li>Braille: 2x4 (2 columns, 4 rows per cell)</li>
-  <li>Native protocols: depends on cell pixel size</li>
+<li>Half-block: 1x2 (1 column, 2 rows per cell)</li>
+<li>Braille: 2x4 (2 columns, 4 rows per cell)</li>
+<li>Native protocols: depends on cell pixel size</li>
 </ul></div>
 <dl class="notes">
 <dt>Returns:</dt>

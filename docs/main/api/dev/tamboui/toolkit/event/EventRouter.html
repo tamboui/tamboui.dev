@@ -96,16 +96,17 @@ loadScripts(document, 'script');</script>
 <p>
 Events are routed as follows:
 <ul>
-  <li>Key events go to the focused element</li>
-  <li>Mouse events go to the element at the mouse position</li>
-  <li>Tab/Shift+Tab navigate focus</li>
-  <li>Drag events are tracked and routed to the dragged element</li>
+<li>Key events go to the focused element</li>
+<li>Mouse events go to the element at the mouse position</li>
+<li>Tab/Shift+Tab navigate focus</li>
+<li>Drag events are tracked and routed to the dragged element</li>
 </ul>
 <p>
 Events can be consumed by handlers to stop propagation.
 <p>
 The router uses an <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element"><code>ElementRegistry</code></a> to track element areas by ID,
-which can be used by external systems (like effects) to look up element positions.</div>
+which can be used by external systems (like effects) to look up element
+positions.</div>
 </div>
 </section>
 <section class="summary">
@@ -249,8 +250,8 @@ Global handlers can intercept events before they reach elements.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addGlobalHandler</span><wbr><span class="parameters">(<a href="../../tui/bindings/ActionHandler.html" title="class in dev.tamboui.tui.bindings">ActionHandler</a>&nbsp;handler)</span></div>
 <div class="block">Adds an action handler as a global event handler.
 <p>
-This is a convenience method that wraps the action handler.
-Events are dispatched to the action handler before reaching elements.</div>
+This is a convenience method that wraps the action handler. Events are
+dispatched to the action handler before reaching elements.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>handler</code> - the action handler to add</dd>
@@ -277,15 +278,15 @@ Events are dispatched to the action handler before reaching elements.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerElement</span><wbr><span class="parameters">(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
-<div class="block">Registers an element for event routing.
-Called during rendering to build the element list.
-The area is stored internally - elements don't need to track it.
+<div class="block">Registers an element for event routing. Called during rendering to build the
+element list. The area is stored internally - elements don't need to track
+it.
 <p>
-If an element is already registered, this updates its area but
-does not add a duplicate entry.
+If an element is already registered, this updates its area but does not add a
+duplicate entry.
 <p>
-Elements are also registered in the <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element"><code>ElementRegistry</code></a>
-for CSS-like queries by external systems (like effects).</div>
+Elements are also registered in the <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element"><code>ElementRegistry</code></a> for CSS-like
+queries by external systems (like effects).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>element</code> - the element to register</dd>
@@ -299,8 +300,8 @@ for CSS-like queries by external systems (like effects).</div>
 <h3>clear</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
-<div class="block">Clears all registered elements.
-Should be called at the start of each render cycle.</div>
+<div class="block">Clears all registered elements. Should be called at the start of each render
+cycle.</div>
 </div>
 </section>
 </li>
@@ -311,9 +312,10 @@ Should be called at the start of each render cycle.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">route</span><wbr><span class="parameters">(<a href="../../tui/event/Event.html" title="interface in dev.tamboui.tui.event">Event</a>&nbsp;event)</span></div>
 <div class="block">Routes an event to the appropriate element(s).
 <p>
-For key events, the focused element is given first chance to handle the event.
-This allows text inputs to consume character keys before global handlers see them.
-Global handlers are called after element routing if the event wasn't handled.</div>
+For key events, the focused element is given first chance to handle the
+event. This allows text inputs to consume character keys before global
+handlers see them. Global handlers are called after element routing if the
+event wasn't handled.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>event</code> - the event to route</dd>
@@ -369,8 +371,8 @@ Global handlers are called after element routing if the event wasn't handled.</d
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a></span>&nbsp;<span class="element-name">elementRegistry</span>()</div>
 <div class="block">Returns the element registry used by this router.
 <p>
-The registry contains ID-to-area mappings for all elements with IDs.
-External systems (like effects) can use this to look up element positions.</div>
+The registry contains ID-to-area mappings for all elements with IDs. External
+systems (like effects) can use this to look up element positions.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the element registry</dd>

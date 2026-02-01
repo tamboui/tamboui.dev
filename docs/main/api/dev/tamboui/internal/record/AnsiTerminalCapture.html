@@ -91,13 +91,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">AnsiTerminalCapture</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a></span></div>
-<div class="block">Captures raw bytes written to System.out for recording inline demos.
-Instead of parsing ANSI sequences into a virtual buffer, this captures
-the raw byte stream and replays it directly in the cast file.
+<div class="block">Captures raw bytes written to System.out for recording inline demos. Instead
+of parsing ANSI sequences into a virtual buffer, this captures the raw byte
+stream and replays it directly in the cast file.
 <p>
-This approach provides perfect fidelity - the cast file contains exactly
-what was written to stdout, and the asciinema player interprets the
-ANSI sequences correctly.
+This approach provides perfect fidelity - the cast file contains exactly what
+was written to stdout, and the asciinema player interprets the ANSI sequences
+correctly.
 <p>
 This is an internal API and not part of the public contract.</div>
 </div>
@@ -179,8 +179,8 @@ This is an internal API and not part of the public contract.</div>
 <h3>install</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">install</span><wbr><span class="parameters">(<a href="RecordingConfig.html" title="class in dev.tamboui.internal.record">RecordingConfig</a>&nbsp;config)</span></div>
-<div class="block">Installs the capture by replacing System.out.
-Does nothing if already installed or if config is null.</div>
+<div class="block">Installs the capture by replacing System.out. Does nothing if already
+installed or if config is null.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>config</code> - the recording configuration</dd>

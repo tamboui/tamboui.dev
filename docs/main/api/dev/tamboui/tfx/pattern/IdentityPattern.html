@@ -92,7 +92,8 @@ loadScripts(document, 'script');</script>
 implements <a href="Pattern.html" title="interface in dev.tamboui.tfx.pattern">Pattern</a></span></div>
 <div class="block">Identity pattern that returns the global alpha unchanged.
 <p>
-This is the default pattern - it allows effects to work without spatial patterns.</div>
+This is the default pattern - it allows effects to work without spatial
+patterns.</div>
 </div>
 </section>
 <section class="summary">
@@ -131,7 +132,8 @@ This is the default pattern - it allows effects to work without spatial patterns
  int&nbsp;y,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Maps a global alpha value to a position-specific alpha value using primitive coordinates.</div>
+<div class="block">Maps a global alpha value to a position-specific alpha value using primitive
+coordinates.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mapAlpha(float,dev.tamboui.layout.Position,dev.tamboui.layout.Rect)" class="member-name-link">mapAlpha</a><wbr>(float&nbsp;globalAlpha,
@@ -210,10 +212,11 @@ This is the default pattern - it allows effects to work without spatial patterns
  int&nbsp;y,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Pattern.html#mapAlpha(float,int,int,dev.tamboui.layout.Rect)">Pattern</a></code></span></div>
-<div class="block">Maps a global alpha value to a position-specific alpha value using primitive coordinates.
+<div class="block">Maps a global alpha value to a position-specific alpha value using primitive
+coordinates.
 <p>
-This overload avoids Position object allocation in performance-critical loops.
-The default implementation creates a Position and delegates to
+This overload avoids Position object allocation in performance-critical
+loops. The default implementation creates a Position and delegates to
 <a href="Pattern.html#mapAlpha(float,dev.tamboui.layout.Position,dev.tamboui.layout.Rect)"><code>Pattern.mapAlpha(float, Position, Rect)</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>

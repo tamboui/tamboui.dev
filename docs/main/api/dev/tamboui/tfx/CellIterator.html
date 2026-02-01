@@ -96,11 +96,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base
 <div class="block">An iterator over terminal cells within a rectangular area.
 <p>
 CellIterator provides efficient access to terminal cells in a Buffer within a
-specified rectangular region. It supports optional filtering via CellFilter to
-selectively process cells based on their properties.
+specified rectangular region. It supports optional filtering via CellFilter
+to selectively process cells based on their properties.
 <p>
-For optimal performance, prefer <a href="#forEachCell(java.util.function.BiConsumer)"><code>forEachCell(java.util.function.BiConsumer)</code></a>
-over iterator-based iteration when you don't need iterator combinators.</div>
+For optimal performance, prefer
+<a href="#forEachCell(java.util.function.BiConsumer)"><code>forEachCell(java.util.function.BiConsumer)</code></a> over iterator-based
+iteration when you don't need iterator combinators.</div>
 </div>
 </section>
 <section class="summary">
@@ -149,7 +150,8 @@ over iterator-based iteration when you don't need iterator combinators.</div>
  <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a>&nbsp;filter)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a new CellIterator over the specified area of a buffer with filtering.</div>
+<div class="block">Creates a new CellIterator over the specified area of a buffer with
+filtering.</div>
 </div>
 </div>
 </section>
@@ -179,7 +181,8 @@ over iterator-based iteration when you don't need iterator combinators.</div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#forEachCellMutable(java.util.function.BiConsumer)" class="member-name-link">forEachCellMutable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>, <a href="CellIterator.MutableCell.html" title="class in dev.tamboui.tfx">CellIterator.MutableCell</a>&gt;&nbsp;consumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use <a href="#forEachCellMutable(dev.tamboui.tfx.CellIterator.CellMutator)"><code>forEachCellMutable(CellMutator)</code></a> instead for better performance</div>
+<div class="deprecation-comment">Use <a href="#forEachCellMutable(dev.tamboui.tfx.CellIterator.CellMutator)"><code>forEachCellMutable(CellMutator)</code></a> instead for better
+            performance</div>
 </div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="CellIterator.CellEntry.html" title="class in dev.tamboui.tfx">CellIterator.CellEntry</a>&gt;</code></div>
@@ -227,7 +230,8 @@ over iterator-based iteration when you don't need iterator combinators.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CellIterator</span><wbr><span class="parameters">(<a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
  <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="CellFilter.html" title="class in dev.tamboui.tfx">CellFilter</a>&nbsp;filter)</span></div>
-<div class="block">Creates a new CellIterator over the specified area of a buffer with filtering.</div>
+<div class="block">Creates a new CellIterator over the specified area of a buffer with
+filtering.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>buffer</code> - The buffer to iterate over</dd>
@@ -256,8 +260,8 @@ This is the preferred method for iterating over cells when you don't need
 iterator combinators. It's significantly faster than using the Iterator
 interface because it avoids coordinate calculations.
 <p>
-The function receives the cell's position and the cell itself. To modify
-the cell, use <a href="../buffer/Buffer.html#set(dev.tamboui.layout.Position,dev.tamboui.buffer.Cell)"><code>Buffer.set(Position, Cell)</code></a>.</div>
+The function receives the cell's position and the cell itself. To modify the
+cell, use <a href="../buffer/Buffer.html#set(dev.tamboui.layout.Position,dev.tamboui.buffer.Cell)"><code>Buffer.set(Position, Cell)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>consumer</code> - A function that takes (Position, Cell) and processes each cell</dd>
@@ -272,7 +276,8 @@ the cell, use <a href="../buffer/Buffer.html#set(dev.tamboui.layout.Position,dev
 <div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forEachCellMutable</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a>, <a href="CellIterator.MutableCell.html" title="class in dev.tamboui.tfx">CellIterator.MutableCell</a>&gt;&nbsp;consumer)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use <a href="#forEachCellMutable(dev.tamboui.tfx.CellIterator.CellMutator)"><code>forEachCellMutable(CellMutator)</code></a> instead for better performance</div>
+<div class="deprecation-comment">Use <a href="#forEachCellMutable(dev.tamboui.tfx.CellIterator.CellMutator)"><code>forEachCellMutable(CellMutator)</code></a> instead for better
+            performance</div>
 </div>
 <div class="block">Applies a function to each cell in the iterator's area, allowing mutation.
 <p>
@@ -280,7 +285,8 @@ This variant provides a mutable cell consumer that can modify cells directly.
 The consumer receives the position and a mutable cell reference.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>consumer</code> - A function that takes (Position, MutableCell) and processes each cell</dd>
+<dd><code>consumer</code> - A function that takes (Position, MutableCell) and processes each
+           cell</dd>
 </dl>
 </div>
 </section>

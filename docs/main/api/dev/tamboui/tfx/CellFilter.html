@@ -92,48 +92,47 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CellFilter</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">A filter that enables effects to operate on specific cells based on various criteria.
+<div class="block">A filter that enables effects to operate on specific cells based on various
+criteria.
 <p>
-CellFilter provides a flexible, composable way to select cells for applying effects.
-Filters can match cells based on their properties (colors, position, content) or
-custom predicates, and can be combined using logical operations (AND, OR, NOR).
+CellFilter provides a flexible, composable way to select cells for applying
+effects. Filters can match cells based on their properties (colors, position,
+content) or custom predicates, and can be combined using logical operations
+(AND, OR, NOR).
 <p>
 <b>Design Philosophy:</b>
 <ul>
-  <li><b>Composability:</b> Simple filters can be combined to create complex
-      selection patterns using <code>allOf</code>, <code>anyOf</code>, and <code>noneOf</code>.</li>
-  <li><b>Performance:</b> Filters are evaluated during cell iteration, allowing
-      effects to skip irrelevant cells efficiently.</li>
-  <li><b>Flexibility:</b> Supports both spatial (area, margin) and content-based
-      (color, text) filtering.</li>
+<li><b>Composability:</b> Simple filters can be combined to create complex
+selection patterns using <code>allOf</code>, <code>anyOf</code>, and
+<code>noneOf</code>.</li>
+<li><b>Performance:</b> Filters are evaluated during cell iteration, allowing
+effects to skip irrelevant cells efficiently.</li>
+<li><b>Flexibility:</b> Supports both spatial (area, margin) and
+content-based (color, text) filtering.</li>
 </ul>
 <p>
 <b>Filter Types:</b>
 <ul>
-  <li><b>Spatial:</b> <code>area</code>, <code>inner</code>, <code>outer</code></li>
-  <li><b>Color:</b> <code>fgColor</code>, <code>bgColor</code></li>
-  <li><b>Content:</b> <code>text</code></li>
-  <li><b>Logical:</b> <code>allOf</code>, <code>anyOf</code>, <code>noneOf</code></li>
-  <li><b>Special:</b> <code>all</code>, <code>none</code></li>
+<li><b>Spatial:</b> <code>area</code>, <code>inner</code>, <code>outer</code></li>
+<li><b>Color:</b> <code>fgColor</code>, <code>bgColor</code></li>
+<li><b>Content:</b> <code>text</code></li>
+<li><b>Logical:</b> <code>allOf</code>, <code>anyOf</code>, <code>noneOf</code></li>
+<li><b>Special:</b> <code>all</code>, <code>none</code></li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>// Simple filter
-Effect effect = Fx.dissolve(2000, Interpolation.Linear)
-    .withFilter(CellFilter.text());
+Effect effect = Fx.dissolve(2000, Interpolation.Linear).withFilter(CellFilter.text());
 
 // Combined filters
-CellFilter combined = CellFilter.allOf(
-    CellFilter.text(),
-    CellFilter.fgColor(Color.WHITE),
-    CellFilter.outer(Margin.uniform(1))
-);
-Effect filtered = Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut)
-    .withFilter(combined);
+CellFilter combined = CellFilter.allOf(CellFilter.text(), CellFilter.fgColor(Color.WHITE),
+        CellFilter.outer(Margin.uniform(1)));
+Effect filtered = Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut).withFilter(combined);
 </code></pre>
 <p>
-Filters are evaluated during effect execution, allowing effects to efficiently
-skip cells that don't match the filter criteria.</div>
+Filters are evaluated during effect execution, allowing effects to
+efficiently skip cells that don't match the filter criteria.</div>
 </div>
 </section>
 <section class="summary">
@@ -484,8 +483,8 @@ skip cells that don't match the filter criteria.</div>
  <a href="../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
 <div class="block">Checks if a cell matches this filter using primitive coordinates.
 <p>
-This overload avoids Position object allocation in performance-critical loops.
-The default implementation creates a Position and delegates to
+This overload avoids Position object allocation in performance-critical
+loops. The default implementation creates a Position and delegates to
 <a href="#matches(dev.tamboui.layout.Position,dev.tamboui.buffer.Cell,dev.tamboui.layout.Rect)"><code>matches(Position, Cell, Rect)</code></a>. Subclasses that can work with
 primitive coordinates directly should override this method.</div>
 <dl class="notes">

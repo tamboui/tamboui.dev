@@ -94,12 +94,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public enum </span><span class="element-name type-name-label">Mode2027Status</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="Mode2027Status.html" title="enum class in dev.tamboui.terminal">Mode2027Status</a>&gt;</span></div>
-<div class="block">Represents the status of Mode 2027 (grapheme cluster mode) support in a terminal.
+<div class="block">Represents the status of Mode 2027 (grapheme cluster mode) support in a
+terminal.
 <p>
-Mode 2027 is a terminal feature that coordinates grapheme cluster handling between
-applications and terminals. When enabled, the terminal signals that it can handle
-complex grapheme clusters (ZWJ emoji sequences, regional indicators) as single
-display units.</div>
+Mode 2027 is a terminal feature that coordinates grapheme cluster handling
+between applications and terminals. When enabled, the terminal signals that
+it can handle complex grapheme clusters (ZWJ emoji sequences, regional
+indicators) as single display units.</div>
 </div>
 </section>
 <section class="summary">
@@ -131,7 +132,8 @@ display units.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="#SUPPORTED_DISABLED" class="member-name-link">SUPPORTED_DISABLED</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Terminal recognizes Mode 2027 but has it disabled (Ps=2 or Ps=4 in DECRPM response).</div>
+<div class="block">Terminal recognizes Mode 2027 but has it disabled (Ps=2 or Ps=4 in DECRPM
+response).</div>
 </div>
 </div>
 </section>
@@ -188,9 +190,8 @@ the order they are declared.</div>
 <h3>NOT_SUPPORTED</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Mode2027Status.html" title="enum class in dev.tamboui.terminal">Mode2027Status</a></span>&nbsp;<span class="element-name">NOT_SUPPORTED</span></div>
-<div class="block">Terminal doesn't recognize Mode 2027.
-This typically means the terminal is older or doesn't support
-the DECRQM query for mode 2027.</div>
+<div class="block">Terminal doesn't recognize Mode 2027. This typically means the terminal is
+older or doesn't support the DECRQM query for mode 2027.</div>
 </div>
 </section>
 </li>
@@ -199,7 +200,8 @@ the DECRQM query for mode 2027.</div>
 <h3>SUPPORTED_DISABLED</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Mode2027Status.html" title="enum class in dev.tamboui.terminal">Mode2027Status</a></span>&nbsp;<span class="element-name">SUPPORTED_DISABLED</span></div>
-<div class="block">Terminal recognizes Mode 2027 but has it disabled (Ps=2 or Ps=4 in DECRPM response).</div>
+<div class="block">Terminal recognizes Mode 2027 but has it disabled (Ps=2 or Ps=4 in DECRPM
+response).</div>
 </div>
 </section>
 </li>
@@ -263,8 +265,8 @@ not permitted.)</div>
 <div class="block">Returns whether the terminal supports Mode 2027.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>true if the terminal recognizes Mode 2027 (either enabled or disabled),
-        false if the terminal doesn't support it at all</dd>
+<dd>true if the terminal recognizes Mode 2027 (either enabled or
+        disabled), false if the terminal doesn't support it at all</dd>
 </dl>
 </div>
 </section>

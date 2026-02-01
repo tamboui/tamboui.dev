@@ -122,10 +122,9 @@ loadScripts(document, 'script');</script>
 implements <a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></span></div>
 <div class="block">Terminal backend implementation using Panama FFI.
 <p>
-This backend provides direct native access to terminal operations
-without requiring external dependencies like JLine. It uses the
-Java Foreign Function and Memory API (Panama FFI) to call native
-platform functions directly.
+This backend provides direct native access to terminal operations without
+requiring external dependencies like JLine. It uses the Java Foreign Function
+and Memory API (Panama FFI) to call native platform functions directly.
 <p>
 Supports Unix-like systems (Linux and macOS) and Windows.</div>
 </div>
@@ -348,8 +347,8 @@ Supports Unix-like systems (Linux and macOS) and Windows.</div>
               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Creates a new Panama backend.
 <p>
-Automatically detects the platform and creates the appropriate
-terminal implementation.</div>
+Automatically detects the platform and creates the appropriate terminal
+implementation.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the terminal cannot be initialized</dd>
@@ -676,8 +675,8 @@ The cursor position does not change.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteLines</span><wbr><span class="parameters">(int&nbsp;n)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#deleteLines(int)">Backend</a></code></span></div>
-<div class="block">Deletes N lines at the current cursor position, pulling lines below up.
-The cursor position does not change.</div>
+<div class="block">Deletes N lines at the current cursor position, pulling lines below up. The
+cursor position does not change.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#deleteLines(int)">deleteLines</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -696,8 +695,8 @@ The cursor position does not change.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorUp</span><wbr><span class="parameters">(int&nbsp;n)</span>
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#moveCursorUp(int)">Backend</a></code></span></div>
-<div class="block">Moves the cursor up by N lines. If the cursor is already at the top,
-this has no effect.</div>
+<div class="block">Moves the cursor up by N lines. If the cursor is already at the top, this has
+no effect.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#moveCursorUp(int)">moveCursorUp</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -756,8 +755,8 @@ rightmost position, this has no effect.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorLeft</span><wbr><span class="parameters">(int&nbsp;n)</span>
                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#moveCursorLeft(int)">Backend</a></code></span></div>
-<div class="block">Moves the cursor left by N columns. If the cursor is already at the
-leftmost position, this has no effect.</div>
+<div class="block">Moves the cursor left by N columns. If the cursor is already at the leftmost
+position, this has no effect.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#moveCursorLeft(int)">moveCursorLeft</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -776,8 +775,8 @@ leftmost position, this has no effect.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">eraseToEndOfLine</span>()
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#eraseToEndOfLine()">Backend</a></code></span></div>
-<div class="block">Erases from the cursor to the end of the line.
-The cursor position does not change.</div>
+<div class="block">Erases from the cursor to the end of the line. The cursor position does not
+change.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#eraseToEndOfLine()">eraseToEndOfLine</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -871,8 +870,8 @@ The cursor position does not change.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#writeRaw(byte%5B%5D)">Backend</a></code></span></div>
 <div class="block">Writes raw bytes directly to the terminal output.
 <p>
-This is used for native image protocols (Sixel, Kitty, iTerm2) that
-require sending escape sequences with binary data.</div>
+This is used for native image protocols (Sixel, Kitty, iTerm2) that require
+sending escape sequences with binary data.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#writeRaw(byte%5B%5D)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -893,7 +892,8 @@ require sending escape sequences with binary data.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#writeRaw(java.lang.String)">Backend</a></code></span></div>
 <div class="block">Writes a raw string directly to the terminal output.
 <p>
-This is a convenience method for protocols that work with ASCII escape sequences.</div>
+This is a convenience method for protocols that work with ASCII escape
+sequences.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#writeRaw(java.lang.String)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>

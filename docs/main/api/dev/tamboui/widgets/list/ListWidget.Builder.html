@@ -328,9 +328,9 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">itemStyleResolver</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&gt;&nbsp;resolver)</span></div>
 <div class="block">Sets a function to resolve styles for each item based on position.
 <p>
-The function receives the item index (0-based) and total item count,
-and returns a Style to apply to that item. This enables positional
-styling like alternating row colors.</div>
+The function receives the item index (0-based) and total item count, and
+returns a Style to apply to that item. This enables positional styling like
+alternating row colors.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>resolver</code> - function that takes (index, totalCount) and returns a Style</dd>
@@ -347,8 +347,8 @@ styling like alternating row colors.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">styleResolver</span><wbr><span class="parameters">(<a href="../../style/StylePropertyResolver.html" title="interface in dev.tamboui.style">StylePropertyResolver</a>&nbsp;resolver)</span></div>
 <div class="block">Sets the property resolver for style-aware properties.
 <p>
-When set, properties like <code>color</code> and <code>background</code>
-will be resolved if not set programmatically.</div>
+When set, properties like <code>color</code> and <code>background</code> will be
+resolved if not set programmatically.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>resolver</code> - the property resolver</dd>
@@ -457,10 +457,10 @@ will be resolved if not set programmatically.</div>
 <p>
 Controls how text is handled when it exceeds the available width:
 <ul>
-  <li><code>CLIP</code> - silently truncate at boundary (default)</li>
-  <li><code>ELLIPSIS</code> - truncate with "..." at end</li>
-  <li><code>ELLIPSIS_START</code> - truncate with "..." at start</li>
-  <li><code>ELLIPSIS_MIDDLE</code> - truncate with "..." in middle</li>
+<li><code>CLIP</code> - silently truncate at boundary (default)</li>
+<li><code>ELLIPSIS</code> - truncate with "..." at end</li>
+<li><code>ELLIPSIS_START</code> - truncate with "..." at start</li>
+<li><code>ELLIPSIS_MIDDLE</code> - truncate with "..." in middle</li>
 </ul>
 Note: WRAP_CHARACTER and WRAP_WORD are not supported for list items.</div>
 <dl class="notes">

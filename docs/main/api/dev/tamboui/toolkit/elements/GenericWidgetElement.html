@@ -97,19 +97,24 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">GenericWidgetElement&lt;T extends <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;</span>
 <span class="extends-implements">extends <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a>&lt;T&gt;&gt;</span></div>
-<div class="block">A generic element that wraps any <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> and exposes it as a <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element"><code>StyledElement</code></a>.
+<div class="block">A generic element that wraps any <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> and exposes it as a
+<a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element"><code>StyledElement</code></a>.
 <p>
-This is useful when you need to use a widget that doesn't have a dedicated element wrapper,
-allowing it to participate in the toolkit's styling and layout system.
+This is useful when you need to use a widget that doesn't have a dedicated
+element wrapper, allowing it to participate in the toolkit's styling and
+layout system.
 
 <h2 id="when-to-use-heading">When to Use</h2>
 <ul>
-  <li>You have a custom or third-party widget without a dedicated toolkit element</li>
-  <li>You need quick integration of a widget into the toolkit DSL</li>
-  <li>You want to apply layout constraints, CSS classes, or event handlers to a widget</li>
+<li>You have a custom or third-party widget without a dedicated toolkit
+element</li>
+<li>You need quick integration of a widget into the toolkit DSL</li>
+<li>You want to apply layout constraints, CSS classes, or event handlers to a
+widget</li>
 </ul>
 
 <h2 id="example-usage-heading">Example Usage</h2>
+
 <pre><code>// Wrap any widget
 GenericWidgetElement.of(someWidget)
     .fg(Color.RED)
@@ -123,16 +128,18 @@ widget(someWidget).bold()
 
 <h2 id="limitations-heading">Limitations</h2>
 <ul>
-  <li><strong>Styling does not propagate:</strong> Styles set on this element (colors, modifiers)
-      do not affect the widget's internal rendering. The widget renders directly to the buffer
-      using its own styling logic.</li>
-  <li><strong>No CSS child selectors:</strong> This element has no sub-components that can be
-      styled via CSS child selectors.</li>
-  <li><strong>No preferred size:</strong> This element does not implement <code>preferredWidth()</code>
-      or <code>preferredHeight()</code> since the wrapped widget's size requirements are unknown.</li>
+<li><strong>Styling does not propagate:</strong> Styles set on this element
+(colors, modifiers) do not affect the widget's internal rendering. The widget
+renders directly to the buffer using its own styling logic.</li>
+<li><strong>No CSS child selectors:</strong> This element has no
+sub-components that can be styled via CSS child selectors.</li>
+<li><strong>No preferred size:</strong> This element does not implement
+<code>preferredWidth()</code> or <code>preferredHeight()</code> since the wrapped
+widget's size requirements are unknown.</li>
 </ul>
 <p>
-For full styling support, consider creating a dedicated element wrapper for the specific widget type.</div>
+For full styling support, consider creating a dedicated element wrapper for
+the specific widget type.</div>
 </div>
 </section>
 <section class="summary">
@@ -270,9 +277,9 @@ This is an alias for <a href="#of(T)"><code>of(Widget)</code></a> intended for s
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering.
-The current style (CSS + inline, merged with parent styles) is available
-via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering. The
+current style (CSS + inline, merged with parent styles) is available via
+<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a>&lt;<a href="#type-param-T" title="type parameter in GenericWidgetElement">T</a> extends <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;&gt;</code></dd>

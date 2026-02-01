@@ -90,7 +90,8 @@ loadScripts(document, 'script');</script>
 <p>
 This is a plain data class that stores information about a styled region
 without any CSS-specific concepts. The toolkit layer interprets the
-<a href="#contextKey()"><code>contextKey()</code></a> as an element ID and the <a href="#tags()"><code>tags()</code></a> as CSS classes.
+<a href="#contextKey()"><code>contextKey()</code></a> as an element ID and the <a href="#tags()"><code>tags()</code></a> as CSS
+classes.
 <p>
 StyledAreaInfo is created automatically when styled content with Tags is
 rendered to a Buffer.</div>
@@ -202,8 +203,8 @@ rendered to a Buffer.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Tags.html" title="class in dev.tamboui.style">Tags</a></span>&nbsp;<span class="element-name">tags</span>()</div>
 <div class="block">Returns the tags associated with this styled area.
 <p>
-Tags are string names that can be used to identify or categorize
-styled content. The toolkit layer interprets these as CSS class names.</div>
+Tags are string names that can be used to identify or categorize styled
+content. The toolkit layer interprets these as CSS class names.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the tags (never null, may be empty)</dd>
@@ -232,8 +233,8 @@ styled content. The toolkit layer interprets these as CSS class names.</div>
 <div class="block">Returns the context key for this styled area.
 <p>
 The context key provides a way to associate styled areas with a parent
-context. The toolkit layer uses the containing element's ID as the
-context key, enabling selectors like <code>#myPanel .highlight</code>.</div>
+context. The toolkit layer uses the containing element's ID as the context
+key, enabling selectors like <code>#myPanel .highlight</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the context key, or null if not set</dd>

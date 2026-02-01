@@ -85,17 +85,16 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Stack</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
-<div class="block">An overlapping layers widget where children render on top of each other
-using a painter's algorithm (last child on top).
+<div class="block">An overlapping layers widget where children render on top of each other using
+a painter's algorithm (last child on top).
 <p>
-Essential for dialogs, popups, floating overlays, and any scenario
-where UI elements need to overlap.
+Essential for dialogs, popups, floating overlays, and any scenario where UI
+elements need to overlap.
 <p>
 Example usage:
-<pre><code>Stack stack = Stack.builder()
-    .children(backgroundWidget, contentWidget, dialogWidget)
-    .alignment(ContentAlignment.CENTER)
-    .build();
+
+<pre><code>Stack stack = Stack.builder().children(backgroundWidget, contentWidget, dialogWidget)
+        .alignment(ContentAlignment.CENTER).build();
 
 stack.render(area, buffer);
 </code></pre></div>

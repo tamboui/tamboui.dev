@@ -90,16 +90,18 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">PicoCLI mixin that provides common TUI-related command line options.
 <p>
-Use this mixin to add TUI options to your existing commands without
-extending <a href="TuiCommand.html" title="class in dev.tamboui.picocli"><code>TuiCommand</code></a>.
+Use this mixin to add TUI options to your existing commands without extending
+<a href="TuiCommand.html" title="class in dev.tamboui.picocli"><code>TuiCommand</code></a>.
 
-<pre><code>@Command(name = "myapp")
+<pre>
+<code>
+&amp;#64;Command(name = "myapp")
 public class MyApp implements Callable&lt;Integer&gt; {
 
-    @Mixin
+    &amp;#64;Mixin
     TuiMixin tuiOptions;
 
-    @Override
+    &amp;#64;Override
     public Integer call() throws Exception {
         TuiConfig config = tuiOptions.toConfig();
         try (TuiRunner runner = TuiRunner.create(config)) {
@@ -108,7 +110,8 @@ public class MyApp implements Callable&lt;Integer&gt; {
         return 0;
     }
 }
-</code></pre></div>
+</code>
+</pre></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>

@@ -90,15 +90,14 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A type-safe heterogeneous map for CSS property values.
 <p>
-This map uses <a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style"><code>PropertyDefinition</code></a> objects as keys and stores values
-of the corresponding types. The type safety is enforced at compile time
-through the generic type parameter on PropertyDefinition.
+This map uses <a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style"><code>PropertyDefinition</code></a> objects as keys and stores values of
+the corresponding types. The type safety is enforced at compile time through
+the generic type parameter on PropertyDefinition.
 <p>
 Example usage:
-<pre><code>TypedPropertyMap props = TypedPropertyMap.builder()
-    .put(StandardProperties.COLOR, Color.RED)
-    .put(StandardProperties.PADDING, Padding.of(1))
-    .build();
+
+<pre><code>TypedPropertyMap props = TypedPropertyMap.builder().put(StandardProperties.COLOR, Color.RED)
+        .put(StandardProperties.PADDING, Padding.of(1)).build();
 
 Optional&lt;Color&gt; color = props.get(StandardProperties.COLOR);
 </code></pre></div>
@@ -181,8 +180,8 @@ Optional&lt;Color&gt; color = props.get(StandardProperties.COLOR);
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TypedPropertyMap.html" title="class in dev.tamboui.css.cascade">TypedPropertyMap</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFallback(dev.tamboui.css.cascade.TypedPropertyMap)" class="member-name-link">withFallback</a><wbr>(<a href="TypedPropertyMap.html" title="class in dev.tamboui.css.cascade">TypedPropertyMap</a>&nbsp;fallback)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Creates a new property map that uses this map's values, falling back to
-the given fallback map for inherited properties that are not set in this map.</div>
+<div class="block">Creates a new property map that uses this map's values, falling back to the
+given fallback map for inherited properties that are not set in this map.</div>
 </div>
 </div>
 </div>
@@ -303,8 +302,8 @@ the given fallback map for inherited properties that are not set in this map.</d
 <h3>withFallback</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TypedPropertyMap.html" title="class in dev.tamboui.css.cascade">TypedPropertyMap</a></span>&nbsp;<span class="element-name">withFallback</span><wbr><span class="parameters">(<a href="TypedPropertyMap.html" title="class in dev.tamboui.css.cascade">TypedPropertyMap</a>&nbsp;fallback)</span></div>
-<div class="block">Creates a new property map that uses this map's values, falling back to
-the given fallback map for inherited properties that are not set in this map.
+<div class="block">Creates a new property map that uses this map's values, falling back to the
+given fallback map for inherited properties that are not set in this map.
 <p>
 Only properties marked as <a href="../../style/PropertyDefinition.html#isInheritable()"><code>PropertyDefinition.isInheritable()</code></a> are
 inherited from the fallback. Non-inheritable properties are not inherited.</div>

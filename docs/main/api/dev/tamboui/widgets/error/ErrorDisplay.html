@@ -90,18 +90,14 @@ implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.wi
 <p>
 Used to show exceptions that occur during rendering. The widget displays:
 <ul>
-  <li>Exception type in red</li>
-  <li>Error message</li>
-  <li>Scrollable stack trace</li>
-  <li>Footer with instructions</li>
+<li>Exception type in red</li>
+<li>Error message</li>
+<li>Scrollable stack trace</li>
+<li>Footer with instructions</li>
 </ul>
 
-<pre><code>ErrorDisplay display = ErrorDisplay.builder()
-    .error(exception)
-    .scroll(scrollOffset)
-    .title(" ERROR ")
-    .footer(" Press 'q' to quit, arrows to scroll ")
-    .build();
+<pre><code>ErrorDisplay display = ErrorDisplay.builder().error(exception).scroll(scrollOffset)
+        .title(" ERROR ").footer(" Press 'q' to quit, arrows to scroll ").build();
 
 display.render(area, buffer);
 </code></pre></div>

@@ -113,16 +113,18 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">RichTextState</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">State for managing scroll position and viewport information in scrollable text elements.
+<div class="block">State for managing scroll position and viewport information in scrollable
+text elements.
 <p>
 The state tracks:
 <ul>
-  <li>Scroll position (row and column offsets)</li>
-  <li>Content dimensions (total lines and max line width)</li>
-  <li>Viewport dimensions (visible area size)</li>
+<li>Scroll position (row and column offsets)</li>
+<li>Content dimensions (total lines and max line width)</li>
+<li>Viewport dimensions (visible area size)</li>
 </ul>
 <p>
 Example usage:
+
 <pre><code>RichTextState state = new RichTextState();
 
 // Scroll down one line
@@ -227,7 +229,8 @@ state.ensureLineVisible(100);
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollCol()" class="member-name-link">scrollCol</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the current horizontal scroll offset (number of columns scrolled from left).</div>
+<div class="block">Returns the current horizontal scroll offset (number of columns scrolled from
+left).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollDown()" class="member-name-link">scrollDown</a>()</code></div>
@@ -262,7 +265,8 @@ state.ensureLineVisible(100);
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollRow()" class="member-name-link">scrollRow</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the current vertical scroll offset (number of lines scrolled from top).</div>
+<div class="block">Returns the current vertical scroll offset (number of lines scrolled from
+top).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollToBottom()" class="member-name-link">scrollToBottom</a>()</code></div>
@@ -358,7 +362,8 @@ state.ensureLineVisible(100);
 <h3>scrollRow</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">scrollRow</span>()</div>
-<div class="block">Returns the current vertical scroll offset (number of lines scrolled from top).</div>
+<div class="block">Returns the current vertical scroll offset (number of lines scrolled from
+top).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the scroll row offset</dd>
@@ -371,7 +376,8 @@ state.ensureLineVisible(100);
 <h3>scrollCol</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">scrollCol</span>()</div>
-<div class="block">Returns the current horizontal scroll offset (number of columns scrolled from left).</div>
+<div class="block">Returns the current horizontal scroll offset (number of columns scrolled from
+left).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the scroll column offset</dd>

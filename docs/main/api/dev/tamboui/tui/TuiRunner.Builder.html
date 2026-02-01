@@ -98,9 +98,9 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Builder for <a href="TuiRunner.html" title="class in dev.tamboui.tui"><code>TuiRunner</code></a> instances.
 <p>
-Provides a fluent API for configuring the TUI application including
-bindings, event handlers, renderers, and auto-registration of annotated
-action handlers.</div>
+Provides a fluent API for configuring the TUI application including bindings,
+event handlers, renderers, and auto-registration of annotated action
+handlers.</div>
 </div>
 </section>
 <section class="summary">
@@ -260,8 +260,8 @@ action handlers.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiRunner.Builder.html" title="class in dev.tamboui.tui">TuiRunner.Builder</a></span>&nbsp;<span class="element-name">autoBindingRegistration</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
 <div class="block">Enables or disables automatic registration of action handlers.
 <p>
-When enabled, methods annotated with <code>@OnAction</code> on the
-event handler object are automatically registered.</div>
+When enabled, methods annotated with <code>@OnAction</code> on the event handler
+object are automatically registered.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>enabled</code> - true to enable auto-registration</dd>
@@ -396,9 +396,9 @@ Equivalent to <code>autoBindingRegistration(true)</code>.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiRunner.Builder.html" title="class in dev.tamboui.tui">TuiRunner.Builder</a></span>&nbsp;<span class="element-name">resizeGracePeriod</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;resizeGracePeriod)</span></div>
 <div class="block">Sets the resize grace period.
 <p>
-This defines the maximum time before resize events are processed,
-ensuring the UI redraws promptly on terminal resize even when
-ticks are disabled or have a long interval.</div>
+This defines the maximum time before resize events are processed, ensuring
+the UI redraws promptly on terminal resize even when ticks are disabled or
+have a long interval.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>resizeGracePeriod</code> - the grace period, or null to disable automatic resize handling</dd>

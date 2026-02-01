@@ -101,33 +101,36 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Main entry point for CSS styling.
 <p>
-The StyleEngine manages stylesheets, resolves styles for elements,
-and supports live stylesheet switching for theming.
+The StyleEngine manages stylesheets, resolves styles for elements, and
+supports live stylesheet switching for theming.
 
 <h2 id="stylesheet-types-heading">Stylesheet Types</h2>
 <p>
 The engine supports two types of stylesheets:
 <ul>
-  <li><b>Inline stylesheets</b>: Added via <a href="#addStylesheet(java.lang.String)"><code>addStylesheet(String)</code></a> or <a href="#loadStylesheet(java.lang.String)"><code>loadStylesheet(String)</code></a>.
-      Multiple inline stylesheets can be registered and are <em>all always applied</em>,
-      in the order they were added. Use these for base styles that should always be present.</li>
-  <li><b>Named stylesheets</b>: Added via <a href="#addStylesheet(java.lang.String,java.lang.String)"><code>addStylesheet(String, String)</code></a> or
-      <a href="#loadStylesheet(java.lang.String,java.lang.String)"><code>loadStylesheet(String, String)</code></a>. Only <em>one named stylesheet is active</em> at a time,
-      selectable via <a href="#setActiveStylesheet(java.lang.String)"><code>setActiveStylesheet(String)</code></a>. Use these for themes that can be switched
-      at runtime.</li>
+<li><b>Inline stylesheets</b>: Added via <a href="#addStylesheet(java.lang.String)"><code>addStylesheet(String)</code></a> or
+<a href="#loadStylesheet(java.lang.String)"><code>loadStylesheet(String)</code></a>. Multiple inline stylesheets can be
+registered and are <em>all always applied</em>, in the order they were added.
+Use these for base styles that should always be present.</li>
+<li><b>Named stylesheets</b>: Added via
+<a href="#addStylesheet(java.lang.String,java.lang.String)"><code>addStylesheet(String, String)</code></a> or
+<a href="#loadStylesheet(java.lang.String,java.lang.String)"><code>loadStylesheet(String, String)</code></a>. Only <em>one named stylesheet is
+active</em> at a time, selectable via <a href="#setActiveStylesheet(java.lang.String)"><code>setActiveStylesheet(String)</code></a>.
+Use these for themes that can be switched at runtime.</li>
 </ul>
 
 <h2 id="cascade-order-heading">Cascade Order</h2>
 <p>
 When resolving styles, rules are collected in the following order:
 <ol>
-  <li>All inline stylesheets (in registration order)</li>
-  <li>The active named stylesheet</li>
+<li>All inline stylesheets (in registration order)</li>
+<li>The active named stylesheet</li>
 </ol>
-Later rules override earlier ones following standard CSS cascade rules,
-so the active named stylesheet can override inline styles.
+Later rules override earlier ones following standard CSS cascade rules, so
+the active named stylesheet can override inline styles.
 
 <h2 id="usage-example-heading">Usage Example</h2>
+
 <pre>
 StyleEngine engine = StyleEngine.create();
 
@@ -314,7 +317,8 @@ engine.setActiveStylesheet("light");
                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Loads a named stylesheet from the classpath.
 <p>
-Named stylesheets can be switched at runtime using <a href="#setActiveStylesheet(java.lang.String)"><code>setActiveStylesheet(String)</code></a>.</div>
+Named stylesheets can be switched at runtime using
+<a href="#setActiveStylesheet(java.lang.String)"><code>setActiveStylesheet(String)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>name</code> - the stylesheet name (e.g., "dark", "light")</dd>
@@ -394,8 +398,8 @@ Named stylesheets can be switched at runtime using <a href="#setActiveStylesheet
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setActiveStylesheet</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <div class="block">Sets the active named stylesheet.
 <p>
-This enables live theme switching - the UI will use the new
-stylesheet on the next render cycle.</div>
+This enables live theme switching - the UI will use the new stylesheet on the
+next render cycle.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>name</code> - the stylesheet name</dd>

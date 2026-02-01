@@ -119,29 +119,31 @@ loadScripts(document, 'script');</script>
 <div class="block">A DSL wrapper for the TextArea widget.
 <p>
 A multi-line text input field with scrolling support.
-<pre><code>textArea(textState)
-    .placeholder("Enter text...")
-    .title("Description")
-    .showLineNumbers()
-    .rounded()
+
+<pre><code>textArea(textState).placeholder("Enter text...").title("Description").showLineNumbers().rounded()
 </code></pre>
 
 <h2 id="css-child-selectors-heading">CSS Child Selectors</h2>
 <p>
 The following child selectors can be used to style sub-components:
 <ul>
-  <li><code>TextAreaElement-cursor</code> - The cursor style (default: reversed)</li>
-  <li><code>TextAreaElement-placeholder</code> - The placeholder text style (default: dim)</li>
-  <li><code>TextAreaElement-line-number</code> - The line number style (default: dim)</li>
+<li><code>TextAreaElement-cursor</code> - The cursor style (default:
+reversed)</li>
+<li><code>TextAreaElement-placeholder</code> - The placeholder text style
+(default: dim)</li>
+<li><code>TextAreaElement-line-number</code> - The line number style (default:
+dim)</li>
 </ul>
 <p>
 Example CSS:
+
 <pre><code>TextAreaElement-cursor { text-style: reversed; background: cyan; }
 TextAreaElement-placeholder { color: gray; text-style: italic; }
 TextAreaElement-line-number { color: #666666; }
 </code></pre>
 <p>
-Note: Programmatic styles set via the corresponding setter methods take precedence over CSS styles.</div>
+Note: Programmatic styles set via the corresponding setter methods take
+precedence over CSS styles.</div>
 </div>
 </section>
 <section class="summary">
@@ -560,9 +562,8 @@ Note: Programmatic styles set via the corresponding setter methods take preceden
 <h3>focusedBorderColor</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></span>&nbsp;<span class="element-name">focusedBorderColor</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
-<div class="block">Sets the border color to use when focused.
-If not set, no special focused border styling is applied
-(CSS :focused pseudo-class can be used instead).</div>
+<div class="block">Sets the border color to use when focused. If not set, no special focused
+border styling is applied (CSS :focused pseudo-class can be used instead).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>color</code> - the focused border color</dd>
@@ -593,8 +594,8 @@ If not set, no special focused border styling is applied
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells. Used when the element
+has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -608,8 +609,8 @@ Used when the element has a <a href="../../layout/Constraint.Fit.html" title="cl
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred height of this element in cells. Used when the element
+has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred height, or 0 if not applicable</dd>
@@ -643,15 +644,15 @@ Used when the element has a <a href="../../layout/Constraint.Fit.html" title="cl
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleAttributes()">Styleable</a></code></span></div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements
-based on their style attributes. This method returns a map of
-attribute names to their values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
+their style attributes. This method returns a map of attribute names to their
+values.
 <p>
 Common attributes include:
 <ul>
-  <li><code>title</code> - the element's title</li>
-  <li><code>label</code> - the element's label</li>
-  <li><code>placeholder</code> - the element's placeholder text</li>
+<li><code>title</code> - the element's title</li>
+<li><code>label</code> - the element's label</li>
+<li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -659,7 +660,8 @@ Common attributes include:
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#styleAttributes()">styleAttributes</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be
+        empty)</dd>
 </dl>
 </div>
 </section>
@@ -672,8 +674,8 @@ Common attributes include:
  boolean&nbsp;focused)</span></div>
 <div class="block">Handles a key event for text area input.
 <p>
-Note: The <code>focused</code> parameter is informational only.
-If the event reached this element, it should be processed.</div>
+Note: The <code>focused</code> parameter is informational only. If the event
+reached this element, it should be processed.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">handleKeyEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -698,9 +700,9 @@ If the event reached this element, it should be processed.</div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering.
-The current style (CSS + inline, merged with parent styles) is available
-via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering. The
+current style (CSS + inline, merged with parent styles) is available via
+<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a>&gt;</code></dd>

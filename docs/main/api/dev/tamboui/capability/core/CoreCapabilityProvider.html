@@ -89,7 +89,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">CoreCapabilityProvider</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../CapabilityProvider.html" title="interface in dev.tamboui.capability">CapabilityProvider</a></span></div>
-<div class="block">Core capability contributor: prints what core assumes/uses and what it can infer from the environment.</div>
+<div class="block">Core capability contributor: prints what core assumes/uses and what it can
+infer from the environment.</div>
 </div>
 </section>
 <section class="summary">
@@ -191,10 +192,12 @@ The default implementation derives a name from the class name by removing
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../CapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)">CapabilityProvider</a></code></span></div>
 <div class="block">Contribute information to the capability report.
 <p>
-Providers SHOULD use dotted keys for <a href="../CapabilityReportBuilder.html#feature(java.lang.String,java.lang.String,java.lang.Object)"><code>CapabilityReportBuilder.feature(String, String, Object)</code></a>
-to create stable namespaces (e.g. <code>image.protocol.kitty</code>).
+Providers SHOULD use dotted keys for
+<a href="../CapabilityReportBuilder.html#feature(java.lang.String,java.lang.String,java.lang.Object)"><code>CapabilityReportBuilder.feature(String, String, Object)</code></a> to create
+stable namespaces (e.g. <code>image.protocol.kitty</code>).
 
-Providers SHOULD NOT fail when contributing to the report; if something goes wrong, they should report that as a missing feature/info.</div>
+Providers SHOULD NOT fail when contributing to the report; if something goes
+wrong, they should report that as a missing feature/info.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../CapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)">contribute</a></code>&nbsp;in interface&nbsp;<code><a href="../CapabilityProvider.html" title="interface in dev.tamboui.capability">CapabilityProvider</a></code></dd>

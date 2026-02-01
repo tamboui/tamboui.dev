@@ -84,28 +84,23 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Dock</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
-<div class="block">A 5-region dock layout widget that arranges children into top, bottom,
-left, right, and center regions — the most common TUI application structure
-(header + sidebar + content + footer).
+<div class="block">A 5-region dock layout widget that arranges children into top, bottom, left,
+right, and center regions — the most common TUI application structure (header
++ sidebar + content + footer).
 <p>
 The layout algorithm works in two steps:
 <ol>
-  <li>Vertical split: <code>[topHeight, fill(), bottomHeight]</code> to get
-      topRect, middleRect, bottomRect (skipping null regions)</li>
-  <li>Horizontal split of middleRect: <code>[leftWidth, fill(), rightWidth]</code>
-      to get leftRect, centerRect, rightRect (skipping null regions)</li>
+<li>Vertical split: <code>[topHeight, fill(), bottomHeight]</code> to get topRect,
+middleRect, bottomRect (skipping null regions)</li>
+<li>Horizontal split of middleRect: <code>[leftWidth, fill(), rightWidth]</code>
+to get leftRect, centerRect, rightRect (skipping null regions)</li>
 </ol>
 <p>
 Example usage:
-<pre><code>Dock dock = Dock.builder()
-    .top(headerWidget)
-    .bottom(footerWidget)
-    .left(sidebarWidget)
-    .center(contentWidget)
-    .topHeight(Constraint.length(3))
-    .bottomHeight(Constraint.length(1))
-    .leftWidth(Constraint.length(20))
-    .build();
+
+<pre><code>Dock dock = Dock.builder().top(headerWidget).bottom(footerWidget).left(sidebarWidget)
+        .center(contentWidget).topHeight(Constraint.length(3)).bottomHeight(Constraint.length(1))
+        .leftWidth(Constraint.length(20)).build();
 
 dock.render(area, buffer);
 </code></pre></div>

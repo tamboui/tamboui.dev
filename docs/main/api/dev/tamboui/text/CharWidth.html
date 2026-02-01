@@ -83,13 +83,16 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">CharWidth</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Utility for determining the display width of Unicode code points in a terminal.
+<div class="block">Utility for determining the display width of Unicode code points in a
+terminal.
 <p>
 Terminals render characters at different widths:
 <ul>
-  <li><b>2-wide</b>: CJK ideographs, Hangul syllables, fullwidth forms, most emoji</li>
-  <li><b>0-wide</b>: Combining marks, zero-width joiners, variation selectors</li>
-  <li><b>1-wide</b>: Latin, Cyrillic, Arabic, and most other characters</li>
+<li><b>2-wide</b>: CJK ideographs, Hangul syllables, fullwidth forms, most
+emoji</li>
+<li><b>0-wide</b>: Combining marks, zero-width joiners, variation
+selectors</li>
+<li><b>1-wide</b>: Latin, Cyrillic, Arabic, and most other characters</li>
 </ul>
 <p>
 Uses a pre-computed lookup table for BMP characters (O(1)) and binary search
@@ -140,14 +143,15 @@ for supplementary plane characters.</div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#substringByWidth(java.lang.String,int)" class="member-name-link">substringByWidth</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  int&nbsp;maxWidth)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns a substring that fits within the given display width,
-respecting code point and grapheme cluster boundaries.</div>
+<div class="block">Returns a substring that fits within the given display width, respecting code
+point and grapheme cluster boundaries.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#substringByWidthFromEnd(java.lang.String,int)" class="member-name-link">substringByWidthFromEnd</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  int&nbsp;maxWidth)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns a substring starting from the end that fits within the given display width.</div>
+<div class="block">Returns a substring starting from the end that fits within the given display
+width.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#truncateWithEllipsis(java.lang.String,int,dev.tamboui.text.CharWidth.TruncatePosition)" class="member-name-link">truncateWithEllipsis</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
@@ -162,7 +166,8 @@ respecting code point and grapheme cluster boundaries.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ellipsis,
  <a href="CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a>&nbsp;position)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Truncates a string to fit within the given display width, adding a custom ellipsis.</div>
+<div class="block">Truncates a string to fit within the given display width, adding a custom
+ellipsis.</div>
 </div>
 </div>
 </div>
@@ -205,9 +210,9 @@ respecting code point and grapheme cluster boundaries.</div>
 <p>
 Handles grapheme clusters correctly:
 <ul>
-  <li>ZWJ sequences (e.g., 👨‍👦): width 2 for the combined glyph</li>
-  <li>Regional Indicator pairs (flags, e.g., 🇫🇷): width 2</li>
-  <li>Skin tone modifiers: zero-width (added to base emoji)</li>
+<li>ZWJ sequences (e.g., 👨‍👦): width 2 for the combined glyph</li>
+<li>Regional Indicator pairs (flags, e.g., 🇫🇷): width 2</li>
+<li>Skin tone modifiers: zero-width (added to base emoji)</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -224,12 +229,12 @@ Handles grapheme clusters correctly:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">substringByWidth</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  int&nbsp;maxWidth)</span></div>
-<div class="block">Returns a substring that fits within the given display width,
-respecting code point and grapheme cluster boundaries.
+<div class="block">Returns a substring that fits within the given display width, respecting code
+point and grapheme cluster boundaries.
 <p>
-If a wide character would exceed maxWidth, it is not included.
-ZWJ sequences are kept intact - truncation happens at the last
-safe break point before the ZWJ sequence if it wouldn't fit.</div>
+If a wide character would exceed maxWidth, it is not included. ZWJ sequences
+are kept intact - truncation happens at the last safe break point before the
+ZWJ sequence if it wouldn't fit.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the source string</dd>
@@ -246,7 +251,8 @@ safe break point before the ZWJ sequence if it wouldn't fit.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">substringByWidthFromEnd</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  int&nbsp;maxWidth)</span></div>
-<div class="block">Returns a substring starting from the end that fits within the given display width.</div>
+<div class="block">Returns a substring starting from the end that fits within the given display
+width.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the source string</dd>
@@ -270,7 +276,8 @@ Uses the default ellipsis ("...").</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the source string</dd>
-<dd><code>maxWidth</code> - the maximum display width in columns (must be at least ellipsis width)</dd>
+<dd><code>maxWidth</code> - the maximum display width in columns (must be at least ellipsis
+           width)</dd>
 <dd><code>position</code> - where to place the ellipsis</dd>
 <dt>Returns:</dt>
 <dd>the truncated string with ellipsis, or the original if it fits</dd>
@@ -286,11 +293,13 @@ Uses the default ellipsis ("...").</div>
  int&nbsp;maxWidth,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ellipsis,
  <a href="CharWidth.TruncatePosition.html" title="enum class in dev.tamboui.text">CharWidth.TruncatePosition</a>&nbsp;position)</span></div>
-<div class="block">Truncates a string to fit within the given display width, adding a custom ellipsis.</div>
+<div class="block">Truncates a string to fit within the given display width, adding a custom
+ellipsis.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>s</code> - the source string</dd>
-<dd><code>maxWidth</code> - the maximum display width in columns (must be at least ellipsis width)</dd>
+<dd><code>maxWidth</code> - the maximum display width in columns (must be at least ellipsis
+           width)</dd>
 <dd><code>ellipsis</code> - the ellipsis string to use (e.g., "...", "…", "&gt;&gt;")</dd>
 <dd><code>position</code> - where to place the ellipsis</dd>
 <dt>Returns:</dt>

@@ -95,20 +95,19 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="LoopMode.html" title="enum class in dev.tamboui.tfx">LoopMode</a>&gt;</span></div>
 <div class="block">Defines how an effect should behave when it reaches its end.
 <p>
-Loop modes control whether effects run once and complete, restart from
-the beginning, or reverse direction for continuous animations.
+Loop modes control whether effects run once and complete, restart from the
+beginning, or reverse direction for continuous animations.
 <p>
 <b>Usage:</b>
+
 <pre><code>// Run once and complete (default)
 Effect fade = Fx.fadeToFg(Color.CYAN, 1000, Interpolation.SineInOut);
 
 // Loop continuously from beginning
-Effect looping = Fx.fadeToFg(Color.CYAN, 1000, Interpolation.SineInOut)
-    .loop();
+Effect looping = Fx.fadeToFg(Color.CYAN, 1000, Interpolation.SineInOut).loop();
 
 // Ping-pong back and forth
-Effect pingPong = Fx.fadeToFg(Color.CYAN, 1000, Interpolation.SineInOut)
-    .pingPong();
+Effect pingPong = Fx.fadeToFg(Color.CYAN, 1000, Interpolation.SineInOut).pingPong();
 </code></pre></div>
 </div>
 </section>
@@ -206,8 +205,8 @@ The effect runs from start to finish and then marks itself as done.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="LoopMode.html" title="enum class in dev.tamboui.tfx">LoopMode</a></span>&nbsp;<span class="element-name">LOOP</span></div>
 <div class="block">Restart from beginning when done.
 <p>
-When the effect reaches its end, it resets to the beginning and
-continues running. Looping effects never complete on their own.</div>
+When the effect reaches its end, it resets to the beginning and continues
+running. Looping effects never complete on their own.</div>
 </div>
 </section>
 </li>
@@ -218,10 +217,9 @@ continues running. Looping effects never complete on their own.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="LoopMode.html" title="enum class in dev.tamboui.tfx">LoopMode</a></span>&nbsp;<span class="element-name">PING_PONG</span></div>
 <div class="block">Reverse direction when reaching end.
 <p>
-When the effect reaches its end, it reverses and plays backwards.
-When it reaches the beginning, it reverses again. This creates
-a smooth back-and-forth animation. Ping-pong effects never
-complete on their own.</div>
+When the effect reaches its end, it reverses and plays backwards. When it
+reaches the beginning, it reverses again. This creates a smooth
+back-and-forth animation. Ping-pong effects never complete on their own.</div>
 </div>
 </section>
 </li>

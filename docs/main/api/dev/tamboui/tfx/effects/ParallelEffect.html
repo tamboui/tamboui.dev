@@ -105,36 +105,36 @@ independently until completion.
 <p>
 Parallel composition enables layering effects to create rich, multi-layered
 animations. Each effect operates independently on the same buffer, allowing
-them to combine visually (e.g., a fade effect combined with a dissolve effect).
+them to combine visually (e.g., a fade effect combined with a dissolve
+effect).
 <p>
 <b>Behavior:</b>
 <ul>
-  <li>All effects start simultaneously</li>
-  <li>Effects run independently and can have different durations</li>
-  <li>Effects are applied to the same buffer in order (later effects may
-      overwrite earlier ones)</li>
-  <li>The parallel effect completes when all constituent effects have completed</li>
+<li>All effects start simultaneously</li>
+<li>Effects run independently and can have different durations</li>
+<li>Effects are applied to the same buffer in order (later effects may
+overwrite earlier ones)</li>
+<li>The parallel effect completes when all constituent effects have
+completed</li>
 </ul>
 <p>
 <b>Visual Layering:</b>
 <p>
-When multiple effects are applied in parallel, they are processed in the order
-they were provided. Later effects may visually overwrite earlier effects depending
-on their cell filters and rendering logic. Use cell filters to control which
-cells each effect affects.
+When multiple effects are applied in parallel, they are processed in the
+order they were provided. Later effects may visually overwrite earlier
+effects depending on their cell filters and rendering logic. Use cell filters
+to control which cells each effect affects.
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>// Run fade and dissolve simultaneously
 Effect parallel = Fx.parallel(
-    Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut)
-        .withFilter(CellFilter.text()),
-    Fx.dissolve(2500, Interpolation.QuadOut)
-        .withFilter(CellFilter.text())
-);
+        Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut).withFilter(CellFilter.text()),
+        Fx.dissolve(2500, Interpolation.QuadOut).withFilter(CellFilter.text()));
 </code></pre>
 <p>
-This shader is typically created through <a href="../Fx.html#parallel(dev.tamboui.tfx.Effect...)"><code>Fx.parallel(Effect...)</code></a>
-rather than directly.</div>
+This shader is typically created through
+<a href="../Fx.html#parallel(dev.tamboui.tfx.Effect...)"><code>Fx.parallel(Effect...)</code></a> rather than directly.</div>
 </div>
 </section>
 <section class="summary">
@@ -298,20 +298,21 @@ rather than directly.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">Shader</a></code></span></div>
 <div class="block">Processes the shader for the given duration.
 <p>
-The default implementation:
-1. Updates the timer with the given duration (if a timer exists)
-2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state
-3. Returns any overflow duration
+The default implementation: 1. Updates the timer with the given duration (if
+a timer exists) 2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state 3. Returns
+any overflow duration
 <p>
-Most effects should use this default implementation and implement <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a>
-instead. Only override this if you need custom timer handling.</div>
+Most effects should use this default implementation and implement
+<a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> instead. Only override this if you need custom timer
+handling.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">process</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The duration to process the shader for</dd>
 <dd><code>buffer</code> - The buffer where the shader will be applied</dd>
-<dd><code>area</code> - The rectangular area within the buffer where the shader will be applied</dd>
+<dd><code>area</code> - The rectangular area within the buffer where the shader will be
+           applied</dd>
 <dt>Returns:</dt>
 <dd>The overflow duration if the shader is done, or null if still running</dd>
 </dl>

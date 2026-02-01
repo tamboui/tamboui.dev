@@ -80,13 +80,16 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Utility class for render thread management.
 <p>
-TamboUI uses a dedicated render thread model similar to JavaFX. All rendering operations
-must happen on the render thread. This class provides methods to check if the current
-thread is the render thread and to assert that code is running on the render thread.
+TamboUI uses a dedicated render thread model similar to JavaFX. All rendering
+operations must happen on the render thread. This class provides methods to
+check if the current thread is the render thread and to assert that code is
+running on the render thread.
 <p>
-The render thread is set when <a href="TuiRunner.html#run(dev.tamboui.tui.EventHandler,dev.tamboui.tui.Renderer)"><code>TuiRunner.run(EventHandler, Renderer)</code></a> starts and cleared when it exits.
+The render thread is set when <a href="TuiRunner.html#run(dev.tamboui.tui.EventHandler,dev.tamboui.tui.Renderer)"><code>TuiRunner.run(EventHandler, Renderer)</code></a> starts and cleared when
+it exits.
 <p>
 <b>Usage:</b>
+
 <pre><code>// Check if on render thread
 if (RenderThread.isRenderThread()) {
     // Safe to perform UI operations
@@ -167,8 +170,8 @@ doRenderOperation();
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkRenderThread</span>()</div>
 <div class="block">Asserts that the current thread is the render thread.
 <p>
-This should be called at the start of any method that must only be
-executed on the render thread.
+This should be called at the start of any method that must only be executed
+on the render thread.
 <p>
 The check only enforces when a render thread has been set (i.e., when
 TuiRunner.run() is active). If no render thread has been set, the check

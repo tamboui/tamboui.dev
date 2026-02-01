@@ -90,12 +90,13 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">StylePropertyResolver</span></div>
 <div class="block">A resolver for retrieving typed property values by definition.
 <p>
-This is the minimal abstraction that allows widgets to resolve style properties
-without depending on any specific styling system.
+This is the minimal abstraction that allows widgets to resolve style
+properties without depending on any specific styling system.
 <p>
 Use <a href="#empty()"><code>empty()</code></a> when no styling is needed.
 
 <h2 id="usage-in-widgets--heading">Usage in widgets:</h2>
+
 <pre><code>public void render(Rect area, Buffer buffer, StylePropertyResolver resolver) {
     Color borderColor = resolver.resolve(StandardProperties.BORDER_COLOR, this.borderColor);
     // render with borderColor...
@@ -173,9 +174,9 @@ Use <a href="#empty()"><code>empty()</code></a> when no styling is needed.
 <p>
 Resolution order: <strong>programmatic → resolver → property default</strong>
 <ol>
-  <li>If <code>programmaticValue</code> is non-null, return it</li>
-  <li>Otherwise, try to resolve from this resolver</li>
-  <li>Otherwise, return <a href="PropertyDefinition.html#defaultValue()"><code>PropertyDefinition.defaultValue()</code></a></li>
+<li>If <code>programmaticValue</code> is non-null, return it</li>
+<li>Otherwise, try to resolve from this resolver</li>
+<li>Otherwise, return <a href="PropertyDefinition.html#defaultValue()"><code>PropertyDefinition.defaultValue()</code></a></li>
 </ol></div>
 <dl class="notes">
 <dt>Type Parameters:</dt>

@@ -81,33 +81,38 @@ loadScripts(document, 'script');</script>
 <div class="block">Calculates alpha values for positions based on a sliding window gradient.
 <p>
 SlidingWindowAlpha is a helper class used by directional sweep effects (like
-<a href="effects/SweepShader.html" title="class in dev.tamboui.tfx.effects"><code>SweepShader</code></a>) to calculate position-specific alpha
-values based on a "sliding window" that moves across the terminal area.
+<a href="effects/SweepShader.html" title="class in dev.tamboui.tfx.effects"><code>SweepShader</code></a>) to calculate position-specific
+alpha values based on a "sliding window" that moves across the terminal area.
 <p>
 <b>Design Philosophy:</b>
 <p>
 The sliding window creates a gradient zone that moves across the area as the
-animation progresses. Cells before the window are fully inactive (alpha = 0.0),
-cells within the window have a gradient from 0.0 to 1.0, and cells after the
-window are fully active (alpha = 1.0). This creates smooth directional transitions.
+animation progresses. Cells before the window are fully inactive (alpha =
+0.0), cells within the window have a gradient from 0.0 to 1.0, and cells
+after the window are fully active (alpha = 1.0). This creates smooth
+directional transitions.
 <p>
 <b>Key Concepts:</b>
 <ul>
-  <li><b>Sliding Window:</b> A gradient zone that moves across the area based on
-      animation progress</li>
-  <li><b>Gradient Length:</b> The width of the transition zone in terminal cells</li>
-  <li><b>Progress:</b> The global animation progress (0.0 to 1.0) that determines
-      window position</li>
+<li><b>Sliding Window:</b> A gradient zone that moves across the area based
+on animation progress</li>
+<li><b>Gradient Length:</b> The width of the transition zone in terminal
+cells</li>
+<li><b>Progress:</b> The global animation progress (0.0 to 1.0) that
+determines window position</li>
 </ul>
 <p>
 <b>Usage:</b>
 <p>
-This class is primarily used internally by <a href="effects/SweepShader.html" title="class in dev.tamboui.tfx.effects"><code>SweepShader</code></a>
-to implement sweep effects. It's not typically used directly by application code.
+This class is primarily used internally by
+<a href="effects/SweepShader.html" title="class in dev.tamboui.tfx.effects"><code>SweepShader</code></a> to implement sweep effects. It's
+not typically used directly by application code.
 <p>
-<b>Note:</b> For pattern-based spatial effects (like <a href="pattern/SweepPattern.html" title="class in dev.tamboui.tfx.pattern"><code>SweepPattern</code></a>),
-use <a href="pattern/TransitionProgress.html" title="class in dev.tamboui.tfx.pattern"><code>TransitionProgress</code></a> instead, which provides a
-different approach to spatial mapping that works better with the pattern system.</div>
+<b>Note:</b> For pattern-based spatial effects (like
+<a href="pattern/SweepPattern.html" title="class in dev.tamboui.tfx.pattern"><code>SweepPattern</code></a>), use
+<a href="pattern/TransitionProgress.html" title="class in dev.tamboui.tfx.pattern"><code>TransitionProgress</code></a> instead, which provides a
+different approach to spatial mapping that works better with the pattern
+system.</div>
 </div>
 </section>
 <section class="summary">

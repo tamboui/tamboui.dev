@@ -114,28 +114,32 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Factory class providing static methods for creating common effects.
 <p>
-The Fx class serves as the primary entry point for creating effects. It provides
-convenient factory methods that encapsulate the creation of shaders and their
-wrapping in Effect instances.
+The Fx class serves as the primary entry point for creating effects. It
+provides convenient factory methods that encapsulate the creation of shaders
+and their wrapping in Effect instances.
 <p>
 <b>Design Philosophy:</b>
 <ul>
-  <li><b>Convenience:</b> Simplifies effect creation with sensible defaults</li>
-  <li><b>Consistency:</b> Provides a uniform API for all effect types</li>
-  <li><b>Discoverability:</b> All effects are accessible through a single class</li>
+<li><b>Convenience:</b> Simplifies effect creation with sensible
+defaults</li>
+<li><b>Consistency:</b> Provides a uniform API for all effect types</li>
+<li><b>Discoverability:</b> All effects are accessible through a single
+class</li>
 </ul>
 <p>
 <b>Effect Categories:</b>
 <ul>
-  <li><b>Color Effects:</b> <code>fadeTo</code>, <code>fadeFrom</code>, <code>fadeToFg</code>,
-      <code>fadeFromFg</code>, <code>paint</code>, <code>paintFg</code>, <code>paintBg</code></li>
-  <li><b>Text Effects:</b> <code>dissolve</code>, <code>dissolveTo</code>, <code>coalesce</code>,
-      <code>coalesceFrom</code></li>
-  <li><b>Motion Effects:</b> <code>sweepIn</code>, <code>sweepOut</code>, <code>slideIn</code>, <code>slideOut</code></li>
-  <li><b>Composition:</b> <code>sequence</code>, <code>parallel</code></li>
+<li><b>Color Effects:</b> <code>fadeTo</code>, <code>fadeFrom</code>, <code>fadeToFg</code>,
+<code>fadeFromFg</code>, <code>paint</code>, <code>paintFg</code>, <code>paintBg</code></li>
+<li><b>Text Effects:</b> <code>dissolve</code>, <code>dissolveTo</code>,
+<code>coalesce</code>, <code>coalesceFrom</code></li>
+<li><b>Motion Effects:</b> <code>sweepIn</code>, <code>sweepOut</code>,
+<code>slideIn</code>, <code>slideOut</code></li>
+<li><b>Composition:</b> <code>sequence</code>, <code>parallel</code></li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>// Simple effect with duration and interpolation
 Effect fade = Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut);
 
@@ -144,15 +148,14 @@ EffectTimer timer = EffectTimer.fromMs(2000, Interpolation.BounceOut);
 Effect fadeCustom = Fx.fadeToFg(Color.CYAN, timer);
 
 // Composed effects
-Effect sequence = Fx.sequence(
-    Fx.fadeFromFg(Color.BLACK, 500, Interpolation.QuadOut),
-    Fx.dissolve(800, Interpolation.Linear)
-);
+Effect sequence = Fx.sequence(Fx.fadeFromFg(Color.BLACK, 500, Interpolation.QuadOut),
+        Fx.dissolve(800, Interpolation.Linear));
 </code></pre>
 <p>
-All factory methods return <a href="Effect.html" title="class in dev.tamboui.tfx"><code>Effect</code></a> instances that can be further configured
-using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)"><code>Effect.withFilter(CellFilter)</code></a>,
-<a href="Effect.html#withColorSpace(dev.tamboui.tfx.TFxColorSpace)"><code>Effect.withColorSpace(TFxColorSpace)</code></a>, and <a href="Effect.html#withPattern(dev.tamboui.tfx.pattern.Pattern)"><code>Effect.withPattern(dev.tamboui.tfx.pattern.Pattern)</code></a>.</div>
+All factory methods return <a href="Effect.html" title="class in dev.tamboui.tfx"><code>Effect</code></a> instances that can be further
+configured using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)"><code>Effect.withFilter(CellFilter)</code></a>,
+<a href="Effect.html#withColorSpace(dev.tamboui.tfx.TFxColorSpace)"><code>Effect.withColorSpace(TFxColorSpace)</code></a>, and
+<a href="Effect.html#withPattern(dev.tamboui.tfx.pattern.Pattern)"><code>Effect.withPattern(dev.tamboui.tfx.pattern.Pattern)</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -172,12 +175,14 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coalesce(long,dev.tamboui.tfx.Interpolation)" class="member-name-link">coalesce</a><wbr>(long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random positions.</div>
+<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random
+positions.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coalesce(dev.tamboui.tfx.EffectTimer)" class="member-name-link">coalesce</a><wbr>(<a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random positions.</div>
+<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random
+positions.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#coalesceFrom(dev.tamboui.style.Style,long,dev.tamboui.tfx.Interpolation)" class="member-name-link">coalesceFrom</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style,
@@ -222,14 +227,16 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an expand effect that grows outward from the center in both directions.</div>
+<div class="block">Creates an expand effect that grows outward from the center in both
+directions.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#expand(dev.tamboui.tfx.ExpandDirection,dev.tamboui.style.Style,dev.tamboui.tfx.EffectTimer)" class="member-name-link">expand</a><wbr>(<a href="ExpandDirection.html" title="enum class in dev.tamboui.tfx">ExpandDirection</a>&nbsp;direction,
  <a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an expand effect that grows outward from the center in both directions.</div>
+<div class="block">Creates an expand effect that grows outward from the center in both
+directions.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fadeFrom(dev.tamboui.style.Color,dev.tamboui.style.Color,long,dev.tamboui.tfx.Interpolation)" class="member-name-link">fadeFrom</a><wbr>(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;fromColor,
@@ -251,13 +258,15 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a fade effect that transitions the foreground color from the specified color.</div>
+<div class="block">Creates a fade effect that transitions the foreground color from the
+specified color.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fadeFromFg(dev.tamboui.style.Color,dev.tamboui.tfx.EffectTimer)" class="member-name-link">fadeFromFg</a><wbr>(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;fromColor,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a fade effect that transitions the foreground color from the specified color.</div>
+<div class="block">Creates a fade effect that transitions the foreground color from the
+specified color.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fadeTo(dev.tamboui.style.Color,dev.tamboui.style.Color,long,dev.tamboui.tfx.Interpolation)" class="member-name-link">fadeTo</a><wbr>(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;fromColor,
@@ -356,7 +365,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a slide effect that slides in using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides in using block characters (shutter
+animation).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#slideIn(dev.tamboui.tfx.Motion,int,int,dev.tamboui.style.Color,dev.tamboui.tfx.EffectTimer)" class="member-name-link">slideIn</a><wbr>(<a href="Motion.html" title="enum class in dev.tamboui.tfx">Motion</a>&nbsp;direction,
@@ -365,7 +375,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;colorBehindCell,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a slide effect that slides in using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides in using block characters (shutter
+animation).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#slideOut(dev.tamboui.tfx.Motion,int,int,dev.tamboui.style.Color,long,dev.tamboui.tfx.Interpolation)" class="member-name-link">slideOut</a><wbr>(<a href="Motion.html" title="enum class in dev.tamboui.tfx">Motion</a>&nbsp;direction,
@@ -375,7 +386,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a slide effect that slides out using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides out using block characters (shutter
+animation).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#slideOut(dev.tamboui.tfx.Motion,int,int,dev.tamboui.style.Color,dev.tamboui.tfx.EffectTimer)" class="member-name-link">slideOut</a><wbr>(<a href="Motion.html" title="enum class in dev.tamboui.tfx">Motion</a>&nbsp;direction,
@@ -384,7 +396,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;colorBehindCell,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a slide effect that slides out using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides out using block characters (shutter
+animation).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sweepIn(dev.tamboui.tfx.Motion,int,int,dev.tamboui.style.Color,long,dev.tamboui.tfx.Interpolation)" class="member-name-link">sweepIn</a><wbr>(<a href="Motion.html" title="enum class in dev.tamboui.tfx">Motion</a>&nbsp;direction,
@@ -563,7 +576,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">fadeFromFg</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;fromColor,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</span></div>
-<div class="block">Creates a fade effect that transitions the foreground color from the specified color.</div>
+<div class="block">Creates a fade effect that transitions the foreground color from the
+specified color.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>fromColor</code> - The starting foreground color</dd>
@@ -581,7 +595,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">fadeFromFg</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;fromColor,
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
-<div class="block">Creates a fade effect that transitions the foreground color from the specified color.</div>
+<div class="block">Creates a fade effect that transitions the foreground color from the
+specified color.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>fromColor</code> - The starting foreground color</dd>
@@ -666,7 +681,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
 <h3>coalesce</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">coalesce</span><wbr><span class="parameters">(<a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</span></div>
-<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random positions.</div>
+<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random
+positions.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>timer</code> - The effect timer</dd>
@@ -682,7 +698,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">coalesce</span><wbr><span class="parameters">(long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
-<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random positions.</div>
+<div class="block">Creates a coalesce effect (reverse dissolve) that coalesces text from random
+positions.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>durationMs</code> - Duration in milliseconds</dd>
@@ -834,7 +851,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  int&nbsp;randomness,
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;colorBehindCell,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</span></div>
-<div class="block">Creates a slide effect that slides in using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides in using block characters (shutter
+animation).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>direction</code> - The direction of the slide</dd>
@@ -858,7 +876,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;colorBehindCell,
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
-<div class="block">Creates a slide effect that slides in using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides in using block characters (shutter
+animation).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>direction</code> - The direction of the slide</dd>
@@ -882,7 +901,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  int&nbsp;randomness,
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;colorBehindCell,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</span></div>
-<div class="block">Creates a slide effect that slides out using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides out using block characters (shutter
+animation).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>direction</code> - The direction of the slide</dd>
@@ -906,7 +926,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;colorBehindCell,
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
-<div class="block">Creates a slide effect that slides out using block characters (shutter animation).</div>
+<div class="block">Creates a slide effect that slides out using block characters (shutter
+animation).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>direction</code> - The direction of the slide</dd>
@@ -1038,8 +1059,8 @@ using methods like <a href="Effect.html#withFilter(dev.tamboui.tfx.CellFilter)">
 <h3>sequence</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">sequence</span><wbr><span class="parameters">(<a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a>...&nbsp;effects)</span></div>
-<div class="block">Runs the effects in sequence, one after the other.
-Reports completion once the last effect has completed.</div>
+<div class="block">Runs the effects in sequence, one after the other. Reports completion once
+the last effect has completed.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>effects</code> - The effects to run sequentially</dd>
@@ -1054,8 +1075,8 @@ Reports completion once the last effect has completed.</div>
 <h3>sequence</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">sequence</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a>&gt;&nbsp;effects)</span></div>
-<div class="block">Runs the effects in sequence, one after the other.
-Reports completion once the last effect has completed.</div>
+<div class="block">Runs the effects in sequence, one after the other. Reports completion once
+the last effect has completed.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>effects</code> - The list of effects to run sequentially</dd>
@@ -1070,8 +1091,8 @@ Reports completion once the last effect has completed.</div>
 <h3>parallel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">parallel</span><wbr><span class="parameters">(<a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a>...&nbsp;effects)</span></div>
-<div class="block">Runs the effects in parallel, all at the same time.
-Reports completion once all effects have completed.</div>
+<div class="block">Runs the effects in parallel, all at the same time. Reports completion once
+all effects have completed.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>effects</code> - The effects to run in parallel</dd>
@@ -1086,8 +1107,8 @@ Reports completion once all effects have completed.</div>
 <h3>parallel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">parallel</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a>&gt;&nbsp;effects)</span></div>
-<div class="block">Runs the effects in parallel, all at the same time.
-Reports completion once all effects have completed.</div>
+<div class="block">Runs the effects in parallel, all at the same time. Reports completion once
+all effects have completed.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>effects</code> - The list of effects to run in parallel</dd>
@@ -1104,14 +1125,17 @@ Reports completion once all effects have completed.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Effect.html" title="class in dev.tamboui.tfx">Effect</a></span>&nbsp;<span class="element-name">expand</span><wbr><span class="parameters">(<a href="ExpandDirection.html" title="enum class in dev.tamboui.tfx">ExpandDirection</a>&nbsp;direction,
  <a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style,
  <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a>&nbsp;timer)</span></div>
-<div class="block">Creates an expand effect that grows outward from the center in both directions.
+<div class="block">Creates an expand effect that grows outward from the center in both
+directions.
 <p>
-The expand effect fills the area with the specified style (including background color),
-then reveals the content as it expands. It uses block characters for smooth transitions.</div>
+The expand effect fills the area with the specified style (including
+background color), then reveals the content as it expands. It uses block
+characters for smooth transitions.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>direction</code> - The direction of expansion (horizontal or vertical)</dd>
-<dd><code>style</code> - The style to apply during expansion (foreground and background colors)</dd>
+<dd><code>style</code> - The style to apply during expansion (foreground and background
+           colors)</dd>
 <dd><code>timer</code> - The effect timer</dd>
 <dt>Returns:</dt>
 <dd>An expand effect</dd>
@@ -1127,11 +1151,13 @@ then reveals the content as it expands. It uses block characters for smooth tran
  <a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style,
  long&nbsp;durationMs,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
-<div class="block">Creates an expand effect that grows outward from the center in both directions.</div>
+<div class="block">Creates an expand effect that grows outward from the center in both
+directions.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>direction</code> - The direction of expansion (horizontal or vertical)</dd>
-<dd><code>style</code> - The style to apply during expansion (foreground and background colors)</dd>
+<dd><code>style</code> - The style to apply during expansion (foreground and background
+           colors)</dd>
 <dd><code>durationMs</code> - Duration in milliseconds</dd>
 <dd><code>interpolation</code> - The interpolation method</dd>
 <dt>Returns:</dt>

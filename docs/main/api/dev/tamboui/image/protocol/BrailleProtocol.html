@@ -97,10 +97,12 @@ implements <a href="ImageProtocol.html" title="interface in dev.tamboui.image.pr
 <div class="block">Renders images using Unicode Braille patterns.
 <p>
 Each terminal cell can display a 2x4 grid of Braille dots (8 dots total),
-providing the highest character-based resolution at 2x4 virtual pixels per cell.
+providing the highest character-based resolution at 2x4 virtual pixels per
+cell.
 <p>
-Braille patterns use Unicode characters from U+2800 to U+28FF.
-The 8 dots are mapped to bits as follows:
+Braille patterns use Unicode characters from U+2800 to U+28FF. The 8 dots are
+mapped to bits as follows:
+
 <pre>
 Dot positions:  Bit values:
   1 4           0x01 0x08
@@ -109,8 +111,8 @@ Dot positions:  Bit values:
   7 8           0x40 0x80
 </pre>
 <p>
-Uses adaptive percentile-based thresholding to determine which pixels are "on".
-By default, the brightest 75% of pixels are shown as dots.</div>
+Uses adaptive percentile-based thresholding to determine which pixels are
+"on". By default, the brightest 75% of pixels are shown as dots.</div>
 </div>
 </section>
 <section class="summary">
@@ -218,7 +220,8 @@ By default, the brightest 75% of pixels are shown as dots (25th percentile).</di
 <div class="block">Creates a new Braille protocol instance with a custom percentile threshold.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>percentile</code> - percentile (0-100) - pixels with luminance above this percentile are "on"</dd>
+<dd><code>percentile</code> - percentile (0-100) - pixels with luminance above this percentile
+           are "on"</dd>
 </dl>
 </div>
 </section>
@@ -242,8 +245,8 @@ By default, the brightest 75% of pixels are shown as dots (25th percentile).</di
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ImageProtocol.html#render(dev.tamboui.image.ImageData,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)">ImageProtocol</a></code></span></div>
 <div class="block">Renders the image to the given terminal area.
 <p>
-Character-based protocols write directly to the buffer.
-Native protocols write to the raw output stream.</div>
+Character-based protocols write directly to the buffer. Native protocols
+write to the raw output stream.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ImageProtocol.html#render(dev.tamboui.image.ImageData,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)">render</a></code>&nbsp;in interface&nbsp;<code><a href="ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></code></dd>
@@ -251,7 +254,8 @@ Native protocols write to the raw output stream.</div>
 <dd><code>image</code> - the image data to render</dd>
 <dd><code>area</code> - the terminal area (in character cells) to render into</dd>
 <dd><code>buffer</code> - the buffer for character-based rendering</dd>
-<dd><code>rawOutput</code> - the output stream for native protocol escape sequences (may be null)</dd>
+<dd><code>rawOutput</code> - the output stream for native protocol escape sequences (may be
+           null)</dd>
 </dl>
 </div>
 </section>
@@ -264,8 +268,9 @@ Native protocols write to the raw output stream.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ImageProtocol.html#requiresRawOutput()">ImageProtocol</a></code></span></div>
 <div class="block">Returns true if this protocol requires raw byte output.
 <p>
-Character-based protocols (half-block, braille) return false and use the buffer.
-Native protocols (Sixel, Kitty, iTerm2) return true and use rawOutput.</div>
+Character-based protocols (half-block, braille) return false and use the
+buffer. Native protocols (Sixel, Kitty, iTerm2) return true and use
+rawOutput.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ImageProtocol.html#requiresRawOutput()">requiresRawOutput</a></code>&nbsp;in interface&nbsp;<code><a href="ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></code></dd>
@@ -285,9 +290,9 @@ Native protocols (Sixel, Kitty, iTerm2) return true and use rawOutput.</div>
 <p>
 This indicates how many "virtual pixels" each terminal cell can represent:
 <ul>
-  <li>Half-block: 1x2 (1 column, 2 rows per cell)</li>
-  <li>Braille: 2x4 (2 columns, 4 rows per cell)</li>
-  <li>Native protocols: depends on cell pixel size</li>
+<li>Half-block: 1x2 (1 column, 2 rows per cell)</li>
+<li>Braille: 2x4 (2 columns, 4 rows per cell)</li>
+<li>Native protocols: depends on cell pixel size</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>

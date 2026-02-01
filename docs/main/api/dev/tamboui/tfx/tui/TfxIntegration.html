@@ -92,25 +92,28 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Integrates TFX effects with the TuiRunner event loop.
 <p>
-TfxIntegration provides a non-invasive way to add visual effects to TUI applications
-by wrapping the event handler and renderer. Effects are processed during tick events
-and applied after the user's rendering completes.
+TfxIntegration provides a non-invasive way to add visual effects to TUI
+applications by wrapping the event handler and renderer. Effects are
+processed during tick events and applied after the user's rendering
+completes.
 <p>
 <b>Design Philosophy:</b>
 <ul>
-  <li><b>Non-invasive:</b> Wraps existing handlers without requiring changes to application code</li>
-  <li><b>Automatic timing:</b> Uses TickEvent elapsed time for consistent animation</li>
-  <li><b>Forced redraws:</b> Automatically triggers redraws when effects are running</li>
+<li><b>Non-invasive:</b> Wraps existing handlers without requiring changes to
+application code</li>
+<li><b>Automatic timing:</b> Uses TickEvent elapsed time for consistent
+animation</li>
+<li><b>Forced redraws:</b> Automatically triggers redraws when effects are
+running</li>
 </ul>
 <p>
 <b>Usage:</b>
+
 <pre><code>TfxIntegration tfx = new TfxIntegration();
 tfx.addEffect(Fx.fadeFromFg(Color.BLACK, 1000, Interpolation.QuadOut));
 
-tui.run(
-    tfx.wrapHandler((event, runner) -&gt; handleEvent(event)),
-    tfx.wrapRenderer(frame -&gt; renderUI(frame))
-);
+tui.run(tfx.wrapHandler((event, runner) -&gt; handleEvent(event)),
+        tfx.wrapRenderer(frame -&gt; renderUI(frame)));
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -187,7 +190,8 @@ tui.run(
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../tui/EventHandler.html" title="interface in dev.tamboui.tui">EventHandler</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapHandler(dev.tamboui.tui.EventHandler)" class="member-name-link">wrapHandler</a><wbr>(<a href="../../tui/EventHandler.html" title="interface in dev.tamboui.tui">EventHandler</a>&nbsp;handler)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Wraps an event handler to capture tick timing and force redraws when effects are running.</div>
+<div class="block">Wraps an event handler to capture tick timing and force redraws when effects
+are running.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../tui/Renderer.html" title="interface in dev.tamboui.tui">Renderer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrapRenderer(dev.tamboui.tui.Renderer)" class="member-name-link">wrapRenderer</a><wbr>(<a href="../../tui/Renderer.html" title="interface in dev.tamboui.tui">Renderer</a>&nbsp;renderer)</code></div>
@@ -235,8 +239,8 @@ tui.run(
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEffect</span><wbr><span class="parameters">(<a href="../Effect.html" title="class in dev.tamboui.tfx">Effect</a>&nbsp;effect)</span></div>
 <div class="block">Adds an effect to be processed.
 <p>
-The effect will be applied to the entire frame area during rendering.
-For effects that target specific areas, use <a href="#addEffect(dev.tamboui.tfx.Effect,dev.tamboui.layout.Rect)"><code>addEffect(Effect, Rect)</code></a>.</div>
+The effect will be applied to the entire frame area during rendering. For
+effects that target specific areas, use <a href="#addEffect(dev.tamboui.tfx.Effect,dev.tamboui.layout.Rect)"><code>addEffect(Effect, Rect)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>effect</code> - the effect to add</dd>
@@ -303,13 +307,14 @@ This can be used to determine if the UI needs continuous redraws.</div>
 <h3>wrapHandler</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../tui/EventHandler.html" title="interface in dev.tamboui.tui">EventHandler</a></span>&nbsp;<span class="element-name">wrapHandler</span><wbr><span class="parameters">(<a href="../../tui/EventHandler.html" title="interface in dev.tamboui.tui">EventHandler</a>&nbsp;handler)</span></div>
-<div class="block">Wraps an event handler to capture tick timing and force redraws when effects are running.
+<div class="block">Wraps an event handler to capture tick timing and force redraws when effects
+are running.
 <p>
 The wrapper:
 <ul>
-  <li>Captures elapsed time from <a href="../../tui/event/TickEvent.html" title="class in dev.tamboui.tui.event"><code>TickEvent</code></a>s for effect timing</li>
-  <li>Forces redraws (returns true) when effects are active</li>
-  <li>Delegates all events to the wrapped handler</li>
+<li>Captures elapsed time from <a href="../../tui/event/TickEvent.html" title="class in dev.tamboui.tui.event"><code>TickEvent</code></a>s for effect timing</li>
+<li>Forces redraws (returns true) when effects are active</li>
+<li>Delegates all events to the wrapped handler</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -329,9 +334,9 @@ The wrapper:
 <p>
 The wrapper:
 <ul>
-  <li>Calls the wrapped renderer first</li>
-  <li>Processes all active effects on the buffer</li>
-  <li>Automatically removes completed effects</li>
+<li>Calls the wrapped renderer first</li>
+<li>Processes all active effects on the buffer</li>
+<li>Automatically removes completed effects</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -352,8 +357,8 @@ The wrapper:
              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Utility method to run a TUI application with TFX integration.
 <p>
-This is a convenience method that wraps the handler and renderer
-and calls <a href="../../tui/TuiRunner.html#run(dev.tamboui.tui.EventHandler,dev.tamboui.tui.Renderer)"><code>TuiRunner.run(EventHandler, Renderer)</code></a>.</div>
+This is a convenience method that wraps the handler and renderer and calls
+<a href="../../tui/TuiRunner.html#run(dev.tamboui.tui.EventHandler,dev.tamboui.tui.Renderer)"><code>TuiRunner.run(EventHandler, Renderer)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>runner</code> - the TUI runner</dd>

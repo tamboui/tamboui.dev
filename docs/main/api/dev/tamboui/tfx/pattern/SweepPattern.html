@@ -90,44 +90,48 @@ implements <a href="Pattern.html" title="interface in dev.tamboui.tfx.pattern">P
 <div class="block">Pattern implementation for linear sweep effects in cardinal directions.
 <p>
 SweepPattern creates effects that progress linearly across the terminal area
-in one of the four cardinal directions (left-to-right, right-to-left, up-to-down,
-down-to-up). The effect creates a "wave" or "wipe" animation that moves
-across the screen.
+in one of the four cardinal directions (left-to-right, right-to-left,
+up-to-down, down-to-up). The effect creates a "wave" or "wipe" animation that
+moves across the screen.
 <p>
 <b>Design Philosophy:</b>
 <p>
-Sweep patterns are ideal for directional reveals, transitions, and wipes. They
-provide a simple, predictable way to control effect progression based on
+Sweep patterns are ideal for directional reveals, transitions, and wipes.
+They provide a simple, predictable way to control effect progression based on
 position along one axis.
 <p>
 <b>Key Concepts:</b>
 <ul>
-  <li><b>Direction:</b> The cardinal direction of the sweep (horizontal or vertical)</li>
-  <li><b>Transition Width:</b> Controls the gradient zone where the effect transitions
-      from inactive to active (in terminal cells). Larger values create smoother,
-      more gradual transitions.</li>
-  <li><b>Position Calculation:</b> Uses cell position along the sweep axis to
-      determine effect strength</li>
+<li><b>Direction:</b> The cardinal direction of the sweep (horizontal or
+vertical)</li>
+<li><b>Transition Width:</b> Controls the gradient zone where the effect
+transitions from inactive to active (in terminal cells). Larger values create
+smoother, more gradual transitions.</li>
+<li><b>Position Calculation:</b> Uses cell position along the sweep axis to
+determine effect strength</li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>// Sweep from left to right
 Effect sweep = Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut)
-    .withPattern(SweepPattern.leftToRight(15.0f));
+        .withPattern(SweepPattern.leftToRight(15.0f));
 
 // Sweep from top to bottom
 Effect verticalSweep = Fx.dissolve(2000, Interpolation.QuadOut)
-    .withPattern(SweepPattern.upToDown(10.0f));
+        .withPattern(SweepPattern.upToDown(10.0f));
 </code></pre>
 <p>
-The pattern uses <a href="TransitionProgress.html#mapSpatial(float,float,float)"><code>TransitionProgress.mapSpatial(float, float, float)</code></a> internally
-to calculate position-specific alpha values based on the cell's position along the
-sweep axis and the global animation progress. This provides smooth gradient transitions
-controlled by the transition width parameter.
+The pattern uses <a href="TransitionProgress.html#mapSpatial(float,float,float)"><code>TransitionProgress.mapSpatial(float, float, float)</code></a>
+internally to calculate position-specific alpha values based on the cell's
+position along the sweep axis and the global animation progress. This
+provides smooth gradient transitions controlled by the transition width
+parameter.
 <p>
-<b>Note:</b> <a href="../SlidingWindowAlpha.html" title="class in dev.tamboui.tfx"><code>SlidingWindowAlpha</code></a> is used by <a href="../effects/SweepShader.html" title="class in dev.tamboui.tfx.effects"><code>SweepShader</code></a>
-for sweep effects, but <code>SweepPattern</code> uses <code>TransitionProgress</code> for
-pattern-based spatial mapping when applied to other effects (like fade effects).</div>
+<b>Note:</b> <a href="../SlidingWindowAlpha.html" title="class in dev.tamboui.tfx"><code>SlidingWindowAlpha</code></a> is used by
+<a href="../effects/SweepShader.html" title="class in dev.tamboui.tfx.effects"><code>SweepShader</code></a> for sweep effects, but
+<code>SweepPattern</code> uses <code>TransitionProgress</code> for pattern-based
+spatial mapping when applied to other effects (like fade effects).</div>
 </div>
 </section>
 <section class="summary">

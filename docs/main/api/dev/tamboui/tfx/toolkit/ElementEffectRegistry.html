@@ -96,35 +96,40 @@ loadScripts(document, 'script');</script>
 <div class="block">Registry for effects that target specific elements by ID.
 <p>
 ElementEffectRegistry manages effects that are associated with element IDs.
-Effects are stored with their element ID associations, and areas are looked up
-dynamically each frame from the ElementRegistry. This ensures effects automatically
-follow their target elements when the terminal resizes.
+Effects are stored with their element ID associations, and areas are looked
+up dynamically each frame from the ElementRegistry. This ensures effects
+automatically follow their target elements when the terminal resizes.
 <p>
 <b>Design Philosophy:</b>
 <ul>
-  <li><b>Dynamic Area Lookup:</b> Effect areas are looked up each frame, so effects
-      automatically follow elements when they move or resize</li>
-  <li><b>render thread:</b> All mutating operations must be called from the render thread</li>
-  <li><b>No Coupling:</b> Does not require Element interface changes</li>
+<li><b>Dynamic Area Lookup:</b> Effect areas are looked up each frame, so
+effects automatically follow elements when they move or resize</li>
+<li><b>render thread:</b> All mutating operations must be called from the
+render thread</li>
+<li><b>No Coupling:</b> Does not require Element interface changes</li>
 </ul>
 <p>
 <b>Supported Pseudo-Classes:</b>
 <ul>
-  <li><code>:focus</code> - Matches elements that have focus (via FocusManager)</li>
+<li><code>:focus</code> - Matches elements that have focus (via FocusManager)</li>
 </ul>
 <p>
 <b>Limitations - Pseudo-classes NOT supported for effects:</b>
 <ul>
-  <li><code>:hover</code> - No mouse hover tracking in TUI</li>
-  <li><code>:disabled</code>, <code>:selected</code>, <code>:active</code> - Element state not tracked post-render</li>
-  <li><code>:first-child</code>, <code>:last-child</code>, <code>:nth-child()</code> - Sibling position not tracked</li>
+<li><code>:hover</code> - No mouse hover tracking in TUI</li>
+<li><code>:disabled</code>, <code>:selected</code>, <code>:active</code> - Element state not
+tracked post-render</li>
+<li><code>:first-child</code>, <code>:last-child</code>, <code>:nth-child()</code> - Sibling
+position not tracked</li>
 </ul>
 <p>
-Note: These pseudo-classes work for CSS styling during render (via <code>childStyle()</code>)
-but are not available for effect targeting because element state and position are not
-preserved in the ElementRegistry after rendering.
+Note: These pseudo-classes work for CSS styling during render (via
+<code>childStyle()</code>) but are not available for effect targeting because
+element state and position are not preserved in the ElementRegistry after
+rendering.
 <p>
 <b>Usage:</b>
+
 <pre><code>ElementEffectRegistry registry = new ElementEffectRegistry();
 
 // Add effect targeting an element
@@ -234,7 +239,8 @@ registry.processEffects(delta, buffer, fullArea, elementRegistry);
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runningCount()" class="member-name-link">runningCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of running effects (global + element-targeted + styled-area-targeted).</div>
+<div class="block">Returns the number of running effects (global + element-targeted +
+styled-area-targeted).</div>
 </div>
 </div>
 </div>
@@ -319,18 +325,18 @@ Convenience method that extracts the element's ID.</div>
 <div class="block">Adds an effect that targets elements matching a CSS-like selector.
 <p>
 The effect will be applied to all elements matching the selector when
-<a href="#expandSelectors(dev.tamboui.toolkit.element.ElementRegistry)"><code>expandSelectors(ElementRegistry)</code></a> is called. Each matching
-element receives a copy of the effect.
+<a href="#expandSelectors(dev.tamboui.toolkit.element.ElementRegistry)"><code>expandSelectors(ElementRegistry)</code></a> is called. Each matching element
+receives a copy of the effect.
 <p>
 Must be called from the render thread.
 <p>
 Supported selectors:
 <ul>
-  <li><code>#id</code> - matches element by ID</li>
-  <li><code>.class</code> - matches elements by CSS class</li>
-  <li><code>Type</code> - matches elements by type name</li>
-  <li><code>Type.class</code> - combined type and class</li>
-  <li><code>.class1.class2</code> - multiple classes</li>
+<li><code>#id</code> - matches element by ID</li>
+<li><code>.class</code> - matches elements by CSS class</li>
+<li><code>Type</code> - matches elements by type name</li>
+<li><code>Type.class</code> - combined type and class</li>
+<li><code>.class1.class2</code> - multiple classes</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -367,8 +373,8 @@ Must be called from the render thread.</div>
 <div class="block">Expands pending selector-based effects to individual effect instances.
 <p>
 This method queries the ElementRegistry to find elements matching each
-pending selector and creates effect copies for each match. The selector
-and its effect instances are then tracked for dynamic area lookup.
+pending selector and creates effect copies for each match. The selector and
+its effect instances are then tracked for dynamic area lookup.
 <p>
 This should be called after rendering completes but before
 <a href="#processEffects(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.ElementRegistry,dev.tamboui.style.StyledAreaRegistry,dev.tamboui.toolkit.focus.FocusManager)"><code>processEffects(TFxDuration, Buffer, Rect, ElementRegistry, StyledAreaRegistry, FocusManager)</code></a>.</div>
@@ -389,14 +395,15 @@ This should be called after rendering completes but before
 <p>
 This method queries both the ElementRegistry (for elements) and
 StyledAreaRegistry (for styled spans) to find all targets matching each
-pending selector. Effect copies are created for each match and tracked
-for dynamic area lookup.
+pending selector. Effect copies are created for each match and tracked for
+dynamic area lookup.
 <p>
 This enables selectors like:
 <ul>
-  <li><code>.highlight</code> - matches both elements and spans with class "highlight"</li>
-  <li><code>#myPanel .highlight</code> - matches spans inside element #myPanel</li>
-  <li><code>Span.error</code> - matches only styled spans (type "Span")</li>
+<li><code>.highlight</code> - matches both elements and spans with class
+"highlight"</li>
+<li><code>#myPanel .highlight</code> - matches spans inside element #myPanel</li>
+<li><code>Span.error</code> - matches only styled spans (type "Span")</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -418,11 +425,13 @@ This enables selectors like:
  <a href="../../toolkit/focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager)</span></div>
 <div class="block">Processes all active effects with dynamic area lookup from both registries.
 <p>
-This processes global effects, ID-based effects, selector-based element effects,
-and selector-based styled area effects. Areas are looked up dynamically each
-frame, so effects automatically follow their targets when they move or resize.
+This processes global effects, ID-based effects, selector-based element
+effects, and selector-based styled area effects. Areas are looked up
+dynamically each frame, so effects automatically follow their targets when
+they move or resize.
 <p>
-Pseudo-class selectors like <code>:focus</code> are supported via the FocusManager.
+Pseudo-class selectors like <code>:focus</code> are supported via the
+FocusManager.
 <p>
 Effects are automatically removed when complete.</div>
 <dl class="notes">
@@ -479,7 +488,8 @@ Must be called from the render thread.</div>
 <h3>runningCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">runningCount</span>()</div>
-<div class="block">Returns the number of running effects (global + element-targeted + styled-area-targeted).</div>
+<div class="block">Returns the number of running effects (global + element-targeted +
+styled-area-targeted).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>running effect count</dd>

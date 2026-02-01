@@ -95,11 +95,12 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">SequentialEffect</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></span></div>
-<div class="block">Shader implementation that runs multiple effects sequentially, one after another.
+<div class="block">Shader implementation that runs multiple effects sequentially, one after
+another.
 <p>
-SequentialEffect composes multiple effects into a chain, where each effect runs
-to completion before the next one begins. This allows creating complex animations
-by combining simple effects.
+SequentialEffect composes multiple effects into a chain, where each effect
+runs to completion before the next one begins. This allows creating complex
+animations by combining simple effects.
 <p>
 <b>Design Philosophy:</b>
 <p>
@@ -109,22 +110,21 @@ time from one effect is automatically passed to the next.
 <p>
 <b>Behavior:</b>
 <ul>
-  <li>Effects run in the order they are provided</li>
-  <li>Each effect must complete before the next begins</li>
-  <li>Overflow time from completed effects is passed to the next effect</li>
-  <li>The sequence completes when all effects have completed</li>
+<li>Effects run in the order they are provided</li>
+<li>Each effect must complete before the next begins</li>
+<li>Overflow time from completed effects is passed to the next effect</li>
+<li>The sequence completes when all effects have completed</li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>// Chain fade-in followed by dissolve
-Effect sequence = Fx.sequence(
-    Fx.fadeFromFg(Color.BLACK, 500, Interpolation.QuadOut),
-    Fx.dissolve(800, Interpolation.Linear)
-);
+Effect sequence = Fx.sequence(Fx.fadeFromFg(Color.BLACK, 500, Interpolation.QuadOut),
+        Fx.dissolve(800, Interpolation.Linear));
 </code></pre>
 <p>
-This shader is typically created through <a href="../Fx.html#sequence(dev.tamboui.tfx.Effect...)"><code>Fx.sequence(Effect...)</code></a>
-rather than directly.</div>
+This shader is typically created through
+<a href="../Fx.html#sequence(dev.tamboui.tfx.Effect...)"><code>Fx.sequence(Effect...)</code></a> rather than directly.</div>
 </div>
 </section>
 <section class="summary">
@@ -288,20 +288,21 @@ rather than directly.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">Shader</a></code></span></div>
 <div class="block">Processes the shader for the given duration.
 <p>
-The default implementation:
-1. Updates the timer with the given duration (if a timer exists)
-2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state
-3. Returns any overflow duration
+The default implementation: 1. Updates the timer with the given duration (if
+a timer exists) 2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state 3. Returns
+any overflow duration
 <p>
-Most effects should use this default implementation and implement <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a>
-instead. Only override this if you need custom timer handling.</div>
+Most effects should use this default implementation and implement
+<a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> instead. Only override this if you need custom timer
+handling.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">process</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The duration to process the shader for</dd>
 <dd><code>buffer</code> - The buffer where the shader will be applied</dd>
-<dd><code>area</code> - The rectangular area within the buffer where the shader will be applied</dd>
+<dd><code>area</code> - The rectangular area within the buffer where the shader will be
+           applied</dd>
 <dt>Returns:</dt>
 <dd>The overflow duration if the shader is done, or null if still running</dd>
 </dl>

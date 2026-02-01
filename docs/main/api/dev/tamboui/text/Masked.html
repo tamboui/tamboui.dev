@@ -90,10 +90,11 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A wrapper around a string that is masked when displayed.
 <p>
-The masked string is displayed as a series of the same character. This might be used to display
-a password field or similar secure data.
+The masked string is displayed as a series of the same character. This might
+be used to display a password field or similar secure data.
 <p>
 Example:
+
 <pre><code>Masked password = new Masked("secret123", '*');
 Span span = Span.styled(password.value(), Style.EMPTY.fg(Color.RED));
 // span will display as "*********"
@@ -211,8 +212,8 @@ Span span = Span.styled(password.value(), Style.EMPTY.fg(Color.RED));
 <h3>value</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">value</span>()</div>
-<div class="block">Returns the underlying string, with all characters masked.
-Uses code point count to handle Unicode properly.</div>
+<div class="block">Returns the underlying string, with all characters masked. Uses code point
+count to handle Unicode properly.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the masked string</dd>
@@ -225,8 +226,8 @@ Uses code point count to handle Unicode properly.</div>
 <h3>original</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">original</span>()</div>
-<div class="block">Returns the original (unmasked) text.
-Use with caution - this exposes the sensitive data.</div>
+<div class="block">Returns the original (unmasked) text. Use with caution - this exposes the
+sensitive data.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the original unmasked text</dd>

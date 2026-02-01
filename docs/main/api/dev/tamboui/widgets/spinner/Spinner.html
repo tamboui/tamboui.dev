@@ -95,25 +95,21 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Spinner</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;<a href="SpinnerState.html" title="class in dev.tamboui.widgets.spinner">SpinnerState</a>&gt;</span></div>
-<div class="block">A widget that renders an animated spinner by cycling through frame characters.
+<div class="block">A widget that renders an animated spinner by cycling through frame
+characters.
 <p>
-The spinner displays one frame at a time, determined by the current tick
-in the <a href="SpinnerState.html" title="class in dev.tamboui.widgets.spinner"><code>SpinnerState</code></a>. Each tick advances to the next frame in the sequence.
+The spinner displays one frame at a time, determined by the current tick in
+the <a href="SpinnerState.html" title="class in dev.tamboui.widgets.spinner"><code>SpinnerState</code></a>. Each tick advances to the next frame in the
+sequence.
 
 <pre><code>// Create a spinner with the DOTS style
-Spinner spinner = Spinner.builder()
-    .spinnerStyle(SpinnerStyle.DOTS)
-    .build();
+Spinner spinner = Spinner.builder().spinnerStyle(SpinnerStyle.DOTS).build();
 
 // Create a spinner with custom frames
-Spinner spinner = Spinner.builder()
-    .frames("*", "+", "x", "+")
-    .build();
+Spinner spinner = Spinner.builder().frames("*", "+", "x", "+").build();
 
 // Create a spinner with a custom frame set
-Spinner spinner = Spinner.builder()
-    .frameSet(SpinnerFrameSet.of("⠋", "⠙", "⠹", "⠸"))
-    .build();
+Spinner spinner = Spinner.builder().frameSet(SpinnerFrameSet.of("⠋", "⠙", "⠹", "⠸")).build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -238,10 +234,10 @@ Spinner spinner = Spinner.builder()
 CSS values are derived from enum names by converting to lowercase and
 replacing underscores with hyphens. For example:
 <ul>
-  <li><code>dots</code> - braille dot pattern (default)</li>
-  <li><code>line</code> - classic -\|/</li>
-  <li><code>bouncing-bar</code> - bouncing bar [=== ]</li>
-  <li><code>gauge</code> - horizontal block fill</li>
+<li><code>dots</code> - braille dot pattern (default)</li>
+<li><code>line</code> - classic -\|/</li>
+<li><code>bouncing-bar</code> - bouncing bar [=== ]</li>
+<li><code>gauge</code> - horizontal block fill</li>
 </ul>
 This property is NOT inheritable. Default: <a href="SpinnerStyle.html#DOTS"><code>SpinnerStyle.DOTS</code></a></div>
 </div>
@@ -258,8 +254,8 @@ Format: variable number of quoted strings representing the animation frames.
 <p>
 Example: <code>spinner-frames: "-" "\\" "|" "/"</code>
 <p>
-This property overrides <code>spinner-style</code> when set.
-This property is NOT inheritable.</div>
+This property overrides <code>spinner-style</code> when set. This property is NOT
+inheritable.</div>
 </div>
 </section>
 </li>

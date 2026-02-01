@@ -94,11 +94,12 @@ loadScripts(document, 'script');</script>
 implements <a href="Patchable.html" title="interface in dev.tamboui.style">Patchable</a>&lt;<a href="Tags.html" title="class in dev.tamboui.style">Tags</a>&gt;</span></div>
 <div class="block">A collection of tag names associated with a Style.
 <p>
-Tags are preserved from markup parsing and can be used as CSS class names
-for TFX effects targeting. When styles are patched together, tags are
+Tags are preserved from markup parsing and can be used as CSS class names for
+TFX effects targeting. When styles are patched together, tags are
 automatically merged (unioned) due to the <a href="Patchable.html" title="interface in dev.tamboui.style"><code>Patchable</code></a> implementation.
 <p>
 Example usage:
+
 <pre><code>// Create a style with tags
 Style style = Style.EMPTY.withExtension(Tags.class, Tags.of("bold", "highlight"));
 

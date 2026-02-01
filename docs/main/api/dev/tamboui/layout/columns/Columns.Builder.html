@@ -271,9 +271,8 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></span>&nbsp;<span class="element-name">columnWidths</span><wbr><span class="parameters">(<a href="../Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>...&nbsp;widths)</span></div>
 <div class="block">Sets the width constraints for columns.
 <p>
-If not set, all columns use <a href="../Constraint.html#fill()"><code>Constraint.fill()</code></a>.
-If fewer constraints than columns are provided, remaining columns use
-<a href="../Constraint.html#fill()"><code>Constraint.fill()</code></a>.</div>
+If not set, all columns use <a href="../Constraint.html#fill()"><code>Constraint.fill()</code></a>. If fewer constraints
+than columns are provided, remaining columns use <a href="../Constraint.html#fill()"><code>Constraint.fill()</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>widths</code> - the column width constraints</dd>
@@ -305,8 +304,8 @@ If fewer constraints than columns are provided, remaining columns use
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Columns.Builder.html" title="class in dev.tamboui.layout.columns">Columns.Builder</a></span>&nbsp;<span class="element-name">rowHeights</span><wbr><span class="parameters">(int...&nbsp;heights)</span></div>
 <div class="block">Sets explicit row heights.
 <p>
-If not set, rows share the available height equally.
-If fewer heights than rows are provided, remaining rows default to 1.</div>
+If not set, rows share the available height equally. If fewer heights than
+rows are provided, remaining rows default to 1.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>heights</code> - the row heights</dd>

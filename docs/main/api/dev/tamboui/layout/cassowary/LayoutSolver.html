@@ -85,15 +85,18 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Bridge between TamboUI layout constraints and the Cassowary solver.
 
-<p>This class translates TamboUI's constraint types and Flex modes into
+<p>
+This class translates TamboUI's constraint types and Flex modes into
 Cassowary constraints and solves them using the simplex method.
 
-<p>The solver creates variables for each segment's position and size,
-then adds constraints based on the TamboUI constraint types and the
-selected Flex distribution mode.
+<p>
+The solver creates variables for each segment's position and size, then adds
+constraints based on the TamboUI constraint types and the selected Flex
+distribution mode.
 
-<p>This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic,
-avoiding the cumulative rounding errors that occur with floating-point.</div>
+<p>
+This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic, avoiding the
+cumulative rounding errors that occur with floating-point.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>

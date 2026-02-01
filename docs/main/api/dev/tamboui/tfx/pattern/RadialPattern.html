@@ -97,27 +97,28 @@ from the center point, creating a radial wave or expansion animation.
 <b>Design Philosophy:</b>
 <p>
 Radial patterns are useful for creating "explosion" or "ripple" effects where
-the animation spreads outward from a focal point. The transition width controls
-how smoothly the effect transitions from inactive to active regions.
+the animation spreads outward from a focal point. The transition width
+controls how smoothly the effect transitions from inactive to active regions.
 <p>
 <b>Key Concepts:</b>
 <ul>
-  <li><b>Center Point:</b> The origin of the radial expansion, specified in
-      normalized coordinates (0.0-1.0) relative to the area</li>
-  <li><b>Distance Calculation:</b> Uses Euclidean distance from center to
-      determine effect strength at each cell</li>
-  <li><b>Transition Width:</b> Controls the gradient zone where the effect
-      transitions from inactive to active (in terminal cells)</li>
+<li><b>Center Point:</b> The origin of the radial expansion, specified in
+normalized coordinates (0.0-1.0) relative to the area</li>
+<li><b>Distance Calculation:</b> Uses Euclidean distance from center to
+determine effect strength at each cell</li>
+<li><b>Transition Width:</b> Controls the gradient zone where the effect
+transitions from inactive to active (in terminal cells)</li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>// Radial expansion from center
 Effect radial = Fx.dissolve(2000, Interpolation.QuadOut)
-    .withPattern(RadialPattern.center().withTransitionWidth(10.0f));
+        .withPattern(RadialPattern.center().withTransitionWidth(10.0f));
 
 // Custom center point (top-left corner)
 Effect customRadial = Fx.fadeToFg(Color.CYAN, 2000, Interpolation.SineInOut)
-    .withPattern(RadialPattern.at(0.0f, 0.0f).withTransitionWidth(8.0f));
+        .withPattern(RadialPattern.at(0.0f, 0.0f).withTransitionWidth(8.0f));
 </code></pre>
 <p>
 The pattern calculates the distance from each cell to the center point and
@@ -159,7 +160,8 @@ on the global animation progress.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newPattern(float,float)" class="member-name-link">newPattern</a><wbr>(float&nbsp;centerX,
  float&nbsp;centerY)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a radial pattern with custom center point (0.0-1.0 normalized coordinates).</div>
+<div class="block">Creates a radial pattern with custom center point (0.0-1.0 normalized
+coordinates).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RadialPattern.html" title="class in dev.tamboui.tfx.pattern">RadialPattern</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withCenter(float,float)" class="member-name-link">withCenter</a><wbr>(float&nbsp;centerX,
@@ -218,7 +220,8 @@ on the global animation progress.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="RadialPattern.html" title="class in dev.tamboui.tfx.pattern">RadialPattern</a></span>&nbsp;<span class="element-name">newPattern</span><wbr><span class="parameters">(float&nbsp;centerX,
  float&nbsp;centerY)</span></div>
-<div class="block">Creates a radial pattern with custom center point (0.0-1.0 normalized coordinates).</div>
+<div class="block">Creates a radial pattern with custom center point (0.0-1.0 normalized
+coordinates).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>centerX</code> - Center X position (0.0-1.0)</dd>

@@ -133,11 +133,12 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;T&gt;&gt;</span></div>
 <div class="block">A scrollable container that displays a list of selectable items.
 <p>
-Unlike <code>ListWidget</code> (which only displays text), <code>ListElement</code>
-can display any <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element"><code>StyledElement</code></a> as list items, including complex
-layouts like rows with multiple styled children.
+Unlike <code>ListWidget</code> (which only displays text), <code>ListElement</code> can
+display any <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element"><code>StyledElement</code></a> as list items, including complex layouts
+like rows with multiple styled children.
 <p>
 Example usage:
+
 <pre><code>list("Item 1", "Item 2", "Item 3")
     .state(listState)
     .highlightColor(Color.YELLOW)
@@ -153,18 +154,19 @@ list(
 <p>
 CSS selectors:
 <ul>
-  <li><code>ListElement</code> - styles the container (border, background)</li>
-  <li><code>ListElement-item</code> - styles each list item</li>
-  <li><code>ListElement-item:selected</code> - styles the selected item</li>
-  <li><code>ListElement-item:nth-child(odd/even)</code> - zebra striping</li>
-  <li><code>ListElement-scrollbar-thumb</code> - styles the scrollbar thumb</li>
-  <li><code>ListElement-scrollbar-track</code> - styles the scrollbar track</li>
+<li><code>ListElement</code> - styles the container (border, background)</li>
+<li><code>ListElement-item</code> - styles each list item</li>
+<li><code>ListElement-item:selected</code> - styles the selected item</li>
+<li><code>ListElement-item:nth-child(odd/even)</code> - zebra striping</li>
+<li><code>ListElement-scrollbar-thumb</code> - styles the scrollbar thumb</li>
+<li><code>ListElement-scrollbar-track</code> - styles the scrollbar track</li>
 </ul></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="../../widgets/list/ListWidget.html" title="class in dev.tamboui.widgets.list">for simple text-only lists at the widget level</a></li>
+<li><a href="../../widgets/list/ListWidget.html" title="class in dev.tamboui.widgets.list">for simple text-only lists at the
+     widget level</a></li>
 </ul>
 </dd>
 </dl>
@@ -691,8 +693,9 @@ CSS selectors:
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;U, <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;?&gt;&gt;&nbsp;renderer)</span></div>
 <div class="block">Sets the data items and a renderer function.
 <p>
-The renderer function is called at render time to convert each data item
-to a styled element. This allows the list to reflect the current state of your data.</div>
+The renderer function is called at render time to convert each data item to a
+styled element. This allows the list to reflect the current state of your
+data.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="data(java.util.List,java.util.function.Function)-type-param-U"><code>U</code> - the data item type</span></dd>
@@ -729,10 +732,11 @@ The renderer is called at render time for each data item.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">autoScroll</span>()</div>
 <div class="block">Enables auto-scroll to keep the selected item visible.
 <p>
-When enabled, the list automatically scrolls to show the selected item
-before rendering.
+When enabled, the list automatically scrolls to show the selected item before
+rendering.
 <p>
-Note: Cannot be combined with <a href="#scrollToEnd()"><code>scrollToEnd()</code></a> or <a href="#stickyScroll()"><code>stickyScroll()</code></a>.</div>
+Note: Cannot be combined with <a href="#scrollToEnd()"><code>scrollToEnd()</code></a> or
+<a href="#stickyScroll()"><code>stickyScroll()</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>this element</dd>
@@ -766,15 +770,16 @@ Note: Cannot be combined with <a href="#scrollToEnd()"><code>scrollToEnd()</code
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">scrollToEnd</span>()</div>
 <div class="block">Scrolls the list to show the last items.
 <p>
-Unlike <a href="#autoScroll()"><code>autoScroll()</code></a>, this scrolls to the end immediately
-without requiring a selection. Useful for chat messages, logs, or
-other content where you want to always show the most recent items.
+Unlike <a href="#autoScroll()"><code>autoScroll()</code></a>, this scrolls to the end immediately without
+requiring a selection. Useful for chat messages, logs, or other content where
+you want to always show the most recent items.
 <p>
-Note: This always forces scroll to end, overriding any user scrolling.
-For logs or chat where you want auto-scroll that pauses when the user
-scrolls up, use <a href="#stickyScroll()"><code>stickyScroll()</code></a> instead.
+Note: This always forces scroll to end, overriding any user scrolling. For
+logs or chat where you want auto-scroll that pauses when the user scrolls up,
+use <a href="#stickyScroll()"><code>stickyScroll()</code></a> instead.
 <p>
-Note: Cannot be combined with <a href="#autoScroll()"><code>autoScroll()</code></a> or <a href="#stickyScroll()"><code>stickyScroll()</code></a>.</div>
+Note: Cannot be combined with <a href="#autoScroll()"><code>autoScroll()</code></a> or
+<a href="#stickyScroll()"><code>stickyScroll()</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>this element</dd>
@@ -791,14 +796,15 @@ Note: Cannot be combined with <a href="#autoScroll()"><code>autoScroll()</code><
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">stickyScroll</span>()</div>
 <div class="block">Enables sticky scroll behavior for the list.
 <p>
-With sticky scroll, the list automatically scrolls to show new items
-at the bottom, but pauses auto-scrolling when the user scrolls up.
-Auto-scrolling resumes when the user scrolls back to the bottom.
+With sticky scroll, the list automatically scrolls to show new items at the
+bottom, but pauses auto-scrolling when the user scrolls up. Auto-scrolling
+resumes when the user scrolls back to the bottom.
 <p>
-This is ideal for logs, chat messages, or activity feeds where you want
-to show the latest content but allow users to scroll back through history.
+This is ideal for logs, chat messages, or activity feeds where you want to
+show the latest content but allow users to scroll back through history.
 <p>
-Note: Cannot be combined with <a href="#autoScroll()"><code>autoScroll()</code></a> or <a href="#scrollToEnd()"><code>scrollToEnd()</code></a>.</div>
+Note: Cannot be combined with <a href="#autoScroll()"><code>autoScroll()</code></a> or
+<a href="#scrollToEnd()"><code>scrollToEnd()</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>this element</dd>
@@ -933,8 +939,8 @@ other content where selection is not meaningful.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells. Used when the element
+has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -948,8 +954,8 @@ Used when the element has a <a href="../../layout/Constraint.Fit.html" title="cl
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred height of this element in cells. Used when the element
+has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred height, or 0 if not applicable</dd>
@@ -965,15 +971,15 @@ Used when the element has a <a href="../../layout/Constraint.Fit.html" title="cl
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleAttributes()">Styleable</a></code></span></div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements
-based on their style attributes. This method returns a map of
-attribute names to their values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
+their style attributes. This method returns a map of attribute names to their
+values.
 <p>
 Common attributes include:
 <ul>
-  <li><code>title</code> - the element's title</li>
-  <li><code>label</code> - the element's label</li>
-  <li><code>placeholder</code> - the element's placeholder text</li>
+<li><code>title</code> - the element's title</li>
+<li><code>label</code> - the element's label</li>
+<li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -981,7 +987,8 @@ Common attributes include:
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#styleAttributes()">styleAttributes</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be
+        empty)</dd>
 </dl>
 </div>
 </section>
@@ -996,9 +1003,9 @@ Common attributes include:
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering.
-The current style (CSS + inline, merged with parent styles) is available
-via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering. The
+current style (CSS + inline, merged with parent styles) is available via
+<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;&gt;</code></dd>
@@ -1017,8 +1024,8 @@ via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.c
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleKeyEvent</span><wbr><span class="parameters">(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
  boolean&nbsp;focused)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">Element</a></code></span></div>
-<div class="block">Handles a key event on this element.
-Override to handle key events directly on the element.</div>
+<div class="block">Handles a key event on this element. Override to handle key events directly
+on the element.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">handleKeyEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -1039,8 +1046,8 @@ Override to handle key events directly on the element.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleMouseEvent</span><wbr><span class="parameters">(<a href="../../tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a>&nbsp;event)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)">Element</a></code></span></div>
-<div class="block">Handles a mouse event on this element.
-Override to handle mouse events directly on the element.</div>
+<div class="block">Handles a mouse event on this element. Override to handle mouse events
+directly on the element.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)">handleMouseEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>

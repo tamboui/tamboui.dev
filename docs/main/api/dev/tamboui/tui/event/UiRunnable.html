@@ -88,11 +88,13 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">UiRunnable</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="Event.html" title="interface in dev.tamboui.tui.event">Event</a></span></div>
-<div class="block">An event that encapsulates a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link"><code>Runnable</code></a> to be executed on the render thread.
+<div class="block">An event that encapsulates a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link"><code>Runnable</code></a> to be executed on the render
+thread.
 <p>
-UiRunnable events are used internally by <a href="../TuiRunner.html#runOnRenderThread(java.lang.Runnable)"><code>TuiRunner.runOnRenderThread(Runnable)</code></a>
-and <a href="../TuiRunner.html#runLater(java.lang.Runnable)"><code>TuiRunner.runLater(Runnable)</code></a> to schedule work on the render thread
-from other threads.
+UiRunnable events are used internally by
+<a href="../TuiRunner.html#runOnRenderThread(java.lang.Runnable)"><code>TuiRunner.runOnRenderThread(Runnable)</code></a> and
+<a href="../TuiRunner.html#runLater(java.lang.Runnable)"><code>TuiRunner.runLater(Runnable)</code></a> to schedule work on the
+render thread from other threads.
 <p>
 When the TuiRunner event loop processes a UiRunnable event, it executes the
 enclosed action directly on the render thread.</div>

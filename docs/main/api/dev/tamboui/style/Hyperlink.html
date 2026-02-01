@@ -85,16 +85,18 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Represents a hyperlink that can be attached to a Style.
 <p>
-Hyperlinks use the OSC8 protocol (https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda) to create
-clickable links in terminal emulators that support it.
+Hyperlinks use the OSC8 protocol
+(https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda) to
+create clickable links in terminal emulators that support it.
 <p>
 The hyperlink consists of:
 <ul>
-  <li>A URL - the target of the link (required)</li>
-  <li>An optional ID - used to group multiple cells into a single link</li>
+<li>A URL - the target of the link (required)</li>
+<li>An optional ID - used to group multiple cells into a single link</li>
 </ul>
 <p>
 Example usage:
+
 <pre><code>Style style = Style.create().hyperlink("https://example.com");
 // Or with an ID to group multiple cells:
 Style style = Style.create().hyperlink("https://example.com", "link1");
@@ -182,8 +184,8 @@ Style style = Style.create().hyperlink("https://example.com", "link1");
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Hyperlink.html" title="class in dev.tamboui.style">Hyperlink</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;url,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</span></div>
-<div class="block">Creates a hyperlink with a URL and an ID.
-The ID can be used to group multiple cells into a single link.</div>
+<div class="block">Creates a hyperlink with a URL and an ID. The ID can be used to group
+multiple cells into a single link.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>url</code> - the URL for the hyperlink</dd>

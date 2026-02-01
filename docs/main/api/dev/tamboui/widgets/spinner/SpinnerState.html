@@ -90,13 +90,13 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">State for the <a href="Spinner.html" title="class in dev.tamboui.widgets.spinner"><code>Spinner</code></a> widget, tracking animation progress.
 <p>
-The tick value controls which frame is currently displayed.
-Call <a href="#advance()"><code>advance()</code></a> each frame to advance the animation.
+The tick value controls which frame is currently displayed. Call
+<a href="#advance()"><code>advance()</code></a> each frame to advance the animation.
 
 <pre><code>SpinnerState state = new SpinnerState();
 
 // In your render loop:
-state.advance();  // Advance to next frame
+state.advance(); // Advance to next frame
 frame.renderStatefulWidget(spinner, area, state);
 </code></pre></div>
 <dl class="notes">

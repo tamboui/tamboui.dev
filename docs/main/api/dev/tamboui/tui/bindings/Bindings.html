@@ -84,15 +84,15 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Bindings</span></div>
 <div class="block">Maps input events to semantic actions.
 <p>
-Bindings support both keyboard and mouse events, allowing the same
-action to be triggered by either input type.
+Bindings support both keyboard and mouse events, allowing the same action to
+be triggered by either input type.
 <p>
-Actions are identified by strings, with common actions defined as
-constants in <a href="Actions.html" title="class in dev.tamboui.tui.bindings"><code>Actions</code></a>. Custom actions can use any string.
+Actions are identified by strings, with common actions defined as constants
+in <a href="Actions.html" title="class in dev.tamboui.tui.bindings"><code>Actions</code></a>. Custom actions can use any string.
 <p>
-Events (both <code>KeyEvent</code> and <code>MouseEvent</code>) carry their own bindings
-and provide convenience methods for action matching. The preferred API is to
-call <code>matches()</code> directly on the event:
+Events (both <code>KeyEvent</code> and <code>MouseEvent</code>) carry their own
+bindings and provide convenience methods for action matching. The preferred
+API is to call <code>matches()</code> directly on the event:
 
 <pre><code>// Preferred: call matches() on the event
 if (event.matches(Actions.MOVE_UP)) {
@@ -105,11 +105,8 @@ if (event.matches("myApp.save")) {
 }
 
 // Customizing bindings
-Bindings custom = BindingSets.standard()
-    .toBuilder()
-    .bind(KeyTrigger.ch('x'), Actions.QUIT)
-    .bind(MouseTrigger.rightClick(), "myAction")
-    .build();
+Bindings custom = BindingSets.standard().toBuilder().bind(KeyTrigger.ch('x'), Actions.QUIT)
+        .bind(MouseTrigger.rightClick(), "myAction").build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>

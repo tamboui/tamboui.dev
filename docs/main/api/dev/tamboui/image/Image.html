@@ -94,15 +94,13 @@ loadScripts(document, 'script');</script>
 implements <a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>, <a href="../widget/RawOutputCapable.html" title="interface in dev.tamboui.widget">RawOutputCapable</a></span></div>
 <div class="block">A widget for displaying images in the terminal.
 <p>
-The Image widget automatically detects terminal capabilities and uses the best
-available rendering method: native protocols (Kitty, iTerm2, Sixel) when supported,
-or character-based fallbacks (half-blocks, Braille) for universal compatibility.
+The Image widget automatically detects terminal capabilities and uses the
+best available rendering method: native protocols (Kitty, iTerm2, Sixel) when
+supported, or character-based fallbacks (half-blocks, Braille) for universal
+compatibility.
 
-<pre><code>Image image = Image.builder()
-    .data(ImageData.fromPath(Path.of("photo.png")))
-    .scaling(ImageScaling.FIT)
-    .block(Block.bordered().title(Title.from("Photo")))
-    .build();
+<pre><code>Image image = Image.builder().data(ImageData.fromPath(Path.of("photo.png")))
+        .scaling(ImageScaling.FIT).block(Block.bordered().title(Title.from("Photo"))).build();
 
 frame.renderWidget(image, area);
 </code></pre></div>
@@ -309,8 +307,9 @@ frame.renderWidget(image, area);
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;rawOutput)</span></div>
 <div class="block">Renders the image to the given area with optional raw output support.
 <p>
-For native protocols (Sixel, Kitty, iTerm2), the rawOutput stream must be provided.
-If rawOutput is null and the protocol requires it, the image will not be rendered.</div>
+For native protocols (Sixel, Kitty, iTerm2), the rawOutput stream must be
+provided. If rawOutput is null and the protocol requires it, the image will
+not be rendered.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../widget/RawOutputCapable.html#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)">render</a></code>&nbsp;in interface&nbsp;<code><a href="../widget/RawOutputCapable.html" title="interface in dev.tamboui.widget">RawOutputCapable</a></code></dd>

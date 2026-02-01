@@ -79,9 +79,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">RawOutputCapable</span></div>
 <div class="block">Interface for widgets that can render using raw terminal output.
 <p>
-Widgets implementing this interface can use native terminal protocols
-(such as Sixel, Kitty, or iTerm2) that require sending escape sequences
-directly to the terminal output stream.
+Widgets implementing this interface can use native terminal protocols (such
+as Sixel, Kitty, or iTerm2) that require sending escape sequences directly to
+the terminal output stream.
 <p>
 When a widget implements both <a href="Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> and <code>RawOutputCapable</code>,
 the frame will call <a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)"><code>render(Rect, Buffer, OutputStream)</code></a> instead of
@@ -142,8 +142,8 @@ the standard <a href="Widget.html#render(dev.tamboui.layout.Rect,dev.tamboui.buf
 <dt>Parameters:</dt>
 <dd><code>area</code> - the area to render within</dd>
 <dd><code>buffer</code> - the buffer for character-based rendering</dd>
-<dd><code>rawOutput</code> - the output stream for native protocol escape sequences,
-                 may be <code>null</code> if raw output is not available</dd>
+<dd><code>rawOutput</code> - the output stream for native protocol escape sequences, may be
+           <code>null</code> if raw output is not available</dd>
 </dl>
 </div>
 </section>

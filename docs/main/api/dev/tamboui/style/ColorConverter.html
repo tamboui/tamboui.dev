@@ -92,18 +92,20 @@ implements <a href="PropertyConverter.html" title="interface in dev.tamboui.styl
 <p>
 Supported formats:
 <ul>
-  <li>Named colors: red, green, blue, etc.</li>
-  <li>Hex colors: #RGB, #RRGGBB</li>
-  <li>RGB function: rgb(r, g, b)</li>
-  <li>Indexed colors: indexed(0-255)</li>
+<li>Named colors: red, green, blue, etc.</li>
+<li>Hex colors: #RGB, #RRGGBB</li>
+<li>RGB function: rgb(r, g, b)</li>
+<li>Indexed colors: indexed(0-255)</li>
 </ul>
 <p>
 Example usage:
+
 <pre><code>// Standalone usage
 Optional&lt;Color&gt; color = ColorConverter.INSTANCE.convert("#FF0000");
 
 // With PropertyDefinition
-PropertyDefinition&lt;Color&gt; BORDER_COLOR = PropertyDefinition.of("border-color", ColorConverter.INSTANCE);
+PropertyDefinition&lt;Color&gt; BORDER_COLOR = PropertyDefinition.of("border-color",
+        ColorConverter.INSTANCE);
 </code></pre></div>
 </div>
 </section>

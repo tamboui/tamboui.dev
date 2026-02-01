@@ -348,8 +348,8 @@ loadScripts(document, 'script');</script>
 <h3>DEFAULT_RESIZE_GRACE_PERIOD</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_RESIZE_GRACE_PERIOD</span></div>
-<div class="block">Default grace period for resize events (250ms).
-This ensures resize events are processed within a reasonable time even when ticks are disabled.</div>
+<div class="block">Default grace period for resize events (250ms). This ensures resize events
+are processed within a reasonable time even when ticks are disabled.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -388,7 +388,8 @@ This ensures resize events are processed within a reasonable time even when tick
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&gt;&nbsp;postRenderProcessors)</span></div>
 <div class="block">Creates a new TUI configuration with the specified options.
 <p>
-Prefer using <a href="#builder()"><code>builder()</code></a> or <a href="#defaults()"><code>defaults()</code></a> instead of this constructor.</div>
+Prefer using <a href="#builder()"><code>builder()</code></a> or <a href="#defaults()"><code>defaults()</code></a> instead of this
+constructor.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>rawMode</code> - whether to enable raw terminal mode</dd>
@@ -423,8 +424,8 @@ Prefer using <a href="#builder()"><code>builder()</code></a> or <a href="#defaul
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></span>&nbsp;<span class="element-name">defaults</span>()</div>
 <div class="block">Returns the default configuration.
 <p>
-By default, tick events are generated every 100ms to ensure periodic UI refresh.
-Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</code></a> to disable automatic ticking.</div>
+By default, tick events are generated every 100ms to ensure periodic UI
+refresh. Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</code></a> to disable automatic ticking.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the default TUI configuration</dd>
@@ -440,7 +441,8 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="block">Returns a configuration suitable for animated applications.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>tickRate</code> - the interval between tick events (e.g., Duration.ofMillis(16) for ~60fps)</dd>
+<dd><code>tickRate</code> - the interval between tick events (e.g., Duration.ofMillis(16) for
+           ~60fps)</dd>
 <dt>Returns:</dt>
 <dd>configuration with ticks enabled</dd>
 </dl>
@@ -558,9 +560,9 @@ Use <a href="TuiConfig.Builder.html#noTick()"><code>TuiConfig.Builder.noTick()</
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></span>&nbsp;<span class="element-name">resizeGracePeriod</span>()</div>
 <div class="block">Returns the resize grace period.
 <p>
-This defines the maximum time before resize events are processed,
-ensuring the UI redraws promptly on terminal resize even when
-ticks are disabled or have a long interval.</div>
+This defines the maximum time before resize events are processed, ensuring
+the UI redraws promptly on terminal resize even when ticks are disabled or
+have a long interval.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the resize grace period, or null to use the poll timeout</dd>
@@ -626,8 +628,8 @@ ticks are disabled or have a long interval.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a></span>&nbsp;<span class="element-name">errorOutput</span>()</div>
 <div class="block">Returns the output stream for error logging.
 <p>
-This stream is used to log fatal errors when the TUI has captured
-standard streams and stack traces would otherwise be invisible.</div>
+This stream is used to log fatal errors when the TUI has captured standard
+streams and stack traces would otherwise be invisible.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the error output stream</dd>

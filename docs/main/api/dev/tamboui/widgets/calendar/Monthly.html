@@ -94,16 +94,14 @@ loadScripts(document, 'script');</script>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
 <div class="block">A calendar widget displaying a single month.
 <p>
-Renders a calendar grid for the month containing the display date,
-with customizable styling for headers, weekdays, and individual dates.
+Renders a calendar grid for the month containing the display date, with
+customizable styling for headers, weekdays, and individual dates.
 
 <pre><code>CalendarEventStore events = CalendarEventStore.today(Style.EMPTY.fg(Color.RED).bold());
 
-Monthly calendar = Monthly.of(LocalDate.now(), events)
-    .showMonthHeader(Style.EMPTY.bold())
-    .showWeekdaysHeader(Style.EMPTY.fg(Color.CYAN))
-    .showSurrounding(Style.EMPTY.dim())
-    .block(Block.bordered());
+Monthly calendar = Monthly.of(LocalDate.now(), events).showMonthHeader(Style.EMPTY.bold())
+        .showWeekdaysHeader(Style.EMPTY.fg(Color.CYAN)).showSurrounding(Style.EMPTY.dim())
+        .block(Block.bordered());
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -300,8 +298,8 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">showSurrounding</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
 <div class="block">Returns a new calendar with surrounding days shown.
 <p>
-Surrounding days are days from the previous/next month that
-appear in the calendar grid.</div>
+Surrounding days are days from the previous/next month that appear in the
+calendar grid.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>style</code> - the style for surrounding days</dd>

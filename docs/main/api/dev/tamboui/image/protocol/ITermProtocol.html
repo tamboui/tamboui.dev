@@ -100,12 +100,13 @@ loadScripts(document, 'script');</script>
 implements <a href="ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></span></div>
 <div class="block">Renders images using the iTerm2 inline images protocol.
 <p>
-The iTerm2 protocol uses OSC (Operating System Command) escape sequences
-with base64-encoded image data. It's simpler than Kitty but widely supported.
+The iTerm2 protocol uses OSC (Operating System Command) escape sequences with
+base64-encoded image data. It's simpler than Kitty but widely supported.
 <p>
 Supported by: iTerm2, WezTerm, Ghostty, Konsole, mintty.
 
 <h2 id="protocol-format-heading">Protocol Format</h2>
+
 <pre>
 ESC ] 1337 ; File = [arguments] : base64-data BEL
 </pre></div>
@@ -113,7 +114,8 @@ ESC ] 1337 ; File = [arguments] : base64-data BEL
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="https://iterm2.com/documentation-images.html">iTerm2 Inline Images</a></li>
+<li><a href="https://iterm2.com/documentation-images.html">iTerm2 Inline
+     Images</a></li>
 </ul>
 </dd>
 </dl>
@@ -247,8 +249,8 @@ ESC ] 1337 ; File = [arguments] : base64-data BEL
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ImageProtocol.html#render(dev.tamboui.image.ImageData,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)">ImageProtocol</a></code></span></div>
 <div class="block">Renders the image to the given terminal area.
 <p>
-Character-based protocols write directly to the buffer.
-Native protocols write to the raw output stream.</div>
+Character-based protocols write directly to the buffer. Native protocols
+write to the raw output stream.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ImageProtocol.html#render(dev.tamboui.image.ImageData,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)">render</a></code>&nbsp;in interface&nbsp;<code><a href="ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></code></dd>
@@ -256,7 +258,8 @@ Native protocols write to the raw output stream.</div>
 <dd><code>image</code> - the image data to render</dd>
 <dd><code>area</code> - the terminal area (in character cells) to render into</dd>
 <dd><code>buffer</code> - the buffer for character-based rendering</dd>
-<dd><code>rawOutput</code> - the output stream for native protocol escape sequences (may be null)</dd>
+<dd><code>rawOutput</code> - the output stream for native protocol escape sequences (may be
+           null)</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if writing to rawOutput fails</dd>
 </dl>
@@ -271,8 +274,9 @@ Native protocols write to the raw output stream.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ImageProtocol.html#requiresRawOutput()">ImageProtocol</a></code></span></div>
 <div class="block">Returns true if this protocol requires raw byte output.
 <p>
-Character-based protocols (half-block, braille) return false and use the buffer.
-Native protocols (Sixel, Kitty, iTerm2) return true and use rawOutput.</div>
+Character-based protocols (half-block, braille) return false and use the
+buffer. Native protocols (Sixel, Kitty, iTerm2) return true and use
+rawOutput.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ImageProtocol.html#requiresRawOutput()">requiresRawOutput</a></code>&nbsp;in interface&nbsp;<code><a href="ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></code></dd>
@@ -292,9 +296,9 @@ Native protocols (Sixel, Kitty, iTerm2) return true and use rawOutput.</div>
 <p>
 This indicates how many "virtual pixels" each terminal cell can represent:
 <ul>
-  <li>Half-block: 1x2 (1 column, 2 rows per cell)</li>
-  <li>Braille: 2x4 (2 columns, 4 rows per cell)</li>
-  <li>Native protocols: depends on cell pixel size</li>
+<li>Half-block: 1x2 (1 column, 2 rows per cell)</li>
+<li>Braille: 2x4 (2 columns, 4 rows per cell)</li>
+<li>Native protocols: depends on cell pixel size</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>

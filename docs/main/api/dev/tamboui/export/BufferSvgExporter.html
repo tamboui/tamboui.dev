@@ -89,19 +89,22 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">BufferSvgExporter</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Exports a <a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer"><code>Buffer</code></a> to an SVG in the same spirit as Rich's <code>Console.export_svg</code>.
+<div class="block">Exports a <a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer"><code>Buffer</code></a> to an SVG in the same spirit as Rich's
+<code>Console.export_svg</code>.
 <p>
 This exporter treats the buffer as a fixed-width grid of cells and generates:
 <ul>
-    <li>CSS classes for unique <a href="../style/Style.html" title="class in dev.tamboui.style"><code>Style</code></a>s</li>
-    <li>Background rectangles for runs with a background color (including <a href="../style/Modifier.html#REVERSED"><code>Modifier.REVERSED</code></a>)</li>
-    <li>Text nodes clipped per line for crisp rendering</li>
+<li>CSS classes for unique <a href="../style/Style.html" title="class in dev.tamboui.style"><code>Style</code></a>s</li>
+<li>Background rectangles for runs with a background color (including
+<a href="../style/Modifier.html#REVERSED"><code>Modifier.REVERSED</code></a>)</li>
+<li>Text nodes clipped per line for crisp rendering</li>
 </ul>
 
 <h2 id="notes-heading">Notes</h2>
 <ul>
-    <li>This is a pure string export; it does not require a backend.</li>
-    <li>Colors are resolved via <a href="../style/Color.html#toRgb()"><code>Color.toRgb()</code></a> plus a simple theme fallback.</li>
+<li>This is a pure string export; it does not require a backend.</li>
+<li>Colors are resolved via <a href="../style/Color.html#toRgb()"><code>Color.toRgb()</code></a> plus a simple theme
+fallback.</li>
 </ul></div>
 </div>
 </section>
@@ -141,7 +144,8 @@ This exporter treats the buffer as a fixed-width grid of cells and generates:
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#DEFAULT_SVG_FORMAT" class="member-name-link">DEFAULT_SVG_FORMAT</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">SVG template derived from Rich's <code>CONSOLE_SVG_FORMAT</code> with branding adjusted.</div>
+<div class="block">SVG template derived from Rich's <code>CONSOLE_SVG_FORMAT</code> with branding
+adjusted.</div>
 </div>
 </div>
 </section>
@@ -190,7 +194,8 @@ This exporter treats the buffer as a fixed-width grid of cells and generates:
 <h3>DEFAULT_SVG_FORMAT</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DEFAULT_SVG_FORMAT</span></div>
-<div class="block">SVG template derived from Rich's <code>CONSOLE_SVG_FORMAT</code> with branding adjusted.</div>
+<div class="block">SVG template derived from Rich's <code>CONSOLE_SVG_FORMAT</code> with branding
+adjusted.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>

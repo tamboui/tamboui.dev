@@ -110,9 +110,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">RecordingBackend</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></span></div>
-<div class="block">A backend wrapper that records frames to an Asciinema cast file.
-This backend is headless - it does not output to the real terminal.
-This is an internal API and not part of the public contract.</div>
+<div class="block">A backend wrapper that records frames to an Asciinema cast file. This backend
+is headless - it does not output to the real terminal. This is an internal
+API and not part of the public contract.</div>
 </div>
 </section>
 <section class="summary">
@@ -608,8 +608,8 @@ This is an internal API and not part of the public contract.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#writeRaw(byte%5B%5D)">Backend</a></code></span></div>
 <div class="block">Writes raw bytes directly to the terminal output.
 <p>
-This is used for native image protocols (Sixel, Kitty, iTerm2) that
-require sending escape sequences with binary data.</div>
+This is used for native image protocols (Sixel, Kitty, iTerm2) that require
+sending escape sequences with binary data.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#writeRaw(byte%5B%5D)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -630,7 +630,8 @@ require sending escape sequences with binary data.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#writeRaw(java.lang.String)">Backend</a></code></span></div>
 <div class="block">Writes a raw string directly to the terminal output.
 <p>
-This is a convenience method for protocols that work with ASCII escape sequences.</div>
+This is a convenience method for protocols that work with ASCII escape
+sequences.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#writeRaw(java.lang.String)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>

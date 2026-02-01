@@ -93,23 +93,20 @@ loadScripts(document, 'script');</script>
 implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span></div>
 <div class="block">Base class for PicoCLI commands that run TUI applications.
 <p>
-Extend this class to create a TUI application with CLI argument parsing.
-The class handles terminal setup and teardown automatically.
+Extend this class to create a TUI application with CLI argument parsing. The
+class handles terminal setup and teardown automatically.
 
-<pre><code>@Command(name = "myapp", description = "My TUI Application")
+<pre><code>&amp;#64;Command(name = "myapp", description = "My TUI Application")
 public class MyApp extends TuiCommand {
 
-    @Option(names = {"-c", "--config"}, description = "Config file path")
+    &amp;#64;Option(names = {"-c", "--config"}, description = "Config file path")
     Path configFile;
 
-    @Override
+    &amp;#64;Override
     protected void runTui(TuiRunner runner) throws Exception {
         AppState state = loadState(configFile);
 
-        runner.run(
-            (event, r) -&gt; handleEvent(event, r, state),
-            frame -&gt; render(frame, state)
-        );
+        runner.run((event, r) -&gt; handleEvent(event, r, state), frame -&gt; render(frame, state));
     }
 
     public static void main(String[] args) {
@@ -218,8 +215,8 @@ public class MyApp extends TuiCommand {
                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Runs the TUI application.
 <p>
-Override this method to implement your TUI logic. The TuiRunner
-is already created and configured based on CLI options.</div>
+Override this method to implement your TUI logic. The TuiRunner is already
+created and configured based on CLI options.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>runner</code> - the configured TUI runner</dd>
@@ -236,8 +233,8 @@ is already created and configured based on CLI options.</div>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></span>&nbsp;<span class="element-name">createConfig</span>()</div>
 <div class="block">Creates the TuiConfig for this command.
 <p>
-Override this method to customize the configuration beyond what
-the CLI options provide.</div>
+Override this method to customize the configuration beyond what the CLI
+options provide.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the TuiConfig to use</dd>

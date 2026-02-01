@@ -99,30 +99,33 @@ loadScripts(document, 'script');</script>
 <p>
 The EffectTimer is responsible for:
 <ul>
-  <li><b>Duration Tracking:</b> Tracking total duration and remaining time</li>
-  <li><b>Progress Calculation:</b> Computing alpha values (0.0 to 1.0) based on elapsed time</li>
-  <li><b>Easing Application:</b> Applying interpolation functions for smooth animations</li>
-  <li><b>Direction Control:</b> Supporting forward and reverse playback</li>
+<li><b>Duration Tracking:</b> Tracking total duration and remaining time</li>
+<li><b>Progress Calculation:</b> Computing alpha values (0.0 to 1.0) based on
+elapsed time</li>
+<li><b>Easing Application:</b> Applying interpolation functions for smooth
+animations</li>
+<li><b>Direction Control:</b> Supporting forward and reverse playback</li>
 </ul>
 <p>
 <b>Design Philosophy:</b>
 <p>
-EffectTimer separates timing concerns from rendering logic. Effects use the timer's
-<a href="#alpha()"><code>alpha()</code></a> method to get a normalized progress value (0.0 to 1.0) that has
-been transformed by the interpolation function. This allows effects to focus on
-"what to render" rather than "when to render it."
+EffectTimer separates timing concerns from rendering logic. Effects use the
+timer's <a href="#alpha()"><code>alpha()</code></a> method to get a normalized progress value (0.0 to
+1.0) that has been transformed by the interpolation function. This allows
+effects to focus on "what to render" rather than "when to render it."
 <p>
 <b>Key Concepts:</b>
 <ul>
-  <li><b>Alpha Value:</b> A normalized progress value (0.0 = start, 1.0 = end)
-      that has been transformed by the interpolation function.</li>
-  <li><b>Interpolation:</b> An easing function that transforms linear progress
-      into smooth animation curves (e.g., ease-in, ease-out, bounce).</li>
-  <li><b>Overflow:</b> When processing exceeds the timer's duration, the excess
-      time is returned as overflow for use by subsequent effects in sequences.</li>
+<li><b>Alpha Value:</b> A normalized progress value (0.0 = start, 1.0 = end)
+that has been transformed by the interpolation function.</li>
+<li><b>Interpolation:</b> An easing function that transforms linear progress
+into smooth animation curves (e.g., ease-in, ease-out, bounce).</li>
+<li><b>Overflow:</b> When processing exceeds the timer's duration, the excess
+time is returned as overflow for use by subsequent effects in sequences.</li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
+
 <pre><code>EffectTimer timer = EffectTimer.fromMs(2000, Interpolation.SineInOut);
 
 // In render loop
@@ -138,8 +141,9 @@ if (timer.done()) {
 <p>
 <b>Reversing Effects:</b>
 <p>
-Use <a href="#reversed()"><code>reversed()</code></a> to play an effect backwards, or <a href="#mirrored()"><code>mirrored()</code></a> to
-reverse while preserving the visual curve shape (useful for ping-pong effects).</div>
+Use <a href="#reversed()"><code>reversed()</code></a> to play an effect backwards, or <a href="#mirrored()"><code>mirrored()</code></a>
+to reverse while preserving the visual curve shape (useful for ping-pong
+effects).</div>
 </div>
 </section>
 <section class="summary">
@@ -158,7 +162,8 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#alpha()" class="member-name-link">alpha</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Computes the current alpha value based on the elapsed time and interpolation method.</div>
+<div class="block">Computes the current alpha value based on the elapsed time and interpolation
+method.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#done()" class="member-name-link">done</a>()</code></div>
@@ -177,7 +182,8 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromMs(long,dev.tamboui.tfx.Interpolation)" class="member-name-link">fromMs</a><wbr>(long&nbsp;milliseconds,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a new EffectTimer with the specified duration in milliseconds and interpolation.</div>
+<div class="block">Creates a new EffectTimer with the specified duration in milliseconds and
+interpolation.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -205,12 +211,14 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mirrored()" class="member-name-link">mirrored</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a mirrored timer that runs in reverse direction with flipped interpolation.</div>
+<div class="block">Returns a mirrored timer that runs in reverse direction with flipped
+interpolation.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(dev.tamboui.tfx.TFxDuration)" class="member-name-link">of</a><wbr>(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;duration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a new EffectTimer with the specified duration and Linear interpolation.</div>
+<div class="block">Creates a new EffectTimer with the specified duration and Linear
+interpolation.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(dev.tamboui.tfx.TFxDuration,dev.tamboui.tfx.Interpolation)" class="member-name-link">of</a><wbr>(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;duration,
@@ -221,7 +229,8 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#process(dev.tamboui.tfx.TFxDuration)" class="member-name-link">process</a><wbr>(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;duration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Processes the timer by reducing the remaining duration by the specified amount.</div>
+<div class="block">Processes the timer by reducing the remaining duration by the specified
+amount.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remaining()" class="member-name-link">remaining</a>()</code></div>
@@ -269,7 +278,8 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">fromMs</span><wbr><span class="parameters">(long&nbsp;milliseconds,
  <a href="Interpolation.html" title="enum class in dev.tamboui.tfx">Interpolation</a>&nbsp;interpolation)</span></div>
-<div class="block">Creates a new EffectTimer with the specified duration in milliseconds and interpolation.</div>
+<div class="block">Creates a new EffectTimer with the specified duration in milliseconds and
+interpolation.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>milliseconds</code> - the duration in milliseconds</dd>
@@ -302,7 +312,8 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <h3>of</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;duration)</span></div>
-<div class="block">Creates a new EffectTimer with the specified duration and Linear interpolation.</div>
+<div class="block">Creates a new EffectTimer with the specified duration and Linear
+interpolation.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>duration</code> - the total duration</dd>
@@ -321,9 +332,9 @@ reverse while preserving the visual curve shape (useful for ping-pong effects).<
 <p>
 Loop mode controls what happens when the timer completes:
 <ul>
-  <li><a href="LoopMode.html#ONCE"><code>LoopMode.ONCE</code></a>: Timer completes and stays done (default)</li>
-  <li><a href="LoopMode.html#LOOP"><code>LoopMode.LOOP</code></a>: Timer resets to start and continues</li>
-  <li><a href="LoopMode.html#PING_PONG"><code>LoopMode.PING_PONG</code></a>: Timer reverses direction and continues</li>
+<li><a href="LoopMode.html#ONCE"><code>LoopMode.ONCE</code></a>: Timer completes and stays done (default)</li>
+<li><a href="LoopMode.html#LOOP"><code>LoopMode.LOOP</code></a>: Timer resets to start and continues</li>
+<li><a href="LoopMode.html#PING_PONG"><code>LoopMode.PING_PONG</code></a>: Timer reverses direction and continues</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -378,11 +389,13 @@ Loop mode controls what happens when the timer completes:
 <h3>mirrored</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="EffectTimer.html" title="class in dev.tamboui.tfx">EffectTimer</a></span>&nbsp;<span class="element-name">mirrored</span>()</div>
-<div class="block">Returns a mirrored timer that runs in reverse direction with flipped interpolation.
+<div class="block">Returns a mirrored timer that runs in reverse direction with flipped
+interpolation.
 <p>
 This preserves the visual curve shape when used with effects that reverse at
-construction time. Unlike reversed(), which flips both direction and interpolation
-type, mirrored() flips the interpolation to compensate for the reversed direction.</div>
+construction time. Unlike reversed(), which flips both direction and
+interpolation type, mirrored() flips the interpolation to compensate for the
+reversed direction.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new timer with reversed direction and flipped interpolation</dd>
@@ -417,7 +430,8 @@ type, mirrored() flips the interpolation to compensate for the reversed directio
 <h3>alpha</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">alpha</span>()</div>
-<div class="block">Computes the current alpha value based on the elapsed time and interpolation method.</div>
+<div class="block">Computes the current alpha value based on the elapsed time and interpolation
+method.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>The current alpha value (0.0 to 1.0)</dd>
@@ -456,20 +470,22 @@ type, mirrored() flips the interpolation to compensate for the reversed directio
 <h3>process</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a></span>&nbsp;<span class="element-name">process</span><wbr><span class="parameters">(<a href="TFxDuration.html" title="class in dev.tamboui.tfx">TFxDuration</a>&nbsp;duration)</span></div>
-<div class="block">Processes the timer by reducing the remaining duration by the specified amount.
+<div class="block">Processes the timer by reducing the remaining duration by the specified
+amount.
 <p>
-For looping timers, this method handles resetting or reversing the timer
-when it completes:
+For looping timers, this method handles resetting or reversing the timer when
+it completes:
 <ul>
-  <li><a href="LoopMode.html#ONCE"><code>LoopMode.ONCE</code></a>: Returns overflow when complete</li>
-  <li><a href="LoopMode.html#LOOP"><code>LoopMode.LOOP</code></a>: Resets to start, returns null</li>
-  <li><a href="LoopMode.html#PING_PONG"><code>LoopMode.PING_PONG</code></a>: Reverses direction, returns null</li>
+<li><a href="LoopMode.html#ONCE"><code>LoopMode.ONCE</code></a>: Returns overflow when complete</li>
+<li><a href="LoopMode.html#LOOP"><code>LoopMode.LOOP</code></a>: Resets to start, returns null</li>
+<li><a href="LoopMode.html#PING_PONG"><code>LoopMode.PING_PONG</code></a>: Reverses direction, returns null</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The amount of time to process</dd>
 <dt>Returns:</dt>
-<dd>The overflow duration if the timer has completed (ONCE mode only), or null if still running</dd>
+<dd>The overflow duration if the timer has completed (ONCE mode only), or
+        null if still running</dd>
 </dl>
 </div>
 </section>
@@ -482,7 +498,8 @@ when it completes:
 <div class="block">Returns true if the timer has completed.
 <p>
 For looping timers (<a href="LoopMode.html#LOOP"><code>LoopMode.LOOP</code></a> and <a href="LoopMode.html#PING_PONG"><code>LoopMode.PING_PONG</code></a>),
-this method always returns false since looping timers never complete on their own.</div>
+this method always returns false since looping timers never complete on their
+own.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if the timer has completed</dd>

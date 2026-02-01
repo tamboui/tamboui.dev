@@ -103,9 +103,9 @@ loadScripts(document, 'script');</script>
 implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
 <div class="block">Runner for DSL applications with automatic event routing.
 <p>
-Events are routed to elements based on focus and position.
-Elements handle their own events via handlers set with <code>onKeyEvent()</code>
-and <code>onMouseEvent()</code>.
+Events are routed to elements based on focus and position. Elements handle
+their own events via handlers set with <code>onKeyEvent()</code> and
+<code>onMouseEvent()</code>.
 
 <pre><code>import static toolkit.dev.tamboui.Toolkit.*;
 
@@ -319,15 +319,15 @@ try (var runner = ToolkitRunner.create()) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">run</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;elementSupplier)</span>
          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
-<div class="block">Runs the application with the given element supplier.
-The supplier is called each frame to get the current UI state.
+<div class="block">Runs the application with the given element supplier. The supplier is called
+each frame to get the current UI state.
 <p>
-Events are routed to elements based on their handlers.
-Press 'q' or Ctrl+C to quit (when no element consumes the event).
+Events are routed to elements based on their handlers. Press 'q' or Ctrl+C to
+quit (when no element consumes the event).
 <p>
 If fault-tolerant rendering is enabled (via builder), individual element
-render failures are caught and replaced with error placeholders, allowing
-the rest of the UI to continue rendering.</div>
+render failures are caught and replaced with error placeholders, allowing the
+rest of the UI to continue rendering.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>elementSupplier</code> - provides the root element for each render</dd>
@@ -380,8 +380,8 @@ the rest of the UI to continue rendering.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;delay)</span></div>
 <div class="block">Schedules an action to run after a delay.
 <p>
-The action runs on the scheduler thread. If the action modifies UI state,
-use <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety:
+The action runs on the scheduler thread. If the action modifies UI state, use
+<a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety:
 
 <pre><code>runner.schedule(() -&gt; {
     runner.runOnRenderThread(() -&gt; {
@@ -407,8 +407,8 @@ use <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Run
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;interval)</span></div>
 <div class="block">Schedules an action to run repeatedly at a fixed interval.
 <p>
-The action runs on the scheduler thread. If the action modifies UI state,
-use <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety.
+The action runs on the scheduler thread. If the action modifies UI state, use
+<a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety.
 
 <pre><code>var repeating = runner.scheduleRepeating(() -&gt; {
     runner.runOnRenderThread(() -&gt; counter++);
@@ -436,11 +436,11 @@ repeating.cancel();
 <div class="block">Schedules an action to run repeatedly with a fixed delay between runs.
 <p>
 Unlike <a href="#scheduleRepeating(java.lang.Runnable,java.time.Duration)"><code>scheduleRepeating(Runnable, Duration)</code></a>, this waits for each execution to complete
-before scheduling the next one. This is useful when the action's duration
-is unpredictable and you want consistent spacing between runs.
+before scheduling the next one. This is useful when the action's duration is
+unpredictable and you want consistent spacing between runs.
 <p>
-The action runs on the scheduler thread. If the action modifies UI state,
-use <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety.</div>
+The action runs on the scheduler thread. If the action modifies UI state, use
+<a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a> to ensure thread safety.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - the action to run</dd>
@@ -512,8 +512,8 @@ Delegates to <a href="../../tui/TuiRunner.html#runOnRenderThread(java.lang.Runna
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a></span>&nbsp;<span class="element-name">elementRegistry</span>()</div>
 <div class="block">Returns the element registry for ID-based area lookups.
 <p>
-The registry is populated during rendering and can be used
-by effect systems to target elements by ID.</div>
+The registry is populated during rendering and can be used by effect systems
+to target elements by ID.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the element registry</dd>
@@ -528,9 +528,9 @@ by effect systems to target elements by ID.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../style/StyledAreaRegistry.html" title="interface in dev.tamboui.style">StyledAreaRegistry</a></span>&nbsp;<span class="element-name">styledAreaRegistry</span>()</div>
 <div class="block">Returns the styled area registry for styled span lookups.
 <p>
-The registry is populated during rendering when styled content with Tags
-is written to the buffer. It can be used by effect systems to target
-styled spans using CSS-like selectors.</div>
+The registry is populated during rendering when styled content with Tags is
+written to the buffer. It can be used by effect systems to target styled
+spans using CSS-like selectors.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the styled area registry</dd>
@@ -587,8 +587,8 @@ When set, elements will have their CSS styles resolved during rendering.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
 <div class="block">Creates a builder for configuring a ToolkitRunner.
 <p>
-The builder provides a fluent API for configuring bindings,
-style engine, and automatic registration of action handlers.
+The builder provides a fluent API for configuring bindings, style engine, and
+automatic registration of action handlers.
 
 <pre><code>try (var runner = ToolkitRunner.builder()
         .bindings(BindingSets.vim())

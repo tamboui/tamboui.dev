@@ -96,24 +96,20 @@ loadScripts(document, 'script');</script>
 implements <a href="../../widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;<a href="ScrollbarState.html" title="class in dev.tamboui.widgets.scrollbar">ScrollbarState</a>&gt;</span></div>
 <div class="block">A scrollbar widget for displaying scroll position.
 <p>
-The scrollbar can be oriented vertically (left/right) or horizontally (top/bottom).
-It consists of:
+The scrollbar can be oriented vertically (left/right) or horizontally
+(top/bottom). It consists of:
 <ul>
-  <li><b>track</b> - the background line</li>
-  <li><b>thumb</b> - the position indicator that moves along the track</li>
-  <li><b>begin/end symbols</b> - optional arrows at the ends</li>
+<li><b>track</b> - the background line</li>
+<li><b>thumb</b> - the position indicator that moves along the track</li>
+<li><b>begin/end symbols</b> - optional arrows at the ends</li>
 </ul>
 
 <pre><code>// Create a vertical scrollbar
-Scrollbar scrollbar = Scrollbar.builder()
-    .orientation(ScrollbarOrientation.VERTICAL_RIGHT)
-    .thumbStyle(Style.EMPTY.fg(Color.YELLOW))
-    .build();
+Scrollbar scrollbar = Scrollbar.builder().orientation(ScrollbarOrientation.VERTICAL_RIGHT)
+        .thumbStyle(Style.EMPTY.fg(Color.YELLOW)).build();
 
 // Create state for 100 items
-ScrollbarState state = new ScrollbarState()
-    .contentLength(100)
-    .position(currentScrollPosition);
+ScrollbarState state = new ScrollbarState().contentLength(100).position(currentScrollPosition);
 
 // Render in a frame
 frame.renderStatefulWidget(scrollbar, area, state);

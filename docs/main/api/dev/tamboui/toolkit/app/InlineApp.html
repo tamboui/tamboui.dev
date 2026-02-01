@@ -98,18 +98,18 @@ Extend this class to create an inline TUI application that stays within the
 normal terminal flow (no alternate screen). State is managed through instance
 fields, and events are handled by elements via their handlers.
 
-<pre><code>import static dev.tamboui.toolkit.Toolkit.*;
+<pre>
+<code>
+import static dev.tamboui.toolkit.Toolkit.*;
 
 public class ProgressApp extends InlineApp {
     private double progress = 0.0;
 
-    @Override
+    &amp;#64;Override
     protected Element render() {
-        return column(
-            waveText("Installing packages...").cyan(),
-            gauge(progress).label(String.format("%.0f%%", progress * 100)),
-            text("Press q to cancel").dim()
-        );
+        return column(waveText("Installing packages...").cyan(),
+                gauge(progress).label(String.format("%.0f%%", progress * 100)),
+                text("Press q to cancel").dim());
     }
 
     @Override
@@ -129,7 +129,8 @@ public class ProgressApp extends InlineApp {
         new ProgressApp().run();
     }
 }
-</code></pre></div>
+</code>
+</pre></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -262,9 +263,9 @@ public class ProgressApp extends InlineApp {
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">height</span>()</div>
 <div class="block">Returns the initial height of the inline display in lines.
 <p>
-The display will automatically grow beyond this if the content
-requires more space. Override this method to specify a starting height.
-The default is 1 line.</div>
+The display will automatically grow beyond this if the content requires more
+space. Override this method to specify a starting height. The default is 1
+line.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the initial display height</dd>
@@ -279,9 +280,8 @@ The default is 1 line.</div>
 <div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></span>&nbsp;<span class="element-name">render</span>()</div>
 <div class="block">Renders the application UI.
 <p>
-Called each frame to get the current state.
-Add event handlers to elements using <code>onKeyEvent()</code> and
-<code>onMouseEvent()</code> methods.</div>
+Called each frame to get the current state. Add event handlers to elements
+using <code>onKeyEvent()</code> and <code>onMouseEvent()</code> methods.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the root element to render</dd>

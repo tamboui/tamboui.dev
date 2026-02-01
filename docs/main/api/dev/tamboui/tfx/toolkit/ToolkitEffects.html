@@ -94,41 +94,37 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">High-level API for integrating TFX effects with the Toolkit DSL.
 <p>
-ToolkitEffects provides a simple interface for adding effects to elements
-by ID, with automatic resolution of element areas during rendering.
-Effects automatically follow their target elements when the terminal resizes
-because areas are looked up dynamically each frame.
+ToolkitEffects provides a simple interface for adding effects to elements by
+ID, with automatic resolution of element areas during rendering. Effects
+automatically follow their target elements when the terminal resizes because
+areas are looked up dynamically each frame.
 <p>
 <b>Design Philosophy:</b>
 <ul>
-  <li><b>Element-targeted:</b> Effects can target specific elements by ID</li>
-  <li><b>Non-invasive:</b> Uses wrapper pattern like FpsOverlay</li>
-  <li><b>Automatic timing:</b> Uses TickEvent elapsed time for consistency</li>
-  <li><b>Resize-safe:</b> Effects follow elements automatically on resize</li>
+<li><b>Element-targeted:</b> Effects can target specific elements by ID</li>
+<li><b>Non-invasive:</b> Uses wrapper pattern like FpsOverlay</li>
+<li><b>Automatic timing:</b> Uses TickEvent elapsed time for consistency</li>
+<li><b>Resize-safe:</b> Effects follow elements automatically on resize</li>
 </ul>
 <p>
 <b>Usage with ToolkitRunner:</b>
+
 <pre><code>ToolkitEffects effects = new ToolkitEffects();
 effects.addEffect("header", Fx.fadeFromFg(Color.BLACK, 800, Interpolation.QuadOut));
 
 try (ToolkitRunner runner = ToolkitRunner.create(config)) {
-    effects.runWith(runner, () -&gt;
-        panel("Header", text("Welcome!"))
-            .id("header")
-            .rounded()
-    );
+    effects.runWith(runner, () -&gt; panel("Header", text("Welcome!")).id("header").rounded());
 }
 </code></pre>
 <p>
 <b>Usage with TuiRunner:</b>
+
 <pre><code>ToolkitEffects effects = new ToolkitEffects();
 effects.addEffect("header", Fx.fadeFromFg(Color.BLACK, 800, Interpolation.QuadOut));
 
 try (TuiRunner runner = TuiRunner.create(config)) {
-    runner.run(
-        effects.wrapHandler(myHandler, eventRouter),
-        effects.wrapRenderer(myRenderer, eventRouter)
-    );
+    runner.run(effects.wrapHandler(myHandler, eventRouter),
+            effects.wrapRenderer(myRenderer, eventRouter));
 }
 </code></pre></div>
 <dl class="notes">
@@ -268,8 +264,8 @@ try (TuiRunner runner = TuiRunner.create(config)) {
  <a href="../Effect.html" title="class in dev.tamboui.tfx">Effect</a>&nbsp;effect)</span></div>
 <div class="block">Adds an effect that targets a specific element by ID.
 <p>
-The effect will be applied to the element's rendered area once
-the element is rendered and its area is available.</div>
+The effect will be applied to the element's rendered area once the element is
+rendered and its area is available.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>elementId</code> - the ID of the target element</dd>
@@ -310,14 +306,15 @@ once the elements are rendered and their areas are available.
 <p>
 Supported selectors:
 <ul>
-  <li><code>#id</code> - matches element by ID</li>
-  <li><code>.class</code> - matches elements by CSS class</li>
-  <li><code>Type</code> - matches elements by type name (e.g., Panel, Button)</li>
-  <li><code>Type.class</code> - combined type and class</li>
-  <li><code>.class1.class2</code> - multiple classes (all must match)</li>
+<li><code>#id</code> - matches element by ID</li>
+<li><code>.class</code> - matches elements by CSS class</li>
+<li><code>Type</code> - matches elements by type name (e.g., Panel, Button)</li>
+<li><code>Type.class</code> - combined type and class</li>
+<li><code>.class1.class2</code> - multiple classes (all must match)</li>
 </ul>
 <p>
 Example:
+
 <pre><code>// Apply effect to all elements with class "highlight"
 effects.addEffectBySelector(".highlight", Fx.fadeToFg(Color.YELLOW, 500));
 
@@ -378,8 +375,8 @@ Global effects are not targeted to any specific element.</div>
 <p>
 The wrapper:
 <ul>
-  <li>Captures elapsed time from <a href="../../tui/event/TickEvent.html" title="class in dev.tamboui.tui.event"><code>TickEvent</code></a>s</li>
-  <li>Forces redraws when effects are active</li>
+<li>Captures elapsed time from <a href="../../tui/event/TickEvent.html" title="class in dev.tamboui.tui.event"><code>TickEvent</code></a>s</li>
+<li>Forces redraws when effects are active</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -402,15 +399,17 @@ The wrapper:
 <p>
 The wrapper:
 <ul>
-  <li>Calls the wrapped renderer first</li>
-  <li>Expands pending selector effects to element and styled area instances</li>
-  <li>Processes all active effects on the buffer with dynamic area lookup</li>
+<li>Calls the wrapped renderer first</li>
+<li>Expands pending selector effects to element and styled area
+instances</li>
+<li>Processes all active effects on the buffer with dynamic area lookup</li>
 </ul>
 <p>
-When a StyledAreaRegistry is provided, effects can target styled spans
-using CSS selectors like <code>.highlight</code> or <code>#myPanel .highlight</code>.
+When a StyledAreaRegistry is provided, effects can target styled spans using
+CSS selectors like <code>.highlight</code> or <code>#myPanel .highlight</code>.
 <p>
-When a FocusManager is provided, pseudo-class selectors like <code>:focus</code> are supported.</div>
+When a FocusManager is provided, pseudo-class selectors like <code>:focus</code>
+are supported.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>renderer</code> - the renderer to wrap</dd>
@@ -430,21 +429,21 @@ When a FocusManager is provided, pseudo-class selectors like <code>:focus</code>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../toolkit/app/ToolkitPostRenderProcessor.html" title="interface in dev.tamboui.toolkit.app">ToolkitPostRenderProcessor</a></span>&nbsp;<span class="element-name">asPostRenderProcessor</span>()</div>
 <div class="block">Creates a post-render processor for use with ToolkitRunner.Builder.
 <p>
-This returns a processor that expands pending selector effects and
-processes all active effects on the buffer. Areas are looked up dynamically
-from the element registry each frame, so effects automatically follow
-elements when the terminal resizes.
+This returns a processor that expands pending selector effects and processes
+all active effects on the buffer. Areas are looked up dynamically from the
+element registry each frame, so effects automatically follow elements when
+the terminal resizes.
 <p>
 When the Frame has a StyledAreaRegistry configured, effects can also target
 styled spans using CSS selectors like <code>.highlight</code> or
 <code>#myPanel .highlight</code>.
 <p>
 <b>Usage:</b>
+
 <pre><code>ToolkitEffects effects = new ToolkitEffects();
 effects.addEffect("header", Fx.fadeFromFg(Color.BLACK, 800, Interpolation.QuadOut));
 
-try (var runner = ToolkitRunner.builder()
-        .postRenderProcessor(effects.asPostRenderProcessor())
+try (var runner = ToolkitRunner.builder().postRenderProcessor(effects.asPostRenderProcessor())
         .build()) {
     runner.run(() -&gt; panel("Header", text("Welcome!")).id("header"));
 }

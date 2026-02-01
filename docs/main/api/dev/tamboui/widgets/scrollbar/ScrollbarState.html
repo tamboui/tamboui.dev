@@ -101,24 +101,23 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">State for a <a href="Scrollbar.html" title="class in dev.tamboui.widgets.scrollbar"><code>Scrollbar</code></a> widget.
 <p>
-Tracks the scroll position and content dimensions for proper scrollbar rendering.
+Tracks the scroll position and content dimensions for proper scrollbar
+rendering.
 <p>
 <b>Important:</b> You must set <a href="#contentLength(int)"><code>contentLength(int)</code></a> before rendering,
 otherwise the scrollbar will appear blank.
 
 <pre><code>// Create state for a list of 100 items
-ScrollbarState state = new ScrollbarState()
-    .contentLength(100)
-    .position(0);
+ScrollbarState state = new ScrollbarState().contentLength(100).position(0);
 
 // Update position when scrolling
 state.position(newScrollPosition);
 
 // Navigation helpers
-state.next();     // Scroll down one item
-state.prev();     // Scroll up one item
-state.first();    // Jump to start
-state.last();     // Jump to end
+state.next(); // Scroll down one item
+state.prev(); // Scroll up one item
+state.first(); // Jump to start
+state.last(); // Jump to end
 </code></pre></div>
 </div>
 </section>
@@ -258,8 +257,8 @@ state.last();     // Jump to end
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ScrollbarState</span>()</div>
 <div class="block">Creates a new scrollbar state with default values.
 <p>
-Content length defaults to 0, which will result in a blank scrollbar.
-You must call <a href="#contentLength(int)"><code>contentLength(int)</code></a> before rendering.</div>
+Content length defaults to 0, which will result in a blank scrollbar. You
+must call <a href="#contentLength(int)"><code>contentLength(int)</code></a> before rendering.</div>
 </div>
 </section>
 </li>
@@ -334,8 +333,8 @@ This is a fluent setter that returns this state for chaining.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ScrollbarState.html" title="class in dev.tamboui.widgets.scrollbar">ScrollbarState</a></span>&nbsp;<span class="element-name">position</span><wbr><span class="parameters">(int&nbsp;position)</span></div>
 <div class="block">Sets the current scroll position.
 <p>
-This is a fluent setter that returns this state for chaining.
-The position is clamped to valid bounds.</div>
+This is a fluent setter that returns this state for chaining. The position is
+clamped to valid bounds.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>position</code> - the scroll position (0-based index)</dd>
@@ -367,8 +366,8 @@ If not set (0), the scrollbar will use the track size.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ScrollbarState.html" title="class in dev.tamboui.widgets.scrollbar">ScrollbarState</a></span>&nbsp;<span class="element-name">viewportContentLength</span><wbr><span class="parameters">(int&nbsp;viewportContentLength)</span></div>
 <div class="block">Sets the viewport content length.
 <p>
-This represents the number of items visible in the viewport.
-If not set, the scrollbar will use the track size as the viewport length.
+This represents the number of items visible in the viewport. If not set, the
+scrollbar will use the track size as the viewport length.
 <p>
 This is a fluent setter that returns this state for chaining.</div>
 <dl class="notes">
@@ -423,8 +422,8 @@ This is a fluent setter that returns this state for chaining.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scrollBy</span><wbr><span class="parameters">(int&nbsp;amount)</span></div>
 <div class="block">Scrolls by the given amount.
 <p>
-Positive values scroll down/right, negative values scroll up/left.
-The position is clamped to valid bounds.</div>
+Positive values scroll down/right, negative values scroll up/left. The
+position is clamped to valid bounds.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>amount</code> - the number of items to scroll</dd>

@@ -88,15 +88,15 @@ loadScripts(document, 'script');</script>
 <p>
 The cascade algorithm:
 <ol>
-<li>Find all rules whose selectors match the element</li>
-<li>Sort by specificity (higher wins)</li>
-<li>For equal specificity, later rules win (source order)</li>
-<li>!important declarations override all non-important</li>
-<li>Merge all matching declarations into a final style</li>
+  <li>Find all rules whose selectors match the element</li>
+  <li>Sort by specificity (higher wins)</li>
+  <li>For equal specificity, later rules win (source order)</li>
+  <li>!important declarations override all non-important</li>
+  <li>Merge all matching declarations into a final style</li>
 </ol>
 <p>
-Unknown properties (those not registered in <a href="../../style/PropertyRegistry.html" title="class in dev.tamboui.style"><code>PropertyRegistry</code></a>) are
-handled according to the configured <a href="UnknownPropertyBehavior.html" title="enum class in dev.tamboui.css.cascade"><code>UnknownPropertyBehavior</code></a>.</div>
+Unknown properties (those not registered in <a href="../../style/PropertyRegistry.html" title="class in dev.tamboui.style"><code>PropertyRegistry</code></a>) are handled
+according to the configured <a href="UnknownPropertyBehavior.html" title="enum class in dev.tamboui.css.cascade"><code>UnknownPropertyBehavior</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -111,8 +111,7 @@ handled according to the configured <a href="UnknownPropertyBehavior.html" title
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CascadeResolver</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new cascade resolver with default behavior (IGNORE unknown
-properties).</div>
+<div class="block">Creates a new cascade resolver with default behavior (IGNORE unknown properties).</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.css.cascade.UnknownPropertyBehavior)" class="member-name-link">CascadeResolver</a><wbr>(<a href="UnknownPropertyBehavior.html" title="enum class in dev.tamboui.css.cascade">UnknownPropertyBehavior</a>&nbsp;unknownPropertyBehavior)</code></div>
 <div class="col-last odd-row-color">
@@ -163,8 +162,7 @@ properties).</div>
 <h3>CascadeResolver</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CascadeResolver</span>()</div>
-<div class="block">Creates a new cascade resolver with default behavior (IGNORE unknown
-properties).</div>
+<div class="block">Creates a new cascade resolver with default behavior (IGNORE unknown properties).</div>
 </div>
 </section>
 </li>

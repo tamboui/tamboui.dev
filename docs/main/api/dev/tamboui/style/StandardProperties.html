@@ -122,19 +122,19 @@ passed from parent to child elements if not explicitly set.
 
 <h2 id="inheritable-properties--heading">Inheritable properties:</h2>
 <ul>
-<li><code>color</code> - foreground/text color</li>
-<li><code>text-style</code> - text modifiers (bold, italic, etc.)</li>
-<li><code>border-type</code> - border style (for nested containers)</li>
+  <li><code>color</code> - foreground/text color</li>
+  <li><code>text-style</code> - text modifiers (bold, italic, etc.)</li>
+  <li><code>border-type</code> - border style (for nested containers)</li>
 </ul>
 
 <h2 id="non-inheritable-properties--heading">Non-inheritable properties:</h2>
 <ul>
-<li><code>background</code>, <code>background-color</code> - background color</li>
-<li><code>padding</code> - inner spacing</li>
-<li><code>margin</code> - outer spacing</li>
-<li><code>flex</code>, <code>direction</code>, <code>spacing</code> - layout properties</li>
-<li><code>width</code>, <code>height</code> - size constraints</li>
-<li><code>text-align</code> - text alignment</li>
+  <li><code>background</code>, <code>background-color</code> - background color</li>
+  <li><code>padding</code> - inner spacing</li>
+  <li><code>margin</code> - outer spacing</li>
+  <li><code>flex</code>, <code>direction</code>, <code>spacing</code> - layout properties</li>
+  <li><code>width</code>, <code>height</code> - size constraints</li>
+  <li><code>text-align</code> - text alignment</li>
 </ul></div>
 </div>
 </section>
@@ -529,8 +529,8 @@ passed from parent to child elements if not explicitly set.
 <h3>COLOR</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="Color.html" title="interface in dev.tamboui.style">Color</a>&gt;</span>&nbsp;<span class="element-name">COLOR</span></div>
-<div class="block">The <code>color</code> property for foreground/text color. This property is
-inheritable - children inherit their parent's color.</div>
+<div class="block">The <code>color</code> property for foreground/text color.
+This property is inheritable - children inherit their parent's color.</div>
 </div>
 </section>
 </li>
@@ -539,8 +539,8 @@ inheritable - children inherit their parent's color.</div>
 <h3>TEXT_STYLE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&gt;&gt;</span>&nbsp;<span class="element-name">TEXT_STYLE</span></div>
-<div class="block">The <code>text-style</code> property for text modifiers. This property is
-inheritable - children inherit their parent's text style.</div>
+<div class="block">The <code>text-style</code> property for text modifiers.
+This property is inheritable - children inherit their parent's text style.</div>
 </div>
 </section>
 </li>
@@ -549,8 +549,8 @@ inheritable - children inherit their parent's text style.</div>
 <h3>BACKGROUND</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="Color.html" title="interface in dev.tamboui.style">Color</a>&gt;</span>&nbsp;<span class="element-name">BACKGROUND</span></div>
-<div class="block">The <code>background</code> property for background color. This property is NOT
-inheritable per CSS spec.</div>
+<div class="block">The <code>background</code> property for background color.
+This property is NOT inheritable per CSS spec.</div>
 </div>
 </section>
 </li>
@@ -559,8 +559,8 @@ inheritable per CSS spec.</div>
 <h3>BACKGROUND_COLOR</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="Color.html" title="interface in dev.tamboui.style">Color</a>&gt;</span>&nbsp;<span class="element-name">BACKGROUND_COLOR</span></div>
-<div class="block">The <code>background-color</code> property (alias for background). This property
-is NOT inheritable per CSS spec.</div>
+<div class="block">The <code>background-color</code> property (alias for background).
+This property is NOT inheritable per CSS spec.</div>
 </div>
 </section>
 </li>
@@ -569,8 +569,9 @@ is NOT inheritable per CSS spec.</div>
 <h3>PADDING</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../layout/Padding.html" title="class in dev.tamboui.layout">Padding</a>&gt;</span>&nbsp;<span class="element-name">PADDING</span></div>
-<div class="block">The <code>padding</code> property for inner spacing. This property is NOT
-inheritable. Default: <a href="../layout/Padding.html#NONE"><code>Padding.NONE</code></a></div>
+<div class="block">The <code>padding</code> property for inner spacing.
+This property is NOT inheritable.
+Default: <a href="../layout/Padding.html#NONE"><code>Padding.NONE</code></a></div>
 </div>
 </section>
 </li>
@@ -579,8 +580,9 @@ inheritable. Default: <a href="../layout/Padding.html#NONE"><code>Padding.NONE</
 <h3>MARGIN</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../layout/Margin.html" title="class in dev.tamboui.layout">Margin</a>&gt;</span>&nbsp;<span class="element-name">MARGIN</span></div>
-<div class="block">The <code>margin</code> property for outer spacing. This property is NOT
-inheritable. Default: <a href="../layout/Margin.html#NONE"><code>Margin.NONE</code></a></div>
+<div class="block">The <code>margin</code> property for outer spacing.
+This property is NOT inheritable.
+Default: <a href="../layout/Margin.html#NONE"><code>Margin.NONE</code></a></div>
 </div>
 </section>
 </li>
@@ -589,8 +591,9 @@ inheritable. Default: <a href="../layout/Margin.html#NONE"><code>Margin.NONE</co
 <h3>TEXT_ALIGN</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../layout/Alignment.html" title="enum class in dev.tamboui.layout">Alignment</a>&gt;</span>&nbsp;<span class="element-name">TEXT_ALIGN</span></div>
-<div class="block">The <code>text-align</code> property for text alignment. This property is NOT
-inheritable. Default: <a href="../layout/Alignment.html#LEFT"><code>Alignment.LEFT</code></a></div>
+<div class="block">The <code>text-align</code> property for text alignment.
+This property is NOT inheritable.
+Default: <a href="../layout/Alignment.html#LEFT"><code>Alignment.LEFT</code></a></div>
 </div>
 </section>
 </li>
@@ -599,8 +602,8 @@ inheritable. Default: <a href="../layout/Alignment.html#LEFT"><code>Alignment.LE
 <h3>FLEX</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../layout/Flex.html" title="enum class in dev.tamboui.layout">Flex</a>&gt;</span>&nbsp;<span class="element-name">FLEX</span></div>
-<div class="block">The <code>flex</code> property for flex layout mode. This property is NOT
-inheritable.</div>
+<div class="block">The <code>flex</code> property for flex layout mode.
+This property is NOT inheritable.</div>
 </div>
 </section>
 </li>
@@ -609,8 +612,8 @@ inheritable.</div>
 <h3>DIRECTION</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../layout/Direction.html" title="enum class in dev.tamboui.layout">Direction</a>&gt;</span>&nbsp;<span class="element-name">DIRECTION</span></div>
-<div class="block">The <code>direction</code> property for layout direction. This property is NOT
-inheritable.</div>
+<div class="block">The <code>direction</code> property for layout direction.
+This property is NOT inheritable.</div>
 </div>
 </section>
 </li>
@@ -619,8 +622,8 @@ inheritable.</div>
 <h3>SPACING</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">SPACING</span></div>
-<div class="block">The <code>spacing</code> property for gap between elements. This property is NOT
-inheritable.</div>
+<div class="block">The <code>spacing</code> property for gap between elements.
+This property is NOT inheritable.</div>
 </div>
 </section>
 </li>
@@ -629,9 +632,9 @@ inheritable.</div>
 <h3>WIDTH</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&gt;</span>&nbsp;<span class="element-name">WIDTH</span></div>
-<div class="block">The <code>width</code> property for element width constraint. Supports: fill, fit,
-percentages (50%), fixed lengths (20), min/max, ratios (1/3). This property
-is NOT inheritable.</div>
+<div class="block">The <code>width</code> property for element width constraint.
+Supports: fill, fit, percentages (50%), fixed lengths (20), min/max, ratios (1/3).
+This property is NOT inheritable.</div>
 </div>
 </section>
 </li>
@@ -640,8 +643,8 @@ is NOT inheritable.</div>
 <h3>HEIGHT</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>&gt;</span>&nbsp;<span class="element-name">HEIGHT</span></div>
-<div class="block">The <code>height</code> property for height constraint. This property is NOT
-inheritable.</div>
+<div class="block">The <code>height</code> property for height constraint.
+This property is NOT inheritable.</div>
 </div>
 </section>
 </li>
@@ -651,7 +654,8 @@ inheritable.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="Overflow.html" title="enum class in dev.tamboui.style">Overflow</a>&gt;</span>&nbsp;<span class="element-name">TEXT_OVERFLOW</span></div>
 <div class="block">The <code>text-overflow</code> property for text wrapping/truncation behavior.
-This property is NOT inheritable. Default: <a href="Overflow.html#CLIP"><code>Overflow.CLIP</code></a></div>
+This property is NOT inheritable.
+Default: <a href="Overflow.html#CLIP"><code>Overflow.CLIP</code></a></div>
 </div>
 </section>
 </li>

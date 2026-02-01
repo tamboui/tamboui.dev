@@ -84,8 +84,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Styleable</span></div>
 <div class="block">Interface for elements that can be styled via CSS.
 <p>
-Elements implementing this interface can be targeted by CSS selectors and
-have CSS rules applied to them during rendering.</div>
+Elements implementing this interface can be targeted by CSS selectors
+and have CSS rules applied to them during rendering.</div>
 </div>
 </section>
 <section class="summary">
@@ -152,8 +152,8 @@ have CSS rules applied to them during rendering.</div>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">styleType</span>()</div>
 <div class="block">Returns the style type name used for type selectors.
 <p>
-For example, a Panel element would return "Panel" to match the CSS selector
-<code>Panel { ... }</code>.</div>
+For example, a Panel element would return "Panel" to match
+the CSS selector <code>Panel { ... }</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the style type name (never null)</dd>
@@ -168,8 +168,8 @@ For example, a Panel element would return "Panel" to match the CSS selector
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">cssId</span>()</div>
 <div class="block">Returns the element ID for ID selectors.
 <p>
-For example, an element with ID "sidebar" would be matched by the CSS
-selector <code>#sidebar { ... }</code>.</div>
+For example, an element with ID "sidebar" would be matched
+by the CSS selector <code>#sidebar { ... }</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the element ID, or empty if not set</dd>
@@ -184,8 +184,8 @@ selector <code>#sidebar { ... }</code>.</div>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">cssClasses</span>()</div>
 <div class="block">Returns the CSS classes assigned to this element.
 <p>
-For example, an element with class "primary" would be matched by the CSS
-selector <code>.primary { ... }</code>.</div>
+For example, an element with class "primary" would be matched
+by the CSS selector <code>.primary { ... }</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an unmodifiable set of CSS class names (never null, may be empty)</dd>
@@ -200,8 +200,8 @@ selector <code>.primary { ... }</code>.</div>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&gt;</span>&nbsp;<span class="element-name">cssParent</span>()</div>
 <div class="block">Returns the parent element in the style hierarchy.
 <p>
-Used for descendant and child combinator selectors like <code>Panel Button {
-... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
+Used for descendant and child combinator selectors like
+<code>Panel Button { ... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the parent element, or empty if this is a root element</dd>
@@ -216,20 +216,19 @@ Used for descendant and child combinator selectors like <code>Panel Button {
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">styleAttributes</span>()</div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
-their style attributes. This method returns a map of attribute names to their
-values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements
+based on their style attributes. This method returns a map of
+attribute names to their values.
 <p>
 Common attributes include:
 <ul>
-<li><code>title</code> - the element's title</li>
-<li><code>label</code> - the element's label</li>
-<li><code>placeholder</code> - the element's placeholder text</li>
+  <li><code>title</code> - the element's title</li>
+  <li><code>label</code> - the element's label</li>
+  <li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be
-        empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
 </dl>
 </div>
 </section>
@@ -243,8 +242,7 @@ Common attributes include:
 <p>
 The list contains the element's type and all parent types in the class
 hierarchy that implement <a href="Styleable.html" title="interface in dev.tamboui.css"><code>Styleable</code></a>. Types are ordered with lower
-precedence first (parent types) and higher precedence last (most specific
-type).
+precedence first (parent types) and higher precedence last (most specific type).
 <p>
 For example, if <code>MyPanel extends Panel</code> and both implement Styleable,
 calling <code>styleTypes(myPanel)</code> returns <code>["Panel", "MyPanel"]</code>.</div>

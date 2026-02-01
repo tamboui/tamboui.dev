@@ -81,14 +81,12 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Thread-local cache for layout solver results.
 
-<p>
-This cache stores the results of Cassowary solver computations to avoid
-redundant work when the same layout is computed multiple times per frame. The
-cache uses LRU eviction to bound memory usage.
+<p>This cache stores the results of Cassowary solver computations to avoid
+redundant work when the same layout is computed multiple times per frame.
+The cache uses LRU eviction to bound memory usage.
 
-<p>
-The cache is thread-local to avoid synchronization overhead, as TUI rendering
-is typically single-threaded.</div>
+<p>The cache is thread-local to avoid synchronization overhead, as TUI
+rendering is typically single-threaded.</div>
 </div>
 </section>
 <section class="summary">
@@ -116,8 +114,7 @@ is typically single-threaded.</div>
  <a href="../Flex.html" title="enum class in dev.tamboui.layout">Flex</a>&nbsp;flex,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;int[]&gt;&nbsp;computer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets cached sizes for the given layout parameters, computing and caching if
-absent.</div>
+<div class="block">Gets cached sizes for the given layout parameters, computing and caching if absent.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LayoutCache.html" title="class in dev.tamboui.layout.cassowary">LayoutCache</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#instance()" class="member-name-link">instance</a>()</code></div>
@@ -163,8 +160,7 @@ absent.</div>
  int&nbsp;spacing,
  <a href="../Flex.html" title="enum class in dev.tamboui.layout">Flex</a>&nbsp;flex,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;int[]&gt;&nbsp;computer)</span></div>
-<div class="block">Gets cached sizes for the given layout parameters, computing and caching if
-absent.</div>
+<div class="block">Gets cached sizes for the given layout parameters, computing and caching if absent.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>constraints</code> - the layout constraints</dd>
@@ -183,8 +179,8 @@ absent.</div>
 <h3>clearAll</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearAll</span>()</div>
-<div class="block">Clears the cache for the current thread. This can be called at the end of a
-frame if desired.</div>
+<div class="block">Clears the cache for the current thread.
+This can be called at the end of a frame if desired.</div>
 </div>
 </section>
 </li>

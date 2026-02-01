@@ -103,30 +103,38 @@ implements <a href="../../widget/StatefulWidget.html" title="interface in dev.ta
 <div class="block">A widget that renders text with an animated wave brightness effect.
 <p>
 By default, the wave creates a dark "shadow" that moves through otherwise
-bright text. This can be inverted to have a bright peak moving through dim
-text.
+bright text. This can be inverted to have a bright peak moving through
+dim text.
 
 <pre><code>// Dark shadow moving through bright text (default)
-WaveText wave = WaveText.builder().text("Processing...").color(Color.CYAN).build();
+WaveText wave = WaveText.builder()
+    .text("Processing...")
+    .color(Color.CYAN)
+    .build();
 
 // Bright peak moving through dim text (inverted)
-WaveText wave = WaveText.builder().text("Loading...").color(Color.YELLOW).inverted(true).build();
+WaveText wave = WaveText.builder()
+    .text("Loading...")
+    .color(Color.YELLOW)
+    .inverted(true)
+    .build();
 
 // Back-and-forth oscillation instead of looping
-WaveText wave = WaveText.builder().text("Thinking...").mode(Mode.OSCILLATE).build();
+WaveText wave = WaveText.builder()
+    .text("Thinking...")
+    .mode(Mode.OSCILLATE)
+    .build();
 </code></pre>
 
 <h2 id="configuration-options-heading">Configuration Options</h2>
 <ul>
-<li><b>color</b> - Base color of the text</li>
-<li><b>dimFactor</b> - Brightness of the dim portion (0.0-1.0, default
-0.3)</li>
-<li><b>peakWidth</b> - Width of the wave peak in characters (default 3)</li>
-<li><b>peakCount</b> - Number of peaks in the wave (default 1)</li>
-<li><b>speed</b> - Animation speed multiplier (default 1.0)</li>
-<li><b>mode</b> - LOOP (continuous) or OSCILLATE (back-and-forth)</li>
-<li><b>inverted</b> - If true, bright peak on dim text; if false, dark shadow
-on bright text</li>
+  <li><b>color</b> - Base color of the text</li>
+  <li><b>dimFactor</b> - Brightness of the dim portion (0.0-1.0, default 0.3)</li>
+  <li><b>peakWidth</b> - Width of the wave peak in characters (default 3)</li>
+  <li><b>peakCount</b> - Number of peaks in the wave (default 1)</li>
+  <li><b>speed</b> - Animation speed multiplier (default 1.0)</li>
+  <li><b>mode</b> - LOOP (continuous) or OSCILLATE (back-and-forth)</li>
+  <li><b>inverted</b> - If true, bright peak on dim text; if false, dark shadow on bright text</li>
 </ul></div>
 </div>
 </section>

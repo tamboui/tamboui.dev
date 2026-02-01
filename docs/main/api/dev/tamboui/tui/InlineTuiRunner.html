@@ -98,30 +98,31 @@ loadScripts(document, 'script');</script>
 implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
 <div class="block">Event loop for inline displays.
 <p>
-InlineTuiRunner combines the inline display semantics of
-<a href="../inline/InlineDisplay.html" title="class in dev.tamboui.inline"><code>InlineDisplay</code></a> with the event handling capabilities of
-<a href="TuiRunner.html" title="class in dev.tamboui.tui"><code>TuiRunner</code></a>. It provides:
+InlineTuiRunner combines the inline display semantics of <a href="../inline/InlineDisplay.html" title="class in dev.tamboui.inline"><code>InlineDisplay</code></a>
+with the event handling capabilities of <a href="TuiRunner.html" title="class in dev.tamboui.tui"><code>TuiRunner</code></a>. It provides:
 <ul>
-<li>Raw mode for key event reading (like TuiRunner)</li>
-<li>NO alternate screen (stays inline, like InlineDisplay)</li>
-<li>Tick events for animations (WaveText, etc.)</li>
-<li>Input reader thread for responsive keyboard handling</li>
-<li>Thread-safe operations for background task integration</li>
+  <li>Raw mode for key event reading (like TuiRunner)</li>
+  <li>NO alternate screen (stays inline, like InlineDisplay)</li>
+  <li>Tick events for animations (WaveText, etc.)</li>
+  <li>Input reader thread for responsive keyboard handling</li>
+  <li>Thread-safe operations for background task integration</li>
 </ul>
 
 <pre><code>try (var runner = InlineTuiRunner.create(4)) {
     int[] progress = {0};
 
-    runner.run((event, r) -&gt; {
-        if (event instanceof TickEvent) {
-            progress[0] = Math.min(100, progress[0] + 1);
-            if (progress[0] &gt;= 100)
-                r.quit();
+    runner.run(
+        (event, r) -&gt; {
+            if (event instanceof TickEvent) {
+                progress[0] = Math.min(100, progress[0] + 1);
+                if (progress[0] &gt;= 100) r.quit();
+            }
+            return true;
+        },
+        frame -&gt; {
+            gauge(progress[0] / 100.0).render(frame.area(), frame.buffer());
         }
-        return true;
-    }, frame -&gt; {
-        gauge(progress[0] / 100.0).render(frame.area(), frame.buffer());
-    });
+    );
 }
 </code></pre></div>
 <dl class="notes">
@@ -154,8 +155,7 @@ InlineTuiRunner combines the inline display semantics of
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#create(int)" class="member-name-link">create</a><wbr>(int&nbsp;height)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an InlineTuiRunner with the specified height and default
-configuration.</div>
+<div class="block">Creates an InlineTuiRunner with the specified height and default configuration.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#create(dev.tamboui.tui.InlineTuiConfig)" class="member-name-link">create</a><wbr>(<a href="InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a>&nbsp;config)</code></div>
@@ -246,8 +246,7 @@ configuration.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(int&nbsp;height)</span>
                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
-<div class="block">Creates an InlineTuiRunner with the specified height and default
-configuration.</div>
+<div class="block">Creates an InlineTuiRunner with the specified height and default configuration.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>height</code> - the number of lines for the inline display</dd>
@@ -286,8 +285,8 @@ configuration.</div>
          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Runs the main event loop with the given handler and renderer.
 <p>
-The event handler is called for each event (key, mouse, tick). The renderer
-is called to update the display when the handler returns true.</div>
+The event handler is called for each event (key, mouse, tick).
+The renderer is called to update the display when the handler returns true.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>handler</code> - the event handler</dd>
@@ -347,8 +346,7 @@ is called to update the display when the handler returns true.</div>
 <div class="block">Sets the content height for the next draw.
 <p>
 This controls how many terminal lines are allocated for the inline display.
-Calling this before rendering allows the display to grow or shrink
-dynamically.</div>
+Calling this before rendering allows the display to grow or shrink dynamically.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>height</code> - the desired content height in lines</dd>
@@ -363,8 +361,8 @@ dynamically.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runOnRenderThread</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
 <div class="block">Executes an action on the render thread.
 <p>
-If called from the render thread, the action is executed immediately. If
-called from another thread, the action is queued for execution.</div>
+If called from the render thread, the action is executed immediately.
+If called from another thread, the action is queued for execution.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - the action to execute</dd>
@@ -379,8 +377,8 @@ called from another thread, the action is queued for execution.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runLater</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
 <div class="block">Queues an action to be executed on the render thread.
 <p>
-Unlike <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a>, this method always queues the
-action even if called from the render thread.</div>
+Unlike <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a>, this method always queues
+the action even if called from the render thread.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - the action to execute</dd>

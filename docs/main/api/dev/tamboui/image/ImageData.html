@@ -96,8 +96,8 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Immutable holder for image pixel data.
 <p>
-Images are stored in ARGB format where each pixel is a 32-bit integer: bits
-24-31 = alpha, bits 16-23 = red, bits 8-15 = green, bits 0-7 = blue.
+Images are stored in ARGB format where each pixel is a 32-bit integer:
+bits 24-31 = alpha, bits 16-23 = red, bits 8-15 = green, bits 0-7 = blue.
 
 <pre><code>ImageData data = ImageData.fromPath(Path.of("photo.png"));
 ImageData scaled = data.resize(80, 40);
@@ -191,15 +191,13 @@ ImageData scaled = data.resize(80, 40);
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scaledDimensionsToFill(int,int)" class="member-name-link">scaledDimensionsToFill</a><wbr>(int&nbsp;targetWidth,
  int&nbsp;targetHeight)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Calculates the scaled dimensions to fill the given bounds while preserving
-aspect ratio.</div>
+<div class="block">Calculates the scaled dimensions to fill the given bounds while preserving aspect ratio.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scaledDimensionsToFit(int,int)" class="member-name-link">scaledDimensionsToFit</a><wbr>(int&nbsp;maxWidth,
  int&nbsp;maxHeight)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Calculates the scaled dimensions to fit within the given bounds while
-preserving aspect ratio.</div>
+<div class="block">Calculates the scaled dimensions to fit within the given bounds while preserving aspect ratio.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/java/awt/image/BufferedImage.html" title="class or interface in java.awt.image" class="external-link">BufferedImage</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toBufferedImage()" class="member-name-link">toBufferedImage</a>()</code></div>
@@ -497,8 +495,7 @@ The result is cached for subsequent calls.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">scaledDimensionsToFit</span><wbr><span class="parameters">(int&nbsp;maxWidth,
  int&nbsp;maxHeight)</span></div>
-<div class="block">Calculates the scaled dimensions to fit within the given bounds while
-preserving aspect ratio.</div>
+<div class="block">Calculates the scaled dimensions to fit within the given bounds while preserving aspect ratio.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>maxWidth</code> - the maximum width</dd>
@@ -515,8 +512,7 @@ preserving aspect ratio.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="element-name">scaledDimensionsToFill</span><wbr><span class="parameters">(int&nbsp;targetWidth,
  int&nbsp;targetHeight)</span></div>
-<div class="block">Calculates the scaled dimensions to fill the given bounds while preserving
-aspect ratio.</div>
+<div class="block">Calculates the scaled dimensions to fill the given bounds while preserving aspect ratio.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>targetWidth</code> - the target width</dd>

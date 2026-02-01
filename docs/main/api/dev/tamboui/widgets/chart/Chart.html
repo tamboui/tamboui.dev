@@ -87,17 +87,30 @@ loadScripts(document, 'script');</script>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
 <div class="block">A chart widget for plotting datasets in a cartesian coordinate system.
 <p>
-Supports scatter plots, line charts, and bar charts with configurable axes,
-legends, and styling.
+Supports scatter plots, line charts, and bar charts with configurable
+axes, legends, and styling.
 
 <pre><code>Chart chart = Chart.builder()
-        .datasets(Dataset.builder().name("Series 1")
-                .data(new double[][]{{0, 1}, {1, 3}, {2, 2}, {3, 4}}).graphType(GraphType.LINE)
-                .style(Style.EMPTY.fg(Color.CYAN)).build())
-        .xAxis(Axis.builder().title("X").bounds(0, 4).labels("0", "1", "2", "3", "4").build())
-        .yAxis(Axis.builder().title("Y").bounds(0, 5).labels("0", "1", "2", "3", "4", "5")
-                .build())
-        .block(Block.bordered().title(Title.from("My Chart"))).build();
+    .datasets(
+        Dataset.builder()
+            .name("Series 1")
+            .data(new double[][] {{0, 1}, {1, 3}, {2, 2}, {3, 4}})
+            .graphType(GraphType.LINE)
+            .style(Style.EMPTY.fg(Color.CYAN))
+            .build()
+    )
+    .xAxis(Axis.builder()
+        .title("X")
+        .bounds(0, 4)
+        .labels("0", "1", "2", "3", "4")
+        .build())
+    .yAxis(Axis.builder()
+        .title("Y")
+        .bounds(0, 5)
+        .labels("0", "1", "2", "3", "4", "5")
+        .build())
+    .block(Block.bordered().title(Title.from("My Chart")))
+    .build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>

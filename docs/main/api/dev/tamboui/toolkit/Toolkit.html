@@ -168,9 +168,8 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Toolkit</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Static factory methods for building UI elements with the DSL. Import
-statically to use:
-
+<div class="block">Static factory methods for building UI elements with the DSL.
+Import statically to use:
 <pre>
 import static toolkit.dev.tamboui.Toolkit.*;
 
@@ -740,7 +739,6 @@ panel("Title",
 <div class="block">Creates a wave text element with the given text.
 <p>
 By default, a dark "shadow" moves through otherwise bright text.
-
 <pre><code>waveText("Loading...").color(Color.CYAN)
 waveText("Thinking...").inverted()  // Bright peak on dim text
 </code></pre></div>
@@ -778,7 +776,6 @@ waveText("Thinking...").inverted()  // Bright peak on dim text
 <div class="block">Creates a simple inline rich text element with styled text.
 <p>
 For scrollable rich text with borders, use <a href="#richTextArea(dev.tamboui.text.Text)"><code>richTextArea(Text)</code></a>.
-
 <pre><code>Text styledText = Text.from(
     Line.from(Span.styled("Hello", Style.EMPTY.bold()), Span.raw(" World"))
 );
@@ -829,8 +826,10 @@ richText(styledText).centered()
 <div class="block">Creates a scrollable rich text area with styled text.
 <p>
 Rich text areas support scrolling, borders, line numbers, and focus.
-
-<pre><code>richTextArea(styledText).showLineNumbers().scrollbar(ScrollBarPolicy.AS_NEEDED).rounded()
+<pre><code>richTextArea(styledText)
+    .showLineNumbers()
+    .scrollbar(ScrollBarPolicy.AS_NEEDED)
+    .rounded()
 </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -880,15 +879,12 @@ For scrollable markup text with borders, use <a href="#markupTextArea(java.lang.
 <p>
 Supported markup:
 <ul>
-<li>Modifiers: <code>[bold]</code>, <code>[italic]</code>, <code>[underlined]</code>,
-<code>[dim]</code></li>
-<li>Colors: <code>[red]</code>, <code>[green]</code>, <code>[blue]</code>, <code>[yellow]</code>,
-etc.</li>
-<li>Hyperlinks: <code>[link=URL]text[/link]</code></li>
-<li>Nested tags: <code>[red][bold]text[/bold][/red]</code></li>
-<li>Escaped brackets: <code>[[</code> and <code>]]</code></li>
+  <li>Modifiers: <code>[bold]</code>, <code>[italic]</code>, <code>[underlined]</code>, <code>[dim]</code></li>
+  <li>Colors: <code>[red]</code>, <code>[green]</code>, <code>[blue]</code>, <code>[yellow]</code>, etc.</li>
+  <li>Hyperlinks: <code>[link=URL]text[/link]</code></li>
+  <li>Nested tags: <code>[red][bold]text[/bold][/red]</code></li>
+  <li>Escaped brackets: <code>[[</code> and <code>]]</code></li>
 </ul>
-
 <pre><code>markupText("This is [red]red[/red] and [bold]bold[/bold].")
 </code></pre></div>
 <dl class="notes">
@@ -921,9 +917,10 @@ etc.</li>
 <div class="block">Creates a scrollable markup text area that parses BBCode-style markup.
 <p>
 Markup text areas support scrolling, borders, and focus.
-
-<pre><code>markupTextArea("[bold]Hello[/bold] World").scrollbar(ScrollBarPolicy.AS_NEEDED).rounded()
-        .focusable()
+<pre><code>markupTextArea("[bold]Hello[/bold] World")
+    .scrollbar(ScrollBarPolicy.AS_NEEDED)
+    .rounded()
+    .focusable()
 </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1172,8 +1169,11 @@ Markup text areas support scrolling, borders, and focus.
 <div class="block">Creates an empty dock layout.
 <p>
 Regions are added via named methods:
-
-<pre><code>dock().top(text("Header")).bottom(text("Footer")).left(text("Sidebar")).center(text("Content"))
+<pre><code>dock()
+    .top(text("Header"))
+    .bottom(text("Footer"))
+    .left(text("Sidebar"))
+    .center(text("Content"))
 </code></pre></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -1234,8 +1234,8 @@ Children render on top of each other (painter's algorithm).</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FlowElement.html" title="class in dev.tamboui.toolkit.elements">FlowElement</a></span>&nbsp;<span class="element-name">flow</span><wbr><span class="parameters">(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
 <div class="block">Creates a flow layout with the given children.
 <p>
-Children flow left-to-right and wrap to the next line when exceeding the
-available width.</div>
+Children flow left-to-right and wrap to the next line
+when exceeding the available width.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>children</code> - the child elements</dd>
@@ -1461,7 +1461,6 @@ Dialogs auto-center in their parent area and clear the background.</div>
 <div class="block">Creates a lazy element that evaluates the supplier on each render.
 <p>
 This allows state to be captured in the closure:
-
 <pre><code>int count = 0;
 lazy(() -&gt; text("Count: " + count))
 </code></pre></div>
@@ -1480,9 +1479,8 @@ lazy(() -&gt; text("Count: " + count))
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/Panel.html" title="class in dev.tamboui.toolkit.elements">Panel</a></span>&nbsp;<span class="element-name">panel</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;contentSupplier)</span></div>
-<div class="block">Creates a panel with a title and lazy content. The content supplier is
-evaluated on each render.
-
+<div class="block">Creates a panel with a title and lazy content.
+The content supplier is evaluated on each render.
 <pre><code>panel("Counter", () -&gt; text("Count: " + count))
 </code></pre></div>
 <dl class="notes">
@@ -1735,8 +1733,10 @@ evaluated on each render.
 <div class="block">Creates a list with styled element items.
 <p>
 This allows using styled elements directly:
-
-<pre><code>list(text("Hello").green(), text("World").cyan())
+<pre><code>list(
+    text("Hello").green(),
+    text("World").cyan()
+)
 </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -2078,15 +2078,16 @@ This allows using styled elements directly:
 <div class="block">Wraps any low-level <a href="../widget/Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> as a <a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements"><code>GenericWidgetElement</code></a>.
 <p>
 This is useful when you need to use a widget that doesn't have a dedicated
-element wrapper, allowing it to participate in the toolkit's styling and
-layout system.
-
-<pre><code>widget(someWidget).fg(Color.RED).addClass("custom-class").fill()
+element wrapper, allowing it to participate in the toolkit's styling and layout system.
+<pre><code>widget(someWidget)
+    .fg(Color.RED)
+    .addClass("custom-class")
+    .fill()
 </code></pre>
 <p>
-Note: The styling applied to this element affects the element itself but may
-not propagate to the wrapped widget's internal rendering, as the widget
-renders directly to the buffer.</div>
+Note: The styling applied to this element affects the element itself but may not
+propagate to the wrapped widget's internal rendering, as the widget renders directly
+to the buffer.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="widget(T)-type-param-T"><code>T</code> - the type of the widget</span></dd>

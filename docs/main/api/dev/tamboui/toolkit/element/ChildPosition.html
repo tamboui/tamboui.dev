@@ -89,12 +89,11 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Represents the position of a child element within its parent.
 <p>
-This is used with <a href="RenderContext.html#childStyle(java.lang.String,dev.tamboui.toolkit.element.ChildPosition)"><code>RenderContext.childStyle(String, ChildPosition)</code></a> to
-enable CSS pseudo-class matching based on position, such as
-<code>:first-child</code>, <code>:last-child</code>, and <code>:nth-child(even/odd)</code>.
+This is used with <a href="RenderContext.html#childStyle(java.lang.String,dev.tamboui.toolkit.element.ChildPosition)"><code>RenderContext.childStyle(String, ChildPosition)</code></a> to enable
+CSS pseudo-class matching based on position, such as <code>:first-child</code>,
+<code>:last-child</code>, and <code>:nth-child(even/odd)</code>.
 <p>
 Example usage:
-
 <pre><code>for (int i = 0; i &lt; rows.size(); i++) {
     ChildPosition pos = ChildPosition.of(i, rows.size());
     Style rowStyle = context.childStyle("row", pos);
@@ -156,8 +155,7 @@ Example usage:
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(int,int)" class="member-name-link">of</a><wbr>(int&nbsp;index,
  int&nbsp;total)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a ChildPosition for the given index within a collection of the given
-size.</div>
+<div class="block">Creates a ChildPosition for the given index within a collection of the given size.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -190,8 +188,7 @@ size.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ChildPosition.html" title="class in dev.tamboui.toolkit.element">ChildPosition</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;index,
  int&nbsp;total)</span></div>
-<div class="block">Creates a ChildPosition for the given index within a collection of the given
-size.</div>
+<div class="block">Creates a ChildPosition for the given index within a collection of the given size.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>index</code> - the zero-based index of the child</dd>
@@ -259,8 +256,8 @@ size.</div>
 <h3>isEven</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEven</span>()</div>
-<div class="block">Returns true if this child is at an even position (0, 2, 4, ...). Note: This
-uses zero-based indexing, so the first child is "even".</div>
+<div class="block">Returns true if this child is at an even position (0, 2, 4, ...).
+Note: This uses zero-based indexing, so the first child is "even".</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this child is at an even position</dd>

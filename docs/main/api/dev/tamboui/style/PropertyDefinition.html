@@ -91,22 +91,20 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">PropertyDefinition&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">A typed definition for a style property, bundling the property name with its
-converter, inheritance behavior, and optional default value.
+<div class="block">A typed definition for a style property, bundling the property name with its converter,
+inheritance behavior, and optional default value.
 <p>
-PropertyDefinitions are typically defined as constants in property registry
-classes:
+PropertyDefinitions are typically defined as constants in property registry classes:
+<pre><code>public static final PropertyDefinition&lt;Color&gt; COLOR =
+    PropertyDefinition.builder("color", ColorConverter.INSTANCE)
+        .inheritable()
+        .build();
 
-<pre><code>public static final PropertyDefinition&lt;Color&gt; COLOR = PropertyDefinition
-        .builder("color", ColorConverter.INSTANCE).inheritable().build();
-
-public static final PropertyDefinition&lt;Color&gt; BACKGROUND = PropertyDefinition.of("background",
-        ColorConverter.INSTANCE); // Non-inheritable
+public static final PropertyDefinition&lt;Color&gt; BACKGROUND =
+    PropertyDefinition.of("background", ColorConverter.INSTANCE); // Non-inheritable
 </code></pre>
 <p>
-They can then be used with <a href="StylePropertyResolver.html" title="interface in dev.tamboui.style"><code>StylePropertyResolver</code></a> to retrieve typed
-values:
-
+They can then be used with <a href="StylePropertyResolver.html" title="interface in dev.tamboui.style"><code>StylePropertyResolver</code></a> to retrieve typed values:
 <pre><code>Color color = resolver.get(BORDER_COLOR).orElse(Color.WHITE);
 </code></pre></div>
 </div>
@@ -210,8 +208,8 @@ values:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="PropertyConverter.html" title="interface in dev.tamboui.style">PropertyConverter</a>&lt;T&gt;&nbsp;converter)</span></div>
-<div class="block">Creates a new property definition with the given name and converter. The
-property will be non-inheritable with no default value.</div>
+<div class="block">Creates a new property definition with the given name and converter.
+The property will be non-inheritable with no default value.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="of(java.lang.String,dev.tamboui.style.PropertyConverter)-type-param-T"><code>T</code> - the type of value this property represents</span></dd>
@@ -263,8 +261,8 @@ property will be non-inheritable with no default value.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInheritable</span>()</div>
 <div class="block">Returns whether this property is inherited from parent elements.
 <p>
-Per CSS semantics, inheritable properties (like color, text-style) are passed
-from parent to child elements if not explicitly set.</div>
+Per CSS semantics, inheritable properties (like color, text-style)
+are passed from parent to child elements if not explicitly set.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this property inherits from parent</dd>

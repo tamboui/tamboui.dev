@@ -299,7 +299,8 @@ loadScripts(document, 'script');</script>
 <h3>tickRate</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">tickRate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</span></div>
-<div class="block">Sets the interval between tick events. Set to null to disable tick events.</div>
+<div class="block">Sets the interval between tick events.
+Set to null to disable tick events.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>tickRate</code> - the tick interval (e.g., Duration.ofMillis(16) for ~60fps)</dd>
@@ -331,9 +332,9 @@ Use this for purely event-driven UIs that only need to refresh on user input.</d
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">resizeGracePeriod</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;resizeGracePeriod)</span></div>
 <div class="block">Sets the resize grace period.
 <p>
-This defines the maximum time before resize events are processed, ensuring
-the UI redraws promptly on terminal resize even when ticks are disabled or
-have a long interval.
+This defines the maximum time before resize events are processed,
+ensuring the UI redraws promptly on terminal resize even when
+ticks are disabled or have a long interval.
 <p>
 Default is <a href="TuiConfig.html#DEFAULT_RESIZE_GRACE_PERIOD">250</a>ms.</div>
 <dl class="notes">
@@ -354,11 +355,11 @@ Default is <a href="TuiConfig.html#DEFAULT_RESIZE_GRACE_PERIOD">250</a>ms.</div>
 <p>
 Use predefined binding sets from <a href="bindings/BindingSets.html" title="class in dev.tamboui.tui.bindings"><code>BindingSets</code></a>:
 <ul>
-<li><a href="bindings/BindingSets.html#standard()"><code>BindingSets.standard()</code></a> - Arrow keys only (default)</li>
-<li><a href="bindings/BindingSets.html#vim()"><code>BindingSets.vim()</code></a> - Vim-style navigation (hjkl)</li>
-<li><a href="bindings/BindingSets.html#emacs()"><code>BindingSets.emacs()</code></a> - Emacs-style navigation (Ctrl+n/p/f/b)</li>
-<li><a href="bindings/BindingSets.html#intellij()"><code>BindingSets.intellij()</code></a> - IntelliJ IDEA-style</li>
-<li><a href="bindings/BindingSets.html#vscode()"><code>BindingSets.vscode()</code></a> - VS Code-style</li>
+  <li><a href="bindings/BindingSets.html#standard()"><code>BindingSets.standard()</code></a> - Arrow keys only (default)</li>
+  <li><a href="bindings/BindingSets.html#vim()"><code>BindingSets.vim()</code></a> - Vim-style navigation (hjkl)</li>
+  <li><a href="bindings/BindingSets.html#emacs()"><code>BindingSets.emacs()</code></a> - Emacs-style navigation (Ctrl+n/p/f/b)</li>
+  <li><a href="bindings/BindingSets.html#intellij()"><code>BindingSets.intellij()</code></a> - IntelliJ IDEA-style</li>
+  <li><a href="bindings/BindingSets.html#vscode()"><code>BindingSets.vscode()</code></a> - VS Code-style</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -376,8 +377,8 @@ Use predefined binding sets from <a href="bindings/BindingSets.html" title="clas
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">errorHandler</span><wbr><span class="parameters">(<a href="error/RenderErrorHandler.html" title="interface in dev.tamboui.tui.error">RenderErrorHandler</a>&nbsp;errorHandler)</span></div>
 <div class="block">Sets the error handler for render errors.
 <p>
-The handler is invoked when an exception occurs during rendering. Use factory
-methods from <a href="error/RenderErrorHandlers.html" title="class in dev.tamboui.tui.error"><code>RenderErrorHandlers</code></a> for common behaviors.</div>
+The handler is invoked when an exception occurs during rendering.
+Use factory methods from <a href="error/RenderErrorHandlers.html" title="class in dev.tamboui.tui.error"><code>RenderErrorHandlers</code></a> for common behaviors.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>errorHandler</code> - the error handler to use</dd>
@@ -400,8 +401,8 @@ methods from <a href="error/RenderErrorHandlers.html" title="class in dev.tambou
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">errorOutput</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput)</span></div>
 <div class="block">Sets the output stream for error logging.
 <p>
-This stream is used to log fatal errors when the TUI has captured standard
-streams. Defaults to <code>System.err</code>.</div>
+This stream is used to log fatal errors when the TUI has captured
+standard streams. Defaults to <code>System.err</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>errorOutput</code> - the error output stream</dd>
@@ -433,9 +434,9 @@ streams. Defaults to <code>System.err</code>.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">postRenderProcessor</span><wbr><span class="parameters">(<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&nbsp;processor)</span></div>
 <div class="block">Adds a post-render processor.
 <p>
-Post-render processors are called after each frame is rendered, allowing for
-effects, overlays, or other post-processing. Processors are called in the
-order they are added.</div>
+Post-render processors are called after each frame is rendered,
+allowing for effects, overlays, or other post-processing.
+Processors are called in the order they are added.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>processor</code> - the processor to add</dd>

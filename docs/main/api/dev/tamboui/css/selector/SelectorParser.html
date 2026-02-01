@@ -79,26 +79,24 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Parses CSS selector strings into <a href="Selector.html" title="interface in dev.tamboui.css.selector"><code>Selector</code></a> objects.
 <p>
-This parser supports the full CSS selector syntax used by the tamboui CSS
-module:
+This parser supports the full CSS selector syntax used by the tamboui CSS module:
 <ul>
-<li><code>*</code> - Universal selector</li>
-<li><code>Type</code> - Type selector</li>
-<li><code>#id</code> - ID selector</li>
-<li><code>.class</code> - Class selector</li>
-<li><code>:pseudo</code> - Pseudo-class selector</li>
-<li><code>[attr]</code> - Attribute existence selector</li>
-<li><code>[attr=value]</code> - Attribute equals selector</li>
-<li><code>[attr^=value]</code> - Attribute starts-with selector</li>
-<li><code>[attr$=value]</code> - Attribute ends-with selector</li>
-<li><code>[attr*=value]</code> - Attribute contains selector</li>
-<li><code>A B</code> - Descendant combinator</li>
-<li><code>A &gt; B</code> - Child combinator</li>
-<li><code>A.class#id</code> - Compound selectors</li>
+  <li><code>*</code> - Universal selector</li>
+  <li><code>Type</code> - Type selector</li>
+  <li><code>#id</code> - ID selector</li>
+  <li><code>.class</code> - Class selector</li>
+  <li><code>:pseudo</code> - Pseudo-class selector</li>
+  <li><code>[attr]</code> - Attribute existence selector</li>
+  <li><code>[attr=value]</code> - Attribute equals selector</li>
+  <li><code>[attr^=value]</code> - Attribute starts-with selector</li>
+  <li><code>[attr$=value]</code> - Attribute ends-with selector</li>
+  <li><code>[attr*=value]</code> - Attribute contains selector</li>
+  <li><code>A B</code> - Descendant combinator</li>
+  <li><code>A &gt; B</code> - Child combinator</li>
+  <li><code>A.class#id</code> - Compound selectors</li>
 </ul>
 <p>
 <b>Usage:</b>
-
 <pre><code>Selector selector = SelectorParser.parse(".primary.large");
 boolean matches = selector.matches(element, state, ancestors);
 </code></pre></div>

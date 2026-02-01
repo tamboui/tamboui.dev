@@ -80,17 +80,21 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">DSL factory for inline-specific elements.
 <p>
-This class provides static factory methods for elements designed for inline
-display mode (non-alternate-screen rendering). Use these alongside the
-general-purpose methods in <a href="Toolkit.html" title="class in dev.tamboui.toolkit"><code>Toolkit</code></a>.
+This class provides static factory methods for elements designed for
+inline display mode (non-alternate-screen rendering). Use these alongside
+the general-purpose methods in <a href="Toolkit.html" title="class in dev.tamboui.toolkit"><code>Toolkit</code></a>.
 
 <pre><code>import static dev.tamboui.toolkit.InlineToolkit.*;
 import static dev.tamboui.toolkit.Toolkit.*;
 
-Element ui = column(text("Status: downloading").cyan(),
-        scope(downloading, row(text("file1.zip: "), gauge(progress[0])),
-                row(text("file2.zip: "), gauge(progress[1]))),
-        text("Footer").dim());
+Element ui = column(
+    text("Status: downloading").cyan(),
+    scope(downloading,
+        row(text("file1.zip: "), gauge(progress[0])),
+        row(text("file2.zip: "), gauge(progress[1]))
+    ),
+    text("Footer").dim()
+);
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -151,11 +155,13 @@ Element ui = column(text("Status: downloading").cyan(),
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/InlineScopeElement.html" title="class in dev.tamboui.toolkit.elements">InlineScopeElement</a></span>&nbsp;<span class="element-name">scope</span><wbr><span class="parameters">(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</span></div>
 <div class="block">Creates an inline scope element with the given children.
 <p>
-A scope is a container that can be shown or hidden dynamically. When hidden,
-it collapses to zero height.
+A scope is a container that can be shown or hidden dynamically.
+When hidden, it collapses to zero height.
 
-<pre><code>scope(row(text("file1.zip: "), gauge(progress[0])), row(text("file2.zip: "), gauge(progress[1])))
-        .visible(downloading)
+<pre><code>scope(
+    row(text("file1.zip: "), gauge(progress[0])),
+    row(text("file2.zip: "), gauge(progress[1]))
+).visible(downloading)
 </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -176,8 +182,10 @@ it collapses to zero height.
 <p>
 Convenience method to set visibility at creation time.
 
-<pre><code>scope(downloading, row(text("file1.zip: "), gauge(progress[0])),
-        row(text("file2.zip: "), gauge(progress[1])))
+<pre><code>scope(downloading,
+    row(text("file1.zip: "), gauge(progress[0])),
+    row(text("file2.zip: "), gauge(progress[1]))
+)
 </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>

@@ -84,11 +84,9 @@ loadScripts(document, 'script');</script>
 <p>
 Provides pre-built handlers for common error handling scenarios:
 <ul>
-<li><a href="#displayAndQuit()"><code>displayAndQuit()</code></a> - Default: show error in UI, wait for
-dismissal</li>
-<li><a href="#logAndQuit(java.io.PrintStream)"><code>logAndQuit(PrintStream)</code></a> - Log to stream and quit
-immediately</li>
-<li><a href="#writeToFile(java.nio.file.Path)"><code>writeToFile(Path)</code></a> - Write to file then display in UI</li>
+  <li><a href="#displayAndQuit()"><code>displayAndQuit()</code></a> - Default: show error in UI, wait for dismissal</li>
+  <li><a href="#logAndQuit(java.io.PrintStream)"><code>logAndQuit(PrintStream)</code></a> - Log to stream and quit immediately</li>
+  <li><a href="#writeToFile(java.nio.file.Path)"><code>writeToFile(Path)</code></a> - Write to file then display in UI</li>
 </ul></div>
 </div>
 </section>
@@ -149,8 +147,8 @@ immediately</li>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="RenderErrorHandler.html" title="interface in dev.tamboui.tui.error">RenderErrorHandler</a></span>&nbsp;<span class="element-name">displayAndQuit</span>()</div>
 <div class="block">Returns the default handler that displays the error in the UI.
 <p>
-The error display shows the exception type, message, and a scrollable stack
-trace. Users can press 'q' to quit or use arrow keys to scroll.</div>
+The error display shows the exception type, message, and a scrollable
+stack trace. Users can press 'q' to quit or use arrow keys to scroll.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the default display-and-quit handler</dd>
@@ -183,9 +181,9 @@ quits. The terminal is cleaned up before printing.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="RenderErrorHandler.html" title="interface in dev.tamboui.tui.error">RenderErrorHandler</a></span>&nbsp;<span class="element-name">writeToFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;logFile)</span></div>
 <div class="block">Returns a handler that writes the error to a file, then displays in the UI.
 <p>
-This is useful when you want both a log file for debugging and immediate user
-feedback. If the file cannot be written, the handler falls back to just
-displaying in the UI.</div>
+This is useful when you want both a log file for debugging and immediate
+user feedback. If the file cannot be written, the handler falls back to
+just displaying in the UI.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>logFile</code> - the path to write the error log</dd>
@@ -203,8 +201,8 @@ displaying in the UI.</div>
 <div class="block">Returns a handler that suppresses errors and continues.
 <p>
 <strong>Warning:</strong> This is dangerous and should only be used in
-specific scenarios where you understand the implications. Errors are logged
-to the error output but rendering continues.</div>
+specific scenarios where you understand the implications. Errors are
+logged to the error output but rendering continues.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a suppress handler</dd>

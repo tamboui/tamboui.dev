@@ -102,37 +102,28 @@ loadScripts(document, 'script');</script>
 <p>
 TFxDuration provides a lightweight wrapper around time durations specifically
 designed for effect timing. It uses millisecond precision (sufficient for
-frame-based animations) and provides a simpler API than
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link"><code>Duration</code></a> for common effect timing operations.
+frame-based animations) and provides a simpler API than <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link"><code>Duration</code></a>
+for common effect timing operations.
 <p>
 <b>Design Philosophy:</b>
 <p>
 TFxDuration is designed for performance and simplicity in animation contexts:
 <ul>
-<li><b>Millisecond Precision:</b> Sufficient for 60fps animations (16ms per
-frame)</li>
-<li><b>Immutable:</b> All operations return new instances, ensuring thread
-safety</li>
-<li><b>Simple API:</b> Focused on common operations needed for effect
-timing</li>
-<li><b>No Negative Durations:</b> Enforces non-negative durations to prevent
-errors</li>
+  <li><b>Millisecond Precision:</b> Sufficient for 60fps animations (16ms per frame)</li>
+  <li><b>Immutable:</b> All operations return new instances, ensuring thread safety</li>
+  <li><b>Simple API:</b> Focused on common operations needed for effect timing</li>
+  <li><b>No Negative Durations:</b> Enforces non-negative durations to prevent errors</li>
 </ul>
 <p>
 <b>Key Operations:</b>
 <ul>
-<li><b>Creation:</b> <code>fromMillis</code>, <code>fromSecs</code>,
-<code>fromSecsF32</code></li>
-<li><b>Arithmetic:</b> <code>add</code>, <code>sub</code>, <code>mul</code> (with overflow
-protection)</li>
-<li><b>Comparison:</b> <code>isZero</code>, <code>checkedSub</code> (returns null if
-negative)</li>
-<li><b>Conversion:</b> <code>asMillis</code>, <code>asSecsF32</code>,
-<code>toJavaDuration</code></li>
+  <li><b>Creation:</b> <code>fromMillis</code>, <code>fromSecs</code>, <code>fromSecsF32</code></li>
+  <li><b>Arithmetic:</b> <code>add</code>, <code>sub</code>, <code>mul</code> (with overflow protection)</li>
+  <li><b>Comparison:</b> <code>isZero</code>, <code>checkedSub</code> (returns null if negative)</li>
+  <li><b>Conversion:</b> <code>asMillis</code>, <code>asSecsF32</code>, <code>toJavaDuration</code></li>
 </ul>
 <p>
 <b>Usage Pattern:</b>
-
 <pre><code>// Create duration
 TFxDuration duration = TFxDuration.fromMillis(2000); // 2 seconds
 
@@ -148,14 +139,14 @@ TFxDuration overflow = timer.process(delta);
 <p>
 While <code>java.time.Duration</code> is more feature-rich, TFxDuration provides:
 <ul>
-<li>Simpler API for common animation operations</li>
-<li>Millisecond precision (sufficient for frame-based animations)</li>
-<li>Better performance for frequent operations</li>
-<li>Explicit non-negative enforcement</li>
+  <li>Simpler API for common animation operations</li>
+  <li>Millisecond precision (sufficient for frame-based animations)</li>
+  <li>Better performance for frequent operations</li>
+  <li>Explicit non-negative enforcement</li>
 </ul>
 <p>
-Conversion methods are provided for interoperability with
-<code>java.time.Duration</code> when needed (e.g., for TuiConfig tick rates).</div>
+Conversion methods are provided for interoperability with <code>java.time.Duration</code>
+when needed (e.g., for TuiConfig tick rates).</div>
 </div>
 </section>
 <section class="summary">
@@ -418,8 +409,7 @@ Conversion methods are provided for interoperability with
 <dt>Parameters:</dt>
 <dd><code>other</code> - the duration to subtract</dd>
 <dt>Returns:</dt>
-<dd>the result of the subtraction, or <code>null</code> if the result would be
-        negative</dd>
+<dd>the result of the subtraction, or <code>null</code> if the result would be negative</dd>
 </dl>
 </div>
 </section>

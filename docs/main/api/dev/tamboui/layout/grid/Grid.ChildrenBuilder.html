@@ -202,8 +202,8 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></span>&nbsp;<span class="element-name">rowCount</span><wbr><span class="parameters">(int&nbsp;count)</span></div>
 <div class="block">Sets the number of rows.
 <p>
-When set, validates that children fit within columns × rows cells. When not
-set, rows expand automatically to fit all children.</div>
+When set, validates that children fit within columns × rows cells.
+When not set, rows expand automatically to fit all children.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>count</code> - the row count (must be at least 1)</dd>
@@ -297,9 +297,9 @@ Constraints cycle when fewer than the column count.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></span>&nbsp;<span class="element-name">rowConstraints</span><wbr><span class="parameters">(<a href="../Constraint.html" title="interface in dev.tamboui.layout">Constraint</a>...&nbsp;constraints)</span></div>
 <div class="block">Sets the height constraints for rows.
 <p>
-When set, row heights are determined by the layout solver rather than by
-children preferred heights or equal distribution. Constraints cycle when
-fewer than the row count.</div>
+When set, row heights are determined by the layout solver
+rather than by children preferred heights or equal distribution.
+Constraints cycle when fewer than the row count.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>constraints</code> - the row height constraints</dd>
@@ -331,9 +331,8 @@ fewer than the row count.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Grid.ChildrenBuilder.html" title="class in dev.tamboui.layout.grid">Grid.ChildrenBuilder</a></span>&nbsp;<span class="element-name">rowHeights</span><wbr><span class="parameters">(int...&nbsp;heights)</span></div>
 <div class="block">Sets explicit row heights.
 <p>
-If not set and no row constraints are set, rows share the available height
-equally. If fewer heights than rows are provided, remaining rows default to
-1.</div>
+If not set and no row constraints are set, rows share the available height equally.
+If fewer heights than rows are provided, remaining rows default to 1.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>heights</code> - the row heights</dd>

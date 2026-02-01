@@ -92,8 +92,12 @@ loadScripts(document, 'script');</script>
 <p>
 Defines the title, bounds, labels, and styling for an axis.
 
-<pre><code>Axis xAxis = Axis.builder().title("Time (s)").bounds(0, 100).labels("0", "25", "50", "75", "100")
-        .style(Style.EMPTY.fg(Color.CYAN)).build();
+<pre><code>Axis xAxis = Axis.builder()
+    .title("Time (s)")
+    .bounds(0, 100)
+    .labels("0", "25", "50", "75", "100")
+    .style(Style.EMPTY.fg(Color.CYAN))
+    .build();
 </code></pre></div>
 </div>
 </section>

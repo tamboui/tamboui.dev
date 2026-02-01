@@ -78,16 +78,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">BackendFactory</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Factory for creating <a href="Backend.html" title="interface in dev.tamboui.terminal"><code>Backend</code></a> instances using the
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.
+<div class="block">Factory for creating <a href="Backend.html" title="interface in dev.tamboui.terminal"><code>Backend</code></a> instances using the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.
 
-This uses the <a href="../util/SafeServiceLoader.html" title="class in dev.tamboui.util"><code>SafeServiceLoader</code></a> to load the providers and skip
-providers that fails to load.
+This uses the <a href="../util/SafeServiceLoader.html" title="class in dev.tamboui.util"><code>SafeServiceLoader</code></a> to load the providers and skip providers that fails to load.
 <p>
-This factory discovers <a href="BackendProvider.html" title="interface in dev.tamboui.terminal"><code>BackendProvider</code></a> implementations on the
-classpath and uses them to create backend instances. When multiple providers
-are available, they are tried in order until one successfully creates a
-backend.
+This factory discovers <a href="BackendProvider.html" title="interface in dev.tamboui.terminal"><code>BackendProvider</code></a> implementations on the classpath
+and uses them to create backend instances. When multiple providers are available,
+they are tried in order until one successfully creates a backend.
 <p>
 The provider order can be explicitly controlled via a comma-separated list
 (e.g., "panama,jline") in the system property or environment variable.</div>
@@ -149,13 +146,13 @@ The provider order can be explicitly controlled via a comma-separated list
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">initRecording</span>()</div>
 <div class="block">Initializes recording if enabled via system properties.
 <p>
-Call this method early in your application (before any System.out usage) to
-ensure all console output is captured when recording is enabled. This is
-especially important for inline demos that print to System.out before
-creating a Backend.
+Call this method early in your application (before any System.out usage)
+to ensure all console output is captured when recording is enabled.
+This is especially important for inline demos that print to System.out
+before creating a Backend.
 <p>
-If recording is not enabled, this method does nothing. If recording is
-already initialized, this method does nothing.</div>
+If recording is not enabled, this method does nothing.
+If recording is already initialized, this method does nothing.</div>
 </div>
 </section>
 </li>
@@ -167,27 +164,24 @@ already initialized, this method does nothing.</div>
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Creates a new backend instance using the discovered provider.
 <p>
-This method discovers <a href="BackendProvider.html" title="interface in dev.tamboui.terminal"><code>BackendProvider</code></a> implementations on the
-classpath and selects one based on the following priority:
+This method discovers <a href="BackendProvider.html" title="interface in dev.tamboui.terminal"><code>BackendProvider</code></a> implementations on the classpath
+and selects one based on the following priority:
 <ol>
-<li>System property <code>tamboui.backend</code> (if set)</li>
-<li>Environment variable <code>TAMBOUI_BACKEND</code> (if set)</li>
-<li>Auto-discovery via ServiceLoader</li>
+  <li>System property <code>tamboui.backend</code> (if set)</li>
+  <li>Environment variable <code>TAMBOUI_BACKEND</code> (if set)</li>
+  <li>Auto-discovery via ServiceLoader</li>
 </ol>
 <p>
 The provider can be specified by:
 <ul>
-<li>Simple name (e.g., "jline", "panama") - matches the provider's
-<a href="BackendProvider.html#name()"><code>BackendProvider.name()</code></a></li>
-<li>Fully qualified class name (e.g.,
-"dev.tamboui.backend.jline.JLineBackendProvider")</li>
-<li>Comma-separated list (e.g., "panama,jline") - tries each in order until
-one succeeds</li>
+  <li>Simple name (e.g., "jline", "panama") - matches the provider's <a href="BackendProvider.html#name()"><code>BackendProvider.name()</code></a></li>
+  <li>Fully qualified class name (e.g., "dev.tamboui.backend.jline.JLineBackendProvider")</li>
+  <li>Comma-separated list (e.g., "panama,jline") - tries each in order until one succeeds</li>
 </ul>
 <p>
-Providers are tried in order until one successfully creates a backend. If a
-provider fails (throws an exception), the next provider is attempted. This
-applies both to explicitly specified providers and auto-discovered ones.</div>
+Providers are tried in order until one successfully creates a backend. If a provider
+fails (throws an exception), the next provider is attempted. This applies both to
+explicitly specified providers and auto-discovered ones.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new backend instance</dd>

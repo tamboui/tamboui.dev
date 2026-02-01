@@ -86,17 +86,20 @@ loadScripts(document, 'script');</script>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
 <div class="block">A grid layout widget that arranges children into columns.
 <p>
-The column count must be set explicitly (no auto-detection at the widget
-level). Children are rendered in grid cells whose positions are determined by
-the <a href="ColumnOrder.html" title="enum class in dev.tamboui.layout.columns">ordering mode</a>.
+The column count must be set explicitly (no auto-detection at the widget level).
+Children are rendered in grid cells whose positions are determined by the
+<a href="ColumnOrder.html" title="enum class in dev.tamboui.layout.columns">ordering mode</a>.
 <p>
-Column widths default to <a href="../Constraint.html#fill()"><code>Constraint.fill()</code></a> for each column but can be
-overridden via <a href="Columns.Builder.html#columnWidths(dev.tamboui.layout.Constraint...)"><code>Columns.Builder.columnWidths(Constraint...)</code></a>. Row heights
-default to equal distribution of available height but can be overridden via
-<a href="Columns.Builder.html#rowHeights(int...)"><code>Columns.Builder.rowHeights(int...)</code></a>.
+Column widths default to <a href="../Constraint.html#fill()"><code>Constraint.fill()</code></a> for each column but can
+be overridden via <a href="Columns.Builder.html#columnWidths(dev.tamboui.layout.Constraint...)"><code>Columns.Builder.columnWidths(Constraint...)</code></a>.
+Row heights default to equal distribution of available height but can be
+overridden via <a href="Columns.Builder.html#rowHeights(int...)"><code>Columns.Builder.rowHeights(int...)</code></a>.
 
-<pre><code>Columns columns = Columns.builder().children(widget1, widget2, widget3, widget4).columnCount(2)
-        .spacing(1).build();
+<pre><code>Columns columns = Columns.builder()
+    .children(widget1, widget2, widget3, widget4)
+    .columnCount(2)
+    .spacing(1)
+    .build();
 
 columns.render(area, buffer);
 </code></pre></div>

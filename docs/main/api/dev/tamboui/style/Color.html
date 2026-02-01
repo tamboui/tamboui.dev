@@ -110,8 +110,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Color</span></div>
-<div class="block">Terminal colors supporting ANSI 16, 256-color indexed, and RGB true color
-modes.</div>
+<div class="block">Terminal colors supporting ANSI 16, 256-color indexed, and RGB true color modes.</div>
 </div>
 </section>
 <section class="summary">
@@ -574,8 +573,8 @@ modes.</div>
 <div class="block">Converts this color to an ANSI foreground color code.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the ANSI code string (without CSI prefix or 'm' suffix), or empty
-        string if not applicable</dd>
+<dd>the ANSI code string (without CSI prefix or 'm' suffix),
+        or empty string if not applicable</dd>
 </dl>
 </div>
 </section>
@@ -588,8 +587,8 @@ modes.</div>
 <div class="block">Converts this color to an ANSI background color code.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the ANSI code string (without CSI prefix or 'm' suffix), or empty
-        string if not applicable</dd>
+<dd>the ANSI code string (without CSI prefix or 'm' suffix),
+        or empty string if not applicable</dd>
 </dl>
 </div>
 </section>
@@ -599,12 +598,12 @@ modes.</div>
 <h3>toAnsiUnderline</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toAnsiUnderline</span>()</div>
-<div class="block">Converts this color to an ANSI underline color code. Note that underline
-colors are only supported by some terminal emulators.</div>
+<div class="block">Converts this color to an ANSI underline color code.
+Note that underline colors are only supported by some terminal emulators.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the ANSI code string (without CSI prefix or 'm' suffix), or empty
-        string if the color type doesn't support underline coloring</dd>
+<dd>the ANSI code string (without CSI prefix or 'm' suffix),
+        or empty string if the color type doesn't support underline coloring</dd>
 </dl>
 </div>
 </section>
@@ -649,9 +648,9 @@ Named colors delegate to their default value. Reset colors default to white.</di
 <p>
 The 256-color palette is:
 <ul>
-<li>0-15: Standard ANSI colors</li>
-<li>16-231: 6x6x6 color cube</li>
-<li>232-255: Grayscale ramp</li>
+  <li>0-15: Standard ANSI colors</li>
+  <li>16-231: 6x6x6 color cube</li>
+  <li>232-255: Grayscale ramp</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>

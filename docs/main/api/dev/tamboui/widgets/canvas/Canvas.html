@@ -86,16 +86,21 @@ loadScripts(document, 'script');</script>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
 <div class="block">A widget for drawing arbitrary shapes on a terminal grid.
 <p>
-The Canvas widget provides a mathematical coordinate system where shapes can
-be drawn using floating-point coordinates. The widget handles the
-transformation from canvas space to terminal cells.
+The Canvas widget provides a mathematical coordinate system where
+shapes can be drawn using floating-point coordinates. The widget
+handles the transformation from canvas space to terminal cells.
 
-<pre><code>Canvas canvas = Canvas.builder().xBounds(-180, 180).yBounds(-90, 90).marker(Marker.BRAILLE)
-        .block(Block.bordered().title(Title.from("World Map"))).paint(ctx -&gt; {
-            ctx.draw(new Circle(0, 0, 50, Color.RED));
-            ctx.draw(new Line(-50, -50, 50, 50, Color.GREEN));
-            ctx.print(0, 0, "Center");
-        }).build();
+<pre><code>Canvas canvas = Canvas.builder()
+    .xBounds(-180, 180)
+    .yBounds(-90, 90)
+    .marker(Marker.BRAILLE)
+    .block(Block.bordered().title(Title.from("World Map")))
+    .paint(ctx -&gt; {
+        ctx.draw(new Circle(0, 0, 50, Color.RED));
+        ctx.draw(new Line(-50, -50, 50, 50, Color.GREEN));
+        ctx.print(0, 0, "Center");
+    })
+    .build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>

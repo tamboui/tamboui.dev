@@ -101,32 +101,30 @@ implements <a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader<
 <p>
 FadeShader smoothly transitions between two colors over time. It supports:
 <ul>
-<li><b>Color Interpolation:</b> Uses configurable color spaces (RGB, HSL,
-HSV) for perceptually smooth transitions</li>
-<li><b>Spatial Patterns:</b> Can apply fade patterns using <a href="../pattern/Pattern.html" title="interface in dev.tamboui.tfx.pattern"><code>Pattern</code></a>
-implementations for directional or radial fades</li>
-<li><b>Cell Filtering:</b> Can target specific cells using
-<a href="../CellFilter.html" title="class in dev.tamboui.tfx"><code>CellFilter</code></a></li>
+  <li><b>Color Interpolation:</b> Uses configurable color spaces (RGB, HSL, HSV)
+      for perceptually smooth transitions</li>
+  <li><b>Spatial Patterns:</b> Can apply fade patterns using <a href="../pattern/Pattern.html" title="interface in dev.tamboui.tfx.pattern"><code>Pattern</code></a>
+      implementations for directional or radial fades</li>
+  <li><b>Cell Filtering:</b> Can target specific cells using <a href="../CellFilter.html" title="class in dev.tamboui.tfx"><code>CellFilter</code></a></li>
 </ul>
 <p>
 <b>Implementation Details:</b>
 <p>
-The shader iterates through cells in the target area, applies the cell
-filter, and interpolates colors based on the timer's alpha value. If a
-pattern is set, the pattern transforms the global alpha into
-position-specific alpha values.
+The shader iterates through cells in the target area, applies the cell filter,
+and interpolates colors based on the timer's alpha value. If a pattern is set,
+the pattern transforms the global alpha into position-specific alpha values.
 <p>
 <b>Color Space Selection:</b>
 <ul>
-<li><b>RGB:</b> Fastest, but produces perceptually non-uniform transitions
-(e.g., gray midpoints when fading between saturated colors)</li>
-<li><b>HSL:</b> Default - good balance of performance and perceptual quality,
-produces smooth hue transitions</li>
-<li><b>HSV:</b> Similar to HSL but with different perceptual model</li>
+  <li><b>RGB:</b> Fastest, but produces perceptually non-uniform transitions
+      (e.g., gray midpoints when fading between saturated colors)</li>
+  <li><b>HSL:</b> Default - good balance of performance and perceptual quality,
+      produces smooth hue transitions</li>
+  <li><b>HSV:</b> Similar to HSL but with different perceptual model</li>
 </ul>
 <p>
-This shader is typically created through <a href="../Fx.html" title="class in dev.tamboui.tfx"><code>Fx</code></a> factory
-methods rather than directly.</div>
+This shader is typically created through <a href="../Fx.html" title="class in dev.tamboui.tfx"><code>Fx</code></a> factory methods
+rather than directly.</div>
 </div>
 </section>
 <section class="summary">
@@ -293,21 +291,20 @@ methods rather than directly.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">Shader</a></code></span></div>
 <div class="block">Processes the shader for the given duration.
 <p>
-The default implementation: 1. Updates the timer with the given duration (if
-a timer exists) 2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state 3. Returns
-any overflow duration
+The default implementation:
+1. Updates the timer with the given duration (if a timer exists)
+2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state
+3. Returns any overflow duration
 <p>
-Most effects should use this default implementation and implement
-<a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> instead. Only override this if you need custom timer
-handling.</div>
+Most effects should use this default implementation and implement <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a>
+instead. Only override this if you need custom timer handling.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">process</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The duration to process the shader for</dd>
 <dd><code>buffer</code> - The buffer where the shader will be applied</dd>
-<dd><code>area</code> - The rectangular area within the buffer where the shader will be
-           applied</dd>
+<dd><code>area</code> - The rectangular area within the buffer where the shader will be applied</dd>
 <dt>Returns:</dt>
 <dd>The overflow duration if the shader is done, or null if still running</dd>
 </dl>
@@ -331,8 +328,7 @@ default <a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.
 <dd><code><a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)">execute</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The duration to process the shader for</dd>
-<dd><code>area</code> - The rectangular area within the buffer where the shader will be
-           applied</dd>
+<dd><code>area</code> - The rectangular area within the buffer where the shader will be applied</dd>
 <dd><code>buffer</code> - The buffer where the shader will be applied</dd>
 </dl>
 </div>

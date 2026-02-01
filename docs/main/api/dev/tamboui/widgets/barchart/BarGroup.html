@@ -93,8 +93,14 @@ Groups allow organizing related bars together with an optional group label.
 BarGroup group = BarGroup.of(10, 20, 30);
 
 // Group with label
-BarGroup group2 = BarGroup.builder().label("Q1")
-        .bars(Bar.of(100, "Jan"), Bar.of(150, "Feb"), Bar.of(120, "Mar")).build();
+BarGroup group2 = BarGroup.builder()
+    .label("Q1")
+    .bars(
+        Bar.of(100, "Jan"),
+        Bar.of(150, "Feb"),
+        Bar.of(120, "Mar")
+    )
+    .build();
 </code></pre></div>
 </div>
 </section>

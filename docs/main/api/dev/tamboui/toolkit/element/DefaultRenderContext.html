@@ -113,18 +113,15 @@ loadScripts(document, 'script');</script>
 implements <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a></span></div>
 <div class="block">Default implementation of RenderContext with internal framework methods.
 <p>
-<strong>INTERNAL USE ONLY</strong> - This class is used internally by the
-toolkit framework. User code and element implementations should only interact
-with the <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element"><code>RenderContext</code></a> interface.
+<strong>INTERNAL USE ONLY</strong> - This class is used internally by the toolkit framework.
+User code and element implementations should only interact with the <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element"><code>RenderContext</code></a> interface.
 <p>
-<strong>CODE SMELL WARNING:</strong> If you find yourself casting
-<code>RenderContext</code> to <code>DefaultRenderContext</code> in your code, this is a
-design problem. The only legitimate user of this class's internal methods is
-<a href="StyledElement.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>StyledElement.render(Frame, Rect, RenderContext)</code></a>.
+<strong>CODE SMELL WARNING:</strong> If you find yourself casting <code>RenderContext</code> to
+<code>DefaultRenderContext</code> in your code, this is a design problem. The only legitimate
+user of this class's internal methods is <a href="StyledElement.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>StyledElement.render(Frame, Rect, RenderContext)</code></a>.
 <p>
-Methods like <a href="#withElement(dev.tamboui.css.Styleable,dev.tamboui.style.Style,java.lang.Runnable)"><code>withElement(Styleable, Style, Runnable)</code></a>, <a href="#registerElement(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Rect)"><code>registerElement(Element, Rect)</code></a>, and stack
-manipulation are framework internals that should never be called directly
-from element implementations.</div>
+Methods like <a href="#withElement(dev.tamboui.css.Styleable,dev.tamboui.style.Style,java.lang.Runnable)"><code>withElement(Styleable, Style, Runnable)</code></a>, <a href="#registerElement(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Rect)"><code>registerElement(Element, Rect)</code></a>, and stack manipulation
+are framework internals that should never be called directly from element implementations.</div>
 </div>
 </section>
 <section class="summary">
@@ -172,8 +169,7 @@ from element implementations.</div>
  <a href="ChildPosition.html" title="class in dev.tamboui.toolkit.element">ChildPosition</a>&nbsp;position,
  <a href="../../css/cascade/PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a>&nbsp;state)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Resolves CSS style for a child element at a specific position with additional
-state.</div>
+<div class="block">Resolves CSS style for a child element at a specific position with additional state.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DefaultRenderContext.html" title="class in dev.tamboui.toolkit.element">DefaultRenderContext</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createEmpty()" class="member-name-link">createEmpty</a>()</code></div>
@@ -280,8 +276,7 @@ state.</div>
  <a href="../../css/cascade/CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a>&nbsp;resolver,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Executes an action with an element, style, and CSS resolver pushed onto their
-stacks.</div>
+<div class="block">Executes an action with an element, style, and CSS resolver pushed onto their stacks.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withElement(dev.tamboui.css.Styleable,dev.tamboui.style.Style,java.lang.Runnable)" class="member-name-link">withElement</a><wbr>(<a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a>&nbsp;element,
@@ -407,8 +402,8 @@ The ElementRegistry is obtained from the EventRouter.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setFaultTolerant</span><wbr><span class="parameters">(boolean&nbsp;faultTolerant)</span></div>
 <div class="block">Enables or disables fault-tolerant rendering.
 <p>
-When enabled, exceptions thrown during child rendering are caught and an
-error placeholder is displayed instead.</div>
+When enabled, exceptions thrown during child rendering are caught
+and an error placeholder is displayed instead.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>faultTolerant</code> - true to enable fault-tolerant rendering</dd>
@@ -493,8 +488,8 @@ rules are found, or empty if no CSS styling is applicable.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="RenderContext.html#resolveStyle(java.lang.String,java.lang.String...)">RenderContext</a></code></span></div>
 <div class="block">Resolves the CSS style for a virtual element with the given type and classes.
 <p>
-This is useful for resolving styles for sub-elements (like list items) that
-aren't full Element instances but need CSS styling.</div>
+This is useful for resolving styles for sub-elements (like list items)
+that aren't full Element instances but need CSS styling.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="RenderContext.html#resolveStyle(java.lang.String,java.lang.String...)">resolveStyle</a></code>&nbsp;in interface&nbsp;<code><a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a></code></dd>
@@ -539,13 +534,12 @@ and RGB notation (e.g., "rgb(255,0,0)").</div>
 <div class="block">Renders a child element within the given area.
 <p>
 Container elements should use this method instead of calling
-<code>child.render()</code> directly. This allows the infrastructure to handle
-errors gracefully when fault-tolerant mode is enabled, and ensures that all
-rendered elements are properly registered with the event router, enabling
-them to receive key and mouse events.
+<code>child.render()</code> directly. This allows the infrastructure
+to handle errors gracefully when fault-tolerant mode is enabled,
+and ensures that all rendered elements are properly registered with
+the event router, enabling them to receive key and mouse events.
 <p>
 Example usage in a container element:
-
 <pre><code>for (Element child : children) {
     context.renderChild(child, frame, childArea);
 }
@@ -569,8 +563,8 @@ Example usage in a container element:
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="RenderContext.html#currentStyle()">RenderContext</a></code></span></div>
 <div class="block">Returns the current style from the style stack.
 <p>
-This style represents the accumulated styles from parent elements and should
-be used as the base for rendering operations.</div>
+This style represents the accumulated styles from parent elements
+and should be used as the base for rendering operations.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="RenderContext.html#currentStyle()">currentStyle</a></code>&nbsp;in interface&nbsp;<code><a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a></code></dd>
@@ -610,21 +604,16 @@ Use this for stateful children like selected items or focused tabs.</div>
  <a href="ChildPosition.html" title="class in dev.tamboui.toolkit.element">ChildPosition</a>&nbsp;position,
  <a href="../../css/cascade/PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a>&nbsp;state)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="RenderContext.html#childStyle(java.lang.String,dev.tamboui.toolkit.element.ChildPosition,dev.tamboui.css.cascade.PseudoClassState)">RenderContext</a></code></span></div>
-<div class="block">Resolves CSS style for a child element at a specific position with additional
-state.
+<div class="block">Resolves CSS style for a child element at a specific position with additional state.
 <p>
-Combines positional pseudo-classes (<code>:first-child</code>,
-<code>:last-child</code>, <code>:nth-child</code>) with state pseudo-classes
-(<code>:selected</code>, <code>:hover</code>).
+Combines positional pseudo-classes (<code>:first-child</code>, <code>:last-child</code>,
+<code>:nth-child</code>) with state pseudo-classes (<code>:selected</code>, <code>:hover</code>).
 <p>
 Example usage:
-
 <pre><code>for (int i = 0; i &lt; rows.size(); i++) {
     ChildPosition pos = ChildPosition.of(i, rows.size());
     boolean isSelected = (i == selectedIndex);
-    PseudoClassState state = isSelected
-            ? PseudoClassState.ofSelected()
-            : PseudoClassState.NONE;
+    PseudoClassState state = isSelected ? PseudoClassState.ofSelected() : PseudoClassState.NONE;
     Style rowStyle = context.childStyle("row", pos, state);
 }
 </code></pre></div>
@@ -677,11 +666,10 @@ Internal use only.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerElement</span><wbr><span class="parameters">(<a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
-<div class="block">Registers an element for event routing and focus management. Called by
-container elements after rendering children.
+<div class="block">Registers an element for event routing and focus management.
+Called by container elements after rendering children.
 <p>
-The EventRouter handles registration in the ElementRegistry for ID-based
-lookups.
+The EventRouter handles registration in the ElementRegistry for ID-based lookups.
 <p>
 Internal use only.</div>
 <dl class="notes">
@@ -699,8 +687,8 @@ Internal use only.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a></span>&nbsp;<span class="element-name">elementRegistry</span>()</div>
 <div class="block">Returns the element registry for ID-based area lookups.
 <p>
-The registry is populated during rendering and can be used by effect systems
-to target elements by ID.</div>
+The registry is populated during rendering and can be used
+by effect systems to target elements by ID.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the element registry</dd>
@@ -718,8 +706,8 @@ to target elements by ID.</div>
 <div class="block">Executes an action with an element and style pushed onto their stacks.
 <p>
 The style is merged with the current style. Both the element and merged style
-are available via <a href="#currentElement()"><code>currentElement()</code></a> and <a href="#currentStyle()"><code>currentStyle()</code></a>. This
-enables <a href="RenderContext.html#childStyle(java.lang.String)"><code>RenderContext.childStyle(String)</code></a> to work without passing the parent.
+are available via <a href="#currentElement()"><code>currentElement()</code></a> and <a href="#currentStyle()"><code>currentStyle()</code></a>.
+This enables <a href="RenderContext.html#childStyle(java.lang.String)"><code>RenderContext.childStyle(String)</code></a> to work without passing the parent.
 <p>
 Internal use only - called by StyledElement.render().</div>
 <dl class="notes">
@@ -739,12 +727,11 @@ Internal use only - called by StyledElement.render().</div>
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style,
  <a href="../../css/cascade/CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a>&nbsp;resolver,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
-<div class="block">Executes an action with an element, style, and CSS resolver pushed onto their
-stacks.
+<div class="block">Executes an action with an element, style, and CSS resolver pushed onto their stacks.
 <p>
-The style is merged with the current style. The element, merged style, and
-resolver are available via <a href="#currentElement()"><code>currentElement()</code></a>,
-<a href="#currentStyle()"><code>currentStyle()</code></a>, and <a href="#currentResolver()"><code>currentResolver()</code></a>.
+The style is merged with the current style. The element, merged style, and resolver
+are available via <a href="#currentElement()"><code>currentElement()</code></a>, <a href="#currentStyle()"><code>currentStyle()</code></a>, and
+<a href="#currentResolver()"><code>currentResolver()</code></a>.
 <p>
 Internal use only - called by StyledElement.render().</div>
 <dl class="notes">
@@ -777,8 +764,8 @@ Internal use only - called by StyledElement.render().</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../../css/cascade/CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a>&gt;</span>&nbsp;<span class="element-name">currentResolver</span>()</div>
 <div class="block">Returns the current CSS resolver from the resolver stack, if any.
 <p>
-This allows child elements to access CSS properties from their parent
-elements that are not part of the Style cascade (e.g., border-type).</div>
+This allows child elements to access CSS properties from their parent elements
+that are not part of the Style cascade (e.g., border-type).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the current CSS resolver, or empty if none is active</dd>

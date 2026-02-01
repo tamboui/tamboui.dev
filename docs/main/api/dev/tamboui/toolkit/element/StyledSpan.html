@@ -95,21 +95,19 @@ loadScripts(document, 'script');</script>
 implements <a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></span></div>
 <div class="block">A styled span that can be targeted by CSS selectors.
 <p>
-This adapter interprets the core layer's CSS-unaware data types in CSS terms:
+This adapter interprets the core layer's CSS-unaware data types in
+CSS terms:
 <ul>
-<li><a href="../../style/Tags.html" title="class in dev.tamboui.style"><code>Tags</code></a> are exposed as CSS classes</li>
-<li><code>contextKey</code> is interpreted as an element ID for parent
-resolution</li>
-<li><code>styleType()</code> returns "Span" for selector matching</li>
+  <li><a href="../../style/Tags.html" title="class in dev.tamboui.style"><code>Tags</code></a> are exposed as CSS classes</li>
+  <li><code>contextKey</code> is interpreted as an element ID for parent resolution</li>
+  <li><code>styleType()</code> returns "Span" for selector matching</li>
 </ul>
 <p>
 This enables CSS selectors like:
 <ul>
-<li><code>.highlight</code> - matches all spans with the "highlight" tag</li>
-<li><code>#myPanel .highlight</code> - matches "highlight" spans inside
-#myPanel</li>
-<li><code>Span.error</code> - matches spans with type "Span" and class
-"error"</li>
+  <li><code>.highlight</code> - matches all spans with the "highlight" tag</li>
+  <li><code>#myPanel .highlight</code> - matches "highlight" spans inside #myPanel</li>
+  <li><code>Span.error</code> - matches spans with type "Span" and class "error"</li>
 </ul></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -243,8 +241,8 @@ This enables CSS selectors like:
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleType()">Styleable</a></code></span></div>
 <div class="block">Returns the style type name used for type selectors.
 <p>
-For example, a Panel element would return "Panel" to match the CSS selector
-<code>Panel { ... }</code>.</div>
+For example, a Panel element would return "Panel" to match
+the CSS selector <code>Panel { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#styleType()">styleType</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -262,8 +260,8 @@ For example, a Panel element would return "Panel" to match the CSS selector
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssId()">Styleable</a></code></span></div>
 <div class="block">Returns the element ID for ID selectors.
 <p>
-For example, an element with ID "sidebar" would be matched by the CSS
-selector <code>#sidebar { ... }</code>.</div>
+For example, an element with ID "sidebar" would be matched
+by the CSS selector <code>#sidebar { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssId()">cssId</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -281,8 +279,8 @@ selector <code>#sidebar { ... }</code>.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssClasses()">Styleable</a></code></span></div>
 <div class="block">Returns the CSS classes assigned to this element.
 <p>
-For example, an element with class "primary" would be matched by the CSS
-selector <code>.primary { ... }</code>.</div>
+For example, an element with class "primary" would be matched
+by the CSS selector <code>.primary { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssClasses()">cssClasses</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -300,8 +298,8 @@ selector <code>.primary { ... }</code>.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssParent()">Styleable</a></code></span></div>
 <div class="block">Returns the parent element in the style hierarchy.
 <p>
-Used for descendant and child combinator selectors like <code>Panel Button {
-... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
+Used for descendant and child combinator selectors like
+<code>Panel Button { ... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssParent()">cssParent</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>

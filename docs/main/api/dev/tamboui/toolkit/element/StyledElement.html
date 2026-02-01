@@ -180,8 +180,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">StyledElement&lt;T extends StyledElement&lt;T&gt;&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>, <a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></span></div>
-<div class="block">Abstract base for elements that support styling and event handling. Provides
-a fluent API for setting colors, modifiers, and event handlers.
+<div class="block">Abstract base for elements that support styling and event handling.
+Provides a fluent API for setting colors, modifiers, and event handlers.
 <p>
 Implements <a href="../../css/Styleable.html" title="interface in dev.tamboui.css"><code>Styleable</code></a> to support CSS-based styling.</div>
 </div>
@@ -586,8 +586,7 @@ Implements <a href="../../css/Styleable.html" title="interface in dev.tamboui.cs
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;explicitStyle,
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;defaultStyle)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Resolves a style for a sub-component with pseudo-class state, following the
-priority: explicit &gt; CSS &gt; default.</div>
+<div class="block">Resolves a style for a sub-component with pseudo-class state, following the priority: explicit &gt; CSS &gt; default.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.style.Style,dev.tamboui.style.Style)" class="member-name-link">resolveEffectiveStyle</a><wbr>(<a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context,
@@ -595,8 +594,7 @@ priority: explicit &gt; CSS &gt; default.</div>
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;explicitStyle,
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;defaultStyle)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Resolves a style for a sub-component following the priority: explicit &gt; CSS &gt;
-default.</div>
+<div class="block">Resolves a style for a sub-component following the priority: explicit &gt; CSS &gt; default.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-T" title="type parameter in StyledElement">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reversed()" class="member-name-link">reversed</a>()</code></div>
@@ -1179,17 +1177,16 @@ default.</div>
  <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block">Renders this element. This is a template method that:
 <ol>
-<li>Resolves the effective CSS + inline style</li>
-<li>Pushes the style and CSS resolver onto the context's stacks</li>
-<li>Calls <a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>renderContent(Frame, Rect, RenderContext)</code></a> for subclass-specific rendering</li>
-<li>Pops the style and resolver when done</li>
+  <li>Resolves the effective CSS + inline style</li>
+  <li>Pushes the style and CSS resolver onto the context's stacks</li>
+  <li>Calls <a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>renderContent(Frame, Rect, RenderContext)</code></a> for subclass-specific rendering</li>
+  <li>Pops the style and resolver when done</li>
 </ol>
 <p>
-Subclasses must implement <a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>renderContent(Frame, Rect, RenderContext)</code></a> instead of overriding this
-method. The current style is available via
-<a href="RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>. CSS properties not in Style (e.g.,
-border-type) can be accessed from parent elements via
-<a href="DefaultRenderContext.html#currentResolver()"><code>DefaultRenderContext.currentResolver()</code></a>.</div>
+Subclasses must implement <a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>renderContent(Frame, Rect, RenderContext)</code></a> instead of overriding this method.
+The current style is available via <a href="RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.
+CSS properties not in Style (e.g., border-type) can be accessed from parent
+elements via <a href="DefaultRenderContext.html#currentResolver()"><code>DefaultRenderContext.currentResolver()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">render</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -1210,9 +1207,9 @@ border-type) can be accessed from parent elements via
  <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>frame</code> - the frame to render to</dd>
@@ -1230,32 +1227,27 @@ current style (CSS + inline, merged with parent styles) is available via
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;childName,
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;explicitStyle,
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;defaultStyle)</span></div>
-<div class="block">Resolves a style for a sub-component following the priority: explicit &gt; CSS &gt;
-default.
+<div class="block">Resolves a style for a sub-component following the priority: explicit &gt; CSS &gt; default.
 <p>
-This helper method standardizes how element sub-components (like cursors,
-placeholders, scrollbar thumbs, etc.) resolve their styles. It enables CSS
-theming while preserving programmatic control when needed.
+This helper method standardizes how element sub-components (like cursors, placeholders,
+scrollbar thumbs, etc.) resolve their styles. It enables CSS theming while preserving
+programmatic control when needed.
 <p>
 The resolution order is:
 <ol>
-<li>If <code>explicitStyle</code> is non-null, use it (programmatic override)</li>
-<li>Otherwise, check CSS via <a href="RenderContext.html#childStyle(java.lang.String)"><code>RenderContext.childStyle(String)</code></a></li>
-<li>If CSS provides styles, use those</li>
-<li>Otherwise, use <code>defaultStyle</code></li>
+  <li>If <code>explicitStyle</code> is non-null, use it (programmatic override)</li>
+  <li>Otherwise, check CSS via <a href="RenderContext.html#childStyle(java.lang.String)"><code>RenderContext.childStyle(String)</code></a></li>
+  <li>If CSS provides styles, use those</li>
+  <li>Otherwise, use <code>defaultStyle</code></li>
 </ol>
 <p>
 Example usage in a TextInput element:
-
 <pre><code>// In renderContent():
-Style effectiveCursorStyle = resolveEffectiveStyle(context, "cursor", cursorStyle,
-        DEFAULT_CURSOR_STYLE);
-Style effectivePlaceholderStyle = resolveEffectiveStyle(context, "placeholder",
-        placeholderStyle, DEFAULT_PLACEHOLDER_STYLE);
+Style effectiveCursorStyle = resolveEffectiveStyle(context, "cursor", cursorStyle, DEFAULT_CURSOR_STYLE);
+Style effectivePlaceholderStyle = resolveEffectiveStyle(context, "placeholder", placeholderStyle, DEFAULT_PLACEHOLDER_STYLE);
 </code></pre>
 <p>
 This enables CSS like:
-
 <pre><code>TextInputElement-cursor { text-style: reversed; }
 TextInputElement-placeholder { color: gray; }
 </code></pre></div>
@@ -1280,15 +1272,14 @@ TextInputElement-placeholder { color: gray; }
  <a href="../../css/cascade/PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a>&nbsp;state,
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;explicitStyle,
  <a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;defaultStyle)</span></div>
-<div class="block">Resolves a style for a sub-component with pseudo-class state, following the
-priority: explicit &gt; CSS &gt; default.
+<div class="block">Resolves a style for a sub-component with pseudo-class state, following the priority: explicit &gt; CSS &gt; default.
 <p>
 Use this overload for stateful children like selected items or focused tabs.
 <p>
 Example usage:
-
-<pre><code>Style effectiveHighlightStyle = resolveEffectiveStyle(context, "item",
-        PseudoClassState.ofSelected(), highlightStyle, DEFAULT_HIGHLIGHT_STYLE);
+<pre><code>Style effectiveHighlightStyle = resolveEffectiveStyle(
+    context, "item", PseudoClassState.ofSelected(),
+    highlightStyle, DEFAULT_HIGHLIGHT_STYLE);
 </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1310,14 +1301,13 @@ Example usage:
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../style/StylePropertyResolver.html" title="interface in dev.tamboui.style">StylePropertyResolver</a></span>&nbsp;<span class="element-name">styleResolver</span><wbr><span class="parameters">(<a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block">Gets the StylePropertyResolver for CSS property resolution.
 <p>
-This is useful for passing to widgets like Block that need to resolve CSS
-properties beyond basic styling (e.g., border-type, border-color).</div>
+This is useful for passing to widgets like Block that need to resolve
+CSS properties beyond basic styling (e.g., border-type, border-color).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>context</code> - the render context</dd>
 <dt>Returns:</dt>
-<dd>the StylePropertyResolver, or an empty resolver if no CSS is
-        available</dd>
+<dd>the StylePropertyResolver, or an empty resolver if no CSS is available</dd>
 </dl>
 </div>
 </section>
@@ -1433,8 +1423,8 @@ properties beyond basic styling (e.g., border-type, border-color).</div>
 <div class="block">Sets the constraint to fit the element's preferred size.
 <p>
 When used in a row, the element will take only as much width as needed
-(queried via <a href="Element.html#preferredWidth()"><code>Element.preferredWidth()</code></a>). This is useful for inline text where
-you want each text element to use its natural width.</div>
+(queried via <a href="Element.html#preferredWidth()"><code>Element.preferredWidth()</code></a>). This is useful for inline text
+where you want each text element to use its natural width.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>this element for chaining</dd>
@@ -1448,8 +1438,8 @@ you want each text element to use its natural width.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></span>&nbsp;<span class="element-name">constraint</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Element.html#constraint()">Element</a></code></span></div>
-<div class="block">Returns the layout constraint for this element, if any. Used by container
-elements to determine sizing.</div>
+<div class="block">Returns the layout constraint for this element, if any.
+Used by container elements to determine sizing.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#constraint()">constraint</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -1468,21 +1458,17 @@ elements to determine sizing.</div>
 <p>
 When an element is focusable:
 <ul>
-<li>It is included in the focus chain for TAB/Shift+TAB navigation</li>
-<li>It receives keyboard events via
-<a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)"><code>handleKeyEvent(KeyEvent, boolean)</code></a> when focused</li>
-<li>An ID is required for focus management - if not set via
-<a href="#id(java.lang.String)"><code>id(String)</code></a>, one will be auto-generated at render time</li>
+  <li>It is included in the focus chain for TAB/Shift+TAB navigation</li>
+  <li>It receives keyboard events via <a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)"><code>handleKeyEvent(KeyEvent, boolean)</code></a> when focused</li>
+  <li>An ID is required for focus management - if not set via <a href="#id(java.lang.String)"><code>id(String)</code></a>,
+      one will be auto-generated at render time</li>
 </ul>
 <p>
-Note: <code>focusable()</code> and <a href="#onKeyEvent(dev.tamboui.toolkit.event.KeyEventHandler)"><code>onKeyEvent(KeyEventHandler)</code></a> are
-orthogonal:
+Note: <code>focusable()</code> and <a href="#onKeyEvent(dev.tamboui.toolkit.event.KeyEventHandler)"><code>onKeyEvent(KeyEventHandler)</code></a> are orthogonal:
 <ul>
-<li>Use <code>focusable()</code> when the element should participate in TAB
-navigation</li>
-<li>Use <code>onKeyEvent()</code> to handle keyboard events (works regardless of
-focusability)</li>
-<li>Use both when you want TAB navigation AND custom key handling</li>
+  <li>Use <code>focusable()</code> when the element should participate in TAB navigation</li>
+  <li>Use <code>onKeyEvent()</code> to handle keyboard events (works regardless of focusability)</li>
+  <li>Use both when you want TAB navigation AND custom key handling</li>
 </ul></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -1535,8 +1521,8 @@ focusability)</li>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="type parameter in StyledElement">T</a></span>&nbsp;<span class="element-name">id</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</span></div>
 <div class="block">Sets the element's ID for focus management and CSS targeting.
 <p>
-The ID is immutable once set and cannot be changed. If an ID is needed but
-not explicitly provided, calling <a href="#focusable()"><code>focusable()</code></a> will auto-generate one.</div>
+The ID is immutable once set and cannot be changed. If an ID is needed
+but not explicitly provided, calling <a href="#focusable()"><code>focusable()</code></a> will auto-generate one.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>id</code> - the unique identifier for this element</dd>
@@ -1554,8 +1540,8 @@ not explicitly provided, calling <a href="#focusable()"><code>focusable()</code>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Element.html#id()">Element</a></code></span></div>
-<div class="block">Returns the unique ID of this element, if set. Used for focus management and
-state tracking.</div>
+<div class="block">Returns the unique ID of this element, if set.
+Used for focus management and state tracking.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#id()">id</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -1655,8 +1641,8 @@ Style attributes can be used with CSS attribute selectors like
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssId()">Styleable</a></code></span></div>
 <div class="block">Returns the element ID for ID selectors.
 <p>
-For example, an element with ID "sidebar" would be matched by the CSS
-selector <code>#sidebar { ... }</code>.</div>
+For example, an element with ID "sidebar" would be matched
+by the CSS selector <code>#sidebar { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssId()">cssId</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -1674,8 +1660,8 @@ selector <code>#sidebar { ... }</code>.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssClasses()">Styleable</a></code></span></div>
 <div class="block">Returns the CSS classes assigned to this element.
 <p>
-For example, an element with class "primary" would be matched by the CSS
-selector <code>.primary { ... }</code>.</div>
+For example, an element with class "primary" would be matched
+by the CSS selector <code>.primary { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssClasses()">cssClasses</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -1693,8 +1679,8 @@ selector <code>.primary { ... }</code>.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssParent()">Styleable</a></code></span></div>
 <div class="block">Returns the parent element in the style hierarchy.
 <p>
-Used for descendant and child combinator selectors like <code>Panel Button {
-... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
+Used for descendant and child combinator selectors like
+<code>Panel Button { ... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssParent()">cssParent</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -1712,22 +1698,21 @@ Used for descendant and child combinator selectors like <code>Panel Button {
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleAttributes()">Styleable</a></code></span></div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
-their style attributes. This method returns a map of attribute names to their
-values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements
+based on their style attributes. This method returns a map of
+attribute names to their values.
 <p>
 Common attributes include:
 <ul>
-<li><code>title</code> - the element's title</li>
-<li><code>label</code> - the element's label</li>
-<li><code>placeholder</code> - the element's placeholder text</li>
+  <li><code>title</code> - the element's title</li>
+  <li><code>label</code> - the element's label</li>
+  <li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#styleAttributes()">styleAttributes</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be
-        empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
 </dl>
 </div>
 </section>
@@ -1741,20 +1726,16 @@ Common attributes include:
 <p>
 The handler receives keyboard events when:
 <ul>
-<li>This element is focused (receives events directly)</li>
-<li>A focused descendant doesn't handle the event (bubbles up)</li>
+  <li>This element is focused (receives events directly)</li>
+  <li>A focused descendant doesn't handle the event (bubbles up)</li>
 </ul>
 <p>
 <strong>Relationship with <a href="#focusable()"><code>focusable()</code></a>:</strong>
 <ul>
-<li><code>onKeyEvent()</code> registers a handler but does NOT make the element
-focusable</li>
-<li><code>focusable()</code> adds the element to TAB navigation but does NOT add a
-handler</li>
-<li>Use both together when you want TAB navigation AND custom key
-handling</li>
-<li>Use only <code>onKeyEvent()</code> for handling keys from focused children or
-global shortcuts</li>
+  <li><code>onKeyEvent()</code> registers a handler but does NOT make the element focusable</li>
+  <li><code>focusable()</code> adds the element to TAB navigation but does NOT add a handler</li>
+  <li>Use both together when you want TAB navigation AND custom key handling</li>
+  <li>Use only <code>onKeyEvent()</code> for handling keys from focused children or global shortcuts</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1778,9 +1759,9 @@ global shortcuts</li>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="type parameter in StyledElement">T</a></span>&nbsp;<span class="element-name">onAction</span><wbr><span class="parameters">(<a href="../../tui/bindings/ActionHandler.html" title="class in dev.tamboui.tui.bindings">ActionHandler</a>&nbsp;handler)</span></div>
 <div class="block">Sets an action handler for this element.
 <p>
-This is a convenience method that dispatches both key and mouse events to the
-action handler. Key events are dispatched when this element is focused, mouse
-events when clicking on the element.</div>
+This is a convenience method that dispatches both key and mouse events
+to the action handler. Key events are dispatched when this element is focused,
+mouse events when clicking on the element.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>handler</code> - the action handler to use</dd>
@@ -1889,8 +1870,8 @@ events when clicking on the element.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></span>&nbsp;<span class="element-name">renderedArea</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Element.html#renderedArea()">Element</a></code></span></div>
-<div class="block">Returns the last rendered area of this element. Used for hit testing and
-event routing.</div>
+<div class="block">Returns the last rendered area of this element.
+Used for hit testing and event routing.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#renderedArea()">renderedArea</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -1907,8 +1888,8 @@ event routing.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleKeyEvent</span><wbr><span class="parameters">(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
  boolean&nbsp;focused)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">Element</a></code></span></div>
-<div class="block">Handles a key event on this element. Override to handle key events directly
-on the element.</div>
+<div class="block">Handles a key event on this element.
+Override to handle key events directly on the element.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">handleKeyEvent</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -1927,8 +1908,8 @@ on the element.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleMouseEvent</span><wbr><span class="parameters">(<a href="../../tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a>&nbsp;event)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)">Element</a></code></span></div>
-<div class="block">Handles a mouse event on this element. Override to handle mouse events
-directly on the element.</div>
+<div class="block">Handles a mouse event on this element.
+Override to handle mouse events directly on the element.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)">handleMouseEvent</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>

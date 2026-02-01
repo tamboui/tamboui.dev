@@ -82,8 +82,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">CapabilityReport</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Aggregated capability information from all discovered
-<a href="CapabilityProvider.html" title="interface in dev.tamboui.capability"><code>CapabilityProvider</code></a>s.</div>
+<div class="block">Aggregated capability information from all discovered <a href="CapabilityProvider.html" title="interface in dev.tamboui.capability"><code>CapabilityProvider</code></a>s.</div>
 </div>
 </section>
 <section class="summary">
@@ -115,8 +114,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Looks up a feature by source and key, and returns it if it matches the
-requested type.</div>
+<div class="block">Looks up a feature by source and key, and returns it if it matches the requested type.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#featuresBySource()" class="member-name-link">featuresBySource</a>()</code></div>
@@ -157,8 +155,7 @@ requested type.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</span>&nbsp;<span class="element-name">environmentBySource</span>()</div>
 <div class="block">Environment entries grouped by provider source.
 <p>
-Each list entry is an environment variable name (value is resolved at
-print-time).</div>
+Each list entry is an environment variable name (value is resolved at print-time).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>unmodifiable map of source to environment variable names</dd>
@@ -188,8 +185,7 @@ Each list entry is a property name (value is resolved at print-time).</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;&gt;</span>&nbsp;<span class="element-name">featuresBySource</span>()</div>
 <div class="block">Free-form capability/features map, grouped by provider source.
 <p>
-Keys SHOULD use dotted notation to create stable namespaces, e.g.
-<code>image.protocol.kitty</code>.</div>
+Keys SHOULD use dotted notation to create stable namespaces, e.g. <code>image.protocol.kitty</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>unmodifiable map of source to feature key-value pairs</dd>
@@ -221,8 +217,7 @@ Keys SHOULD use dotted notation to create stable namespaces, e.g.
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;T&gt;</span>&nbsp;<span class="element-name">feature</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;type)</span></div>
-<div class="block">Looks up a feature by source and key, and returns it if it matches the
-requested type.</div>
+<div class="block">Looks up a feature by source and key, and returns it if it matches the requested type.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="feature(java.lang.String,java.lang.String,java.lang.Class)-type-param-T"><code>T</code> - value type</span></dd>

@@ -91,19 +91,14 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A constraint in the Cassowary system.
 
-<p>
-A constraint represents a linear relationship between variables with an
+<p>A constraint represents a linear relationship between variables with an
 associated strength. The constraint has the form:
-
 <pre>
 expression relation 0
 </pre>
-
 where the relation is one of ==, &lt;=, or &gt;=.
 
-<p>
-Constraints should be created using the fluent API on <a href="Expression.html" title="class in dev.tamboui.layout.cassowary"><code>Expression</code></a>:
-
+<p>Constraints should be created using the fluent API on <a href="Expression.html" title="class in dev.tamboui.layout.cassowary"><code>Expression</code></a>:
 <pre>
 // x + y == 100
 Expression.variable(x).plus(y).equalTo(100, Strength.REQUIRED)
@@ -198,9 +193,8 @@ Expression.variable(x).greaterThanOrEqual(10, Strength.STRONG)
  <a href="Strength.html" title="class in dev.tamboui.layout.cassowary">Strength</a>&nbsp;strength)</span></div>
 <div class="block">Creates a new constraint.
 
-<p>
-Typically constraints are created through the <a href="Expression.html" title="class in dev.tamboui.layout.cassowary"><code>Expression</code></a> API rather
-than using this constructor directly.</div>
+<p>Typically constraints are created through the <a href="Expression.html" title="class in dev.tamboui.layout.cassowary"><code>Expression</code></a> API
+rather than using this constructor directly.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>expression</code> - the linear expression (left-hand side)</dd>
@@ -225,8 +219,7 @@ than using this constructor directly.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in dev.tamboui.layout.cassowary">Expression</a></span>&nbsp;<span class="element-name">expression</span>()</div>
 <div class="block">Returns the expression (left-hand side) of this constraint.
 
-<p>
-The constraint is satisfied when <code>expression relation 0</code>.</div>
+<p>The constraint is satisfied when <code>expression relation 0</code>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the constraint expression</dd>

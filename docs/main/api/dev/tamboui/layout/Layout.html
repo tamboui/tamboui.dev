@@ -91,21 +91,22 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Layout</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">A layout defines how to split a rectangular area into smaller areas based on
-constraints.
+<div class="block">A layout defines how to split a rectangular area into smaller areas
+based on constraints.
 
-<p>
-The layout uses a Cassowary constraint solver to compute sizes based on the
-provided constraints, then positions the resulting rectangles according to
-the <a href="Flex.html" title="enum class in dev.tamboui.layout"><code>Flex</code></a> mode.
+<p>The layout uses a Cassowary constraint solver to compute sizes based on
+the provided constraints, then positions the resulting rectangles according
+to the <a href="Flex.html" title="enum class in dev.tamboui.layout"><code>Flex</code></a> mode.
 
-<p>
-Example usage:
-
+<p>Example usage:
 <pre>
 Layout layout = Layout.horizontal()
-        .constraints(Constraint.length(20), Constraint.fill(), Constraint.percentage(30))
-        .spacing(1).flex(Flex.CENTER);
+    .constraints(
+        Constraint.length(20),
+        Constraint.fill(),
+        Constraint.percentage(30))
+    .spacing(1)
+    .flex(Flex.CENTER);
 
 List&lt;Rect&gt; areas = layout.split(new Rect(0, 0, 100, 50));
 </pre></div>
@@ -428,8 +429,7 @@ List&lt;Rect&gt; areas = layout.split(new Rect(0, 0, 100, 50));
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Rect.html" title="class in dev.tamboui.layout">Rect</a>&gt;</span>&nbsp;<span class="element-name">split</span><wbr><span class="parameters">(<a href="Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</span></div>
 <div class="block">Split the given area according to this layout's constraints.
 
-<p>
-The method uses the Cassowary constraint solver to compute optimal sizes
+<p>The method uses the Cassowary constraint solver to compute optimal sizes
 based on the provided constraints, then positions the resulting rectangles
 according to the <a href="Flex.html" title="enum class in dev.tamboui.layout"><code>Flex</code></a> mode.</div>
 <dl class="notes">

@@ -80,24 +80,20 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">CapabilityProvider</span></div>
 <div class="block">Service-provider interface (SPI) for contributing capability information.
 <p>
-Assumption is that various parts of TamboUI will have a broad range of
-capabilities and ways that it explores the environment, properties and
-various features.
+Assumption is that various parts of TamboUI will have a broad range of capabilities
+and ways that it explores the environment, properties and various features.
 
-Each provider is responsible for contributing its own information to the
-report into the following sections:
+Each provider is responsible for contributing its own information to the report into the following sections:
 
-1. List of relevant environment variables for this provider 2. List of
-relevant system properties for this provider 3. List of relevant
-capabilities/features specific to the provider (meaning a provider should not
-try report features coming from another module)
+1. List of relevant environment variables for this provider
+2. List of relevant system properties for this provider
+3. List of relevant capabilities/features specific to the provider (meaning a provider should not try report features coming from another module)
 
-Each section is grouped by the provider source; allowing multiple providers
-to be interested/using the same keys/info. It is up to the caller to decide
-how to use the report and what to do with the information.
+Each section is grouped by the provider source; allowing multiple providers to be interested/using the same keys/info.
+It is up to the caller to decide how to use the report and what to do with the information.
 
-Implementations should be registered via the Java
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism by creating a file:
+Implementations should be registered via the Java <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a>
+mechanism by creating a file:
 <code>META-INF/services/dev.tamboui.capability.CapabilityProvider</code>
 containing the fully qualified class name of the implementation.</div>
 </div>
@@ -162,12 +158,10 @@ The default implementation derives a name from the class name by removing
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">contribute</span><wbr><span class="parameters">(<a href="CapabilityReportBuilder.html" title="class in dev.tamboui.capability">CapabilityReportBuilder</a>&nbsp;report)</span></div>
 <div class="block">Contribute information to the capability report.
 <p>
-Providers SHOULD use dotted keys for
-<a href="CapabilityReportBuilder.html#feature(java.lang.String,java.lang.String,java.lang.Object)"><code>CapabilityReportBuilder.feature(String, String, Object)</code></a> to create
-stable namespaces (e.g. <code>image.protocol.kitty</code>).
+Providers SHOULD use dotted keys for <a href="CapabilityReportBuilder.html#feature(java.lang.String,java.lang.String,java.lang.Object)"><code>CapabilityReportBuilder.feature(String, String, Object)</code></a>
+to create stable namespaces (e.g. <code>image.protocol.kitty</code>).
 
-Providers SHOULD NOT fail when contributing to the report; if something goes
-wrong, they should report that as a missing feature/info.</div>
+Providers SHOULD NOT fail when contributing to the report; if something goes wrong, they should report that as a missing feature/info.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>report</code> - report builder</dd>

@@ -107,17 +107,16 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">ContainerElement&lt;T extends ContainerElement&lt;T&gt;&gt;</span>
 <span class="extends-implements">extends <a href="StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;T&gt;</span></div>
-<div class="block">Base class for container elements that hold children and forward events to
-them.
+<div class="block">Base class for container elements that hold children and forward events to them.
 <p>
-When a container receives an event it doesn't handle itself, it forwards the
-event to its children. This enables interactive elements (lists, text inputs)
-inside containers to receive events when their parent container is focused.
+When a container receives an event it doesn't handle itself, it forwards the event
+to its children. This enables interactive elements (lists, text inputs) inside
+containers to receive events when their parent container is focused.
 <p>
 Subclasses should:
 <ul>
-<li>Use <a href="#children"><code>children</code></a> to store child elements</li>
-<li>Override <a href="StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>StyledElement.renderContent(Frame, Rect, RenderContext)</code></a> for layout-specific rendering</li>
+  <li>Use <a href="#children"><code>children</code></a> to store child elements</li>
+  <li>Override <a href="StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)"><code>StyledElement.renderContent(Frame, Rect, RenderContext)</code></a> for layout-specific rendering</li>
 </ul></div>
 </div>
 </section>
@@ -190,14 +189,12 @@ Subclasses should:
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent</a><wbr>(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
  boolean&nbsp;focused)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Handles key events by first trying custom handlers, then forwarding to
-children.</div>
+<div class="block">Handles key events by first trying custom handlers, then forwarding to children.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" class="member-name-link">handleMouseEvent</a><wbr>(<a href="../../tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Handles mouse events by first trying custom handlers, then forwarding to
-children.</div>
+<div class="block">Handles mouse events by first trying custom handlers, then forwarding to children.</div>
 </div>
 </div>
 </div>
@@ -308,11 +305,10 @@ children.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleKeyEvent</span><wbr><span class="parameters">(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
  boolean&nbsp;focused)</span></div>
-<div class="block">Handles key events by first trying custom handlers, then forwarding to
-children.
+<div class="block">Handles key events by first trying custom handlers, then forwarding to children.
 <p>
-Children receive events with <code>focused=true</code> since they are within the
-focused container's subtree.</div>
+Children receive events with <code>focused=true</code> since they are within
+the focused container's subtree.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">handleKeyEvent</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -332,12 +328,10 @@ focused container's subtree.</div>
 <h3>handleMouseEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleMouseEvent</span><wbr><span class="parameters">(<a href="../../tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a>&nbsp;event)</span></div>
-<div class="block">Handles mouse events by first trying custom handlers, then forwarding to
-children.
+<div class="block">Handles mouse events by first trying custom handlers, then forwarding to children.
 <p>
 Only forwards to children whose rendered area contains the mouse position,
-ensuring that mouse events are routed to the correct child in multi-panel
-layouts.</div>
+ensuring that mouse events are routed to the correct child in multi-panel layouts.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)">handleMouseEvent</a></code>&nbsp;in interface&nbsp;<code><a href="Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>

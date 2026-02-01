@@ -84,27 +84,25 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Utility class for Mode 2027 (grapheme cluster mode) terminal support.
 <p>
-Mode 2027 is a terminal feature that coordinates grapheme cluster handling
-between applications and terminals. When enabled, the terminal signals that
-it can handle complex grapheme clusters (ZWJ emoji sequences, regional
-indicators) as single display units.
+Mode 2027 is a terminal feature that coordinates grapheme cluster handling between
+applications and terminals. When enabled, the terminal signals that it can handle
+complex grapheme clusters (ZWJ emoji sequences, regional indicators) as single
+display units.
 <p>
 <b>Escape sequences:</b>
 <ul>
-<li>Query (DECRQM): <code>CSI ? 2027 $ p</code></li>
-<li>Response (DECRPM): <code>CSI ? 2027 ; Ps $ y</code> where Ps=1 enabled, Ps=2
-disabled but recognized</li>
-<li>Enable: <code>CSI ? 2027 h</code></li>
-<li>Disable: <code>CSI ? 2027 l</code></li>
+  <li>Query (DECRQM): <code>CSI ? 2027 $ p</code></li>
+  <li>Response (DECRPM): <code>CSI ? 2027 ; Ps $ y</code> where Ps=1 enabled, Ps=2 disabled but recognized</li>
+  <li>Enable: <code>CSI ? 2027 h</code></li>
+  <li>Disable: <code>CSI ? 2027 l</code></li>
 </ul>
 <p>
 Terminals known to support Mode 2027: Ghostty, Contour, Foot, WezTerm, kitty.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://mitchellh.com/writing/grapheme-clusters-in-terminals">Grapheme
-     Clusters in Terminals</a></li>
+<ul class="tag-list">
+<li><a href="https://mitchellh.com/writing/grapheme-clusters-in-terminals">Grapheme Clusters in Terminals</a></li>
 </ul>
 </dd>
 </dl>
@@ -180,9 +178,9 @@ Terminals known to support Mode 2027: Ghostty, Contour, Foot, WezTerm, kitty.</d
                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Queries the terminal for Mode 2027 support status.
 <p>
-Sends the DECRQM escape sequence and waits for the DECRPM response. If the
-terminal doesn't respond within the timeout, it is considered as not
-supporting Mode 2027.</div>
+Sends the DECRQM escape sequence and waits for the DECRPM response.
+If the terminal doesn't respond within the timeout, it is considered
+as not supporting Mode 2027.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>backend</code> - the backend to use for terminal I/O</dd>

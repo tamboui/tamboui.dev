@@ -99,9 +99,12 @@ implements <a href="../../widget/StatefulWidget.html" title="interface in dev.ta
 Each tab title is stored as a <a href="../../text/Line.html" title="class in dev.tamboui.text"><code>Line</code></a> and can be individually styled.
 The selected tab is highlighted using the highlight style.
 
-<pre><code>Tabs tabs = Tabs.builder().titles("Home", "Settings", "About")
-        .highlightStyle(Style.EMPTY.fg(Color.YELLOW).bold()).divider(" | ")
-        .block(Block.bordered()).build();
+<pre><code>Tabs tabs = Tabs.builder()
+    .titles("Home", "Settings", "About")
+    .highlightStyle(Style.EMPTY.fg(Color.YELLOW).bold())
+    .divider(" | ")
+    .block(Block.bordered())
+    .build();
 
 TabsState state = new TabsState(0); // Select first tab
 frame.renderStatefulWidget(tabs, area, state);

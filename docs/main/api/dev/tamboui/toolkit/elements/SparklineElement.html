@@ -112,8 +112,10 @@ loadScripts(document, 'script');</script>
 <div class="block">A DSL wrapper for the Sparkline widget.
 <p>
 Displays data trends in a compact form using bar characters.
-
-<pre><code>sparkline(1, 2, 3, 4, 5, 4, 3, 2, 1).color(Color.CYAN).title("CPU Usage").rounded()
+<pre><code>sparkline(1, 2, 3, 4, 5, 4, 3, 2, 1)
+    .color(Color.CYAN)
+    .title("CPU Usage")
+    .rounded()
 </code></pre></div>
 </div>
 </section>
@@ -528,8 +530,8 @@ Displays data trends in a compact form using bar characters.
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -543,8 +545,8 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred height of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred height, or 0 if not applicable</dd>
@@ -560,15 +562,15 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleAttributes()">Styleable</a></code></span></div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
-their style attributes. This method returns a map of attribute names to their
-values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements
+based on their style attributes. This method returns a map of
+attribute names to their values.
 <p>
 Common attributes include:
 <ul>
-<li><code>title</code> - the element's title</li>
-<li><code>label</code> - the element's label</li>
-<li><code>placeholder</code> - the element's placeholder text</li>
+  <li><code>title</code> - the element's title</li>
+  <li><code>label</code> - the element's label</li>
+  <li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -576,8 +578,7 @@ Common attributes include:
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#styleAttributes()">styleAttributes</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be
-        empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
 </dl>
 </div>
 </section>
@@ -592,9 +593,9 @@ Common attributes include:
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="SparklineElement.html" title="class in dev.tamboui.toolkit.elements">SparklineElement</a>&gt;</code></dd>

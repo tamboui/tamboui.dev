@@ -84,17 +84,16 @@ loadScripts(document, 'script');</script>
 <div class="block">Thread-safe registry for style property definitions.
 <p>
 This registry allows widgets and components to register their custom
-<a href="PropertyDefinition.html" title="class in dev.tamboui.style"><code>PropertyDefinition</code></a>s so that style resolvers can recognize them as
-valid properties.
+<a href="PropertyDefinition.html" title="class in dev.tamboui.style"><code>PropertyDefinition</code></a>s so that style resolvers can recognize them
+as valid properties.
 <p>
-Properties are registered by name. If a property with the same name is
-registered multiple times, the last registration wins.
+Properties are registered by name. If a property with the same name
+is registered multiple times, the last registration wins.
 <p>
 Example usage in a widget:
-
 <pre><code>public class MyWidget {
-    public static final PropertyDefinition&lt;Color&gt; BAR_COLOR = PropertyDefinition.of("bar-color",
-            ColorConverter.INSTANCE);
+    public static final PropertyDefinition&lt;Color&gt; BAR_COLOR =
+        PropertyDefinition.of("bar-color", ColorConverter.INSTANCE);
 
     static {
         PropertyRegistry.register(BAR_COLOR);
@@ -174,8 +173,8 @@ Example usage in a widget:
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;?&gt;&nbsp;property)</span></div>
 <div class="block">Registers a property definition.
 <p>
-Once registered, the property will be recognized by style resolvers and will
-not trigger unknown property warnings or errors.</div>
+Once registered, the property will be recognized by style resolvers
+and will not trigger unknown property warnings or errors.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>property</code> - the property definition to register</dd>

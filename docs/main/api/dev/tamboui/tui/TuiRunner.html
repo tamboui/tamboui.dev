@@ -99,17 +99,20 @@ loadScripts(document, 'script');</script>
 implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
 <div class="block">Main entry point for running TUI applications.
 <p>
-TuiRunner handles the terminal lifecycle (raw mode, alternate screen,
-cursor), event parsing, and the main event loop.
+TuiRunner handles the terminal lifecycle (raw mode, alternate screen, cursor),
+event parsing, and the main event loop.
 
 <pre><code>try (var tui = TuiRunner.create()) {
-    tui.run((event, runner) -&gt; {
-        if (event instanceof KeyEvent &amp;&amp; ((KeyEvent) event).isQuit()) {
-            runner.quit();
-            return false;
-        }
-        return handleEvent(event);
-    }, frame -&gt; renderUI(frame));
+    tui.run(
+        (event, runner) -&gt; {
+            if (event instanceof KeyEvent &amp;&amp; ((KeyEvent) event).isQuit()) {
+                runner.quit();
+                return false;
+            }
+            return handleEvent(event);
+        },
+        frame -&gt; renderUI(frame)
+    );
 }
 </code></pre></div>
 <dl class="notes">
@@ -293,9 +296,9 @@ cursor), event parsing, and the main event loop.
          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Runs the main event loop with the given handler and renderer.
 <p>
-Exceptions thrown during rendering are caught and handled according to the
-configured <a href="error/RenderErrorHandler.html" title="interface in dev.tamboui.tui.error"><code>RenderErrorHandler</code></a>. By default, errors are displayed in
-the UI and the application waits for user dismissal before quitting.</div>
+Exceptions thrown during rendering are caught and handled according to
+the configured <a href="error/RenderErrorHandler.html" title="interface in dev.tamboui.tui.error"><code>RenderErrorHandler</code></a>. By default, errors are displayed
+in the UI and the application waits for user dismissal before quitting.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>handler</code> - the event handler</dd>
@@ -313,12 +316,12 @@ the UI and the application waits for user dismissal before quitting.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/Event.html" title="interface in dev.tamboui.tui.event">Event</a></span>&nbsp;<span class="element-name">pollEvent</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;timeout)</span></div>
 <div class="block">Polls for the next event with the specified timeout.
 <p>
-Events are read from the unified event queue, which receives events from both
-the dedicated input reader thread (keyboard/mouse) and the scheduler thread
-(ticks/resize).
+Events are read from the unified event queue, which receives events
+from both the dedicated input reader thread (keyboard/mouse) and
+the scheduler thread (ticks/resize).
 <p>
-Input events (key/mouse) are prioritized over tick events to ensure UI
-responsiveness even when rendering is slow.</div>
+Input events (key/mouse) are prioritized over tick events to ensure
+UI responsiveness even when rendering is slow.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>timeout</code> - the maximum time to wait</dd>
@@ -385,12 +388,11 @@ responsiveness even when rendering is slow.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runOnRenderThread</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
 <div class="block">Executes an action on the render thread.
 <p>
-If called from the render thread, the action is executed immediately. If
-called from another thread, the action is queued for execution on the render
-thread.
+If called from the render thread, the action is executed immediately.
+If called from another thread, the action is queued for execution
+on the render thread.
 <p>
 This is the primary API for safely updating UI state from background threads:
-
 <pre><code>// From a background thread:
 runner.runOnRenderThread(() -&gt; {
     updateState();
@@ -411,9 +413,10 @@ runner.runOnRenderThread(() -&gt; {
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runLater</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;action)</span></div>
 <div class="block">Queues an action to be executed on the render thread.
 <p>
-Unlike <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a>, this method always queues the
-action even if called from the render thread. This is useful when you want to
-defer execution until after the current event handling completes.</div>
+Unlike <a href="#runOnRenderThread(java.lang.Runnable)"><code>runOnRenderThread(Runnable)</code></a>, this method always queues
+the action even if called from the render thread. This is useful when
+you want to defer execution until after the current event handling
+completes.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - the action to execute on the render thread</dd>
@@ -479,11 +482,16 @@ defer execution until after the current event handling completes.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="TuiRunner.Builder.html" title="class in dev.tamboui.tui">TuiRunner.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
 <div class="block">Returns a new builder for constructing TuiRunner instances.
 <p>
-The builder provides a fluent API for configuring all aspects of the TUI
-application including bindings and auto-registration of action handlers.
+The builder provides a fluent API for configuring all aspects of the
+TUI application including bindings and auto-registration of action handlers.
 
-<pre><code>TuiRunner.builder().bindings(BindingSets.vim()).eventHandler(app).renderer(app::render)
-        .autoBindingRegistration(true).build().run();
+<pre><code>TuiRunner.builder()
+    .bindings(BindingSets.vim())
+    .eventHandler(app)
+    .renderer(app::render)
+    .autoBindingRegistration(true)
+    .build()
+    .run();
 </code></pre></div>
 <dl class="notes">
 <dt>Returns:</dt>

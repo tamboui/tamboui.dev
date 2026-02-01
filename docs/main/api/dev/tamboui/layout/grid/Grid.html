@@ -89,34 +89,40 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Grid</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
-<div class="block">A CSS Grid-inspired layout widget that arranges children into a grid with
-explicit control over grid dimensions, per-column/per-row sizing constraints,
-and gutter spacing.
+<div class="block">A CSS Grid-inspired layout widget that arranges children into a grid
+with explicit control over grid dimensions, per-column/per-row sizing
+constraints, and gutter spacing.
 <p>
 Grid supports two mutually exclusive modes:
 <ul>
-<li><b>Children mode</b>: Sequential placement using <code>children()</code> and
-<code>columnCount()</code></li>
-<li><b>Area mode</b>: Template-based placement using <code>gridAreas()</code> and
-<code>area()</code></li>
+  <li><b>Children mode</b>: Sequential placement using <code>children()</code> and <code>columnCount()</code></li>
+  <li><b>Area mode</b>: Template-based placement using <code>gridAreas()</code> and <code>area()</code></li>
 </ul>
 <p>
-The staged builder pattern ensures compile-time safety - you cannot mix
-modes.
+The staged builder pattern ensures compile-time safety - you cannot mix modes.
 
 <h2 id="children-mode-example-heading">Children Mode Example</h2>
-
-<pre><code>Grid grid = Grid.builder().children(widget1, widget2, widget3, widget4).columnCount(2)
-        .horizontalGutter(1).verticalGutter(1).build();
+<pre><code>Grid grid = Grid.builder()
+    .children(widget1, widget2, widget3, widget4)
+    .columnCount(2)
+    .horizontalGutter(1)
+    .verticalGutter(1)
+    .build();
 </code></pre>
 
 <h2 id="area-mode-example-heading">Area Mode Example</h2>
-
 <pre><code>Grid grid = Grid.builder()
-        .gridAreas("header header header", "nav    main   main", "nav    main   main",
-                "footer footer footer")
-        .area("header", headerWidget).area("nav", navWidget).area("main", mainWidget)
-        .area("footer", footerWidget).horizontalGutter(1).verticalGutter(1).build();
+    .gridAreas("header header header",
+               "nav    main   main",
+               "nav    main   main",
+               "footer footer footer")
+    .area("header", headerWidget)
+    .area("nav", navWidget)
+    .area("main", mainWidget)
+    .area("footer", footerWidget)
+    .horizontalGutter(1)
+    .verticalGutter(1)
+    .build();
 </code></pre></div>
 </div>
 </section>

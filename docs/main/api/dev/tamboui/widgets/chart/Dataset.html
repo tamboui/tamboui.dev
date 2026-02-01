@@ -91,9 +91,13 @@ loadScripts(document, 'script');</script>
 <p>
 Contains data points (x, y coordinates) and rendering configuration.
 
-<pre><code>Dataset dataset = Dataset.builder().name("Temperature")
-        .data(new double[][]{{0, 20}, {1, 22}, {2, 25}, {3, 23}}).graphType(GraphType.LINE)
-        .marker(Dataset.Marker.BRAILLE).style(Style.EMPTY.fg(Color.RED)).build();
+<pre><code>Dataset dataset = Dataset.builder()
+    .name("Temperature")
+    .data(new double[][] {{0, 20}, {1, 22}, {2, 25}, {3, 23}})
+    .graphType(GraphType.LINE)
+    .marker(Dataset.Marker.BRAILLE)
+    .style(Style.EMPTY.fg(Color.RED))
+    .build();
 </code></pre></div>
 </div>
 </section>

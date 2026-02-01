@@ -79,13 +79,13 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Utility class exposing internal Frame capabilities.
 <p>
-This class provides access to raw terminal output for widgets that need to
-send escape sequences directly (e.g., native image protocols like Sixel,
+This class provides access to raw terminal output for widgets that need
+to send escape sequences directly (e.g., native image protocols like Sixel,
 Kitty, or iTerm2).
 <p>
-<b>Warning:</b> This is an internal API. Widgets should only use this if they
-understand the implications of writing raw bytes to the terminal output
-stream.</div>
+<b>Warning:</b> This is an internal API. Widgets should only use this
+if they understand the implications of writing raw bytes to the terminal
+output stream.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -138,17 +138,16 @@ stream.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a></span>&nbsp;<span class="element-name">rawOutput</span><wbr><span class="parameters">(<a href="Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame)</span></div>
 <div class="block">Returns the raw output stream for the given frame.
 <p>
-This stream writes directly to the terminal backend, bypassing the normal
-cell-based rendering. Use with caution.
+This stream writes directly to the terminal backend, bypassing the
+normal cell-based rendering. Use with caution.
 <p>
-The returned stream may be <code>null</code> if the backend does not support raw
-output.</div>
+The returned stream may be <code>null</code> if the backend does not
+support raw output.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>frame</code> - the frame to get raw output from</dd>
 <dt>Returns:</dt>
-<dd>an output stream for raw terminal output, or <code>null</code> if not
-        supported</dd>
+<dd>an output stream for raw terminal output, or <code>null</code> if not supported</dd>
 </dl>
 </div>
 </section>

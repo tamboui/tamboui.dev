@@ -97,8 +97,12 @@ Bar bar = Bar.of(75);
 Bar bar2 = Bar.of(75, "Sales");
 
 // Fully customized bar
-Bar bar3 = Bar.builder().value(75).label("Sales").textValue("75%")
-        .style(Style.EMPTY.fg(Color.GREEN)).build();
+Bar bar3 = Bar.builder()
+    .value(75)
+    .label("Sales")
+    .textValue("75%")
+    .style(Style.EMPTY.fg(Color.GREEN))
+    .build();
 </code></pre></div>
 </div>
 </section>

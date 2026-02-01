@@ -199,8 +199,7 @@ resolved through the underlying <a href="../../widgets/paragraph/Paragraph.html"
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element given an available width and
-render context.</div>
+<div class="block">Returns the preferred height of this element given an available width and render context.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
@@ -394,11 +393,10 @@ render context.</div>
 If no explicit constraint is set, a sensible default is calculated based on
 the content and overflow mode:
 <ul>
-<li>For wrapping modes (WRAP_WORD, WRAP_CHARACTER): uses
-<code>min(lineCount)</code> to ensure at least minimum height while allowing
-growth for wrapped content.</li>
-<li>For non-wrapping modes (CLIP, ELLIPSIS, etc.): returns <code>null</code> to
-let the container decide (typically using <code>fill()</code>).</li>
+  <li>For wrapping modes (WRAP_WORD, WRAP_CHARACTER): uses <code>min(lineCount)</code>
+      to ensure at least minimum height while allowing growth for wrapped content.</li>
+  <li>For non-wrapping modes (CLIP, ELLIPSIS, etc.): returns <code>null</code> to let
+      the container decide (typically using <code>fill()</code>).</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -417,8 +415,8 @@ let the container decide (typically using <code>fill()</code>).</li>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -432,8 +430,8 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred height of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred height, or 0 if not applicable</dd>
@@ -448,16 +446,13 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element given an available width and
-render context.
+<div class="block">Returns the preferred height of this element given an available width and render context.
 <p>
 This is useful for elements that may wrap content (like text) where the
 height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via
-CSS.
+height calculation where properties like <code>text-overflow</code> may be set via CSS.
 <p>
-When context is null, implementations should use programmatic property values
-only.</div>
+When context is null, implementations should use programmatic property values only.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>availableWidth</code> - the available width in cells</dd>
@@ -478,9 +473,9 @@ only.</div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a>&gt;</code></dd>

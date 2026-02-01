@@ -105,8 +105,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">MarkupTextElement</span>
 <span class="extends-implements">extends <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="MarkupTextElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextElement</a>&gt;</span></div>
-<div class="block">A simple inline element that parses BBCode-style markup and displays styled
-text.
+<div class="block">A simple inline element that parses BBCode-style markup and displays styled text.
 <p>
 This element is similar to <a href="TextElement.html" title="class in dev.tamboui.toolkit.elements"><code>TextElement</code></a> but accepts markup syntax like
 <code>[bold]text[/bold]</code> for styling.
@@ -115,21 +114,17 @@ For scrollable markup text with borders, see <a href="MarkupTextAreaElement.html
 <p>
 Supported markup:
 <ul>
-<li>Built-in modifiers: <code>[bold]</code>, <code>[italic]</code>,
-<code>[underlined]</code>, <code>[dim]</code>, <code>[reversed]</code>,
-<code>[crossed-out]</code></li>
-<li>Built-in colors: <code>[red]</code>, <code>[green]</code>, <code>[blue]</code>,
-<code>[yellow]</code>, <code>[cyan]</code>, <code>[magenta]</code>, <code>[white]</code>,
-<code>[black]</code>, <code>[gray]</code></li>
-<li>Hyperlinks: <code>[link=URL]text[/link]</code></li>
-<li>Custom tags: unknown tags are resolved as CSS class names via TCSS</li>
-<li>Escaped brackets: <code>[[</code> produces <code>[</code>, and <code>]]</code> produces
-<code>]</code></li>
-<li>Nested tags: <code>[red][bold]text[/bold][/red]</code></li>
+  <li>Built-in modifiers: <code>[bold]</code>, <code>[italic]</code>, <code>[underlined]</code>,
+      <code>[dim]</code>, <code>[reversed]</code>, <code>[crossed-out]</code></li>
+  <li>Built-in colors: <code>[red]</code>, <code>[green]</code>, <code>[blue]</code>, <code>[yellow]</code>,
+      <code>[cyan]</code>, <code>[magenta]</code>, <code>[white]</code>, <code>[black]</code>, <code>[gray]</code></li>
+  <li>Hyperlinks: <code>[link=URL]text[/link]</code></li>
+  <li>Custom tags: unknown tags are resolved as CSS class names via TCSS</li>
+  <li>Escaped brackets: <code>[[</code> produces <code>[</code>, and <code>]]</code> produces <code>]</code></li>
+  <li>Nested tags: <code>[red][bold]text[/bold][/red]</code></li>
 </ul>
 <p>
 Example usage:
-
 <pre><code>import static dev.tamboui.toolkit.Toolkit.*;
 
 markupText("This is [red]red[/red] and [bold]bold[/bold].")
@@ -478,8 +473,8 @@ markupText("This is [red]red[/red] and [bold]bold[/bold].")
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></span>&nbsp;<span class="element-name">constraint</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#constraint()">Element</a></code></span></div>
-<div class="block">Returns the layout constraint for this element, if any. Used by container
-elements to determine sizing.</div>
+<div class="block">Returns the layout constraint for this element, if any.
+Used by container elements to determine sizing.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#constraint()">constraint</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -497,8 +492,8 @@ elements to determine sizing.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -512,8 +507,8 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred height of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred height, or 0 if not applicable</dd>
@@ -531,9 +526,9 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="MarkupTextElement.html" title="class in dev.tamboui.toolkit.elements">MarkupTextElement</a>&gt;</code></dd>

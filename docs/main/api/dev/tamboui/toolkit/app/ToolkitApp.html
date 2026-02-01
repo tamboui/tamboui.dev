@@ -91,9 +91,9 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Base class for DSL-based TUI applications.
 <p>
-Extend this class to create a TUI application. State is managed through
-instance fields, and events are handled by elements via their
-<code>onKeyEvent()</code> and <code>onMouseEvent()</code> handlers.
+Extend this class to create a TUI application. State is managed
+through instance fields, and events are handled by elements via
+their <code>onKeyEvent()</code> and <code>onMouseEvent()</code> handlers.
 
 <pre><code>import static toolkit.dev.tamboui.Toolkit.*;
 
@@ -102,19 +102,24 @@ public class CounterApp extends ToolkitApp {
 
     @Override
     protected Element render() {
-        return panel("Counter", text("Count: " + count).bold().cyan(),
-                text("[Up/Down] to change").dim()).rounded().id("main").focusable()
-                .onKeyEvent(event -&gt; {
-                    if (event.isUp()) {
-                        count++;
-                        return EventResult.HANDLED;
-                    }
-                    if (event.isDown()) {
-                        count--;
-                        return EventResult.HANDLED;
-                    }
-                    return EventResult.UNHANDLED;
-                });
+        return panel("Counter",
+            text("Count: " + count).bold().cyan(),
+            text("[Up/Down] to change").dim()
+        )
+        .rounded()
+        .id("main")
+        .focusable()
+        .onKeyEvent(event -&gt; {
+            if (event.isUp()) {
+                count++;
+                return EventResult.HANDLED;
+            }
+            if (event.isDown()) {
+                count--;
+                return EventResult.HANDLED;
+            }
+            return EventResult.UNHANDLED;
+        });
     }
 
     public static void main(String[] args) throws Exception {
@@ -228,7 +233,8 @@ public class CounterApp extends ToolkitApp {
 <h3>configure</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></span>&nbsp;<span class="element-name">configure</span>()</div>
-<div class="block">Returns the TUI configuration for this application. Override to customize.</div>
+<div class="block">Returns the TUI configuration for this application.
+Override to customize.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the configuration</dd>
@@ -241,7 +247,8 @@ public class CounterApp extends ToolkitApp {
 <h3>render</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></span>&nbsp;<span class="element-name">render</span>()</div>
-<div class="block">Renders the application UI. Called each frame to get the current state.
+<div class="block">Renders the application UI.
+Called each frame to get the current state.
 <p>
 Add event handlers to elements using <code>onKeyEvent()</code> and
 <code>onMouseEvent()</code> methods.</div>
@@ -257,8 +264,8 @@ Add event handlers to elements using <code>onKeyEvent()</code> and
 <h3>onStart</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onStart</span>()</div>
-<div class="block">Called when the application starts, before the first render. Override to
-perform initialization.</div>
+<div class="block">Called when the application starts, before the first render.
+Override to perform initialization.</div>
 </div>
 </section>
 </li>
@@ -267,7 +274,8 @@ perform initialization.</div>
 <h3>onStop</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onStop</span>()</div>
-<div class="block">Called when the application is about to stop. Override to perform cleanup.</div>
+<div class="block">Called when the application is about to stop.
+Override to perform cleanup.</div>
 </div>
 </section>
 </li>

@@ -298,8 +298,7 @@ including termios manipulation, terminal size queries, and non-blocking I/O.</di
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#TCSAFLUSH" class="member-name-link">TCSAFLUSH</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Apply termios changes after all output has been transmitted, discarding
-pending input.</div>
+<div class="block">Apply termios changes after all output has been transmitted, discarding pending input.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#TCSANOW" class="member-name-link">TCSANOW</a></code></div>
@@ -616,8 +615,7 @@ pending input.</div>
 <h3>TCSAFLUSH</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TCSAFLUSH</span></div>
-<div class="block">Apply termios changes after all output has been transmitted, discarding
-pending input.</div>
+<div class="block">Apply termios changes after all output has been transmitted, discarding pending input.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -993,7 +991,6 @@ Platform-specific: Linux uses 4-byte ints for flags, macOS uses 8-byte longs.</d
 <div class="block">Layout for the sigaction structure.
 <p>
 macOS struct __sigaction (24 bytes):
-
 <pre>
     union __sigaction_u __sigaction_u;  // 8 bytes - handler pointer
     void (*sa_tramp)(...);              // 8 bytes - trampoline pointer
@@ -1002,7 +999,6 @@ macOS struct __sigaction (24 bytes):
 </pre>
 <p>
 Linux struct sigaction (152 bytes):
-
 <pre>
     void (*sa_handler)(int);            // 8 bytes - handler pointer
     unsigned long sa_flags;             // 8 bytes - flags
@@ -1139,8 +1135,8 @@ Uses a thread-local call state segment to avoid per-call Arena allocation.</div>
  int&nbsp;timeout)</span></div>
 <div class="block">Waits for events on file descriptors.
 <p>
-Uses a thread-local call state segment to capture errno. Check
-<a href="#getLastErrno()"><code>getLastErrno()</code></a> after a -1 return to determine the cause.</div>
+Uses a thread-local call state segment to capture errno.
+Check <a href="#getLastErrno()"><code>getLastErrno()</code></a> after a -1 return to determine the cause.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>fds</code> - array of pollfd structures</dd>
@@ -1207,8 +1203,7 @@ Uses a thread-local call state segment to capture errno. Check
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;handler)</span></div>
 <div class="block">Installs a signal handler using signal().
 <p>
-Note: This is deprecated on macOS. Use
-<a href="#sigaction(int,java.lang.foreign.MemorySegment,java.lang.foreign.MemorySegment)"><code>sigaction(int, MemorySegment, MemorySegment)</code></a> instead.</div>
+Note: This is deprecated on macOS. Use <a href="#sigaction(int,java.lang.foreign.MemorySegment,java.lang.foreign.MemorySegment)"><code>sigaction(int, MemorySegment, MemorySegment)</code></a> instead.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>signum</code> - the signal number</dd>
@@ -1293,8 +1288,8 @@ Note: On Linux, sa_flags is a long (8 bytes), on macOS it's an int (4 bytes).</d
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSigactionTramp</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;sigactionStruct,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;tramp)</span></div>
-<div class="block">Sets the trampoline pointer in a sigaction structure. For simple signal
-handlers, this should be set to NULL.
+<div class="block">Sets the trampoline pointer in a sigaction structure.
+For simple signal handlers, this should be set to NULL.
 <p>
 Note: This is macOS-specific. On Linux, this method does nothing.</div>
 <dl class="notes">
@@ -1314,8 +1309,7 @@ Note: This is macOS-specific. On Linux, this method does nothing.</div>
 <div class="block">Sets the signal mask in a sigaction structure.
 <p>
 Note: On macOS, sa_mask is a simple int. On Linux, it's a 128-byte sigset_t.
-This method only sets the mask on macOS. On Linux, the mask is zeroed by
-default.</div>
+This method only sets the mask on macOS. On Linux, the mask is zeroed by default.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>sigactionStruct</code> - the sigaction structure</dd>
@@ -1350,8 +1344,8 @@ default.</div>
 The returned memory segment is valid for the lifetime of the provided arena.
 The handler will be called with the signal number as parameter.
 <p>
-This follows the jextract pattern: create unbound MethodHandle first, then
-bind when creating the upcall stub.</div>
+This follows the jextract pattern: create unbound MethodHandle first,
+then bind when creating the upcall stub.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>arena</code> - the arena to allocate the stub in</dd>

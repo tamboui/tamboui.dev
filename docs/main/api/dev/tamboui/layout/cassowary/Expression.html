@@ -112,25 +112,22 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A linear expression of the form: constant + c1*v1 + c2*v2 + ... + cn*vn.
 
-<p>
-Expressions are immutable and support fluent operations for building complex
-expressions. They can be combined using arithmetic operations and converted
-to constraints.
+<p>Expressions are immutable and support fluent operations for building
+complex expressions. They can be combined using arithmetic operations
+and converted to constraints.
 
-<p>
-This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic, avoiding the
-cumulative rounding errors that occur with floating-point.
+<p>This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic,
+avoiding the cumulative rounding errors that occur with floating-point.
 
-<p>
-Example usage:
-
+<p>Example usage:
 <pre>
 Variable x = new Variable("x");
 Variable y = new Variable("y");
 
 // Build: 2*x + 3*y + 10
-Expression expr = Expression.variable(x).times(2).plus(Expression.variable(y).times(3))
-        .plus(Expression.constant(10));
+Expression expr = Expression.variable(x).times(2)
+    .plus(Expression.variable(y).times(3))
+    .plus(Expression.constant(10));
 
 // Create constraint: 2*x + 3*y + 10 == 0
 CassowaryConstraint c = expr.equalTo(0, Strength.REQUIRED);

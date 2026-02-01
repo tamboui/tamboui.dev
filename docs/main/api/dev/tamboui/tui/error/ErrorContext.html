@@ -123,8 +123,8 @@ Provides access to error output streams and control over the runner.</div>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a></span>&nbsp;<span class="element-name">errorOutput</span>()</div>
 <div class="block">Returns the output stream for logging fatal errors.
 <p>
-This stream is configured via <code>TuiConfig.errorOutput()</code> and defaults to
-<code>System.err</code> (captured at config creation time). When the TUI has
+This stream is configured via <code>TuiConfig.errorOutput()</code> and defaults
+to <code>System.err</code> (captured at config creation time). When the TUI has
 captured standard streams, this provides a way to log errors to an external
 destination.</div>
 <dl class="notes">
@@ -141,8 +141,8 @@ destination.</div>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">quit</span>()</div>
 <div class="block">Signals the runner to stop.
 <p>
-Call this when the error handler determines the application should quit. The
-runner will perform cleanup and exit the main loop.</div>
+Call this when the error handler determines the application should quit.
+The runner will perform cleanup and exit the main loop.</div>
 </div>
 </section>
 </li>

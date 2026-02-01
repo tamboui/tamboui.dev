@@ -80,16 +80,15 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">BackendProvider</span></div>
 <div class="block">Service provider interface for creating <a href="Backend.html" title="interface in dev.tamboui.terminal"><code>Backend</code></a> instances.
 <p>
-Implementations of this interface should be registered via the Java
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism by creating a file
-<code>META-INF/services/dev.tamboui.terminal.BackendProvider</code> containing the
-fully qualified class name of the implementation.
+Implementations of this interface should be registered via the
+Java <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism by creating a file
+<code>META-INF/services/dev.tamboui.terminal.BackendProvider</code> containing
+the fully qualified class name of the implementation.
 <p>
 Applications should include exactly one backend provider on the classpath
 (e.g., tamboui-jline). If multiple providers are present, use the
-<code>tamboui.backend</code> system property or <code>TAMBOUI_BACKEND</code>
-environment variable to specify which provider to use (by simple name or
-fully qualified class name).</div>
+<code>tamboui.backend</code> system property or <code>TAMBOUI_BACKEND</code> environment
+variable to specify which provider to use (by simple name or fully qualified class name).</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -146,14 +145,14 @@ fully qualified class name).</div>
 <div class="block">Returns a simple identifier for this backend provider.
 <p>
 This name is used when selecting a provider via the <code>tamboui.backend</code>
-system property or <code>TAMBOUI_BACKEND</code> environment variable. The default
-implementation derives a name from the class name by removing
+system property or <code>TAMBOUI_BACKEND</code> environment variable.
+The default implementation derives a name from the class name by removing
 "BackendProvider" suffix and converting to lowercase.
 <p>
 Examples:
 <ul>
-<li><code>JLineBackendProvider</code> → "jline"</li>
-<li><code>PanamaBackendProvider</code> → "panama"</li>
+  <li><code>JLineBackendProvider</code> → "jline"</li>
+  <li><code>PanamaBackendProvider</code> → "panama"</li>
 </ul></div>
 <dl class="notes">
 <dt>Returns:</dt>

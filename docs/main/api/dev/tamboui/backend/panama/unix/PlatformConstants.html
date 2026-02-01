@@ -459,13 +459,26 @@ indices, and structure layouts that differ between Linux and macOS.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link">MemoryLayout</a></span>&nbsp;<span class="element-name">TERMIOS_LAYOUT</span></div>
 <div class="block">Termios structure layout.
 <p>
-Linux layout: - c_iflag (4 bytes) - c_oflag (4 bytes) - c_cflag (4 bytes) -
-c_lflag (4 bytes) - c_line (1 byte) - c_cc[32] (32 bytes) - padding (3 bytes)
-- c_ispeed (4 bytes) - c_ospeed (4 bytes)
+Linux layout:
+- c_iflag (4 bytes)
+- c_oflag (4 bytes)
+- c_cflag (4 bytes)
+- c_lflag (4 bytes)
+- c_line (1 byte)
+- c_cc[32] (32 bytes)
+- padding (3 bytes)
+- c_ispeed (4 bytes)
+- c_ospeed (4 bytes)
 <p>
-macOS layout: - c_iflag (8 bytes - unsigned long) - c_oflag (8 bytes) -
-c_cflag (8 bytes) - c_lflag (8 bytes) - c_cc[20] (20 bytes) - padding (4
-bytes) - c_ispeed (8 bytes) - c_ospeed (8 bytes)</div>
+macOS layout:
+- c_iflag (8 bytes - unsigned long)
+- c_oflag (8 bytes)
+- c_cflag (8 bytes)
+- c_lflag (8 bytes)
+- c_cc[20] (20 bytes)
+- padding (4 bytes)
+- c_ispeed (8 bytes)
+- c_ospeed (8 bytes)</div>
 </div>
 </section>
 </li>

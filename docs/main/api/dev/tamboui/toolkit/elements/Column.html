@@ -103,16 +103,14 @@ loadScripts(document, 'script');</script>
 <p>
 Layout properties can be set via CSS or programmatically:
 <ul>
-<li><code>flex</code> - Flex positioning mode: "start", "center", "end",
-"space-between", "space-around", "space-evenly"</li>
-<li><code>spacing</code> - Gap between children in cells</li>
-<li><code>margin</code> - Margin around the column</li>
+  <li><code>flex</code> - Flex positioning mode: "start", "center", "end", "space-between", "space-around", "space-evenly"</li>
+  <li><code>spacing</code> - Gap between children in cells</li>
+  <li><code>margin</code> - Margin around the column</li>
 </ul>
 <p>
 Programmatic values override CSS values when both are set.
 <p>
 Example usage:
-
 <pre>
 column(child1, child2, child3).flex(Flex.CENTER).spacing(1)
 </pre></div>
@@ -181,8 +179,7 @@ column(child1, child2, child3).flex(Flex.CENTER).spacing(1)
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element given an available width and
-render context.</div>
+<div class="block">Returns the preferred height of this element given an available width and render context.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
@@ -338,8 +335,8 @@ Can also be set via CSS <code>margin</code> property.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -354,16 +351,13 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element given an available width and
-render context.
+<div class="block">Returns the preferred height of this element given an available width and render context.
 <p>
 This is useful for elements that may wrap content (like text) where the
 height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via
-CSS.
+height calculation where properties like <code>text-overflow</code> may be set via CSS.
 <p>
-When context is null, implementations should use programmatic property values
-only.</div>
+When context is null, implementations should use programmatic property values only.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>availableWidth</code> - the available width in cells</dd>
@@ -384,9 +378,9 @@ only.</div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="Column.html" title="class in dev.tamboui.toolkit.elements">Column</a>&gt;</code></dd>

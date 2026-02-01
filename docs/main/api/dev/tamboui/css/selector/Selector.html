@@ -82,9 +82,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Selector</span></div>
 <div class="block">Represents a CSS selector that matches elements.
 <p>
-Selectors are used to determine which CSS rules apply to which elements. The
-specificity of a selector determines its priority when multiple rules match
-the same element.</div>
+Selectors are used to determine which CSS rules apply to which elements.
+The specificity of a selector determines its priority when multiple
+rules match the same element.</div>
 </div>
 </section>
 <section class="summary">
@@ -146,8 +146,8 @@ for dynamic pseudo-class resolution.</div>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">specificity</span>()</div>
 <div class="block">Returns the specificity of this selector.
 <p>
-Specificity is used for cascade resolution: higher specificity wins. The
-value is computed as: (id * 100) + (class/pseudo * 10) + type</div>
+Specificity is used for cascade resolution: higher specificity wins.
+The value is computed as: (id * 100) + (class/pseudo * 10) + type</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the specificity value</dd>
@@ -184,14 +184,12 @@ value is computed as: (id * 100) + (class/pseudo * 10) + type</div>
 <div class="block">Tests whether this selector matches the given element, using a state provider
 for dynamic pseudo-class resolution.
 <p>
-This method is needed for descendant selectors like
-<code>#parent:focus .child</code> where the :focus pseudo-class must be evaluated
-on the ancestor element.
+This method is needed for descendant selectors like <code>#parent:focus .child</code>
+where the :focus pseudo-class must be evaluated on the ancestor element.
 <p>
-The default implementation delegates to
-<a href="#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassState,java.util.List)"><code>matches(Styleable, PseudoClassState, List)</code></a> using the state from the
-provider for the target element. Combinator selectors (like
-DescendantSelector) override this to properly evaluate ancestor states.</div>
+The default implementation delegates to <a href="#matches(dev.tamboui.css.Styleable,dev.tamboui.css.cascade.PseudoClassState,java.util.List)"><code>matches(Styleable, PseudoClassState, List)</code></a>
+using the state from the provider for the target element. Combinator selectors
+(like DescendantSelector) override this to properly evaluate ancestor states.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>element</code> - the element to test</dd>

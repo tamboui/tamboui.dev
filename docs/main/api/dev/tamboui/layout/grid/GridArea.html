@@ -92,9 +92,8 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Parses and validates CSS grid-template-areas style layout definitions.
 <p>
-Area names must be alphanumeric identifiers starting with a letter. Use "."
-for empty cells. Named areas must form contiguous rectangles.
-
+Area names must be alphanumeric identifiers starting with a letter.
+Use "." for empty cells. Named areas must form contiguous rectangles.
 <pre><code>GridArea areas = GridArea.parse("A A B", "A A C", "D D D");
 // A spans columns 0-1, rows 0-1
 // B spans column 2, row 0
@@ -234,9 +233,10 @@ for empty cells. Named areas must form contiguous rectangles.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="GridArea.html" title="class in dev.tamboui.layout.grid">GridArea</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;rowTemplates)</span></div>
 <div class="block">Parses area template strings into a GridArea.
 <p>
-Each string represents a row; tokens are space-separated area names. All rows
-must have the same number of tokens (columns). Named areas must form
-contiguous rectangles. Use "." for empty cells.</div>
+Each string represents a row; tokens are space-separated area names.
+All rows must have the same number of tokens (columns).
+Named areas must form contiguous rectangles.
+Use "." for empty cells.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>rowTemplates</code> - the row templates (e.g., "A A B", "A A C")</dd>

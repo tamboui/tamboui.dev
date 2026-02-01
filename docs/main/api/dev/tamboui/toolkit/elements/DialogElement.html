@@ -118,24 +118,24 @@ loadScripts(document, 'script');</script>
 <p>
 DialogElement simplifies creating modal dialogs by automatically:
 <ul>
-<li>Centering the dialog in the parent area</li>
-<li>Clearing the background before rendering</li>
-<li>Calculating dimensions from content (or using fixed dimensions)</li>
+  <li>Centering the dialog in the parent area</li>
+  <li>Clearing the background before rendering</li>
+  <li>Calculating dimensions from content (or using fixed dimensions)</li>
 </ul>
 <p>
 Layout properties for dialog content can be set via CSS or programmatically:
 <ul>
-<li><code>direction</code> - Layout direction: "horizontal"/"row" or
-"vertical"/"column"</li>
-<li><code>flex</code> - Flex positioning mode: "start", "center", "end",
-"space-between", "space-around", "space-evenly"</li>
-<li><code>spacing</code> - Gap between children in cells</li>
+  <li><code>direction</code> - Layout direction: "horizontal"/"row" or "vertical"/"column"</li>
+  <li><code>flex</code> - Flex positioning mode: "start", "center", "end", "space-between", "space-around", "space-evenly"</li>
+  <li><code>spacing</code> - Gap between children in cells</li>
 </ul>
 <p>
 Programmatic values override CSS values when both are set.
 
-<pre><code>dialog("Confirm Delete", text("Delete 3 files?"), text("[y] Yes  [n] No").dim()).rounded()
-        .borderColor(Color.YELLOW)
+<pre><code>dialog("Confirm Delete",
+    text("Delete 3 files?"),
+    text("[y] Yes  [n] No").dim()
+).rounded().borderColor(Color.YELLOW)
 </code></pre></div>
 </div>
 </section>
@@ -616,9 +616,9 @@ Can also be set via CSS <code>spacing</code> property.</div>
  boolean&nbsp;focused)</span></div>
 <div class="block">Handles key events for the dialog.
 <p>
-Routes events to children first (via ContainerElement). Then handles Enter
-for confirm and Escape for cancel. Being modal, the dialog consumes all key
-events.</div>
+Routes events to children first (via ContainerElement).
+Then handles Enter for confirm and Escape for cancel.
+Being modal, the dialog consumes all key events.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">handleKeyEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -639,8 +639,8 @@ events.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></span>&nbsp;<span class="element-name">constraint</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#constraint()">Element</a></code></span></div>
-<div class="block">Returns the layout constraint for this element, if any. Used by container
-elements to determine sizing.</div>
+<div class="block">Returns the layout constraint for this element, if any.
+Used by container elements to determine sizing.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#constraint()">constraint</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -658,8 +658,8 @@ elements to determine sizing.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -675,15 +675,15 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleAttributes()">Styleable</a></code></span></div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
-their style attributes. This method returns a map of attribute names to their
-values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements
+based on their style attributes. This method returns a map of
+attribute names to their values.
 <p>
 Common attributes include:
 <ul>
-<li><code>title</code> - the element's title</li>
-<li><code>label</code> - the element's label</li>
-<li><code>placeholder</code> - the element's placeholder text</li>
+  <li><code>title</code> - the element's title</li>
+  <li><code>label</code> - the element's label</li>
+  <li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -691,8 +691,7 @@ Common attributes include:
 <dt>Overrides:</dt>
 <dd><code><a href="../element/StyledElement.html#styleAttributes()">styleAttributes</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be
-        empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
 </dl>
 </div>
 </section>
@@ -707,9 +706,9 @@ Common attributes include:
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a>&gt;</code></dd>

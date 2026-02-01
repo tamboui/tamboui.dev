@@ -116,39 +116,33 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">GridElement</span>
 <span class="extends-implements">extends <a href="../element/ContainerElement.html" title="class in dev.tamboui.toolkit.element">ContainerElement</a>&lt;<a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a>&gt;</span></div>
-<div class="block">A CSS Grid-inspired layout container that arranges children into a grid with
-explicit control over grid dimensions, per-column/per-row sizing constraints,
-and gutter spacing.
+<div class="block">A CSS Grid-inspired layout container that arranges children into a grid
+with explicit control over grid dimensions, per-column/per-row sizing
+constraints, and gutter spacing.
 <p>
-Unlike <a href="ColumnsElement.html" title="class in dev.tamboui.toolkit.elements"><code>ColumnsElement</code></a> (which auto-calculates column count from child
-widths), GridElement provides explicit control over grid dimensions via
-<a href="#gridSize(int,int)"><code>gridSize(int, int)</code></a>, per-column constraints via
-<a href="#gridColumns(dev.tamboui.layout.Constraint...)"><code>gridColumns(Constraint...)</code></a>, per-row constraints via
-<a href="#gridRows(dev.tamboui.layout.Constraint...)"><code>gridRows(Constraint...)</code></a>, and gutter spacing via
-<a href="#gutter(int)"><code>gutter(int)</code></a>.
+Unlike <a href="ColumnsElement.html" title="class in dev.tamboui.toolkit.elements"><code>ColumnsElement</code></a> (which auto-calculates column count from child widths),
+GridElement provides explicit control over grid dimensions via <a href="#gridSize(int,int)"><code>gridSize(int, int)</code></a>,
+per-column constraints via <a href="#gridColumns(dev.tamboui.layout.Constraint...)"><code>gridColumns(Constraint...)</code></a>, per-row constraints
+via <a href="#gridRows(dev.tamboui.layout.Constraint...)"><code>gridRows(Constraint...)</code></a>, and gutter spacing via <a href="#gutter(int)"><code>gutter(int)</code></a>.
 <p>
 When grid-size is not set, auto-sizing uses <code>ceil(sqrt(n))</code> columns.
 Column/row constraints cycle when fewer constraints than grid dimensions
 (matching Textual behavior).
 <p>
-All layout properties can be set via CSS or programmatically. Programmatic
-values override CSS values when both are set.
+All layout properties can be set via CSS or programmatically.
+Programmatic values override CSS values when both are set.
 <p>
 Supported CSS properties:
 <ul>
-<li><code>grid-size</code> — "3" (3 columns, auto rows) or "3 4" (3 columns, 4
-rows)</li>
-<li><code>grid-columns</code> — space-separated constraint list, e.g. "fill
-fill(2) 20"</li>
-<li><code>grid-rows</code> — space-separated constraint list, e.g. "2 3"</li>
-<li><code>grid-gutter</code> — "2" (uniform) or "1 2" (horizontal vertical)</li>
-<li><code>flex</code> — "start", "center", "end", "space-between", "space-around",
-"space-evenly"</li>
-<li><code>margin</code> — margin around the grid</li>
+  <li><code>grid-size</code> — "3" (3 columns, auto rows) or "3 4" (3 columns, 4 rows)</li>
+  <li><code>grid-columns</code> — space-separated constraint list, e.g. "fill fill(2) 20"</li>
+  <li><code>grid-rows</code> — space-separated constraint list, e.g. "2 3"</li>
+  <li><code>grid-gutter</code> — "2" (uniform) or "1 2" (horizontal vertical)</li>
+  <li><code>flex</code> — "start", "center", "end", "space-between", "space-around", "space-evenly"</li>
+  <li><code>margin</code> — margin around the grid</li>
 </ul>
 <p>
 Example usage:
-
 <pre>
 grid(text("A"), text("B"), text("C"), text("D")).gridSize(2).gutter(1)
 </pre></div>
@@ -242,8 +236,8 @@ grid(text("A"), text("B"), text("C"), text("D")).gridSize(2).gutter(1)
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flex(dev.tamboui.layout.Flex)" class="member-name-link">flex</a><wbr>(<a href="../../layout/Flex.html" title="enum class in dev.tamboui.layout">Flex</a>&nbsp;flex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets how remaining space is distributed when grid constraints don't fill the
-available area.</div>
+<div class="block">Sets how remaining space is distributed when grid constraints
+don't fill the available area.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gridAreas(java.lang.String...)" class="member-name-link">gridAreas</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;rowTemplates)</code></div>
@@ -296,8 +290,7 @@ available area.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element given an available width and
-render context.</div>
+<div class="block">Returns the preferred height of this element given an available width and render context.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
@@ -385,8 +378,8 @@ render context.</div>
 <p>
 Value format: semicolon-separated rows or quoted strings.
 <ul>
-<li>Semicolon format: <code>"A A B; A A C; D D D"</code></li>
-<li>Quoted format: <code>"A A B" "A A C" "D D D"</code></li>
+  <li>Semicolon format: <code>"A A B; A A C; D D D"</code></li>
+  <li>Quoted format: <code>"A A B" "A A C" "D D D"</code></li>
 </ul></div>
 </div>
 </section>
@@ -575,8 +568,8 @@ If fewer constraints than rows, the constraints cycle.</div>
 <h3>flex</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">flex</span><wbr><span class="parameters">(<a href="../../layout/Flex.html" title="enum class in dev.tamboui.layout">Flex</a>&nbsp;flex)</span></div>
-<div class="block">Sets how remaining space is distributed when grid constraints don't fill the
-available area.</div>
+<div class="block">Sets how remaining space is distributed when grid constraints
+don't fill the available area.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>flex</code> - the flex mode for space distribution</dd>
@@ -599,15 +592,20 @@ available area.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a></span>&nbsp;<span class="element-name">gridAreas</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;rowTemplates)</span></div>
 <div class="block">Defines the grid layout using CSS grid-template-areas style strings.
 <p>
-Each string represents a row. Area names are space-separated tokens. Use "."
-for empty cells. Area names must form contiguous rectangles.
+Each string represents a row. Area names are space-separated tokens.
+Use "." for empty cells. Area names must form contiguous rectangles.
 <p>
 When using area-based layout, use <a href="#area(java.lang.String,dev.tamboui.toolkit.element.Element)"><code>area(String, Element)</code></a> to assign
 elements to named areas instead of adding children directly.
-
-<pre><code>grid().gridAreas("header header header", "nav    main   main", "nav    main   main",
-        "footer footer footer").area("header", text("Header")).area("nav", menu)
-        .area("main", content).area("footer", statusBar)
+<pre><code>grid()
+    .gridAreas("header header header",
+               "nav    main   main",
+               "nav    main   main",
+               "footer footer footer")
+    .area("header", text("Header"))
+    .area("nav", menu)
+    .area("main", content)
+    .area("footer", statusBar)
 </code></pre></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -628,8 +626,8 @@ elements to named areas instead of adding children directly.
  <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element)</span></div>
 <div class="block">Assigns an element to a named area.
 <p>
-Must be called after <a href="#gridAreas(java.lang.String...)"><code>gridAreas(String...)</code></a>. Areas without assigned
-elements render as empty space.</div>
+Must be called after <a href="#gridAreas(java.lang.String...)"><code>gridAreas(String...)</code></a>.
+Areas without assigned elements render as empty space.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>areaName</code> - the area name from the template</dd>
@@ -649,8 +647,8 @@ elements render as empty space.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -665,16 +663,13 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element given an available width and
-render context.
+<div class="block">Returns the preferred height of this element given an available width and render context.
 <p>
 This is useful for elements that may wrap content (like text) where the
 height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via
-CSS.
+height calculation where properties like <code>text-overflow</code> may be set via CSS.
 <p>
-When context is null, implementations should use programmatic property values
-only.</div>
+When context is null, implementations should use programmatic property values only.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>availableWidth</code> - the available width in cells</dd>
@@ -695,9 +690,9 @@ only.</div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="GridElement.html" title="class in dev.tamboui.toolkit.elements">GridElement</a>&gt;</code></dd>

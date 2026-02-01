@@ -115,19 +115,19 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Represents the current pseudo-class state of an element.
 <p>
-This is used during selector matching to determine if pseudo-class selectors
-like :focus, :hover, :disabled match the element.
+This is used during selector matching to determine if pseudo-class
+selectors like :focus, :hover, :disabled match the element.
 <p>
 For positional pseudo-classes like :nth-child(even), the nthChild field
 stores the 1-based position (0 means position is not set).
 <p>
 <b>Usage Context:</b>
 <ul>
-<li><b>CSS Styling (during render):</b> All pseudo-classes work via
-<code>RenderContext.childStyle()</code> which accepts position and state</li>
-<li><b>TFX Effects (post-render):</b> Only <code>:focus</code> is supported
-because it's tracked by FocusManager. Other pseudo-classes require
-state/position info that isn't preserved after rendering.</li>
+  <li><b>CSS Styling (during render):</b> All pseudo-classes work via
+      <code>RenderContext.childStyle()</code> which accepts position and state</li>
+  <li><b>TFX Effects (post-render):</b> Only <code>:focus</code> is supported
+      because it's tracked by FocusManager. Other pseudo-classes require
+      state/position info that isn't preserved after rendering.</li>
 </ul></div>
 </div>
 </section>
@@ -428,8 +428,8 @@ state/position info that isn't preserved after rendering.</li>
 <h3>allMatch</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PseudoClassState.html" title="class in dev.tamboui.css.cascade">PseudoClassState</a></span>&nbsp;<span class="element-name">allMatch</span>()</div>
-<div class="block">Returns a state with all pseudo-classes matching. Useful for
-lenient/structural matching where pseudo-class state should be ignored.</div>
+<div class="block">Returns a state with all pseudo-classes matching.
+Useful for lenient/structural matching where pseudo-class state should be ignored.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a pseudo-class state with all flags set to true</dd>

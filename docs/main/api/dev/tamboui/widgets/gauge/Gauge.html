@@ -92,17 +92,19 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Gauge</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
-<div class="block">A progress bar widget that renders a bar filled according to the progress
-value.
+<div class="block">A progress bar widget that renders a bar filled according to the progress value.
 <p>
-Progress can be set as a percentage (0-100) or as a ratio (0.0-1.0). The
-gauge can optionally display a label centered in the bar.
+Progress can be set as a percentage (0-100) or as a ratio (0.0-1.0).
+The gauge can optionally display a label centered in the bar.
 <p>
 When unicode mode is enabled, the widget uses block characters for smoother
 visual progression with 8 extra fractional parts per cell.
 
-<pre><code>Gauge gauge = Gauge.builder().percent(75).label("75%").gaugeStyle(Style.EMPTY.fg(Color.GREEN))
-        .build();
+<pre><code>Gauge gauge = Gauge.builder()
+    .percent(75)
+    .label("75%")
+    .gaugeStyle(Style.EMPTY.fg(Color.GREEN))
+    .build();
 </code></pre></div>
 </div>
 </section>

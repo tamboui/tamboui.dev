@@ -95,21 +95,17 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Cassowary constraint solver using the dual simplex method.
 
-<p>
-The solver maintains a tableau of linear equations and supports:
+<p>The solver maintains a tableau of linear equations and supports:
 <ul>
-<li>Adding and removing constraints dynamically</li>
-<li>Suggesting values for edit variables</li>
-<li>Hierarchical constraint priorities</li>
+  <li>Adding and removing constraints dynamically</li>
+  <li>Suggesting values for edit variables</li>
+  <li>Hierarchical constraint priorities</li>
 </ul>
 
-<p>
-This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic, avoiding the
-cumulative rounding errors that occur with floating-point.
+<p>This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic,
+avoiding the cumulative rounding errors that occur with floating-point.
 
-<p>
-Example usage:
-
+<p>Example usage:
 <pre>
 Solver solver = new Solver();
 Variable left = new Variable("left");
@@ -117,11 +113,15 @@ Variable width = new Variable("width");
 Variable right = new Variable("right");
 
 // right == left + width (required)
-solver.addConstraint(Expression.variable(right)
-        .equalTo(Expression.variable(left).plus(Expression.variable(width)), Strength.REQUIRED));
+solver.addConstraint(
+    Expression.variable(right)
+        .equalTo(Expression.variable(left).plus(Expression.variable(width)),
+                 Strength.REQUIRED));
 
 // width &gt;= 100 (required)
-solver.addConstraint(Expression.variable(width).greaterThanOrEqual(100, Strength.REQUIRED));
+solver.addConstraint(
+    Expression.variable(width)
+        .greaterThanOrEqual(100, Strength.REQUIRED));
 
 solver.updateVariables();
 Fraction resolvedWidth = solver.valueOf(width);
@@ -374,8 +374,7 @@ Fraction resolvedWidth = solver.valueOf(width);
  <a href="../Fraction.html" title="class in dev.tamboui.layout">Fraction</a>&nbsp;value)</span></div>
 <div class="block">Suggests a new value for an edit variable.
 
-<p>
-Call <a href="#updateVariables()"><code>updateVariables()</code></a> after suggesting values.</div>
+<p>Call <a href="#updateVariables()"><code>updateVariables()</code></a> after suggesting values.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>variable</code> - the edit variable</dd>
@@ -393,8 +392,7 @@ Call <a href="#updateVariables()"><code>updateVariables()</code></a> after sugge
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateVariables</span>()</div>
 <div class="block">Updates all variable values after constraint changes.
 
-<p>
-Must be called before reading variable values.</div>
+<p>Must be called before reading variable values.</div>
 </div>
 </section>
 </li>

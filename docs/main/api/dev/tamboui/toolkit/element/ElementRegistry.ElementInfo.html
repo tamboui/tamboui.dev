@@ -241,8 +241,8 @@ Implements <a href="../../css/Styleable.html" title="interface in dev.tamboui.cs
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleType()">Styleable</a></code></span></div>
 <div class="block">Returns the style type name used for type selectors.
 <p>
-For example, a Panel element would return "Panel" to match the CSS selector
-<code>Panel { ... }</code>.</div>
+For example, a Panel element would return "Panel" to match
+the CSS selector <code>Panel { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#styleType()">styleType</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -260,8 +260,8 @@ For example, a Panel element would return "Panel" to match the CSS selector
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssId()">Styleable</a></code></span></div>
 <div class="block">Returns the element ID for ID selectors.
 <p>
-For example, an element with ID "sidebar" would be matched by the CSS
-selector <code>#sidebar { ... }</code>.</div>
+For example, an element with ID "sidebar" would be matched
+by the CSS selector <code>#sidebar { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssId()">cssId</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -279,8 +279,8 @@ selector <code>#sidebar { ... }</code>.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssClasses()">Styleable</a></code></span></div>
 <div class="block">Returns the CSS classes assigned to this element.
 <p>
-For example, an element with class "primary" would be matched by the CSS
-selector <code>.primary { ... }</code>.</div>
+For example, an element with class "primary" would be matched
+by the CSS selector <code>.primary { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssClasses()">cssClasses</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -298,8 +298,8 @@ selector <code>.primary { ... }</code>.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#cssParent()">Styleable</a></code></span></div>
 <div class="block">Returns the parent element in the style hierarchy.
 <p>
-Used for descendant and child combinator selectors like <code>Panel Button {
-... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
+Used for descendant and child combinator selectors like
+<code>Panel Button { ... }</code> or <code>Panel &gt; Button { ... }</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#cssParent()">cssParent</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
@@ -317,22 +317,21 @@ Used for descendant and child combinator selectors like <code>Panel Button {
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../css/Styleable.html#styleAttributes()">Styleable</a></code></span></div>
 <div class="block">Returns the style attributes for attribute selector matching.
 <p>
-Attribute selectors like <code>Panel[title="Test"]</code> match elements based on
-their style attributes. This method returns a map of attribute names to their
-values.
+Attribute selectors like <code>Panel[title="Test"]</code> match elements
+based on their style attributes. This method returns a map of
+attribute names to their values.
 <p>
 Common attributes include:
 <ul>
-<li><code>title</code> - the element's title</li>
-<li><code>label</code> - the element's label</li>
-<li><code>placeholder</code> - the element's placeholder text</li>
+  <li><code>title</code> - the element's title</li>
+  <li><code>label</code> - the element's label</li>
+  <li><code>placeholder</code> - the element's placeholder text</li>
 </ul></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../css/Styleable.html#styleAttributes()">styleAttributes</a></code>&nbsp;in interface&nbsp;<code><a href="../../css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a></code></dd>
 <dt>Returns:</dt>
-<dd>an unmodifiable map of attribute names to values (never null, may be
-        empty)</dd>
+<dd>an unmodifiable map of attribute names to values (never null, may be empty)</dd>
 </dl>
 </div>
 </section>

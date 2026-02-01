@@ -104,8 +104,7 @@ position-specific alpha values with smooth gradient transitions.</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(float)" class="member-name-link">TransitionProgress</a><wbr>(float&nbsp;width)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new transition progress handler with the specified transition
-width.</div>
+<div class="block">Creates a new transition progress handler with the specified transition width.</div>
 </div>
 </div>
 </section>
@@ -126,8 +125,7 @@ width.</div>
  float&nbsp;distance,
  float&nbsp;maxRange)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Maps radial patterns where smaller distances (closer to center) should be
-more active.</div>
+<div class="block">Maps radial patterns where smaller distances (closer to center) should be more active.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mapSpatial(float,float,float)" class="member-name-link">mapSpatial</a><wbr>(float&nbsp;globalAlpha,
@@ -140,8 +138,7 @@ more active.</div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mapThreshold(float,float)" class="member-name-link">mapThreshold</a><wbr>(float&nbsp;globalAlpha,
  float&nbsp;cellThreshold)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Maps discrete threshold patterns where cells have distinct activation
-thresholds.</div>
+<div class="block">Maps discrete threshold patterns where cells have distinct activation thresholds.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#transitionWidth()" class="member-name-link">transitionWidth</a>()</code></div>
@@ -170,12 +167,10 @@ thresholds.</div>
 <h3>TransitionProgress</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TransitionProgress</span><wbr><span class="parameters">(float&nbsp;width)</span></div>
-<div class="block">Creates a new transition progress handler with the specified transition
-width.</div>
+<div class="block">Creates a new transition progress handler with the specified transition width.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>width</code> - Width of the gradient transition zone in terminal cells (minimum
-           0.1)</dd>
+<dd><code>width</code> - Width of the gradient transition zone in terminal cells (minimum 0.1)</dd>
 </dl>
 </div>
 </section>
@@ -217,8 +212,7 @@ progression along some spatial dimension with a defined range.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">mapRadial</span><wbr><span class="parameters">(float&nbsp;globalAlpha,
  float&nbsp;distance,
  float&nbsp;maxRange)</span></div>
-<div class="block">Maps radial patterns where smaller distances (closer to center) should be
-more active.</div>
+<div class="block">Maps radial patterns where smaller distances (closer to center) should be more active.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>globalAlpha</code> - Global animation progress (0.0-1.0)</dd>
@@ -236,16 +230,14 @@ more active.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">mapThreshold</span><wbr><span class="parameters">(float&nbsp;globalAlpha,
  float&nbsp;cellThreshold)</span></div>
-<div class="block">Maps discrete threshold patterns where cells have distinct activation
-thresholds.
+<div class="block">Maps discrete threshold patterns where cells have distinct activation thresholds.
 <p>
 Used for patterns like checkerboard where cells belong to discrete categories
 with specific threshold values.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>globalAlpha</code> - Global animation progress (0.0-1.0)</dd>
-<dd><code>cellThreshold</code> - The discrete threshold for this cell (e.g., 0.0 for white, 0.5 for
-           black)</dd>
+<dd><code>cellThreshold</code> - The discrete threshold for this cell (e.g., 0.0 for white, 0.5 for black)</dd>
 <dt>Returns:</dt>
 <dd>The mapped alpha value (0.0-1.0)</dd>
 </dl>

@@ -93,9 +93,8 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A mutable cell wrapper that allows modifying cells in the buffer.
 <p>
-This class is designed to be reused across iterations to avoid object
-allocation. Call <code>reset(int, int, Cell)</code> to prepare it for a new cell
-position.</div>
+This class is designed to be reused across iterations to avoid object allocation.
+Call <code>reset(int, int, Cell)</code> to prepare it for a new cell position.</div>
 </div>
 </section>
 <section class="summary">
@@ -211,8 +210,8 @@ position.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../layout/Position.html" title="class in dev.tamboui.layout">Position</a></span>&nbsp;<span class="element-name">position</span>()</div>
 <div class="block">Returns a Position object for this cell.
 <p>
-Note: This creates a new Position object. Prefer using <a href="#x()"><code>x()</code></a> and
-<a href="#y()"><code>y()</code></a> when possible to avoid allocation.</div>
+Note: This creates a new Position object. Prefer using <a href="#x()"><code>x()</code></a> and <a href="#y()"><code>y()</code></a>
+when possible to avoid allocation.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the position</dd>
@@ -279,8 +278,8 @@ Note: This creates a new Position object. Prefer using <a href="#x()"><code>x()<
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setFg</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the cell's foreground color directly.
 <p>
-This is more efficient than creating a Style and calling patchStyle when only
-the foreground color needs to change.</div>
+This is more efficient than creating a Style and calling patchStyle
+when only the foreground color needs to change.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>color</code> - the foreground color</dd>
@@ -295,8 +294,8 @@ the foreground color needs to change.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBg</span><wbr><span class="parameters">(<a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
 <div class="block">Sets the cell's background color directly.
 <p>
-This is more efficient than creating a Style and calling patchStyle when only
-the background color needs to change.</div>
+This is more efficient than creating a Style and calling patchStyle
+when only the background color needs to change.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>color</code> - the background color</dd>

@@ -84,16 +84,20 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Flow</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a></span></div>
-<div class="block">A wrap layout widget where items flow left-to-right and wrap to the next line
-when exceeding the available width.
+<div class="block">A wrap layout widget where items flow left-to-right and wrap to the
+next line when exceeding the available width.
 <p>
-Useful for tag clouds, button groups, chip lists, and similar layouts where
-items should wrap naturally.
+Useful for tag clouds, button groups, chip lists, and similar layouts
+where items should wrap naturally.
 <p>
 Example usage:
-
-<pre><code>Flow flow = Flow.builder().item(tagWidget1, 8).item(tagWidget2, 12).item(tagWidget3, 6)
-        .horizontalSpacing(1).verticalSpacing(1).build();
+<pre><code>Flow flow = Flow.builder()
+    .item(tagWidget1, 8)
+    .item(tagWidget2, 12)
+    .item(tagWidget3, 6)
+    .horizontalSpacing(1)
+    .verticalSpacing(1)
+    .build();
 
 flow.render(area, buffer);
 </code></pre></div>

@@ -85,14 +85,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">AnsiStringBuilder</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Utility class for building ANSI-escaped strings from styled content. This
-class provides methods to convert TamboUI styles to ANSI escape sequences
-that can be used for direct terminal output without requiring the full TUI
-system.
+<div class="block">Utility class for building ANSI-escaped strings from styled content.
+This class provides methods to convert TamboUI styles to ANSI escape sequences
+that can be used for direct terminal output without requiring the full TUI system.
 
-<p>
-Example usage:
-
+<p>Example usage:
 <pre><code>Style style = Style.create().fg(Color.GREEN).bold();
 String ansi = AnsiStringBuilder.styleToAnsi(style);
 System.out.print(ansi + "Hello, World!" + AnsiStringBuilder.RESET);
@@ -142,8 +139,7 @@ System.out.print(ansi + "Hello, World!" + AnsiStringBuilder.RESET);
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#styleToAnsi(dev.tamboui.style.Style)" class="member-name-link">styleToAnsi</a><wbr>(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts a <a href="../style/Style.html" title="class in dev.tamboui.style"><code>Style</code></a> to an ANSI SGR (Select Graphic Rendition) escape
-sequence.</div>
+<div class="block">Converts a <a href="../style/Style.html" title="class in dev.tamboui.style"><code>Style</code></a> to an ANSI SGR (Select Graphic Rendition) escape sequence.</div>
 </div>
 </div>
 </div>
@@ -192,9 +188,9 @@ sequence.</div>
 <h3>styleToAnsi</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">styleToAnsi</span><wbr><span class="parameters">(<a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
-<div class="block">Converts a <a href="../style/Style.html" title="class in dev.tamboui.style"><code>Style</code></a> to an ANSI SGR (Select Graphic Rendition) escape
-sequence. The returned string includes the complete escape sequence including
-the reset prefix and the 'm' terminator.</div>
+<div class="block">Converts a <a href="../style/Style.html" title="class in dev.tamboui.style"><code>Style</code></a> to an ANSI SGR (Select Graphic Rendition) escape sequence.
+The returned string includes the complete escape sequence including the reset prefix
+and the 'm' terminator.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>style</code> - the style to convert</dd>
@@ -211,8 +207,8 @@ the reset prefix and the 'm' terminator.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">hyperlinkStart</span><wbr><span class="parameters">(<a href="../style/Hyperlink.html" title="class in dev.tamboui.style">Hyperlink</a>&nbsp;hyperlink)</span></div>
 <div class="block">Generates an OSC8 hyperlink escape sequence to start a hyperlink.
 <p>
-OSC8 format: <code>\033]8;id=&lt;id&gt;;&lt;url&gt;\033\\</code> If no ID is provided, the
-format is: <code>\033]8;;&lt;url&gt;\033\\</code></div>
+OSC8 format: <code>\033]8;id=&lt;id&gt;;&lt;url&gt;\033\\</code>
+If no ID is provided, the format is: <code>\033]8;;&lt;url&gt;\033\\</code></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>hyperlink</code> - the hyperlink to generate a sequence for</dd>

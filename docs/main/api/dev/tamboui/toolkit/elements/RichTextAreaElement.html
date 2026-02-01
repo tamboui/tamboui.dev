@@ -131,21 +131,20 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a>&gt;</span></div>
 <div class="block">A toolkit element for displaying styled text with scrolling support.
 <p>
-This element provides internal scroll state management and keyboard/mouse
-event handling. It accepts pre-styled <a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a> objects, enabling syntax
-highlighting, markup rendering, and other rich text features.
+This element provides internal scroll state management and keyboard/mouse event handling.
+It accepts pre-styled <a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a> objects, enabling syntax highlighting, markup rendering,
+and other rich text features.
 <p>
 Unlike <a href="TextElement.html" title="class in dev.tamboui.toolkit.elements"><code>TextElement</code></a>, this element:
 <ul>
-<li>Accepts <a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a> objects with multiple styled <a href="../../text/Span.html" title="class in dev.tamboui.text"><code>Span</code></a>s</li>
-<li>Supports vertical scrolling with automatic scroll state</li>
-<li>Handles keyboard navigation (UP/DOWN/PAGE_UP/PAGE_DOWN/HOME/END)</li>
-<li>Handles mouse scroll events</li>
-<li>Optionally displays line numbers</li>
+  <li>Accepts <a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a> objects with multiple styled <a href="../../text/Span.html" title="class in dev.tamboui.text"><code>Span</code></a>s</li>
+  <li>Supports vertical scrolling with automatic scroll state</li>
+  <li>Handles keyboard navigation (UP/DOWN/PAGE_UP/PAGE_DOWN/HOME/END)</li>
+  <li>Handles mouse scroll events</li>
+  <li>Optionally displays line numbers</li>
 </ul>
 <p>
 Example usage:
-
 <pre><code>import static dev.tamboui.toolkit.Toolkit.*;
 
 Text styledText = Text.from(
@@ -162,12 +161,9 @@ richTextArea(styledText)
 
 <h2 id="css-child-selectors-heading">CSS Child Selectors</h2>
 <ul>
-<li><code>RichTextAreaElement-line-number</code> - The line number style (default:
-dim)</li>
-<li><code>RichTextAreaElement-scrollbar-thumb</code> - The scrollbar thumb
-style</li>
-<li><code>RichTextAreaElement-scrollbar-track</code> - The scrollbar track
-style</li>
+  <li><code>RichTextAreaElement-line-number</code> - The line number style (default: dim)</li>
+  <li><code>RichTextAreaElement-scrollbar-thumb</code> - The scrollbar thumb style</li>
+  <li><code>RichTextAreaElement-scrollbar-track</code> - The scrollbar track style</li>
 </ul></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -322,8 +318,7 @@ style</li>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element given an available width and
-render context.</div>
+<div class="block">Returns the preferred height of this element given an available width and render context.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
@@ -854,8 +849,8 @@ render context.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -869,8 +864,8 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></span>&nbsp;<span class="element-name">constraint</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#constraint()">Element</a></code></span></div>
-<div class="block">Returns the layout constraint for this element, if any. Used by container
-elements to determine sizing.</div>
+<div class="block">Returns the layout constraint for this element, if any.
+Used by container elements to determine sizing.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#constraint()">constraint</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -888,8 +883,8 @@ elements to determine sizing.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred height of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred height, or 0 if not applicable</dd>
@@ -904,16 +899,13 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element given an available width and
-render context.
+<div class="block">Returns the preferred height of this element given an available width and render context.
 <p>
 This is useful for elements that may wrap content (like text) where the
 height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via
-CSS.
+height calculation where properties like <code>text-overflow</code> may be set via CSS.
 <p>
-When context is null, implementations should use programmatic property values
-only.</div>
+When context is null, implementations should use programmatic property values only.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>availableWidth</code> - the available width in cells</dd>
@@ -934,9 +926,9 @@ only.</div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements">RichTextAreaElement</a>&gt;</code></dd>
@@ -955,8 +947,8 @@ current style (CSS + inline, merged with parent styles) is available via
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleKeyEvent</span><wbr><span class="parameters">(<a href="../../tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a>&nbsp;event,
  boolean&nbsp;focused)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">Element</a></code></span></div>
-<div class="block">Handles a key event on this element. Override to handle key events directly
-on the element.</div>
+<div class="block">Handles a key event on this element.
+Override to handle key events directly on the element.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)">handleKeyEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -977,8 +969,8 @@ on the element.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handleMouseEvent</span><wbr><span class="parameters">(<a href="../../tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a>&nbsp;event)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)">Element</a></code></span></div>
-<div class="block">Handles a mouse event on this element. Override to handle mouse events
-directly on the element.</div>
+<div class="block">Handles a mouse event on this element.
+Override to handle mouse events directly on the element.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)">handleMouseEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>

@@ -92,12 +92,12 @@ loadScripts(document, 'script');</script>
 implements <a href="DateStyler.html" title="interface in dev.tamboui.widgets.calendar">DateStyler</a></span></div>
 <div class="block">A simple <a href="DateStyler.html" title="interface in dev.tamboui.widgets.calendar"><code>DateStyler</code></a> implementation backed by a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link"><code>HashMap</code></a>.
 <p>
-Allows storing styles for specific dates and retrieving them during calendar
-rendering.
+Allows storing styles for specific dates and retrieving them during
+calendar rendering.
 
 <pre><code>CalendarEventStore events = CalendarEventStore.today(Style.EMPTY.fg(Color.RED).bold())
-        .add(LocalDate.of(2025, 12, 25), Style.EMPTY.fg(Color.GREEN))
-        .add(LocalDate.of(2025, 1, 1), Style.EMPTY.fg(Color.YELLOW));
+    .add(LocalDate.of(2025, 12, 25), Style.EMPTY.fg(Color.GREEN))
+    .add(LocalDate.of(2025, 1, 1), Style.EMPTY.fg(Color.YELLOW));
 
 Monthly calendar = Monthly.of(LocalDate.now(), events);
 </code></pre></div>

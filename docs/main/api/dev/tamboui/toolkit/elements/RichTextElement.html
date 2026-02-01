@@ -108,14 +108,13 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a>&gt;</span></div>
 <div class="block">A simple inline element for displaying styled <a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a>.
 <p>
-This element is similar to <a href="TextElement.html" title="class in dev.tamboui.toolkit.elements"><code>TextElement</code></a> but accepts pre-styled
-<a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a> objects with multiple <a href="../../text/Span.html" title="class in dev.tamboui.text"><code>Span</code></a>s, enabling syntax
-highlighting, markup rendering, and other rich text features.
+This element is similar to <a href="TextElement.html" title="class in dev.tamboui.toolkit.elements"><code>TextElement</code></a> but accepts pre-styled <a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a>
+objects with multiple <a href="../../text/Span.html" title="class in dev.tamboui.text"><code>Span</code></a>s, enabling syntax highlighting, markup rendering,
+and other rich text features.
 <p>
 For scrollable rich text with borders, see <a href="RichTextAreaElement.html" title="class in dev.tamboui.toolkit.elements"><code>RichTextAreaElement</code></a>.
 <p>
 Example usage:
-
 <pre><code>import static dev.tamboui.toolkit.Toolkit.*;
 
 Text styledText = Text.from(
@@ -485,8 +484,8 @@ richText(styledText)
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../layout/Constraint.html" title="interface in dev.tamboui.layout">Constraint</a></span>&nbsp;<span class="element-name">constraint</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#constraint()">Element</a></code></span></div>
-<div class="block">Returns the layout constraint for this element, if any. Used by container
-elements to determine sizing.</div>
+<div class="block">Returns the layout constraint for this element, if any.
+Used by container elements to determine sizing.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/Element.html#constraint()">constraint</a></code>&nbsp;in interface&nbsp;<code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></dd>
@@ -504,8 +503,8 @@ elements to determine sizing.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred width of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred width, or 0 if not applicable</dd>
@@ -519,8 +518,8 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells. Used when the element
-has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="block">Returns the preferred height of this element in cells.
+Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the preferred height, or 0 if not applicable</dd>
@@ -538,9 +537,9 @@ has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.lay
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">StyledElement</a></code></span></div>
 <div class="block">Renders the content of this element.
 <p>
-Subclasses implement this method to perform their specific rendering. The
-current style (CSS + inline, merged with parent styles) is available via
-<a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
+Subclasses implement this method to perform their specific rendering.
+The current style (CSS + inline, merged with parent styles) is available
+via <a href="../element/RenderContext.html#currentStyle()"><code>RenderContext.currentStyle()</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../element/StyledElement.html#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)">renderContent</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="RichTextElement.html" title="class in dev.tamboui.toolkit.elements">RichTextElement</a>&gt;</code></dd>

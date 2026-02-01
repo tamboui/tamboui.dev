@@ -99,11 +99,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ExpandShader</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></span></div>
-<div class="block">A shader that applies bidirectional expansion effects using two opposing
-stretch shaders.
+<div class="block">A shader that applies bidirectional expansion effects using two opposing stretch shaders.
 <p>
-Creates expansion animations that grow outward from the center in both
-directions simultaneously, either horizontally or vertically.</div>
+Creates expansion animations that grow outward from the center in both directions
+simultaneously, either horizontally or vertically.</div>
 </div>
 </section>
 <section class="summary">
@@ -271,21 +270,20 @@ directions simultaneously, either horizontally or vertically.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">Shader</a></code></span></div>
 <div class="block">Processes the shader for the given duration.
 <p>
-The default implementation: 1. Updates the timer with the given duration (if
-a timer exists) 2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state 3. Returns
-any overflow duration
+The default implementation:
+1. Updates the timer with the given duration (if a timer exists)
+2. Calls <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> with the current state
+3. Returns any overflow duration
 <p>
-Most effects should use this default implementation and implement
-<a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a> instead. Only override this if you need custom timer
-handling.</div>
+Most effects should use this default implementation and implement <a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)"><code>Shader.execute(TFxDuration, Rect, Buffer)</code></a>
+instead. Only override this if you need custom timer handling.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.buffer.Buffer,dev.tamboui.layout.Rect)">process</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The duration to process the shader for</dd>
 <dd><code>buffer</code> - The buffer where the shader will be applied</dd>
-<dd><code>area</code> - The rectangular area within the buffer where the shader will be
-           applied</dd>
+<dd><code>area</code> - The rectangular area within the buffer where the shader will be applied</dd>
 <dt>Returns:</dt>
 <dd>The overflow duration if the shader is done, or null if still running</dd>
 </dl>
@@ -309,8 +307,7 @@ default <a href="../Shader.html#process(dev.tamboui.tfx.TFxDuration,dev.tamboui.
 <dd><code><a href="../Shader.html#execute(dev.tamboui.tfx.TFxDuration,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)">execute</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>duration</code> - The duration to process the shader for</dd>
-<dd><code>area</code> - The rectangular area within the buffer where the shader will be
-           applied</dd>
+<dd><code>area</code> - The rectangular area within the buffer where the shader will be applied</dd>
 <dd><code>buffer</code> - The buffer where the shader will be applied</dd>
 </dl>
 </div>
@@ -438,8 +435,8 @@ This is used internally for timer updates.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Shader.html#reverse()">Shader</a></code></span></div>
 <div class="block">Reverses the shader's playback direction.
 <p>
-This method reverses the timer direction, causing the effect to play
-backwards. The default implementation reverses the timer if one exists.</div>
+This method reverses the timer direction, causing the effect to play backwards.
+The default implementation reverses the timer if one exists.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Shader.html#reverse()">reverse</a></code>&nbsp;in interface&nbsp;<code><a href="../Shader.html" title="interface in dev.tamboui.tfx">Shader</a></code></dd>

@@ -103,9 +103,9 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Buffer</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">A buffer that stores cells for a rectangular area. Widgets render to a
-Buffer, and the Terminal calculates diffs between buffers to minimize updates
-sent to the backend.</div>
+<div class="block">A buffer that stores cells for a rectangular area.
+Widgets render to a Buffer, and the Terminal calculates diffs between buffers
+to minimize updates sent to the backend.</div>
 </div>
 </section>
 <section class="summary">
@@ -246,14 +246,13 @@ sent to the backend.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toAnsiStringTrimmed()" class="member-name-link">toAnsiStringTrimmed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Renders the buffer content as an ANSI-escaped string, trimming trailing
-whitespace from each line.</div>
+<div class="block">Renders the buffer content as an ANSI-escaped string, trimming trailing whitespace
+from each line.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toAnsiStringWithCursorPositioning()" class="member-name-link">toAnsiStringWithCursorPositioning</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Renders the buffer content as an ANSI-escaped string using explicit cursor
-positioning.</div>
+<div class="block">Renders the buffer content as an ANSI-escaped string using explicit cursor positioning.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -322,9 +321,10 @@ positioning.</div>
 <h3>withLines</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Buffer.html" title="class in dev.tamboui.buffer">Buffer</a></span>&nbsp;<span class="element-name">withLines</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;lines)</span></div>
-<div class="block">Creates a buffer from an array of strings. Each string represents a line in
-the buffer. The buffer area is determined by the maximum line width and the
-number of lines. Lines shorter than the maximum width are padded with spaces.</div>
+<div class="block">Creates a buffer from an array of strings.
+Each string represents a line in the buffer.
+The buffer area is determined by the maximum line width and the number of lines.
+Lines shorter than the maximum width are padded with spaces.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>lines</code> - the lines to create the buffer from</dd>
@@ -342,8 +342,8 @@ number of lines. Lines shorter than the maximum width are padded with spaces.</d
 <div class="block">Sets a listener to be notified when styled content is written to this buffer.
 <p>
 The listener receives the style and area for each span written to the buffer.
-This allows external systems (like Frame) to track styled areas for effect
-targeting without Buffer needing to know about registries.</div>
+This allows external systems (like Frame) to track styled areas for
+effect targeting without Buffer needing to know about registries.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>listener</code> - the listener, or null to disable notifications</dd>
@@ -462,19 +462,18 @@ targeting without Buffer needing to know about registries.</div>
  int&nbsp;y,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;string,
  <a href="../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
-<div class="block">Sets a string at the given position with the given style. Returns the x
-position after the last character written.
+<div class="block">Sets a string at the given position with the given style.
+Returns the x position after the last character written.
 <p>
 This method patches the style of existing cells rather than replacing them,
-preserving background colors and other style attributes that were previously
-set. This matches the behavior of ratatui.rs.
+preserving background colors and other style attributes that were previously set.
+This matches the behavior of ratatui.rs.
 <p>
 Handles grapheme clusters correctly:
 <ul>
-<li>ZWJ sequences: characters after ZWJ are appended to the preceding
-cell</li>
-<li>Regional Indicator pairs: combined into a single 2-wide cell</li>
-<li>Skin tone modifiers: appended to preceding cell (zero-width)</li>
+  <li>ZWJ sequences: characters after ZWJ are appended to the preceding cell</li>
+  <li>Regional Indicator pairs: combined into a single 2-wide cell</li>
+  <li>Skin tone modifiers: appended to preceding cell (zero-width)</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -495,11 +494,11 @@ cell</li>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">setSpan</span><wbr><span class="parameters">(int&nbsp;x,
  int&nbsp;y,
  <a href="../text/Span.html" title="class in dev.tamboui.text">Span</a>&nbsp;span)</span></div>
-<div class="block">Sets a span at the given position. Returns the x position after the last
-character written.
+<div class="block">Sets a span at the given position.
+Returns the x position after the last character written.
 <p>
-If a styled content listener is set, it will be notified with the span's
-style and area.</div>
+If a styled content listener is set, it will be notified with the
+span's style and area.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>x</code> - the x coordinate</dd>
@@ -518,8 +517,8 @@ style and area.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">setLine</span><wbr><span class="parameters">(int&nbsp;x,
  int&nbsp;y,
  <a href="../text/Line.html" title="class in dev.tamboui.text">Line</a>&nbsp;line)</span></div>
-<div class="block">Sets a line at the given position. Returns the x position after the last
-character written.</div>
+<div class="block">Sets a line at the given position.
+Returns the x position after the last character written.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>x</code> - the x coordinate</dd>
@@ -618,8 +617,8 @@ character written.</div>
 <h3>diff</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="CellUpdate.html" title="class in dev.tamboui.buffer">CellUpdate</a>&gt;</span>&nbsp;<span class="element-name">diff</span><wbr><span class="parameters">(<a href="Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;other)</span></div>
-<div class="block">Calculates the differences between this buffer and another. Returns a list of
-cell updates needed to transform this buffer into the other.</div>
+<div class="block">Calculates the differences between this buffer and another.
+Returns a list of cell updates needed to transform this buffer into the other.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>other</code> - the buffer to compare with</dd>
@@ -634,13 +633,11 @@ cell updates needed to transform this buffer into the other.</div>
 <h3>toAnsiString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toAnsiString</span>()</div>
-<div class="block">Renders the buffer content as an ANSI-escaped string. Each row becomes a line
-of output with embedded ANSI escape codes for styling. The result can be
-printed directly to stdout without needing the full TUI system.
+<div class="block">Renders the buffer content as an ANSI-escaped string.
+Each row becomes a line of output with embedded ANSI escape codes for styling.
+The result can be printed directly to stdout without needing the full TUI system.
 
-<p>
-Example usage:
-
+<p>Example usage:
 <pre><code>Buffer buffer = Buffer.empty(Rect.of(80, 3));
 myWidget.render(buffer.area(), buffer);
 System.out.println(buffer.toAnsiString());
@@ -657,10 +654,9 @@ System.out.println(buffer.toAnsiString());
 <h3>toAnsiStringWithCursorPositioning</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toAnsiStringWithCursorPositioning</span>()</div>
-<div class="block">Renders the buffer content as an ANSI-escaped string using explicit cursor
-positioning. Each row is preceded by a cursor position escape sequence (CSI
-row;1H) to ensure correct rendering in terminal recording players like
-asciinema.</div>
+<div class="block">Renders the buffer content as an ANSI-escaped string using explicit cursor positioning.
+Each row is preceded by a cursor position escape sequence (CSI row;1H) to ensure
+correct rendering in terminal recording players like asciinema.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an ANSI string representation of the buffer with cursor positioning</dd>
@@ -673,13 +669,12 @@ asciinema.</div>
 <h3>toAnsiStringTrimmed</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toAnsiStringTrimmed</span>()</div>
-<div class="block">Renders the buffer content as an ANSI-escaped string, trimming trailing
-whitespace from each line. This produces cleaner output when the buffer
-contains significant empty space on the right side.</div>
+<div class="block">Renders the buffer content as an ANSI-escaped string, trimming trailing whitespace
+from each line. This produces cleaner output when the buffer contains significant
+empty space on the right side.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>an ANSI string representation of the buffer with trailing spaces
-        removed</dd>
+<dd>an ANSI string representation of the buffer with trailing spaces removed</dd>
 </dl>
 </div>
 </section>

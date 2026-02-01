@@ -88,8 +88,8 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A set of frames that define a spinner animation.
 <p>
-Each frame is a string that will be displayed in sequence to create the
-animation effect. Frames are cycled through repeatedly.
+Each frame is a string that will be displayed in sequence to create
+the animation effect. Frames are cycled through repeatedly.
 
 <pre><code>// Use a predefined style
 SpinnerFrameSet frames = SpinnerStyle.DOTS.frameSet();
@@ -98,7 +98,11 @@ SpinnerFrameSet frames = SpinnerStyle.DOTS.frameSet();
 SpinnerFrameSet custom = SpinnerFrameSet.of("*", "+", "x", "+");
 
 // Use builder for more control
-SpinnerFrameSet custom = SpinnerFrameSet.builder().frame("⠋").frame("⠙").frame("⠹").build();
+SpinnerFrameSet custom = SpinnerFrameSet.builder()
+    .frame("⠋")
+    .frame("⠙")
+    .frame("⠹")
+    .build();
 </code></pre></div>
 </div>
 </section>

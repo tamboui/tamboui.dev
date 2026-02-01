@@ -111,8 +111,8 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Backend</span><span class="extends-implements">
 extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
-<div class="block">Backend interface for terminal operations. Implementations handle the actual
-terminal I/O.</div>
+<div class="block">Backend interface for terminal operations.
+Implementations handle the actual terminal I/O.</div>
 </div>
 </section>
 <section class="summary">
@@ -536,8 +536,8 @@ terminal I/O.</div>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Writes raw bytes directly to the terminal output.
 <p>
-This is used for native image protocols (Sixel, Kitty, iTerm2) that require
-sending escape sequences with binary data.</div>
+This is used for native image protocols (Sixel, Kitty, iTerm2) that
+require sending escape sequences with binary data.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the raw bytes to write</dd>
@@ -555,8 +555,7 @@ sending escape sequences with binary data.</div>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Writes a raw string directly to the terminal output.
 <p>
-This is a convenience method for protocols that work with ASCII escape
-sequences.</div>
+This is a convenience method for protocols that work with ASCII escape sequences.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the string to write</dd>
@@ -638,8 +637,8 @@ The cursor position does not change.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteLines</span><wbr><span class="parameters">(int&nbsp;n)</span>
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Deletes N lines at the current cursor position, pulling lines below up. The
-cursor position does not change.</div>
+<div class="block">Deletes N lines at the current cursor position, pulling lines below up.
+The cursor position does not change.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of lines to delete</dd>
@@ -655,8 +654,8 @@ cursor position does not change.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorUp</span><wbr><span class="parameters">(int&nbsp;n)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Moves the cursor up by N lines. If the cursor is already at the top, this has
-no effect.</div>
+<div class="block">Moves the cursor up by N lines. If the cursor is already at the top,
+this has no effect.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of lines to move up</dd>
@@ -706,8 +705,8 @@ rightmost position, this has no effect.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorLeft</span><wbr><span class="parameters">(int&nbsp;n)</span>
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Moves the cursor left by N columns. If the cursor is already at the leftmost
-position, this has no effect.</div>
+<div class="block">Moves the cursor left by N columns. If the cursor is already at the
+leftmost position, this has no effect.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of columns to move left</dd>
@@ -723,8 +722,8 @@ position, this has no effect.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">eraseToEndOfLine</span>()
                        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Erases from the cursor to the end of the line. The cursor position does not
-change.</div>
+<div class="block">Erases from the cursor to the end of the line.
+The cursor position does not change.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>

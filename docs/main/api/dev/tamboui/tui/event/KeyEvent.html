@@ -132,8 +132,8 @@ implements <a href="Event.html" title="interface in dev.tamboui.tui.event">Event
 <p>
 KeyEvent is associated with <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings"><code>Bindings</code></a> that determine how semantic
 actions (like "move up" or "quit") are mapped to key presses. Use the
-convenience methods like <a href="#isUp()"><code>isUp()</code></a>, <a href="#isDown()"><code>isDown()</code></a>, etc. to check if
-this event matches a semantic action according to the configured bindings.
+convenience methods like <a href="#isUp()"><code>isUp()</code></a>, <a href="#isDown()"><code>isDown()</code></a>, etc. to check
+if this event matches a semantic action according to the configured bindings.
 
 <pre><code>// Check semantic actions
 if (event.isUp()) {
@@ -205,8 +205,7 @@ if (event.matches("myApp.customAction")) {
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>char</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#character()" class="member-name-link">character</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code>
-otherwise.</div>
+<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code> otherwise.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#code()" class="member-name-link">code</a>()</code></div>
@@ -242,14 +241,12 @@ otherwise.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChar(char)" class="member-name-link">isChar</a><wbr>(char&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a character event matching the given character
-(case-sensitive).</div>
+<div class="block">Returns true if this is a character event matching the given character (case-sensitive).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCharIgnoreCase(char)" class="member-name-link">isCharIgnoreCase</a><wbr>(char&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a character event matching the given character
-(case-insensitive).</div>
+<div class="block">Returns true if this is a character event matching the given character (case-insensitive).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConfirm()" class="member-name-link">isConfirm</a>()</code></div>
@@ -264,14 +261,12 @@ otherwise.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDeleteBackward()" class="member-name-link">isDeleteBackward</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a "delete backward" event (Backspace) according to
-the bindings.</div>
+<div class="block">Returns true if this is a "delete backward" event (Backspace) according to the bindings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDeleteForward()" class="member-name-link">isDeleteForward</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a "delete forward" event (Delete) according to the
-bindings.</div>
+<div class="block">Returns true if this is a "delete forward" event (Delete) according to the bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDown()" class="member-name-link">isDown</a>()</code></div>
@@ -291,8 +286,7 @@ bindings.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusPrevious()" class="member-name-link">isFocusPrevious</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a "focus previous" event (Shift+Tab) according to the
-bindings.</div>
+<div class="block">Returns true if this is a "focus previous" event (Shift+Tab) according to the bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHome()" class="member-name-link">isHome</a>()</code></div>
@@ -312,14 +306,12 @@ bindings.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPageDown()" class="member-name-link">isPageDown</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a "page down" navigation event according to the
-bindings.</div>
+<div class="block">Returns true if this is a "page down" navigation event according to the bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPageUp()" class="member-name-link">isPageUp</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a "page up" navigation event according to the
-bindings.</div>
+<div class="block">Returns true if this is a "page up" navigation event according to the bindings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isQuit()" class="member-name-link">isQuit</a>()</code></div>
@@ -334,8 +326,7 @@ bindings.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelect()" class="member-name-link">isSelect</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a "select" event (Enter or Space) according to the
-bindings.</div>
+<div class="block">Returns true if this is a "select" event (Enter or Space) according to the bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUp()" class="member-name-link">isUp</a>()</code></div>
@@ -345,8 +336,7 @@ bindings.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(java.lang.String)" class="member-name-link">matches</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this event matches the given action in the configured
-bindings.</div>
+<div class="block">Returns true if this event matches the given action in the configured bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifiers()" class="member-name-link">modifiers</a>()</code></div>
@@ -368,16 +358,14 @@ bindings.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a key event for a printable character with modifiers and the default
-bindings.</div>
+<div class="block">Creates a key event for a printable character with modifiers and the default bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
  <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a key event for a printable character with modifiers and specific
-bindings.</div>
+<div class="block">Creates a key event for a printable character with modifiers and specific bindings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code)</code></div>
@@ -394,8 +382,7 @@ bindings.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a key event for a special key with modifiers and the default
-bindings.</div>
+<div class="block">Creates a key event for a special key with modifiers and the default bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
@@ -436,8 +423,7 @@ bindings.</div>
 <dt>Parameters:</dt>
 <dd><code>code</code> - the key code (<a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> for printable characters)</dd>
 <dd><code>modifiers</code> - modifier state</dd>
-<dd><code>character</code> - the character when <code>code</code> is <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a>, otherwise
-           ignored</dd>
+<dd><code>character</code> - the character when <code>code</code> is <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a>, otherwise ignored</dd>
 </dl>
 </div>
 </section>
@@ -455,8 +441,7 @@ bindings.</div>
 <dt>Parameters:</dt>
 <dd><code>code</code> - the key code (<a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> for printable characters)</dd>
 <dd><code>modifiers</code> - modifier state</dd>
-<dd><code>character</code> - the character when <code>code</code> is <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a>, otherwise
-           ignored</dd>
+<dd><code>character</code> - the character when <code>code</code> is <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a>, otherwise ignored</dd>
 <dd><code>bindings</code> - the bindings for semantic action matching</dd>
 </dl>
 </div>
@@ -491,8 +476,7 @@ bindings.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></span>&nbsp;<span class="element-name">ofChar</span><wbr><span class="parameters">(char&nbsp;c,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</span></div>
-<div class="block">Creates a key event for a printable character with modifiers and the default
-bindings.</div>
+<div class="block">Creates a key event for a printable character with modifiers and the default bindings.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>c</code> - the character</dd>
@@ -527,8 +511,7 @@ bindings.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></span>&nbsp;<span class="element-name">ofChar</span><wbr><span class="parameters">(char&nbsp;c,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
  <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
-<div class="block">Creates a key event for a printable character with modifiers and specific
-bindings.</div>
+<div class="block">Creates a key event for a printable character with modifiers and specific bindings.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>c</code> - the character</dd>
@@ -561,8 +544,7 @@ bindings.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></span>&nbsp;<span class="element-name">ofKey</span><wbr><span class="parameters">(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</span></div>
-<div class="block">Creates a key event for a special key with modifiers and the default
-bindings.</div>
+<div class="block">Creates a key event for a special key with modifiers and the default bindings.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>code</code> - the key code</dd>
@@ -614,8 +596,7 @@ bindings.</div>
 <h3>isChar</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isChar</span><wbr><span class="parameters">(char&nbsp;c)</span></div>
-<div class="block">Returns true if this is a character event matching the given character
-(case-sensitive).</div>
+<div class="block">Returns true if this is a character event matching the given character (case-sensitive).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>c</code> - character to compare</dd>
@@ -630,8 +611,7 @@ bindings.</div>
 <h3>isCharIgnoreCase</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCharIgnoreCase</span><wbr><span class="parameters">(char&nbsp;c)</span></div>
-<div class="block">Returns true if this is a character event matching the given character
-(case-insensitive).</div>
+<div class="block">Returns true if this is a character event matching the given character (case-insensitive).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>c</code> - character to compare (case-insensitive)</dd>
@@ -739,8 +719,7 @@ bindings.</div>
 <h3>character</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">char</span>&nbsp;<span class="element-name">character</span>()</div>
-<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code>
-otherwise.</div>
+<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code> otherwise.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the character value</dd>
@@ -766,12 +745,10 @@ otherwise.</div>
 <h3>matches</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">matches</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action)</span></div>
-<div class="block">Returns true if this event matches the given action in the configured
-bindings.</div>
+<div class="block">Returns true if this event matches the given action in the configured bindings.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>action</code> - the action to check (use <a href="../bindings/Actions.html" title="class in dev.tamboui.tui.bindings"><code>Actions</code></a> constants or custom
-           strings)</dd>
+<dd><code>action</code> - the action to check (use <a href="../bindings/Actions.html" title="class in dev.tamboui.tui.bindings"><code>Actions</code></a> constants or custom strings)</dd>
 <dt>Returns:</dt>
 <dd>true if this event triggers the action</dd>
 </dl>
@@ -848,8 +825,7 @@ bindings.</div>
 <h3>isPageUp</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPageUp</span>()</div>
-<div class="block">Returns true if this is a "page up" navigation event according to the
-bindings.</div>
+<div class="block">Returns true if this is a "page up" navigation event according to the bindings.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this event triggers the page-up action</dd>
@@ -862,8 +838,7 @@ bindings.</div>
 <h3>isPageDown</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPageDown</span>()</div>
-<div class="block">Returns true if this is a "page down" navigation event according to the
-bindings.</div>
+<div class="block">Returns true if this is a "page down" navigation event according to the bindings.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this event triggers the page-down action</dd>
@@ -902,8 +877,7 @@ bindings.</div>
 <h3>isSelect</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSelect</span>()</div>
-<div class="block">Returns true if this is a "select" event (Enter or Space) according to the
-bindings.</div>
+<div class="block">Returns true if this is a "select" event (Enter or Space) according to the bindings.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this event triggers the select action</dd>
@@ -968,8 +942,7 @@ bindings.</div>
 <h3>isFocusPrevious</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFocusPrevious</span>()</div>
-<div class="block">Returns true if this is a "focus previous" event (Shift+Tab) according to the
-bindings.</div>
+<div class="block">Returns true if this is a "focus previous" event (Shift+Tab) according to the bindings.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this event triggers the focus-previous action</dd>
@@ -982,8 +955,7 @@ bindings.</div>
 <h3>isDeleteBackward</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDeleteBackward</span>()</div>
-<div class="block">Returns true if this is a "delete backward" event (Backspace) according to
-the bindings.</div>
+<div class="block">Returns true if this is a "delete backward" event (Backspace) according to the bindings.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this event triggers the delete-backward action</dd>
@@ -996,8 +968,7 @@ the bindings.</div>
 <h3>isDeleteForward</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDeleteForward</span>()</div>
-<div class="block">Returns true if this is a "delete forward" event (Delete) according to the
-bindings.</div>
+<div class="block">Returns true if this is a "delete forward" event (Delete) according to the bindings.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>true if this event triggers the delete-forward action</dd>

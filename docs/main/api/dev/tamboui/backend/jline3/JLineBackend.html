@@ -654,8 +654,8 @@ The cursor position does not change.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteLines</span><wbr><span class="parameters">(int&nbsp;n)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#deleteLines(int)">Backend</a></code></span></div>
-<div class="block">Deletes N lines at the current cursor position, pulling lines below up. The
-cursor position does not change.</div>
+<div class="block">Deletes N lines at the current cursor position, pulling lines below up.
+The cursor position does not change.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#deleteLines(int)">deleteLines</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -674,8 +674,8 @@ cursor position does not change.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorUp</span><wbr><span class="parameters">(int&nbsp;n)</span>
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#moveCursorUp(int)">Backend</a></code></span></div>
-<div class="block">Moves the cursor up by N lines. If the cursor is already at the top, this has
-no effect.</div>
+<div class="block">Moves the cursor up by N lines. If the cursor is already at the top,
+this has no effect.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#moveCursorUp(int)">moveCursorUp</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -734,8 +734,8 @@ rightmost position, this has no effect.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveCursorLeft</span><wbr><span class="parameters">(int&nbsp;n)</span>
                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#moveCursorLeft(int)">Backend</a></code></span></div>
-<div class="block">Moves the cursor left by N columns. If the cursor is already at the leftmost
-position, this has no effect.</div>
+<div class="block">Moves the cursor left by N columns. If the cursor is already at the
+leftmost position, this has no effect.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#moveCursorLeft(int)">moveCursorLeft</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -754,8 +754,8 @@ position, this has no effect.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">eraseToEndOfLine</span>()
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#eraseToEndOfLine()">Backend</a></code></span></div>
-<div class="block">Erases from the cursor to the end of the line. The cursor position does not
-change.</div>
+<div class="block">Erases from the cursor to the end of the line.
+The cursor position does not change.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#eraseToEndOfLine()">eraseToEndOfLine</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -791,8 +791,8 @@ change.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#writeRaw(byte%5B%5D)">Backend</a></code></span></div>
 <div class="block">Writes raw bytes directly to the terminal output.
 <p>
-This is used for native image protocols (Sixel, Kitty, iTerm2) that require
-sending escape sequences with binary data.</div>
+This is used for native image protocols (Sixel, Kitty, iTerm2) that
+require sending escape sequences with binary data.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#writeRaw(byte%5B%5D)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
@@ -812,8 +812,7 @@ sending escape sequences with binary data.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#writeRaw(java.lang.String)">Backend</a></code></span></div>
 <div class="block">Writes a raw string directly to the terminal output.
 <p>
-This is a convenience method for protocols that work with ASCII escape
-sequences.</div>
+This is a convenience method for protocols that work with ASCII escape sequences.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../terminal/Backend.html#writeRaw(java.lang.String)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>

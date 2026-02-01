@@ -86,8 +86,8 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Lexer for Textual-style CSS.
 <p>
-Tokenizes CSS input into a stream of tokens for the parser. Supports standard
-CSS syntax plus Textual extensions like variables ($name).</div>
+Tokenizes CSS input into a stream of tokens for the parser.
+Supports standard CSS syntax plus Textual extensions like variables ($name).</div>
 </div>
 </section>
 <section class="summary">
@@ -173,8 +173,8 @@ CSS syntax plus Textual extensions like variables ($name).</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Token.html" title="class in dev.tamboui.css.parser">Token</a>&gt;</span>&nbsp;<span class="element-name">tokenize</span>()</div>
 <div class="block">Tokenizes the entire input and returns a list of tokens.
 <p>
-Whitespace tokens are included in the output. The list always ends with an
-EOF token.</div>
+Whitespace tokens are included in the output. The list always
+ends with an EOF token.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the list of tokens</dd>
@@ -189,8 +189,8 @@ EOF token.</div>
 <h3>tokenizeFiltered</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Token.html" title="class in dev.tamboui.css.parser">Token</a>&gt;</span>&nbsp;<span class="element-name">tokenizeFiltered</span>()</div>
-<div class="block">Tokenizes the input, filtering out whitespace tokens. Each token has its
-<code>precededByWhitespace</code> flag set appropriately.</div>
+<div class="block">Tokenizes the input, filtering out whitespace tokens.
+Each token has its <code>precededByWhitespace</code> flag set appropriately.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the list of non-whitespace tokens</dd>

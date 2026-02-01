@@ -90,14 +90,13 @@ loadScripts(document, 'script');</script>
 implements <a href="PropertyConverter.html" title="interface in dev.tamboui.css.property">PropertyConverter</a>&lt;<a href="../../widgets/block/BorderSet.html" title="class in dev.tamboui.widgets.block">BorderSet</a>&gt;</span></div>
 <div class="block">Converts CSS border-chars values to BorderSet.
 <p>
-Format: 8 quoted strings representing (in order): top-horizontal,
-bottom-horizontal, left-vertical, right-vertical, top-left, top-right,
-bottom-left, bottom-right.
+Format: 8 quoted strings representing (in order):
+top-horizontal, bottom-horizontal, left-vertical, right-vertical,
+top-left, top-right, bottom-left, bottom-right.
 <p>
 Empty strings (<code>""</code>) indicate that character should not be rendered.
 <p>
 Examples:
-
 <pre>
 border-chars: "─" "─" "│" "│" "┌" "┐" "└" "┘";   // full border
 border-chars: "" "" "" "" "┌" "┐" "└" "┘";       // corners only

@@ -96,8 +96,10 @@ ActionHandler wraps a <a href="Bindings.html" title="interface in dev.tamboui.tu
 callbacks for specific actions. When an event is dispatched, it is matched
 against the bindings and the corresponding handlers are invoked.
 
-<pre><code>ActionHandler handler = new ActionHandler(BindingSets.vim()).on(Actions.QUIT, e -&gt; runner.quit())
-        .on("save", this::save).on("delete", this::delete);
+<pre><code>ActionHandler handler = new ActionHandler(BindingSets.vim())
+    .on(Actions.QUIT, e -&gt; runner.quit())
+    .on("save", this::save)
+    .on("delete", this::delete);
 
 // In event handler:
 if (handler.dispatch(event)) {
@@ -166,8 +168,7 @@ if (handler.dispatch(event)) {
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#on(java.lang.String,java.util.function.BiConsumer)" class="member-name-link">on</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../event/Event.html" title="interface in dev.tamboui.tui.event">Event</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Registers a handler for the specified action that also receives the action
-name.</div>
+<div class="block">Registers a handler for the specified action that also receives the action name.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ActionHandler.html" title="class in dev.tamboui.tui.bindings">ActionHandler</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#on(java.lang.String,java.util.function.Consumer)" class="member-name-link">on</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action,
@@ -231,8 +232,8 @@ name.</div>
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../event/Event.html" title="interface in dev.tamboui.tui.event">Event</a>&gt;&nbsp;handler)</span></div>
 <div class="block">Registers a handler for the specified action.
 <p>
-Multiple handlers can be registered for the same action; they will be invoked
-in registration order when the action is triggered.</div>
+Multiple handlers can be registered for the same action; they will
+be invoked in registration order when the action is triggered.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - the action name to handle</dd>
@@ -249,14 +250,13 @@ in registration order when the action is triggered.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ActionHandler.html" title="class in dev.tamboui.tui.bindings">ActionHandler</a></span>&nbsp;<span class="element-name">on</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="class or interface in java.util.function" class="external-link">BiConsumer</a>&lt;<a href="../event/Event.html" title="interface in dev.tamboui.tui.event">Event</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;handler)</span></div>
-<div class="block">Registers a handler for the specified action that also receives the action
-name.
+<div class="block">Registers a handler for the specified action that also receives the action name.
 <p>
-This is useful when the same handler is registered for multiple actions and
-needs to know which action triggered it.
+This is useful when the same handler is registered for multiple actions
+and needs to know which action triggered it.
 <p>
-Multiple handlers can be registered for the same action; they will be invoked
-in registration order when the action is triggered.</div>
+Multiple handlers can be registered for the same action; they will
+be invoked in registration order when the action is triggered.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>action</code> - the action name to handle</dd>
@@ -289,8 +289,8 @@ in registration order when the action is triggered.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBindings</span><wbr><span class="parameters">(<a href="Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
 <div class="block">Sets the bindings used for matching events to actions.
 <p>
-This allows changing the key bindings at runtime without re-registering
-handlers.</div>
+This allows changing the key bindings at runtime without
+re-registering handlers.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>bindings</code> - the new bindings to use</dd>
@@ -318,15 +318,15 @@ handlers.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">dispatch</span><wbr><span class="parameters">(<a href="../event/Event.html" title="interface in dev.tamboui.tui.event">Event</a>&nbsp;event)</span></div>
 <div class="block">Dispatches an event to registered handlers.
 <p>
-The event is matched against the bindings. If a matching action is found and
-handlers are registered for that action, all handlers are invoked in
-registration order.</div>
+The event is matched against the bindings. If a matching action is found
+and handlers are registered for that action, all handlers are invoked
+in registration order.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>event</code> - the event to dispatch</dd>
 <dt>Returns:</dt>
-<dd>true if the event was handled (action found with registered
-        handlers), false otherwise</dd>
+<dd>true if the event was handled (action found with registered handlers),
+        false otherwise</dd>
 </dl>
 </div>
 </section>
@@ -353,10 +353,9 @@ registration order.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="ActionHandler.html" title="class in dev.tamboui.tui.bindings">ActionHandler</a></span>&nbsp;<span class="element-name">registerAnnotated</span><wbr><span class="parameters">(T&nbsp;target)</span></div>
 <div class="block">Discovers and registers action handlers from the target object.
 <p>
-First attempts to find generated <a href="ActionHandlerRegistrar.html" title="interface in dev.tamboui.tui.bindings"><code>ActionHandlerRegistrar</code></a>
-implementations via ServiceLoader. If no registrar is found for the target's
-exact class, falls back to reflection-based discovery of <code>@OnAction</code>
-annotated methods.</div>
+First attempts to find generated <a href="ActionHandlerRegistrar.html" title="interface in dev.tamboui.tui.bindings"><code>ActionHandlerRegistrar</code></a> implementations
+via ServiceLoader. If no registrar is found for the target's exact class,
+falls back to reflection-based discovery of <code>@OnAction</code> annotated methods.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="registerAnnotated(T)-type-param-T"><code>T</code> - the target type</span></dd>

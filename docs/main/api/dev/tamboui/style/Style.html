@@ -860,8 +860,8 @@ Styles are immutable and composable.</div>
 <h3>addModifier</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">addModifier</span><wbr><span class="parameters">(<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&nbsp;modifier)</span></div>
-<div class="block">Returns a new style with the given modifier enabled. If the modifier was
-previously removed (subtracted), it is added back.</div>
+<div class="block">Returns a new style with the given modifier enabled.
+If the modifier was previously removed (subtracted), it is added back.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>modifier</code> - the modifier to enable</dd>
@@ -876,8 +876,8 @@ previously removed (subtracted), it is added back.</div>
 <h3>removeModifier</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">removeModifier</span><wbr><span class="parameters">(<a href="Modifier.html" title="enum class in dev.tamboui.style">Modifier</a>&nbsp;modifier)</span></div>
-<div class="block">Returns a new style with the given modifier removed (subtracted). If the
-modifier was previously added, it is removed.</div>
+<div class="block">Returns a new style with the given modifier removed (subtracted).
+If the modifier was previously added, it is removed.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>modifier</code> - the modifier to remove</dd>
@@ -1116,8 +1116,8 @@ modifier was previously added, it is removed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">hyperlink</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;url,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id)</span></div>
-<div class="block">Returns a new style with the given hyperlink and ID. The ID can be used to
-group multiple cells into a single link.</div>
+<div class="block">Returns a new style with the given hyperlink and ID.
+The ID can be used to group multiple cells into a single link.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>url</code> - the URL for the hyperlink</dd>
@@ -1162,8 +1162,8 @@ group multiple cells into a single link.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">withExtension</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;type,
  T&nbsp;value)</span></div>
-<div class="block">Returns a new style with the given extension property set. Extensions allow
-modules to attach additional data to styles without coupling.</div>
+<div class="block">Returns a new style with the given extension property set.
+Extensions allow modules to attach additional data to styles without coupling.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><span id="withExtension(java.lang.Class,T)-type-param-T"><code>T</code> - the type of the extension</span></dd>
@@ -1217,9 +1217,8 @@ modules to attach additional data to styles without coupling.</div>
 <h3>patch</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Style.html" title="class in dev.tamboui.style">Style</a></span>&nbsp;<span class="element-name">patch</span><wbr><span class="parameters">(<a href="Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;other)</span></div>
-<div class="block">Combines this style with another. The other style's values override this
-style's values where they are set; null values in <code>other</code> leave the
-current value unchanged.</div>
+<div class="block">Combines this style with another. The other style's values override this style's
+values where they are set; null values in <code>other</code> leave the current value unchanged.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>other</code> - the style to overlay</dd>
@@ -1314,9 +1313,9 @@ current value unchanged.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">implicitStyleNames</span>()</div>
 <div class="block">Returns the style names implied by this style's Named colors and modifiers.
 <p>
-Named foreground colors contribute their name (e.g., "red"), Named background
-colors contribute "bg-" + name (e.g., "bg-red"), and modifiers contribute
-their <a href="Modifier.html#implicitStyleName()"><code>Modifier.implicitStyleName()</code></a> (e.g., "bold").</div>
+Named foreground colors contribute their name (e.g., "red"),
+Named background colors contribute "bg-" + name (e.g., "bg-red"),
+and modifiers contribute their <a href="Modifier.html#implicitStyleName()"><code>Modifier.implicitStyleName()</code></a> (e.g., "bold").</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an unmodifiable set of implied CSS class names</dd>

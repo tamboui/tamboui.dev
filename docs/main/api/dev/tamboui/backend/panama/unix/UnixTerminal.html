@@ -101,8 +101,8 @@ loadScripts(document, 'script');</script>
 implements <a href="../PlatformTerminal.html" title="interface in dev.tamboui.backend.panama">PlatformTerminal</a></span></div>
 <div class="block">Unix terminal operations using Panama FFI.
 <p>
-This class provides higher-level terminal operations built on top of the
-low-level libc bindings in <a href="LibC.html" title="class in dev.tamboui.backend.panama.unix"><code>LibC</code></a>.</div>
+This class provides higher-level terminal operations built on top of
+the low-level libc bindings in <a href="LibC.html" title="class in dev.tamboui.backend.panama.unix"><code>LibC</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -242,8 +242,8 @@ low-level libc bindings in <a href="LibC.html" title="class in dev.tamboui.backe
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Enables raw mode on the terminal.
 <p>
-Raw mode disables line buffering, echo, and signal processing, allowing
-direct character-by-character input.</div>
+Raw mode disables line buffering, echo, and signal processing,
+allowing direct character-by-character input.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../PlatformTerminal.html#enableRawMode()">enableRawMode</a></code>&nbsp;in interface&nbsp;<code><a href="../PlatformTerminal.html" title="interface in dev.tamboui.backend.panama">PlatformTerminal</a></code></dd>
@@ -295,9 +295,9 @@ direct character-by-character input.</div>
          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Reads a single character from the terminal with timeout.
 <p>
-This method also checks for and dispatches pending resize events, ensuring
-resize handlers are called from the main event loop context rather than from
-signal handler context.</div>
+This method also checks for and dispatches pending resize events,
+ensuring resize handlers are called from the main event loop context
+rather than from signal handler context.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../PlatformTerminal.html#read(int)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../PlatformTerminal.html" title="interface in dev.tamboui.backend.panama">PlatformTerminal</a></code></dd>
@@ -359,8 +359,8 @@ signal handler context.</div>
            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Writes a portion of a byte array to the terminal.
 <p>
-This method uses a reusable buffer to avoid per-call memory allocation. For
-large writes exceeding the buffer size, data is written in chunks.</div>
+This method uses a reusable buffer to avoid per-call memory allocation.
+For large writes exceeding the buffer size, data is written in chunks.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../PlatformTerminal.html#write(byte%5B%5D,int,int)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../PlatformTerminal.html" title="interface in dev.tamboui.backend.panama">PlatformTerminal</a></code></dd>
@@ -430,11 +430,11 @@ large writes exceeding the buffer size, data is written in chunks.</div>
 <div class="block">Registers a handler to be called when the terminal is resized.
 <p>
 On Unix systems, this installs a SIGWINCH signal handler using Panama FFI.
-The signal handler sets a flag which is checked from the main event loop (via
-<a href="#read(int)"><code>read(int)</code></a>), ensuring the handler is called from a safe context.
+The signal handler sets a flag which is checked from the main event loop
+(via <a href="#read(int)"><code>read(int)</code></a>), ensuring the handler is called from a safe context.
 <p>
-Only one handler can be registered at a time; subsequent calls will replace
-the previous handler.</div>
+Only one handler can be registered at a time; subsequent calls
+will replace the previous handler.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../PlatformTerminal.html#onResize(java.lang.Runnable)">onResize</a></code>&nbsp;in interface&nbsp;<code><a href="../PlatformTerminal.html" title="interface in dev.tamboui.backend.panama">PlatformTerminal</a></code></dd>

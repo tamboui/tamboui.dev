@@ -120,7 +120,6 @@ typed getters (e.g., <a href="#foreground()"><code>foreground()</code></a>) or t
 <a href="#get(dev.tamboui.style.PropertyDefinition)"><code>get(PropertyDefinition)</code></a> method.
 <p>
 Example usage with PropertyDefinition:
-
 <pre><code>CssStyleResolver style = cascadeResolver.resolve(element, rules);
 Color borderColor = style.get(StandardProperties.BORDER_COLOR).orElse(Color.WHITE);
 </code></pre></div>
@@ -302,8 +301,8 @@ Color borderColor = style.get(StandardProperties.BORDER_COLOR).orElse(Color.WHIT
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFallback(dev.tamboui.css.cascade.CssStyleResolver)" class="member-name-link">withFallback</a><wbr>(<a href="CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a>&nbsp;fallback)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Creates a new resolver that uses this resolver's properties but falls back to
-the given resolver for CSS-inheritable properties not set in this resolver.</div>
+<div class="block">Creates a new resolver that uses this resolver's properties but falls back
+to the given resolver for CSS-inheritable properties not set in this resolver.</div>
 </div>
 </div>
 </div>
@@ -347,8 +346,8 @@ the given resolver for CSS-inheritable properties not set in this resolver.</div
 <p>
 The resolution order is:
 <ol>
-<li>Check for a pre-converted value in the typed property map</li>
-<li>Check for a raw CSS value and convert using the property's converter</li>
+  <li>Check for a pre-converted value in the typed property map</li>
+  <li>Check for a raw CSS value and convert using the property's converter</li>
 </ol>
 This allows widget-defined properties to be resolved from CSS without
 requiring the CSS engine to know about all properties upfront.</div>
@@ -552,8 +551,8 @@ requiring the CSS engine to know about all properties upfront.</div>
 <h3>borderChars</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">borderChars</span>()</div>
-<div class="block">Returns the border-chars string, if set. Format: 8 quoted strings (top-h,
-bottom-h, left-v, right-v, tl, tr, bl, br).</div>
+<div class="block">Returns the border-chars string, if set.
+Format: 8 quoted strings (top-h, bottom-h, left-v, right-v, tl, tr, bl, br).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the border-chars value</dd>
@@ -696,12 +695,11 @@ bottom-h, left-v, right-v, tl, tr, bl, br).</div>
 <h3>withFallback</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a></span>&nbsp;<span class="element-name">withFallback</span><wbr><span class="parameters">(<a href="CssStyleResolver.html" title="class in dev.tamboui.css.cascade">CssStyleResolver</a>&nbsp;fallback)</span></div>
-<div class="block">Creates a new resolver that uses this resolver's properties but falls back to
-the given resolver for CSS-inheritable properties not set in this resolver.
+<div class="block">Creates a new resolver that uses this resolver's properties but falls back
+to the given resolver for CSS-inheritable properties not set in this resolver.
 <p>
-Per CSS semantics, only certain properties inherit from parent to child. The
-inheritance behavior is defined per-property in
-<a href="../../style/PropertyDefinition.html#isInheritable()"><code>PropertyDefinition.isInheritable()</code></a>.
+Per CSS semantics, only certain properties inherit from parent to child.
+The inheritance behavior is defined per-property in <a href="../../style/PropertyDefinition.html#isInheritable()"><code>PropertyDefinition.isInheritable()</code></a>.
 <p>
 Additionally, this method handles the <code>inherit</code> keyword: properties
 explicitly requesting parent's value.</div>

@@ -97,22 +97,19 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Constraint strength representing priority in the constraint hierarchy.
 
-<p>
-Cassowary uses a hierarchical constraint system where higher-strength
+<p>Cassowary uses a hierarchical constraint system where higher-strength
 constraints take absolute precedence over lower-strength ones. The strength
 is computed using three weight levels that are combined into a single value.
 
-<p>
-This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic, avoiding the
-cumulative rounding errors that occur with floating-point.
+<p>This implementation uses <a href="../Fraction.html" title="class in dev.tamboui.layout"><code>Fraction</code></a> for exact arithmetic,
+avoiding the cumulative rounding errors that occur with floating-point.
 
-<p>
-Predefined strengths in decreasing order of priority:
+<p>Predefined strengths in decreasing order of priority:
 <ul>
-<li><a href="#REQUIRED"><code>REQUIRED</code></a> - Must be satisfied; failure throws an exception</li>
-<li><a href="#STRONG"><code>STRONG</code></a> - High priority preference</li>
-<li><a href="#MEDIUM"><code>MEDIUM</code></a> - Medium priority preference</li>
-<li><a href="#WEAK"><code>WEAK</code></a> - Low priority preference</li>
+  <li><a href="#REQUIRED"><code>REQUIRED</code></a> - Must be satisfied; failure throws an exception</li>
+  <li><a href="#STRONG"><code>STRONG</code></a> - High priority preference</li>
+  <li><a href="#MEDIUM"><code>MEDIUM</code></a> - Medium priority preference</li>
+  <li><a href="#WEAK"><code>WEAK</code></a> - Low priority preference</li>
 </ul></div>
 </div>
 </section>
@@ -231,8 +228,8 @@ Predefined strengths in decreasing order of priority:
 <h3>REQUIRED</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Strength.html" title="class in dev.tamboui.layout.cassowary">Strength</a></span>&nbsp;<span class="element-name">REQUIRED</span></div>
-<div class="block">Required constraints must be satisfied. Adding an unsatisfiable required
-constraint will throw an exception.</div>
+<div class="block">Required constraints must be satisfied. Adding an unsatisfiable
+required constraint will throw an exception.</div>
 </div>
 </section>
 </li>
@@ -280,9 +277,8 @@ constraint will throw an exception.</div>
  <a href="../Fraction.html" title="class in dev.tamboui.layout">Fraction</a>&nbsp;weak)</span></div>
 <div class="block">Creates a custom strength with the given weights.
 
-<p>
-The weights are combined using a polynomial scheme where the strong weight
-has the highest significance, followed by medium, then weak.</div>
+<p>The weights are combined using a polynomial scheme where the strong
+weight has the highest significance, followed by medium, then weak.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>strong</code> - the strong weight (highest priority)</dd>
@@ -303,9 +299,8 @@ has the highest significance, followed by medium, then weak.</div>
  long&nbsp;weak)</span></div>
 <div class="block">Creates a custom strength with the given weights.
 
-<p>
-The weights are combined using a polynomial scheme where the strong weight
-has the highest significance, followed by medium, then weak.</div>
+<p>The weights are combined using a polynomial scheme where the strong
+weight has the highest significance, followed by medium, then weak.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>strong</code> - the strong weight (highest priority)</dd>
@@ -324,9 +319,8 @@ has the highest significance, followed by medium, then weak.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Fraction.html" title="class in dev.tamboui.layout">Fraction</a></span>&nbsp;<span class="element-name">computeValue</span>()</div>
 <div class="block">Computes the numeric value of this strength for use in the simplex objective.
 
-<p>
-Uses a polynomial scheme to ensure hierarchical ordering: strong weights
-dominate medium weights which dominate weak weights.</div>
+<p>Uses a polynomial scheme to ensure hierarchical ordering:
+strong weights dominate medium weights which dominate weak weights.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the computed strength value</dd>

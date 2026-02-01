@@ -91,20 +91,22 @@ loadScripts(document, 'script');</script>
 <p>
 Available binding sets:
 <ul>
-<li><a href="#standard()"><code>standard()</code></a> - Arrow keys only, no vim/emacs bindings
-(default)</li>
-<li><a href="#vim()"><code>vim()</code></a> - Vim-style navigation (hjkl, g/G, Ctrl+u/d)</li>
-<li><a href="#emacs()"><code>emacs()</code></a> - Emacs-style navigation (Ctrl+n/p/f/b, etc.)</li>
-<li><a href="#intellij()"><code>intellij()</code></a> - IntelliJ IDEA-style bindings</li>
-<li><a href="#vscode()"><code>vscode()</code></a> - Visual Studio Code-style bindings</li>
+  <li><a href="#standard()"><code>standard()</code></a> - Arrow keys only, no vim/emacs bindings (default)</li>
+  <li><a href="#vim()"><code>vim()</code></a> - Vim-style navigation (hjkl, g/G, Ctrl+u/d)</li>
+  <li><a href="#emacs()"><code>emacs()</code></a> - Emacs-style navigation (Ctrl+n/p/f/b, etc.)</li>
+  <li><a href="#intellij()"><code>intellij()</code></a> - IntelliJ IDEA-style bindings</li>
+  <li><a href="#vscode()"><code>vscode()</code></a> - Visual Studio Code-style bindings</li>
 </ul>
 
 <pre><code>// Use a predefined binding set
 Bindings bindings = BindingSets.vim();
 
 // Customize a predefined set
-Bindings custom = BindingSets.standard().toBuilder().bind(KeyTrigger.ch('x'), Actions.QUIT)
-        .bind(MouseTrigger.rightClick(), "contextMenu").build();
+Bindings custom = BindingSets.standard()
+    .toBuilder()
+    .bind(KeyTrigger.ch('x'), Actions.QUIT)
+    .bind(MouseTrigger.rightClick(), "contextMenu")
+    .build();
 </code></pre></div>
 </div>
 </section>
@@ -202,8 +204,8 @@ Bindings custom = BindingSets.standard().toBuilder().bind(KeyTrigger.ch('x'), Ac
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a></span>&nbsp;<span class="element-name">standard</span>()</div>
 <div class="block">Standard binding set using only arrow keys and standard keys.
 <p>
-No vim or emacs-style bindings. This is the default set, safe for use with
-text input (no letter keys bound to navigation).</div>
+No vim or emacs-style bindings. This is the default set,
+safe for use with text input (no letter keys bound to navigation).</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the standard bindings</dd>
@@ -220,9 +222,9 @@ text input (no letter keys bound to navigation).</div>
 <p>
 Includes:
 <ul>
-<li>hjkl for directional navigation</li>
-<li>g/G for home/end</li>
-<li>Ctrl+u/d for page up/down</li>
+  <li>hjkl for directional navigation</li>
+  <li>g/G for home/end</li>
+  <li>Ctrl+u/d for page up/down</li>
 </ul></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -240,10 +242,10 @@ Includes:
 <p>
 Includes:
 <ul>
-<li>Ctrl+n/p/f/b for directional navigation</li>
-<li>Alt+v/Ctrl+v for page up/down</li>
-<li>Ctrl+a/e for home/end (line-level)</li>
-<li>Ctrl+g as cancel</li>
+  <li>Ctrl+n/p/f/b for directional navigation</li>
+  <li>Alt+v/Ctrl+v for page up/down</li>
+  <li>Ctrl+a/e for home/end (line-level)</li>
+  <li>Ctrl+g as cancel</li>
 </ul></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -306,7 +308,6 @@ Currently returns <a href="#standard()"><code>standard()</code></a>.</div>
 <div class="block">Loads bindings from a properties file.
 <p>
 The file format uses standard Java properties:
-
 <pre><code># Navigation
 moveUp = Up, k, K
 moveDown = Down, j, J
@@ -321,19 +322,18 @@ ctrlClick = Ctrl+Mouse.Left.Press
 <p>
 Key binding syntax:
 <ul>
-<li>Key names: Up, Down, Enter, Tab, Escape, Backspace, Delete, Home, End,
-PageUp, PageDown, F1-F12</li>
-<li>Characters: Single character like k, q</li>
-<li>Modifiers: Ctrl+c, Alt+x, Shift+Tab</li>
-<li>Space: Use the word "Space"</li>
+  <li>Key names: Up, Down, Enter, Tab, Escape, Backspace, Delete, Home, End, PageUp, PageDown, F1-F12</li>
+  <li>Characters: Single character like k, q</li>
+  <li>Modifiers: Ctrl+c, Alt+x, Shift+Tab</li>
+  <li>Space: Use the word "Space"</li>
 </ul>
 <p>
 Mouse binding syntax:
 <ul>
-<li>Format: [Modifiers+]Mouse.Button.Kind</li>
-<li>Buttons: Left, Right, Middle</li>
-<li>Kinds: Press, Release, Drag, ScrollUp, ScrollDown</li>
-<li>Example: Ctrl+Mouse.Left.Press</li>
+  <li>Format: [Modifiers+]Mouse.Button.Kind</li>
+  <li>Buttons: Left, Right, Middle</li>
+  <li>Kinds: Press, Release, Drag, ScrollUp, ScrollDown</li>
+  <li>Example: Ctrl+Mouse.Left.Press</li>
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -354,8 +354,8 @@ Mouse binding syntax:
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Loads bindings from an input stream containing properties.
 <p>
-The loaded bindings will be based on the standard bindings, with properties
-overriding/adding to them.</div>
+The loaded bindings will be based on the standard bindings,
+with properties overriding/adding to them.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>input</code> - the input stream</dd>

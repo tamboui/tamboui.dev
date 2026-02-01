@@ -178,8 +178,8 @@ bindings, style engine, and auto-registration of annotated action handlers.</div
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">app</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;app)</span></div>
 <div class="block">Sets the application object containing <code>@OnAction</code> annotated methods.
 <p>
-This object will be used for automatic action handler registration when
-<a href="#withAutoBindingRegistration()"><code>withAutoBindingRegistration()</code></a> is called.</div>
+This object will be used for automatic action handler registration
+when <a href="#withAutoBindingRegistration()"><code>withAutoBindingRegistration()</code></a> is called.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>app</code> - the application object</dd>
@@ -241,8 +241,8 @@ This object will be used for automatic action handler registration when
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">withAutoBindingRegistration</span>()</div>
 <div class="block">Enables automatic registration of action handlers.
 <p>
-Discovers and registers handlers for methods annotated with <code>@OnAction</code>
-on the application object set via <a href="#app(java.lang.Object)"><code>app(Object)</code></a>.</div>
+Discovers and registers handlers for methods annotated with
+<code>@OnAction</code> on the application object set via <a href="#app(java.lang.Object)"><code>app(Object)</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>this builder</dd>
@@ -257,10 +257,10 @@ on the application object set via <a href="#app(java.lang.Object)"><code>app(Obj
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">faultTolerant</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
 <div class="block">Enables or disables fault-tolerant rendering.
 <p>
-When enabled, individual element render failures are caught and replaced with
-error placeholders, allowing the rest of the UI to continue rendering. When
-disabled (default), render exceptions propagate to the TuiRunner's error
-handler.</div>
+When enabled, individual element render failures are caught and
+replaced with error placeholders, allowing the rest of the UI to
+continue rendering. When disabled (default), render exceptions
+propagate to the TuiRunner's error handler.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>enabled</code> - true to enable fault-tolerant rendering</dd>
@@ -277,9 +277,9 @@ handler.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">errorOutput</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput)</span></div>
 <div class="block">Sets the output stream for error logging.
 <p>
-Defaults to a null output stream that discards all output. In fault-tolerant
-mode, errors are displayed via placeholders rather than logged to avoid
-flooding the terminal.</div>
+Defaults to a null output stream that discards all output.
+In fault-tolerant mode, errors are displayed via placeholders
+rather than logged to avoid flooding the terminal.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>errorOutput</code> - the error output stream, or null to discard output</dd>
@@ -296,8 +296,8 @@ flooding the terminal.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">postRenderProcessor</span><wbr><span class="parameters">(<a href="ToolkitPostRenderProcessor.html" title="interface in dev.tamboui.toolkit.app">ToolkitPostRenderProcessor</a>&nbsp;processor)</span></div>
 <div class="block">Adds a post-render processor.
 <p>
-Post-render processors are called after each frame is rendered, allowing for
-effects, overlays, or other post-processing.</div>
+Post-render processors are called after each frame is rendered,
+allowing for effects, overlays, or other post-processing.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>processor</code> - the processor to add</dd>

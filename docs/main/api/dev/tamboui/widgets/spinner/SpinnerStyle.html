@@ -110,17 +110,23 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="SpinnerStyle.html" title="enum class in dev.tamboui.widgets.spinner">SpinnerStyle</a>&gt;</span></div>
 <div class="block">Built-in spinner frame sets for the <a href="Spinner.html" title="class in dev.tamboui.widgets.spinner"><code>Spinner</code></a> widget.
 <p>
-Each style defines a sequence of frames that are cycled through to create an
-animated loading indicator.
+Each style defines a sequence of frames that are cycled through
+to create an animated loading indicator.
 
 <pre><code>// Use the DOTS style (braille characters)
-Spinner spinner = Spinner.builder().spinnerStyle(SpinnerStyle.DOTS).build();
+Spinner spinner = Spinner.builder()
+    .spinnerStyle(SpinnerStyle.DOTS)
+    .build();
 
 // Use the LINE style (classic -\|/)
-Spinner spinner = Spinner.builder().spinnerStyle(SpinnerStyle.LINE).build();
+Spinner spinner = Spinner.builder()
+    .spinnerStyle(SpinnerStyle.LINE)
+    .build();
 
 // Use a custom frame set
-Spinner spinner = Spinner.builder().frameSet(SpinnerFrameSet.of("*", "+", "x", "+")).build();
+Spinner spinner = Spinner.builder()
+    .frameSet(SpinnerFrameSet.of("*", "+", "x", "+"))
+    .build();
 </code></pre></div>
 <dl class="notes">
 <dt>See Also:</dt>

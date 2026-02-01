@@ -191,12 +191,10 @@ The default implementation derives a name from the class name by removing
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../capability/CapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)">CapabilityProvider</a></code></span></div>
 <div class="block">Contribute information to the capability report.
 <p>
-Providers SHOULD use dotted keys for
-<a href="../../capability/CapabilityReportBuilder.html#feature(java.lang.String,java.lang.String,java.lang.Object)"><code>CapabilityReportBuilder.feature(String, String, Object)</code></a> to create
-stable namespaces (e.g. <code>image.protocol.kitty</code>).
+Providers SHOULD use dotted keys for <a href="../../capability/CapabilityReportBuilder.html#feature(java.lang.String,java.lang.String,java.lang.Object)"><code>CapabilityReportBuilder.feature(String, String, Object)</code></a>
+to create stable namespaces (e.g. <code>image.protocol.kitty</code>).
 
-Providers SHOULD NOT fail when contributing to the report; if something goes
-wrong, they should report that as a missing feature/info.</div>
+Providers SHOULD NOT fail when contributing to the report; if something goes wrong, they should report that as a missing feature/info.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../capability/CapabilityProvider.html#contribute(dev.tamboui.capability.CapabilityReportBuilder)">contribute</a></code>&nbsp;in interface&nbsp;<code><a href="../../capability/CapabilityProvider.html" title="interface in dev.tamboui.capability">CapabilityProvider</a></code></dd>

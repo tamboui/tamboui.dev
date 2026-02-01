@@ -86,16 +86,16 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ErrorPlaceholder</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></span></div>
-<div class="block">An element that displays an error placeholder when another element fails to
-render.
+<div class="block">An element that displays an error placeholder when another element fails to render.
 <p>
 Used by fault-tolerant rendering to show a visual indication that an element
-encountered an error during rendering, while allowing the rest of the UI to
-continue.
+encountered an error during rendering, while allowing the rest of the UI to continue.
 
 <pre><code>// Typically created automatically during fault-tolerant rendering
-ErrorPlaceholder placeholder = ErrorPlaceholder.from(new RuntimeException("Widget failed"),
-        "my-widget");
+ErrorPlaceholder placeholder = ErrorPlaceholder.from(
+    new RuntimeException("Widget failed"),
+    "my-widget"
+);
 </code></pre></div>
 </div>
 </section>

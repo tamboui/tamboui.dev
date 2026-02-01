@@ -98,33 +98,31 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ElementRegistry</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Registry that maps elements to their rendered areas with full CSS selector
-support.
+<div class="block">Registry that maps elements to their rendered areas with full CSS selector support.
 <p>
 ElementRegistry is populated during the render pass as elements are rendered.
-It provides a way to look up element areas using CSS selectors, which is
-useful for effect systems that need to target specific elements without
-holding direct references to Element objects.
+It provides a way to look up element areas using CSS selectors, which is useful for
+effect systems that need to target specific elements without holding
+direct references to Element objects.
 <p>
 The registry should be cleared at the start of each render cycle and
 repopulated as elements render themselves.
 
 <h2 id="supported-selectors-heading">Supported Selectors</h2>
 <ul>
-<li><code>*</code> - Universal selector (matches all elements)</li>
-<li><code>Type</code> - Type selector (e.g., Panel, Button)</li>
-<li><code>#id</code> - ID selector</li>
-<li><code>.class</code> - Class selector</li>
-<li><code>:pseudo</code> - Pseudo-class selector (focus, hover, disabled,
-etc.)</li>
-<li><code>[attr]</code> - Attribute existence selector</li>
-<li><code>[attr=value]</code> - Attribute equals selector</li>
-<li><code>[attr^=value]</code> - Attribute starts-with selector</li>
-<li><code>[attr$=value]</code> - Attribute ends-with selector</li>
-<li><code>[attr*=value]</code> - Attribute contains selector</li>
-<li><code>A B</code> - Descendant combinator</li>
-<li><code>A &gt; B</code> - Child combinator</li>
-<li><code>A.class#id</code> - Compound selectors</li>
+  <li><code>*</code> - Universal selector (matches all elements)</li>
+  <li><code>Type</code> - Type selector (e.g., Panel, Button)</li>
+  <li><code>#id</code> - ID selector</li>
+  <li><code>.class</code> - Class selector</li>
+  <li><code>:pseudo</code> - Pseudo-class selector (focus, hover, disabled, etc.)</li>
+  <li><code>[attr]</code> - Attribute existence selector</li>
+  <li><code>[attr=value]</code> - Attribute equals selector</li>
+  <li><code>[attr^=value]</code> - Attribute starts-with selector</li>
+  <li><code>[attr$=value]</code> - Attribute ends-with selector</li>
+  <li><code>[attr*=value]</code> - Attribute contains selector</li>
+  <li><code>A B</code> - Descendant combinator</li>
+  <li><code>A &gt; B</code> - Child combinator</li>
+  <li><code>A.class#id</code> - Compound selectors</li>
 </ul>
 
 <pre><code>ElementRegistry registry = new ElementRegistry();
@@ -458,8 +456,8 @@ This is a convenience method equivalent to <code>query("#" + elementId)</code>.<
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
 <div class="block">Clears all registered elements.
 <p>
-Should be called at the start of each render cycle. Must be called from the
-render thread.</div>
+Should be called at the start of each render cycle.
+Must be called from the render thread.</div>
 </div>
 </section>
 </li>

@@ -97,13 +97,12 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Enum.html" title="class or interface in java.lang" class="external-link">Enum</a>&lt;<a href="MergeStrategy.html" title="enum class in dev.tamboui.symbols.merge">MergeStrategy</a>&gt;</span></div>
 <div class="block">A strategy for merging two border symbols into one.
 <p>
-This enum defines how two symbols should be merged together, allowing for
-different behaviors when combining symbols, such as replacing the previous
-symbol, merging them if an exact match exists, or using a fuzzy match to find
-the closest representation.
+This enum defines how two symbols should be merged together, allowing for different behaviors
+when combining symbols, such as replacing the previous symbol, merging them if an exact match
+exists, or using a fuzzy match to find the closest representation.
 <p>
-This is useful for collapsing borders in layouts, where multiple symbols may
-need to be combined to create a single, coherent border representation.</div>
+This is useful for collapsing borders in layouts, where multiple symbols may need to be
+combined to create a single, coherent border representation.</div>
 </div>
 </section>
 <section class="summary">
@@ -131,8 +130,8 @@ need to be combined to create a single, coherent border representation.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="#FUZZY" class="member-name-link">FUZZY</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Merges symbols even if an exact composite unicode character doesn't exist,
-using the closest match.</div>
+<div class="block">Merges symbols even if an exact composite unicode character doesn't exist, using the closest
+match.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="#REPLACE" class="member-name-link">REPLACE</a></code></div>
 <div class="col-last even-row-color">
@@ -201,10 +200,9 @@ the order they are declared.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="MergeStrategy.html" title="enum class in dev.tamboui.symbols.merge">MergeStrategy</a></span>&nbsp;<span class="element-name">REPLACE</span></div>
 <div class="block">Replaces the previous symbol with the next one.
 <p>
-This strategy simply replaces the previous symbol with the next one, without
-attempting to merge them. This is useful when you want to ensure that the
-last rendered symbol takes precedence over the previous one, regardless of
-their compatibility.</div>
+This strategy simply replaces the previous symbol with the next one, without attempting to
+merge them. This is useful when you want to ensure that the last rendered symbol takes
+precedence over the previous one, regardless of their compatibility.</div>
 </div>
 </section>
 </li>
@@ -215,10 +213,9 @@ their compatibility.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="MergeStrategy.html" title="enum class in dev.tamboui.symbols.merge">MergeStrategy</a></span>&nbsp;<span class="element-name">EXACT</span></div>
 <div class="block">Merges symbols only if an exact composite unicode character exists.
 <p>
-This strategy attempts to merge two symbols into a single composite unicode
-character if the exact representation exists. If the required unicode symbol
-does not exist, it falls back to <a href="#REPLACE"><code>REPLACE</code></a>, replacing the previous
-symbol with the next one.</div>
+This strategy attempts to merge two symbols into a single composite unicode character if the
+exact representation exists. If the required unicode symbol does not exist, it falls back to
+<a href="#REPLACE"><code>REPLACE</code></a>, replacing the previous symbol with the next one.</div>
 </div>
 </section>
 </li>
@@ -227,11 +224,11 @@ symbol with the next one.</div>
 <h3>FUZZY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="MergeStrategy.html" title="enum class in dev.tamboui.symbols.merge">MergeStrategy</a></span>&nbsp;<span class="element-name">FUZZY</span></div>
-<div class="block">Merges symbols even if an exact composite unicode character doesn't exist,
-using the closest match.
+<div class="block">Merges symbols even if an exact composite unicode character doesn't exist, using the closest
+match.
 <p>
-If required unicode symbol exists, acts exactly like <a href="#EXACT"><code>EXACT</code></a>, if not,
-applies fuzzy matching rules to find the closest representation.</div>
+If required unicode symbol exists, acts exactly like <a href="#EXACT"><code>EXACT</code></a>, if not, applies fuzzy
+matching rules to find the closest representation.</div>
 </div>
 </section>
 </li>
@@ -305,8 +302,7 @@ not permitted.)</div>
 <dt>Parameters:</dt>
 <dd><code>symbol</code> - the symbol to check</dd>
 <dt>Returns:</dt>
-<dd>true if the symbol is a border symbol that can be merged, false
-        otherwise</dd>
+<dd>true if the symbol is a border symbol that can be merged, false otherwise</dd>
 </dl>
 </div>
 </section>

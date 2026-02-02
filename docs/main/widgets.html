@@ -54,6 +54,14 @@
 </li>
 <li><a href="#table">Table</a></li>
 <li><a href="#tabs">Tabs</a></li>
+<li><a href="#tree">Tree</a>
+<ul class="sectlevel3">
+<li><a href="#modelview-separation">Model/View Separation</a></li>
+<li><a href="#keyboard-navigation">Keyboard Navigation</a></li>
+<li><a href="#lazy-loading">Lazy Loading</a></li>
+<li><a href="#css-styling">CSS Styling</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#data-visualization">Data Visualization</a>
@@ -501,6 +509,196 @@ table.render(area, buffer, state);</code></pre>
 TabsState state = new TabsState();
 state.select(0);
 tabs.render(area, buffer, state);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tree"><a class="anchor" href="#tree"></a><a class="link" href="#tree">Tree</a></h3>
+<div class="paragraph">
+<p>A hierarchical tree view with expand/collapse, keyboard navigation, and support for custom node rendering. Use <code>TreeElement</code> (toolkit layer) with <code>TreeNode</code> for the data model.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create tree nodes with data model
+TreeNode&lt;FileInfo&gt; src = TreeNode.of("src", new FileInfo("src", FileType.DIRECTORY))
+    .add(TreeNode.of("main", new FileInfo("main", FileType.DIRECTORY))
+        .add(TreeNode.of("App.java", new FileInfo("App.java", FileType.JAVA, 2048)).leaf())
+        .expanded())
+    .expanded();
+
+// Create tree with custom node renderer
+tree(src, docs, build)
+    .title("Project Files")
+    .rounded()
+    .highlightColor(Color.CYAN)
+    .scrollbar()
+    .nodeRenderer(node -&gt; row(
+        text(node.data().icon() + " "),
+        text(node.label()).bold(),
+        spacer(),
+        text(node.data().formattedSize()).dim()
+    ))</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="modelview-separation"><a class="anchor" href="#modelview-separation"></a><a class="link" href="#modelview-separation">Model/View Separation</a></h4>
+<div class="paragraph">
+<p>TreeElement encourages clean separation between data and presentation:</p>
+</div>
+<div class="paragraph">
+<p><strong>Model (TreeNode + Data)</strong>: Contains only data, no rendering logic.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Pure data model - no view concerns
+record FileInfo(String name, FileType type, long size, Status status) {
+    String icon() { /* data-derived */ }
+    String formattedSize() { /* data formatting */ }
+}
+
+// TreeNode holds the data
+TreeNode&lt;FileInfo&gt; node = TreeNode.of("App.java", fileInfo).leaf();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>View (nodeRenderer)</strong>: Transforms data into styled elements.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Rendering logic separated from model
+tree.nodeRenderer(node -&gt; {
+    var info = node.data();
+    return row(
+        text(info.icon() + " "),
+        text(info.name()).fg(info.statusColor()),
+        spacer(),
+        text(info.formattedSize()).dim()
+    );
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This separation allows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Reusable models</strong>: Same <code>TreeNode&lt;T&gt;</code> data can be rendered differently in different contexts</p>
+</li>
+<li>
+<p><strong>Testable logic</strong>: Data transformations can be unit tested without UI</p>
+</li>
+<li>
+<p><strong>Flexible presentation</strong>: Change rendering without modifying data structures</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="keyboard-navigation"><a class="anchor" href="#keyboard-navigation"></a><a class="link" href="#keyboard-navigation">Keyboard Navigation</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Key</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">↑/↓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move selection up/down</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">→</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expand node or move to first child</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">←</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Collapse node or move to parent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter/Space</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle expand/collapse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Home/End</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jump to first/last visible node</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Page Up/Down</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scroll by viewport height</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="lazy-loading"><a class="anchor" href="#lazy-loading"></a><a class="link" href="#lazy-loading">Lazy Loading</a></h4>
+<div class="paragraph">
+<p>Load children on-demand for large trees:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">TreeNode.of("Large Directory", dirInfo)
+    .childrenLoader(() -&gt; loadChildrenFromDisk(dirInfo.path()))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The loader is called once when the node is first expanded.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="css-styling"><a class="anchor" href="#css-styling"></a><a class="link" href="#css-styling">CSS Styling</a></h4>
+<div class="paragraph">
+<p>Style trees with CSS, including the <code>:selected</code> pseudo-class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">/* Guide characters */
+TreeElement-guide {
+    color: #45475a;
+}
+
+/* Selected node styling */
+TreeElement-node:selected {
+    color: #89dceb;
+    background: #313244;
+    bold: true;
+}
+
+/* Scrollbar */
+TreeElement-scrollbar-thumb {
+    color: #89b4fa;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CSS selectors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>TreeElement</code> - the container</p>
+</li>
+<li>
+<p><code>TreeElement-node</code> - each tree node</p>
+</li>
+<li>
+<p><code>TreeElement-node:selected</code> - the selected node</p>
+</li>
+<li>
+<p><code>TreeElement-guide</code> - guide/branch characters</p>
+</li>
+<li>
+<p><code>TreeElement-scrollbar-thumb</code> - scrollbar thumb</p>
+</li>
+<li>
+<p><code>TreeElement-scrollbar-track</code> - scrollbar track</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1030,7 +1228,7 @@ column(top, middle, bottom).spacing(1)</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-02-02 08:47:04 UTC
+Last updated 2026-02-02 11:56:48 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

@@ -75,4 +75,5 @@ dev.tamboui.widgets.sparkline
 dev.tamboui.widgets.spinner
 dev.tamboui.widgets.table
 dev.tamboui.widgets.tabs
+dev.tamboui.widgets.tree
 dev.tamboui.widgets.wavetext

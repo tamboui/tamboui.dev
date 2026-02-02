@@ -47,6 +47,18 @@
 <li><a href="#bounds-checking">Bounds Checking</a></li>
 </ul>
 </li>
+<li><a href="#exporting-buffer-content">Exporting Buffer Content</a>
+<ul class="sectlevel2">
+<li><a href="#fluent-api">Fluent API</a></li>
+<li><a href="#format-selection">Format Selection</a></li>
+<li><a href="#output-methods">Output Methods</a></li>
+<li><a href="#cropping-to-a-region">Cropping to a region</a></li>
+<li><a href="#default-export-colors">Default export colors</a></li>
+<li><a href="#svg-export">SVG Export</a></li>
+<li><a href="#html-export">HTML Export</a></li>
+<li><a href="#text-export">Text Export</a></li>
+</ul>
+</li>
 <li><a href="#creating-toolkit-components">Creating Toolkit Components</a>
 <ul class="sectlevel2">
 <li><a href="#using-components">Using Components</a></li>
@@ -244,6 +256,257 @@ for (int row = area.y(); row &lt; area.bottom(); row++) {
     y &gt;= area.y() &amp;&amp; y &lt; area.bottom()) {
     buffer.setCell(x, y, cell);
 }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="exporting-buffer-content"><a class="anchor" href="#exporting-buffer-content"></a><a class="link" href="#exporting-buffer-content">Exporting Buffer Content</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can export a <code>Buffer</code> to SVG, HTML, or plain/ANSI text for screenshots, documentation, or sharing. The API is fluent: start from <code>export(buffer)</code> (static import {@code ExportRequest.export}), choose a format, optionally configure options, then write to a file, stream, or string.</p>
+</div>
+<div class="sect2">
+<h3 id="fluent-api"><a class="anchor" href="#fluent-api"></a><a class="link" href="#fluent-api">Fluent API</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.buffer.Buffer;
+import java.nio.file.Path;
+
+import static dev.tamboui.export.ExportRequest.export;
+
+// Start from a buffer (e.g. after rendering widgets)
+Buffer buffer = ...;
+
+// Shorthand: export as SVG with default options
+export(buffer).svg().toFile(Path.of("output.svg"));
+
+// Configure options via options(Consumer)
+export(buffer).svg()
+    .options(o -&gt; o.title("My App"))
+    .toFile(Path.of("output.svg"));
+
+// Export to string or bytes
+String svgString = export(buffer).svg().toString();
+byte[] htmlBytes = export(buffer).html().options(o -&gt; o.inlineStyles(true)).toBytes();
+
+// Write to an OutputStream or Writer
+export(buffer).text().to(outputStream);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="format-selection"><a class="anchor" href="#format-selection"></a><a class="link" href="#format-selection">Format Selection</a></h3>
+<div class="paragraph">
+<p>Use the shorthand methods for the built-in formats:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>export(buffer).svg()</code> — SVG (scalable vector graphic)</p>
+</li>
+<li>
+<p><code>export(buffer).html()</code> — HTML document (with embedded or external CSS)</p>
+</li>
+<li>
+<p><code>export(buffer).text()</code> — Plain text or ANSI-styled text</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To use a custom format, pass it to <code>as(Format)</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">export(buffer).as(Formats.SVG).toFile(path);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also export by file path and let the extension choose the format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">export(buffer).toFile(Path.of("screenshot.svg"));   // SVG
+export(buffer).toFile(Path.of("page.html"));       // HTML
+export(buffer).toFile(Path.of("dump.txt"));        // Plain text
+export(buffer).toFile(Path.of("styled.ansi"));     // ANSI-styled text</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Extension mapping: <code>.svg</code> → SVG; <code>.html</code> / <code>.htm</code> → HTML; <code>.txt</code> / <code>.asc</code> → plain text; <code>.ans</code> / <code>.ansi</code> → ANSI text. Unknown extensions default to SVG.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="output-methods"><a class="anchor" href="#output-methods"></a><a class="link" href="#output-methods">Output Methods</a></h3>
+<div class="paragraph">
+<p>After choosing a format (and optionally configuring options), use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>toFile(Path path)</code> — write to a file (UTF-8)</p>
+</li>
+<li>
+<p><code>to(OutputStream out)</code> — write to a stream (UTF-8)</p>
+</li>
+<li>
+<p><code>to(Writer out)</code> — write to a writer (caller controls charset; writer is not closed)</p>
+</li>
+<li>
+<p><code>toString()</code> — return the exported string</p>
+</li>
+<li>
+<p><code>toBytes()</code> — return UTF-8 bytes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cropping-to-a-region"><a class="anchor" href="#cropping-to-a-region"></a><a class="link" href="#cropping-to-a-region">Cropping to a region</a></h3>
+<div class="paragraph">
+<p>Use <code>crop(Rect)</code> to export only part of the buffer. The rect is clipped to buffer bounds. Returns a new request (immutable); chain with format and output as usual.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Rect;
+
+// Export a single region (e.g. title, table, or footer)
+Rect titleRect = new Rect(0, 0, 80, 3);
+export(buffer).crop(titleRect).svg().toFile(Path.of("title.svg"));
+
+// Combined rectangle of multiple elements: union of two rects
+Rect tableRect = new Rect(22, 3, 58, 12);
+Rect footerRect = new Rect(0, 15, 80, 2);
+Rect tableAndFooter = tableRect.union(footerRect);
+export(buffer).crop(tableAndFooter).svg().toFile(Path.of("table_and_footer.svg"));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In Toolkit apps, use <code>Element.renderedArea()</code> after a frame is rendered to get an element&#8217;s last rendered rect, then crop to that rect to export just that element:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// After rendering (e.g. in an action handler with access to buffer and element)
+Rect area = myPanel.renderedArea();
+if (area != null &amp;&amp; !area.isEmpty()) {
+    export(buffer).crop(area).svg().toFile(Path.of("panel.svg"));
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="default-export-colors"><a class="anchor" href="#default-export-colors"></a><a class="link" href="#default-export-colors">Default export colors</a></h3>
+<div class="paragraph">
+<p>Export formats use a default foreground and background when a cell style does not specify colors (e.g. after RESET). When you do not pass a resolver, export uses those property defaults.</p>
+</div>
+<div class="paragraph">
+<p>To supply custom defaults (e.g. from the toolkit style engine), pass a <code>StylePropertyResolver</code> via <code>styles(&#8230;&#8203;)</code>. The resolver can provide values for the properties <code>export-foreground</code> and <code>export-background</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.export.ExportProperties;
+import dev.tamboui.style.Color;
+import dev.tamboui.style.StylePropertyResolver;
+
+// Use property defaults (dark theme) — no resolver
+export(buffer).svg().toFile(path);
+
+// Custom defaults via a resolver (e.g. from toolkit StyleEngine)
+StylePropertyResolver myResolver = ...;  // e.g. styleEngine.resolver()
+export(buffer).svg().options(o -&gt; o.styles(myResolver)).toFile(path);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="svg-export"><a class="anchor" href="#svg-export"></a><a class="link" href="#svg-export">SVG Export</a></h3>
+<div class="paragraph">
+<p>SVG export produces a standalone SVG document suitable for embedding or conversion to PNG/PDF.</p>
+</div>
+<div class="paragraph">
+<p>Options (<code>SvgOptions</code>), via <code>.options(o &#8594; &#8230;&#8203;)</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>title(String)</code> — window/title text (default: <code>"TamboUI"</code>)</p>
+</li>
+<li>
+<p><code>chrome(boolean)</code> — include window frame, title, and traffic-light buttons (default: <code>true</code>); <code>false</code> for content only</p>
+</li>
+<li>
+<p><code>styles(StylePropertyResolver)</code> — style resolver for default export foreground/background (properties <code>export-foreground</code>, <code>export-background</code>); when <code>null</code> (default), uses <code>ExportProperties</code> defaults (dark theme)</p>
+</li>
+<li>
+<p><code>fontAspectRatio(double)</code> — character width-to-height ratio for layout (default: 0.61)</p>
+</li>
+<li>
+<p><code>uniqueId(String)</code> — prefix for CSS classes and clip paths, or <code>null</code> for auto-generated</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">export(buffer).svg()
+    .options(o -&gt; o.title("Dashboard"))
+    .toFile(Path.of("dashboard.svg"));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="html-export"><a class="anchor" href="#html-export"></a><a class="link" href="#html-export">HTML Export</a></h3>
+<div class="paragraph">
+<p>HTML export produces a full HTML document with styled <code>&lt;pre&gt;</code> content. Styles can be embedded in each <code>&lt;span&gt;</code> or placed in a <code>&lt;style&gt;</code> block.</p>
+</div>
+<div class="paragraph">
+<p>Options (<code>HtmlOptions</code>):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>styles(StylePropertyResolver)</code> — style resolver for default export foreground/background (same as SVG); when <code>null</code> (default), uses <code>ExportProperties</code> defaults</p>
+</li>
+<li>
+<p><code>inlineStyles(boolean)</code> — <code>true</code> for inline styles on each span (single-file, larger); <code>false</code> for a stylesheet (default, smaller HTML)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// One file with external stylesheet (default)
+export(buffer).html().toFile(Path.of("output.html"));
+
+// Inline styles (self-contained, no separate CSS)
+export(buffer).html()
+    .options(o -&gt; o.inlineStyles(true))
+    .toFile(Path.of("output_inline.html"));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="text-export"><a class="anchor" href="#text-export"></a><a class="link" href="#text-export">Text Export</a></h3>
+<div class="paragraph">
+<p>Text export produces plain text or ANSI-escape-styled text (e.g. for pasting into terminals or logs).</p>
+</div>
+<div class="paragraph">
+<p>Options (<code>TextOptions</code>):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>styles(boolean)</code> — <code>true</code> to include ANSI escape codes for colors and modifiers; <code>false</code> for plain text only (default)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Plain text
+String plain = export(buffer).text().toString();
+export(buffer).text().toFile(Path.of("dump.txt"));
+
+// ANSI-styled (e.g. for .ansi files or terminal paste)
+String ansi = export(buffer).text().options(o -&gt; o.styles(true)).toString();
+export(buffer).text().options(o -&gt; o.styles(true)).toFile(Path.of("styled.ansi"));</code></pre>
 </div>
 </div>
 </div>
@@ -841,6 +1104,9 @@ String result = CharWidth.substringByWidth("A👨‍🦲B", 3);
 <p><code>tamboui-core/src/main/java/dev/tamboui/buffer/</code> - Buffer and Cell</p>
 </li>
 <li>
+<p><code>tamboui-core/src/main/java/dev/tamboui/export/</code> - Export API (SVG, HTML, text)</p>
+</li>
+<li>
 <p><code>tamboui-core/src/main/java/dev/tamboui/text/CharWidth.java</code> - Unicode display width utilities</p>
 </li>
 <li>
@@ -854,7 +1120,7 @@ String result = CharWidth.substringByWidth("A👨‍🦲B", 3);
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-02-01 22:37:58 UTC
+Last updated 2026-02-02 08:47:04 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

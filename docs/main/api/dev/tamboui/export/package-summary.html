@@ -77,26 +77,50 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">dev.tamboui</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="html/package-summary.html">dev.tamboui.export.html</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="svg/package-summary.html">dev.tamboui.export.svg</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="text/package-summary.html">dev.tamboui.export.text</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </div>
 </li>
 <li>
 <div id="class-summary">
-<div class="caption"><span>Classes</span></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button></div>
+<div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="BufferSvgExporter.html" title="class in dev.tamboui.export">BufferSvgExporter</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Exports a <a href="../buffer/Buffer.html" title="class in dev.tamboui.buffer"><code>Buffer</code></a> to an SVG in the same spirit as Rich's <code>Console.export_svg</code>.</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Encoder.html" title="interface in dev.tamboui.export">Encoder</a>&lt;O extends <a href="ExportOptions.html" title="interface in dev.tamboui.export">ExportOptions</a>&gt;</div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">Encodes a region of a buffer to a format and writes to an <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Appendable.html" title="class or interface in java.lang" class="external-link"><code>Appendable</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="BufferSvgExporter.Options.html" title="class in dev.tamboui.export">BufferSvgExporter.Options</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ExportOptions.html" title="interface in dev.tamboui.export">ExportOptions</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">Marker interface for format-specific export options.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ExportProperties.html" title="class in dev.tamboui.export">ExportProperties</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Property definitions for export default colors.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ExportRequest.html" title="class in dev.tamboui.export">ExportRequest</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Export options (all values have reasonable defaults).</div>
+<div class="block">Entry point for the fluent export API after selecting a buffer.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="BufferSvgExporter.Theme.html" title="class in dev.tamboui.export">BufferSvgExporter.Theme</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ExportStep.html" title="class in dev.tamboui.export">ExportStep</a>&lt;O extends <a href="ExportOptions.html" title="interface in dev.tamboui.export">ExportOptions</a>&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A minimal theme for SVG export.</div>
+<div class="block">Fluent step after selecting a format.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Format.html" title="interface in dev.tamboui.export">Format</a>&lt;O extends <a href="ExportOptions.html" title="interface in dev.tamboui.export">ExportOptions</a>&gt;</div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">A format for buffer export (e.g.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Formats.html" title="class in dev.tamboui.export">Formats</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Built-in export formats.</div>
+</div>
 </div>
 </div>
 </div>

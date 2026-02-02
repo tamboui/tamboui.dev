@@ -36,6 +36,8 @@
 <li><a href="#ai-coding-assistant-demo">AI Coding Assistant Demo</a></li>
 <li><a href="#dock-layout">Dock Layout</a></li>
 <li><a href="#error-handling-demo">Error Handling Demo</a></li>
+<li><a href="#export-core">Export (Core)</a></li>
+<li><a href="#export-toolkit">Export (Toolkit)</a></li>
 <li><a href="#file-manager">File Manager</a></li>
 <li><a href="#flex-layout-demo">Flex Layout Demo</a></li>
 <li><a href="#flow-layout">Flow Layout</a></li>
@@ -94,6 +96,34 @@ AsciinemaPlayer.create('demos/dock-demo.cast', document.getElementById('player-d
 <div id="player-error-handling-demo" class="demo-player"></div>
 <script>
 AsciinemaPlayer.create('demos/error-handling-demo.cast', document.getElementById('player-error-handling-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="export-core"><a class="anchor" href="#export-core"></a><a class="link" href="#export-core">Export (Core)</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Buffer export demo (SVG, HTML, text) using core widgets; full-buffer export only</p>
+</div>
+<div id="player-export-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/export-demo.cast', document.getElementById('player-export-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="export-toolkit"><a class="anchor" href="#export-toolkit"></a><a class="link" href="#export-toolkit">Export (Toolkit)</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Toolkit export demo: uses Element.renderedArea() for export regions. Press E to export.</p>
+</div>
+<div id="player-toolkit-export-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/toolkit-export-demo.cast', document.getElementById('player-toolkit-export-demo'), {
     autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
 });
 </script>
@@ -243,7 +273,7 @@ AsciinemaPlayer.create('demos/stack-demo.cast', document.getElementById('player-
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-02-01 22:37:58 UTC
+Last updated 2026-02-02 08:47:04 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

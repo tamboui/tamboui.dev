@@ -72,6 +72,9 @@ loadScripts(document, 'script');</script>
 <li><a href="dev/tamboui/css/selector/package-tree.html">dev.tamboui.css.selector</a>, </li>
 <li><a href="dev/tamboui/error/package-tree.html">dev.tamboui.error</a>, </li>
 <li><a href="dev/tamboui/export/package-tree.html">dev.tamboui.export</a>, </li>
+<li><a href="dev/tamboui/export/html/package-tree.html">dev.tamboui.export.html</a>, </li>
+<li><a href="dev/tamboui/export/svg/package-tree.html">dev.tamboui.export.svg</a>, </li>
+<li><a href="dev/tamboui/export/text/package-tree.html">dev.tamboui.export.text</a>, </li>
 <li><a href="dev/tamboui/image/package-tree.html">dev.tamboui.image</a>, </li>
 <li><a href="dev/tamboui/image/capability/package-tree.html">dev.tamboui.image.capability</a>, </li>
 <li><a href="dev/tamboui/image/protocol/package-tree.html">dev.tamboui.image.protocol</a>, </li>
@@ -167,9 +170,6 @@ loadScripts(document, 'script');</script>
 <li class="circle">dev.tamboui.widgets.block.<a href="dev/tamboui/widgets/block/BorderTypeConverter.html" class="type-name-link" title="class in dev.tamboui.widgets.block">BorderTypeConverter</a> (implements dev.tamboui.style.<a href="dev/tamboui/style/PropertyConverter.html" title="interface in dev.tamboui.style">PropertyConverter</a>&lt;T&gt;)</li>
 <li class="circle">dev.tamboui.image.protocol.<a href="dev/tamboui/image/protocol/BrailleProtocol.html" class="type-name-link" title="class in dev.tamboui.image.protocol">BrailleProtocol</a> (implements dev.tamboui.image.protocol.<a href="dev/tamboui/image/protocol/ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a>)</li>
 <li class="circle">dev.tamboui.buffer.<a href="dev/tamboui/buffer/Buffer.html" class="type-name-link" title="class in dev.tamboui.buffer">Buffer</a></li>
-<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/BufferSvgExporter.html" class="type-name-link" title="class in dev.tamboui.export">BufferSvgExporter</a></li>
-<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/BufferSvgExporter.Options.html" class="type-name-link" title="class in dev.tamboui.export">BufferSvgExporter.Options</a></li>
-<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/BufferSvgExporter.Theme.html" class="type-name-link" title="class in dev.tamboui.export">BufferSvgExporter.Theme</a></li>
 <li class="circle">dev.tamboui.backend.panama.<a href="dev/tamboui/backend/panama/ByteArrayBuilder.html" class="type-name-link" title="class in dev.tamboui.backend.panama">ByteArrayBuilder</a></li>
 <li class="circle">dev.tamboui.widgets.calendar.<a href="dev/tamboui/widgets/calendar/CalendarEventStore.html" class="type-name-link" title="class in dev.tamboui.widgets.calendar">CalendarEventStore</a> (implements dev.tamboui.widgets.calendar.<a href="dev/tamboui/widgets/calendar/DateStyler.html" title="interface in dev.tamboui.widgets.calendar">DateStyler</a>)</li>
 <li class="circle">dev.tamboui.widgets.canvas.<a href="dev/tamboui/widgets/canvas/Canvas.html" class="type-name-link" title="class in dev.tamboui.widgets.canvas">Canvas</a> (implements dev.tamboui.widget.<a href="dev/tamboui/widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>)</li>
@@ -250,6 +250,9 @@ loadScripts(document, 'script');</script>
 <li class="circle">dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/EventParser.html" class="type-name-link" title="class in dev.tamboui.tui.event">EventParser</a></li>
 <li class="circle">dev.tamboui.toolkit.event.<a href="dev/tamboui/toolkit/event/EventRouter.html" class="type-name-link" title="class in dev.tamboui.toolkit.event">EventRouter</a></li>
 <li class="circle">dev.tamboui.tfx.effects.<a href="dev/tamboui/tfx/effects/ExpandShader.html" class="type-name-link" title="class in dev.tamboui.tfx.effects">ExpandShader</a> (implements dev.tamboui.tfx.<a href="dev/tamboui/tfx/Shader.html" title="interface in dev.tamboui.tfx">Shader</a>)</li>
+<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/ExportProperties.html" class="type-name-link" title="class in dev.tamboui.export">ExportProperties</a></li>
+<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/ExportRequest.html" class="type-name-link" title="class in dev.tamboui.export">ExportRequest</a></li>
+<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/ExportStep.html" class="type-name-link" title="class in dev.tamboui.export">ExportStep</a>&lt;O&gt;</li>
 <li class="circle">dev.tamboui.layout.cassowary.<a href="dev/tamboui/layout/cassowary/Expression.html" class="type-name-link" title="class in dev.tamboui.layout.cassowary">Expression</a></li>
 <li class="circle">dev.tamboui.tfx.effects.<a href="dev/tamboui/tfx/effects/FadeShader.html" class="type-name-link" title="class in dev.tamboui.tfx.effects">FadeShader</a> (implements dev.tamboui.tfx.<a href="dev/tamboui/tfx/Shader.html" title="interface in dev.tamboui.tfx">Shader</a>)</li>
 <li class="circle">dev.tamboui.css.property.<a href="dev/tamboui/css/property/FlexConverter.html" class="type-name-link" title="class in dev.tamboui.css.property">FlexConverter</a> (implements dev.tamboui.css.property.<a href="dev/tamboui/css/property/PropertyConverter.html" title="interface in dev.tamboui.css.property">PropertyConverter</a>&lt;T&gt;)</li>
@@ -258,6 +261,7 @@ loadScripts(document, 'script');</script>
 <li class="circle">dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/Flow.Builder.html" class="type-name-link" title="class in dev.tamboui.layout.flow">Flow.Builder</a></li>
 <li class="circle">dev.tamboui.layout.flow.<a href="dev/tamboui/layout/flow/FlowItem.html" class="type-name-link" title="class in dev.tamboui.layout.flow">FlowItem</a></li>
 <li class="circle">dev.tamboui.toolkit.focus.<a href="dev/tamboui/toolkit/focus/FocusManager.html" class="type-name-link" title="class in dev.tamboui.toolkit.focus">FocusManager</a></li>
+<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/Formats.html" class="type-name-link" title="class in dev.tamboui.export">Formats</a></li>
 <li class="circle">dev.tamboui.layout.<a href="dev/tamboui/layout/Fraction.html" class="type-name-link" title="class in dev.tamboui.layout">Fraction</a> (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;)</li>
 <li class="circle">dev.tamboui.terminal.<a href="dev/tamboui/terminal/Frame.html" class="type-name-link" title="class in dev.tamboui.terminal">Frame</a></li>
 <li class="circle">dev.tamboui.terminal.<a href="dev/tamboui/terminal/FrameInternal.html" class="type-name-link" title="class in dev.tamboui.terminal">FrameInternal</a></li>
@@ -276,6 +280,9 @@ loadScripts(document, 'script');</script>
 <li class="circle">dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/Gutter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">Gutter</a></li>
 <li class="circle">dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/GutterConverter.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">GutterConverter</a> (implements dev.tamboui.style.<a href="dev/tamboui/style/PropertyConverter.html" title="interface in dev.tamboui.style">PropertyConverter</a>&lt;T&gt;)</li>
 <li class="circle">dev.tamboui.image.protocol.<a href="dev/tamboui/image/protocol/HalfBlockProtocol.html" class="type-name-link" title="class in dev.tamboui.image.protocol">HalfBlockProtocol</a> (implements dev.tamboui.image.protocol.<a href="dev/tamboui/image/protocol/ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a>)</li>
+<li class="circle">dev.tamboui.export.html.<a href="dev/tamboui/export/html/HtmlExporter.html" class="type-name-link" title="class in dev.tamboui.export.html">HtmlExporter</a></li>
+<li class="circle">dev.tamboui.export.html.<a href="dev/tamboui/export/html/HtmlFormat.html" class="type-name-link" title="class in dev.tamboui.export.html">HtmlFormat</a> (implements dev.tamboui.export.<a href="dev/tamboui/export/Format.html" title="interface in dev.tamboui.export">Format</a>&lt;O&gt;)</li>
+<li class="circle">dev.tamboui.export.html.<a href="dev/tamboui/export/html/HtmlOptions.html" class="type-name-link" title="class in dev.tamboui.export.html">HtmlOptions</a> (implements dev.tamboui.export.<a href="dev/tamboui/export/ExportOptions.html" title="interface in dev.tamboui.export">ExportOptions</a>)</li>
 <li class="circle">dev.tamboui.style.<a href="dev/tamboui/style/Hyperlink.html" class="type-name-link" title="class in dev.tamboui.style">Hyperlink</a></li>
 <li class="circle">dev.tamboui.tfx.pattern.<a href="dev/tamboui/tfx/pattern/IdentityPattern.html" class="type-name-link" title="class in dev.tamboui.tfx.pattern">IdentityPattern</a> (implements dev.tamboui.tfx.pattern.<a href="dev/tamboui/tfx/pattern/Pattern.html" title="interface in dev.tamboui.tfx.pattern">Pattern</a>)</li>
 <li class="circle">dev.tamboui.toolkit.id.<a href="dev/tamboui/toolkit/id/IdGenerator.html" class="type-name-link" title="class in dev.tamboui.toolkit.id">IdGenerator</a></li>
@@ -451,6 +458,9 @@ loadScripts(document, 'script');</script>
 <li class="circle">dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledSpan.html" class="type-name-link" title="class in dev.tamboui.toolkit.element">StyledSpan</a> (implements dev.tamboui.css.<a href="dev/tamboui/css/Styleable.html" title="interface in dev.tamboui.css">Styleable</a>)</li>
 <li class="circle">dev.tamboui.css.engine.<a href="dev/tamboui/css/engine/StyleEngine.html" class="type-name-link" title="class in dev.tamboui.css.engine">StyleEngine</a></li>
 <li class="circle">dev.tamboui.css.model.<a href="dev/tamboui/css/model/Stylesheet.html" class="type-name-link" title="class in dev.tamboui.css.model">Stylesheet</a></li>
+<li class="circle">dev.tamboui.export.svg.<a href="dev/tamboui/export/svg/SvgExporter.html" class="type-name-link" title="class in dev.tamboui.export.svg">SvgExporter</a></li>
+<li class="circle">dev.tamboui.export.svg.<a href="dev/tamboui/export/svg/SvgFormat.html" class="type-name-link" title="class in dev.tamboui.export.svg">SvgFormat</a> (implements dev.tamboui.export.<a href="dev/tamboui/export/Format.html" title="interface in dev.tamboui.export">Format</a>&lt;O&gt;)</li>
+<li class="circle">dev.tamboui.export.svg.<a href="dev/tamboui/export/svg/SvgOptions.html" class="type-name-link" title="class in dev.tamboui.export.svg">SvgOptions</a> (implements dev.tamboui.export.<a href="dev/tamboui/export/ExportOptions.html" title="interface in dev.tamboui.export">ExportOptions</a>)</li>
 <li class="circle">dev.tamboui.tfx.pattern.<a href="dev/tamboui/tfx/pattern/SweepPattern.html" class="type-name-link" title="class in dev.tamboui.tfx.pattern">SweepPattern</a> (implements dev.tamboui.tfx.pattern.<a href="dev/tamboui/tfx/pattern/Pattern.html" title="interface in dev.tamboui.tfx.pattern">Pattern</a>)</li>
 <li class="circle">dev.tamboui.tfx.effects.<a href="dev/tamboui/tfx/effects/SweepShader.html" class="type-name-link" title="class in dev.tamboui.tfx.effects">SweepShader</a> (implements dev.tamboui.tfx.<a href="dev/tamboui/tfx/Shader.html" title="interface in dev.tamboui.tfx">Shader</a>)</li>
 <li class="circle">dev.tamboui.widgets.table.<a href="dev/tamboui/widgets/table/Table.html" class="type-name-link" title="class in dev.tamboui.widgets.table">Table</a> (implements dev.tamboui.widget.<a href="dev/tamboui/widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;S&gt;)</li>
@@ -468,9 +478,12 @@ loadScripts(document, 'script');</script>
 <li class="circle">dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextArea.html" class="type-name-link" title="class in dev.tamboui.widgets.input">TextArea</a> (implements dev.tamboui.widget.<a href="dev/tamboui/widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;S&gt;)</li>
 <li class="circle">dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextArea.Builder.html" class="type-name-link" title="class in dev.tamboui.widgets.input">TextArea.Builder</a></li>
 <li class="circle">dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextAreaState.html" class="type-name-link" title="class in dev.tamboui.widgets.input">TextAreaState</a></li>
+<li class="circle">dev.tamboui.export.text.<a href="dev/tamboui/export/text/TextExporter.html" class="type-name-link" title="class in dev.tamboui.export.text">TextExporter</a></li>
+<li class="circle">dev.tamboui.export.text.<a href="dev/tamboui/export/text/TextFormat.html" class="type-name-link" title="class in dev.tamboui.export.text">TextFormat</a> (implements dev.tamboui.export.<a href="dev/tamboui/export/Format.html" title="interface in dev.tamboui.export">Format</a>&lt;O&gt;)</li>
 <li class="circle">dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInput.html" class="type-name-link" title="class in dev.tamboui.widgets.input">TextInput</a> (implements dev.tamboui.widget.<a href="dev/tamboui/widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;S&gt;)</li>
 <li class="circle">dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInput.Builder.html" class="type-name-link" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></li>
 <li class="circle">dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInputState.html" class="type-name-link" title="class in dev.tamboui.widgets.input">TextInputState</a></li>
+<li class="circle">dev.tamboui.export.text.<a href="dev/tamboui/export/text/TextOptions.html" class="type-name-link" title="class in dev.tamboui.export.text">TextOptions</a> (implements dev.tamboui.export.<a href="dev/tamboui/export/ExportOptions.html" title="interface in dev.tamboui.export">ExportOptions</a>)</li>
 <li class="circle">dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxDuration.html" class="type-name-link" title="class in dev.tamboui.tfx">TFxDuration</a></li>
 <li class="circle">dev.tamboui.tfx.tui.<a href="dev/tamboui/tfx/tui/TfxIntegration.html" class="type-name-link" title="class in dev.tamboui.tfx.tui">TfxIntegration</a></li>
 <li class="circle">dev.tamboui.tfx.<a href="dev/tamboui/tfx/TFxMath.html" class="type-name-link" title="class in dev.tamboui.tfx">TFxMath</a></li>
@@ -583,10 +596,13 @@ loadScripts(document, 'script');</script>
 <li class="circle">dev.tamboui.widgets.calendar.<a href="dev/tamboui/widgets/calendar/DateStyler.html" class="type-name-link" title="interface in dev.tamboui.widgets.calendar">DateStyler</a></li>
 <li class="circle">dev.tamboui.toolkit.event.<a href="dev/tamboui/toolkit/event/DragHandler.html" class="type-name-link" title="interface in dev.tamboui.toolkit.event">DragHandler</a></li>
 <li class="circle">dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/Element.html" class="type-name-link" title="interface in dev.tamboui.toolkit.element">Element</a></li>
+<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/Encoder.html" class="type-name-link" title="interface in dev.tamboui.export">Encoder</a>&lt;O&gt;</li>
 <li class="circle">dev.tamboui.tui.error.<a href="dev/tamboui/tui/error/ErrorContext.html" class="type-name-link" title="interface in dev.tamboui.tui.error">ErrorContext</a></li>
 <li class="circle">dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/Event.html" class="type-name-link" title="interface in dev.tamboui.tui.event">Event</a></li>
 <li class="circle">dev.tamboui.tui.<a href="dev/tamboui/tui/EventHandler.html" class="type-name-link" title="interface in dev.tamboui.tui">EventHandler</a></li>
+<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/ExportOptions.html" class="type-name-link" title="interface in dev.tamboui.export">ExportOptions</a></li>
 <li class="circle">dev.tamboui.toolkit.focus.<a href="dev/tamboui/toolkit/focus/Focusable.html" class="type-name-link" title="interface in dev.tamboui.toolkit.focus">Focusable</a></li>
+<li class="circle">dev.tamboui.export.<a href="dev/tamboui/export/Format.html" class="type-name-link" title="interface in dev.tamboui.export">Format</a>&lt;O&gt;</li>
 <li class="circle">dev.tamboui.toolkit.event.<a href="dev/tamboui/toolkit/event/GlobalEventHandler.html" class="type-name-link" title="interface in dev.tamboui.toolkit.event">GlobalEventHandler</a></li>
 <li class="circle">dev.tamboui.image.protocol.<a href="dev/tamboui/image/protocol/ImageProtocol.html" class="type-name-link" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></li>
 <li class="circle">dev.tamboui.tui.<a href="dev/tamboui/tui/InlineEventHandler.html" class="type-name-link" title="interface in dev.tamboui.tui">InlineEventHandler</a></li>

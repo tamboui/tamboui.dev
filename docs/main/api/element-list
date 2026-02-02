@@ -16,6 +16,9 @@ dev.tamboui.css.property
 dev.tamboui.css.selector
 dev.tamboui.error
 dev.tamboui.export
+dev.tamboui.export.html
+dev.tamboui.export.svg
+dev.tamboui.export.text
 dev.tamboui.image
 dev.tamboui.image.capability
 dev.tamboui.image.protocol

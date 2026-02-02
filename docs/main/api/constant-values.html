@@ -242,13 +242,26 @@ loadScripts(document, 'script');</script>
 </ul>
 <ul class="block-list">
 <li>
-<div class="caption"><span>dev.tamboui.export.<a href="dev/tamboui/export/BufferSvgExporter.html" title="class in dev.tamboui.export">BufferSvgExporter</a></span></div>
+<div class="caption"><span>dev.tamboui.export.html.<a href="dev/tamboui/export/html/HtmlExporter.html" title="class in dev.tamboui.export.html">HtmlExporter</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Constant Field</div>
 <div class="table-header col-last">Value</div>
-<div class="col-first even-row-color"><code id="dev.tamboui.export.BufferSvgExporter.DEFAULT_SVG_FORMAT">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="dev/tamboui/export/BufferSvgExporter.html#DEFAULT_SVG_FORMAT">DEFAULT_SVG_FORMAT</a></code></div>
+<div class="col-first even-row-color"><code id="dev.tamboui.export.html.HtmlExporter.DEFAULT_HTML_FORMAT">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="dev/tamboui/export/html/HtmlExporter.html#DEFAULT_HTML_FORMAT">DEFAULT_HTML_FORMAT</a></code></div>
+<div class="col-last even-row-color"><code>"&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta charset=\"UTF-8\"&gt;\n&lt;style&gt;\n{stylesheet}\nbody {\n    color: {foreground};\n    background-color: {background};\n}\n&lt;/style&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;pre style=\"font-family:Menlo,\'DejaVu Sans Mono\',consolas,\'Courier New\',monospace\"&gt;&lt;code style=\"font-family:inherit\"&gt;{code}&lt;/code&gt;&lt;/pre&gt;\n&lt;/body&gt;\n&lt;/html&gt;"</code></div>
+</div>
+</li>
+</ul>
+<ul class="block-list">
+<li>
+<div class="caption"><span>dev.tamboui.export.svg.<a href="dev/tamboui/export/svg/SvgExporter.html" title="class in dev.tamboui.export.svg">SvgExporter</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Constant Field</div>
+<div class="table-header col-last">Value</div>
+<div class="col-first even-row-color"><code id="dev.tamboui.export.svg.SvgExporter.DEFAULT_SVG_FORMAT">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="dev/tamboui/export/svg/SvgExporter.html#DEFAULT_SVG_FORMAT">DEFAULT_SVG_FORMAT</a></code></div>
 <div class="col-last even-row-color"><code>"&lt;svg class=\"rich-terminal\" viewBox=\"0 0 {width} {height}\" xmlns=\"http://www.w3.org/2000/svg\"&gt;    &lt;!-- Generated with TamboUI --&gt;    &lt;style&gt;    @font-face {        font-family: \"Fira Code\";        src: local(\"FiraCode-Regular\"),                url(\"https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2\") format(\"woff2\"),                url(\"https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff\") format(\"woff\");        font-style: normal;        font-weight: 400;    }    @font-face {        font-family: \"Fira Code\";        src: local(\"FiraCode-Bold\"),                url(\"https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2\") format(\"woff2\"),                url(\"https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff\") format(\"woff\");        font-style: bold;        font-weight: 700;    }    .{unique_id}-matrix {        font-family: Fira Code, monospace;        font-size: {char_height}px;        line-height: {line_height}px;        font-variant-east-asian: full-width;    }    .{unique_id}-title {        font-size: 18px;        font-weight: bold;        font-family: arial;    }    {styles}    &lt;/style&gt;    &lt;defs&gt;    &lt;clipPath id=\"{unique_id}-clip-terminal\"&gt;      &lt;rect x=\"0\" y=\"0\" width=\"{terminal_width}\" height=\"{terminal_height}\" /&gt;    &lt;/clipPath&gt;    {lines}    &lt;/defs&gt;    {chrome}    &lt;g transform=\"translate({terminal_x}, {terminal_y})\" clip-path=\"url(#{unique_id}-clip-terminal)\"&gt;    {backgrounds}    &lt;g class=\"{unique_id}-matrix\"&gt;    {matrix}    &lt;/g&gt;    &lt;/g&gt;&lt;/svg&gt;"</code></div>
 </div>
 </li>

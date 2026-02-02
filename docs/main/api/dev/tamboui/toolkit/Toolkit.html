@@ -135,6 +135,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#textInput()" tabindex="0">textInput()</a></li>
 <li><a href="#textArea(dev.tamboui.widgets.input.TextAreaState)" tabindex="0">textArea(TextAreaState)</a></li>
 <li><a href="#textArea()" tabindex="0">textArea()</a></li>
+<li><a href="#formField(java.lang.String,dev.tamboui.widgets.input.TextInputState)" tabindex="0">formField(String, TextInputState)</a></li>
+<li><a href="#formField(java.lang.String)" tabindex="0">formField(String)</a></li>
+<li><a href="#formField(java.lang.String,dev.tamboui.widgets.form.BooleanFieldState)" tabindex="0">formField(String, BooleanFieldState)</a></li>
+<li><a href="#formField(java.lang.String,dev.tamboui.widgets.form.BooleanFieldState,dev.tamboui.widgets.form.FieldType)" tabindex="0">formField(String, BooleanFieldState, FieldType)</a></li>
+<li><a href="#formField(java.lang.String,dev.tamboui.widgets.form.SelectFieldState)" tabindex="0">formField(String, SelectFieldState)</a></li>
+<li><a href="#form(dev.tamboui.widgets.form.FormState)" tabindex="0">form(FormState)</a></li>
 <li><a href="#barChart(long...)" tabindex="0">barChart(long...)</a></li>
 <li><a href="#barChart()" tabindex="0">barChart()</a></li>
 <li><a href="#chart()" tabindex="0">chart()</a></li>
@@ -317,6 +323,41 @@ panel("Title",
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#flow(java.util.Collection)" class="member-name-link">flow</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a flow layout from a collection.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FormElement.html" title="class in dev.tamboui.toolkit.elements">FormElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#form(dev.tamboui.widgets.form.FormState)" class="member-name-link">form</a><wbr>(<a href="../widgets/form/FormState.html" title="class in dev.tamboui.widgets.form">FormState</a>&nbsp;formState)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a form container with the given state.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formField(java.lang.String)" class="member-name-link">formField</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a form field with a label and new text input state.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formField(java.lang.String,dev.tamboui.widgets.form.BooleanFieldState)" class="member-name-link">formField</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/form/BooleanFieldState.html" title="class in dev.tamboui.widgets.form">BooleanFieldState</a>&nbsp;state)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a form field with a label and boolean state (checkbox).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formField(java.lang.String,dev.tamboui.widgets.form.BooleanFieldState,dev.tamboui.widgets.form.FieldType)" class="member-name-link">formField</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/form/BooleanFieldState.html" title="class in dev.tamboui.widgets.form">BooleanFieldState</a>&nbsp;state,
+ <a href="../widgets/form/FieldType.html" title="enum class in dev.tamboui.widgets.form">FieldType</a>&nbsp;type)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a form field with a label, boolean state, and field type.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formField(java.lang.String,dev.tamboui.widgets.form.SelectFieldState)" class="member-name-link">formField</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/form/SelectFieldState.html" title="class in dev.tamboui.widgets.form">SelectFieldState</a>&nbsp;state)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a form field with a label and select state.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formField(java.lang.String,dev.tamboui.widgets.input.TextInputState)" class="member-name-link">formField</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&nbsp;state)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a form field with a label and text input state.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/GaugeElement.html" title="class in dev.tamboui.toolkit.elements">GaugeElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#gauge()" class="member-name-link">gauge</a>()</code></div>
@@ -1867,6 +1908,129 @@ This allows using styled elements directly:
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new text area element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="formField(java.lang.String,dev.tamboui.widgets.input.TextInputState)">
+<h3>formField</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></span>&nbsp;<span class="element-name">formField</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&nbsp;state)</span></div>
+<div class="block">Creates a form field with a label and text input state.
+<p>
+Form fields combine a label and input into a single element with
+consistent layout and styling.
+<pre><code>formField("Full name", nameState)
+    .labelWidth(14)
+    .rounded()
+    .borderColor(Color.DARK_GRAY)
+    .focusedBorderColor(Color.CYAN)
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the field label</dd>
+<dd><code>state</code> - the text input state</dd>
+<dt>Returns:</dt>
+<dd>a new form field element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="formField(java.lang.String)">
+<h3>formField</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></span>&nbsp;<span class="element-name">formField</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label)</span></div>
+<div class="block">Creates a form field with a label and new text input state.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the field label</dd>
+<dt>Returns:</dt>
+<dd>a new form field element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="formField(java.lang.String,dev.tamboui.widgets.form.BooleanFieldState)">
+<h3>formField</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></span>&nbsp;<span class="element-name">formField</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/form/BooleanFieldState.html" title="class in dev.tamboui.widgets.form">BooleanFieldState</a>&nbsp;state)</span></div>
+<div class="block">Creates a form field with a label and boolean state (checkbox).
+<p>
+Use <a href="elements/FormFieldElement.html#type(dev.tamboui.widgets.form.FieldType)"><code>FormFieldElement.type(FieldType)</code></a> to change to TOGGLE.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the field label</dd>
+<dd><code>state</code> - the boolean field state</dd>
+<dt>Returns:</dt>
+<dd>a new form field element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="formField(java.lang.String,dev.tamboui.widgets.form.BooleanFieldState,dev.tamboui.widgets.form.FieldType)">
+<h3>formField</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></span>&nbsp;<span class="element-name">formField</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/form/BooleanFieldState.html" title="class in dev.tamboui.widgets.form">BooleanFieldState</a>&nbsp;state,
+ <a href="../widgets/form/FieldType.html" title="enum class in dev.tamboui.widgets.form">FieldType</a>&nbsp;type)</span></div>
+<div class="block">Creates a form field with a label, boolean state, and field type.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the field label</dd>
+<dd><code>state</code> - the boolean field state</dd>
+<dd><code>type</code> - the field type (CHECKBOX or TOGGLE)</dd>
+<dt>Returns:</dt>
+<dd>a new form field element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="formField(java.lang.String,dev.tamboui.widgets.form.SelectFieldState)">
+<h3>formField</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></span>&nbsp;<span class="element-name">formField</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;label,
+ <a href="../widgets/form/SelectFieldState.html" title="class in dev.tamboui.widgets.form">SelectFieldState</a>&nbsp;state)</span></div>
+<div class="block">Creates a form field with a label and select state.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>label</code> - the field label</dd>
+<dd><code>state</code> - the select field state</dd>
+<dt>Returns:</dt>
+<dd>a new form field element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="form(dev.tamboui.widgets.form.FormState)">
+<h3>form</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/FormElement.html" title="class in dev.tamboui.toolkit.elements">FormElement</a></span>&nbsp;<span class="element-name">form</span><wbr><span class="parameters">(<a href="../widgets/form/FormState.html" title="class in dev.tamboui.widgets.form">FormState</a>&nbsp;formState)</span></div>
+<div class="block">Creates a form container with the given state.
+<p>
+Form containers manage multiple fields with consistent styling
+and optional grouping.
+<pre><code>form(formState)
+    .field("fullName", "Full name")
+    .field("email", "Email", Validators.email())
+    .group("Preferences")
+        .field("newsletter", "Newsletter", FieldType.CHECKBOX)
+    .labelWidth(14)
+    .rounded()
+    .onSubmit(state -&gt; saveUser(state))
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>formState</code> - the form state</dd>
+<dt>Returns:</dt>
+<dd>a new form element</dd>
 </dl>
 </div>
 </section>

@@ -63,6 +63,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#HANDLED" tabindex="0">HANDLED</a></li>
 <li><a href="#UNHANDLED" tabindex="0">UNHANDLED</a></li>
+<li><a href="#FOCUS_NEXT" tabindex="0">FOCUS_NEXT</a></li>
+<li><a href="#FOCUS_PREVIOUS" tabindex="0">FOCUS_PREVIOUS</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -117,6 +119,14 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Enum Constant</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="#FOCUS_NEXT" class="member-name-link">FOCUS_NEXT</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Request to move focus to the next focusable element.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="#FOCUS_PREVIOUS" class="member-name-link">FOCUS_PREVIOUS</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Request to move focus to the previous focusable element.</div>
+</div>
 <div class="col-first even-row-color"><code><a href="#HANDLED" class="member-name-link">HANDLED</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The event was handled and should not be propagated further.</div>
@@ -200,6 +210,26 @@ the order they are declared.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">UNHANDLED</span></div>
 <div class="block">The event was not handled and should continue propagating.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="FOCUS_NEXT">
+<h3>FOCUS_NEXT</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">FOCUS_NEXT</span></div>
+<div class="block">Request to move focus to the next focusable element.
+Used by form elements to enable up/down arrow navigation.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="FOCUS_PREVIOUS">
+<h3>FOCUS_PREVIOUS</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">FOCUS_PREVIOUS</span></div>
+<div class="block">Request to move focus to the previous focusable element.
+Used by form elements to enable up/down arrow navigation.</div>
 </div>
 </section>
 </li>

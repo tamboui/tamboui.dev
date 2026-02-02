@@ -70,6 +70,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#foreground(dev.tamboui.style.Color)" tabindex="0">foreground(Color)</a></li>
 <li><a href="#cursorColor(dev.tamboui.style.Color)" tabindex="0">cursorColor(Color)</a></li>
 <li><a href="#placeholderColor(dev.tamboui.style.Color)" tabindex="0">placeholderColor(Color)</a></li>
+<li><a href="#masked()" tabindex="0">masked()</a></li>
+<li><a href="#masked(char)" tabindex="0">masked(char)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -137,6 +139,16 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreground(dev.tamboui.style.Color)" class="member-name-link">foreground</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the foreground (text) color programmatically.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInput.Builder.html" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#masked()" class="member-name-link">masked</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Masks the input text with the default mask character ('*').</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInput.Builder.html" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#masked(char)" class="member-name-link">masked</a><wbr>(char&nbsp;maskChar)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Masks the input text with the specified character.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TextInput.Builder.html" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#placeholder(java.lang.String)" class="member-name-link">placeholder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;placeholder)</code></div>
@@ -336,6 +348,40 @@ This takes precedence over values from the style resolver.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>color</code> - the placeholder color</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="masked()">
+<h3>masked</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TextInput.Builder.html" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></span>&nbsp;<span class="element-name">masked</span>()</div>
+<div class="block">Masks the input text with the default mask character ('*').
+<p>
+When enabled, the actual text is stored but displayed as mask characters.
+Useful for password fields.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="masked(char)">
+<h3>masked</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TextInput.Builder.html" title="class in dev.tamboui.widgets.input">TextInput.Builder</a></span>&nbsp;<span class="element-name">masked</span><wbr><span class="parameters">(char&nbsp;maskChar)</span></div>
+<div class="block">Masks the input text with the specified character.
+<p>
+When enabled, the actual text is stored but displayed as the mask character.
+Useful for password fields.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>maskChar</code> - the character to display instead of actual text</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

@@ -2942,9 +2942,13 @@ loadScripts(document, 'script');</script>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/tui/InlineTuiRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Closes this runner and releases resources.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Closes this runner and releases resources.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiRunner.ConfiguredRunner.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.ConfiguredRunner.html" title="class in dev.tamboui.tui">TuiRunner.ConfiguredRunner</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/panama/unix/LibC.html#close(int)" class="member-name-link">close(int)</a> - Static method in class dev.tamboui.backend.panama.unix.<a href="dev/tamboui/backend/panama/unix/LibC.html" title="class in dev.tamboui.backend.panama.unix">LibC</a></dt>
@@ -14780,6 +14784,30 @@ and continuing to try other providers.</div>
 <dd>
 <div class="block">Schedules an action to run after a delay.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#scheduler()" class="member-name-link">scheduler()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns the externally-managed scheduler, or null if the runner should create its own.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiRunner.html#scheduler()" class="member-name-link">scheduler()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiRunner.html" title="class in dev.tamboui.tui">InlineTuiRunner</a></dt>
+<dd>
+<div class="block">Returns the shared scheduler for scheduling tasks.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#scheduler()" class="member-name-link">scheduler()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dd>
+<div class="block">Returns the externally-managed scheduler, or null if the runner should create its own.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiRunner.html#scheduler()" class="member-name-link">scheduler()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></dt>
+<dd>
+<div class="block">Returns the shared scheduler for scheduling tasks.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#scheduler(java.util.concurrent.ScheduledExecutorService)" class="member-name-link">scheduler(ScheduledExecutorService)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Sets an externally-managed scheduler.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#scheduler(java.util.concurrent.ScheduledExecutorService)" class="member-name-link">scheduler(ScheduledExecutorService)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Sets an externally-managed scheduler.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html#scheduleRepeating(java.lang.Runnable,java.time.Duration)" class="member-name-link">scheduleRepeating(Runnable, Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner</a></dt>
 <dd>
 <div class="block">Schedules an action to run repeatedly at a fixed interval.</div>
@@ -18798,7 +18826,7 @@ from each line.</div>
 <dd>
 <div class="block">Configuration options for <a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui"><code>TuiRunner</code></a>.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,java.util.concurrent.ScheduledExecutorService)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, ScheduledExecutorService)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
 <div class="block">Creates a new TUI configuration with the specified options.</div>
 </dd>

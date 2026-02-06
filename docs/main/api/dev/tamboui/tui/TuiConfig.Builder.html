@@ -74,6 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#errorOutput(java.io.PrintStream)" tabindex="0">errorOutput(PrintStream)</a></li>
 <li><a href="#fpsOverlay(boolean)" tabindex="0">fpsOverlay(boolean)</a></li>
 <li><a href="#postRenderProcessor(dev.tamboui.tui.PostRenderProcessor)" tabindex="0">postRenderProcessor(PostRenderProcessor)</a></li>
+<li><a href="#scheduler(java.util.concurrent.ScheduledExecutorService)" tabindex="0">scheduler(ScheduledExecutorService)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -178,13 +179,18 @@ loadScripts(document, 'script');</script>
 <div class="block">Sets the resize grace period.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shutdownHook(boolean)" class="member-name-link">shutdownHook</a><wbr>(boolean&nbsp;shutdownHook)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduler(java.util.concurrent.ScheduledExecutorService)" class="member-name-link">scheduler</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ScheduledExecutorService</a>&nbsp;scheduler)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets whether to register a JVM shutdown hook for cleanup.</div>
+<div class="block">Sets an externally-managed scheduler.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRate(java.time.Duration)" class="member-name-link">tickRate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shutdownHook(boolean)" class="member-name-link">shutdownHook</a><wbr>(boolean&nbsp;shutdownHook)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets whether to register a JVM shutdown hook for cleanup.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRate(java.time.Duration)" class="member-name-link">tickRate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the interval between tick events.</div>
 </div>
 </div>
@@ -440,6 +446,27 @@ Processors are called in the order they are added.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>processor</code> - the processor to add</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scheduler(java.util.concurrent.ScheduledExecutorService)">
+<h3>scheduler</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">scheduler</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ScheduledExecutorService</a>&nbsp;scheduler)</span></div>
+<div class="block">Sets an externally-managed scheduler.
+<p>
+When an external scheduler is provided, the runner will NOT shut it down
+on close - the caller retains ownership and is responsible for its lifecycle.
+<p>
+This is useful when multiple runners should share a single scheduler,
+or when integrating with frameworks that manage their own thread pools.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>scheduler</code> - the scheduler to use, or null to create an internal one</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

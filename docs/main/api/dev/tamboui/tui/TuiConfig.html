@@ -69,7 +69,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List)" tabindex="0">TuiConfig(boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List)</a></li>
+<li><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,java.util.concurrent.ScheduledExecutorService)" tabindex="0">TuiConfig(boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, ScheduledExecutorService)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#errorOutput()" tabindex="0">errorOutput()</a></li>
 <li><a href="#fpsOverlayEnabled()" tabindex="0">fpsOverlayEnabled()</a></li>
 <li><a href="#postRenderProcessors()" tabindex="0">postRenderProcessors()</a></li>
+<li><a href="#scheduler()" tabindex="0">scheduler()</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
@@ -168,7 +169,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List)" class="member-name-link">TuiConfig</a><wbr>(boolean&nbsp;rawMode,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,java.util.concurrent.ScheduledExecutorService)" class="member-name-link">TuiConfig</a><wbr>(boolean&nbsp;rawMode,
  boolean&nbsp;alternateScreen,
  boolean&nbsp;hideCursor,
  boolean&nbsp;mouseCapture,
@@ -180,7 +181,8 @@ loadScripts(document, 'script');</script>
  <a href="error/RenderErrorHandler.html" title="interface in dev.tamboui.tui.error">RenderErrorHandler</a>&nbsp;errorHandler,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput,
  boolean&nbsp;fpsOverlayEnabled,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&gt;&nbsp;postRenderProcessors)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&gt;&nbsp;postRenderProcessors,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ScheduledExecutorService</a>&nbsp;scheduler)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new TUI configuration with the specified options.</div>
 </div>
@@ -269,27 +271,32 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the resize grace period.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shutdownHook()" class="member-name-link">shutdownHook</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ScheduledExecutorService</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduler()" class="member-name-link">scheduler</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the externally-managed scheduler, or null if the runner should create its own.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shutdownHook()" class="member-name-link">shutdownHook</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns whether a shutdown hook is registered to restore the terminal.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRate()" class="member-name-link">tickRate</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRate()" class="member-name-link">tickRate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the tick interval, or null if ticks are disabled.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ticksEnabled()" class="member-name-link">ticksEnabled</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ticksEnabled()" class="member-name-link">ticksEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if tick events are enabled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withAnimation(java.time.Duration)" class="member-name-link">withAnimation</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withAnimation(java.time.Duration)" class="member-name-link">withAnimation</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a configuration suitable for animated applications.</div>
 </div>
 </div>
@@ -370,7 +377,7 @@ This ensures resize events are processed within a reasonable time even when tick
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List)">
+<section class="detail" id="&lt;init&gt;(boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,java.util.concurrent.ScheduledExecutorService)">
 <h3>TuiConfig</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TuiConfig</span><wbr><span class="parameters">(boolean&nbsp;rawMode,
@@ -385,7 +392,8 @@ This ensures resize events are processed within a reasonable time even when tick
  <a href="error/RenderErrorHandler.html" title="interface in dev.tamboui.tui.error">RenderErrorHandler</a>&nbsp;errorHandler,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput,
  boolean&nbsp;fpsOverlayEnabled,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&gt;&nbsp;postRenderProcessors)</span></div>
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PostRenderProcessor.html" title="interface in dev.tamboui.tui">PostRenderProcessor</a>&gt;&nbsp;postRenderProcessors,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ScheduledExecutorService</a>&nbsp;scheduler)</span></div>
 <div class="block">Creates a new TUI configuration with the specified options.
 <p>
 Prefer using <a href="#builder()"><code>builder()</code></a> or <a href="#defaults()"><code>defaults()</code></a> instead of this constructor.</div>
@@ -404,6 +412,7 @@ Prefer using <a href="#builder()"><code>builder()</code></a> or <a href="#defaul
 <dd><code>errorOutput</code> - the output stream for error logging</dd>
 <dd><code>fpsOverlayEnabled</code> - whether to show the FPS overlay</dd>
 <dd><code>postRenderProcessors</code> - list of post-render processors</dd>
+<dd><code>scheduler</code> - external scheduler to use, or null to create an internal one</dd>
 </dl>
 </div>
 </section>
@@ -659,6 +668,22 @@ Processors are called in order after the main renderer completes.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an unmodifiable list of post-render processors</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scheduler()">
+<h3>scheduler</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html" title="class or interface in java.util.concurrent" class="external-link">ScheduledExecutorService</a></span>&nbsp;<span class="element-name">scheduler</span>()</div>
+<div class="block">Returns the externally-managed scheduler, or null if the runner should create its own.
+<p>
+When an external scheduler is provided, the runner will NOT shut it down on close -
+the caller retains ownership and is responsible for its lifecycle.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the external scheduler, or null to use an internally-managed one</dd>
 </dl>
 </div>
 </section>

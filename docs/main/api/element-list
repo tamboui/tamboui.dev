@@ -1,5 +1,6 @@
 dev.tamboui
 dev.tamboui.annotations.bindings
+dev.tamboui.backend.aesh
 dev.tamboui.backend.jline3
 dev.tamboui.backend.panama
 dev.tamboui.backend.panama.unix

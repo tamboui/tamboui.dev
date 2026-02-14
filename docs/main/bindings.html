@@ -28,14 +28,18 @@
 <div id="header">
 <h1>Bindings and Actions</h1>
 <div class="details">
-<span id="revnumber">version 1.0.0-SNAPSHOT</span>
+<span id="revnumber">version 0.1.0-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#predefined-binding-sets">Predefined Binding Sets</a></li>
 <li><a href="#matching-actions-in-events">Matching Actions in Events</a></li>
-<li><a href="#key-triggers">Key Triggers</a></li>
+<li><a href="#key-triggers">Key Triggers</a>
+<ul class="sectlevel2">
+<li><a href="#terminal-compatibility">Terminal Compatibility</a></li>
+</ul>
+</li>
 <li><a href="#mouse-triggers">Mouse Triggers</a></li>
 <li><a href="#custom-bindings">Custom Bindings</a></li>
 <li><a href="#actionhandler">ActionHandler</a></li>
@@ -118,6 +122,100 @@ KeyTrigger.ch('j')                   // Character
 KeyTrigger.chIgnoreCase('j')         // j or J
 KeyTrigger.ctrl('u')                 // Ctrl+U
 KeyTrigger.alt('x')                  // Alt+X</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="terminal-compatibility"><a class="anchor" href="#terminal-compatibility"></a><a class="link" href="#terminal-compatibility">Terminal Compatibility</a></h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Ctrl key bindings have significant limitations</strong> due to how terminals encode keyboard input.</p>
+</div>
+<div class="paragraph">
+<p>When you press a key combination like Ctrl+A, the terminal does not send "Ctrl" + "A" separately.
+Instead, it sends a single ASCII control character (byte value 1 for Ctrl+A).
+This encoding dates back to the 1970s and causes several problems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ctrl+letter (a-z)</strong>: Works, but case information is lost. Ctrl+a and Ctrl+Shift+A send the same byte.</p>
+</li>
+<li>
+<p><strong>Ctrl+number</strong>: Unreliable. Ctrl+2, Ctrl+@, and Ctrl+Space all send the same byte (0). The original key cannot be determined.</p>
+</li>
+<li>
+<p><strong>Ctrl+Alt+key</strong>: Inconsistent across terminals.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Alt key bindings are more reliable</strong> because terminals send ESC followed by the actual character:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alt+a sends <code>ESC</code> + <code>'a'</code> - we know it was lowercase 'a'</p>
+</li>
+<li>
+<p>Alt+A sends <code>ESC</code> + <code>'A'</code> - we know it was uppercase 'A' (shifted)</p>
+</li>
+<li>
+<p>Alt+2 sends <code>ESC</code> + <code>'2'</code> - we know it was '2'</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Recommendation for custom bindings:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Modifier</th>
+<th class="tableblock halign-left valign-top">Reliability</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Alt+letter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Excellent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preserves case, works consistently</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Alt+number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Excellent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fully distinguishable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl+letter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Good</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Works but loses shift information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ctrl+number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Poor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avoid - ambiguous with other combinations</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For maximum compatibility, prefer <code>Alt+key</code> bindings for custom actions.
+Use <code>Ctrl+key</code> only for well-established conventions (Ctrl+C, Ctrl+S, Ctrl+Z, etc.).</p>
 </div>
 </div>
 </div>
@@ -237,8 +335,8 @@ For better startup performance and GraalVM native image compatibility, use the a
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">dependencies {
-    implementation("dev.tamboui:tamboui-toolkit:1.0.0-SNAPSHOT")
-    annotationProcessor("dev.tamboui:tamboui-processor:1.0.0-SNAPSHOT")
+    implementation("dev.tamboui:tamboui-toolkit:0.1.0-SNAPSHOT")
+    annotationProcessor("dev.tamboui:tamboui-processor:0.1.0-SNAPSHOT")
 }</code></pre>
 </div>
 </div>
@@ -248,8 +346,8 @@ For better startup performance and GraalVM native image compatibility, use the a
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">dependencies {
-    implementation 'dev.tamboui:tamboui-toolkit:1.0.0-SNAPSHOT'
-    annotationProcessor 'dev.tamboui:tamboui-processor:1.0.0-SNAPSHOT'
+    implementation 'dev.tamboui:tamboui-toolkit:0.1.0-SNAPSHOT'
+    annotationProcessor 'dev.tamboui:tamboui-processor:0.1.0-SNAPSHOT'
 }</code></pre>
 </div>
 </div>
@@ -262,7 +360,7 @@ For better startup performance and GraalVM native image compatibility, use the a
     &lt;dependency&gt;
         &lt;groupId&gt;dev.tamboui&lt;/groupId&gt;
         &lt;artifactId&gt;tamboui-toolkit&lt;/artifactId&gt;
-        &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+        &lt;version&gt;0.1.0-SNAPSHOT&lt;/version&gt;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;
 
@@ -277,7 +375,7 @@ For better startup performance and GraalVM native image compatibility, use the a
                     &lt;path&gt;
                         &lt;groupId&gt;dev.tamboui&lt;/groupId&gt;
                         &lt;artifactId&gt;tamboui-processor&lt;/artifactId&gt;
-                        &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+                        &lt;version&gt;0.1.0-SNAPSHOT&lt;/version&gt;
                     &lt;/path&gt;
                 &lt;/annotationProcessorPaths&gt;
             &lt;/configuration&gt;
@@ -400,8 +498,8 @@ Modifiers use <code>Ctrl+</code>, <code>Alt+</code>, <code>Shift+</code> prefixe
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0.0-SNAPSHOT<br>
-Last updated 2026-02-07 06:36:43 UTC
+Version 0.1.0-SNAPSHOT<br>
+Last updated 2026-02-14 09:26:31 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

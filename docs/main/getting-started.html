@@ -50,10 +50,15 @@
 </li>
 <li><a href="#running-the-demos">Running the Demos</a>
 <ul class="sectlevel2">
+<li><a href="#without-cloning-the-repository">Without Cloning the Repository</a></li>
+<li><a href="#from-tamboui-sources">From TamboUI sources</a>
+<ul class="sectlevel3">
 <li><a href="#using-jbang">Using JBang</a></li>
 <li><a href="#using-the-run-demo-sh-script">Using the run-demo.sh Script</a></li>
 <li><a href="#manual-build-and-run">Manual Build and Run</a></li>
 <li><a href="#compiling-to-native-image">Compiling to Native Image</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#next-steps">Next Steps</a></li>
@@ -209,7 +214,21 @@ dependencies {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Unresolved directive in getting-started.adoc - include::code/getting-started/Hellodsl.java[lines=3..-1]</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HelloDsl extends ToolkitApp {
+
+    @Override
+    protected Element render() {
+        return panel("Hello",
+            text("Welcome to TamboUI DSL!").bold().cyan(),
+            spacer(),
+            text("Press 'q' to quit").dim()
+        ).rounded();
+    }
+
+    public void runApp() throws Exception {
+        new HelloDsl().run();
+    }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -217,33 +236,23 @@ dependencies {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">//JAVA 21+
-import dev.tamboui.tui.TuiRunner;
-import dev.tamboui.tui.event.KeyEvent;
-import dev.tamboui.widgets.paragraph.Paragraph;
-import dev.tamboui.text.Text;
-
-public class HelloTuiRunner {
-    public static void main(String[] args) throws Exception {
-        try (var tui = TuiRunner.create()) {
-            tui.run(
-                (event, runner) -&gt;
-                    switch (event) {
-                        case KeyEvent k when k.isQuit() -&gt; {
-                            runner.quit();
-                            yield false;
-                        }
-                        default -&gt; false;
-                    },
-                frame -&gt; {
-                    var paragraph = Paragraph.builder()
-                        .text(Text.from("Hello, TamboUI! Press 'q' to quit."))
-                        .build();
-                    frame.renderWidget(paragraph, frame.area());
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var tui = TuiRunner.create()) {
+    tui.run(
+        (event, runner) -&gt;
+            switch (event) {
+                case KeyEvent k when k.isQuit() -&gt; {
+                    runner.quit();
+                    yield false;
                 }
-            );
+                default -&gt; false;
+            },
+        frame -&gt; {
+            var paragraph = Paragraph.builder()
+                .text(Text.from("Hello, TamboUI! Press 'q' to quit."))
+                .build();
+            frame.renderWidget(paragraph, frame.area());
         }
-    }
+    );
 }</code></pre>
 </div>
 </div>
@@ -255,29 +264,20 @@ public class HelloTuiRunner {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.terminal.BackendFactory;
-import dev.tamboui.terminal.Terminal;
-import dev.tamboui.widgets.paragraph.Paragraph;
-import dev.tamboui.text.Text;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var backend = BackendFactory.create()) {
+    backend.enableRawMode();
+    backend.enterAlternateScreen();
 
-public class HelloImmediate {
-    public static void main(String[] args) throws Exception {
-        try (var backend = BackendFactory.create()) {
-            backend.enableRawMode();
-            backend.enterAlternateScreen();
-
-            try (var terminal = new Terminal&lt;&gt;(backend)) {
-                terminal.draw(frame -&gt; {
-                    var paragraph = Paragraph.builder()
-                        .text(Text.from("Hello, Immediate Mode!"))
-                        .build();
-                    frame.renderWidget(paragraph, frame.area());
-                });
-            }
-            // Wait for user input
-            Thread.sleep(2000);
-        }
+    try (var terminal = new Terminal&lt;&gt;(backend)) {
+        terminal.draw(frame -&gt; {
+            var paragraph = Paragraph.builder()
+                .text(Text.from("Hello, Immediate Mode!"))
+                .build();
+            frame.renderWidget(paragraph, frame.area());
+        });
     }
+    // Wait for user input
+    Thread.sleep(2000);
 }</code></pre>
 </div>
 </div>
@@ -289,26 +289,19 @@ public class HelloImmediate {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.inline.InlineDisplay;
-import dev.tamboui.widgets.gauge.Gauge;
-
-public class HelloInline {
-    public static void main(String[] args) throws Exception {
-        try (var display = InlineDisplay.create(2)) {
-            for (int i = 0; i &lt;= 100; i += 5) {
-                int progress = i;
-                display.render((area, buffer) -&gt; {
-                    var gauge = Gauge.builder()
-                        .ratio(progress / 100.0)
-                        .label("Progress: " + progress + "%")
-                        .build();
-                    gauge.render(area, buffer);
-                });
-                Thread.sleep(50);
-            }
-            display.println("Done!");
-        }
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var display = InlineDisplay.create(2)) {
+    for (int i = 0; i &lt;= 100; i += 5) {
+        int progress = i;
+        display.render((area, buffer) -&gt; {
+            var gauge = Gauge.builder()
+                .ratio(progress / 100.0)
+                .label("Progress: " + progress + "%")
+                .build();
+            gauge.render(area, buffer);
+        });
+        Thread.sleep(50);
     }
+    display.println("Done!");
 }</code></pre>
 </div>
 </div>
@@ -319,13 +312,27 @@ public class HelloInline {
 <h2 id="running-the-demos"><a class="anchor" href="#running-the-demos"></a><a class="link" href="#running-the-demos">Running the Demos</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The TamboUI repository includes many demo applications showcasing different features.</p>
+<p>TamboUI includes many demo applications showcasing different features.</p>
 </div>
 <div class="sect2">
-<h3 id="using-jbang"><a class="anchor" href="#using-jbang"></a><a class="link" href="#using-jbang">Using JBang</a></h3>
+<h3 id="without-cloning-the-repository"><a class="anchor" href="#without-cloning-the-repository"></a><a class="link" href="#without-cloning-the-repository">Without Cloning the Repository</a></h3>
 <div class="paragraph">
-<p>If you have JBang installed:</p>
+<p>The easiest way to explore demos is with JBang (you don&#8217;t need to clone the TamboUI repository):</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Launch the interactive demo selector
+jbang demos@tamboui</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="from-tamboui-sources"><a class="anchor" href="#from-tamboui-sources"></a><a class="link" href="#from-tamboui-sources">From TamboUI sources</a></h3>
+<div class="paragraph">
+<p>If you&#8217;ve cloned the TamboUI repository, you have more options.</p>
+</div>
+<div class="sect3">
+<h4 id="using-jbang"><a class="anchor" href="#using-jbang"></a><a class="link" href="#using-jbang">Using JBang</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># List available demos
@@ -336,8 +343,8 @@ jbang sparkline-demo</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="using-the-run-demo-sh-script"><a class="anchor" href="#using-the-run-demo-sh-script"></a><a class="link" href="#using-the-run-demo-sh-script">Using the run-demo.sh Script</a></h3>
+<div class="sect3">
+<h4 id="using-the-run-demo-sh-script"><a class="anchor" href="#using-the-run-demo-sh-script"></a><a class="link" href="#using-the-run-demo-sh-script">Using the run-demo.sh Script</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Show interactive demo selector
@@ -351,8 +358,8 @@ jbang sparkline-demo</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="manual-build-and-run"><a class="anchor" href="#manual-build-and-run"></a><a class="link" href="#manual-build-and-run">Manual Build and Run</a></h3>
+<div class="sect3">
+<h4 id="manual-build-and-run"><a class="anchor" href="#manual-build-and-run"></a><a class="link" href="#manual-build-and-run">Manual Build and Run</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Build and install the demo
@@ -363,8 +370,8 @@ jbang sparkline-demo</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="compiling-to-native-image"><a class="anchor" href="#compiling-to-native-image"></a><a class="link" href="#compiling-to-native-image">Compiling to Native Image</a></h3>
+<div class="sect3">
+<h4 id="compiling-to-native-image"><a class="anchor" href="#compiling-to-native-image"></a><a class="link" href="#compiling-to-native-image">Compiling to Native Image</a></h4>
 <div class="paragraph">
 <p>With GraalVM installed:</p>
 </div>
@@ -372,6 +379,7 @@ jbang sparkline-demo</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew :demos:sparkline-demo:nativeCompile
 ./demos/sparkline-demo/build/native/nativeCompile/sparkline-demo</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -402,7 +410,7 @@ jbang sparkline-demo</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

@@ -133,6 +133,18 @@ If you&#8217;ve used ratatui before, the concepts here will be familiar - <code>
 <div class="sect1">
 <h2 id="buffer-system"><a class="anchor" href="#buffer-system"></a><a class="link" href="#buffer-system">Buffer System</a></h2>
 <div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you&#8217;re using the Toolkit DSL, you won&#8217;t interact with buffers directly. Feel free to skip this section.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="buffer"><a class="anchor" href="#buffer"></a><a class="link" href="#buffer">Buffer</a></h3>
 <div class="paragraph">
@@ -141,13 +153,13 @@ If you&#8217;ve used ratatui before, the concepts here will be familiar - <code>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// A Buffer is created for each frame
-Buffer buffer = new Buffer(width, height);
+Buffer buffer = Buffer.empty(new Rect(0, 0, width, height));
 
 // Set a cell at position (x, y)
-buffer.setCell(x, y, Cell.of('A', Style.EMPTY.fg(Color.RED)));
+buffer.set(x, y, new Cell("A", Style.EMPTY.fg(Color.RED)));
 
 // Get a cell
-Cell cell = buffer.cell(x, y);</code></pre>
+Cell cell = buffer.get(x, y);</code></pre>
 </div>
 </div>
 </div>
@@ -159,10 +171,10 @@ Cell cell = buffer.cell(x, y);</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create a cell with character and style
-Cell cell = Cell.of('X', Style.EMPTY.bold().fg(Color.CYAN));
+Cell cell = new Cell("X", Style.EMPTY.bold().fg(Color.CYAN));
 
 // Get properties
-char symbol = cell.symbol();
+String symbol = cell.symbol();
 Style style = cell.style();</code></pre>
 </div>
 </div>
@@ -204,15 +216,14 @@ Style style = cell.style();</code></pre>
 Rect rect = new Rect(x, y, width, height);
 
 // Properties
-int x = rect.x();
-int y = rect.y();
-int width = rect.width();
-int height = rect.height();
+int rx = rect.x();
+int ry = rect.y();
+int rw = rect.width();
+int rh = rect.height();
 
 // Derived values
 int right = rect.right();    // x + width
-int bottom = rect.bottom();  // y + height
-Position center = rect.center();</code></pre>
+int bottom = rect.bottom();  // y + height</code></pre>
 </div>
 </div>
 </div>
@@ -278,13 +289,11 @@ Position center = rect.center();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Layout layout = Layout.builder()
-    .direction(Direction.VERTICAL)
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Layout layout = Layout.vertical()
     .constraints(
         Constraint.length(3),   // First area: 3 cells tall
         Constraint.fill()       // Second area: takes remaining space
-    )
-    .build();
+    );
 
 // Split a 80x24 area into two rectangles
 Rect area = new Rect(0, 0, 80, 24);
@@ -301,23 +310,21 @@ List&lt;Rect&gt; areas = layout.split(area);
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Split vertically into header (3 lines) and content (rest)
-Layout layout = Layout.builder()
-    .direction(Direction.VERTICAL)
+Layout layout = Layout.vertical()
     .constraints(
         Constraint.length(3),
         Constraint.fill()
-    )
-    .build();
+    );
 
 List&lt;Rect&gt; areas = layout.split(frame.area());
 Rect headerArea = areas.get(0);
 Rect contentArea = areas.get(1);
 
 // Render widgets into the split areas
-Paragraph header = new Paragraph("Header Text");
+Paragraph header = Paragraph.from("Header Text");
 header.render(headerArea, frame.buffer());
 
-Paragraph content = new Paragraph("Main content goes here...");
+Paragraph content = Paragraph.from("Main content goes here...");
 content.render(contentArea, frame.buffer());</code></pre>
 </div>
 </div>
@@ -327,23 +334,21 @@ content.render(contentArea, frame.buffer());</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Split horizontally with percentages
-Layout horizontalLayout = Layout.builder()
-    .direction(Direction.HORIZONTAL)
+Layout horizontalLayout = Layout.horizontal()
     .constraints(
         Constraint.percentage(30),
         Constraint.percentage(70)
-    )
-    .build();
+    );
 
 List&lt;Rect&gt; columns = horizontalLayout.split(contentArea);
 
 // Render sidebar and main area
-List sidebar = List.builder()
-    .items("Item 1", "Item 2", "Item 3")
+ListWidget sidebar = ListWidget.builder()
+    .items(ListItem.from("Item 1"), ListItem.from("Item 2"), ListItem.from("Item 3"))
     .build();
-sidebar.render(columns.get(0), frame.buffer());
+sidebar.render(columns.get(0), frame.buffer(), new ListState());
 
-Paragraph mainArea = new Paragraph("Main content");
+Paragraph mainArea = Paragraph.from("Main content");
 mainArea.render(columns.get(1), frame.buffer());</code></pre>
 </div>
 </div>
@@ -354,18 +359,14 @@ mainArea.render(columns.get(1), frame.buffer());</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Flex;
-
-// Center three fixed-width buttons in a toolbar
-Layout toolbar = Layout.builder()
-    .direction(Direction.HORIZONTAL)
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Center three fixed-width buttons in a toolbar
+Layout toolbar = Layout.horizontal()
     .constraints(
         Constraint.length(10),  // Button 1
         Constraint.length(10),  // Button 2
         Constraint.length(10)   // Button 3
     )
-    .flex(Flex.CENTER)  // Center the buttons, space on both sides
-    .build();
+    .flex(Flex.CENTER);  // Center the buttons, space on both sides
 
 List&lt;Rect&gt; buttonAreas = toolbar.split(toolbarArea);
 renderButton("Save", buttonAreas.get(0), frame.buffer());
@@ -373,14 +374,12 @@ renderButton("Cancel", buttonAreas.get(1), frame.buffer());
 renderButton("Help", buttonAreas.get(2), frame.buffer());
 
 // Spread menu items across a navigation bar
-Layout navbar = Layout.builder()
-    .direction(Direction.HORIZONTAL)
+Layout navbar = Layout.horizontal()
     .constraints(
         Constraint.length(8),   // "File"
         Constraint.length(8)    // "Edit"
     )
-    .flex(Flex.SPACE_BETWEEN)  // Push to edges with gap between
-    .build();
+    .flex(Flex.SPACE_BETWEEN);  // Push to edges with gap between
 
 List&lt;Rect&gt; menuAreas = navbar.split(navbarArea);
 renderMenuItem("File", menuAreas.get(0), frame.buffer());
@@ -418,10 +417,9 @@ renderMenuItem("Edit", menuAreas.get(1), frame.buffer());</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Layout.builder()
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Layout.vertical()
     .margin(new Margin(1, 2, 1, 2))  // top, right, bottom, left
-    .constraints(...)
-    .build()</code></pre>
+    .constraints(Constraint.fill());</code></pre>
 </div>
 </div>
 </div>
@@ -457,17 +455,17 @@ Style dimStyle = style.dim();</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Named ANSI colors
-Color.RED
-Color.GREEN
-Color.CYAN
-Color.WHITE
-Color.GRAY
+Color red = Color.RED;
+Color green = Color.GREEN;
+Color cyan = Color.CYAN;
+Color white = Color.WHITE;
+Color gray = Color.GRAY;
 
 // Indexed colors (0-255)
-Color.indexed(196)
+Color indexed = Color.indexed(196);
 
 // RGB colors (true color)
-Color.rgb(255, 128, 0)</code></pre>
+Color rgb = Color.rgb(255, 128, 0);</code></pre>
 </div>
 </div>
 </div>
@@ -487,7 +485,7 @@ Color.rgb(255, 128, 0)</code></pre>
     .rapidBlink() // Rapid blinking
     .reversed()   // Swap fg/bg colors
     .hidden()     // Hidden text
-    .crossedOut() // Strikethrough</code></pre>
+    .crossedOut(); // Strikethrough</code></pre>
 </div>
 </div>
 </div>
@@ -511,13 +509,13 @@ For a convenient way to create styled text from markup strings, see <a href="mar
 Text text = Text.from("Hello, World!");
 
 // Multi-line text
-Text multiLine = Text.of(
+Text multiLine = Text.from(
     Line.from("First line"),
     Line.from("Second line")
 );
 
 // With alignment
-Text centered = Text.from("Centered").centered();</code></pre>
+Text centered = Text.from("Centered").alignment(Alignment.CENTER);</code></pre>
 </div>
 </div>
 </div>
@@ -547,7 +545,7 @@ Text centered = Text.from("Centered").centered();</code></pre>
 Span plain = Span.raw("plain text");
 
 // Styled span
-Span styled = Span.styled("styled", Style.EMPTY.cyan().bold());</code></pre>
+Span styled = Span.styled("styled", Style.EMPTY.fg(Color.CYAN).bold());</code></pre>
 </div>
 </div>
 </div>
@@ -563,7 +561,7 @@ Span styled = Span.styled("styled", Style.EMPTY.cyan().bold());</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface Widget {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface WidgetInterface {
     void render(Rect area, Buffer buffer);
 }</code></pre>
 </div>
@@ -579,7 +577,7 @@ Span styled = Span.styled("styled", Style.EMPTY.cyan().bold());</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface StatefulWidget&lt;S&gt; {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface StatefulWidgetInterface&lt;S&gt; {
     void render(Rect area, Buffer buffer, S state);
 }</code></pre>
 </div>
@@ -616,15 +614,15 @@ listState.selectNext(items.size());</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Check specific keys
-if (event.code() == KeyCode.ENTER) { ... }
-if (event.code() == KeyCode.CHAR &amp;&amp; event.character() == 'q') { ... }
+if (event.code() == KeyCode.ENTER) { /* handle enter */ }
+if (event.code() == KeyCode.CHAR &amp;&amp; event.character() == 'q') { /* handle q */ }
 
 // Check modifiers
-if (event.modifiers().contains(KeyModifiers.CTRL)) { ... }
+if (event.modifiers().ctrl()) { /* Ctrl is held */ }
 
-// Using Keys utility
-if (event.isQuit()) { ... }
-if (event.isUp()) { ... }</code></pre>
+// Using semantic actions
+if (event.isQuit()) { /* quit action */ }
+if (event.isUp()) { /* move up action */ }</code></pre>
 </div>
 </div>
 </div>
@@ -636,7 +634,7 @@ if (event.isUp()) { ... }</code></pre>
 int y = event.y();
 MouseEventKind kind = event.kind();
 
-if (kind == MouseEventKind.DOWN &amp;&amp; event.button() == MouseButton.LEFT) {
+if (kind == MouseEventKind.PRESS &amp;&amp; event.button() == MouseButton.LEFT) {
     handleClick(x, y);
 }</code></pre>
 </div>
@@ -657,7 +655,7 @@ TuiConfig config = TuiConfig.builder()
 // Handle tick
 if (event instanceof TickEvent) {
     updateAnimation();
-    return true;  // redraw
+    // return true to trigger redraw
 }</code></pre>
 </div>
 </div>
@@ -723,7 +721,7 @@ if (event instanceof TickEvent) {
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

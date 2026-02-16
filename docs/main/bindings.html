@@ -117,11 +117,11 @@ With standard bindings, it only matches the Up arrow.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">KeyTrigger.key(KeyCode.UP)           // Arrow key
-KeyTrigger.ch('j')                   // Character
-KeyTrigger.chIgnoreCase('j')         // j or J
-KeyTrigger.ctrl('u')                 // Ctrl+U
-KeyTrigger.alt('x')                  // Alt+X</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">KeyTrigger.key(KeyCode.UP);           // Arrow key
+KeyTrigger.ch('j');                   // Character
+KeyTrigger.chIgnoreCase('j');         // j or J
+KeyTrigger.ctrl('u');                 // Ctrl+U
+KeyTrigger.alt('x');                  // Alt+X</code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -225,11 +225,11 @@ Use <code>Ctrl+key</code> only for well-established conventions (Ctrl+C, Ctrl+S,
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">MouseTrigger.click()                 // Left click
-MouseTrigger.rightClick()            // Right click
-MouseTrigger.ctrlClick()             // Ctrl+click
-MouseTrigger.scrollUp()              // Scroll wheel
-MouseTrigger.drag(MouseButton.LEFT)  // Dragging</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">MouseTrigger.click();                 // Left click
+MouseTrigger.rightClick();            // Right click
+MouseTrigger.ctrlClick();             // Ctrl+click
+MouseTrigger.scrollUp();              // Scroll wheel
+MouseTrigger.drag(MouseButton.LEFT);  // Dragging</code></pre>
 </div>
 </div>
 </div>
@@ -264,10 +264,14 @@ MouseTrigger.drag(MouseButton.LEFT)  // Dragging</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">ActionHandler actions = new ActionHandler(BindingSets.vim())
     .on(Actions.QUIT, e -&gt; runner.quit())
     .on("save", e -&gt; save())
-    .on("delete", e -&gt; deleteSelected());
-
-// In your event handler:
-(event, runner) -&gt; {
+    .on("delete", e -&gt; deleteSelected());</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// In your event handler:
+boolean handleEvent(Event event, TuiRunner runner) {
+    ActionHandler actions = new ActionHandler(BindingSets.vim());
     if (actions.dispatch(event)) {
         return true;  // Action was handled
     }
@@ -293,6 +297,19 @@ ActionHandler actions = new ActionHandler(bindings)
 <div class="sect1">
 <h2 id="onaction-annotation"><a class="anchor" href="#onaction-annotation"></a><a class="link" href="#onaction-annotation">@OnAction Annotation</a></h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>@OnAction</code> annotation works with Toolkit Components.
+For TuiRunner or immediate mode, use <code>ActionHandler</code> instead (see above).
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>In Toolkit components, annotate methods to handle actions:</p>
 </div>
@@ -317,6 +334,11 @@ ActionHandler actions = new ActionHandler(bindings)
         if (!lines.isEmpty()) {
             lines.remove(cursor);
         }
+    }
+
+    @Override
+    protected Element render() {
+        return text("Editor");
     }
 }</code></pre>
 </div>
@@ -404,7 +426,7 @@ These registrars are discovered via <code>ServiceLoader</code> and register acti
 Bindings bindings = BindingSets.loadResource("/my-bindings.properties");
 
 // From filesystem
-Bindings bindings = BindingSets.load(Paths.get("~/.config/myapp/bindings.properties"));</code></pre>
+Bindings bindingsFromFile = BindingSets.load(Paths.get("~/.config/myapp/bindings.properties"));</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -499,7 +521,7 @@ Modifiers use <code>Ctrl+</code>, <code>Alt+</code>, <code>Shift+</code> prefixe
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

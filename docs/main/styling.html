@@ -89,6 +89,19 @@
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+CSS styling works at any API level. With Toolkit DSL, elements automatically support CSS classes and IDs.
+For lower-level APIs, implement <code>Styleable</code> and pass a <code>styleResolver</code> to widgets—see <a href="#implementing-styleable">Implementing Styleable</a> and the <code>css-no-toolkit-demo</code> for examples.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>TamboUI supports CSS-based styling as an alternative to programmatic style configuration.
 Instead of chaining <code>.bold().cyan().onBlue()</code> calls, you can define styles in external <code>.tcss</code> files and apply them via selectors.</p>
@@ -103,8 +116,10 @@ Instead of chaining <code>.bold().cyan().onBlue()</code> calls, you can define s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">text("Hello").bold().cyan()
-panel("Title", content).rounded().borderColor(Color.BLUE)</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Element programmaticExample = column(
+    text("Hello").bold().cyan(),
+    panel("Title", () -&gt; text("content")).rounded().borderColor(Color.BLUE)
+);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -155,7 +170,7 @@ engine.setActiveStylesheet("dark");</code></pre>
 <h2 id="tcss-format"><a class="anchor" href="#tcss-format"></a><a class="link" href="#tcss-format">TCSS Format</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TamboUI uses <code>.tcss</code> (Textual CSS) files - a CSS dialect designed for terminal UIs.</p>
+<p>TamboUI uses <code>.tcss</code> (TamboUI CSS) files - a CSS dialect designed for terminal UIs.</p>
 </div>
 <div class="sect2">
 <h3 id="variables"><a class="anchor" href="#variables"></a><a class="link" href="#variables">Variables</a></h3>
@@ -913,12 +928,12 @@ DialogElement Text.title {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Combine CSS template with programmatic area assignment
-grid()
-    .cssClass("dashboard")
+Element gridExample = grid()
+    .addClass("dashboard")
     .area("header", text("Dashboard").bold())
     .area("nav", list("Menu 1", "Menu 2"))
     .area("main", content)
-    .area("footer", text("Status").dim())</code></pre>
+    .area("footer", text("Status").dim());</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1085,25 +1100,22 @@ Run the interactive <code>flex-demo</code> to see all flex modes in action: <cod
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Flex;
-import static dev.tamboui.toolkit.Toolkit.*;
-
-// Horizontal flex (Row)
-row(
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Horizontal flex (Row)
+Element horizontalFlex = row(
     panel(() -&gt; text("Left")).rounded().length(10),
     panel(() -&gt; text("Center")).rounded().length(10),
     panel(() -&gt; text("Right")).rounded().length(10)
-).flex(Flex.SPACE_BETWEEN)
+).flex(Flex.SPACE_BETWEEN);
 
 // Vertical flex (Column)
-column(
+Element verticalFlex = column(
     panel(() -&gt; text("Top")).rounded().length(3),
     panel(() -&gt; text("Middle")).rounded().length(3),
     panel(() -&gt; text("Bottom")).rounded().length(3)
-).flex(Flex.CENTER)
+).flex(Flex.CENTER);
 
 // Nested layouts with different flex modes
-column(
+Element nestedFlex = column(
     row(
         text("Item A").length(8),
         text("Item B").length(8)
@@ -1113,7 +1125,7 @@ column(
         text("Item C").length(8),
         text("Item D").length(8)
     ).flex(Flex.END).length(3)
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 </div>
@@ -1148,11 +1160,11 @@ column(
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Elements pick up flex from CSS classes
-row(
+Element toolbarRow = row(
     text("New"),
     text("Open"),
     text("Save")
-).cssClass("toolbar-row")</code></pre>
+).addClass("toolbar-row");</code></pre>
 </div>
 </div>
 </div>
@@ -1200,18 +1212,18 @@ row(
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WITHOUT fill() - flex positions fixed-size items
-row(
+Element withoutFill = row(
     text("A").length(5),
     text("B").length(5),
     text("C").length(5)
-).flex(Flex.SPACE_BETWEEN)  // Items stay 5 wide, spread out
+).flex(Flex.SPACE_BETWEEN);  // Items stay 5 wide, spread out
 
 // WITH fill() - item grows, flex has less effect
-row(
+Element withFill = row(
     text("A").length(5),
     text("B").fill(),          // Takes all remaining space
     text("C").length(5)
-).flex(Flex.CENTER)            // Only affects tiny leftover gaps</code></pre>
+).flex(Flex.CENTER);            // Only affects tiny leftover gaps</code></pre>
 </div>
 </div>
 </div>
@@ -1222,15 +1234,17 @@ row(
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">column(
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Element centeredDialog = column(
     panel("Confirm",
-        text("Are you sure?"),
-        row(
-            text("[ Yes ]").green(),
-            text("[ No ]").red()
-        ).flex(Flex.SPACE_AROUND).spacing(2)
+        column(
+            text("Are you sure?"),
+            row(
+                text("[ Yes ]").green(),
+                text("[ No ]").red()
+            ).flex(Flex.SPACE_AROUND).spacing(2)
+        )
     ).rounded().length(10)
-).flex(Flex.CENTER)</code></pre>
+).flex(Flex.CENTER);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1238,7 +1252,7 @@ row(
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">column(
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Element appLayout = column(
     // Header: left-aligned title
     row(
         text("My App").bold(),
@@ -1254,7 +1268,7 @@ row(
         text("Line 42, Col 15").dim(),
         text("UTF-8").dim()
     ).flex(Flex.SPACE_BETWEEN).length(1)
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1279,18 +1293,18 @@ row(
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Main toolbar with items spread across
-row(
+Element mainToolbar = row(
     text("File"),
     text("Edit"),
     text("View"),
     text("Help")
-).cssClass("toolbar")
+).addClass("toolbar");
 
 // Toolbar section with items grouped left
-row(
+Element leftToolbar = row(
     text("New"),
     text("Open")
-).cssClass("toolbar-left")</code></pre>
+).addClass("toolbar-left");</code></pre>
 </div>
 </div>
 </div>
@@ -1302,11 +1316,11 @@ row(
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// spacing=1 creates 1-cell gaps, flex centers the whole group
-row(
+Element spacedRow = row(
     text("A"),
     text("B"),
     text("C")
-).spacing(1).flex(Flex.CENTER)</code></pre>
+).spacing(1).flex(Flex.CENTER);</code></pre>
 </div>
 </div>
 </div>
@@ -1315,36 +1329,36 @@ row(
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Left-aligned button group
-row(
-    button("Save"),
-    button("Cancel")
-).flex(Flex.START).spacing(1)
+Element leftAligned = row(
+    text(" Save ").bold().black().onGreen(),
+    text(" Cancel ").bold()
+).flex(Flex.START).spacing(1);
 
 // Right-aligned status
-row(
+Element rightAligned = row(
     text("Ready").green()
-).flex(Flex.END)
+).flex(Flex.END);
 
 // Split layout: title left, controls right
-row(
+Element splitLayout = row(
     text("Settings").bold().length(20),
     spacer(),  // Takes remaining space
-    button("OK").length(6),
-    button("Cancel").length(8)
-).flex(Flex.START).spacing(1)
+    text(" OK ").bold().length(6),
+    text(" Cancel ").bold().length(8)
+).flex(Flex.START).spacing(1);
 
 // Perfectly centered modal
-column(
+Element centeredModal = column(
     spacer(),
     row(
         spacer(),
         panel("Notice",
-            text("Operation completed")
+            () -&gt; text("Operation completed")
         ).rounded().length(30),
         spacer()
     ),
     spacer()
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 </div>
@@ -1387,14 +1401,14 @@ column(
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">column(
-    panel(header()).addClass("header-panel"),
-    panel(content()).addClass("main-content"),
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Element layout = column(
+    panel(() -&gt; header()).addClass("header-panel"),
+    panel(() -&gt; content()).addClass("main-content"),
     panel(() -&gt; row(
         text("Status: ").addClass("title"),
         text("Ready").addClass("dim")
     ).addClass("footer-row")).addClass("footer-panel")
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1432,11 +1446,11 @@ column(
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Simple non-inheritable property
-public static final PropertyDefinition&lt;Color&gt; GAUGE_COLOR =
+PropertyDefinition&lt;Color&gt; GAUGE_COLOR =
     PropertyDefinition.of("gauge-color", ColorConverter.INSTANCE);
 
 // Inheritable property with default value
-public static final PropertyDefinition&lt;Color&gt; COLOR =
+PropertyDefinition&lt;Color&gt; COLOR =
     PropertyDefinition.builder("color", ColorConverter.INSTANCE)
         .inheritable()
         .build();</code></pre>
@@ -1450,9 +1464,7 @@ public static final PropertyDefinition&lt;Color&gt; COLOR =
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.style.PropertyRegistry;
-
-// Register a single property
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Register a single property
 PropertyRegistry.register(MY_PROPERTY);
 
 // Register multiple properties at once
@@ -1464,12 +1476,18 @@ PropertyRegistry.registerAll(PROPERTY_A, PROPERTY_B, PROPERTY_C);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyWidget {
-    public static final PropertyDefinition&lt;Color&gt; BAR_COLOR = ...;
-    public static final PropertyDefinition&lt;Integer&gt; BAR_WIDTH = ...;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyWidget {
+    public static final PropertyDefinition&lt;Color&gt; BAR_COLOR =
+        PropertyDefinition.of("bar-color", ColorConverter.INSTANCE);
+    public static final PropertyDefinition&lt;Integer&gt; BAR_WIDTH =
+        PropertyDefinition.of("bar-width", intConverter());
 
     static {
         PropertyRegistry.registerAll(BAR_COLOR, BAR_WIDTH);
+    }
+
+    private static PropertyConverter&lt;Integer&gt; intConverter() {
+        return value -&gt; Optional.of(Integer.parseInt(value));
     }
 }</code></pre>
 </div>
@@ -1577,11 +1595,11 @@ PropertyRegistry.registerAll(PROPERTY_A, PROPERTY_B, PROPERTY_C);</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// All text inside the sidebar automatically gets cyan + dim styling
-panel(() -&gt; column(
+Element sidebar = panel(() -&gt; column(
     text("Menu"),           // cyan, dim (inherited from Panel)
     text("Dashboard"),      // cyan, dim (inherited from Panel)
     text("Settings").bold() // cyan, dim + bold (inherits color, adds bold)
-)).cssClass("sidebar")</code></pre>
+)).addClass("sidebar");</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1651,14 +1669,16 @@ Panel.sidebar Text {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">panel("Settings",
-    text("Username").cssClass("label"),
-    textInput(usernameState).id("username-input"),
-    text("Password").cssClass("label"),
-    textInput(passwordState).id("password-input").cssClass("secret")
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Element settingsPanel = panel("Settings",
+    () -&gt; column(
+        text("Username").addClass("label"),
+        textInput(usernameState).id("username-input"),
+        text("Password").addClass("label"),
+        textInput(passwordState).id("password-input").addClass("secret")
+    )
 )
 .id("settings-panel")
-.cssClass("primary")</code></pre>
+.addClass("primary");</code></pre>
 </div>
 </div>
 </div>
@@ -1688,7 +1708,7 @@ try (var runner = ToolkitRunner.builder()
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyWidget implements Widget, Styleable {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyStylableWidget implements Styleable {
     private String id;
     private Set&lt;String&gt; classes = new HashSet&lt;&gt;();
 
@@ -1722,13 +1742,15 @@ try (var runner = ToolkitRunner.builder()
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CssStyleResolver resolved = engine.resolve(widget);
 
 Style style = Style.EMPTY;
-if (resolved.foreground() != null) {
-    style = style.fg(resolved.foreground());
+if (resolved.foreground().isPresent()) {
+    style = style.fg(resolved.foreground().get());
 }
-if (resolved.background() != null) {
-    style = style.bg(resolved.background());
+if (resolved.background().isPresent()) {
+    style = style.bg(resolved.background().get());
 }
-style = style.addModifiers(resolved.modifiers());</code></pre>
+for (var modifier : resolved.modifiers()) {
+    style = style.addModifier(modifier);
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1742,9 +1764,8 @@ style = style.addModifiers(resolved.modifiers());</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@OnAction("toggleTheme")
-void onToggleTheme(Event event) {
-    String current = engine.getActiveStylesheet();
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void onToggleTheme(StyleEngine engine) {
+    String current = engine.getActiveStylesheet().orElse("dark");
     String next = "dark".equals(current) ? "light" : "dark";
     engine.setActiveStylesheet(next);
 }</code></pre>
@@ -1856,7 +1877,7 @@ Panel:focus {
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

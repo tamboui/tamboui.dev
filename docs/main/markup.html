@@ -90,14 +90,11 @@ This is a convenient alternative to building <code>Line</code> and <code>Span</c
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.text.MarkupParser;
-import dev.tamboui.text.Text;
-
-// Parse markup into styled Text
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Parse markup into styled Text
 Text text = MarkupParser.parse("This is [bold]bold[/bold] and [red]red[/red].");
 
 // Use with widgets
-Paragraph paragraph = new Paragraph(
+Paragraph paragraph = Paragraph.from(
     MarkupParser.parse("[cyan]Status:[/cyan] [bold green]Ready[/]")
 );</code></pre>
 </div>
@@ -465,9 +462,9 @@ Text text = MarkupParser.parse("[custom]styled by CSS[/custom]");
 <h3 id="status-messages"><a class="anchor" href="#status-messages"></a><a class="link" href="#status-messages">Status Messages</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">MarkupParser.parse("[green]SUCCESS[/] Operation completed")
-MarkupParser.parse("[yellow]WARNING[/] Disk space low")
-MarkupParser.parse("[bold red]ERROR[/] Connection failed")</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">MarkupParser.parse("[green]SUCCESS[/] Operation completed");
+MarkupParser.parse("[yellow]WARNING[/] Disk space low");
+MarkupParser.parse("[bold red]ERROR[/] Connection failed");</code></pre>
 </div>
 </div>
 </div>
@@ -583,7 +580,7 @@ Text code = MarkupParser.parse(
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

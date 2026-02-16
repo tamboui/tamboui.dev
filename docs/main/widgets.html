@@ -82,16 +82,24 @@
 <li><a href="#css-properties">CSS Properties</a></li>
 </ul>
 </li>
+<li><a href="#wavetext">WaveText</a></li>
 </ul>
 </li>
 <li><a href="#input-widgets">Input Widgets</a>
 <ul class="sectlevel2">
 <li><a href="#textinput">TextInput</a></li>
+<li><a href="#textarea">TextArea</a></li>
+<li><a href="#checkbox">Checkbox</a></li>
+<li><a href="#toggle">Toggle</a></li>
+<li><a href="#select">Select</a></li>
 </ul>
 </li>
 <li><a href="#utility-widgets">Utility Widgets</a>
 <ul class="sectlevel2">
 <li><a href="#scrollbar">Scrollbar</a></li>
+<li><a href="#logo">Logo</a></li>
+<li><a href="#errordisplay">ErrorDisplay</a></li>
+<li><a href="#clear">Clear</a></li>
 </ul>
 </li>
 <li><a href="#toolkit-dsl">Using Widgets with Toolkit DSL</a></li>
@@ -199,6 +207,46 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Single-line text input</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#textarea">TextArea</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-line text input</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#checkbox">Checkbox</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggleable checkbox</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#toggle">Toggle</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On/off toggle switch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#select">Select</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inline select with navigation indicators</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#tree">Tree</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hierarchical tree view with expand/collapse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#wavetext">WaveText</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Animated wave brightness text effect</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#logo">Logo</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateless</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders the Tamboui logo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#errordisplay">ErrorDisplay</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateless</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays error information with stack trace</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stateless</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Clears an area (for widget layering)</p></td>
@@ -281,7 +329,7 @@ Rect inner = block.inner(area);</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Paragraph paragraph = Paragraph.builder()
     .text(Text.from("This is a paragraph of text that can wrap across multiple lines."))
-    .wrap(Wrap.WORD)
+    .overflow(Overflow.WRAP_WORD)
     .alignment(Alignment.LEFT)
     .block(Block.builder()
         .title("Description")
@@ -337,7 +385,7 @@ paragraph.render(area, buffer);</code></pre>
 List&lt;ListItem&gt; items = List.of(
     ListItem.from("First item"),
     ListItem.from("Second item"),
-    ListItem.styled("Styled item", Style.EMPTY.bold())
+    ListItem.from("Styled item").style(Style.EMPTY.bold())
 );
 
 // Create state
@@ -447,11 +495,11 @@ list.render(area, buffer, state);</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Toolkit DSL - ListElement with rich content
 list()
-    .add(row(text("⭐").yellow(), text(" Featured Item")))
+    .add(row(text("*").yellow(), text(" Featured Item")))
     .add(text("Plain Item"))
     .add(panel("Nested Panel", text("Content")).rounded())
     .highlightColor(Color.CYAN)
-    .autoScroll()</code></pre>
+    .autoScroll();</code></pre>
 </div>
 </div>
 </div>
@@ -502,7 +550,7 @@ table.render(area, buffer, state);</code></pre>
     .highlightStyle(Style.EMPTY.bold().fg(Color.CYAN))
     .divider(" | ")
     .block(Block.builder()
-        .borders(Borders.BOTTOM)
+        .borders(Borders.BOTTOM_ONLY)
         .build())
     .build();
 
@@ -537,7 +585,7 @@ tree(src, docs, build)
         text(node.label()).bold(),
         spacer(),
         text(node.data().formattedSize()).dim()
-    ))</code></pre>
+    ));</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -551,13 +599,14 @@ tree(src, docs, build)
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Pure data model - no view concerns
-record FileInfo(String name, FileType type, long size, Status status) {
-    String icon() { /* data-derived */ }
-    String formattedSize() { /* data formatting */ }
+record FileData(String name, FileType type, long size, Status status) {
+    String icon() { /* data-derived */ return ""; }
+    String formattedSize() { /* data formatting */ return ""; }
 }
 
+FileData data = new FileData("App.java", FileType.JAVA, 2048, Status.OK);
 // TreeNode holds the data
-TreeNode&lt;FileInfo&gt; node = TreeNode.of("App.java", fileInfo).leaf();</code></pre>
+TreeNode&lt;FileData&gt; node = TreeNode.of("App.java", data).leaf();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -566,8 +615,8 @@ TreeNode&lt;FileInfo&gt; node = TreeNode.of("App.java", fileInfo).leaf();</code>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Rendering logic separated from model
-tree.nodeRenderer(node -&gt; {
-    var info = node.data();
+tree(node).nodeRenderer(n -&gt; {
+    var info = n.data();
     return row(
         text(info.icon() + " "),
         text(info.name()).fg(info.statusColor()),
@@ -643,7 +692,7 @@ tree.nodeRenderer(node -&gt; {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">TreeNode.of("Large Directory", dirInfo)
-    .childrenLoader(() -&gt; loadChildrenFromDisk(dirInfo.path()))</code></pre>
+    .childrenLoader(() -&gt; loadChildrenFromDisk(dirInfo.name()));</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -738,7 +787,7 @@ gauge.render(area, buffer);</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">LineGauge lineGauge = LineGauge.builder()
     .ratio(0.5)
     .label("50%")
-    .lineSet(LineSet.THICK)
+    .lineSet(LineGauge.THICK)
     .filledStyle(Style.EMPTY.fg(Color.CYAN))
     .unfilledStyle(Style.EMPTY.fg(Color.DARK_GRAY))
     .build();
@@ -758,7 +807,7 @@ lineGauge.render(area, buffer);</code></pre>
 
 Sparkline sparkline = Sparkline.builder()
     .data(data)
-    .barStyle(Style.EMPTY.fg(Color.CYAN))
+    .foreground(Color.CYAN)
     .block(Block.builder()
         .title("CPU Usage")
         .borders(Borders.ALL)
@@ -777,17 +826,17 @@ sparkline.render(area, buffer);</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">BarChart barChart = BarChart.builder()
-    .bars(
-        Bar.builder().value(80).label("Mon").build(),
-        Bar.builder().value(95).label("Tue").build(),
-        Bar.builder().value(60).label("Wed").build(),
-        Bar.builder().value(75).label("Thu").build(),
-        Bar.builder().value(90).label("Fri").build()
-    )
+    .data(BarGroup.of(
+        Bar.of(80, "Mon"),
+        Bar.of(95, "Tue"),
+        Bar.of(60, "Wed"),
+        Bar.of(75, "Thu"),
+        Bar.of(90, "Fri")
+    ))
     .barWidth(5)
     .barGap(1)
-    .barStyle(Style.EMPTY.fg(Color.GREEN))
-    .labelStyle(Style.EMPTY.dim())
+    .barColor(Color.GREEN)
+    .labelColor(Color.DARK_GRAY)
     .block(Block.builder()
         .title("Weekly Sales")
         .borders(Borders.ALL)
@@ -808,15 +857,15 @@ barChart.render(area, buffer);</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create datasets
 Dataset dataset1 = Dataset.builder()
     .name("Series A")
-    .data(List.of(
-        new Point(0, 0),
-        new Point(1, 2),
-        new Point(2, 1),
-        new Point(3, 4),
-        new Point(4, 3)
-    ))
-    .marker(Marker.BRAILLE)
-    .graphStyle(Style.EMPTY.fg(Color.CYAN))
+    .data(new double[][] {
+        {0, 0},
+        {1, 2},
+        {2, 1},
+        {3, 4},
+        {4, 3}
+    })
+    .marker(Dataset.Marker.BRAILLE)
+    .style(Style.EMPTY.fg(Color.CYAN))
     .build();
 
 // Build chart
@@ -909,20 +958,13 @@ canvas.render(area, buffer);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Calendar calendar = Calendar.builder()
-    .date(LocalDate.now())
-    .showSurroundingMonths(true)
-    .dateStyle(date -&gt; {
-        if (date.equals(LocalDate.now())) {
-            return Style.EMPTY.bold().fg(Color.CYAN);
-        }
-        return Style.EMPTY;
-    })
-    .block(Block.builder()
-        .title("Calendar")
-        .borders(Borders.ALL)
-        .build())
-    .build();
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CalendarEventStore events = CalendarEventStore.today(Style.EMPTY.bold().fg(Color.CYAN));
+
+Monthly calendar = Monthly.of(LocalDate.now(), events)
+    .showMonthHeader(Style.EMPTY.bold())
+    .showWeekdaysHeader(Style.EMPTY.fg(Color.CYAN))
+    .showSurrounding(Style.EMPTY.dim())
+    .block(Block.bordered());
 
 calendar.render(area, buffer);</code></pre>
 </div>
@@ -947,13 +989,13 @@ Spinner spinner = Spinner.builder()
     .build();
 
 // Or with custom frames
-Spinner spinner = Spinner.builder()
+Spinner spinnerCustom = Spinner.builder()
     .frames("*", "+", "x", "+")
     .build();
 
 // Or with a custom frame set
-Spinner spinner = Spinner.builder()
-    .frameSet(SpinnerFrameSet.of("⠋", "⠙", "⠹", "⠸"))
+Spinner spinnerFrameSet = Spinner.builder()
+    .frameSet(SpinnerFrameSet.of("a", "b", "c", "d"))
     .build();
 
 // Create state and render
@@ -1064,6 +1106,100 @@ Programmatic styles set via <code>spinnerStyle()</code>, <code>frameSet()</code>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="wavetext"><a class="anchor" href="#wavetext"></a><a class="link" href="#wavetext">WaveText</a></h3>
+<div class="paragraph">
+<p>An animated text widget with a wave brightness effect:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Dark shadow moving through bright text (default)
+WaveText wave = WaveText.builder()
+    .text("Processing...")
+    .color(Color.CYAN)
+    .build();
+
+// Bright peak moving through dim text (inverted)
+WaveText waveInverted = WaveText.builder()
+    .text("Loading...")
+    .color(Color.YELLOW)
+    .inverted(true)
+    .build();
+
+// Back-and-forth oscillation instead of looping
+WaveText waveOscillate = WaveText.builder()
+    .text("Thinking...")
+    .mode(WaveText.Mode.OSCILLATE)
+    .build();
+
+// Multiple peaks for dynamic effect
+WaveText waveMulti = WaveText.builder()
+    .text("Working hard...")
+    .color(Color.GREEN)
+    .peakCount(2)
+    .peakWidth(5)
+    .speed(1.5)
+    .build();
+
+// Create state and render
+WaveTextState state = new WaveTextState();
+wave.render(area, buffer, state);
+
+// Advance animation each frame
+state.advance();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>color(Color)</code> - Base color of the text</p>
+</li>
+<li>
+<p><code>dimFactor(double)</code> - Brightness of dim portion (0.0-1.0, default 0.3)</p>
+</li>
+<li>
+<p><code>peakWidth(int)</code> - Width of the wave peak in characters (default 3)</p>
+</li>
+<li>
+<p><code>peakCount(int)</code> - Number of peaks in the wave (default 1)</p>
+</li>
+<li>
+<p><code>speed(double)</code> - Animation speed multiplier (default 1.0)</p>
+</li>
+<li>
+<p><code>mode(Mode)</code> - <code>LOOP</code> (continuous) or <code>OSCILLATE</code> (back-and-forth)</p>
+</li>
+<li>
+<p><code>inverted(boolean)</code> - If true, bright peak on dim text; if false, dark shadow on bright text</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CSS properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>color</code> - Base text color</p>
+</li>
+<li>
+<p><code>wave-dim-factor</code> - Brightness of dim portion</p>
+</li>
+<li>
+<p><code>wave-peak-width</code> - Width of wave peak</p>
+</li>
+<li>
+<p><code>wave-peak-count</code> - Number of peaks</p>
+</li>
+<li>
+<p><code>wave-speed</code> - Animation speed multiplier</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1080,7 +1216,7 @@ Programmatic styles set via <code>spinnerStyle()</code>, <code>frameSet()</code>
 TextInputState state = new TextInputState();
 
 // Or with initial value
-TextInputState state = new TextInputState("initial text");
+TextInputState stateWithValue = new TextInputState("initial text");
 
 // Build widget
 TextInput textInput = TextInput.builder()
@@ -1137,6 +1273,342 @@ if (event.code() == KeyCode.CHAR) {
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="textarea"><a class="anchor" href="#textarea"></a><a class="link" href="#textarea">TextArea</a></h3>
+<div class="paragraph">
+<p>A multi-line text input field with scrolling and optional line numbers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create state
+TextAreaState state = new TextAreaState();
+
+// Or with initial content
+TextAreaState stateWithContent = new TextAreaState("Line 1\nLine 2\nLine 3");
+
+// Build widget
+TextArea textArea = TextArea.builder()
+    .placeholder("Enter text...")
+    .showLineNumbers(true)
+    .cursorStyle(Style.EMPTY.reversed())
+    .lineNumberStyle(Style.EMPTY.dim())
+    .block(Block.builder()
+        .title("Editor")
+        .borders(Borders.ALL)
+        .build())
+    .build();
+
+// Render with cursor visible
+textArea.renderWithCursor(area, buffer, state, frame);
+
+// Handle key events
+if (event.code() == KeyCode.CHAR) {
+    state.insert(event.character());
+} else if (event.code() == KeyCode.ENTER) {
+    state.insert('\n');
+} else if (event.code() == KeyCode.BACKSPACE) {
+    state.deleteBackward();
+} else if (event.code() == KeyCode.UP) {
+    state.moveCursorUp();
+} else if (event.code() == KeyCode.DOWN) {
+    state.moveCursorDown();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>State methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>state.text()</code> - Get full text content</p>
+</li>
+<li>
+<p><code>state.setText(text)</code> - Set text content</p>
+</li>
+<li>
+<p><code>state.lineCount()</code> - Get number of lines</p>
+</li>
+<li>
+<p><code>state.getLine(row)</code> - Get text of specific line</p>
+</li>
+<li>
+<p><code>state.insert(char)</code> / <code>state.insert(string)</code> - Insert at cursor</p>
+</li>
+<li>
+<p><code>state.deleteBackward()</code> / <code>state.deleteForward()</code> - Delete characters</p>
+</li>
+<li>
+<p><code>state.moveCursorUp()</code> / <code>moveCursorDown()</code> / <code>moveCursorLeft()</code> / <code>moveCursorRight()</code> - Move cursor</p>
+</li>
+<li>
+<p><code>state.moveCursorToLineStart()</code> / <code>moveCursorToLineEnd()</code> - Jump to line boundaries</p>
+</li>
+<li>
+<p><code>state.moveCursorToStart()</code> / <code>moveCursorToEnd()</code> - Jump to document boundaries</p>
+</li>
+<li>
+<p><code>state.scrollUp(amount)</code> / <code>state.scrollDown(amount, visibleRows)</code> - Manual scrolling</p>
+</li>
+<li>
+<p><code>state.clear()</code> - Clear all content</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CSS properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cursor-color</code> - Cursor highlight color</p>
+</li>
+<li>
+<p><code>placeholder-color</code> - Placeholder text color</p>
+</li>
+<li>
+<p><code>line-number-color</code> - Line number gutter color</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checkbox"><a class="anchor" href="#checkbox"></a><a class="link" href="#checkbox">Checkbox</a></h3>
+<div class="paragraph">
+<p>A toggleable checkbox widget displaying checked/unchecked state:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create state
+CheckboxState state = new CheckboxState();       // unchecked
+CheckboxState stateChecked = new CheckboxState(true);   // checked
+
+// Build widget with default style [x] / [ ]
+Checkbox checkbox = Checkbox.builder().build();
+
+// Custom symbols
+Checkbox checkboxCustom = Checkbox.builder()
+    .checkedSymbol("[v]")
+    .uncheckedSymbol("[ ]")
+    .checkedColor(Color.GREEN)
+    .uncheckedColor(Color.DARK_GRAY)
+    .build();
+
+checkbox.render(area, buffer, state);
+
+// Handle input
+if (event.code() == KeyCode.ENTER || (event.code() == KeyCode.CHAR &amp;&amp; event.character() == ' ')) {
+    state.toggle();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>State methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>state.isChecked()</code> / <code>state.value()</code> - Get checked state</p>
+</li>
+<li>
+<p><code>state.setChecked(boolean)</code> / <code>state.setValue(boolean)</code> - Set state</p>
+</li>
+<li>
+<p><code>state.toggle()</code> - Toggle and return new value</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CSS properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>checkbox-checked-symbol</code> - Symbol when checked (default: "[x]")</p>
+</li>
+<li>
+<p><code>checkbox-unchecked-symbol</code> - Symbol when unchecked (default: "[ ]")</p>
+</li>
+<li>
+<p><code>checkbox-checked-color</code> - Foreground color when checked</p>
+</li>
+<li>
+<p><code>checkbox-unchecked-color</code> - Foreground color when unchecked</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="toggle"><a class="anchor" href="#toggle"></a><a class="link" href="#toggle">Toggle</a></h3>
+<div class="paragraph">
+<p>A toggle switch widget with two display modes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create state
+ToggleState state = new ToggleState();       // off
+ToggleState stateOn = new ToggleState(true);   // on
+
+// Single symbol mode (default): [ON ] or [OFF]
+Toggle toggle = Toggle.builder()
+    .onSymbol("o ON ")
+    .offSymbol("o OFF")
+    .onColor(Color.GREEN)
+    .build();
+
+// Inline choice mode: o Yes / o No
+Toggle toggleInline = Toggle.builder()
+    .inlineChoice(true)
+    .onLabel("Yes")
+    .offLabel("No")
+    .selectedIndicator("o")
+    .unselectedIndicator("o")
+    .selectedColor(Color.GREEN)
+    .unselectedColor(Color.DARK_GRAY)
+    .build();
+
+toggle.render(area, buffer, state);
+
+// Handle input
+if (event.code() == KeyCode.ENTER || (event.code() == KeyCode.CHAR &amp;&amp; event.character() == ' ')) {
+    state.toggle();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>State methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>state.isOn()</code> / <code>state.value()</code> - Get on/off state</p>
+</li>
+<li>
+<p><code>state.setOn(boolean)</code> / <code>state.setValue(boolean)</code> - Set state</p>
+</li>
+<li>
+<p><code>state.toggle()</code> - Toggle and return new value</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CSS properties (single mode):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>toggle-on-symbol</code> - Symbol when on (default: "[ON ]")</p>
+</li>
+<li>
+<p><code>toggle-off-symbol</code> - Symbol when off (default: "[OFF]")</p>
+</li>
+<li>
+<p><code>toggle-on-color</code> - Foreground color when on</p>
+</li>
+<li>
+<p><code>toggle-off-color</code> - Foreground color when off</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CSS properties (inline choice mode):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>toggle-selected-indicator</code> - Selected option indicator (default: "●")</p>
+</li>
+<li>
+<p><code>toggle-unselected-indicator</code> - Unselected option indicator (default: "○")</p>
+</li>
+<li>
+<p><code>toggle-selected-color</code> - Color for selected option</p>
+</li>
+<li>
+<p><code>toggle-unselected-color</code> - Color for unselected option</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="select"><a class="anchor" href="#select"></a><a class="link" href="#select">Select</a></h3>
+<div class="paragraph">
+<p>An inline select widget showing the current selection with navigation indicators:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create state with options
+SelectState state = new SelectState("Option A", "Option B", "Option C");
+
+// Build widget: &lt; Option A &gt;
+Select select = Select.builder()
+    .leftIndicator("&lt; ")
+    .rightIndicator(" &gt;")
+    .selectedColor(Color.CYAN)
+    .indicatorColor(Color.DARK_GRAY)
+    .build();
+
+select.render(area, buffer, state);
+
+// Handle navigation
+if (event.code() == KeyCode.LEFT) {
+    state.selectPrevious();  // wraps around
+} else if (event.code() == KeyCode.RIGHT) {
+    state.selectNext();      // wraps around
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>State methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>state.selectedValue()</code> / <code>state.value()</code> - Get selected option text</p>
+</li>
+<li>
+<p><code>state.selectedIndex()</code> - Get selected index</p>
+</li>
+<li>
+<p><code>state.options()</code> - Get all options</p>
+</li>
+<li>
+<p><code>state.optionCount()</code> - Get number of options</p>
+</li>
+<li>
+<p><code>state.selectIndex(int)</code> - Select by index</p>
+</li>
+<li>
+<p><code>state.selectNext()</code> / <code>state.selectPrevious()</code> - Navigate (wraps)</p>
+</li>
+<li>
+<p><code>state.selectFirst()</code> / <code>state.selectLast()</code> - Jump to ends</p>
+</li>
+<li>
+<p><code>state.setOptions(&#8230;&#8203;)</code> - Replace available options</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CSS properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>select-left-indicator</code> - Left navigation indicator (default: "&lt; ")</p>
+</li>
+<li>
+<p><code>select-right-indicator</code> - Right navigation indicator (default: " &gt;")</p>
+</li>
+<li>
+<p><code>select-selected-color</code> - Foreground color for selected value</p>
+</li>
+<li>
+<p><code>select-indicator-color</code> - Foreground color for indicators</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1150,17 +1622,109 @@ if (event.code() == KeyCode.CHAR) {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Scrollbar scrollbar = Scrollbar.builder()
-    .orientation(ScrollbarOrientation.VERTICAL)
+    .orientation(ScrollbarOrientation.VERTICAL_RIGHT)
     .thumbStyle(Style.EMPTY.fg(Color.CYAN))
     .trackStyle(Style.EMPTY.fg(Color.DARK_GRAY))
     .build();
 
 ScrollbarState state = new ScrollbarState();
 state.contentLength(100);
-state.viewportLength(20);
+state.viewportContentLength(20);
 state.position(scrollPosition);
 
 scrollbar.render(area, buffer, state);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logo"><a class="anchor" href="#logo"></a><a class="link" href="#logo">Logo</a></h3>
+<div class="paragraph">
+<p>Renders the Tamboui logo for use in help or about screens:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Default tiny logo (2 lines)
+Logo logo = Logo.tiny();
+logo.render(area, buffer);
+
+// Or the normal size (4 lines)
+Logo logoNormal = Logo.of(Logo.Size.NORMAL);
+logoNormal.render(area, buffer);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Available sizes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Logo.Size.TINY</code> - 2-line compact logo using braille characters</p>
+</li>
+<li>
+<p><code>Logo.Size.NORMAL</code> - 4-line logo using box-drawing characters</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="errordisplay"><a class="anchor" href="#errordisplay"></a><a class="link" href="#errordisplay">ErrorDisplay</a></h3>
+<div class="paragraph">
+<p>Displays exception information with a formatted stack trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Quick creation from exception
+ErrorDisplay display = ErrorDisplay.from(exception);
+
+// Or with customization
+ErrorDisplay displayCustom = ErrorDisplay.builder()
+    .error(exception)
+    .title(" CRASH ")
+    .footer(" Press 'q' to quit, arrows to scroll ")
+    .borderColor(Color.RED)
+    .scroll(scrollOffset)
+    .build();
+
+display.render(area, buffer);
+
+// Handle scrolling
+int totalLines = display.lineCount();
+if (event.code() == KeyCode.DOWN) {
+    scrollOffset = Math.min(scrollOffset + 1, totalLines - visibleHeight);
+} else if (event.code() == KeyCode.UP) {
+    scrollOffset = Math.max(0, scrollOffset - 1);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The widget displays:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Exception type in red and bold</p>
+</li>
+<li>
+<p>Error message</p>
+</li>
+<li>
+<p>Full stack trace (scrollable)</p>
+</li>
+<li>
+<p>Footer with instructions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clear"><a class="anchor" href="#clear"></a><a class="link" href="#clear">Clear</a></h3>
+<div class="paragraph">
+<p>Clears an area by filling it with a style. Useful for widget layering:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Clear is a singleton widget with no style support
+Clear.INSTANCE.render(area, buffer);</code></pre>
 </div>
 </div>
 </div>
@@ -1174,46 +1738,44 @@ scrollbar.render(area, buffer, state);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static dev.tamboui.toolkit.Toolkit.*;
-
-// Text
-text("Hello").bold().cyan()
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Text
+text("Hello").bold().cyan();
 
 // Panel (Block)
-panel("Title", child1, child2).rounded().borderColor(Color.CYAN)
+panel("Title", text("child")).rounded().borderColor(Color.CYAN);
 
 // List (manages its own state)
-list("Item 1", "Item 2", "Item 3").highlightColor(Color.YELLOW).autoScroll()
+list("Item 1", "Item 2", "Item 3").highlightColor(Color.YELLOW).autoScroll();
 
 // Table
 table()
     .header("Name", "Age")
     .row("Alice", "30")
-    .state(tableState)
+    .state(tableState);
 
 // Gauge
-gauge(0.75).label("Loading...").gaugeColor(Color.GREEN)
+gauge(0.75).label("Loading...").gaugeColor(Color.GREEN);
 
 // Sparkline
-sparkline(1, 4, 2, 8, 5).color(Color.CYAN)
+sparkline(1, 4, 2, 8, 5).color(Color.CYAN);
 
 // Spinner (manages its own state, advances each render)
-spinner().cyan()
-spinner(SpinnerStyle.LINE, "Loading...").green()
+spinner().cyan();
+spinner(SpinnerStyle.LINE, "Loading...").green();
 
 // Tree (expand/collapse, keyboard navigation, lazy loading)
 tree(
     TreeNode.of("Root",
         TreeNode.of("Child 1"),
         TreeNode.of("Child 2"))
-).highlightColor(Color.CYAN).rounded().scrollbar()
+).highlightColor(Color.CYAN).rounded().scrollbar();
 
 // TextInput
-textInput(inputState).placeholder("Enter name...")
+textInput(inputState).placeholder("Enter name...");
 
 // Layout
-row(left, right).spacing(1)
-column(top, middle, bottom).spacing(1)</code></pre>
+row(left, right).spacing(1);
+column(top, middle, bottom).spacing(1);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1228,7 +1790,7 @@ column(top, middle, bottom).spacing(1)</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

@@ -73,6 +73,19 @@
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The examples in this guide use the Toolkit DSL.
+See <a href="api-levels.html#toolkit-dsl">Toolkit DSL</a> for an introduction.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>This guide explains how to build maintainable terminal applications using the Model-View-Controller (MVC) pattern with TamboUI.</p>
 </div>
@@ -119,9 +132,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.widgets.input.TextInputState;
-
-public class TodoController {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class TodoController {
     private final List&lt;TodoItem&gt; items = new ArrayList&lt;&gt;();
     private final TextInputState inputState = new TextInputState();
     private int selectedIndex = 0;
@@ -205,16 +216,14 @@ public class TodoController {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static dev.tamboui.toolkit.Toolkit.*;
-
-public class TodoView {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class TodoView {
     private final TodoController controller;
 
     public TodoView(TodoController controller) {
         this.controller = controller;
     }
 
-    public Element render() {
+    public Panel render() {
         return panel("Todo List",
             renderList(),
             spacer(),
@@ -299,51 +308,50 @@ public class TodoView {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static dev.tamboui.toolkit.Toolkit.handleTextInputKey;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">TodoController controller = new TodoController();
+TodoView view = new TodoView(controller);
 
-public class TodoApp {
-    public static void main(String[] args) throws Exception {
-        var controller = new TodoController();
-        var view = new TodoView(controller);
-
-        try (var runner = ToolkitRunner.create()) {
-            runner.run(() -&gt;
-                view.render()
-                    .onKeyEvent(event -&gt; handleEvent(event, controller))
-            );
-        }
+try (var runner = ToolkitRunner.create()) {
+    runner.run(() -&gt;
+        view.render()
+            .onKeyEvent(event -&gt; handleEvent(event, controller))
+    );
+} catch (Exception e) {
+    throw new RuntimeException(e);
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private static EventResult handleEvent(KeyEvent event, TodoController ctrl) {
+    if (ctrl.isInputMode()) {
+        return handleInputMode(event, ctrl);
     }
+    return handleNormalMode(event, ctrl);
+}
 
-    private static EventResult handleEvent(KeyEvent event, TodoController ctrl) {
-        if (ctrl.isInputMode()) {
-            return handleInputMode(event, ctrl);
-        }
-        return handleNormalMode(event, ctrl);
+private static EventResult handleInputMode(KeyEvent event, TodoController ctrl) {
+    if (event.isCancel()) {
+        ctrl.cancelInput();
+        return EventResult.HANDLED;
     }
+    if (event.isSelect()) {
+        ctrl.submitInput();
+        return EventResult.HANDLED;
+    }
+    if (handleTextInputKey(ctrl.inputState(), event)) {
+        return EventResult.HANDLED;
+    }
+    return EventResult.UNHANDLED;
+}
 
-    private static EventResult handleInputMode(KeyEvent event, TodoController ctrl) {
-        if (event.isCancel()) {
-            ctrl.cancelInput();
-            return EventResult.HANDLED;
-        }
-        if (event.isSelect()) {
-            ctrl.submitInput();
-            return EventResult.HANDLED;
-        }
-        if (handleTextInputKey(ctrl.inputState(), event)) {
-            return EventResult.HANDLED;
-        }
-        return EventResult.UNHANDLED;
-    }
-
-    private static EventResult handleNormalMode(KeyEvent event, TodoController ctrl) {
-        if (event.isChar('a')) { ctrl.startInput(); return EventResult.HANDLED; }
-        if (event.isUp()) { ctrl.moveUp(); return EventResult.HANDLED; }
-        if (event.isDown()) { ctrl.moveDown(); return EventResult.HANDLED; }
-        if (event.isSelect()) { ctrl.toggleSelected(); return EventResult.HANDLED; }
-        if (event.isChar('d')) { ctrl.deleteSelected(); return EventResult.HANDLED; }
-        return EventResult.UNHANDLED;
-    }
+private static EventResult handleNormalMode(KeyEvent event, TodoController ctrl) {
+    if (event.isChar('a')) { ctrl.startInput(); return EventResult.HANDLED; }
+    if (event.isUp()) { ctrl.moveUp(); return EventResult.HANDLED; }
+    if (event.isDown()) { ctrl.moveDown(); return EventResult.HANDLED; }
+    if (event.isSelect()) { ctrl.toggleSelected(); return EventResult.HANDLED; }
+    if (event.isChar('d')) { ctrl.deleteSelected(); return EventResult.HANDLED; }
+    return EventResult.UNHANDLED;
 }</code></pre>
 </div>
 </div>
@@ -426,7 +434,7 @@ public class TodoApp {
     .id("panel-a")          // Unique identifier (REQUIRED)
     .focusable()            // Enable focus (REQUIRED)
     .borderColor(Color.GRAY)
-    .focusedBorderColor(Color.CYAN)  // Visual feedback</code></pre>
+    .focusedBorderColor(Color.CYAN);  // Visual feedback</code></pre>
 </div>
 </div>
 </div>
@@ -477,7 +485,7 @@ public class TodoApp {
         .id("actions")
         .focusable()
         .onKeyEvent(event -&gt; handleActionsKey(event, controller))
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 </div>
@@ -511,6 +519,16 @@ public class TodoApp {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyView implements Element {
     private final MyController controller;
+
+    public MyView(MyController controller) {
+        this.controller = controller;
+    }
+
+    @Override
+    public int preferredWidth() { return 0; }
+
+    @Override
+    public int preferredHeight() { return 0; }
 
     @Override
     public void render(Frame frame, Rect area, RenderContext context) {
@@ -553,6 +571,10 @@ public class TodoApp {
         // ... other handling
         return EventResult.UNHANDLED;
     }
+
+    private Element header() { return text("Header"); }
+    private Element content() { return text("Content"); }
+    private Element footer() { return text("Footer"); }
 }</code></pre>
 </div>
 </div>
@@ -564,24 +586,11 @@ public class TodoApp {
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.toolkit.app.ToolkitRunner;
-import dev.tamboui.toolkit.element.Element;
-import dev.tamboui.toolkit.event.EventResult;
-import dev.tamboui.style.Color;
-import dev.tamboui.tui.TuiConfig;
-import dev.tamboui.tui.event.KeyCode;
-import dev.tamboui.tui.event.KeyEvent;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class TodoApp {
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static dev.tamboui.toolkit.Toolkit.*;
-
-public class TodoApp {
-
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
     // CONTROLLER
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
 
     static class Controller {
         public record Item(String text, boolean done) {}
@@ -631,16 +640,16 @@ public class TodoApp {
         }
     }
 
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
     // VIEW
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
 
     static class View {
         private final Controller ctrl;
 
         View(Controller ctrl) { this.ctrl = ctrl; }
 
-        Element render() {
+        Panel render() {
             return panel("Todo List",
                 ctrl.isEmpty() ? emptyState() : itemList(),
                 spacer(),
@@ -690,9 +699,9 @@ public class TodoApp {
         }
     }
 
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
     // EVENT HANDLER
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
 
     static EventResult handleKey(KeyEvent event, Controller ctrl) {
         if (ctrl.isEditing()) {
@@ -717,9 +726,9 @@ public class TodoApp {
         return EventResult.UNHANDLED;
     }
 
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
     // MAIN
-    // ═══════════════════════════════════════════════════════════════
+    // ===================================================================
 
     public static void main(String[] args) throws Exception {
         var controller = new Controller();
@@ -805,7 +814,7 @@ public class TodoApp {
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

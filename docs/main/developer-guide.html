@@ -123,7 +123,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface Widget {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface WidgetInterface {
     void render(Rect area, Buffer buffer);
 }</code></pre>
 </div>
@@ -144,7 +144,7 @@
     public void render(Rect area, Buffer buffer) {
         // Fill the entire width with a horizontal line
         for (int x = area.x(); x &lt; area.right(); x++) {
-            buffer.setCell(x, area.y(), Cell.of('─', style));
+            buffer.set(x, area.y(), new Cell("─", style));
         }
     }
 }</code></pre>
@@ -158,7 +158,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface StatefulWidget&lt;S&gt; {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface StatefulWidgetInterface&lt;S&gt; {
     void render(Rect area, Buffer buffer, S state);
 }</code></pre>
 </div>
@@ -189,14 +189,19 @@
         int x = area.x();
         for (char c : text.toCharArray()) {
             if (x &lt; area.right()) {
-                buffer.setCell(x++, area.y(), Cell.of(c, style));
+                buffer.set(x++, area.y(), new Cell(String.valueOf(c), style));
             }
         }
     }
-}
-
-// Usage:
-Counter.State counterState = new Counter.State();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Counter.State counterState = new Counter.State();
 Counter counter = new Counter(Style.EMPTY.bold());
 counter.render(area, buffer, counterState);</code></pre>
 </div>
@@ -212,12 +217,12 @@ counter.render(area, buffer, counterState);</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Set a single cell
-buffer.setCell(x, y, Cell.of('X', style));
+buffer.set(x, y, new Cell("X", style));
 
 // Set a string
 int col = x;
 for (char c : "Hello".toCharArray()) {
-    buffer.setCell(col++, y, Cell.of(c, style));
+    buffer.set(col++, y, new Cell(String.valueOf(c), style));
 }</code></pre>
 </div>
 </div>
@@ -226,9 +231,9 @@ for (char c : "Hello".toCharArray()) {
 <h3 id="reading-cells"><a class="anchor" href="#reading-cells"></a><a class="link" href="#reading-cells">Reading Cells</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Cell cell = buffer.cell(x, y);
-char symbol = cell.symbol();
-Style style = cell.style();</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Cell cell = buffer.get(x, y);
+String symbol = cell.symbol();
+Style cellStyle = cell.style();</code></pre>
 </div>
 </div>
 </div>
@@ -239,7 +244,7 @@ Style style = cell.style();</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Fill a rectangle with a character
 for (int row = area.y(); row &lt; area.bottom(); row++) {
     for (int col = area.x(); col &lt; area.right(); col++) {
-        buffer.setCell(col, row, Cell.of(' ', bgStyle));
+        buffer.set(col, row, new Cell(" ", bgStyle));
     }
 }</code></pre>
 </div>
@@ -254,7 +259,7 @@ for (int row = area.y(); row &lt; area.bottom(); row++) {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">if (x &gt;= area.x() &amp;&amp; x &lt; area.right() &amp;&amp;
     y &gt;= area.y() &amp;&amp; y &lt; area.bottom()) {
-    buffer.setCell(x, y, cell);
+    buffer.set(x, y, cell);
 }</code></pre>
 </div>
 </div>
@@ -271,13 +276,8 @@ for (int row = area.y(); row &lt; area.bottom(); row++) {
 <h3 id="fluent-api"><a class="anchor" href="#fluent-api"></a><a class="link" href="#fluent-api">Fluent API</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.buffer.Buffer;
-import java.nio.file.Path;
-
-import static dev.tamboui.export.ExportRequest.export;
-
-// Start from a buffer (e.g. after rendering widgets)
-Buffer buffer = ...;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Start from a buffer (e.g. after rendering widgets)
+Buffer buffer = Buffer.empty(new Rect(0, 0, 80, 24));
 
 // Shorthand: export as SVG with default options
 export(buffer).svg().toFile(Path.of("output.svg"));
@@ -304,13 +304,13 @@ export(buffer).text().to(outputStream);</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>export(buffer).svg()</code> — SVG (scalable vector graphic)</p>
+<p><code>export(buffer).svg()</code>&#8201;&#8212;&#8201;SVG (scalable vector graphic)</p>
 </li>
 <li>
-<p><code>export(buffer).html()</code> — HTML document (with embedded or external CSS)</p>
+<p><code>export(buffer).html()</code>&#8201;&#8212;&#8201;HTML document (with embedded or external CSS)</p>
 </li>
 <li>
-<p><code>export(buffer).text()</code> — Plain text or ANSI-styled text</p>
+<p><code>export(buffer).text()</code>&#8201;&#8212;&#8201;Plain text or ANSI-styled text</p>
 </li>
 </ul>
 </div>
@@ -334,7 +334,7 @@ export(buffer).toFile(Path.of("styled.ansi"));     // ANSI-styled text</code></p
 </div>
 </div>
 <div class="paragraph">
-<p>Extension mapping: <code>.svg</code> → SVG; <code>.html</code> / <code>.htm</code> → HTML; <code>.txt</code> / <code>.asc</code> → plain text; <code>.ans</code> / <code>.ansi</code> → ANSI text. Unknown extensions default to SVG.</p>
+<p>Extension mapping: <code>.svg</code> &#8594; SVG; <code>.html</code> / <code>.htm</code> &#8594; HTML; <code>.txt</code> / <code>.asc</code> &#8594; plain text; <code>.ans</code> / <code>.ansi</code> &#8594; ANSI text. Unknown extensions default to SVG.</p>
 </div>
 </div>
 <div class="sect2">
@@ -345,19 +345,19 @@ export(buffer).toFile(Path.of("styled.ansi"));     // ANSI-styled text</code></p
 <div class="ulist">
 <ul>
 <li>
-<p><code>toFile(Path path)</code> — write to a file (UTF-8)</p>
+<p><code>toFile(Path path)</code>&#8201;&#8212;&#8201;write to a file (UTF-8)</p>
 </li>
 <li>
-<p><code>to(OutputStream out)</code> — write to a stream (UTF-8)</p>
+<p><code>to(OutputStream out)</code>&#8201;&#8212;&#8201;write to a stream (UTF-8)</p>
 </li>
 <li>
-<p><code>to(Writer out)</code> — write to a writer (caller controls charset; writer is not closed)</p>
+<p><code>to(Writer out)</code>&#8201;&#8212;&#8201;write to a writer (caller controls charset; writer is not closed)</p>
 </li>
 <li>
-<p><code>toString()</code> — return the exported string</p>
+<p><code>toString()</code>&#8201;&#8212;&#8201;return the exported string</p>
 </li>
 <li>
-<p><code>toBytes()</code> — return UTF-8 bytes</p>
+<p><code>toBytes()</code>&#8201;&#8212;&#8201;return UTF-8 bytes</p>
 </li>
 </ul>
 </div>
@@ -369,9 +369,7 @@ export(buffer).toFile(Path.of("styled.ansi"));     // ANSI-styled text</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Rect;
-
-// Export a single region (e.g. title, table, or footer)
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Export a single region (e.g. title, table, or footer)
 Rect titleRect = new Rect(0, 0, 80, 3);
 export(buffer).crop(titleRect).svg().toFile(Path.of("title.svg"));
 
@@ -405,15 +403,11 @@ if (area != null &amp;&amp; !area.isEmpty()) {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.export.ExportProperties;
-import dev.tamboui.style.Color;
-import dev.tamboui.style.StylePropertyResolver;
-
-// Use property defaults (dark theme) — no resolver
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Use property defaults (dark theme) — no resolver
 export(buffer).svg().toFile(path);
 
 // Custom defaults via a resolver (e.g. from toolkit StyleEngine)
-StylePropertyResolver myResolver = ...;  // e.g. styleEngine.resolver()
+StylePropertyResolver myResolver = StylePropertyResolver.empty();  // e.g. styleEngine.resolver()
 export(buffer).svg().options(o -&gt; o.styles(myResolver)).toFile(path);</code></pre>
 </div>
 </div>
@@ -429,19 +423,19 @@ export(buffer).svg().options(o -&gt; o.styles(myResolver)).toFile(path);</code><
 <div class="ulist">
 <ul>
 <li>
-<p><code>title(String)</code> — window/title text (default: <code>"TamboUI"</code>)</p>
+<p><code>title(String)</code>&#8201;&#8212;&#8201;window/title text (default: <code>"TamboUI"</code>)</p>
 </li>
 <li>
-<p><code>chrome(boolean)</code> — include window frame, title, and traffic-light buttons (default: <code>true</code>); <code>false</code> for content only</p>
+<p><code>chrome(boolean)</code>&#8201;&#8212;&#8201;include window frame, title, and traffic-light buttons (default: <code>true</code>); <code>false</code> for content only</p>
 </li>
 <li>
-<p><code>styles(StylePropertyResolver)</code> — style resolver for default export foreground/background (properties <code>export-foreground</code>, <code>export-background</code>); when <code>null</code> (default), uses <code>ExportProperties</code> defaults (dark theme)</p>
+<p><code>styles(StylePropertyResolver)</code>&#8201;&#8212;&#8201;style resolver for default export foreground/background (properties <code>export-foreground</code>, <code>export-background</code>); when <code>null</code> (default), uses <code>ExportProperties</code> defaults (dark theme)</p>
 </li>
 <li>
-<p><code>fontAspectRatio(double)</code> — character width-to-height ratio for layout (default: 0.61)</p>
+<p><code>fontAspectRatio(double)</code>&#8201;&#8212;&#8201;character width-to-height ratio for layout (default: 0.61)</p>
 </li>
 <li>
-<p><code>uniqueId(String)</code> — prefix for CSS classes and clip paths, or <code>null</code> for auto-generated</p>
+<p><code>uniqueId(String)</code>&#8201;&#8212;&#8201;prefix for CSS classes and clip paths, or <code>null</code> for auto-generated</p>
 </li>
 </ul>
 </div>
@@ -464,10 +458,10 @@ export(buffer).svg().options(o -&gt; o.styles(myResolver)).toFile(path);</code><
 <div class="ulist">
 <ul>
 <li>
-<p><code>styles(StylePropertyResolver)</code> — style resolver for default export foreground/background (same as SVG); when <code>null</code> (default), uses <code>ExportProperties</code> defaults</p>
+<p><code>styles(StylePropertyResolver)</code>&#8201;&#8212;&#8201;style resolver for default export foreground/background (same as SVG); when <code>null</code> (default), uses <code>ExportProperties</code> defaults</p>
 </li>
 <li>
-<p><code>inlineStyles(boolean)</code> — <code>true</code> for inline styles on each span (single-file, larger); <code>false</code> for a stylesheet (default, smaller HTML)</p>
+<p><code>inlineStyles(boolean)</code>&#8201;&#8212;&#8201;<code>true</code> for inline styles on each span (single-file, larger); <code>false</code> for a stylesheet (default, smaller HTML)</p>
 </li>
 </ul>
 </div>
@@ -494,7 +488,7 @@ export(buffer).html()
 <div class="ulist">
 <ul>
 <li>
-<p><code>styles(boolean)</code> — <code>true</code> to include ANSI escape codes for colors and modifiers; <code>false</code> for plain text only (default)</p>
+<p><code>styles(boolean)</code>&#8201;&#8212;&#8201;<code>true</code> to include ANSI escape codes for colors and modifiers; <code>false</code> for plain text only (default)</p>
 </li>
 </ul>
 </div>
@@ -521,14 +515,7 @@ Components use the <a href="bindings.html">@OnAction annotation</a> to handle in
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.toolkit.component.Component;
-import dev.tamboui.toolkit.element.Element;
-import dev.tamboui.tui.bindings.OnAction;
-import dev.tamboui.tui.event.Event;
-
-import static dev.tamboui.toolkit.Toolkit.*;
-
-public class CounterCard extends Component&lt;CounterCard&gt; {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class CounterCard extends Component&lt;CounterCard&gt; {
     private int count = 0;
 
     @OnAction("increment")
@@ -598,12 +585,7 @@ try (var runner = ToolkitRunner.builder()
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.style.PropertyDefinition;
-import dev.tamboui.style.PropertyRegistry;
-import dev.tamboui.style.ColorConverter;
-import dev.tamboui.style.Color;
-
-public class MyGauge implements Widget {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyGauge implements Widget {
     // Define a custom property for the filled bar color
     public static final PropertyDefinition&lt;Color&gt; BAR_COLOR =
         PropertyDefinition.of("bar-color", ColorConverter.INSTANCE);
@@ -613,7 +595,10 @@ public class MyGauge implements Widget {
         PropertyRegistry.register(BAR_COLOR);
     }
 
-    // ...
+    @Override
+    public void render(Rect area, Buffer buffer) {
+        // Widget implementation
+    }
 }</code></pre>
 </div>
 </div>
@@ -663,15 +648,20 @@ For multiple properties, use <code>PropertyRegistry.registerAll(PROP1, PROP2, &#
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyGauge implements Widget {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyGaugeWithResolver implements Widget {
     public static final PropertyDefinition&lt;Color&gt; BAR_COLOR =
         PropertyDefinition.of("bar-color", ColorConverter.INSTANCE);
 
     private final Color barColor;
 
-    private MyGauge(Builder builder) {
+    private MyGaugeWithResolver(Builder builder) {
         // Resolve: programmatic value → CSS value → property default
         this.barColor = builder.resolveBarColor();
+    }
+
+    @Override
+    public void render(Rect area, Buffer buffer) {
+        // Use barColor for rendering
     }
 
     public static final class Builder {
@@ -692,8 +682,8 @@ For multiple properties, use <code>PropertyRegistry.registerAll(PROP1, PROP2, &#
             return styleResolver.resolve(BAR_COLOR, barColor);
         }
 
-        public MyGauge build() {
-            return new MyGauge(this);
+        public MyGaugeWithResolver build() {
+            return new MyGaugeWithResolver(this);
         }
     }
 }</code></pre>
@@ -723,11 +713,9 @@ For multiple properties, use <code>PropertyRegistry.registerAll(PROP1, PROP2, &#
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.style.StandardProperties;
-
-// In your resolution method:
-Color bg = styleResolver.resolve(StandardProperties.BACKGROUND, this.background);
-Color fg = styleResolver.resolve(StandardProperties.COLOR, this.foreground);</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// In your resolution method:
+Color bg = styleResolver.resolve(StandardProperties.BACKGROUND, background);
+Color fg = styleResolver.resolve(StandardProperties.COLOR, foreground);</code></pre>
 </div>
 </div>
 </div>
@@ -817,19 +805,19 @@ Always use <code>CharWidth</code> utilities for width calculations when renderin
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Simple Emoji</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"🔥"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"火"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ZWJ Emoji</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"👨‍🦲"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"man-bald"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Flag Emoji</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"🇬🇱"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"flag-GL"</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
@@ -841,7 +829,7 @@ Always use <code>CharWidth</code> utilities for width calculations when renderin
 <div class="ulist">
 <ul>
 <li>
-<p>ZWJ emoji like "👨‍🦲" to display as "👨?" (truncated mid-sequence)</p>
+<p>ZWJ emoji like "man-bald" to display as "man?" (truncated mid-sequence)</p>
 </li>
 <li>
 <p>CJK characters to overflow cells (width 2 treated as width 1)</p>
@@ -859,9 +847,7 @@ Always use <code>CharWidth</code> utilities for width calculations when renderin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.text.CharWidth;
-
-// Get display width of a string
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Get display width of a string
 int width = CharWidth.of("Hello 世界 🔥");  // Returns 14, not 11
 
 // Get display width of a code point
@@ -889,10 +875,10 @@ String ellipsized = CharWidth.truncateWithEllipsis(
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - breaks emoji and CJK
-int width = text.length();
+int wrongWidth = text.length();
 
 // CORRECT - respects display width
-int width = CharWidth.of(text);</code></pre>
+int correctWidth = CharWidth.of(text);</code></pre>
 </div>
 </div>
 </div>
@@ -901,10 +887,10 @@ int width = CharWidth.of(text);</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - may break mid-grapheme cluster
-String truncated = text.substring(0, maxWidth);
+String wrongTruncated = text.substring(0, Math.min(text.length(), maxWidth));
 
 // CORRECT - preserves grapheme boundaries
-String truncated = CharWidth.substringByWidth(text, maxWidth);</code></pre>
+String correctTruncated = CharWidth.substringByWidth(text, maxWidth);</code></pre>
 </div>
 </div>
 </div>
@@ -918,9 +904,9 @@ buffer.setString(col, y, text, style);
 col += text.length();
 
 // CORRECT - use display width
-int col = x;
-buffer.setString(col, y, text, style);
-col += CharWidth.of(text);</code></pre>
+int col2 = x;
+buffer.setString(col2, y, text, style);
+col2 += CharWidth.of(text);</code></pre>
 </div>
 </div>
 </div>
@@ -929,10 +915,10 @@ col += CharWidth.of(text);</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - misaligned with CJK/emoji
-int labelX = x + (width - label.length()) / 2;
+int wrongLabelX = x + (width - label.length()) / 2;
 
 // CORRECT - proper centering
-int labelX = x + (width - CharWidth.of(label)) / 2;</code></pre>
+int correctLabelX = x + (width - CharWidth.of(label)) / 2;</code></pre>
 </div>
 </div>
 </div>
@@ -941,17 +927,19 @@ int labelX = x + (width - CharWidth.of(label)) / 2;</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// WRONG - char count, not display width
+String wrongEllipsis = text;
 if (text.length() &gt; maxWidth) {
-    text = text.substring(0, maxWidth - 3) + "...";
+    wrongEllipsis = text.substring(0, maxWidth - 3) + "...";
 }
 
 // CORRECT - using CharWidth utilities
-text = CharWidth.truncateWithEllipsis(text, maxWidth, CharWidth.TruncatePosition.END);
+String correctEllipsis = CharWidth.truncateWithEllipsis(text, maxWidth, CharWidth.TruncatePosition.END);
 
 // Or manually:
+String manualEllipsis = text;
 if (CharWidth.of(text) &gt; maxWidth) {
     int ellipsisWidth = CharWidth.of("...");
-    text = CharWidth.substringByWidth(text, maxWidth - ellipsisWidth) + "...";
+    manualEllipsis = CharWidth.substringByWidth(text, maxWidth - ellipsisWidth) + "...";
 }</code></pre>
 </div>
 </div>
@@ -967,13 +955,13 @@ if (CharWidth.of(text) &gt; maxWidth) {
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">String text = "Hello World Example";
 
 // END: "Hello Wor..."
-CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.END);
+String endTruncate = CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.END);
 
 // START: "...d Example"
-CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.START);
+String startTruncate = CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.START);
 
 // MIDDLE: "Hell...ample"
-CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.MIDDLE);</code></pre>
+String middleTruncate = CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.MIDDLE);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -981,7 +969,7 @@ CharWidth.truncateWithEllipsis(text, 12, CharWidth.TruncatePosition.MIDDLE);</co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CharWidth.truncateWithEllipsis(text, 12, "…", CharWidth.TruncatePosition.END);</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">String customEllipsis = CharWidth.truncateWithEllipsis(text, 12, "…", CharWidth.TruncatePosition.END);</code></pre>
 </div>
 </div>
 </div>
@@ -1120,7 +1108,7 @@ String result = CharWidth.substringByWidth("A👨‍🦲B", 3);
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

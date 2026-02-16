@@ -37,7 +37,6 @@
 <ul class="sectlevel2">
 <li><a href="#terminal-and-backend">Terminal and Backend</a></li>
 <li><a href="#drawing">Drawing</a></li>
-<li><a href="#event-loop">Event Loop</a></li>
 <li><a href="#putting-it-together">Putting It Together</a></li>
 </ul>
 </li>
@@ -187,10 +186,7 @@ Nothing is hidden - you decide when to poll for events, when to draw, and how to
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.jline.JLineBackend;
-import dev.tamboui.terminal.Terminal;
-
-try (var backend = new JLineBackend()) {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var backend = new JLineBackend()) {
     var terminal = new Terminal&lt;&gt;(backend);
     // ...
 }</code></pre>
@@ -261,36 +257,11 @@ If you&#8217;re not using it, remember to restore the terminal state before exit
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">terminal.draw(frame -&gt; {
     Buffer buffer = frame.buffer();
-    buffer.setCell(0, 0, Cell.of('X', Style.EMPTY.bold()));
+    buffer.set(0, 0, new Cell("X", Style.EMPTY.bold()));
 
-    Cell cell = buffer.cell(5, 5);
+    Cell cell = buffer.get(5, 5);
     // ...
 });</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="event-loop"><a class="anchor" href="#event-loop"></a><a class="link" href="#event-loop">Event Loop</a></h3>
-<div class="paragraph">
-<p>You own the event loop entirely:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">boolean running = true;
-
-while (running) {
-    Event event = backend.pollEvent(Duration.ofMillis(100));
-
-    if (event instanceof KeyEvent key) {
-        if (key.code() == KeyCode.CHAR &amp;&amp; key.character() == 'q') {
-            running = false;
-        }
-    } else if (event instanceof ResizeEvent) {
-        // Terminal resized - might want to redraw
-    }
-
-    terminal.draw(frame -&gt; renderUI(frame));
-}</code></pre>
 </div>
 </div>
 </div>
@@ -298,7 +269,7 @@ while (running) {
 <h3 id="putting-it-together"><a class="anchor" href="#putting-it-together"></a><a class="link" href="#putting-it-together">Putting It Together</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class ImmediateModeExample {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class ImmediateModeExample {
     public static void main(String[] args) throws Exception {
         try (var backend = new JLineBackend()) {
             backend.enableRawMode();
@@ -306,24 +277,16 @@ while (running) {
             backend.hideCursor();
 
             var terminal = new Terminal&lt;&gt;(backend);
-            boolean running = true;
 
-            while (running) {
-                Event event = backend.pollEvent(Duration.ofMillis(100));
-                if (event instanceof KeyEvent key) {
-                    if (key.code() == KeyCode.CHAR &amp;&amp; key.character() == 'q') {
-                        running = false;
-                    }
-                }
-
-                terminal.draw(frame -&gt; {
-                    var widget = Paragraph.builder()
-                        .text(Text.from("Press 'q' to quit"))
-                        .style(Style.EMPTY.fg(Color.CYAN))
-                        .build();
-                    frame.renderWidget(widget, frame.area());
-                });
-            }
+            // Note: For event handling, use TuiRunner which provides
+            // a managed event loop. This example shows low-level terminal setup.
+            terminal.draw(frame -&gt; {
+                var widget = Paragraph.builder()
+                    .text(Text.from("Press 'q' to quit"))
+                    .style(Style.EMPTY.fg(Color.CYAN))
+                    .build();
+                frame.renderWidget(widget, frame.area());
+            });
         }
     }
 }</code></pre>
@@ -429,15 +392,13 @@ try (var tui = TuiRunner.create()) {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.tui.error.RenderErrorHandlers;
-
-// Log errors to a file and quit immediately
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Log errors to a file and quit immediately
 var config = TuiConfig.builder()
     .errorHandler(RenderErrorHandlers.logAndQuit(new PrintStream("/tmp/tui-errors.log")))
     .build();
 
 // Write error details to a file, then show in-app error display
-var config = TuiConfig.builder()
+var config2 = TuiConfig.builder()
     .errorHandler(RenderErrorHandlers.writeToFile(Path.of("/tmp/crash.log")))
     .build();</code></pre>
 </div>
@@ -545,7 +506,7 @@ if (RenderThread.isRenderThread()) {
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// From a background thread:
 runner.runOnRenderThread(() -&gt; {
     // This runs on the render thread
-    status = "Download complete";
+    // status = "Download complete";
     // UI will redraw on next event
 });</code></pre>
 </div>
@@ -578,7 +539,7 @@ If they modify UI state, use <code>runOnRenderThread()</code>:</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Action runs on scheduler thread - use runOnRenderThread for UI state
 runner.schedule(() -&gt; {
     runner.runOnRenderThread(() -&gt; {
-        countdown--;
+        // countdown--;
     });
 }, Duration.ofSeconds(1));
 
@@ -699,15 +660,13 @@ if (key.isPageDown()) { }  // PageDown, Ctrl+F</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">(event, runner) -&gt; {
-    return switch (event) {
-        case KeyEvent k -&gt; handleKey(k);
-        case MouseEvent m -&gt; handleMouse(m);
-        case TickEvent t -&gt; { animationFrame++; yield true; }
-        case ResizeEvent r -&gt; true;  // Always redraw on resize
-        default -&gt; false;
-    };
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">EventHandler handler = (event, runner) -&gt; {
+    if (event instanceof KeyEvent k) return handleKey(k);
+    if (event instanceof MouseEvent m) return handleMouse(m);
+    if (event instanceof TickEvent) { animationFrame++; return true; }
+    if (event instanceof ResizeEvent) return true;  // Always redraw on resize
+    return false;
+};</code></pre>
 </div>
 </div>
 </div>
@@ -719,21 +678,19 @@ Combine it with the layout system:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">frame -&gt; {
-    var areas = Layout.builder()
-        .direction(Direction.VERTICAL)
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Renderer renderer = frame -&gt; {
+    var areas = Layout.vertical()
         .constraints(
             Constraint.length(3),
             Constraint.fill(),
             Constraint.length(1)
         )
-        .build()
         .split(frame.area());
 
     frame.renderWidget(header, areas.get(0));
     frame.renderWidget(content, areas.get(1));
     frame.renderWidget(statusBar, areas.get(2));
-}</code></pre>
+};</code></pre>
 </div>
 </div>
 </div>
@@ -760,7 +717,7 @@ Combine it with the layout system:</p>
         }
     }
 
-    private boolean handleEvent(Event event, TuiRunner.Runner runner) {
+    private boolean handleEvent(Event event, TuiRunner runner) {
         if (event instanceof KeyEvent key &amp;&amp; key.isQuit()) {
             runner.quit();
             return false;
@@ -783,7 +740,7 @@ Combine it with the layout system:</p>
         var widget = Paragraph.builder()
             .text(Text.from(text))
             .block(Block.builder()
-                .title(Text.from("Demo"))
+                .title("Demo")
                 .borders(Borders.ALL)
                 .borderType(BorderType.ROUNDED)
                 .build())
@@ -809,10 +766,7 @@ Instead of writing render callbacks, you describe your UI declaratively and let 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static dev.tamboui.toolkit.Toolkit.*;
-import dev.tamboui.toolkit.app.ToolkitApp;
-
-public class MyApp extends ToolkitApp {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyApp extends ToolkitApp {
 
     @Override
     protected Element render() {
@@ -842,13 +796,13 @@ public class MyApp extends ToolkitApp {
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">row(
     panel("Left").fill(),
     panel("Right").fill()
-)
+);
 
 column(
     text("Header"),
-    content().fill(),
+    panel("Content").fill(),
     text("Footer")
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -858,16 +812,16 @@ column(
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Auto-detects column count based on available width and child widths
 columns(item1, item2, item3, item4, item5, item6)
-    .spacing(1)
+    .spacing(1);
 
 // Explicit column count
 columns(item1, item2, item3, item4)
-    .columnCount(2)
+    .columnCount(2);
 
 // Column-first ordering (fills top-to-bottom, then left-to-right)
 columns(item1, item2, item3, item4)
     .columnCount(2)
-    .columnFirst()</code></pre>
+    .columnFirst();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -882,7 +836,7 @@ columns(item1, item2, item3, item4)
     text("Left"),
     spacer(),
     text("Right")
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -890,18 +844,16 @@ columns(item1, item2, item3, item4)
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import dev.tamboui.layout.Flex;
-
-row(
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">row(
     text("Item 1"),
     text("Item 2"),
     text("Item 3")
-).flex(Flex.CENTER)  // Center items horizontally
+).flex(Flex.CENTER);  // Center items horizontally
 
 column(
     panel("Top"),
     panel("Bottom")
-).flex(Flex.SPACE_BETWEEN)  // Spread items vertically</code></pre>
+).flex(Flex.SPACE_BETWEEN);  // Spread items vertically</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -915,7 +867,7 @@ column(
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">text("Styled").bold().italic().cyan().onBlue()</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">text("Styled").bold().italic().cyan().onBlue();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -923,10 +875,10 @@ column(
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">panel("Title", content)
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">panel("Title", text("content"))
     .rounded()
     .borderColor(Color.CYAN)
-    .focusedBorderColor(Color.YELLOW)</code></pre>
+    .focusedBorderColor(Color.YELLOW);</code></pre>
 </div>
 </div>
 </div>
@@ -937,13 +889,11 @@ column(
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">panel("Fixed width").length(30)
-panel("Half the space").percentage(50)
-panel("Take what's left").fill()
-panel("Twice the weight").fill(2)
-panel("One third").ratio(1, 3)
-panel("At least 10").min(10)
-panel("At most 50").max(50)</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">panel("Fixed width").length(30);
+panel("Take what's left").fill();
+panel("Twice the weight").fill(2);
+panel("At least 10").min(10);
+panel("At most 50").max(50);</code></pre>
 </div>
 </div>
 </div>
@@ -961,17 +911,21 @@ panel("At most 50").max(50)</code></pre>
 private TableState tableState = new TableState();
 private TextInputState inputState = new TextInputState();
 
-// In render():
-myList  // ListElement manages selection and scroll internally
+Element statefulWidgetsExample() {
+    // In render():
+    return column(
+        myList,  // ListElement manages selection and scroll internally
 
-table()
-    .header("Name", "Age")
-    .row("Alice", "30")
-    .row("Bob", "25")
-    .state(tableState)
+        table()
+            .header("Name", "Age")
+            .row("Alice", "30")
+            .row("Bob", "25")
+            .state(tableState),
 
-textInput(inputState)
-    .placeholder("Type here...")</code></pre>
+        textInput(inputState)
+            .placeholder("Type here...")
+    );
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -982,7 +936,7 @@ textInput(inputState)
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">myList.selectNext(itemCount);  // Move selection down
 myList.selectPrevious();       // Move selection up
 myList.selected();             // Get current selection index
-myList.selected(index);        // Set selection to specific index</code></pre>
+myList.selected(0);            // Set selection to specific index</code></pre>
 </div>
 </div>
 </div>
@@ -1002,7 +956,7 @@ myList.selected(index);        // Set selection to specific index</code></pre>
             return EventResult.HANDLED;
         }
         return EventResult.UNHANDLED;
-    })</code></pre>
+    });</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1019,7 +973,7 @@ myList.selected(index);        // Set selection to specific index</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">column(
     panel("First").id("first").focusable(),
     panel("Second").id("second").focusable()
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1030,13 +984,12 @@ myList.selected(index);        // Set selection to specific index</code></pre>
 <h3 id="data-visualization"><a class="anchor" href="#data-visualization"></a><a class="link" href="#data-visualization">Data Visualization</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">gauge(0.75).label("Progress").gaugeColor(Color.GREEN)
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">gauge(0.75).label("Progress").gaugeColor(Color.GREEN);
 
-sparkline(1, 4, 2, 8, 5, 7).color(Color.CYAN)
+sparkline(1, 4, 2, 8, 5, 7).color(Color.CYAN);
 
 barChart(10, 20, 30)
-    .labels("A", "B", "C")
-    .barColor(Color.BLUE)</code></pre>
+    .barColor(Color.BLUE);</code></pre>
 </div>
 </div>
 </div>
@@ -1050,13 +1003,13 @@ barChart(10, 20, 30)
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Wrap any Widget for use in the Toolkit DSL
 widget(myCustomWidget)
     .addClass("custom")
-    .fill()
+    .fill();
 
 // Use in layouts like any other element
 row(
     widget(customWidget1).fill(),
     widget(customWidget2).fill()
-)</code></pre>
+);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1109,7 +1062,7 @@ The widget renders directly to the buffer using its own styling logic.</p>
     .build();
 
 try (var runner = ToolkitRunner.create(config)) {
-    runner.run(() -&gt; panel("App", content()));
+    runner.run(() -&gt; panel("App", content));
 }</code></pre>
 </div>
 </div>
@@ -1166,9 +1119,7 @@ The rest of the UI continues to render normally.</p>
 <h3 id="example-todo-list"><a class="anchor" href="#example-todo-list"></a><a class="link" href="#example-todo-list">Example: Todo List</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static dev.tamboui.toolkit.Toolkit.*;
-
-public class TodoApp extends ToolkitApp {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class TodoApp extends ToolkitApp {
     private final List&lt;String&gt; items = new ArrayList&lt;&gt;(List.of(
         "Learn TamboUI",
         "Build something cool"
@@ -1256,10 +1207,11 @@ This is the pattern used by Gradle, npm, and other build tools: a fixed status a
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var display = InlineDisplay.create(3)) {  // Reserve 3 lines
     for (int i = 0; i &lt;= 100; i += 10) {
+        final int progress = i;
         display.render((area, buffer) -&gt; {
             var gauge = Gauge.builder()
-                .ratio(i / 100.0)
-                .label("Processing: " + i + "%")
+                .ratio(progress / 100.0)
+                .label("Processing: " + progress + "%")
                 .build();
             gauge.render(area, buffer);
         });
@@ -1291,7 +1243,7 @@ When closed, it moves the cursor below and optionally clears the status area.</p
 
         // Log completion - scrolls above, status stays fixed
         display.println(Text.from(Line.from(
-            Span.styled("✓ ", Style.EMPTY.fg(Color.GREEN)),
+            Span.styled("OK ", Style.EMPTY.fg(Color.GREEN)),
             Span.raw(task.name())
         )));
     }
@@ -1307,10 +1259,10 @@ When closed, it moves the cursor below and optionally clears the status area.</p
 var display = InlineDisplay.create(4);
 
 // Fixed height and width
-var display = InlineDisplay.create(4, 80);
+var display2 = InlineDisplay.create(4, 80);
 
 // Clear the status area when done
-var display = InlineDisplay.create(4).clearOnClose();</code></pre>
+var display3 = InlineDisplay.create(4).clearOnClose();</code></pre>
 </div>
 </div>
 </div>
@@ -1387,12 +1339,12 @@ It handles keyboard and mouse events, tick-based animations, and thread-safe upd
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try (var runner = InlineTuiRunner.create(4)) {
     runner.run(
         // Event handler
-        event -&gt; {
+        (event, r) -&gt; {
             if (event instanceof KeyEvent key &amp;&amp; key.character() == 'q') {
-                runner.quit();
-                return EventResult.HANDLED;
+                r.quit();
+                return true;
             }
-            return EventResult.UNHANDLED;
+            return false;
         },
         // Renderer
         frame -&gt; {
@@ -1429,10 +1381,10 @@ try (var runner = InlineTuiRunner.create(config)) {
 runner.println("Task completed!");
 
 // Styled text
-runner.println(Text.from(
-    Span.styled("✓ ", Style.EMPTY.fg(Color.GREEN)),
+runner.println(Text.from(Line.from(
+    Span.styled("OK ", Style.EMPTY.fg(Color.GREEN)),
     Span.raw("Build successful")
-));</code></pre>
+)));</code></pre>
 </div>
 </div>
 </div>
@@ -1442,7 +1394,7 @@ runner.println(Text.from(
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Run code on the render thread
 runner.runOnRenderThread(() -&gt; {
-    progress = newValue;
+    // progress = newValue;
 });
 
 // Schedule for later
@@ -1468,7 +1420,7 @@ This is the recommended approach for most inline applications.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyProgressApp extends InlineApp {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyProgressApp extends InlineApp {
 
     private double progress = 0.0;
 
@@ -1511,12 +1463,20 @@ This is the recommended approach for most inline applications.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
-protected InlineTuiConfig configure(int height) {
-    return InlineTuiConfig.builder(height)
-        .tickRate(Duration.ofMillis(30))  // Faster for smooth animations
-        .clearOnClose(false)               // Keep output visible
-        .build();
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyConfiguredInlineApp extends InlineApp {
+    @Override
+    protected int height() { return 3; }
+
+    @Override
+    protected Element render() { return text(""); }
+
+    @Override
+    protected InlineTuiConfig configure(int height) {
+        return InlineTuiConfig.builder(height)
+            .tickRate(Duration.ofMillis(30))  // Faster for smooth animations
+            .clearOnClose(false)               // Keep output visible
+            .build();
+    }
 }</code></pre>
 </div>
 </div>
@@ -1530,7 +1490,7 @@ protected InlineTuiConfig configure(int height) {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Print a styled element
 println(row(
-    text("✓ ").green().fit(),
+    text("OK ").green().fit(),
     text("lodash").fit(),
     text("@4.17.21").dim().fit()
 ).flex(Flex.START));
@@ -1547,23 +1507,30 @@ println("Step completed");</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
-protected Element render() {
-    return column(
-        text("Continue? [Y/n]").cyan(),
-        spacer()
-    )
-    .focusable()
-    .onKeyEvent(event -&gt; {
-        if (event.character() == 'y' || event.character() == 'Y') {
-            startNextPhase();
-            return EventResult.HANDLED;
-        } else if (event.character() == 'n') {
-            quit();
-            return EventResult.HANDLED;
-        }
-        return EventResult.UNHANDLED;
-    });
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyInteractiveInlineApp extends InlineApp {
+    @Override
+    protected int height() { return 3; }
+
+    @Override
+    protected Element render() {
+        return column(
+            text("Continue? [Y/n]").cyan(),
+            spacer()
+        )
+        .focusable()
+        .onKeyEvent(event -&gt; {
+            if (event.character() == 'y' || event.character() == 'Y') {
+                startNextPhase();
+                return EventResult.HANDLED;
+            } else if (event.character() == 'n') {
+                quit();
+                return EventResult.HANDLED;
+            }
+            return EventResult.UNHANDLED;
+        });
+    }
+
+    void startNextPhase() {}
 }</code></pre>
 </div>
 </div>
@@ -1575,21 +1542,28 @@ protected Element render() {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private final TextInputState nameState = new TextInputState();
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyFormInlineApp extends InlineApp {
+    private final TextInputState nameState = new TextInputState();
 
-@Override
-protected Element render() {
-    return column(
-        row(
-            text("Name: ").bold().fit(),
-            textInput(nameState)
-                .id("name-input")
-                .placeholder("Enter name...")
-                .constraint(Constraint.length(20))
-                .onSubmit(this::handleSubmit)
-        ).flex(Flex.START),
-        text("[Enter] Submit  [Tab] Next field").dim()
-    );
+    @Override
+    protected int height() { return 3; }
+
+    @Override
+    protected Element render() {
+        return column(
+            row(
+                text("Name: ").bold().fit(),
+                textInput(nameState)
+                    .id("name-input")
+                    .placeholder("Enter name...")
+                    .constraint(Constraint.length(20))
+                    .onSubmit(() -&gt; handleSubmit(nameState.text()))
+            ).flex(Flex.START),
+            text("[Enter] Submit  [Tab] Next field").dim()
+        );
+    }
+
+    private void handleSubmit(String value) {}
 }</code></pre>
 </div>
 </div>
@@ -1618,23 +1592,28 @@ protected Element render() {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static dev.tamboui.toolkit.InlineToolkit.*;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class MyScopedInlineApp extends InlineApp {
+    private boolean downloading = true;
+    private double progress1 = 0;
+    private double progress2 = 0;
 
-private boolean downloading = true;
+    @Override
+    protected int height() { return 5; }
 
-@Override
-protected Element render() {
-    return column(
-        text("Package Installation").bold(),
+    @Override
+    protected Element render() {
+        return column(
+            text("Package Installation").bold(),
 
-        // This section collapses when downloading becomes false
-        scope(downloading,
-            row(text("file1.zip: "), gauge(progress1)),
-            row(text("file2.zip: "), gauge(progress2))
-        ),
+            // This section collapses when downloading becomes false
+            scope(downloading,
+                row(text("file1.zip: "), gauge(progress1)),
+                row(text("file2.zip: "), gauge(progress2))
+            ),
 
-        text(downloading ? "Downloading..." : "Complete!").dim()
-    );
+            text(downloading ? "Downloading..." : "Complete!").dim()
+        );
+    }
 }</code></pre>
 </div>
 </div>
@@ -1708,10 +1687,10 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div class="ulist">
 <ul>
 <li>
-<p><a href="styling.html">CSS Styling</a> - external stylesheets and theming</p>
+<p><a href="bindings.html">Bindings and Actions</a> - key bindings and action handling</p>
 </li>
 <li>
-<p><a href="bindings.html">Bindings and Actions</a> - key bindings and action handling</p>
+<p><a href="styling.html">CSS Styling</a> - external stylesheets and theming</p>
 </li>
 <li>
 <p><a href="mvc-architecture.html">Application Structure</a> - patterns for larger applications</p>
@@ -1730,7 +1709,7 @@ You can use Toolkit elements inside a TuiRunner application, or drop down to dir
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

@@ -99,6 +99,19 @@
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Form state and validation (<code>FormState</code>, <code>Validators</code>) are part of <code>tamboui-widgets</code> and work at any API level.
+The <code>formField()</code> and <code>form()</code> builders shown here are Toolkit DSL conveniences—see <a href="api-levels.html#toolkit-dsl">Toolkit DSL</a> for an introduction.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>TamboUI provides high-level form abstractions to simplify building interactive forms with labels, validation, and centralized state management.</p>
 </div>
@@ -140,11 +153,11 @@ FormState form = FormState.builder()
     .build();
 
 // Simple field declarations
-formField("Full Name", form.textField("fullName"))
+Element overviewExample = formField("Full Name", form.textField("fullName"))
     .labelWidth(12)
     .rounded()
     .borderColor(Color.DARK_GRAY)
-    .focusedBorderColor(Color.CYAN)</code></pre>
+    .focusedBorderColor(Color.CYAN);</code></pre>
 </div>
 </div>
 </div>
@@ -161,13 +174,13 @@ formField("Full Name", form.textField("fullName"))
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static dev.tamboui.toolkit.Toolkit.*;
 
-// With TextInputState
-TextInputState nameState = new TextInputState("John");
-formField("Name", nameState)
+        // With TextInputState
+        TextInputState nameState = new TextInputState("John");
+        formField("Name", nameState);
 
-// Creates internal state automatically
-formField("Email")
-    .placeholder("you@example.com")</code></pre>
+        // Creates internal state automatically
+        formField("Email")
+            .placeholder("you@example.com");</code></pre>
 </div>
 </div>
 </div>
@@ -219,7 +232,7 @@ formField("Email")
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">TextInputState emailState = new TextInputState("");
 formField("Email", emailState)
     .placeholder("you@example.com")
-    .rounded()</code></pre>
+    .rounded();</code></pre>
 </div>
 </div>
 </div>
@@ -245,11 +258,11 @@ For <code>formField()</code>, you can use <code>.masked()</code> explicitly:</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">formField("Password", passwordState)
     .placeholder("Enter password")
     .masked()          // displays '*' for each character
-    .rounded()
+    .rounded();
 
 // Or with a custom mask character
 formField("PIN", pinState)
-    .masked('●')       // displays '●' for each character</code></pre>
+    .masked('\u25CF');       // displays a filled circle for each character</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -263,10 +276,10 @@ formField("PIN", pinState)
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">BooleanFieldState subscribeState = new BooleanFieldState(false);
 
 // Checkbox style: [x] or [ ]
-formField("Subscribe", subscribeState)
+formField("Subscribe", subscribeState);
 
 // Toggle style: [ON] or [OFF]
-formField("Dark Mode", subscribeState, FieldType.TOGGLE)</code></pre>
+formField("Dark Mode", subscribeState, FieldType.TOGGLE);</code></pre>
 </div>
 </div>
 </div>
@@ -275,7 +288,7 @@ formField("Dark Mode", subscribeState, FieldType.TOGGLE)</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">SelectFieldState countryState = new SelectFieldState("USA", "UK", "Germany");
-formField("Country", countryState)</code></pre>
+formField("Country", countryState);</code></pre>
 </div>
 </div>
 </div>
@@ -293,7 +306,7 @@ formField("Country", countryState)</code></pre>
     .rounded()                // Rounded border
     .borderColor(Color.DARK_GRAY)
     .focusedBorderColor(Color.CYAN)
-    .errorBorderColor(Color.RED)</code></pre>
+    .errorBorderColor(Color.RED);</code></pre>
 </div>
 </div>
 </div>
@@ -463,7 +476,7 @@ Map&lt;String, String&gt; allText = form.textValues();</code></pre>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">formField("Email", emailState)
     .validate(Validators.required(), Validators.email())
     .errorBorderColor(Color.RED)
-    .showInlineErrors(true)</code></pre>
+    .showInlineErrors(true);</code></pre>
 </div>
 </div>
 </div>
@@ -474,10 +487,10 @@ Map&lt;String, String&gt; allText = form.textValues();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Validators.required("Please enter your name")
-Validators.email("Invalid email format")
-Validators.minLength(3, "Username must be at least 3 characters")
-Validators.range(1, 100, "Age must be between 1 and 100")</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Validators.required("Please enter your name");
+Validators.email("Invalid email format");
+Validators.minLength(3, "Username must be at least 3 characters");
+Validators.range(1, 100, "Age must be between 1 and 100");</code></pre>
 </div>
 </div>
 </div>
@@ -515,7 +528,7 @@ ValidationResult lastResult = field.lastValidation();</code></pre>
 };
 
 formField("Username", usernameState)
-    .validate(Validators.required(), usernameAvailable)</code></pre>
+    .validate(Validators.required(), usernameAvailable);</code></pre>
 </div>
 </div>
 </div>
@@ -531,7 +544,7 @@ formField("Username", usernameState)
     .and(Validators.maxLength(100));
 
 formField("Email", emailState)
-    .validate(emailValidator)</code></pre>
+    .validate(emailValidator);</code></pre>
 </div>
 </div>
 </div>
@@ -552,7 +565,7 @@ formField("Email", emailState)
     .field("email", "Email")
     .field("role", "Role")
     .labelWidth(14)
-    .rounded()</code></pre>
+    .rounded();</code></pre>
 </div>
 </div>
 </div>
@@ -569,7 +582,7 @@ formField("Email", emailState)
         .field("newsletter", "Newsletter", FieldType.CHECKBOX)
         .field("darkMode", "Dark Mode", FieldType.TOGGLE)
     .labelWidth(14)
-    .spacing(1)</code></pre>
+    .spacing(1);</code></pre>
 </div>
 </div>
 </div>
@@ -593,7 +606,7 @@ formField("Email", emailState)
         String user = state.textValue("username");
         String pass = state.textValue("password");
         authenticate(user, pass);
-    })</code></pre>
+    });</code></pre>
 </div>
 </div>
 </div>
@@ -612,8 +625,8 @@ formField("Email", emailState)
 // Render form with submit button
 column(
     loginForm,
-    button("Login", () -&gt; loginForm.submit())
-)</code></pre>
+    text(" Login ").bold()  // Note: button() is not yet available
+);</code></pre>
 </div>
 </div>
 </div>
@@ -656,7 +669,7 @@ boolean success = form.submit();
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">form(formState)
     .validateOnSubmit(false)  // skip validation
-    .onSubmit(state -&gt; save(state))  // always called</code></pre>
+    .onSubmit(state -&gt; save(state));  // always called</code></pre>
 </div>
 </div>
 </div>
@@ -673,7 +686,7 @@ Enable <code>arrowNavigation</code> to allow Up/Down to move between fields:</p>
     .field("username", "Username")
     .field("email", "Email")
     .field("role", "Role", FieldType.SELECT)
-    .arrowNavigation(true)  // Up/Down navigate between fields</code></pre>
+    .arrowNavigation(true);  // Up/Down navigate between fields</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -703,7 +716,7 @@ Enable <code>arrowNavigation</code> to allow Up/Down to move between fields:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class SettingsForm {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static class SettingsForm {
 
     private static final FormState FORM = FormState.builder()
         // Profile
@@ -799,12 +812,12 @@ state.toggle();  // Flips the value</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">SelectFieldState state = new SelectFieldState("A", "B", "C");
 // Or with List
-SelectFieldState state = new SelectFieldState(options, 1);  // Select index 1
+SelectFieldState stateFromList = new SelectFieldState(options, 1);  // Select index 1
 
 // Get values
 String selected = state.selectedValue();  // "A"
 int index = state.selectedIndex();        // 0
-List&lt;String&gt; options = state.options();   // ["A", "B", "C"]
+List&lt;String&gt; opts = state.options();   // ["A", "B", "C"]
 
 // Change selection
 state.selectIndex(2);    // Select "C"
@@ -839,8 +852,8 @@ private static Element formRow(String label, TextInputState state) {
 }
 
 // Usage
-formRow("Full name", FULL_NAME)
-formRow("Email", EMAIL)</code></pre>
+Element beforeExample1 = formRow("Full name", FULL_NAME);
+Element beforeExample2 = formRow("Email", EMAIL);</code></pre>
 </div>
 </div>
 </div>
@@ -849,17 +862,17 @@ formRow("Email", EMAIL)</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Centralized state
-private static final FormState FORM = FormState.builder()
+private static final FormState FORM_STATE = FormState.builder()
     .textField("fullName", "Ada")
     .textField("email", "ada@example.com")
     .textField("role", "Research")
     .build();
 
 // Usage - no helper needed
-formField("Full name", FORM.textField("fullName"))
-    .labelWidth(14).rounded().borderColor(Color.DARK_GRAY)
-formField("Email", FORM.textField("email"))
-    .labelWidth(14).rounded().borderColor(Color.DARK_GRAY)</code></pre>
+Element afterExample1 = formField("Full name", FORM_STATE.textField("fullName"))
+    .labelWidth(14).rounded().borderColor(Color.DARK_GRAY);
+Element afterExample2 = formField("Email", FORM_STATE.textField("email"))
+    .labelWidth(14).rounded().borderColor(Color.DARK_GRAY);</code></pre>
 </div>
 </div>
 </div>
@@ -869,7 +882,7 @@ formField("Email", FORM.textField("email"))
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

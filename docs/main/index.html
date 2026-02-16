@@ -39,21 +39,11 @@
 <li><a href="#module-overview">Module Overview</a></li>
 </ul>
 </li>
-<li><a href="#documentation-sections">Documentation Sections</a>
-<ul class="sectlevel2">
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#core-concepts">Core Concepts</a></li>
-<li><a href="#markup-text">Markup Text</a></li>
-<li><a href="#layouts-reference">Layouts Reference</a></li>
-<li><a href="#widgets-reference">Widgets Reference</a></li>
-<li><a href="#forms">Forms</a></li>
-<li><a href="#api-levels">API Levels</a></li>
-<li><a href="#css-styling">CSS Styling</a></li>
-<li><a href="#bindings-and-actions">Bindings and Actions</a></li>
-<li><a href="#application-structure">Application Structure</a></li>
-<li><a href="#developer-guide">Developer Guide</a></li>
-</ul>
-</li>
+<li><a href="#where-to-start">Where to Start</a></li>
+<li><a href="#foundations">Foundations</a></li>
+<li><a href="#building-blocks">Building Blocks</a></li>
+<li><a href="#toolkit-dsl">Toolkit DSL</a></li>
+<li><a href="#advanced">Advanced</a></li>
 <li><a href="#quick-example">Quick Example</a></li>
 <li><a href="#resources">Resources</a></li>
 <li><a href="#license">License</a></li>
@@ -98,7 +88,7 @@ Feedback, issues, and contributions are welcome!</p>
 <p><strong>Constraint-based layout</strong> - Flexible layout system with percentage, fixed, ratio, and proportional sizing</p>
 </li>
 <li>
-<p><strong>JLine 3 backend</strong> - Cross-platform terminal support including Windows via Jansi</p>
+<p><strong>Multiple backends</strong> - JLine 3, Panama (FFM), and Aesh for cross-platform terminal support</p>
 </li>
 <li>
 <p><strong>High-level TUI framework</strong> - TuiRunner eliminates boilerplate with built-in event handling</p>
@@ -139,7 +129,15 @@ Feedback, issues, and contributions are welcome!</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tamboui-jline</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JLine 3 terminal backend for cross-platform support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLine 3 terminal backend</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tamboui-panama-backend</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Panama (FFM) terminal backend for modern JDKs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tamboui-aesh-backend</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aesh terminal backend</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tamboui-tui</code></p></td>
@@ -175,73 +173,88 @@ Feedback, issues, and contributions are welcome!</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation-sections"><a class="anchor" href="#documentation-sections"></a><a class="link" href="#documentation-sections">Documentation Sections</a></h2>
+<h2 id="where-to-start"><a class="anchor" href="#where-to-start"></a><a class="link" href="#where-to-start">Where to Start</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="getting-started"><a class="anchor" href="#getting-started"></a><a class="link" href="#getting-started"><a href="getting-started.html">Getting Started</a></a></h3>
 <div class="paragraph">
-<p>Installation, hello world examples, and running demos.</p>
+<p><strong>Building a full-screen TUI application?</strong> Start with <a href="getting-started.html">Getting Started</a>, then move to the <a href="api-levels.html#toolkit-dsl">Toolkit DSL</a> section. From there, explore <a href="forms.html">Forms</a>, <a href="styling.html">CSS Styling</a>, and <a href="bindings.html">Bindings</a> as needed.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="core-concepts"><a class="anchor" href="#core-concepts"></a><a class="link" href="#core-concepts"><a href="core-concepts.html">Core Concepts</a></a></h3>
 <div class="paragraph">
-<p>Understanding the rendering model, buffer system, layout, and styling.</p>
+<p><strong>Building a CLI tool with progress output?</strong> See <a href="api-levels.html#inline-toolkit">Inline Toolkit</a> for npm/Gradle-style progress displays.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="markup-text"><a class="anchor" href="#markup-text"></a><a class="link" href="#markup-text"><a href="markup.html">Markup Text</a></a></h3>
 <div class="paragraph">
-<p>BBCode-style markup for creating styled text with colors, modifiers, and custom tags.</p>
+<p><strong>Want to understand the internals?</strong> Read <a href="core-concepts.html">Core Concepts</a> first, then explore <a href="api-levels.html#immediate-mode">Immediate Mode</a> or <a href="api-levels.html#tuirunner">TuiRunner</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="layouts-reference"><a class="anchor" href="#layouts-reference"></a><a class="link" href="#layouts-reference"><a href="layouts.html">Layouts Reference</a></a></h3>
+</div>
+<div class="sect1">
+<h2 id="foundations"><a class="anchor" href="#foundations"></a><a class="link" href="#foundations">Foundations</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="getting-started.html">Getting Started</a> - Installation and hello world</p>
+</li>
+<li>
+<p><a href="core-concepts.html">Core Concepts</a> - Architecture and primitives</p>
+</li>
+<li>
+<p><a href="api-levels.html">API Levels</a> - Immediate mode, TuiRunner, Toolkit DSL, Inline Display</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="building-blocks"><a class="anchor" href="#building-blocks"></a><a class="link" href="#building-blocks">Building Blocks</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Layout widgets for arranging children: Columns, Grid, Dock, Stack, Flow.</p>
+<p>These work at any API level:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="widgets.html">Widgets Reference</a> - Block, Paragraph, List, Table, Chart, etc.</p>
+</li>
+<li>
+<p><a href="layouts.html">Layouts Reference</a> - Columns, Grid, Dock, Stack, Flow</p>
+</li>
+<li>
+<p><a href="markup.html">Markup Text</a> - BBCode-style text formatting</p>
+</li>
+<li>
+<p><a href="styling.html">CSS Styling</a> - External stylesheets and theming</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="widgets-reference"><a class="anchor" href="#widgets-reference"></a><a class="link" href="#widgets-reference"><a href="widgets.html">Widgets Reference</a></a></h3>
-<div class="paragraph">
-<p>Comprehensive guide to all available widgets with examples.</p>
+</div>
+<div class="sect1">
+<h2 id="toolkit-dsl"><a class="anchor" href="#toolkit-dsl"></a><a class="link" href="#toolkit-dsl">Toolkit DSL</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="forms.html">Forms</a> - Form abstractions with validation</p>
+</li>
+<li>
+<p><a href="bindings.html">Bindings and Actions</a> - Input handling and @OnAction</p>
+</li>
+<li>
+<p><a href="mvc-architecture.html">Application Structure</a> - MVC patterns</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="forms"><a class="anchor" href="#forms"></a><a class="link" href="#forms"><a href="forms.html">Forms</a></a></h3>
-<div class="paragraph">
-<p>Form abstractions with labels, validation, and centralized state management.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="api-levels"><a class="anchor" href="#api-levels"></a><a class="link" href="#api-levels"><a href="api-levels.html">API Levels</a></a></h3>
-<div class="paragraph">
-<p>Detailed documentation for immediate mode, TuiRunner, Toolkit DSL, and inline display.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="css-styling"><a class="anchor" href="#css-styling"></a><a class="link" href="#css-styling"><a href="styling.html">CSS Styling</a></a></h3>
-<div class="paragraph">
-<p>External stylesheets with TCSS format, selectors, and runtime theme switching.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="bindings-and-actions"><a class="anchor" href="#bindings-and-actions"></a><a class="link" href="#bindings-and-actions"><a href="bindings.html">Bindings and Actions</a></a></h3>
-<div class="paragraph">
-<p>Key and mouse bindings, action handlers, and the <code>@OnAction</code> annotation.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="application-structure"><a class="anchor" href="#application-structure"></a><a class="link" href="#application-structure"><a href="mvc-architecture.html">Application Structure</a></a></h3>
-<div class="paragraph">
-<p>Architecture patterns for building maintainable TUI applications.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="developer-guide"><a class="anchor" href="#developer-guide"></a><a class="link" href="#developer-guide"><a href="developer-guide.html">Developer Guide</a></a></h3>
-<div class="paragraph">
-<p>Creating custom widgets and components.</p>
-</div>
+<div class="sect1">
+<h2 id="advanced"><a class="anchor" href="#advanced"></a><a class="link" href="#advanced">Advanced</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="developer-guide.html">Developer Guide</a> - Creating custom widgets</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -306,7 +319,7 @@ public class HelloTamboUI extends ToolkitApp {
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-15 17:18:49 UTC
+Last updated 2026-02-16 17:17:12 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

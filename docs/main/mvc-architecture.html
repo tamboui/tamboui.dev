@@ -524,11 +524,7 @@ private static EventResult handleNormalMode(KeyEvent event, TodoController ctrl)
         this.controller = controller;
     }
 
-    @Override
-    public int preferredWidth() { return 0; }
 
-    @Override
-    public int preferredHeight() { return 0; }
 
     @Override
     public void render(Frame frame, Rect area, RenderContext context) {
@@ -570,6 +566,11 @@ private static EventResult handleNormalMode(KeyEvent event, TodoController ctrl)
         }
         // ... other handling
         return EventResult.UNHANDLED;
+    }
+
+    @Override
+    public Size preferredSize(int availableWidth, int availableHeight, RenderContext context) {
+        return Size.UNKNOWN;
     }
 
     private Element header() { return text("Header"); }
@@ -814,7 +815,7 @@ private static EventResult handleNormalMode(KeyEvent event, TodoController ctrl)
 <div id="footer">
 <div id="footer-text">
 Version 0.1.0-SNAPSHOT<br>
-Last updated 2026-02-17 12:23:21 UTC
+Last updated 2026-02-17 16:25:48 UTC
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

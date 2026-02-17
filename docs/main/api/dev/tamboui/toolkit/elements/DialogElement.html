@@ -74,7 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#borderType(dev.tamboui.widgets.block.BorderType)" tabindex="0">borderType(BorderType)</a></li>
 <li><a href="#borderColor(dev.tamboui.style.Color)" tabindex="0">borderColor(Color)</a></li>
 <li><a href="#width(int)" tabindex="0">width(int)</a></li>
-<li><a href="#height(int)" tabindex="0">height(int)</a></li>
+<li><a href="#length(int)" tabindex="0">length(int)</a></li>
 <li><a href="#minWidth(int)" tabindex="0">minWidth(int)</a></li>
 <li><a href="#padding(int)" tabindex="0">padding(int)</a></li>
 <li><a href="#direction(dev.tamboui.layout.Direction)" tabindex="0">direction(Direction)</a></li>
@@ -86,8 +86,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#onCancel(java.lang.Runnable)" tabindex="0">onCancel(Runnable)</a></li>
 <li><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" tabindex="0">handleKeyEvent(KeyEvent, boolean)</a></li>
 <li><a href="#constraint()" tabindex="0">constraint()</a></li>
-<li><a href="#preferredWidth()" tabindex="0">preferredWidth()</a></li>
-<li><a href="#preferredHeight()" tabindex="0">preferredHeight()</a></li>
+<li><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">preferredSize(int, int, RenderContext)</a></li>
 <li><a href="#styleAttributes()" tabindex="0">styleAttributes()</a></li>
 <li><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">renderContent(Frame, Rect, RenderContext)</a></li>
 </ol>
@@ -226,14 +225,14 @@ Programmatic values override CSS values when both are set.
 <div class="block">Handles key events for the dialog.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#height(int)" class="member-name-link">height</a><wbr>(int&nbsp;height)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#horizontal()" class="member-name-link">horizontal</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets a fixed height for the dialog.</div>
+<div class="block">Sets the layout direction to horizontal.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#horizontal()" class="member-name-link">horizontal</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length(int)" class="member-name-link">length</a><wbr>(int&nbsp;height)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the layout direction to horizontal.</div>
+<div class="block">Sets a fixed height for the dialog.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minWidth(int)" class="member-name-link">minWidth</a><wbr>(int&nbsp;minWidth)</code></div>
@@ -255,51 +254,48 @@ Programmatic values override CSS values when both are set.
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the padding around content for width calculation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredHeight()" class="member-name-link">preferredHeight</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred height of this element in cells.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the preferred width of this element in cells.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
- <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../element/Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredSize</a><wbr>(int&nbsp;availableWidth,
+ int&nbsp;availableHeight,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the preferred size of this element.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
+ <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+ <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Renders the content of this element.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rounded()" class="member-name-link">rounded</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rounded()" class="member-name-link">rounded</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the border type to rounded.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spacing(int)" class="member-name-link">spacing</a><wbr>(int&nbsp;spacing)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#spacing(int)" class="member-name-link">spacing</a><wbr>(int&nbsp;spacing)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the spacing (gap) between children.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleAttributes()" class="member-name-link">styleAttributes</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleAttributes()" class="member-name-link">styleAttributes</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the style attributes for attribute selector matching.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the dialog title.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#vertical()" class="member-name-link">vertical</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#vertical()" class="member-name-link">vertical</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the layout direction to vertical.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width(int)" class="member-name-link">width</a><wbr>(int&nbsp;width)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#width(int)" class="member-name-link">width</a><wbr>(int&nbsp;width)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a fixed width for the dialog.</div>
 </div>
 </div>
@@ -310,13 +306,13 @@ Programmatic values override CSS values when both are set.
 <code><a href="../element/ContainerElement.html#add(dev.tamboui.toolkit.element.Element)" title="add(Element)">add</a>, <a href="../element/ContainerElement.html#add(dev.tamboui.toolkit.element.Element...)" title="add(Element...)">add</a>, <a href="../element/ContainerElement.html#children()" title="children()">children</a>, <a href="../element/ContainerElement.html#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" title="handleMouseEvent(MouseEvent)">handleMouseEvent</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.toolkit.element.StyledElement">Methods inherited from class&nbsp;<a href="../element/StyledElement.html#method-summary" title="class in dev.tamboui.toolkit.element">StyledElement</a></h3>
-<code><a href="../element/StyledElement.html#addClass(java.lang.String...)" title="addClass(String...)">addClass</a>, <a href="../element/StyledElement.html#attr(java.lang.String,java.lang.String)" title="attr(String, String)">attr</a>, <a href="../element/StyledElement.html#bg(dev.tamboui.style.Color)" title="bg(Color)">bg</a>, <a href="../element/StyledElement.html#black()" title="black()">black</a>, <a href="../element/StyledElement.html#blue()" title="blue()">blue</a>, <a href="../element/StyledElement.html#bold()" title="bold()">bold</a>, <a href="../element/StyledElement.html#constraint(dev.tamboui.layout.Constraint)" title="constraint(Constraint)">constraint</a>, <a href="../element/StyledElement.html#crossedOut()" title="crossedOut()">crossedOut</a>, <a href="../element/StyledElement.html#cssClasses()" title="cssClasses()">cssClasses</a>, <a href="../element/StyledElement.html#cssId()" title="cssId()">cssId</a>, <a href="../element/StyledElement.html#cssParent()" title="cssParent()">cssParent</a>, <a href="../element/StyledElement.html#cssParent(dev.tamboui.css.Styleable)" title="cssParent(Styleable)">cssParent</a>, <a href="../element/StyledElement.html#cyan()" title="cyan()">cyan</a>, <a href="../element/StyledElement.html#dim()" title="dim()">dim</a>, <a href="../element/StyledElement.html#draggable(java.util.function.BiConsumer)" title="draggable(BiConsumer)">draggable</a>, <a href="../element/StyledElement.html#dragHandler()" title="dragHandler()">dragHandler</a>, <a href="../element/StyledElement.html#fg(dev.tamboui.style.Color)" title="fg(Color)">fg</a>, <a href="../element/StyledElement.html#fill()" title="fill()">fill</a>, <a href="../element/StyledElement.html#fill(int)" title="fill(int)">fill</a>, <a href="../element/StyledElement.html#fit()" title="fit()">fit</a>, <a href="../element/StyledElement.html#focusable()" title="focusable()">focusable</a>, <a href="../element/StyledElement.html#focusable(boolean)" title="focusable(boolean)">focusable</a>, <a href="../element/StyledElement.html#getStyle()" title="getStyle()">getStyle</a>, <a href="../element/StyledElement.html#gray()" title="gray()">gray</a>, <a href="../element/StyledElement.html#green()" title="green()">green</a>, <a href="../element/StyledElement.html#id()" title="id()">id</a>, <a href="../element/StyledElement.html#id(java.lang.String)" title="id(String)">id</a>, <a href="../element/StyledElement.html#isDraggable()" title="isDraggable()">isDraggable</a>, <a href="../element/StyledElement.html#isFocusable()" title="isFocusable()">isFocusable</a>, <a href="../element/StyledElement.html#italic()" title="italic()">italic</a>, <a href="../element/StyledElement.html#keyEventHandler()" title="keyEventHandler()">keyEventHandler</a>, <a href="../element/StyledElement.html#length(int)" title="length(int)">length</a>, <a href="../element/StyledElement.html#magenta()" title="magenta()">magenta</a>, <a href="../element/StyledElement.html#max(int)" title="max(int)">max</a>, <a href="../element/StyledElement.html#min(int)" title="min(int)">min</a>, <a href="../element/StyledElement.html#mouseEventHandler()" title="mouseEventHandler()">mouseEventHandler</a>, <a href="../element/StyledElement.html#on(dev.tamboui.tui.bindings.InputTrigger,java.util.function.Consumer)" title="on(InputTrigger, Consumer)">on</a>, <a href="../element/StyledElement.html#onAction(dev.tamboui.tui.bindings.ActionHandler)" title="onAction(ActionHandler)">onAction</a>, <a href="../element/StyledElement.html#onBlack()" title="onBlack()">onBlack</a>, <a href="../element/StyledElement.html#onBlue()" title="onBlue()">onBlue</a>, <a href="../element/StyledElement.html#onCyan()" title="onCyan()">onCyan</a>, <a href="../element/StyledElement.html#onDrag(dev.tamboui.toolkit.event.DragHandler)" title="onDrag(DragHandler)">onDrag</a>, <a href="../element/StyledElement.html#onGreen()" title="onGreen()">onGreen</a>, <a href="../element/StyledElement.html#onKeyEvent(dev.tamboui.toolkit.event.KeyEventHandler)" title="onKeyEvent(KeyEventHandler)">onKeyEvent</a>, <a href="../element/StyledElement.html#onMagenta()" title="onMagenta()">onMagenta</a>, <a href="../element/StyledElement.html#onMouseEvent(dev.tamboui.toolkit.event.MouseEventHandler)" title="onMouseEvent(MouseEventHandler)">onMouseEvent</a>, <a href="../element/StyledElement.html#onRed()" title="onRed()">onRed</a>, <a href="../element/StyledElement.html#onWhite()" title="onWhite()">onWhite</a>, <a href="../element/StyledElement.html#onYellow()" title="onYellow()">onYellow</a>, <a href="../element/StyledElement.html#percent(int)" title="percent(int)">percent</a>, <a href="../element/StyledElement.html#red()" title="red()">red</a>, <a href="../element/StyledElement.html#removeClass(java.lang.String)" title="removeClass(String)">removeClass</a>, <a href="../element/StyledElement.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" title="render(Frame, Rect, RenderContext)">render</a>, <a href="../element/StyledElement.html#renderedArea()" title="renderedArea()">renderedArea</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.css.cascade.PseudoClassState,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, PseudoClassState, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#reversed()" title="reversed()">reversed</a>, <a href="../element/StyledElement.html#self()" title="self()">self</a>, <a href="../element/StyledElement.html#style(dev.tamboui.style.Style)" title="style(Style)">style</a>, <a href="../element/StyledElement.html#styleResolver(dev.tamboui.toolkit.element.RenderContext)" title="styleResolver(RenderContext)">styleResolver</a>, <a href="../element/StyledElement.html#toggleClass(java.lang.String,boolean)" title="toggleClass(String, boolean)">toggleClass</a>, <a href="../element/StyledElement.html#underlined()" title="underlined()">underlined</a>, <a href="../element/StyledElement.html#white()" title="white()">white</a>, <a href="../element/StyledElement.html#yellow()" title="yellow()">yellow</a></code></div>
+<code><a href="../element/StyledElement.html#addClass(java.lang.String...)" title="addClass(String...)">addClass</a>, <a href="../element/StyledElement.html#attr(java.lang.String,java.lang.String)" title="attr(String, String)">attr</a>, <a href="../element/StyledElement.html#bg(dev.tamboui.style.Color)" title="bg(Color)">bg</a>, <a href="../element/StyledElement.html#black()" title="black()">black</a>, <a href="../element/StyledElement.html#blue()" title="blue()">blue</a>, <a href="../element/StyledElement.html#bold()" title="bold()">bold</a>, <a href="../element/StyledElement.html#constraint(dev.tamboui.layout.Constraint)" title="constraint(Constraint)">constraint</a>, <a href="../element/StyledElement.html#crossedOut()" title="crossedOut()">crossedOut</a>, <a href="../element/StyledElement.html#cssClasses()" title="cssClasses()">cssClasses</a>, <a href="../element/StyledElement.html#cssId()" title="cssId()">cssId</a>, <a href="../element/StyledElement.html#cssParent()" title="cssParent()">cssParent</a>, <a href="../element/StyledElement.html#cssParent(dev.tamboui.css.Styleable)" title="cssParent(Styleable)">cssParent</a>, <a href="../element/StyledElement.html#cyan()" title="cyan()">cyan</a>, <a href="../element/StyledElement.html#dim()" title="dim()">dim</a>, <a href="../element/StyledElement.html#draggable(java.util.function.BiConsumer)" title="draggable(BiConsumer)">draggable</a>, <a href="../element/StyledElement.html#dragHandler()" title="dragHandler()">dragHandler</a>, <a href="../element/StyledElement.html#fg(dev.tamboui.style.Color)" title="fg(Color)">fg</a>, <a href="../element/StyledElement.html#fill()" title="fill()">fill</a>, <a href="../element/StyledElement.html#fill(int)" title="fill(int)">fill</a>, <a href="../element/StyledElement.html#fit()" title="fit()">fit</a>, <a href="../element/StyledElement.html#focusable()" title="focusable()">focusable</a>, <a href="../element/StyledElement.html#focusable(boolean)" title="focusable(boolean)">focusable</a>, <a href="../element/StyledElement.html#getStyle()" title="getStyle()">getStyle</a>, <a href="../element/StyledElement.html#gray()" title="gray()">gray</a>, <a href="../element/StyledElement.html#green()" title="green()">green</a>, <a href="../element/StyledElement.html#id()" title="id()">id</a>, <a href="../element/StyledElement.html#id(java.lang.String)" title="id(String)">id</a>, <a href="../element/StyledElement.html#isDraggable()" title="isDraggable()">isDraggable</a>, <a href="../element/StyledElement.html#isFocusable()" title="isFocusable()">isFocusable</a>, <a href="../element/StyledElement.html#italic()" title="italic()">italic</a>, <a href="../element/StyledElement.html#keyEventHandler()" title="keyEventHandler()">keyEventHandler</a>, <a href="../element/StyledElement.html#magenta()" title="magenta()">magenta</a>, <a href="../element/StyledElement.html#max(int)" title="max(int)">max</a>, <a href="../element/StyledElement.html#min(int)" title="min(int)">min</a>, <a href="../element/StyledElement.html#mouseEventHandler()" title="mouseEventHandler()">mouseEventHandler</a>, <a href="../element/StyledElement.html#on(dev.tamboui.tui.bindings.InputTrigger,java.util.function.Consumer)" title="on(InputTrigger, Consumer)">on</a>, <a href="../element/StyledElement.html#onAction(dev.tamboui.tui.bindings.ActionHandler)" title="onAction(ActionHandler)">onAction</a>, <a href="../element/StyledElement.html#onBlack()" title="onBlack()">onBlack</a>, <a href="../element/StyledElement.html#onBlue()" title="onBlue()">onBlue</a>, <a href="../element/StyledElement.html#onCyan()" title="onCyan()">onCyan</a>, <a href="../element/StyledElement.html#onDrag(dev.tamboui.toolkit.event.DragHandler)" title="onDrag(DragHandler)">onDrag</a>, <a href="../element/StyledElement.html#onGreen()" title="onGreen()">onGreen</a>, <a href="../element/StyledElement.html#onKeyEvent(dev.tamboui.toolkit.event.KeyEventHandler)" title="onKeyEvent(KeyEventHandler)">onKeyEvent</a>, <a href="../element/StyledElement.html#onMagenta()" title="onMagenta()">onMagenta</a>, <a href="../element/StyledElement.html#onMouseEvent(dev.tamboui.toolkit.event.MouseEventHandler)" title="onMouseEvent(MouseEventHandler)">onMouseEvent</a>, <a href="../element/StyledElement.html#onRed()" title="onRed()">onRed</a>, <a href="../element/StyledElement.html#onWhite()" title="onWhite()">onWhite</a>, <a href="../element/StyledElement.html#onYellow()" title="onYellow()">onYellow</a>, <a href="../element/StyledElement.html#percent(int)" title="percent(int)">percent</a>, <a href="../element/StyledElement.html#red()" title="red()">red</a>, <a href="../element/StyledElement.html#removeClass(java.lang.String)" title="removeClass(String)">removeClass</a>, <a href="../element/StyledElement.html#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" title="render(Frame, Rect, RenderContext)">render</a>, <a href="../element/StyledElement.html#renderedArea()" title="renderedArea()">renderedArea</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.css.cascade.PseudoClassState,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, PseudoClassState, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#resolveEffectiveStyle(dev.tamboui.toolkit.element.RenderContext,java.lang.String,dev.tamboui.style.Style,dev.tamboui.style.Style)" title="resolveEffectiveStyle(RenderContext, String, Style, Style)">resolveEffectiveStyle</a>, <a href="../element/StyledElement.html#reversed()" title="reversed()">reversed</a>, <a href="../element/StyledElement.html#self()" title="self()">self</a>, <a href="../element/StyledElement.html#style(dev.tamboui.style.Style)" title="style(Style)">style</a>, <a href="../element/StyledElement.html#styleResolver(dev.tamboui.toolkit.element.RenderContext)" title="styleResolver(RenderContext)">styleResolver</a>, <a href="../element/StyledElement.html#toggleClass(java.lang.String,boolean)" title="toggleClass(String, boolean)">toggleClass</a>, <a href="../element/StyledElement.html#underlined()" title="underlined()">underlined</a>, <a href="../element/StyledElement.html#white()" title="white()">white</a>, <a href="../element/StyledElement.html#yellow()" title="yellow()">yellow</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.toolkit.element.Element">Methods inherited from interface&nbsp;<a href="../element/Element.html#method-summary" title="interface in dev.tamboui.toolkit.element">Element</a></h3>
-<code><a href="../element/Element.html#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" title="preferredHeight(int, RenderContext)">preferredHeight</a></code></div>
+<code><a href="../element/Element.html#preferredSize()" title="preferredSize()">preferredSize</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-dev.tamboui.css.Styleable">Methods inherited from interface&nbsp;<a href="../../css/Styleable.html#method-summary" title="interface in dev.tamboui.css">Styleable</a></h3>
 <code><a href="../../css/Styleable.html#styleType()" title="styleType()">styleType</a></code></div>
@@ -463,12 +459,14 @@ Programmatic values override CSS values when both are set.
 </section>
 </li>
 <li>
-<section class="detail" id="height(int)">
-<h3>height</h3>
+<section class="detail" id="length(int)">
+<h3>length</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">height</span><wbr><span class="parameters">(int&nbsp;height)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></span>&nbsp;<span class="element-name">length</span><wbr><span class="parameters">(int&nbsp;height)</span></div>
 <div class="block">Sets a fixed height for the dialog.</div>
 <dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="../element/StyledElement.html#length(int)">length</a></code>&nbsp;in class&nbsp;<code><a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;<a href="DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a>&gt;</code></dd>
 <dt>Parameters:</dt>
 <dd><code>height</code> - the fixed height in cells</dd>
 <dt>Returns:</dt>
@@ -659,31 +657,38 @@ Used by container elements to determine sizing.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="preferredWidth()">
-<h3>preferredWidth</h3>
+<section class="detail" id="preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)">
+<h3>preferredSize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredWidth()">Element</a></code></span></div>
-<div class="block">Returns the preferred width of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../element/Size.html" title="class in dev.tamboui.toolkit.element">Size</a></span>&nbsp;<span class="element-name">preferredSize</span><wbr><span class="parameters">(int&nbsp;availableWidth,
+ int&nbsp;availableHeight,
+ <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)">Element</a></code></span></div>
+<div class="block">Returns the preferred size of this element.
+<p>
+The availableWidth/Height parameters allow elements to adapt their
+dimensions based on constraints. Use -1 for unconstrained.
+<p>
+Common patterns:
+<ul>
+  <li>Text elements: height depends on width (text wrapping)</li>
+  <li>Aspect-ratio elements: both dimensions interrelated</li>
+  <li>Fixed elements: ignore available dimensions</li>
+</ul>
+<p>
+Return value semantics:
+<ul>
+  <li>Positive values = known size (use as constraint)</li>
+  <li>Zero = explicitly zero-sized (element should collapse)</li>
+  <li>Negative (-1) = unknown size (element should fill available space)</li>
+</ul></div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>availableWidth</code> - the available width in cells, or -1 if unconstrained</dd>
+<dd><code>availableHeight</code> - the available height in cells, or -1 if unconstrained</dd>
+<dd><code>context</code> - the render context for CSS resolution, may be null</dd>
 <dt>Returns:</dt>
-<dd>the preferred width, or 0 if not applicable</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="preferredHeight()">
-<h3>preferredHeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../element/Element.html#preferredHeight()">Element</a></code></span></div>
-<div class="block">Returns the preferred height of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the preferred height, or 0 if not applicable</dd>
+<dd>the preferred size</dd>
 </dl>
 </div>
 </section>

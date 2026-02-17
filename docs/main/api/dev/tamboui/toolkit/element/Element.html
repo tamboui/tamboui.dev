@@ -61,9 +61,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">render(Frame, Rect, RenderContext)</a></li>
 <li><a href="#constraint()" tabindex="0">constraint()</a></li>
-<li><a href="#preferredWidth()" tabindex="0">preferredWidth()</a></li>
-<li><a href="#preferredHeight()" tabindex="0">preferredHeight()</a></li>
-<li><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">preferredHeight(int, RenderContext)</a></li>
+<li><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">preferredSize(int, int, RenderContext)</a></li>
+<li><a href="#preferredSize()" tabindex="0">preferredSize()</a></li>
 <li><a href="#isFocusable()" tabindex="0">isFocusable()</a></li>
 <li><a href="#id()" tabindex="0">id()</a></li>
 <li><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" tabindex="0">handleKeyEvent(KeyEvent, boolean)</a></li>
@@ -151,32 +150,28 @@ tree and can be consumed to stop propagation.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the mouse event handler, if any.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#preferredHeight()" class="member-name-link">preferredHeight</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the preferred height of this element in cells.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#preferredSize()" class="member-name-link">preferredSize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Convenience method for unconstrained preferred size.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredHeight</a><wbr>(int&nbsp;availableWidth,
- <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Returns the preferred height of this element given an available width and render context.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#preferredWidth()" class="member-name-link">preferredWidth</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the preferred width of this element in cells.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">render</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
- <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredSize</a><wbr>(int&nbsp;availableWidth,
+ int&nbsp;availableHeight,
  <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the preferred size of this element.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">render</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
+ <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+ <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Renders this element to the given frame within the specified area.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#renderedArea()" class="member-name-link">renderedArea</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#renderedArea()" class="member-name-link">renderedArea</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the last rendered area of this element.</div>
 </div>
 </div>
@@ -225,52 +220,50 @@ Used by container elements to determine sizing.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="preferredWidth()">
-<h3>preferredWidth</h3>
+<section class="detail" id="preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)">
+<h3>preferredSize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">preferredWidth</span>()</div>
-<div class="block">Returns the preferred width of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the preferred width, or 0 if not applicable</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="preferredHeight()">
-<h3>preferredHeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span>()</div>
-<div class="block">Returns the preferred height of this element in cells.
-Used when the element has a <a href="../../layout/Constraint.Fit.html" title="class in dev.tamboui.layout"><code>Constraint.Fit</code></a> constraint.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the preferred height, or 0 if not applicable</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="preferredHeight(int,dev.tamboui.toolkit.element.RenderContext)">
-<h3>preferredHeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredHeight</span><wbr><span class="parameters">(int&nbsp;availableWidth,
+<div class="member-signature"><span class="return-type"><a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></span>&nbsp;<span class="element-name">preferredSize</span><wbr><span class="parameters">(int&nbsp;availableWidth,
+ int&nbsp;availableHeight,
  <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</span></div>
-<div class="block">Returns the preferred height of this element given an available width and render context.
+<div class="block">Returns the preferred size of this element.
 <p>
-This is useful for elements that may wrap content (like text) where the
-height depends on the available width. The render context allows CSS-aware
-height calculation where properties like <code>text-overflow</code> may be set via CSS.
+The availableWidth/Height parameters allow elements to adapt their
+dimensions based on constraints. Use -1 for unconstrained.
 <p>
-When context is null, implementations should use programmatic property values only.</div>
+Common patterns:
+<ul>
+  <li>Text elements: height depends on width (text wrapping)</li>
+  <li>Aspect-ratio elements: both dimensions interrelated</li>
+  <li>Fixed elements: ignore available dimensions</li>
+</ul>
+<p>
+Return value semantics:
+<ul>
+  <li>Positive values = known size (use as constraint)</li>
+  <li>Zero = explicitly zero-sized (element should collapse)</li>
+  <li>Negative (-1) = unknown size (element should fill available space)</li>
+</ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>availableWidth</code> - the available width in cells</dd>
+<dd><code>availableWidth</code> - the available width in cells, or -1 if unconstrained</dd>
+<dd><code>availableHeight</code> - the available height in cells, or -1 if unconstrained</dd>
 <dd><code>context</code> - the render context for CSS resolution, may be null</dd>
 <dt>Returns:</dt>
-<dd>the preferred height given the available width</dd>
+<dd>the preferred size</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="preferredSize()">
+<h3>preferredSize</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></span>&nbsp;<span class="element-name">preferredSize</span>()</div>
+<div class="block">Convenience method for unconstrained preferred size.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the preferred size with no constraints</dd>
 </dl>
 </div>
 </section>

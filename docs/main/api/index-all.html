@@ -59,6 +59,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the absolute value of this fraction.</div>
 </dd>
+<dt><a href="dev/tamboui/terminal/AbstractBackend.html" class="type-name-link" title="class in dev.tamboui.terminal">AbstractBackend</a> - Class in <a href="dev/tamboui/terminal/package-summary.html">dev.tamboui.terminal</a></dt>
+<dd>
+<div class="block">Base class for terminal backends that produce ANSI output.</div>
+</dd>
+<dt><a href="dev/tamboui/terminal/AbstractBackend.html#%3Cinit%3E()" class="member-name-link">AbstractBackend()</a> - Constructor for class dev.tamboui.terminal.<a href="dev/tamboui/terminal/AbstractBackend.html" title="class in dev.tamboui.terminal">AbstractBackend</a></dt>
+<dd>
+<div class="block">Creates a new abstract backend.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/event/ActionEvent.html#action()" class="member-name-link">action()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/ActionEvent.html" title="class in dev.tamboui.tui.event">ActionEvent</a></dt>
 <dd>
 <div class="block">Returns the action name that was fired.</div>
@@ -560,6 +568,15 @@ loadScripts(document, 'script');</script>
 <dt><a href="dev/tamboui/style/Color.Ansi.html#%3Cinit%3E(dev.tamboui.style.AnsiColor)" class="member-name-link">Ansi(AnsiColor)</a> - Constructor for class dev.tamboui.style.<a href="dev/tamboui/style/Color.Ansi.html" title="class in dev.tamboui.style">Color.Ansi</a></dt>
 <dd>
 <div class="block">Creates an ANSI color.</div>
+</dd>
+<dt><a href="dev/tamboui/terminal/AnsiCellWriter.html" class="type-name-link" title="class in dev.tamboui.terminal">AnsiCellWriter</a> - Class in <a href="dev/tamboui/terminal/package-summary.html">dev.tamboui.terminal</a></dt>
+<dd>
+<div class="block">Stateful cell-to-ANSI renderer that converts a sequence of <a href="dev/tamboui/buffer/Cell.html" title="class in dev.tamboui.buffer"><code>Cell</code></a> values
+into ANSI escape sequences and delivers them to a provided output sink.</div>
+</dd>
+<dt><a href="dev/tamboui/terminal/AnsiCellWriter.html#%3Cinit%3E(java.util.function.Consumer)" class="member-name-link">AnsiCellWriter(Consumer)</a> - Constructor for class dev.tamboui.terminal.<a href="dev/tamboui/terminal/AnsiCellWriter.html" title="class in dev.tamboui.terminal">AnsiCellWriter</a></dt>
+<dd>
+<div class="block">Creates a new writer that sends ANSI output to the given sink.</div>
 </dd>
 <dt><a href="dev/tamboui/style/AnsiColor.html" class="type-name-link" title="enum class in dev.tamboui.style">AnsiColor</a> - Enum Class in <a href="dev/tamboui/style/package-summary.html">dev.tamboui.style</a></dt>
 <dd>
@@ -2971,6 +2988,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/internal/record/RecordingBackend.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingBackend.html" title="class in dev.tamboui.internal.record">RecordingBackend</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/terminal/AnsiCellWriter.html#close()" class="member-name-link">close()</a> - Method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/AnsiCellWriter.html" title="class in dev.tamboui.terminal">AnsiCellWriter</a></dt>
+<dd>
+<div class="block">Closes this writer by flushing any pending state and emitting
+the ANSI reset sequence (<a href="dev/tamboui/terminal/AnsiStringBuilder.html#RESET"><code>AnsiStringBuilder.RESET</code></a>).</div>
+</dd>
 <dt><a href="dev/tamboui/terminal/Backend.html#close()" class="member-name-link">close()</a> - Method in interface dev.tamboui.terminal.<a href="dev/tamboui/terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></dt>
 <dd>
 <div class="block">Closes this backend and releases any resources.</div>
@@ -5073,14 +5095,12 @@ left, right, and center regions — the most common TUI application structure
 <dd>
 <div class="block">Draws a shape on this context.</div>
 </dd>
-<dt><a href="dev/tamboui/backend/aesh/AeshBackend.html#draw(java.lang.Iterable)" class="member-name-link">draw(Iterable)</a> - Method in class dev.tamboui.backend.aesh.<a href="dev/tamboui/backend/aesh/AeshBackend.html" title="class in dev.tamboui.backend.aesh">AeshBackend</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="dev/tamboui/backend/jline3/JLineBackend.html#draw(java.lang.Iterable)" class="member-name-link">draw(Iterable)</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackend.html" title="class in dev.tamboui.backend.jline3">JLineBackend</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="dev/tamboui/backend/panama/PanamaBackend.html#draw(java.lang.Iterable)" class="member-name-link">draw(Iterable)</a> - Method in class dev.tamboui.backend.panama.<a href="dev/tamboui/backend/panama/PanamaBackend.html" title="class in dev.tamboui.backend.panama">PanamaBackend</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/internal/record/RecordingBackend.html#draw(java.lang.Iterable)" class="member-name-link">draw(Iterable)</a> - Method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingBackend.html" title="class in dev.tamboui.internal.record">RecordingBackend</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/terminal/AbstractBackend.html#draw(java.lang.Iterable)" class="member-name-link">draw(Iterable)</a> - Method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/AbstractBackend.html" title="class in dev.tamboui.terminal">AbstractBackend</a></dt>
+<dd>
+<div class="block">Draws the given cell updates to the terminal.</div>
+</dd>
 <dt><a href="dev/tamboui/terminal/Backend.html#draw(java.lang.Iterable)" class="member-name-link">draw(Iterable)</a> - Method in interface dev.tamboui.terminal.<a href="dev/tamboui/terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></dt>
 <dd>
 <div class="block">Draws the given cell updates to the terminal.</div>
@@ -15708,14 +15728,12 @@ and continuing to try other providers.</div>
 <dd>
 <div class="block">Sets the cursor position using x and y coordinates.</div>
 </dd>
-<dt><a href="dev/tamboui/backend/aesh/AeshBackend.html#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition(Position)</a> - Method in class dev.tamboui.backend.aesh.<a href="dev/tamboui/backend/aesh/AeshBackend.html" title="class in dev.tamboui.backend.aesh">AeshBackend</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="dev/tamboui/backend/jline3/JLineBackend.html#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition(Position)</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackend.html" title="class in dev.tamboui.backend.jline3">JLineBackend</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="dev/tamboui/backend/panama/PanamaBackend.html#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition(Position)</a> - Method in class dev.tamboui.backend.panama.<a href="dev/tamboui/backend/panama/PanamaBackend.html" title="class in dev.tamboui.backend.panama">PanamaBackend</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/internal/record/RecordingBackend.html#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition(Position)</a> - Method in class dev.tamboui.internal.record.<a href="dev/tamboui/internal/record/RecordingBackend.html" title="class in dev.tamboui.internal.record">RecordingBackend</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/terminal/AbstractBackend.html#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition(Position)</a> - Method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/AbstractBackend.html" title="class in dev.tamboui.terminal">AbstractBackend</a></dt>
+<dd>
+<div class="block">Sets the cursor to the given position and flushes.</div>
+</dd>
 <dt><a href="dev/tamboui/terminal/Backend.html#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition(Position)</a> - Method in interface dev.tamboui.terminal.<a href="dev/tamboui/terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></dt>
 <dd>
 <div class="block">Sets the cursor position.</div>
@@ -20526,6 +20544,10 @@ the given fallback map for inherited properties that are not set in this map.</d
 </dd>
 <dt><a href="dev/tamboui/backend/panama/windows/WindowsTerminal.html#write(java.lang.String)" class="member-name-link">write(String)</a> - Method in class dev.tamboui.backend.panama.windows.<a href="dev/tamboui/backend/panama/windows/WindowsTerminal.html" title="class in dev.tamboui.backend.panama.windows">WindowsTerminal</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/terminal/AnsiCellWriter.html#writeCell(dev.tamboui.buffer.Cell)" class="member-name-link">writeCell(Cell)</a> - Method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/AnsiCellWriter.html" title="class in dev.tamboui.terminal">AnsiCellWriter</a></dt>
+<dd>
+<div class="block">Writes a single cell to the output sink.</div>
+</dd>
 <dt><a href="dev/tamboui/backend/panama/windows/Kernel32.html#writeConsole(java.lang.foreign.MemorySegment,java.lang.foreign.MemorySegment,int,java.lang.foreign.MemorySegment,java.lang.foreign.MemorySegment)" class="member-name-link">writeConsole(MemorySegment, MemorySegment, int, MemorySegment, MemorySegment)</a> - Static method in class dev.tamboui.backend.panama.windows.<a href="dev/tamboui/backend/panama/windows/Kernel32.html" title="class in dev.tamboui.backend.panama.windows">Kernel32</a></dt>
 <dd>
 <div class="block">Writes a character string to a console screen buffer.</div>

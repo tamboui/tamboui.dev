@@ -66,14 +66,12 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#draw(java.lang.Iterable)" tabindex="0">draw(Iterable)</a></li>
 <li><a href="#flush()" tabindex="0">flush()</a></li>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#size()" tabindex="0">size()</a></li>
 <li><a href="#showCursor()" tabindex="0">showCursor()</a></li>
 <li><a href="#hideCursor()" tabindex="0">hideCursor()</a></li>
 <li><a href="#getCursorPosition()" tabindex="0">getCursorPosition()</a></li>
-<li><a href="#setCursorPosition(dev.tamboui.layout.Position)" tabindex="0">setCursorPosition(Position)</a></li>
 <li><a href="#enterAlternateScreen()" tabindex="0">enterAlternateScreen()</a></li>
 <li><a href="#leaveAlternateScreen()" tabindex="0">leaveAlternateScreen()</a></li>
 <li><a href="#enableRawMode()" tabindex="0">enableRawMode()</a></li>
@@ -107,7 +105,9 @@ loadScripts(document, 'script');</script>
 <h1 title="Class AeshBackend" class="title">Class AeshBackend</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance"><a href="../../terminal/AbstractBackend.html" title="class in dev.tamboui.terminal">dev.tamboui.terminal.AbstractBackend</a>
 <div class="inheritance">dev.tamboui.backend.aesh.AeshBackend</div>
+</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -117,8 +117,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">AeshBackend</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></span></div>
+<span class="extends-implements">extends <a href="../../terminal/AbstractBackend.html" title="class in dev.tamboui.terminal">AbstractBackend</a></span></div>
 <div class="block">Aesh Readline based backend for terminal operations.
 <p>
 This backend uses the aesh-readline library's TerminalConnection abstraction
@@ -188,104 +187,94 @@ for terminal I/O operations.</div>
 <div class="block">Disables raw mode.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draw(java.lang.Iterable)" class="member-name-link">draw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../../buffer/CellUpdate.html" title="class in dev.tamboui.buffer">CellUpdate</a>&gt;&nbsp;updates)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableMouseCapture()" class="member-name-link">enableMouseCapture</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Draws the given cell updates to the terminal.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableMouseCapture()" class="member-name-link">enableMouseCapture</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables mouse capture.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableRawMode()" class="member-name-link">enableRawMode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableRawMode()" class="member-name-link">enableRawMode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables raw mode (disables line buffering and echo).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enterAlternateScreen()" class="member-name-link">enterAlternateScreen</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enterAlternateScreen()" class="member-name-link">enterAlternateScreen</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enters the alternate screen buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#eraseToEndOfLine()" class="member-name-link">eraseToEndOfLine</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#eraseToEndOfLine()" class="member-name-link">eraseToEndOfLine</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Erases from the cursor to the end of the line.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flush()" class="member-name-link">flush</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flush()" class="member-name-link">flush</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Flushes any buffered output to the terminal.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../layout/Position.html" title="class in dev.tamboui.layout">Position</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCursorPosition()" class="member-name-link">getCursorPosition</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../layout/Position.html" title="class in dev.tamboui.layout">Position</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCursorPosition()" class="member-name-link">getCursorPosition</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the current cursor position.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hideCursor()" class="member-name-link">hideCursor</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hideCursor()" class="member-name-link">hideCursor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Hides the cursor.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertLines(int)" class="member-name-link">insertLines</a><wbr>(int&nbsp;n)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertLines(int)" class="member-name-link">insertLines</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Inserts N lines at the current cursor position, pushing existing lines down.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#leaveAlternateScreen()" class="member-name-link">leaveAlternateScreen</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#leaveAlternateScreen()" class="member-name-link">leaveAlternateScreen</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Leaves the alternate screen buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorDown(int)" class="member-name-link">moveCursorDown</a><wbr>(int&nbsp;n)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorDown(int)" class="member-name-link">moveCursorDown</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Moves the cursor down by N lines.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorLeft(int)" class="member-name-link">moveCursorLeft</a><wbr>(int&nbsp;n)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorLeft(int)" class="member-name-link">moveCursorLeft</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Moves the cursor left by N columns.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorRight(int)" class="member-name-link">moveCursorRight</a><wbr>(int&nbsp;n)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorRight(int)" class="member-name-link">moveCursorRight</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Moves the cursor right by N columns.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorUp(int)" class="member-name-link">moveCursorUp</a><wbr>(int&nbsp;n)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveCursorUp(int)" class="member-name-link">moveCursorUp</a><wbr>(int&nbsp;n)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Moves the cursor up by N lines.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onResize(java.lang.Runnable)" class="member-name-link">onResize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;handler)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onResize(java.lang.Runnable)" class="member-name-link">onResize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;handler)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Registers a handler to be called when the terminal is resized.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#peek(int)" class="member-name-link">peek</a><wbr>(int&nbsp;timeoutMs)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#peek(int)" class="member-name-link">peek</a><wbr>(int&nbsp;timeoutMs)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Peeks at the next character without consuming it.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(int)" class="member-name-link">read</a><wbr>(int&nbsp;timeoutMs)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#read(int)" class="member-name-link">read</a><wbr>(int&nbsp;timeoutMs)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a single character from the terminal input with timeout.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollDown(int)" class="member-name-link">scrollDown</a><wbr>(int&nbsp;lines)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollDown(int)" class="member-name-link">scrollDown</a><wbr>(int&nbsp;lines)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Scrolls the screen down by the given number of lines.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollUp(int)" class="member-name-link">scrollUp</a><wbr>(int&nbsp;lines)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Scrolls the screen up by the given number of lines.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCursorPosition(dev.tamboui.layout.Position)" class="member-name-link">setCursorPosition</a><wbr>(<a href="../../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&nbsp;position)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollUp(int)" class="member-name-link">scrollUp</a><wbr>(int&nbsp;lines)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the cursor position.</div>
+<div class="block">Scrolls the screen up by the given number of lines.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showCursor()" class="member-name-link">showCursor</a>()</code></div>
@@ -315,6 +304,9 @@ for terminal I/O operations.</div>
 </div>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-dev.tamboui.terminal.AbstractBackend">Methods inherited from class&nbsp;<a href="../../terminal/AbstractBackend.html#method-summary" title="class in dev.tamboui.terminal">AbstractBackend</a></h3>
+<code><a href="../../terminal/AbstractBackend.html#draw(java.lang.Iterable)" title="draw(Iterable)">draw</a>, <a href="../../terminal/AbstractBackend.html#setCursorPosition(dev.tamboui.layout.Position)" title="setCursorPosition(Position)">setCursorPosition</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -370,25 +362,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="draw(java.lang.Iterable)">
-<h3>draw</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../../buffer/CellUpdate.html" title="class in dev.tamboui.buffer">CellUpdate</a>&gt;&nbsp;updates)</span>
-          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#draw(java.lang.Iterable)">Backend</a></code></span></div>
-<div class="block">Draws the given cell updates to the terminal.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#draw(java.lang.Iterable)">draw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>updates</code> - the cell updates to draw</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if drawing fails</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="flush()">
 <h3>flush</h3>
 <div class="horizontal-scroll">
@@ -397,8 +370,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#flush()">Backend</a></code></span></div>
 <div class="block">Flushes any buffered output to the terminal.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#flush()">flush</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if flushing fails</dd>
 </dl>
@@ -414,8 +385,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#clear()">Backend</a></code></span></div>
 <div class="block">Clears the terminal screen.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#clear()">clear</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if clearing fails</dd>
 </dl>
@@ -431,8 +400,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#size()">Backend</a></code></span></div>
 <div class="block">Returns the current terminal size.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#size()">size</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Returns:</dt>
 <dd>the terminal size</dd>
 <dt>Throws:</dt>
@@ -450,8 +417,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#showCursor()">Backend</a></code></span></div>
 <div class="block">Shows the cursor.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#showCursor()">showCursor</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if showing the cursor fails</dd>
 </dl>
@@ -467,8 +432,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#hideCursor()">Backend</a></code></span></div>
 <div class="block">Hides the cursor.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#hideCursor()">hideCursor</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if hiding the cursor fails</dd>
 </dl>
@@ -484,31 +447,10 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#getCursorPosition()">Backend</a></code></span></div>
 <div class="block">Gets the current cursor position.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#getCursorPosition()">getCursorPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Returns:</dt>
 <dd>the current cursor position</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the position cannot be determined</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="setCursorPosition(dev.tamboui.layout.Position)">
-<h3>setCursorPosition</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCursorPosition</span><wbr><span class="parameters">(<a href="../../layout/Position.html" title="class in dev.tamboui.layout">Position</a>&nbsp;position)</span>
-                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#setCursorPosition(dev.tamboui.layout.Position)">Backend</a></code></span></div>
-<div class="block">Sets the cursor position.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#setCursorPosition(dev.tamboui.layout.Position)">setCursorPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>position</code> - the position to set the cursor to</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if setting the cursor position fails</dd>
 </dl>
 </div>
 </section>
@@ -522,8 +464,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#enterAlternateScreen()">Backend</a></code></span></div>
 <div class="block">Enters the alternate screen buffer.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#enterAlternateScreen()">enterAlternateScreen</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if entering alternate screen fails</dd>
 </dl>
@@ -539,8 +479,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#leaveAlternateScreen()">Backend</a></code></span></div>
 <div class="block">Leaves the alternate screen buffer.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#leaveAlternateScreen()">leaveAlternateScreen</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if leaving alternate screen fails</dd>
 </dl>
@@ -556,8 +494,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#enableRawMode()">Backend</a></code></span></div>
 <div class="block">Enables raw mode (disables line buffering and echo).</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#enableRawMode()">enableRawMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if enabling raw mode fails</dd>
 </dl>
@@ -573,8 +509,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#disableRawMode()">Backend</a></code></span></div>
 <div class="block">Disables raw mode.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#disableRawMode()">disableRawMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if disabling raw mode fails</dd>
 </dl>
@@ -590,8 +524,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#enableMouseCapture()">Backend</a></code></span></div>
 <div class="block">Enables mouse capture.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#enableMouseCapture()">enableMouseCapture</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if enabling mouse capture fails</dd>
 </dl>
@@ -607,8 +539,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#disableMouseCapture()">Backend</a></code></span></div>
 <div class="block">Disables mouse capture.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#disableMouseCapture()">disableMouseCapture</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if disabling mouse capture fails</dd>
 </dl>
@@ -624,8 +554,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#scrollUp(int)">Backend</a></code></span></div>
 <div class="block">Scrolls the screen up by the given number of lines.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#scrollUp(int)">scrollUp</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>lines</code> - the number of lines to scroll up</dd>
 <dt>Throws:</dt>
@@ -643,8 +571,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#scrollDown(int)">Backend</a></code></span></div>
 <div class="block">Scrolls the screen down by the given number of lines.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#scrollDown(int)">scrollDown</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>lines</code> - the number of lines to scroll down</dd>
 <dt>Throws:</dt>
@@ -663,8 +589,6 @@ This constructor allows creating backends from SSH or HTTP connections.</div>
 <div class="block">Inserts N lines at the current cursor position, pushing existing lines down.
 The cursor position does not change.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#insertLines(int)">insertLines</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of lines to insert</dd>
 <dt>Throws:</dt>
@@ -683,8 +607,6 @@ The cursor position does not change.</div>
 <div class="block">Deletes N lines at the current cursor position, pulling lines below up.
 The cursor position does not change.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#deleteLines(int)">deleteLines</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of lines to delete</dd>
 <dt>Throws:</dt>
@@ -703,8 +625,6 @@ The cursor position does not change.</div>
 <div class="block">Moves the cursor up by N lines. If the cursor is already at the top,
 this has no effect.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#moveCursorUp(int)">moveCursorUp</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of lines to move up</dd>
 <dt>Throws:</dt>
@@ -723,8 +643,6 @@ this has no effect.</div>
 <div class="block">Moves the cursor down by N lines. If the cursor is already at the bottom,
 this has no effect.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#moveCursorDown(int)">moveCursorDown</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of lines to move down</dd>
 <dt>Throws:</dt>
@@ -743,8 +661,6 @@ this has no effect.</div>
 <div class="block">Moves the cursor right by N columns. If the cursor is already at the
 rightmost position, this has no effect.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#moveCursorRight(int)">moveCursorRight</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of columns to move right</dd>
 <dt>Throws:</dt>
@@ -763,8 +679,6 @@ rightmost position, this has no effect.</div>
 <div class="block">Moves the cursor left by N columns. If the cursor is already at the
 leftmost position, this has no effect.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#moveCursorLeft(int)">moveCursorLeft</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>n</code> - the number of columns to move left</dd>
 <dt>Throws:</dt>
@@ -783,8 +697,6 @@ leftmost position, this has no effect.</div>
 <div class="block">Erases from the cursor to the end of the line.
 The cursor position does not change.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#eraseToEndOfLine()">eraseToEndOfLine</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
 </dl>
@@ -800,8 +712,6 @@ The cursor position does not change.</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#carriageReturn()">Backend</a></code></span></div>
 <div class="block">Moves the cursor to the beginning of the current line (carriage return).</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#carriageReturn()">carriageReturn</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the operation fails</dd>
 </dl>
@@ -820,8 +730,6 @@ The cursor position does not change.</div>
 This is used for native image protocols (Sixel, Kitty, iTerm2) that
 require sending escape sequences with binary data.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#writeRaw(byte%5B%5D)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>data</code> - the raw bytes to write</dd>
 <dt>Throws:</dt>
@@ -841,8 +749,6 @@ require sending escape sequences with binary data.</div>
 <p>
 This is a convenience method for protocols that work with ASCII escape sequences.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#writeRaw(java.lang.String)">writeRaw</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>data</code> - the string to write</dd>
 <dt>Throws:</dt>
@@ -859,8 +765,6 @@ This is a convenience method for protocols that work with ASCII escape sequences
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#onResize(java.lang.Runnable)">Backend</a></code></span></div>
 <div class="block">Registers a handler to be called when the terminal is resized.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#onResize(java.lang.Runnable)">onResize</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>handler</code> - the handler to call on resize</dd>
 </dl>
@@ -876,8 +780,6 @@ This is a convenience method for protocols that work with ASCII escape sequences
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#read(int)">Backend</a></code></span></div>
 <div class="block">Reads a single character from the terminal input with timeout.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#read(int)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>timeoutMs</code> - timeout in milliseconds</dd>
 <dt>Returns:</dt>
@@ -897,8 +799,6 @@ This is a convenience method for protocols that work with ASCII escape sequences
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#peek(int)">Backend</a></code></span></div>
 <div class="block">Peeks at the next character without consuming it.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#peek(int)">peek</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>timeoutMs</code> - timeout in milliseconds</dd>
 <dt>Returns:</dt>
@@ -918,10 +818,6 @@ This is a convenience method for protocols that work with ASCII escape sequences
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#close()">Backend</a></code></span></div>
 <div class="block">Closes this backend and releases any resources.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../terminal/Backend.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if closing fails</dd>
 </dl>

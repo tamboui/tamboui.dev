@@ -48,6 +48,20 @@
 <li><a href="#using-inline-display">Using Inline Display</a></li>
 </ul>
 </li>
+<li><a href="#runningdebugging">Running/Debugging</a>
+<ul class="sectlevel2">
+<li><a href="#maven-2">Maven</a></li>
+<li><a href="#gradle">Gradle</a>
+<ul class="sectlevel3">
+<li><a href="#solution">Solution</a></li>
+</ul>
+</li>
+<li><a href="#visual-studio-code-vscode-variants">Visual Studio Code (VSCode) variants</a></li>
+<li><a href="#intellij-idea">IntelliJ IDEA</a></li>
+<li><a href="#apache-netbeans">Apache NetBeans</a></li>
+<li><a href="#eclipse">Eclipse</a></li>
+</ul>
+</li>
 <li><a href="#running-the-demos">Running the Demos</a>
 <ul class="sectlevel2">
 <li><a href="#without-cloning-the-repository">Without Cloning the Repository</a></li>
@@ -304,6 +318,95 @@ dependencies {
     display.println("Done!");
 }</code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="runningdebugging"><a class="anchor" href="#runningdebugging"></a><a class="link" href="#runningdebugging">Running/Debugging</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Full color and input handling require a real terminal. Many build tools and IDEs do not attach one to the process, so you may see a "dumb terminal" warning or broken behavior.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you know of better workarounds or can help advocate for improving terminal support in these tools, please let us know!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following describes how to run and debug TamboUI apps per tool and known workarounds:</p>
+</div>
+<div class="sect2">
+<h3 id="maven-2"><a class="anchor" href="#maven-2"></a><a class="link" href="#maven-2">Maven</a></h3>
+<div class="paragraph">
+<p>Maven normally just works, i.e. if you can run <code>mvn exec:java</code> then you can run TamboUI apps with no problems.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="gradle"><a class="anchor" href="#gradle"></a><a class="link" href="#gradle">Gradle</a></h3>
+<div class="paragraph">
+<p>Gradle runs Java via <a href="https://github.com/gradle/gradle/pull/1152">a daemon that has no terminal</a>. You may see errors like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gradle run
+
+&gt; Task :run
+Feb 17, 2026 5:56:38 PM org.jline.utils.Log logr
+WARNING: Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+
+&lt;=========--&lt;=========----&gt; 75% EXECUTING [8s]
+&gt; :run
+^[[?2027;0$y^C⏎</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="solution"><a class="anchor" href="#solution"></a><a class="link" href="#solution">Solution</a></h4>
+<div class="paragraph">
+<p>Build the app, then run it from a real terminal (or your IDE’s terminal) with <code>java -jar</code> or <code>jbang run</code>. For a single runnable JAR, use the Shadow plugin (or Application plugin’s <code>installDist</code>); then:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew build
+java -jar build/libs/my-app-1.0.0-SNAPSHOT-all.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With JBang you can attach a debugger: <code>jbang run --debug build/libs/my-app-1.0.0-SNAPSHOT-all.jar</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="visual-studio-code-vscode-variants"><a class="anchor" href="#visual-studio-code-vscode-variants"></a><a class="link" href="#visual-studio-code-vscode-variants">Visual Studio Code (VSCode) variants</a></h3>
+<div class="paragraph">
+<p>VSCode works well with Maven, Gradle, and JBang. Use Run &amp; Debug as usual—the easiest way to run and debug TamboUI apps.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="intellij-idea"><a class="anchor" href="#intellij-idea"></a><a class="link" href="#intellij-idea">IntelliJ IDEA</a></h3>
+<div class="paragraph">
+<p>Run &amp; Debug does not <a href="https://youtrack.jetbrains.com/issue/IJPL-11655/Add-option-to-run-configuration-to-launch-in-terminal">reliably get a real terminal</a> (IntelliJ runs via Gradle/Maven in a limited environment). Workaround: build the app, then run it from the command line or IntelliJ’s built-in terminal with <code>java -jar</code> or <code>jbang run</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="apache-netbeans"><a class="anchor" href="#apache-netbeans"></a><a class="link" href="#apache-netbeans">Apache NetBeans</a></h3>
+<div class="paragraph">
+<p>NetBeans has similar issues (runs via Maven/Gradle, no real terminal) and its built-in terminal is not fully compliant. Use an external terminal and run the app with <code>java -jar</code> or <code>jbang run</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eclipse"><a class="anchor" href="#eclipse"></a><a class="link" href="#eclipse">Eclipse</a></h3>
+<div class="paragraph">
+<p>Eclipse can run classes directly, but the console and built-in terminal are not full TTYs. Use an external terminal and run with <code>java -jar</code> or <code>jbang run</code>.</p>
 </div>
 </div>
 </div>

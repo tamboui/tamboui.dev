@@ -61,7 +61,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#builder()" tabindex="0">builder()</a></li>
-<li><a href="#items()" tabindex="0">items()</a></li>
 <li><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,dev.tamboui.widgets.list.ListState)" tabindex="0">render(Rect, Buffer, ListState)</a></li>
 </ol>
 </li>
@@ -85,7 +84,25 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ListWidget</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../widget/StatefulWidget.html" title="interface in dev.tamboui.widget">StatefulWidget</a>&lt;<a href="ListState.html" title="class in dev.tamboui.widgets.list">ListState</a>&gt;</span></div>
-<div class="block">A list widget for displaying selectable items.</div>
+<div class="block">A list widget for displaying selectable items using <a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common"><code>SizedWidget</code></a>.
+<p>
+Unlike the simple text-based list, this widget accepts arbitrary widgets
+with optional size hints, enabling rich content such as styled elements,
+progress bars, or complex layouts as list items.
+<p>
+Supports multiple scroll modes via <a href="ScrollMode.html" title="enum class in dev.tamboui.widgets.list"><code>ScrollMode</code></a>, optional scrollbar
+via <a href="../common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common"><code>ScrollBarPolicy</code></a>, and configurable highlight styles.
+
+<pre><code>ListWidget widget = ListWidget.builder()
+    .items(items)
+    .highlightSymbol("&gt; ")
+    .highlightStyle(Style.EMPTY.reversed())
+    .scrollMode(ScrollMode.AUTO_SCROLL)
+    .scrollBarPolicy(ScrollBarPolicy.AS_NEEDED)
+    .build();
+
+widget.render(area, buffer, state);
+</code></pre></div>
 </div>
 </section>
 <section class="summary">
@@ -121,18 +138,13 @@ implements <a href="../../widget/StatefulWidget.html" title="interface in dev.ta
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#builder()" class="member-name-link">builder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a new list widget builder.</div>
+<div class="block">Creates a new builder for ListWidget.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items()" class="member-name-link">items</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the items in this list.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,dev.tamboui.widgets.list.ListState)" class="member-name-link">render</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,dev.tamboui.widgets.list.ListState)" class="member-name-link">render</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
  <a href="ListState.html" title="class in dev.tamboui.widgets.list">ListState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Renders this widget to the given buffer area with the provided state.</div>
 </div>
 </div>
@@ -157,23 +169,10 @@ implements <a href="../../widget/StatefulWidget.html" title="interface in dev.ta
 <h3>builder</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">builder</span>()</div>
-<div class="block">Creates a new list widget builder.</div>
+<div class="block">Creates a new builder for ListWidget.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>a new Builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="items()">
-<h3>items</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&gt;</span>&nbsp;<span class="element-name">items</span>()</div>
-<div class="block">Returns the items in this list.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the list items</dd>
+<dd>a new builder</dd>
 </dl>
 </div>
 </section>

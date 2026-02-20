@@ -72,6 +72,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#height()" tabindex="0">height()</a></li>
 <li><a href="#content()" tabindex="0">content()</a></li>
 <li><a href="#style()" tabindex="0">style()</a></li>
+<li><a href="#toSizedWidget()" tabindex="0">toSizedWidget()</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
@@ -165,9 +166,15 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new list item with the given style applied.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common">SizedWidget</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toSizedWidget()" class="member-name-link">toSizedWidget</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts this list item to a <a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common"><code>SizedWidget</code></a> for use with the new
+<a href="ListWidget.html" title="class in dev.tamboui.widgets.list"><code>ListWidget</code></a> builder.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -303,6 +310,23 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the style</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toSizedWidget()">
+<h3>toSizedWidget</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common">SizedWidget</a></span>&nbsp;<span class="element-name">toSizedWidget</span>()</div>
+<div class="block">Converts this list item to a <a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common"><code>SizedWidget</code></a> for use with the new
+<a href="ListWidget.html" title="class in dev.tamboui.widgets.list"><code>ListWidget</code></a> builder.
+<p>
+The widget renders the item's <a href="../../text/Text.html" title="class in dev.tamboui.text"><code>Text</code></a> content using a <a href="../paragraph/Paragraph.html" title="class in dev.tamboui.widgets.paragraph"><code>Paragraph</code></a>,
+with the item's style applied as background.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a SizedWidget wrapping this item's content</dd>
 </dl>
 </div>
 </section>

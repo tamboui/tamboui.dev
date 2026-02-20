@@ -73,7 +73,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#selectNext(int)" tabindex="0">selectNext(int)</a></li>
 <li><a href="#selectPrevious()" tabindex="0">selectPrevious()</a></li>
 <li><a href="#setOffset(int)" tabindex="0">setOffset(int)</a></li>
+<li><a href="#scrollBy(int)" tabindex="0">scrollBy(int)</a></li>
+<li><a href="#isUserScrolledAway()" tabindex="0">isUserScrolledAway()</a></li>
+<li><a href="#markUserScrolledAway()" tabindex="0">markUserScrolledAway()</a></li>
+<li><a href="#resumeAutoScroll()" tabindex="0">resumeAutoScroll()</a></li>
 <li><a href="#scrollToSelected(int,java.util.List)" tabindex="0">scrollToSelected(int, List)</a></li>
+<li><a href="#scrollToSelected(int,int%5B%5D)" tabindex="0">scrollToSelected(int, int[])</a></li>
+<li><a href="#applyStickyScroll(int,int,int)" tabindex="0">applyStickyScroll(int, int, int)</a></li>
+<li><a href="#applyScrollToEnd(int,int)" tabindex="0">applyScrollToEnd(int, int)</a></li>
 <li><a href="#scrollToEnd(int,java.util.List)" tabindex="0">scrollToEnd(int, List)</a></li>
 </ol>
 </li>
@@ -123,10 +130,43 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyScrollToEnd(int,int)" class="member-name-link">applyScrollToEnd</a><wbr>(int&nbsp;totalHeight,
+ int&nbsp;visibleHeight)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Applies scroll-to-end mode (unconditional pin to bottom).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyStickyScroll(int,int,int)" class="member-name-link">applyStickyScroll</a><wbr>(int&nbsp;totalItems,
+ int&nbsp;totalHeight,
+ int&nbsp;visibleHeight)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Applies sticky scroll logic.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUserScrolledAway()" class="member-name-link">isUserScrolledAway</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns whether the user has scrolled away from the bottom (for sticky scroll).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#markUserScrolledAway()" class="member-name-link">markUserScrolledAway</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Marks that the user has scrolled away from the bottom.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offset()" class="member-name-link">offset</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the scroll offset.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resumeAutoScroll()" class="member-name-link">resumeAutoScroll</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Resumes auto-scrolling to the bottom (for sticky scroll).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollBy(int)" class="member-name-link">scrollBy</a><wbr>(int&nbsp;delta)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adjusts the scroll offset by a delta.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollToEnd(int,java.util.List)" class="member-name-link">scrollToEnd</a><wbr>(int&nbsp;visibleHeight,
@@ -135,44 +175,51 @@ loadScripts(document, 'script');</script>
 <div class="block">Scrolls the list to show the last items without changing selection.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollToSelected(int,java.util.List)" class="member-name-link">scrollToSelected</a><wbr>(int&nbsp;visibleHeight,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&gt;&nbsp;items)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollToSelected(int,int%5B%5D)" class="member-name-link">scrollToSelected</a><wbr>(int&nbsp;visibleHeight,
+ int[]&nbsp;itemHeights)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Scrolls the list to ensure the selected item is visible,
+using pre-computed item heights.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollToSelected(int,java.util.List)" class="member-name-link">scrollToSelected</a><wbr>(int&nbsp;visibleHeight,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&gt;&nbsp;items)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Scrolls the list to ensure the selected item is visible.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(java.lang.Integer)" class="member-name-link">select</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;index)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(java.lang.Integer)" class="member-name-link">select</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;index)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the item at the given index.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected()" class="member-name-link">selected</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected()" class="member-name-link">selected</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the index of the currently selected item, or null if nothing is selected.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectFirst()" class="member-name-link">selectFirst</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectFirst()" class="member-name-link">selectFirst</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the first item.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectLast(int)" class="member-name-link">selectLast</a><wbr>(int&nbsp;itemCount)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectLast(int)" class="member-name-link">selectLast</a><wbr>(int&nbsp;itemCount)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the last item.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectNext(int)" class="member-name-link">selectNext</a><wbr>(int&nbsp;itemCount)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectNext(int)" class="member-name-link">selectNext</a><wbr>(int&nbsp;itemCount)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the next item.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectPrevious()" class="member-name-link">selectPrevious</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectPrevious()" class="member-name-link">selectPrevious</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the previous item.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOffset(int)" class="member-name-link">setOffset</a><wbr>(int&nbsp;offset)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOffset(int)" class="member-name-link">setOffset</a><wbr>(int&nbsp;offset)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scroll offset directly.</div>
 </div>
 </div>
@@ -306,6 +353,52 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="scrollBy(int)">
+<h3>scrollBy</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scrollBy</span><wbr><span class="parameters">(int&nbsp;delta)</span></div>
+<div class="block">Adjusts the scroll offset by a delta.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>delta</code> - the amount to scroll (positive = down, negative = up)</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isUserScrolledAway()">
+<h3>isUserScrolledAway</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUserScrolledAway</span>()</div>
+<div class="block">Returns whether the user has scrolled away from the bottom (for sticky scroll).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the user has scrolled away</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="markUserScrolledAway()">
+<h3>markUserScrolledAway</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">markUserScrolledAway</span>()</div>
+<div class="block">Marks that the user has scrolled away from the bottom.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="resumeAutoScroll()">
+<h3>resumeAutoScroll</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resumeAutoScroll</span>()</div>
+<div class="block">Resumes auto-scrolling to the bottom (for sticky scroll).
+<p>
+The scroll offset will be set to the maximum during the next render.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="scrollToSelected(int,java.util.List)">
 <h3>scrollToSelected</h3>
 <div class="horizontal-scroll">
@@ -321,15 +414,64 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="scrollToSelected(int,int[])">
+<h3>scrollToSelected</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scrollToSelected</span><wbr><span class="parameters">(int&nbsp;visibleHeight,
+ int[]&nbsp;itemHeights)</span></div>
+<div class="block">Scrolls the list to ensure the selected item is visible,
+using pre-computed item heights.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>visibleHeight</code> - the visible height in the display area</dd>
+<dd><code>itemHeights</code> - array of item heights</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="applyStickyScroll(int,int,int)">
+<h3>applyStickyScroll</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyStickyScroll</span><wbr><span class="parameters">(int&nbsp;totalItems,
+ int&nbsp;totalHeight,
+ int&nbsp;visibleHeight)</span></div>
+<div class="block">Applies sticky scroll logic.
+<p>
+Auto-scrolls to the end when new items are added, but pauses
+when the user has scrolled away. Resumes when the user scrolls
+back to the bottom.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>totalItems</code> - the total number of items</dd>
+<dd><code>totalHeight</code> - the total content height in rows</dd>
+<dd><code>visibleHeight</code> - the visible viewport height</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="applyScrollToEnd(int,int)">
+<h3>applyScrollToEnd</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">applyScrollToEnd</span><wbr><span class="parameters">(int&nbsp;totalHeight,
+ int&nbsp;visibleHeight)</span></div>
+<div class="block">Applies scroll-to-end mode (unconditional pin to bottom).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>totalHeight</code> - the total content height in rows</dd>
+<dd><code>visibleHeight</code> - the visible viewport height</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="scrollToEnd(int,java.util.List)">
 <h3>scrollToEnd</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scrollToEnd</span><wbr><span class="parameters">(int&nbsp;visibleHeight,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&gt;&nbsp;items)</span></div>
-<div class="block">Scrolls the list to show the last items without changing selection.
-<p>
-This is useful for chat messages, logs, or other content where you want
-to always show the most recent items without needing to select them.</div>
+<div class="block">Scrolls the list to show the last items without changing selection.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>visibleHeight</code> - the visible height in the display area</dd>

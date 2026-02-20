@@ -381,20 +381,17 @@ paragraph.render(area, buffer);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create items
-List&lt;ListItem&gt; items = List.of(
-    ListItem.from("First item"),
-    ListItem.from("Second item"),
-    ListItem.from("Styled item").style(Style.EMPTY.bold())
-);
-
-// Create state
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create state
 ListState state = new ListState();
 state.select(0);  // Select first item
 
 // Build and render
 ListWidget list = ListWidget.builder()
-    .items(items)
+    .items(
+        ListItem.from("First item"),
+        ListItem.from("Second item"),
+        ListItem.from("Styled item").style(Style.EMPTY.bold())
+    )
     .highlightStyle(Style.EMPTY.reversed())
     .highlightSymbol("&gt;&gt; ")
     .block(Block.builder()

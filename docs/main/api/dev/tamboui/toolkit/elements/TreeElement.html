@@ -62,7 +62,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#keyboard-navigation-heading" tabindex="0">Keyboard Navigation</a></li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
@@ -93,7 +92,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#rounded()" tabindex="0">rounded()</a></li>
 <li><a href="#borderColor(dev.tamboui.style.Color)" tabindex="0">borderColor(Color)</a></li>
 <li><a href="#scrollbar()" tabindex="0">scrollbar()</a></li>
-<li><a href="#scrollbar(dev.tamboui.toolkit.elements.TreeElement.ScrollBarPolicy)" tabindex="0">scrollbar(TreeElement.ScrollBarPolicy)</a></li>
+<li><a href="#scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)" tabindex="0">scrollbar(ScrollBarPolicy)</a></li>
 <li><a href="#scrollbarThumbColor(dev.tamboui.style.Color)" tabindex="0">scrollbarThumbColor(Color)</a></li>
 <li><a href="#scrollbarTrackColor(dev.tamboui.style.Color)" tabindex="0">scrollbarTrackColor(Color)</a></li>
 <li><a href="#indentWidth(int)" tabindex="0">indentWidth(int)</a></li>
@@ -193,23 +192,6 @@ for rendering, with guide characters showing the hierarchy.
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="TreeElement.ScrollBarPolicy.html" class="type-name-link" title="enum class in dev.tamboui.toolkit.elements">TreeElement.ScrollBarPolicy</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Policy for displaying the scrollbar.</div>
-</div>
-</div>
-</section>
-</li>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
@@ -234,7 +216,7 @@ for rendering, with guide characters showing the hierarchy.
 <div class="col-last even-row-color">
 <div class="block">CSS property for indent width (space per depth level).</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a><wbr>&lt;<a href="TreeElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">TreeElement.ScrollBarPolicy</a>&gt;</code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a><wbr>&lt;<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&gt;</code></div>
 <div class="col-second odd-row-color"><code><a href="#SCROLLBAR_POLICY" class="member-name-link">SCROLLBAR_POLICY</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">CSS property for scrollbar policy.</div>
@@ -366,7 +348,7 @@ for rendering, with guide characters showing the hierarchy.
 <div class="block">Enables showing a scrollbar (always visible).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.toolkit.elements.TreeElement.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="TreeElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">TreeElement.ScrollBarPolicy</a>&nbsp;policy)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar policy.</div>
 </div>
@@ -469,7 +451,7 @@ for rendering, with guide characters showing the hierarchy.
 <section class="detail" id="SCROLLBAR_POLICY">
 <h3>SCROLLBAR_POLICY</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="TreeElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">TreeElement.ScrollBarPolicy</a>&gt;</span>&nbsp;<span class="element-name">SCROLLBAR_POLICY</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&gt;</span>&nbsp;<span class="element-name">SCROLLBAR_POLICY</span></div>
 <div class="block">CSS property for scrollbar policy. Values: "none", "always", "as-needed".</div>
 </div>
 </section>
@@ -708,10 +690,10 @@ Example:
 </section>
 </li>
 <li>
-<section class="detail" id="scrollbar(dev.tamboui.toolkit.elements.TreeElement.ScrollBarPolicy)">
+<section class="detail" id="scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)">
 <h3>scrollbar</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</span>&nbsp;<span class="element-name">scrollbar</span><wbr><span class="parameters">(<a href="TreeElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">TreeElement.ScrollBarPolicy</a>&nbsp;policy)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</span>&nbsp;<span class="element-name">scrollbar</span><wbr><span class="parameters">(<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</span></div>
 <div class="block">Sets the scrollbar policy.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

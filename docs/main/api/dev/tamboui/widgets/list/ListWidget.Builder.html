@@ -62,20 +62,18 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#items(java.util.List)" tabindex="0">items(List)</a></li>
 <li><a href="#items(dev.tamboui.widgets.list.ListItem...)" tabindex="0">items(ListItem...)</a></li>
-<li><a href="#addItem(dev.tamboui.widgets.list.ListItem)" tabindex="0">addItem(ListItem)</a></li>
-<li><a href="#addItem(java.lang.String)" tabindex="0">addItem(String)</a></li>
-<li><a href="#block(dev.tamboui.widgets.block.Block)" tabindex="0">block(Block)</a></li>
+<li><a href="#items(java.lang.String...)" tabindex="0">items(String...)</a></li>
+<li><a href="#addItem(dev.tamboui.widgets.common.SizedWidget)" tabindex="0">addItem(SizedWidget)</a></li>
 <li><a href="#style(dev.tamboui.style.Style)" tabindex="0">style(Style)</a></li>
 <li><a href="#highlightStyle(dev.tamboui.style.Style)" tabindex="0">highlightStyle(Style)</a></li>
-<li><a href="#itemStyleResolver(java.util.function.BiFunction)" tabindex="0">itemStyleResolver(BiFunction)</a></li>
-<li><a href="#styleResolver(dev.tamboui.style.StylePropertyResolver)" tabindex="0">styleResolver(StylePropertyResolver)</a></li>
-<li><a href="#background(dev.tamboui.style.Color)" tabindex="0">background(Color)</a></li>
-<li><a href="#foreground(dev.tamboui.style.Color)" tabindex="0">foreground(Color)</a></li>
 <li><a href="#highlightSymbol(dev.tamboui.text.Line)" tabindex="0">highlightSymbol(Line)</a></li>
 <li><a href="#highlightSymbol(java.lang.String)" tabindex="0">highlightSymbol(String)</a></li>
-<li><a href="#direction(dev.tamboui.widgets.list.ListDirection)" tabindex="0">direction(ListDirection)</a></li>
-<li><a href="#repeatHighlightSymbol(boolean)" tabindex="0">repeatHighlightSymbol(boolean)</a></li>
-<li><a href="#overflow(dev.tamboui.style.Overflow)" tabindex="0">overflow(Overflow)</a></li>
+<li><a href="#block(dev.tamboui.widgets.block.Block)" tabindex="0">block(Block)</a></li>
+<li><a href="#scrollMode(dev.tamboui.widgets.list.ScrollMode)" tabindex="0">scrollMode(ScrollMode)</a></li>
+<li><a href="#scrollBarPolicy(dev.tamboui.widgets.common.ScrollBarPolicy)" tabindex="0">scrollBarPolicy(ScrollBarPolicy)</a></li>
+<li><a href="#scrollbarThumbStyle(dev.tamboui.style.Style)" tabindex="0">scrollbarThumbStyle(Style)</a></li>
+<li><a href="#scrollbarTrackStyle(dev.tamboui.style.Style)" tabindex="0">scrollbarTrackStyle(Style)</a></li>
+<li><a href="#itemStyleResolver(java.util.function.BiFunction)" tabindex="0">itemStyleResolver(BiFunction)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -115,19 +113,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addItem(dev.tamboui.widgets.list.ListItem)" class="member-name-link">addItem</a><wbr>(<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&nbsp;item)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addItem(dev.tamboui.widgets.common.SizedWidget)" class="member-name-link">addItem</a><wbr>(<a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common">SizedWidget</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds an item to the list.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addItem(java.lang.String)" class="member-name-link">addItem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds an item from a string.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#background(dev.tamboui.style.Color)" class="member-name-link">background</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the background color for items.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#block(dev.tamboui.widgets.block.Block)" class="member-name-link">block</a><wbr>(<a href="../block/Block.html" title="class in dev.tamboui.widgets.block">Block</a>&nbsp;block)</code></div>
@@ -137,67 +125,67 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.html" title="class in dev.tamboui.widgets.list">ListWidget</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Builds the list widget.</div>
+<div class="block">Builds the ListWidget.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#direction(dev.tamboui.widgets.list.ListDirection)" class="member-name-link">direction</a><wbr>(<a href="ListDirection.html" title="enum class in dev.tamboui.widgets.list">ListDirection</a>&nbsp;direction)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightStyle(dev.tamboui.style.Style)" class="member-name-link">highlightStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the direction for rendering list items.</div>
+<div class="block">Sets the highlight style for selected items.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#foreground(dev.tamboui.style.Color)" class="member-name-link">foreground</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightSymbol(dev.tamboui.text.Line)" class="member-name-link">highlightSymbol</a><wbr>(<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>&nbsp;symbol)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the foreground (text) color for items.</div>
+<div class="block">Sets the highlight symbol shown before selected items.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightStyle(dev.tamboui.style.Style)" class="member-name-link">highlightStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;highlightStyle)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightSymbol(java.lang.String)" class="member-name-link">highlightSymbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the style for the selected item.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightSymbol(dev.tamboui.text.Line)" class="member-name-link">highlightSymbol</a><wbr>(<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>&nbsp;highlightSymbol)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the highlight symbol as a Line (which can include styling).</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#highlightSymbol(java.lang.String)" class="member-name-link">highlightSymbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;highlightSymbol)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the highlight symbol as a string (convenience method).</div>
+<div class="block">Sets the highlight symbol as a string.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items(dev.tamboui.widgets.list.ListItem...)" class="member-name-link">items</a><wbr>(<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>...&nbsp;items)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the list items from <a href="ListItem.html" title="class in dev.tamboui.widgets.list"><code>ListItem</code></a> instances.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items(java.lang.String...)" class="member-name-link">items</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;items)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the list items from strings.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items(java.util.List)" class="member-name-link">items</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common">SizedWidget</a>&gt;&nbsp;items)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the list items.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#items(java.util.List)" class="member-name-link">items</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&gt;&nbsp;items)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#itemStyleResolver(java.util.function.BiFunction)" class="member-name-link">itemStyleResolver</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&gt;&nbsp;resolver)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the list items.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#itemStyleResolver(java.util.function.BiFunction)" class="member-name-link">itemStyleResolver</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiFunction.html" title="class or interface in java.util.function" class="external-link">BiFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>,<wbr><a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&gt;&nbsp;resolver)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a function to resolve styles for each item based on position.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollBarPolicy(dev.tamboui.widgets.common.ScrollBarPolicy)" class="member-name-link">scrollBarPolicy</a><wbr>(<a href="../common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the scrollbar policy.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#overflow(dev.tamboui.style.Overflow)" class="member-name-link">overflow</a><wbr>(<a href="../../style/Overflow.html" title="enum class in dev.tamboui.style">Overflow</a>&nbsp;overflow)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarThumbStyle(dev.tamboui.style.Style)" class="member-name-link">scrollbarThumbStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the overflow mode for list item text.</div>
+<div class="block">Sets the scrollbar thumb style.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#repeatHighlightSymbol(boolean)" class="member-name-link">repeatHighlightSymbol</a><wbr>(boolean&nbsp;repeatHighlightSymbol)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarTrackStyle(dev.tamboui.style.Style)" class="member-name-link">scrollbarTrackStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets whether to repeat the highlight symbol on all lines of multiline items.</div>
+<div class="block">Sets the scrollbar track style.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style(dev.tamboui.style.Style)" class="member-name-link">style</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollMode(dev.tamboui.widgets.list.ScrollMode)" class="member-name-link">scrollMode</a><wbr>(<a href="ScrollMode.html" title="enum class in dev.tamboui.widgets.list">ScrollMode</a>&nbsp;mode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the scroll mode.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style(dev.tamboui.style.Style)" class="member-name-link">style</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the base style.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleResolver(dev.tamboui.style.StylePropertyResolver)" class="member-name-link">styleResolver</a><wbr>(<a href="../../style/StylePropertyResolver.html" title="interface in dev.tamboui.style">StylePropertyResolver</a>&nbsp;resolver)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the property resolver for style-aware properties.</div>
 </div>
 </div>
 </div>
@@ -220,11 +208,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="items(java.util.List)">
 <h3>items</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">items</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&gt;&nbsp;items)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">items</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common">SizedWidget</a>&gt;&nbsp;items)</span></div>
 <div class="block">Sets the list items.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>items</code> - the items to display</dd>
+<dd><code>items</code> - the SizedWidget items to display</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>
@@ -236,10 +224,10 @@ loadScripts(document, 'script');</script>
 <h3>items</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">items</span><wbr><span class="parameters">(<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>...&nbsp;items)</span></div>
-<div class="block">Sets the list items.</div>
+<div class="block">Sets the list items from <a href="ListItem.html" title="class in dev.tamboui.widgets.list"><code>ListItem</code></a> instances.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>items</code> - the items to display</dd>
+<dd><code>items</code> - the list items</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>
@@ -247,44 +235,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="addItem(dev.tamboui.widgets.list.ListItem)">
+<section class="detail" id="items(java.lang.String...)">
+<h3>items</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">items</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;items)</span></div>
+<div class="block">Sets the list items from strings.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>items</code> - the item texts</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addItem(dev.tamboui.widgets.common.SizedWidget)">
 <h3>addItem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">addItem</span><wbr><span class="parameters">(<a href="ListItem.html" title="class in dev.tamboui.widgets.list">ListItem</a>&nbsp;item)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">addItem</span><wbr><span class="parameters">(<a href="../common/SizedWidget.html" title="class in dev.tamboui.widgets.common">SizedWidget</a>&nbsp;item)</span></div>
 <div class="block">Adds an item to the list.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>item</code> - the item to add</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="addItem(java.lang.String)">
-<h3>addItem</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">addItem</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
-<div class="block">Adds an item from a string.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>text</code> - the item text</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="block(dev.tamboui.widgets.block.Block)">
-<h3>block</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">block</span><wbr><span class="parameters">(<a href="../block/Block.html" title="class in dev.tamboui.widgets.block">Block</a>&nbsp;block)</span></div>
-<div class="block">Wraps the list in a block.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>block</code> - the block to wrap in</dd>
+<dd><code>item</code> - the SizedWidget item to add</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>
@@ -310,11 +283,116 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="highlightStyle(dev.tamboui.style.Style)">
 <h3>highlightStyle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">highlightStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;highlightStyle)</span></div>
-<div class="block">Sets the style for the selected item.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">highlightStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
+<div class="block">Sets the highlight style for selected items.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>highlightStyle</code> - the highlight style</dd>
+<dd><code>style</code> - the highlight style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="highlightSymbol(dev.tamboui.text.Line)">
+<h3>highlightSymbol</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">highlightSymbol</span><wbr><span class="parameters">(<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>&nbsp;symbol)</span></div>
+<div class="block">Sets the highlight symbol shown before selected items.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - the highlight symbol</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="highlightSymbol(java.lang.String)">
+<h3>highlightSymbol</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">highlightSymbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
+<div class="block">Sets the highlight symbol as a string.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - the highlight symbol</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="block(dev.tamboui.widgets.block.Block)">
+<h3>block</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">block</span><wbr><span class="parameters">(<a href="../block/Block.html" title="class in dev.tamboui.widgets.block">Block</a>&nbsp;block)</span></div>
+<div class="block">Wraps the list in a block.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>block</code> - the block</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scrollMode(dev.tamboui.widgets.list.ScrollMode)">
+<h3>scrollMode</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">scrollMode</span><wbr><span class="parameters">(<a href="ScrollMode.html" title="enum class in dev.tamboui.widgets.list">ScrollMode</a>&nbsp;mode)</span></div>
+<div class="block">Sets the scroll mode.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>mode</code> - the scroll mode</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scrollBarPolicy(dev.tamboui.widgets.common.ScrollBarPolicy)">
+<h3>scrollBarPolicy</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">scrollBarPolicy</span><wbr><span class="parameters">(<a href="../common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</span></div>
+<div class="block">Sets the scrollbar policy.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>policy</code> - the scrollbar display policy</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scrollbarThumbStyle(dev.tamboui.style.Style)">
+<h3>scrollbarThumbStyle</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">scrollbarThumbStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
+<div class="block">Sets the scrollbar thumb style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the thumb style</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="scrollbarTrackStyle(dev.tamboui.style.Style)">
+<h3>scrollbarTrackStyle</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">scrollbarTrackStyle</span><wbr><span class="parameters">(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</span></div>
+<div class="block">Sets the scrollbar track style.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>style</code> - the track style</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>
@@ -329,143 +407,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Sets a function to resolve styles for each item based on position.
 <p>
 The function receives the item index (0-based) and total item count,
-and returns a Style to apply to that item. This enables positional
-styling like alternating row colors.</div>
+and returns a Style to apply to that item.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>resolver</code> - function that takes (index, totalCount) and returns a Style</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="styleResolver(dev.tamboui.style.StylePropertyResolver)">
-<h3>styleResolver</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">styleResolver</span><wbr><span class="parameters">(<a href="../../style/StylePropertyResolver.html" title="interface in dev.tamboui.style">StylePropertyResolver</a>&nbsp;resolver)</span></div>
-<div class="block">Sets the property resolver for style-aware properties.
-<p>
-When set, properties like <code>color</code> and <code>background</code>
-will be resolved if not set programmatically.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>resolver</code> - the property resolver</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="background(dev.tamboui.style.Color)">
-<h3>background</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">background</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
-<div class="block">Sets the background color for items.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>color</code> - the background color</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="foreground(dev.tamboui.style.Color)">
-<h3>foreground</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">foreground</span><wbr><span class="parameters">(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</span></div>
-<div class="block">Sets the foreground (text) color for items.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>color</code> - the foreground color</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="highlightSymbol(dev.tamboui.text.Line)">
-<h3>highlightSymbol</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">highlightSymbol</span><wbr><span class="parameters">(<a href="../../text/Line.html" title="class in dev.tamboui.text">Line</a>&nbsp;highlightSymbol)</span></div>
-<div class="block">Sets the highlight symbol as a Line (which can include styling).</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>highlightSymbol</code> - the line to use as the highlight symbol</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="highlightSymbol(java.lang.String)">
-<h3>highlightSymbol</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">highlightSymbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;highlightSymbol)</span></div>
-<div class="block">Sets the highlight symbol as a string (convenience method).</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>highlightSymbol</code> - the string to use as the highlight symbol</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="direction(dev.tamboui.widgets.list.ListDirection)">
-<h3>direction</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">direction</span><wbr><span class="parameters">(<a href="ListDirection.html" title="enum class in dev.tamboui.widgets.list">ListDirection</a>&nbsp;direction)</span></div>
-<div class="block">Sets the direction for rendering list items.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>direction</code> - the direction (default: TOP_TO_BOTTOM)</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="repeatHighlightSymbol(boolean)">
-<h3>repeatHighlightSymbol</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">repeatHighlightSymbol</span><wbr><span class="parameters">(boolean&nbsp;repeatHighlightSymbol)</span></div>
-<div class="block">Sets whether to repeat the highlight symbol on all lines of multiline items.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>repeatHighlightSymbol</code> - if true, repeat symbol on all lines (default: false)</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="overflow(dev.tamboui.style.Overflow)">
-<h3>overflow</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></span>&nbsp;<span class="element-name">overflow</span><wbr><span class="parameters">(<a href="../../style/Overflow.html" title="enum class in dev.tamboui.style">Overflow</a>&nbsp;overflow)</span></div>
-<div class="block">Sets the overflow mode for list item text.
-<p>
-Controls how text is handled when it exceeds the available width:
-<ul>
-  <li><code>CLIP</code> - silently truncate at boundary (default)</li>
-  <li><code>ELLIPSIS</code> - truncate with "..." at end</li>
-  <li><code>ELLIPSIS_START</code> - truncate with "..." at start</li>
-  <li><code>ELLIPSIS_MIDDLE</code> - truncate with "..." in middle</li>
-</ul>
-Note: WRAP_CHARACTER and WRAP_WORD are not supported for list items.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>overflow</code> - the overflow mode</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>
@@ -477,7 +422,7 @@ Note: WRAP_CHARACTER and WRAP_WORD are not supported for list items.</div>
 <h3>build</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListWidget.html" title="class in dev.tamboui.widgets.list">ListWidget</a></span>&nbsp;<span class="element-name">build</span>()</div>
-<div class="block">Builds the list widget.</div>
+<div class="block">Builds the ListWidget.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a new ListWidget</dd>

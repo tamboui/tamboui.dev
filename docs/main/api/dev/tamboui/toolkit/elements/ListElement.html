@@ -56,10 +56,15 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
 <li><a href="#field-summary" tabindex="0">Field Summary</a></li>
 <li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
+<li><a href="#field-detail" tabindex="0">Field Details</a>
+<ol class="toc-list">
+<li><a href="#SCROLLBAR_POLICY" tabindex="0">SCROLLBAR_POLICY</a></li>
+<li><a href="#HIGHLIGHT_SYMBOL" tabindex="0">HIGHLIGHT_SYMBOL</a></li>
+</ol>
+</li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">ListElement()</a></li>
@@ -90,7 +95,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#scrollToEnd()" tabindex="0">scrollToEnd()</a></li>
 <li><a href="#stickyScroll()" tabindex="0">stickyScroll()</a></li>
 <li><a href="#scrollbar()" tabindex="0">scrollbar()</a></li>
-<li><a href="#scrollbar(dev.tamboui.toolkit.elements.ListElement.ScrollBarPolicy)" tabindex="0">scrollbar(ListElement.ScrollBarPolicy)</a></li>
+<li><a href="#scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)" tabindex="0">scrollbar(ScrollBarPolicy)</a></li>
 <li><a href="#displayOnly()" tabindex="0">displayOnly()</a></li>
 <li><a href="#scrollbarThumbColor(dev.tamboui.style.Color)" tabindex="0">scrollbarThumbColor(Color)</a></li>
 <li><a href="#scrollbarTrackColor(dev.tamboui.style.Color)" tabindex="0">scrollbarTrackColor(Color)</a></li>
@@ -171,27 +176,26 @@ CSS selectors:
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<li>
-<section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ListElement.ScrollBarPolicy.html" class="type-name-link" title="enum class in dev.tamboui.toolkit.elements">ListElement.ScrollBarPolicy</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Policy for displaying the scrollbar.</div>
-</div>
-</div>
-</section>
-</li>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static final <a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="#HIGHLIGHT_SYMBOL" class="member-name-link">HIGHLIGHT_SYMBOL</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">CSS property for highlight symbol shown before selected item.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a><wbr>&lt;<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="#SCROLLBAR_POLICY" class="member-name-link">SCROLLBAR_POLICY</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">CSS property for scrollbar policy.</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-dev.tamboui.toolkit.element.StyledElement">Fields inherited from class&nbsp;<a href="../element/StyledElement.html#field-summary" title="class in dev.tamboui.toolkit.element">StyledElement</a></h3>
 <code><a href="../element/StyledElement.html#cssClasses">cssClasses</a>, <a href="../element/StyledElement.html#cssParent">cssParent</a>, <a href="../element/StyledElement.html#draggable">draggable</a>, <a href="../element/StyledElement.html#dragHandler">dragHandler</a>, <a href="../element/StyledElement.html#elementId">elementId</a>, <a href="../element/StyledElement.html#focusable">focusable</a>, <a href="../element/StyledElement.html#keyHandler">keyHandler</a>, <a href="../element/StyledElement.html#lastRenderedArea">lastRenderedArea</a>, <a href="../element/StyledElement.html#layoutConstraint">layoutConstraint</a>, <a href="../element/StyledElement.html#mouseHandler">mouseHandler</a>, <a href="../element/StyledElement.html#style">style</a>, <a href="../element/StyledElement.html#styleAttrs">styleAttrs</a></code></div>
@@ -342,7 +346,7 @@ CSS selectors:
 <div class="block">Enables showing a scrollbar on the right side of the list (always visible).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.toolkit.elements.ListElement.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="ListElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">ListElement.ScrollBarPolicy</a>&nbsp;policy)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar policy.</div>
 </div>
@@ -427,6 +431,32 @@ CSS selectors:
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="SCROLLBAR_POLICY">
+<h3>SCROLLBAR_POLICY</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&gt;</span>&nbsp;<span class="element-name">SCROLLBAR_POLICY</span></div>
+<div class="block">CSS property for scrollbar policy. Values: "none", "always", "as-needed".</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="HIGHLIGHT_SYMBOL">
+<h3>HIGHLIGHT_SYMBOL</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../style/PropertyDefinition.html" title="class in dev.tamboui.style">PropertyDefinition</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">HIGHLIGHT_SYMBOL</span></div>
+<div class="block">CSS property for highlight symbol shown before selected item.</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -818,10 +848,10 @@ Note: Cannot be combined with <a href="#autoScroll()"><code>autoScroll()</code><
 </section>
 </li>
 <li>
-<section class="detail" id="scrollbar(dev.tamboui.toolkit.elements.ListElement.ScrollBarPolicy)">
+<section class="detail" id="scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)">
 <h3>scrollbar</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">scrollbar</span><wbr><span class="parameters">(<a href="ListElement.ScrollBarPolicy.html" title="enum class in dev.tamboui.toolkit.elements">ListElement.ScrollBarPolicy</a>&nbsp;policy)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ListElement.html" title="class in dev.tamboui.toolkit.elements">ListElement</a>&lt;<a href="#type-param-T" title="type parameter in ListElement">T</a>&gt;</span>&nbsp;<span class="element-name">scrollbar</span><wbr><span class="parameters">(<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</span></div>
 <div class="block">Sets the scrollbar policy.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

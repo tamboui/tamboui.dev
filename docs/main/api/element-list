@@ -66,6 +66,7 @@ dev.tamboui.widgets.canvas
 dev.tamboui.widgets.canvas.shapes
 dev.tamboui.widgets.chart
 dev.tamboui.widgets.checkbox
+dev.tamboui.widgets.common
 dev.tamboui.widgets.error
 dev.tamboui.widgets.form
 dev.tamboui.widgets.gauge

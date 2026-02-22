@@ -134,10 +134,10 @@
         &lt;artifactId&gt;tamboui-toolkit&lt;/artifactId&gt;
     &lt;/dependency&gt;
 
-    &lt;!-- JLine backend (required) --&gt;
+    &lt;!-- JLine backend (one backend is required) --&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;dev.tamboui&lt;/groupId&gt;
-        &lt;artifactId&gt;tamboui-jline&lt;/artifactId&gt;
+        &lt;artifactId&gt;tamboui-jline3-backend&lt;/artifactId&gt;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;</code></pre>
 </div>
@@ -162,7 +162,7 @@ dependencies {
     implementation("dev.tamboui:tamboui-toolkit")
 
     // JLine backend (required)
-    implementation("dev.tamboui:tamboui-jline")
+    implementation("dev.tamboui:tamboui-jline3-backend")
 }</code></pre>
 </div>
 </div>
@@ -175,9 +175,8 @@ dependencies {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS dev.tamboui:tamboui-toolkit:LATEST
-//DEPS dev.tamboui:tamboui-jline:LATEST
-//REPOS https://central.sonatype.com/repository/maven-snapshots/
+//DEPS dev.tamboui:tamboui-toolkit:0.2.0-SNAPSHOT
+//DEPS dev.tamboui:tamboui-jline3-backend:0.2.0-SNAPSHOT
 
 // Your code here...</code></pre>
 </div>

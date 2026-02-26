@@ -66,6 +66,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#defaultStyle(dev.tamboui.style.Style)" tabindex="0">defaultStyle(Style)</a></li>
 <li><a href="#block(dev.tamboui.widgets.block.Block)" tabindex="0">block(Block)</a></li>
 <li><a href="#firstDayOfWeek(java.time.DayOfWeek)" tabindex="0">firstDayOfWeek(DayOfWeek)</a></li>
+<li><a href="#locale(java.util.Locale)" tabindex="0">locale(Locale)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -125,18 +126,23 @@ loadScripts(document, 'script');</script>
 <div class="block">Sets the first day of the week.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.Builder.html" title="class in dev.tamboui.widgets.calendar">Monthly.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#monthHeaderStyle(dev.tamboui.style.Style)" class="member-name-link">monthHeaderStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#locale(java.util.Locale)" class="member-name-link">locale</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Shows the month header with the given style.</div>
+<div class="block">Sets the locale.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.Builder.html" title="class in dev.tamboui.widgets.calendar">Monthly.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#surroundingStyle(dev.tamboui.style.Style)" class="member-name-link">surroundingStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#monthHeaderStyle(dev.tamboui.style.Style)" class="member-name-link">monthHeaderStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Shows surrounding days with the given style.</div>
+<div class="block">Shows the month header with the given style.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.Builder.html" title="class in dev.tamboui.widgets.calendar">Monthly.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weekdaysHeaderStyle(dev.tamboui.style.Style)" class="member-name-link">weekdaysHeaderStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#surroundingStyle(dev.tamboui.style.Style)" class="member-name-link">surroundingStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Shows surrounding days with the given style.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.Builder.html" title="class in dev.tamboui.widgets.calendar">Monthly.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weekdaysHeaderStyle(dev.tamboui.style.Style)" class="member-name-link">weekdaysHeaderStyle</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Shows the weekdays header with the given style.</div>
 </div>
 </div>
@@ -240,6 +246,21 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>dayOfWeek</code> - the first day of the week</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="locale(java.util.Locale)">
+<h3>locale</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Monthly.Builder.html" title="class in dev.tamboui.widgets.calendar">Monthly.Builder</a></span>&nbsp;<span class="element-name">locale</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale)</span></div>
+<div class="block">Sets the locale.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>locale</code> - the locale to be used</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

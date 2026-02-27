@@ -63,6 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#of(java.time.LocalDate,dev.tamboui.widgets.calendar.DateStyler)" tabindex="0">of(LocalDate, DateStyler)</a></li>
 <li><a href="#of(java.time.LocalDate,dev.tamboui.widgets.calendar.DateStyler,java.util.Locale)" tabindex="0">of(LocalDate, DateStyler, Locale)</a></li>
 <li><a href="#ofCurrentMonth()" tabindex="0">ofCurrentMonth()</a></li>
+<li><a href="#ofCurrentMonth(java.util.Locale)" tabindex="0">ofCurrentMonth(Locale)</a></li>
 <li><a href="#builder(java.time.LocalDate,dev.tamboui.widgets.calendar.DateStyler)" tabindex="0">builder(LocalDate, DateStyler)</a></li>
 <li><a href="#showMonthHeader(dev.tamboui.style.Style)" tabindex="0">showMonthHeader(Style)</a></li>
 <li><a href="#showWeekdaysHeader(dev.tamboui.style.Style)" tabindex="0">showWeekdaysHeader(Style)</a></li>
@@ -186,25 +187,30 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a calendar for the current month with no special styling.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofCurrentMonth(java.util.Locale)" class="member-name-link">ofCurrentMonth</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a calendar for the current month with custom locale and no special styling.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Renders this widget to the given buffer area.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showMonthHeader(dev.tamboui.style.Style)" class="member-name-link">showMonthHeader</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showMonthHeader(dev.tamboui.style.Style)" class="member-name-link">showMonthHeader</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new calendar with the month header shown.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showSurrounding(dev.tamboui.style.Style)" class="member-name-link">showSurrounding</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showSurrounding(dev.tamboui.style.Style)" class="member-name-link">showSurrounding</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new calendar with surrounding days shown.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showWeekdaysHeader(dev.tamboui.style.Style)" class="member-name-link">showWeekdaysHeader</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showWeekdaysHeader(dev.tamboui.style.Style)" class="member-name-link">showWeekdaysHeader</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new calendar with the weekdays header shown.</div>
 </div>
 </div>
@@ -267,6 +273,21 @@ Monthly calendar = Monthly.of(LocalDate.now(), events)
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">ofCurrentMonth</span>()</div>
 <div class="block">Creates a calendar for the current month with no special styling.</div>
 <dl class="notes">
+<dt>Returns:</dt>
+<dd>a new Monthly calendar for the current month</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ofCurrentMonth(java.util.Locale)">
+<h3>ofCurrentMonth</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Monthly.html" title="class in dev.tamboui.widgets.calendar">Monthly</a></span>&nbsp;<span class="element-name">ofCurrentMonth</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Locale.html" title="class or interface in java.util" class="external-link">Locale</a>&nbsp;locale)</span></div>
+<div class="block">Creates a calendar for the current month with custom locale and no special styling.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>locale</code> - the locale to be used</dd>
 <dt>Returns:</dt>
 <dd>a new Monthly calendar for the current month</dd>
 </dl>

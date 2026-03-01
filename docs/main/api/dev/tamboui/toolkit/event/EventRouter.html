@@ -71,6 +71,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#registerElement(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Rect)" tabindex="0">registerElement(Element, Rect)</a></li>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#route(dev.tamboui.tui.event.Event)" tabindex="0">route(Event)</a></li>
+<li><a href="#close()" tabindex="0">close()</a></li>
 <li><a href="#isDragging()" tabindex="0">isDragging()</a></li>
 <li><a href="#draggingElement()" tabindex="0">draggingElement()</a></li>
 <li><a href="#elementCount()" tabindex="0">elementCount()</a></li>
@@ -88,10 +89,15 @@ loadScripts(document, 'script');</script>
 <div class="inheritance">dev.tamboui.toolkit.event.EventRouter</div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+</dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">EventRouter</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
 <div class="block">Routes events to elements based on focus and position.
 <p>
 Events are routed as follows:
@@ -105,7 +111,9 @@ Events are routed as follows:
 Events can be consumed by handlers to stop propagation.
 <p>
 The router uses an <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element"><code>ElementRegistry</code></a> to track element areas by ID,
-which can be used by external systems (like effects) to look up element positions.</div>
+which can be used by external systems (like effects) to look up element positions.
+<p>
+Event routing decisions can be traced via JFR events (when enabled).</div>
 </div>
 </section>
 <section class="summary">
@@ -121,7 +129,7 @@ which can be used by external systems (like effects) to look up element position
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.toolkit.focus.FocusManager,dev.tamboui.toolkit.element.ElementRegistry)" class="member-name-link">EventRouter</a><wbr>(<a href="../focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager,
  <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new event router.</div>
+<div class="block">Creates a new event router with tracing enabled when available.</div>
 </div>
 </div>
 </section>
@@ -152,40 +160,45 @@ which can be used by external systems (like effects) to look up element position
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Clears all registered elements.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draggingElement()" class="member-name-link">draggingElement</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Closes the event router and releases resources.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#draggingElement()" class="member-name-link">draggingElement</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the element being dragged.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elementCount()" class="member-name-link">elementCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elementCount()" class="member-name-link">elementCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the number of registered elements (for debugging).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elementRegistry()" class="member-name-link">elementRegistry</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elementRegistry()" class="member-name-link">elementRegistry</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the element registry used by this router.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDragging()" class="member-name-link">isDragging</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDragging()" class="member-name-link">isDragging</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns whether a drag operation is in progress.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerElement(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Rect)" class="member-name-link">registerElement</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerElement(dev.tamboui.toolkit.element.Element,dev.tamboui.layout.Rect)" class="member-name-link">registerElement</a><wbr>(<a href="../element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&nbsp;element,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Registers an element for event routing.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeGlobalHandler(dev.tamboui.toolkit.event.GlobalEventHandler)" class="member-name-link">removeGlobalHandler</a><wbr>(<a href="GlobalEventHandler.html" title="interface in dev.tamboui.toolkit.event">GlobalEventHandler</a>&nbsp;handler)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeGlobalHandler(dev.tamboui.toolkit.event.GlobalEventHandler)" class="member-name-link">removeGlobalHandler</a><wbr>(<a href="GlobalEventHandler.html" title="interface in dev.tamboui.toolkit.event">GlobalEventHandler</a>&nbsp;handler)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes a global event handler.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#route(dev.tamboui.tui.event.Event)" class="member-name-link">route</a><wbr>(<a href="../../tui/event/Event.html" title="interface in dev.tamboui.tui.event">Event</a>&nbsp;event)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#route(dev.tamboui.tui.event.Event)" class="member-name-link">route</a><wbr>(<a href="../../tui/event/Event.html" title="interface in dev.tamboui.tui.event">Event</a>&nbsp;event)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Routes an event to the appropriate element(s).</div>
 </div>
 </div>
@@ -211,7 +224,7 @@ which can be used by external systems (like effects) to look up element position
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">EventRouter</span><wbr><span class="parameters">(<a href="../focus/FocusManager.html" title="class in dev.tamboui.toolkit.focus">FocusManager</a>&nbsp;focusManager,
  <a href="../element/ElementRegistry.html" title="class in dev.tamboui.toolkit.element">ElementRegistry</a>&nbsp;elementRegistry)</span></div>
-<div class="block">Creates a new event router.</div>
+<div class="block">Creates a new event router with tracing enabled when available.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>focusManager</code> - the focus manager for focus navigation</dd>
@@ -319,6 +332,19 @@ Global handlers are called after element routing if the event wasn't handled.</d
 <dd><code>event</code> - the event to route</dd>
 <dt>Returns:</dt>
 <dd>HANDLED if any handler handled the event, UNHANDLED otherwise</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="close()">
+<h3>close</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()</div>
+<div class="block">Closes the event router and releases resources.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 </div>
 </section>

@@ -25,6 +25,7 @@ dev.tamboui.image.capability
 dev.tamboui.image.protocol
 dev.tamboui.inline
 dev.tamboui.internal.record
+dev.tamboui.jfr
 dev.tamboui.layout
 dev.tamboui.layout.cassowary
 dev.tamboui.layout.columns
@@ -50,6 +51,7 @@ dev.tamboui.toolkit.elements
 dev.tamboui.toolkit.event
 dev.tamboui.toolkit.focus
 dev.tamboui.toolkit.id
+dev.tamboui.toolkit.jfr
 dev.tamboui.tui
 dev.tamboui.tui.bindings
 dev.tamboui.tui.bindings.processor

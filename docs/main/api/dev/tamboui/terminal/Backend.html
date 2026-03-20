@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#draw(java.lang.Iterable)" tabindex="0">draw(Iterable)</a></li>
+<li><a href="#draw(dev.tamboui.buffer.DiffResult)" tabindex="0">draw(DiffResult)</a></li>
 <li><a href="#flush()" tabindex="0">flush()</a></li>
 <li><a href="#clear()" tabindex="0">clear()</a></li>
 <li><a href="#size()" tabindex="0">size()</a></li>
@@ -77,6 +77,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#scrollDown(int)" tabindex="0">scrollDown(int)</a></li>
 <li><a href="#writeRaw(byte%5B%5D)" tabindex="0">writeRaw(byte[])</a></li>
 <li><a href="#writeRaw(java.lang.String)" tabindex="0">writeRaw(String)</a></li>
+<li><a href="#writeRaw(java.lang.CharSequence)" tabindex="0">writeRaw(CharSequence)</a></li>
 <li><a href="#onResize(java.lang.Runnable)" tabindex="0">onResize(Runnable)</a></li>
 <li><a href="#read(int)" tabindex="0">read(int)</a></li>
 <li><a href="#peek(int)" tabindex="0">peek(int)</a></li>
@@ -159,9 +160,9 @@ Implementations handle the actual terminal I/O.</div>
 <div class="block">Disables raw mode.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#draw(java.lang.Iterable)" class="member-name-link">draw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../buffer/CellUpdate.html" title="class in dev.tamboui.buffer">CellUpdate</a>&gt;&nbsp;updates)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#draw(dev.tamboui.buffer.DiffResult)" class="member-name-link">draw</a><wbr>(<a href="../buffer/DiffResult.html" title="class in dev.tamboui.buffer">DiffResult</a>&nbsp;diff)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Draws the given cell updates to the terminal.</div>
+<div class="block">Draws the given cell updates to the terminal using a Data-Oriented Design approach.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#enableMouseCapture()" class="member-name-link">enableMouseCapture</a>()</code></div>
@@ -274,8 +275,13 @@ Implementations handle the actual terminal I/O.</div>
 <div class="block">Writes raw bytes directly to the terminal output.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#writeRaw(java.lang.String)" class="member-name-link">writeRaw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;data)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#writeRaw(java.lang.CharSequence)" class="member-name-link">writeRaw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;data)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Writes a CharSequence directly to the terminal output.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#writeRaw(java.lang.String)" class="member-name-link">writeRaw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;data)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Writes a raw string directly to the terminal output.</div>
 </div>
 </div>
@@ -293,21 +299,24 @@ Implementations handle the actual terminal I/O.</div>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="draw(java.lang.Iterable)">
+<section class="detail" id="draw(dev.tamboui.buffer.DiffResult)">
 <h3>draw</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../buffer/CellUpdate.html" title="class in dev.tamboui.buffer">CellUpdate</a>&gt;&nbsp;updates)</span>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">draw</span><wbr><span class="parameters">(<a href="../buffer/DiffResult.html" title="class in dev.tamboui.buffer">DiffResult</a>&nbsp;diff)</span>
    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Draws the given cell updates to the terminal.</div>
+<div class="block">Draws the given cell updates to the terminal using a Data-Oriented Design approach.
+<p>
+This is the primary rendering method, optimized for zero allocations with parallel arrays.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>updates</code> - the cell updates to draw</dd>
+<dd><code>diff</code> - the diff result containing cell updates in Structure-of-Arrays format</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if drawing fails</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="AbstractBackend.html" title="class in dev.tamboui.terminal"><code>AbstractBackend</code></a></li>
+<li><a href="../buffer/DiffResult.html" title="class in dev.tamboui.buffer"><code>DiffResult</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -565,6 +574,23 @@ This is a convenience method for protocols that work with ASCII escape sequences
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>data</code> - the string to write</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if writing fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="writeRaw(java.lang.CharSequence)">
+<h3>writeRaw</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeRaw</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;data)</span>
+               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Writes a CharSequence directly to the terminal output.
+The default implementation converts to String.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - the CharSequence to write</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if writing fails</dd>
 </dl>

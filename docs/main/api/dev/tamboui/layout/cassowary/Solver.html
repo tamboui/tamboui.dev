@@ -150,7 +150,7 @@ Fraction resolvedWidth = solver.valueOf(width);
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Solver</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new empty solver.</div>
+<div class="block">Creates a new empty solver in lenient mode (default).</div>
 </div>
 </div>
 </section>
@@ -245,7 +245,10 @@ Fraction resolvedWidth = solver.valueOf(width);
 <h3>Solver</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Solver</span>()</div>
-<div class="block">Creates a new empty solver.</div>
+<div class="block">Creates a new empty solver in lenient mode (default).
+In lenient mode, unsatisfiable REQUIRED constraints are automatically
+softened instead of throwing. Set the system property
+<code>tamboui.solver.strict</code> to <code>true</code> to disable this behavior.</div>
 </div>
 </section>
 </li>
@@ -268,7 +271,7 @@ Fraction resolvedWidth = solver.valueOf(width);
 <dd><code>constraint</code> - the constraint to add</dd>
 <dt>Throws:</dt>
 <dd><code><a href="DuplicateConstraintException.html" title="class in dev.tamboui.layout.cassowary">DuplicateConstraintException</a></code> - if the constraint already exists</dd>
-<dd><code><a href="UnsatisfiableConstraintException.html" title="class in dev.tamboui.layout.cassowary">UnsatisfiableConstraintException</a></code> - if required and unsatisfiable</dd>
+<dd><code><a href="UnsatisfiableConstraintException.html" title="class in dev.tamboui.layout.cassowary">UnsatisfiableConstraintException</a></code> - if required, unsatisfiable, and solver is in strict mode</dd>
 </dl>
 </div>
 </section>

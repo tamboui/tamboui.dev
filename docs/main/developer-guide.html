@@ -95,6 +95,7 @@
 <li><a href="#widget-design">Widget Design</a></li>
 <li><a href="#performance">Performance</a></li>
 <li><a href="#state-management">State Management</a></li>
+<li><a href="#native-image-support">Native Image Support</a></li>
 </ul>
 </li>
 <li><a href="#next-steps">Next Steps</a></li>
@@ -1052,6 +1053,12 @@ String result = CharWidth.substringByWidth("A👨‍🦲B", 3);
 <p>Consider immutable state for thread safety</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="native-image-support"><a class="anchor" href="#native-image-support"></a><a class="link" href="#native-image-support">Native Image Support</a></h3>
+<div class="paragraph">
+<p>When building a native image, you need to make sure that JFR are enabled. This is done by passing <code>--enable-monitoring=jfr</code> to the native image builder.</p>
 </div>
 </div>
 </div>

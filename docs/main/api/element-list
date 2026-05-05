@@ -33,6 +33,8 @@ dev.tamboui.layout.dock
 dev.tamboui.layout.flow
 dev.tamboui.layout.grid
 dev.tamboui.layout.stack
+dev.tamboui.markdown
+dev.tamboui.markdown.internal
 dev.tamboui.picocli
 dev.tamboui.style
 dev.tamboui.symbols.merge
@@ -52,6 +54,7 @@ dev.tamboui.toolkit.event
 dev.tamboui.toolkit.focus
 dev.tamboui.toolkit.id
 dev.tamboui.toolkit.jfr
+dev.tamboui.toolkit.markdown
 dev.tamboui.tui
 dev.tamboui.tui.bindings
 dev.tamboui.tui.bindings.processor

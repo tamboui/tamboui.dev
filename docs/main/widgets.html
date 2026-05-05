@@ -102,6 +102,11 @@
 <li><a href="#clear">Clear</a></li>
 </ul>
 </li>
+<li><a href="#markdown">Markdown</a>
+<ul class="sectlevel2">
+<li><a href="#markdownview">MarkdownView</a></li>
+</ul>
+</li>
 <li><a href="#toolkit-dsl">Using Widgets with Toolkit DSL</a></li>
 </ul>
 </div>
@@ -250,6 +255,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clear">Clear</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stateless</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Clears an area (for widget layering)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#markdownview">MarkdownView</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateless</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders CommonMark + GFM markdown (separate <code>tamboui-markdown</code> module)</p></td>
 </tr>
 </tbody>
 </table>
@@ -1723,6 +1733,34 @@ if (event.code() == KeyCode.DOWN) {
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Clear is a singleton widget with no style support
 Clear.INSTANCE.render(area, buffer);</code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="markdown"><a class="anchor" href="#markdown"></a><a class="link" href="#markdown">Markdown</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="markdownview"><a class="anchor" href="#markdownview"></a><a class="link" href="#markdownview">MarkdownView</a></h3>
+<div class="paragraph">
+<p>Renders CommonMark + GFM markdown to a buffer. Lives in its own
+<code>tamboui-markdown</code> module so consumers who do not need markdown rendering do
+not pay for the CommonMark dependency. The renderer is tolerant of partial
+input: a small sanitizer trims trailing unmatched inline markers before each
+parse, so a stream of markdown (for example produced by an LLM) can be
+displayed safely on every frame.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">MarkdownView view = MarkdownView.builder()
+    .source("# Hello\n\nThis is **markdown**.")
+    .build();
+view.render(area, buffer);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See <a href="markdown.html">Markdown Reference</a> for the full element coverage,
+streaming behaviour, and customization hooks.</p>
 </div>
 </div>
 </div>

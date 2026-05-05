@@ -73,6 +73,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#render(dev.tamboui.image.ImageData,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)" tabindex="0">render(ImageData, Rect, Buffer, OutputStream)</a></li>
 <li><a href="#requiresRawOutput()" tabindex="0">requiresRawOutput()</a></li>
+<li><a href="#handlesOwnScaling()" tabindex="0">handlesOwnScaling()</a></li>
 <li><a href="#resolution()" tabindex="0">resolution()</a></li>
 <li><a href="#name()" tabindex="0">name()</a></li>
 <li><a href="#protocolType()" tabindex="0">protocolType()</a></li>
@@ -160,32 +161,38 @@ ESC ] 1337 ; File = [arguments] : base64-data BEL
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handlesOwnScaling()" class="member-name-link">handlesOwnScaling</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns true if this protocol handles its own pixel scaling via cell dimensions
+(e.g.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a human-readable name for this protocol.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../capability/TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#protocolType()" class="member-name-link">protocolType</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../capability/TerminalImageProtocol.html" title="enum class in dev.tamboui.image.capability">TerminalImageProtocol</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#protocolType()" class="member-name-link">protocolType</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the terminal image protocol type for capability checking.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.image.ImageData,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)" class="member-name-link">render</a><wbr>(<a href="../ImageData.html" title="class in dev.tamboui.image">ImageData</a>&nbsp;image,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.image.ImageData,dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer,java.io.OutputStream)" class="member-name-link">render</a><wbr>(<a href="../ImageData.html" title="class in dev.tamboui.image">ImageData</a>&nbsp;image,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a>&nbsp;rawOutput)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Renders the image to the given terminal area.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresRawOutput()" class="member-name-link">requiresRawOutput</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#requiresRawOutput()" class="member-name-link">requiresRawOutput</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this protocol requires raw byte output.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ImageProtocol.Resolution.html" title="class in dev.tamboui.image.protocol">ImageProtocol.Resolution</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolution()" class="member-name-link">resolution</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ImageProtocol.Resolution.html" title="class in dev.tamboui.image.protocol">ImageProtocol.Resolution</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolution()" class="member-name-link">resolution</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the resolution multiplier for this protocol.</div>
 </div>
 </div>
@@ -278,6 +285,27 @@ Native protocols (Sixel, Kitty, iTerm2) return true and use rawOutput.</div>
 <dd><code><a href="ImageProtocol.html#requiresRawOutput()">requiresRawOutput</a></code>&nbsp;in interface&nbsp;<code><a href="ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></code></dd>
 <dt>Returns:</dt>
 <dd>true if raw output is required</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="handlesOwnScaling()">
+<h3>handlesOwnScaling</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">handlesOwnScaling</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ImageProtocol.html#handlesOwnScaling()">ImageProtocol</a></code></span></div>
+<div class="block">Returns true if this protocol handles its own pixel scaling via cell dimensions
+(e.g. Kitty's c=/r= or iTerm2's width=/height=).
+<p>
+Protocols that return true receive the original full-resolution image and a
+display area computed in cells. Protocols that return false (Sixel, character-based)
+receive a pre-scaled image.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ImageProtocol.html#handlesOwnScaling()">handlesOwnScaling</a></code>&nbsp;in interface&nbsp;<code><a href="ImageProtocol.html" title="interface in dev.tamboui.image.protocol">ImageProtocol</a></code></dd>
+<dt>Returns:</dt>
+<dd>true if the protocol handles scaling internally</dd>
 </dl>
 </div>
 </section>

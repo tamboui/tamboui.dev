@@ -79,6 +79,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#builder()" tabindex="0">builder()</a></li>
 <li><a href="#bordered()" tabindex="0">bordered()</a></li>
 <li><a href="#empty()" tabindex="0">empty()</a></li>
+<li><a href="#verticalChrome()" tabindex="0">verticalChrome()</a></li>
+<li><a href="#horizontalChrome()" tabindex="0">horizontalChrome()</a></li>
 <li><a href="#inner(dev.tamboui.layout.Rect)" tabindex="0">inner(Rect)</a></li>
 <li><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" tabindex="0">render(Rect, Buffer)</a></li>
 </ol>
@@ -221,16 +223,28 @@ Supports style-aware properties: <code>border-type</code>, <code>border-color</c
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an empty block with no borders.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#inner(dev.tamboui.layout.Rect)" class="member-name-link">inner</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#horizontalChrome()" class="member-name-link">horizontalChrome</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the number of columns this block reserves for chrome (left
+and right borders plus horizontal padding).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#inner(dev.tamboui.layout.Rect)" class="member-name-link">inner</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the inner area after accounting for borders, titles, and padding.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#render(dev.tamboui.layout.Rect,dev.tamboui.buffer.Buffer)" class="member-name-link">render</a><wbr>(<a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="../../buffer/Buffer.html" title="class in dev.tamboui.buffer">Buffer</a>&nbsp;buffer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Renders this widget to the given buffer area.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#verticalChrome()" class="member-name-link">verticalChrome</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the number of rows this block reserves for chrome (top and
+bottom borders, top and bottom titles, and vertical padding).</div>
 </div>
 </div>
 </div>
@@ -404,6 +418,37 @@ This property is NOT inheritable.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an empty block</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="verticalChrome()">
+<h3>verticalChrome</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">verticalChrome</span>()</div>
+<div class="block">Returns the number of rows this block reserves for chrome (top and
+bottom borders, top and bottom titles, and vertical padding). The
+inner content area of any rendered block is <code>area.height()</code>
+minus this value (clamped at 0).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>rows of vertical chrome</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="horizontalChrome()">
+<h3>horizontalChrome</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">horizontalChrome</span>()</div>
+<div class="block">Returns the number of columns this block reserves for chrome (left
+and right borders plus horizontal padding). The inner content area
+is <code>area.width()</code> minus this value (clamped at 0).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>columns of horizontal chrome</dd>
 </dl>
 </div>
 </section>

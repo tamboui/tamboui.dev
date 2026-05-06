@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<title>Demo Gallery</title>
+<title>Markdown Demos</title>
 <link rel="stylesheet" href="./_static/tamboui.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="_static/highlight/styles/github-dark.min.css">
@@ -26,22 +26,15 @@
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Demo Gallery</h1>
+<h1>Markdown Demos</h1>
 <div class="details">
 <span id="revnumber">version 0.2.1-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#widgets">Widgets</a></li>
-<li><a href="#tui">TUI</a></li>
-<li><a href="#toolkit">Toolkit</a></li>
-<li><a href="#css">CSS</a></li>
-<li><a href="#image">Image</a></li>
 <li><a href="#markdown">Markdown</a></li>
-<li><a href="#picocli">Picocli</a></li>
-<li><a href="#tfx">TFX</a></li>
-<li><a href="#other">Other</a></li>
+<li><a href="#markdown-toolkit">Markdown Toolkit</a></li>
 </ul>
 </div>
 </div>
@@ -49,65 +42,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Interactive demos of TamboUI applications. Each demo can be played, paused, and scrubbed through.</p>
-</div>
-<div class="paragraph">
-<p>Demos are organized by module. Click on a module to view its demos.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="widgets"><a class="anchor" href="#widgets"></a><a class="link" href="#widgets">Widgets</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="demos-widgets.html">View all Widgets demos</a> (20 demos)</p>
-</div>
-<div class="paragraph">
-<p>Barchart, Basic, Block, Calendar, Canvas, Chart, Collapsed Borders, Gauge, Input Form, List, Paragraph, RGB Colors, Scrollbar, Sparkline, Spinner, Table, Tabs, Todo List, Tree Widget, Wavetext</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="tui"><a class="anchor" href="#tui"></a><a class="link" href="#tui">TUI</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="demos-tui.html">View all TUI demos</a> (3 demos)</p>
-</div>
-<div class="paragraph">
-<p>Helloworld, Logo, TUI Runner</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="toolkit"><a class="anchor" href="#toolkit"></a><a class="link" href="#toolkit">Toolkit</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="demos-toolkit.html">View all Toolkit demos</a> (13 demos)</p>
-</div>
-<div class="paragraph">
-<p>Action Handler, Compact Source File, Custom Component, Emoji, Emoji List, Inline display mode using Toolkit, JTop, Layout, New Year, Text area with rich formatting, Textarea, Toolkit, Tree Demo</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="css"><a class="anchor" href="#css"></a><a class="link" href="#css">CSS</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="demos-css.html">View all CSS demos</a> (2 demos)</p>
-</div>
-<div class="paragraph">
-<p>CSS Styling, CSS Without Toolkit</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="image"><a class="anchor" href="#image"></a><a class="link" href="#image">Image</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="demos-image.html">View all Image demos</a> (1 demo)</p>
-</div>
-<div class="paragraph">
-<p>Image</p>
+<p><a href="demos.html">Back to Demo Gallery</a></p>
 </div>
 </div>
 </div>
@@ -115,44 +50,28 @@
 <h2 id="markdown"><a class="anchor" href="#markdown"></a><a class="link" href="#markdown">Markdown</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="demos-markdown.html">View all Markdown demos</a> (2 demos)</p>
+<p>Demo showcasing the markdown renderer, including simulated LLM streaming</p>
 </div>
-<div class="paragraph">
-<p>Markdown, Markdown Toolkit</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="picocli"><a class="anchor" href="#picocli"></a><a class="link" href="#picocli">Picocli</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="demos-picocli.html">View all Picocli demos</a> (1 demo)</p>
-</div>
-<div class="paragraph">
-<p>PicoCLI</p>
-</div>
+<div id="player-markdown-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/markdown-demo.cast', document.getElementById('player-markdown-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tfx"><a class="anchor" href="#tfx"></a><a class="link" href="#tfx">TFX</a></h2>
+<h2 id="markdown-toolkit"><a class="anchor" href="#markdown-toolkit"></a><a class="link" href="#markdown-toolkit">Markdown Toolkit</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="demos-tfx.html">View all TFX demos</a> (4 demos)</p>
+<p>Toolkit DSL demo for the markdown renderer with CSS-based styling</p>
 </div>
-<div class="paragraph">
-<p>TFX TUI Integration Demo, TFX Toolkit Integration Demo, TamboUI Basic Effects TFX Demo, TamboUI TFX Advanced Effects Demo</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="other"><a class="anchor" href="#other"></a><a class="link" href="#other">Other</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="demos-other.html">View all Other demos</a> (15 demos)</p>
-</div>
-<div class="paragraph">
-<p>AI Coding Assistant Demo, Dock Layout, Error Handling Demo, Export (Core), Export (Toolkit), File Manager, Flex Layout Demo, Flow Layout, Form &amp; Table Layout Demo, Grid Layout, Inline display mode using low level API demo, ListElement Demo, Module Path Demo, Ratatui Flex Layout Demo, Stack Layout</p>
-</div>
+<div id="player-markdown-toolkit-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/markdown-toolkit-demo.cast', document.getElementById('player-markdown-toolkit-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
 </div>
 </div>
 </div>

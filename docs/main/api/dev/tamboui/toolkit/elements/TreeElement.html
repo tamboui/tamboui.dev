@@ -106,6 +106,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#toggleSelected()" tabindex="0">toggleSelected()</a></li>
 <li><a href="#selectFirst()" tabindex="0">selectFirst()</a></li>
 <li><a href="#selectLast()" tabindex="0">selectLast()</a></li>
+<li><a href="#lastFlatEntries()" tabindex="0">lastFlatEntries()</a></li>
 <li><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">preferredSize(int, int, RenderContext)</a></li>
 <li><a href="#styleAttributes()" tabindex="0">styleAttributes()</a></li>
 <li><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" tabindex="0">renderContent(Frame, Rect, RenderContext)</a></li>
@@ -313,103 +314,108 @@ for rendering, with guide characters showing the hierarchy.
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the indent width per depth level.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nodeRenderer(java.util.function.Function)" class="member-name-link">nodeRenderer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;, <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;?&gt;&gt;&nbsp;renderer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../../widgets/tree/TreeWidget.FlatEntry.html" title="class in dev.tamboui.widgets.tree">TreeWidget.FlatEntry</a>&lt;<a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lastFlatEntries()" class="member-name-link">lastFlatEntries</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the last rendered flat entries (for external state access).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nodeRenderer(java.util.function.Function)" class="member-name-link">nodeRenderer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;, <a href="../element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a>&lt;?&gt;&gt;&nbsp;renderer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a custom renderer for tree nodes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../element/Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredSize</a><wbr>(int&nbsp;availableWidth,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../element/Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredSize</a><wbr>(int&nbsp;availableWidth,
  int&nbsp;availableHeight,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the preferred size of this element.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#renderContent(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">renderContent</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="../element/RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Renders the content of this element.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#roots(dev.tamboui.widgets.tree.TreeNode...)" class="member-name-link">roots</a><wbr>(<a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;...&nbsp;roots)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#roots(dev.tamboui.widgets.tree.TreeNode...)" class="member-name-link">roots</a><wbr>(<a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;...&nbsp;roots)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the root nodes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rounded()" class="member-name-link">rounded</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rounded()" class="member-name-link">rounded</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Uses rounded borders.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar()" class="member-name-link">scrollbar</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar()" class="member-name-link">scrollbar</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables showing a scrollbar (always visible).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbar(dev.tamboui.widgets.common.ScrollBarPolicy)" class="member-name-link">scrollbar</a><wbr>(<a href="../../widgets/common/ScrollBarPolicy.html" title="enum class in dev.tamboui.widgets.common">ScrollBarPolicy</a>&nbsp;policy)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar policy.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarThumbColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarThumbColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarThumbColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarThumbColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar thumb color.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarTrackColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarTrackColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scrollbarTrackColor(dev.tamboui.style.Color)" class="member-name-link">scrollbarTrackColor</a><wbr>(<a href="../../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the scrollbar track color.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected()" class="member-name-link">selected</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected()" class="member-name-link">selected</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the currently selected index in the flattened visible list.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected(int)" class="member-name-link">selected</a><wbr>(int&nbsp;index)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selected(int)" class="member-name-link">selected</a><wbr>(int&nbsp;index)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the selected index in the flattened visible list.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectedNode()" class="member-name-link">selectedNode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectedNode()" class="member-name-link">selectedNode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the currently selected tree node, or <code>null</code> if the tree is empty.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectFirst()" class="member-name-link">selectFirst</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectFirst()" class="member-name-link">selectFirst</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the first visible node.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectLast()" class="member-name-link">selectLast</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectLast()" class="member-name-link">selectLast</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the last visible node.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectNext()" class="member-name-link">selectNext</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectNext()" class="member-name-link">selectNext</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the next visible node.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectPrevious()" class="member-name-link">selectPrevious</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectPrevious()" class="member-name-link">selectPrevious</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects the previous visible node.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleAttributes()" class="member-name-link">styleAttributes</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleAttributes()" class="member-name-link">styleAttributes</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the style attributes for attribute selector matching.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#title(java.lang.String)" class="member-name-link">title</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;title)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the title.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toggleSelected()" class="member-name-link">toggleSelected</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toggleSelected()" class="member-name-link">toggleSelected</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Toggles the expanded state of the selected node.</div>
 </div>
 </div>
@@ -852,6 +858,19 @@ By default, the guide style determines the indent width.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">selectLast</span>()</div>
 <div class="block">Selects the last visible node.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="lastFlatEntries()">
+<h3>lastFlatEntries</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../widgets/tree/TreeWidget.FlatEntry.html" title="class in dev.tamboui.widgets.tree">TreeWidget.FlatEntry</a>&lt;<a href="../../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;<a href="#type-param-T" title="type parameter in TreeElement">T</a>&gt;&gt;&gt;</span>&nbsp;<span class="element-name">lastFlatEntries</span>()</div>
+<div class="block">Returns the last rendered flat entries (for external state access).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the flattened entries from the last render</dd>
+</dl>
 </div>
 </section>
 </li>

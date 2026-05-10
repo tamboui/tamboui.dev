@@ -62,9 +62,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#key(dev.tamboui.tui.event.KeyCode)" tabindex="0">key(KeyCode)</a></li>
 <li><a href="#key(dev.tamboui.tui.event.KeyCode,boolean,boolean,boolean)" tabindex="0">key(KeyCode, boolean, boolean, boolean)</a></li>
 <li><a href="#ch(char)" tabindex="0">ch(char)</a></li>
+<li><a href="#ch(int)" tabindex="0">ch(int)</a></li>
 <li><a href="#chIgnoreCase(char)" tabindex="0">chIgnoreCase(char)</a></li>
+<li><a href="#chIgnoreCase(int)" tabindex="0">chIgnoreCase(int)</a></li>
 <li><a href="#ctrl(char)" tabindex="0">ctrl(char)</a></li>
+<li><a href="#ctrl(int)" tabindex="0">ctrl(int)</a></li>
 <li><a href="#alt(char)" tabindex="0">alt(char)</a></li>
+<li><a href="#alt(int)" tabindex="0">alt(int)</a></li>
 <li><a href="#matches(dev.tamboui.tui.event.Event)" tabindex="0">matches(Event)</a></li>
 <li><a href="#matchesKey(dev.tamboui.tui.event.KeyEvent)" tabindex="0">matchesKey(KeyEvent)</a></li>
 <li><a href="#describe()" tabindex="0">describe()</a></li>
@@ -137,12 +141,22 @@ KeyTrigger.key(KeyCode.TAB, false, false, true)
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alt(char)" class="member-name-link">alt</a><wbr>(char&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a trigger for Alt+character.</div>
+<div class="block">Creates a trigger for an Alt+key combination.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ch(char)" class="member-name-link">ch</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#alt(int)" class="member-name-link">alt</a><wbr>(int&nbsp;codePoint)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a trigger for an Alt+key combination.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ch(char)" class="member-name-link">ch</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a trigger for a character (case-sensitive).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ch(int)" class="member-name-link">ch</a><wbr>(int&nbsp;codePoint)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a trigger for a Unicode code point (case-sensitive).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#chIgnoreCase(char)" class="member-name-link">chIgnoreCase</a><wbr>(char&nbsp;c)</code></div>
@@ -150,9 +164,19 @@ KeyTrigger.key(KeyCode.TAB, false, false, true)
 <div class="block">Creates a trigger for a character (case-insensitive).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ctrl(char)" class="member-name-link">ctrl</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#chIgnoreCase(int)" class="member-name-link">chIgnoreCase</a><wbr>(int&nbsp;codePoint)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a trigger for Ctrl+character.</div>
+<div class="block">Creates a trigger for a Unicode code point (case-insensitive).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ctrl(char)" class="member-name-link">ctrl</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a trigger for a Ctrl+key combination.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ctrl(int)" class="member-name-link">ctrl</a><wbr>(int&nbsp;codePoint)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a trigger for a Ctrl+key combination.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#describe()" class="member-name-link">describe</a>()</code></div>
@@ -260,6 +284,21 @@ KeyTrigger.key(KeyCode.TAB, false, false, true)
 </section>
 </li>
 <li>
+<section class="detail" id="ch(int)">
+<h3>ch</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></span>&nbsp;<span class="element-name">ch</span><wbr><span class="parameters">(int&nbsp;codePoint)</span></div>
+<div class="block">Creates a trigger for a Unicode code point (case-sensitive).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the code point to match</dd>
+<dt>Returns:</dt>
+<dd>a trigger that matches the exact code point</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="chIgnoreCase(char)">
 <h3>chIgnoreCase</h3>
 <div class="horizontal-scroll">
@@ -267,9 +306,24 @@ KeyTrigger.key(KeyCode.TAB, false, false, true)
 <div class="block">Creates a trigger for a character (case-insensitive).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>c</code> - the character to match (case-insensitive)</dd>
+<dd><code>c</code> - the character to match</dd>
 <dt>Returns:</dt>
 <dd>a trigger that matches the character regardless of case</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="chIgnoreCase(int)">
+<h3>chIgnoreCase</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></span>&nbsp;<span class="element-name">chIgnoreCase</span><wbr><span class="parameters">(int&nbsp;codePoint)</span></div>
+<div class="block">Creates a trigger for a Unicode code point (case-insensitive).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the code point to match</dd>
+<dt>Returns:</dt>
+<dd>a trigger that matches the code point regardless of case</dd>
 </dl>
 </div>
 </section>
@@ -279,12 +333,27 @@ KeyTrigger.key(KeyCode.TAB, false, false, true)
 <h3>ctrl</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></span>&nbsp;<span class="element-name">ctrl</span><wbr><span class="parameters">(char&nbsp;c)</span></div>
-<div class="block">Creates a trigger for Ctrl+character.</div>
+<div class="block">Creates a trigger for a Ctrl+key combination.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>c</code> - the character</dd>
+<dd><code>c</code> - the character pressed with Ctrl</dd>
 <dt>Returns:</dt>
-<dd>a trigger that matches Ctrl+c</dd>
+<dd>a trigger that matches Ctrl + the given character</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ctrl(int)">
+<h3>ctrl</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></span>&nbsp;<span class="element-name">ctrl</span><wbr><span class="parameters">(int&nbsp;codePoint)</span></div>
+<div class="block">Creates a trigger for a Ctrl+key combination.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the code point of the key pressed with Ctrl</dd>
+<dt>Returns:</dt>
+<dd>a trigger that matches Ctrl + the given code point</dd>
 </dl>
 </div>
 </section>
@@ -294,12 +363,27 @@ KeyTrigger.key(KeyCode.TAB, false, false, true)
 <h3>alt</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></span>&nbsp;<span class="element-name">alt</span><wbr><span class="parameters">(char&nbsp;c)</span></div>
-<div class="block">Creates a trigger for Alt+character.</div>
+<div class="block">Creates a trigger for an Alt+key combination.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>c</code> - the character</dd>
+<dd><code>c</code> - the character pressed with Alt</dd>
 <dt>Returns:</dt>
-<dd>a trigger that matches Alt+c</dd>
+<dd>a trigger that matches Alt + the given character</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="alt(int)">
+<h3>alt</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></span>&nbsp;<span class="element-name">alt</span><wbr><span class="parameters">(int&nbsp;codePoint)</span></div>
+<div class="block">Creates a trigger for an Alt+key combination.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the code point of the key pressed with Alt</dd>
+<dt>Returns:</dt>
+<dd>a trigger that matches Alt + the given code point</dd>
 </dl>
 </div>
 </section>

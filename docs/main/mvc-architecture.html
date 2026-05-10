@@ -626,7 +626,7 @@ private static EventResult handleNormalMode(KeyEvent event, TodoController ctrl)
 
         public void startEditing() { editing = true; }
         public void cancelEditing() { editing = false; input.setLength(0); }
-        public void typeChar(char c) { input.append(c); }
+        public void typeChar(String s) { input.append(s); }
         public void backspace() {
             if (input.length() &gt; 0) input.setLength(input.length() - 1);
         }
@@ -708,8 +708,8 @@ private static EventResult handleNormalMode(KeyEvent event, TodoController ctrl)
         if (ctrl.isEditing()) {
             if (event.isCancel()) { ctrl.cancelEditing(); return EventResult.HANDLED; }
             if (event.isSelect()) { ctrl.submit(); return EventResult.HANDLED; }
-            if (event.code() == KeyCode.CHAR &amp;&amp; event.character() &gt;= 32) {
-                ctrl.typeChar(event.character());
+            if (event.code() == KeyCode.CHAR &amp;&amp; event.codePoint() &gt;= 32) {
+                ctrl.typeChar(event.string());
                 return EventResult.HANDLED;
             }
             if (event.code() == KeyCode.BACKSPACE) {

@@ -60,22 +60,28 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
-<li><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char)" tabindex="0">KeyEvent(KeyCode, KeyModifiers, char)</a></li>
-<li><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char,dev.tamboui.tui.bindings.Bindings)" tabindex="0">KeyEvent(KeyCode, KeyModifiers, char, Bindings)</a></li>
+<li><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int)" tabindex="0">KeyEvent(KeyCode, KeyModifiers, int)</a></li>
+<li><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int,dev.tamboui.tui.bindings.Bindings)" tabindex="0">KeyEvent(KeyCode, KeyModifiers, int, Bindings)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
 <li><a href="#ofChar(char)" tabindex="0">ofChar(char)</a></li>
+<li><a href="#ofChar(int)" tabindex="0">ofChar(int)</a></li>
 <li><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers)" tabindex="0">ofChar(char, KeyModifiers)</a></li>
+<li><a href="#ofChar(int,dev.tamboui.tui.event.KeyModifiers)" tabindex="0">ofChar(int, KeyModifiers)</a></li>
 <li><a href="#ofChar(char,dev.tamboui.tui.bindings.Bindings)" tabindex="0">ofChar(char, Bindings)</a></li>
+<li><a href="#ofChar(int,dev.tamboui.tui.bindings.Bindings)" tabindex="0">ofChar(int, Bindings)</a></li>
 <li><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" tabindex="0">ofChar(char, KeyModifiers, Bindings)</a></li>
+<li><a href="#ofChar(int,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" tabindex="0">ofChar(int, KeyModifiers, Bindings)</a></li>
 <li><a href="#ofKey(dev.tamboui.tui.event.KeyCode)" tabindex="0">ofKey(KeyCode)</a></li>
 <li><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers)" tabindex="0">ofKey(KeyCode, KeyModifiers)</a></li>
 <li><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.bindings.Bindings)" tabindex="0">ofKey(KeyCode, Bindings)</a></li>
 <li><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" tabindex="0">ofKey(KeyCode, KeyModifiers, Bindings)</a></li>
 <li><a href="#isChar(char)" tabindex="0">isChar(char)</a></li>
+<li><a href="#isChar(int)" tabindex="0">isChar(int)</a></li>
 <li><a href="#isCharIgnoreCase(char)" tabindex="0">isCharIgnoreCase(char)</a></li>
+<li><a href="#isCharIgnoreCase(int)" tabindex="0">isCharIgnoreCase(int)</a></li>
 <li><a href="#isKey(dev.tamboui.tui.event.KeyCode)" tabindex="0">isKey(KeyCode)</a></li>
 <li><a href="#hasCtrl()" tabindex="0">hasCtrl()</a></li>
 <li><a href="#hasAlt()" tabindex="0">hasAlt()</a></li>
@@ -84,6 +90,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#code()" tabindex="0">code()</a></li>
 <li><a href="#modifiers()" tabindex="0">modifiers()</a></li>
 <li><a href="#character()" tabindex="0">character()</a></li>
+<li><a href="#string()" tabindex="0">string()</a></li>
+<li><a href="#codePoint()" tabindex="0">codePoint()</a></li>
 <li><a href="#bindings()" tabindex="0">bindings()</a></li>
 <li><a href="#matches(java.lang.String)" tabindex="0">matches(String)</a></li>
 <li><a href="#action()" tabindex="0">action()</a></li>
@@ -165,15 +173,15 @@ if (event.matches("myApp.customAction")) {
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char)" class="member-name-link">KeyEvent</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int)" class="member-name-link">KeyEvent</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
- char&nbsp;character)</code></div>
+ int&nbsp;character)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a key event with the default bindings.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">KeyEvent</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">KeyEvent</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
- char&nbsp;character,
+ int&nbsp;character,
  <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a key event with specific bindings.</div>
@@ -186,7 +194,7 @@ if (event.matches("myApp.customAction")) {
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -202,46 +210,59 @@ if (event.matches("myApp.customAction")) {
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the bindings associated with this event.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>char</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#character()" class="member-name-link">character</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code> otherwise.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>char</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#character()" class="member-name-link">character</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Prefer <a href="#string()"><code>string()</code></a> for text insertion/concatenation or <a href="#isChar(char)"><code>isChar(char)</code></a>
+            for comparisons.</div>
+</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#code()" class="member-name-link">code</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the key code.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAlt()" class="member-name-link">hasAlt</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if Alt modifier was pressed.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCtrl()" class="member-name-link">hasCtrl</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#codePoint()" class="member-name-link">codePoint</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if Ctrl modifier was pressed.</div>
+<div class="block">Returns the Unicode code point for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>0</code> otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasShift()" class="member-name-link">hasShift</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasAlt()" class="member-name-link">hasAlt</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if Shift modifier was pressed.</div>
+<div class="block">Returns true if Alt modifier was pressed.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCancel()" class="member-name-link">isCancel</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasCtrl()" class="member-name-link">hasCtrl</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns true if this is a "cancel" event (Escape) according to the bindings.</div>
+<div class="block">Returns true if Ctrl modifier was pressed.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasShift()" class="member-name-link">hasShift</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns true if Shift modifier was pressed.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChar(char)" class="member-name-link">isChar</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCancel()" class="member-name-link">isCancel</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns true if this is a "cancel" event (Escape) according to the bindings.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChar(char)" class="member-name-link">isChar</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a character event matching the given character (case-sensitive).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isChar(int)" class="member-name-link">isChar</a><wbr>(int&nbsp;codePoint)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns true if this is a character event matching the given code point.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCharIgnoreCase(char)" class="member-name-link">isCharIgnoreCase</a><wbr>(char&nbsp;c)</code></div>
@@ -249,147 +270,182 @@ if (event.matches("myApp.customAction")) {
 <div class="block">Returns true if this is a character event matching the given character (case-insensitive).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConfirm()" class="member-name-link">isConfirm</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCharIgnoreCase(int)" class="member-name-link">isCharIgnoreCase</a><wbr>(int&nbsp;codePoint)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns true if this is a character event matching the given code point (case-insensitive).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConfirm()" class="member-name-link">isConfirm</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "confirm" event (Enter) according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCtrlC()" class="member-name-link">isCtrlC</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCtrlC()" class="member-name-link">isCtrlC</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a Ctrl+C event (common quit signal).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDeleteBackward()" class="member-name-link">isDeleteBackward</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDeleteBackward()" class="member-name-link">isDeleteBackward</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "delete backward" event (Backspace) according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDeleteForward()" class="member-name-link">isDeleteForward</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDeleteForward()" class="member-name-link">isDeleteForward</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "delete forward" event (Delete) according to the bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDown()" class="member-name-link">isDown</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDown()" class="member-name-link">isDown</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "down" navigation event according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEnd()" class="member-name-link">isEnd</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEnd()" class="member-name-link">isEnd</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is an "end" navigation event according to the bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusNext()" class="member-name-link">isFocusNext</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusNext()" class="member-name-link">isFocusNext</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "focus next" event (Tab) according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusPrevious()" class="member-name-link">isFocusPrevious</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusPrevious()" class="member-name-link">isFocusPrevious</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "focus previous" event (Shift+Tab) according to the bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHome()" class="member-name-link">isHome</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHome()" class="member-name-link">isHome</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "home" navigation event according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isKey(dev.tamboui.tui.event.KeyCode)" class="member-name-link">isKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;keyCode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isKey(dev.tamboui.tui.event.KeyCode)" class="member-name-link">isKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;keyCode)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a key event matching the given key code.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLeft()" class="member-name-link">isLeft</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLeft()" class="member-name-link">isLeft</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "left" navigation event according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPageDown()" class="member-name-link">isPageDown</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPageDown()" class="member-name-link">isPageDown</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "page down" navigation event according to the bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPageUp()" class="member-name-link">isPageUp</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPageUp()" class="member-name-link">isPageUp</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "page up" navigation event according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isQuit()" class="member-name-link">isQuit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isQuit()" class="member-name-link">isQuit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "quit" event according to the bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRight()" class="member-name-link">isRight</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRight()" class="member-name-link">isRight</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "right" navigation event according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelect()" class="member-name-link">isSelect</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelect()" class="member-name-link">isSelect</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is a "select" event (Enter or Space) according to the bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUp()" class="member-name-link">isUp</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUp()" class="member-name-link">isUp</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this is an "up" navigation event according to the bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(java.lang.String)" class="member-name-link">matches</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(java.lang.String)" class="member-name-link">matches</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;action)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this event matches the given action in the configured bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifiers()" class="member-name-link">modifiers</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modifiers()" class="member-name-link">modifiers</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the modifier state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a key event for a printable character with the default bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
  <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a key event for a printable character with specific bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a key event for a printable character with modifiers and the default bindings.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(char,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar</a><wbr>(char&nbsp;c,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
  <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a key event for a printable character with modifiers and specific bindings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a key event for a special key with the default bindings.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
- <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(int)" class="member-name-link">ofChar</a><wbr>(int&nbsp;codePoint)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a key event for a special key with specific bindings.</div>
+<div class="block">Creates a key event for a printable character with no modifiers and the default bindings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
- <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(int,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar</a><wbr>(int&nbsp;codePoint,
+ <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a key event for a special key with modifiers and the default bindings.</div>
+<div class="block">Creates a key event for a printable character with specific bindings.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(int,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofChar</a><wbr>(int&nbsp;codePoint,
+ <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a key event for a printable character with modifiers and the default bindings.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofChar(int,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar</a><wbr>(int&nbsp;codePoint,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
  <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a key event for a printable character with modifiers and specific bindings.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a key event for a special key with the default bindings.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
+ <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a key event for a special key with specific bindings.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
+ <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a key event for a special key with modifiers and the default bindings.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofKey(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofKey</a><wbr>(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
+ <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
+ <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a key event for a special key with modifiers and specific bindings.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#string()" class="member-name-link">string</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events as a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>, or an empty
+string otherwise.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -412,12 +468,12 @@ if (event.matches("myApp.customAction")) {
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char)">
+<section class="detail" id="&lt;init&gt;(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int)">
 <h3>KeyEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">KeyEvent</span><wbr><span class="parameters">(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
- char&nbsp;character)</span></div>
+ int&nbsp;character)</span></div>
 <div class="block">Creates a key event with the default bindings.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -429,19 +485,19 @@ if (event.matches("myApp.customAction")) {
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char,dev.tamboui.tui.bindings.Bindings)">
+<section class="detail" id="&lt;init&gt;(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int,dev.tamboui.tui.bindings.Bindings)">
 <h3>KeyEvent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">KeyEvent</span><wbr><span class="parameters">(<a href="KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a>&nbsp;code,
  <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
- char&nbsp;character,
+ int&nbsp;character,
  <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
 <div class="block">Creates a key event with specific bindings.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>code</code> - the key code (<a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> for printable characters)</dd>
 <dd><code>modifiers</code> - modifier state</dd>
-<dd><code>character</code> - the character when <code>code</code> is <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a>, otherwise ignored</dd>
+<dd><code>character</code> - the Unicode code point when <code>code</code> is <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a>, otherwise ignored</dd>
 <dd><code>bindings</code> - the bindings for semantic action matching</dd>
 </dl>
 </div>
@@ -471,6 +527,21 @@ if (event.matches("myApp.customAction")) {
 </section>
 </li>
 <li>
+<section class="detail" id="ofChar(int)">
+<h3>ofChar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></span>&nbsp;<span class="element-name">ofChar</span><wbr><span class="parameters">(int&nbsp;codePoint)</span></div>
+<div class="block">Creates a key event for a printable character with no modifiers and the default bindings.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the Unicode code point</dd>
+<dt>Returns:</dt>
+<dd>key event representing the character with no modifiers</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="ofChar(char,dev.tamboui.tui.event.KeyModifiers)">
 <h3>ofChar</h3>
 <div class="horizontal-scroll">
@@ -480,6 +551,23 @@ if (event.matches("myApp.customAction")) {
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>c</code> - the character</dd>
+<dd><code>modifiers</code> - modifier state</dd>
+<dt>Returns:</dt>
+<dd>key event representing the character</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ofChar(int,dev.tamboui.tui.event.KeyModifiers)">
+<h3>ofChar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></span>&nbsp;<span class="element-name">ofChar</span><wbr><span class="parameters">(int&nbsp;codePoint,
+ <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers)</span></div>
+<div class="block">Creates a key event for a printable character with modifiers and the default bindings.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the Unicode code point</dd>
 <dd><code>modifiers</code> - modifier state</dd>
 <dt>Returns:</dt>
 <dd>key event representing the character</dd>
@@ -505,6 +593,23 @@ if (event.matches("myApp.customAction")) {
 </section>
 </li>
 <li>
+<section class="detail" id="ofChar(int,dev.tamboui.tui.bindings.Bindings)">
+<h3>ofChar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></span>&nbsp;<span class="element-name">ofChar</span><wbr><span class="parameters">(int&nbsp;codePoint,
+ <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
+<div class="block">Creates a key event for a printable character with specific bindings.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the Unicode code point</dd>
+<dd><code>bindings</code> - the bindings for semantic action matching</dd>
+<dt>Returns:</dt>
+<dd>key event representing the character with no modifiers</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="ofChar(char,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)">
 <h3>ofChar</h3>
 <div class="horizontal-scroll">
@@ -515,6 +620,25 @@ if (event.matches("myApp.customAction")) {
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>c</code> - the character</dd>
+<dd><code>modifiers</code> - modifier state</dd>
+<dd><code>bindings</code> - the bindings for semantic action matching</dd>
+<dt>Returns:</dt>
+<dd>key event representing the character</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="ofChar(int,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)">
+<h3>ofChar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></span>&nbsp;<span class="element-name">ofChar</span><wbr><span class="parameters">(int&nbsp;codePoint,
+ <a href="KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a>&nbsp;modifiers,
+ <a href="../bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
+<div class="block">Creates a key event for a printable character with modifiers and specific bindings.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - the Unicode code point</dd>
 <dd><code>modifiers</code> - modifier state</dd>
 <dd><code>bindings</code> - the bindings for semantic action matching</dd>
 <dt>Returns:</dt>
@@ -607,6 +731,21 @@ if (event.matches("myApp.customAction")) {
 </section>
 </li>
 <li>
+<section class="detail" id="isChar(int)">
+<h3>isChar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isChar</span><wbr><span class="parameters">(int&nbsp;codePoint)</span></div>
+<div class="block">Returns true if this is a character event matching the given code point.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - code point to compare</dd>
+<dt>Returns:</dt>
+<dd>true if matches</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="isCharIgnoreCase(char)">
 <h3>isCharIgnoreCase</h3>
 <div class="horizontal-scroll">
@@ -615,6 +754,21 @@ if (event.matches("myApp.customAction")) {
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>c</code> - character to compare (case-insensitive)</dd>
+<dt>Returns:</dt>
+<dd>true if matches ignoring case</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isCharIgnoreCase(int)">
+<h3>isCharIgnoreCase</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCharIgnoreCase</span><wbr><span class="parameters">(int&nbsp;codePoint)</span></div>
+<div class="block">Returns true if this is a character event matching the given code point (case-insensitive).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>codePoint</code> - code point to compare (case-insensitive)</dd>
 <dt>Returns:</dt>
 <dd>true if matches ignoring case</dd>
 </dl>
@@ -718,11 +872,52 @@ if (event.matches("myApp.customAction")) {
 <section class="detail" id="character()">
 <h3>character</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">char</span>&nbsp;<span class="element-name">character</span>()</div>
-<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code> otherwise.</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">char</span>&nbsp;<span class="element-name">character</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Prefer <a href="#string()"><code>string()</code></a> for text insertion/concatenation or <a href="#isChar(char)"><code>isChar(char)</code></a>
+            for comparisons. <code>character()</code> cannot represent supplementary code points.</div>
+</div>
+<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events as a <code>char</code>, or <code>'\0'</code>
+otherwise. For BMP code points (U+0000–U+FFFF) this is the exact character. For
+supplementary code points (emoji, rare scripts) this returns <code>'�'</code> (replacement
+character); use <a href="#string()"><code>string()</code></a> or <a href="#codePoint()"><code>codePoint()</code></a> in those cases.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the character value</dd>
+<dd>the character, or <code>'\0'</code> for non-<a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="string()">
+<h3>string</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">string</span>()</div>
+<div class="block">Returns the character for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events as a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>, or an empty
+string otherwise. Correctly handles the full Unicode range including supplementary
+characters (emoji, etc.).
+
+<p>Use this for text insertion, display, and string concatenation.
+Use <a href="#codePoint()"><code>codePoint()</code></a> for numeric range checks.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a one- or two-<code>char</code> <code>String</code> representing the Unicode character,
+        or <code>""</code> for non-<a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="codePoint()">
+<h3>codePoint</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">codePoint</span>()</div>
+<div class="block">Returns the Unicode code point for <a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>0</code> otherwise.
+Use this when you need the numeric value for range checks or comparisons.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the Unicode code point, or <code>0</code> for non-<a href="KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events</dd>
 </dl>
 </div>
 </section>

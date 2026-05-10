@@ -507,7 +507,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#alt(char)" class="member-name-link">alt(char)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
 <dd>
-<div class="block">Creates a trigger for Alt+character.</div>
+<div class="block">Creates a trigger for an Alt+key combination.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#alt(int)" class="member-name-link">alt(int)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
+<dd>
+<div class="block">Creates a trigger for an Alt+key combination.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/KeyModifiers.html#ALT" class="member-name-link">ALT</a> - Static variable in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a></dt>
 <dd>
@@ -2604,13 +2608,20 @@ into ANSI escape sequences and delivers them to a provided output sink.</div>
 <dd>
 <div class="block">Creates a trigger for a character (case-sensitive).</div>
 </dd>
+<dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#ch(int)" class="member-name-link">ch(int)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
+<dd>
+<div class="block">Creates a trigger for a Unicode code point (case-sensitive).</div>
+</dd>
 <dt><a href="dev/tamboui/tui/event/KeyCode.html#CHAR" class="member-name-link">CHAR</a> - Enum constant in enum class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyCode.html" title="enum class in dev.tamboui.tui.event">KeyCode</a></dt>
 <dd>
 <div class="block">Regular printable character - check <a href="dev/tamboui/tui/event/KeyEvent.html#character()"><code>KeyEvent.character()</code></a></div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/KeyEvent.html#character()" class="member-name-link">character()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
 <dd>
-<div class="block">Returns the character for <a href="dev/tamboui/tui/event/KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>'\0'</code> otherwise.</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">Prefer <a href="dev/tamboui/tui/event/KeyEvent.html#string()"><code>KeyEvent.string()</code></a> for text insertion/concatenation or <a href="dev/tamboui/tui/event/KeyEvent.html#isChar(char)"><code>KeyEvent.isChar(char)</code></a>
+            for comparisons. <code>character()</code> cannot represent supplementary code points.</div>
+</div>
 </dd>
 <dt><a href="dev/tamboui/style/Width.html#chars()" class="member-name-link">chars()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/Width.html" title="class in dev.tamboui.style">Width</a></dt>
 <dd>
@@ -2707,6 +2718,10 @@ into ANSI escape sequences and delivers them to a provided output sink.</div>
 <dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#chIgnoreCase(char)" class="member-name-link">chIgnoreCase(char)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
 <dd>
 <div class="block">Creates a trigger for a character (case-insensitive).</div>
+</dd>
+<dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#chIgnoreCase(int)" class="member-name-link">chIgnoreCase(int)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
+<dd>
+<div class="block">Creates a trigger for a Unicode code point (case-insensitive).</div>
 </dd>
 <dt><a href="dev/tamboui/css/selector/ChildSelector.html#child()" class="member-name-link">child()</a> - Method in class dev.tamboui.css.selector.<a href="dev/tamboui/css/selector/ChildSelector.html" title="class in dev.tamboui.css.selector">ChildSelector</a></dt>
 <dd>
@@ -3094,6 +3109,10 @@ the ANSI reset sequence (<a href="dev/tamboui/terminal/AnsiStringBuilder.html#RE
 <dt><a href="dev/tamboui/markdown/MarkdownStyles.Builder.html#codeBlock(dev.tamboui.style.Style)" class="member-name-link">codeBlock(Style)</a> - Method in class dev.tamboui.markdown.<a href="dev/tamboui/markdown/MarkdownStyles.Builder.html" title="class in dev.tamboui.markdown">MarkdownStyles.Builder</a></dt>
 <dd>
 <div class="block">Sets the code-block style.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#codePoint()" class="member-name-link">codePoint()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Returns the Unicode code point for <a href="dev/tamboui/tui/event/KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events, or <code>0</code> otherwise.</div>
 </dd>
 <dt><a href="dev/tamboui/layout/cassowary/Term.html#coefficient()" class="member-name-link">coefficient()</a> - Method in class dev.tamboui.layout.cassowary.<a href="dev/tamboui/layout/cassowary/Term.html" title="class in dev.tamboui.layout.cassowary">Term</a></dt>
 <dd>
@@ -4069,7 +4088,11 @@ compatible with Java 8.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#ctrl(char)" class="member-name-link">ctrl(char)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
 <dd>
-<div class="block">Creates a trigger for Ctrl+character.</div>
+<div class="block">Creates a trigger for a Ctrl+key combination.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/bindings/KeyTrigger.html#ctrl(int)" class="member-name-link">ctrl(int)</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/KeyTrigger.html" title="class in dev.tamboui.tui.bindings">KeyTrigger</a></dt>
+<dd>
+<div class="block">Creates a trigger for a Ctrl+key combination.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/KeyModifiers.html#CTRL" class="member-name-link">CTRL</a> - Static variable in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyModifiers.html" title="class in dev.tamboui.tui.event">KeyModifiers</a></dt>
 <dd>
@@ -4484,19 +4507,19 @@ compatible with Java 8.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextAreaState.html#deleteBackward()" class="member-name-link">deleteBackward()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a></dt>
 <dd>
-<div class="block">Deletes the character before the cursor.</div>
+<div class="block">Deletes the grapheme cluster before the cursor.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextInputState.html#deleteBackward()" class="member-name-link">deleteBackward()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a></dt>
 <dd>
-<div class="block">Deletes the character before the cursor.</div>
+<div class="block">Deletes the grapheme cluster before the cursor.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextAreaState.html#deleteForward()" class="member-name-link">deleteForward()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a></dt>
 <dd>
-<div class="block">Deletes the character after the cursor.</div>
+<div class="block">Deletes the grapheme cluster after the cursor.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextInputState.html#deleteForward()" class="member-name-link">deleteForward()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a></dt>
 <dd>
-<div class="block">Deletes the character after the cursor.</div>
+<div class="block">Deletes the grapheme cluster after the cursor.</div>
 </dd>
 <dt><a href="dev/tamboui/backend/aesh/AeshBackend.html#deleteLines(int)" class="member-name-link">deleteLines(int)</a> - Method in class dev.tamboui.backend.aesh.<a href="dev/tamboui/backend/aesh/AeshBackend.html" title="class in dev.tamboui.backend.aesh">AeshBackend</a></dt>
 <dd>&nbsp;</dd>
@@ -9197,9 +9220,17 @@ and right borders plus horizontal padding).</div>
 <dd>
 <div class="block">Returns true if this is a character event matching the given character (case-sensitive).</div>
 </dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#isChar(int)" class="member-name-link">isChar(int)</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Returns true if this is a character event matching the given code point.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/event/KeyEvent.html#isCharIgnoreCase(char)" class="member-name-link">isCharIgnoreCase(char)</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
 <dd>
 <div class="block">Returns true if this is a character event matching the given character (case-insensitive).</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#isCharIgnoreCase(int)" class="member-name-link">isCharIgnoreCase(int)</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Returns true if this is a character event matching the given code point (case-insensitive).</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/checkbox/CheckboxState.html#isChecked()" class="member-name-link">isChecked()</a> - Method in class dev.tamboui.widgets.checkbox.<a href="dev/tamboui/widgets/checkbox/CheckboxState.html" title="class in dev.tamboui.widgets.checkbox">CheckboxState</a></dt>
 <dd>
@@ -9850,11 +9881,11 @@ indicating the child wants to explicitly inherit from parent.</div>
 <dd>
 <div class="block">Represents a keyboard input event.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/event/KeyEvent.html#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char)" class="member-name-link">KeyEvent(KeyCode, KeyModifiers, char)</a> - Constructor for class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int)" class="member-name-link">KeyEvent(KeyCode, KeyModifiers, int)</a> - Constructor for class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
 <dd>
 <div class="block">Creates a key event with the default bindings.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/event/KeyEvent.html#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,char,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">KeyEvent(KeyCode, KeyModifiers, char, Bindings)</a> - Constructor for class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#%3Cinit%3E(dev.tamboui.tui.event.KeyCode,dev.tamboui.tui.event.KeyModifiers,int,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">KeyEvent(KeyCode, KeyModifiers, int, Bindings)</a> - Constructor for class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
 <dd>
 <div class="block">Creates a key event with specific bindings.</div>
 </dd>
@@ -11391,11 +11422,11 @@ for dynamic pseudo-class resolution.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextAreaState.html#moveCursorLeft()" class="member-name-link">moveCursorLeft()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a></dt>
 <dd>
-<div class="block">Moves the cursor one position to the left.</div>
+<div class="block">Moves the cursor one grapheme cluster to the left.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextInputState.html#moveCursorLeft()" class="member-name-link">moveCursorLeft()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a></dt>
 <dd>
-<div class="block">Moves the cursor one position to the left.</div>
+<div class="block">Moves the cursor one grapheme cluster to the left.</div>
 </dd>
 <dt><a href="dev/tamboui/backend/aesh/AeshBackend.html#moveCursorLeft(int)" class="member-name-link">moveCursorLeft(int)</a> - Method in class dev.tamboui.backend.aesh.<a href="dev/tamboui/backend/aesh/AeshBackend.html" title="class in dev.tamboui.backend.aesh">AeshBackend</a></dt>
 <dd>&nbsp;</dd>
@@ -11409,11 +11440,11 @@ for dynamic pseudo-class resolution.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextAreaState.html#moveCursorRight()" class="member-name-link">moveCursorRight()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a></dt>
 <dd>
-<div class="block">Moves the cursor one position to the right.</div>
+<div class="block">Moves the cursor one grapheme cluster to the right.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/input/TextInputState.html#moveCursorRight()" class="member-name-link">moveCursorRight()</a> - Method in class dev.tamboui.widgets.input.<a href="dev/tamboui/widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a></dt>
 <dd>
-<div class="block">Moves the cursor one position to the right.</div>
+<div class="block">Moves the cursor one grapheme cluster to the right.</div>
 </dd>
 <dt><a href="dev/tamboui/backend/aesh/AeshBackend.html#moveCursorRight(int)" class="member-name-link">moveCursorRight(int)</a> - Method in class dev.tamboui.backend.aesh.<a href="dev/tamboui/backend/aesh/AeshBackend.html" title="class in dev.tamboui.backend.aesh">AeshBackend</a></dt>
 <dd>&nbsp;</dd>
@@ -12132,6 +12163,22 @@ for dynamic pseudo-class resolution.</div>
 <div class="block">Creates a key event for a printable character with modifiers and the default bindings.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/KeyEvent.html#ofChar(char,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar(char, KeyModifiers, Bindings)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Creates a key event for a printable character with modifiers and specific bindings.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#ofChar(int)" class="member-name-link">ofChar(int)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Creates a key event for a printable character with no modifiers and the default bindings.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#ofChar(int,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar(int, Bindings)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Creates a key event for a printable character with specific bindings.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#ofChar(int,dev.tamboui.tui.event.KeyModifiers)" class="member-name-link">ofChar(int, KeyModifiers)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Creates a key event for a printable character with modifiers and the default bindings.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#ofChar(int,dev.tamboui.tui.event.KeyModifiers,dev.tamboui.tui.bindings.Bindings)" class="member-name-link">ofChar(int, KeyModifiers, Bindings)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
 <dd>
 <div class="block">Creates a key event for a printable character with modifiers and specific bindings.</div>
 </dd>
@@ -17098,6 +17145,11 @@ rectangular areas using block characters.</div>
 <dt><a href="dev/tamboui/markdown/MarkdownStyles.Builder.html#strikethrough(dev.tamboui.style.Style)" class="member-name-link">strikethrough(Style)</a> - Method in class dev.tamboui.markdown.<a href="dev/tamboui/markdown/MarkdownStyles.Builder.html" title="class in dev.tamboui.markdown">MarkdownStyles.Builder</a></dt>
 <dd>
 <div class="block">Sets the strikethrough inline style.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#string()" class="member-name-link">string()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Returns the character for <a href="dev/tamboui/tui/event/KeyCode.html#CHAR"><code>KeyCode.CHAR</code></a> events as a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>, or an empty
+string otherwise.</div>
 </dd>
 <dt><a href="dev/tamboui/style/StringConverter.html" class="type-name-link" title="class in dev.tamboui.style">StringConverter</a> - Class in <a href="dev/tamboui/style/package-summary.html">dev.tamboui.style</a></dt>
 <dd>

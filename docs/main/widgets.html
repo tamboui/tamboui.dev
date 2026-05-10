@@ -1239,7 +1239,7 @@ textInput.render(area, buffer, state);
 
 // Handle key events
 if (event.code() == KeyCode.CHAR) {
-    state.insert(event.character());
+    state.insert(event.string());
 } else if (event.code() == KeyCode.BACKSPACE) {
     state.deleteBackward();
 } else if (event.code() == KeyCode.DELETE) {
@@ -1310,7 +1310,7 @@ textArea.renderWithCursor(area, buffer, state, frame);
 
 // Handle key events
 if (event.code() == KeyCode.CHAR) {
-    state.insert(event.character());
+    state.insert(event.string());
 } else if (event.code() == KeyCode.ENTER) {
     state.insert('\n');
 } else if (event.code() == KeyCode.BACKSPACE) {
@@ -1404,7 +1404,7 @@ Checkbox checkboxCustom = Checkbox.builder()
 checkbox.render(area, buffer, state);
 
 // Handle input
-if (event.code() == KeyCode.ENTER || (event.code() == KeyCode.CHAR &amp;&amp; event.character() == ' ')) {
+if (event.code() == KeyCode.ENTER || (event.isChar(' '))) {
     state.toggle();
 }</code></pre>
 </div>
@@ -1477,7 +1477,7 @@ Toggle toggleInline = Toggle.builder()
 toggle.render(area, buffer, state);
 
 // Handle input
-if (event.code() == KeyCode.ENTER || (event.code() == KeyCode.CHAR &amp;&amp; event.character() == ' ')) {
+if (event.code() == KeyCode.ENTER || (event.isChar(' '))) {
     state.toggle();
 }</code></pre>
 </div>

@@ -67,6 +67,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Use <a href="dev/tamboui/tfx/CellIterator.html#forEachCellMutable(dev.tamboui.tfx.CellIterator.CellMutator)"><code>CellIterator.forEachCellMutable(CellMutator)</code></a> instead for better performance</div>
 </div>
+<div class="col-summary-item-name odd-row-color"><a href="dev/tamboui/tui/event/KeyEvent.html#character()">dev.tamboui.tui.event.KeyEvent.character()</a></div>
+<div class="col-last odd-row-color">
+<div class="block">Prefer <a href="dev/tamboui/tui/event/KeyEvent.html#string()"><code>KeyEvent.string()</code></a> for text insertion/concatenation or <a href="dev/tamboui/tui/event/KeyEvent.html#isChar(char)"><code>KeyEvent.isChar(char)</code></a>
+            for comparisons. <code>character()</code> cannot represent supplementary code points.</div>
+</div>
 </div>
 </div>
 </li>

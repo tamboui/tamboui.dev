@@ -1340,7 +1340,7 @@ It handles keyboard and mouse events, tick-based animations, and thread-safe upd
     runner.run(
         // Event handler
         (event, r) -&gt; {
-            if (event instanceof KeyEvent key &amp;&amp; key.character() == 'q') {
+            if (event instanceof KeyEvent key &amp;&amp; key.isChar('q')) {
                 r.quit();
                 return true;
             }
@@ -1519,10 +1519,10 @@ println("Step completed");</code></pre>
         )
         .focusable()
         .onKeyEvent(event -&gt; {
-            if (event.character() == 'y' || event.character() == 'Y') {
+            if (event.isCharIgnoreCase('y')) {
                 startNextPhase();
                 return EventResult.HANDLED;
-            } else if (event.character() == 'n') {
+            } else if (event.isChar('n')) {
                 quit();
                 return EventResult.HANDLED;
             }

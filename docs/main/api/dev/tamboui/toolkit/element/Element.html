@@ -66,6 +66,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#isFocusable()" tabindex="0">isFocusable()</a></li>
 <li><a href="#id()" tabindex="0">id()</a></li>
 <li><a href="#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" tabindex="0">handleKeyEvent(KeyEvent, boolean)</a></li>
+<li><a href="#handlePasteEvent(dev.tamboui.tui.event.PasteEvent)" tabindex="0">handlePasteEvent(PasteEvent)</a></li>
 <li><a href="#handleMouseEvent(dev.tamboui.tui.event.MouseEvent)" tabindex="0">handleMouseEvent(MouseEvent)</a></li>
 <li><a href="#keyEventHandler()" tabindex="0">keyEventHandler()</a></li>
 <li><a href="#mouseEventHandler()" tabindex="0">mouseEventHandler()</a></li>
@@ -125,53 +126,58 @@ tree and can be consumed to stop propagation.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Handles a mouse event on this element.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#handlePasteEvent(dev.tamboui.tui.event.PasteEvent)" class="member-name-link">handlePasteEvent</a><wbr>(<a href="../../tui/event/PasteEvent.html" title="class in dev.tamboui.tui.event">PasteEvent</a>&nbsp;event)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Handles a paste event on this element.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the unique ID of this element, if set.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isDraggable()" class="member-name-link">isDraggable</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isDraggable()" class="member-name-link">isDraggable</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns whether this element is draggable.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isFocusable()" class="member-name-link">isFocusable</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#isFocusable()" class="member-name-link">isFocusable</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns whether this element can receive focus.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../event/KeyEventHandler.html" title="interface in dev.tamboui.toolkit.event">KeyEventHandler</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#keyEventHandler()" class="member-name-link">keyEventHandler</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../event/KeyEventHandler.html" title="interface in dev.tamboui.toolkit.event">KeyEventHandler</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#keyEventHandler()" class="member-name-link">keyEventHandler</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the key event handler, if any.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../event/MouseEventHandler.html" title="interface in dev.tamboui.toolkit.event">MouseEventHandler</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mouseEventHandler()" class="member-name-link">mouseEventHandler</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../event/MouseEventHandler.html" title="interface in dev.tamboui.toolkit.event">MouseEventHandler</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mouseEventHandler()" class="member-name-link">mouseEventHandler</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the mouse event handler, if any.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#preferredSize()" class="member-name-link">preferredSize</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#preferredSize()" class="member-name-link">preferredSize</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Convenience method for unconstrained preferred size.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredSize</a><wbr>(int&nbsp;availableWidth,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Size.html" title="class in dev.tamboui.toolkit.element">Size</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#preferredSize(int,int,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">preferredSize</a><wbr>(int&nbsp;availableWidth,
  int&nbsp;availableHeight,
  <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the preferred size of this element.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">render</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#render(dev.tamboui.terminal.Frame,dev.tamboui.layout.Rect,dev.tamboui.toolkit.element.RenderContext)" class="member-name-link">render</a><wbr>(<a href="../../terminal/Frame.html" title="class in dev.tamboui.terminal">Frame</a>&nbsp;frame,
  <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a>&nbsp;area,
  <a href="RenderContext.html" title="interface in dev.tamboui.toolkit.element">RenderContext</a>&nbsp;context)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Renders this element to the given frame within the specified area.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#renderedArea()" class="member-name-link">renderedArea</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../layout/Rect.html" title="class in dev.tamboui.layout">Rect</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#renderedArea()" class="member-name-link">renderedArea</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the last rendered area of this element.</div>
 </div>
 </div>
@@ -307,6 +313,22 @@ Override to handle key events directly on the element.</div>
 <dt>Parameters:</dt>
 <dd><code>event</code> - the key event</dd>
 <dd><code>focused</code> - whether this element is currently focused</dd>
+<dt>Returns:</dt>
+<dd>HANDLED if the event was handled, UNHANDLED otherwise</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="handlePasteEvent(dev.tamboui.tui.event.PasteEvent)">
+<h3>handlePasteEvent</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></span>&nbsp;<span class="element-name">handlePasteEvent</span><wbr><span class="parameters">(<a href="../../tui/event/PasteEvent.html" title="class in dev.tamboui.tui.event">PasteEvent</a>&nbsp;event)</span></div>
+<div class="block">Handles a paste event on this element.
+Override to receive bracketed paste content when this element is focused.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>event</code> - the paste event</dd>
 <dt>Returns:</dt>
 <dd>HANDLED if the event was handled, UNHANDLED otherwise</dd>
 </dl>

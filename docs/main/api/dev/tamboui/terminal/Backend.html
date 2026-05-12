@@ -73,6 +73,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#disableRawMode()" tabindex="0">disableRawMode()</a></li>
 <li><a href="#enableMouseCapture()" tabindex="0">enableMouseCapture()</a></li>
 <li><a href="#disableMouseCapture()" tabindex="0">disableMouseCapture()</a></li>
+<li><a href="#enableBracketedPaste()" tabindex="0">enableBracketedPaste()</a></li>
+<li><a href="#disableBracketedPaste()" tabindex="0">disableBracketedPaste()</a></li>
 <li><a href="#scrollUp(int)" tabindex="0">scrollUp(int)</a></li>
 <li><a href="#scrollDown(int)" tabindex="0">scrollDown(int)</a></li>
 <li><a href="#writeRaw(byte%5B%5D)" tabindex="0">writeRaw(byte[])</a></li>
@@ -150,19 +152,29 @@ Implementations handle the actual terminal I/O.</div>
 <div class="block">Deletes N lines at the current cursor position, pulling lines below up.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#disableMouseCapture()" class="member-name-link">disableMouseCapture</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#disableBracketedPaste()" class="member-name-link">disableBracketedPaste</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Disables bracketed paste mode (<code>ESC[?2004l</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#disableMouseCapture()" class="member-name-link">disableMouseCapture</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Disables mouse capture.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#disableRawMode()" class="member-name-link">disableRawMode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#disableRawMode()" class="member-name-link">disableRawMode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Disables raw mode.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#draw(dev.tamboui.buffer.DiffResult)" class="member-name-link">draw</a><wbr>(<a href="../buffer/DiffResult.html" title="class in dev.tamboui.buffer">DiffResult</a>&nbsp;diff)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#draw(dev.tamboui.buffer.DiffResult)" class="member-name-link">draw</a><wbr>(<a href="../buffer/DiffResult.html" title="class in dev.tamboui.buffer">DiffResult</a>&nbsp;diff)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Draws the given cell updates to the terminal using a Data-Oriented Design approach.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#enableBracketedPaste()" class="member-name-link">enableBracketedPaste</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Enables bracketed paste mode (<code>ESC[?2004h</code>).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#enableMouseCapture()" class="member-name-link">enableMouseCapture</a>()</code></div>
@@ -507,6 +519,38 @@ This is the primary rendering method, optimized for zero allocations with parall
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if disabling mouse capture fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="enableBracketedPaste()">
+<h3>enableBracketedPaste</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">enableBracketedPaste</span>()
+                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Enables bracketed paste mode (<code>ESC[?2004h</code>).
+<p>
+When active, pasted text is wrapped with <code>ESC[200~</code> / <code>ESC[201~</code>
+markers so the event parser can deliver the full paste as a single
+<code>PasteEvent</code> instead of individual key events.</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if writing to the terminal fails</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="disableBracketedPaste()">
+<h3>disableBracketedPaste</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">disableBracketedPaste</span>()
+                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Disables bracketed paste mode (<code>ESC[?2004l</code>).</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if writing to the terminal fails</dd>
 </dl>
 </div>
 </section>

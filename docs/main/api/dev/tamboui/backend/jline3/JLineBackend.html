@@ -61,6 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">JLineBackend()</a></li>
+<li><a href="#%3Cinit%3E(org.jline.terminal.Terminal)" tabindex="0">JLineBackend(Terminal)</a></li>
 </ol>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
@@ -117,7 +118,16 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">JLineBackend</span>
 <span class="extends-implements">extends <a href="../../terminal/AbstractBackend.html" title="class in dev.tamboui.terminal">AbstractBackend</a></span></div>
-<div class="block">JLine 3 based backend for terminal operations.</div>
+<div class="block">JLine 3 based backend for terminal operations.
+<p>
+Two construction modes are supported:
+<ul>
+  <li><a href="#%3Cinit%3E()"><code>JLineBackend()</code></a> — creates and owns a system terminal;
+      <a href="#close()"><code>close()</code></a> will close it.</li>
+  <li><a href="#%3Cinit%3E(org.jline.terminal.Terminal)"><code>JLineBackend(Terminal)</code></a> — uses an externally provided terminal
+      (e.g., from a JLine shell); the caller retains ownership and <a href="#close()"><code>close()</code></a>
+      will <em>not</em> close the terminal.</li>
+</ul></div>
 </div>
 </section>
 <section class="summary">
@@ -133,6 +143,10 @@ loadScripts(document, 'script');</script>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">JLineBackend</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new JLine 3 backend using the system terminal.</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.jline.terminal.Terminal)" class="member-name-link">JLineBackend</a><wbr>(org.jline.terminal.Terminal&nbsp;terminal)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Creates a new JLine 3 backend using an existing terminal.</div>
 </div>
 </div>
 </section>
@@ -161,7 +175,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Closes this backend and releases any resources.</div>
+<div class="block">Closes this backend, resetting terminal state (mouse capture, alternate screen,
+cursor visibility, raw mode).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteLines(int)" class="member-name-link">deleteLines</a><wbr>(int&nbsp;n)</code></div>
@@ -322,10 +337,29 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">JLineBackend</span>()
              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Creates a new JLine 3 backend using the system terminal.</div>
+<div class="block">Creates a new JLine 3 backend using the system terminal.
+<p>
+The backend owns the terminal and will close it when <a href="#close()"><code>close()</code></a> is called.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if the terminal cannot be opened</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(org.jline.terminal.Terminal)">
+<h3>JLineBackend</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">JLineBackend</span><wbr><span class="parameters">(org.jline.terminal.Terminal&nbsp;terminal)</span></div>
+<div class="block">Creates a new JLine 3 backend using an existing terminal.
+<p>
+The caller retains ownership of the terminal; it will not be closed
+when this backend is closed. This is useful when embedding TamboUI
+inside a host application that already owns the terminal (e.g., a JLine shell).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>terminal</code> - the JLine terminal to use</dd>
 </dl>
 </div>
 </section>
@@ -789,8 +823,12 @@ This is a convenience method for protocols that work with ASCII escape sequences
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../terminal/Backend.html#close()">Backend</a></code></span></div>
-<div class="block">Closes this backend and releases any resources.</div>
+<div class="block">Closes this backend, resetting terminal state (mouse capture, alternate screen,
+cursor visibility, raw mode).
+<p>
+If this backend owns the terminal (created via <a href="#%3Cinit%3E()"><code>JLineBackend()</code></a>), the
+terminal is closed. If an external terminal was provided via
+<a href="#%3Cinit%3E(org.jline.terminal.Terminal)"><code>JLineBackend(Terminal)</code></a>, it is left open for the caller to manage.</div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - if closing fails</dd>

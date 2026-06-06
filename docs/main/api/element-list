@@ -66,6 +66,7 @@ dev.tamboui.widget
 dev.tamboui.widgets
 dev.tamboui.widgets.barchart
 dev.tamboui.widgets.block
+dev.tamboui.widgets.braille
 dev.tamboui.widgets.calendar
 dev.tamboui.widgets.canvas
 dev.tamboui.widgets.canvas.shapes

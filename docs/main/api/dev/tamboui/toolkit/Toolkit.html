@@ -157,6 +157,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#spinner(dev.tamboui.widgets.spinner.SpinnerStyle)" tabindex="0">spinner(SpinnerStyle)</a></li>
 <li><a href="#spinner(java.lang.String)" tabindex="0">spinner(String)</a></li>
 <li><a href="#spinner(dev.tamboui.widgets.spinner.SpinnerStyle,java.lang.String)" tabindex="0">spinner(SpinnerStyle, String)</a></li>
+<li><a href="#spinner(java.lang.String...)" tabindex="0">spinner(String...)</a></li>
 <li><a href="#widget(T)" tabindex="0">widget(T)</a></li>
 <li><a href="#handleTextInputKey(dev.tamboui.widgets.input.TextInputState,dev.tamboui.tui.event.KeyEvent)" tabindex="0">handleTextInputKey(TextInputState, KeyEvent)</a></li>
 </ol>
@@ -626,100 +627,105 @@ panel("Title",
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a spinner with a label (DOTS style).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack()" class="member-name-link">stack</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#spinner(java.lang.String...)" class="member-name-link">spinner</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;frames)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates an empty stack layout.</div>
+<div class="block">Creates an animated grid element with custom frames.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack(dev.tamboui.toolkit.element.Element...)" class="member-name-link">stack</a><wbr>(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack()" class="member-name-link">stack</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a stack layout with the given children.</div>
+<div class="block">Creates an empty stack layout.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack(java.util.Collection)" class="member-name-link">stack</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack(dev.tamboui.toolkit.element.Element...)" class="member-name-link">stack</a><wbr>(<a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>...&nbsp;children)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a stack layout with the given children.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/StackElement.html" title="class in dev.tamboui.toolkit.elements">StackElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stack(java.util.Collection)" class="member-name-link">stack</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a>&gt;&nbsp;children)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a stack layout from a collection.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#table()" class="member-name-link">table</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TableElement.html" title="class in dev.tamboui.toolkit.elements">TableElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#table()" class="member-name-link">table</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an empty table.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs()" class="member-name-link">tabs</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs()" class="member-name-link">tabs</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates empty tabs.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.lang.String...)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;titles)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates tabs with the given titles.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.util.List)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;titles)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.lang.String...)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;titles)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates tabs with the given titles.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TabsElement.html" title="class in dev.tamboui.toolkit.elements">TabsElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tabs(java.util.List)" class="member-name-link">tabs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;titles)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a text element from any value (uses toString).</div>
+<div class="block">Creates tabs with the given titles.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object...)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a text element with multiple values concatenated.</div>
+<div class="block">Creates a text element from any value (uses toString).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.String)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.Object...)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>...&nbsp;values)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a text element with multiple values concatenated.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextElement.html" title="class in dev.tamboui.toolkit.elements">TextElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#text(java.lang.String)" class="member-name-link">text</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text element with the given content.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea()" class="member-name-link">textArea</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea()" class="member-name-link">textArea</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text area with a new state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea(dev.tamboui.widgets.input.TextAreaState)" class="member-name-link">textArea</a><wbr>(<a href="../widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textArea(dev.tamboui.widgets.input.TextAreaState)" class="member-name-link">textArea</a><wbr>(<a href="../widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input">TextAreaState</a>&nbsp;state)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text area with the given state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput()" class="member-name-link">textInput</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput()" class="member-name-link">textInput</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text input with a new state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(dev.tamboui.widgets.input.TextInputState)" class="member-name-link">textInput</a><wbr>(<a href="../widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&nbsp;state)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/TextInputElement.html" title="class in dev.tamboui.toolkit.elements">TextInputElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#textInput(dev.tamboui.widgets.input.TextInputState)" class="member-name-link">textInput</a><wbr>(<a href="../widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input">TextInputState</a>&nbsp;state)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a text input with the given state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="elements/TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tree()" class="member-name-link">tree</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="elements/TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tree()" class="member-name-link">tree</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an empty tree.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="elements/TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tree(dev.tamboui.widgets.tree.TreeNode...)" class="member-name-link">tree</a><wbr>(<a href="../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;T&gt;...&nbsp;roots)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="elements/TreeElement.html" title="class in dev.tamboui.toolkit.elements">TreeElement</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tree(dev.tamboui.widgets.tree.TreeNode...)" class="member-name-link">tree</a><wbr>(<a href="../widgets/tree/TreeNode.html" title="class in dev.tamboui.widgets.tree">TreeNode</a>&lt;T&gt;...&nbsp;roots)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a tree with the given root nodes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wave text element with the given text.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String,dev.tamboui.style.Color)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="elements/WaveTextElement.html" title="class in dev.tamboui.toolkit.elements">WaveTextElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#waveText(java.lang.String,dev.tamboui.style.Color)" class="member-name-link">waveText</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="../style/Color.html" title="interface in dev.tamboui.style">Color</a>&nbsp;color)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a wave text element with the given text and color.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;<br><a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#widget(T)" class="member-name-link">widget</a><wbr>(T&nbsp;widget)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T extends <a href="../widget/Widget.html" title="interface in dev.tamboui.widget">Widget</a>&gt;<br><a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements">GenericWidgetElement</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#widget(T)" class="member-name-link">widget</a><wbr>(T&nbsp;widget)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Wraps any low-level <a href="../widget/Widget.html" title="interface in dev.tamboui.widget"><code>Widget</code></a> as a <a href="elements/GenericWidgetElement.html" title="class in dev.tamboui.toolkit.elements"><code>GenericWidgetElement</code></a>.</div>
 </div>
 </div>
@@ -2281,6 +2287,26 @@ and optional grouping.
 <dd><code>label</code> - the label text</dd>
 <dt>Returns:</dt>
 <dd>a new spinner element</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="spinner(java.lang.String...)">
+<h3>spinner</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="elements/SpinnerElement.html" title="class in dev.tamboui.toolkit.elements">SpinnerElement</a></span>&nbsp;<span class="element-name">spinner</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;frames)</span></div>
+<div class="block">Creates an animated grid element with custom frames.
+<p>
+This is useful for creating custom grid-based animations using Braille characters.
+
+<pre><code>spinner("⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧").cyan()
+</code></pre></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>frames</code> - the animation frames</dd>
+<dt>Returns:</dt>
+<dd>a new spinner element with the custom frames</dd>
 </dl>
 </div>
 </section>

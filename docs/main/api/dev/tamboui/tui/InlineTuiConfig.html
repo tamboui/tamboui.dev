@@ -76,7 +76,6 @@ loadScripts(document, 'script');</script>
 <li><a href="#clearOnClose()" tabindex="0">clearOnClose()</a></li>
 <li><a href="#bracketedPaste()" tabindex="0">bracketedPaste()</a></li>
 <li><a href="#bindings()" tabindex="0">bindings()</a></li>
-<li><a href="#withBindings(dev.tamboui.tui.bindings.Bindings)" tabindex="0">withBindings(Bindings)</a></li>
 <li><a href="#scheduler()" tabindex="0">scheduler()</a></li>
 <li><a href="#toBuilder()" tabindex="0">toBuilder()</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
@@ -227,11 +226,6 @@ that stay within the normal terminal flow (no alternate screen, cursor stays vis
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withBindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">withBindings</a><wbr>(<a href="bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;newBindings)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a new InlineTuiConfig identical to this one but with different bindings.</div>
-</div>
 </div>
 </div>
 </div>
@@ -416,24 +410,6 @@ Defaults:
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the bindings</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="withBindings(dev.tamboui.tui.bindings.Bindings)">
-<h3>withBindings</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></span>&nbsp;<span class="element-name">withBindings</span><wbr><span class="parameters">(<a href="bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;newBindings)</span></div>
-<div class="block">Returns a new InlineTuiConfig identical to this one but with different bindings.
-<p>
-This is useful when the bindings need to be changed after a config has
-been created (e.g., when a higher-level builder overrides bindings).</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>newBindings</code> - the bindings to use in the new config</dd>
-<dt>Returns:</dt>
-<dd>a new InlineTuiConfig with the specified bindings</dd>
 </dl>
 </div>
 </section>

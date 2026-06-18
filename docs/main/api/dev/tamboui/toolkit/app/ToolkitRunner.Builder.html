@@ -221,9 +221,8 @@ when <a href="#withAutoBindingRegistration()"><code>withAutoBindingRegistration(
 <div class="block">Sets the TUI configuration.
 <p>
 Use this to configure terminal settings (raw mode, alternate screen,
-tick rate, mouse capture, etc.). If <a href="#bindings(dev.tamboui.tui.bindings.Bindings)"><code>bindings(Bindings)</code></a> is
-also called, those bindings take precedence over bindings in the
-config. Otherwise the config's bindings are used.</div>
+tick rate, mouse capture, etc.). All builder methods (including
+<a href="#bindings(dev.tamboui.tui.bindings.Bindings)"><code>bindings(Bindings)</code></a>) use last-write-wins semantics.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>config</code> - the configuration</dd>
@@ -238,11 +237,7 @@ config. Otherwise the config's bindings are used.</div>
 <h3>bindings</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">bindings</span><wbr><span class="parameters">(<a href="../../tui/bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
-<div class="block">Sets the bindings to use for action matching.
-<p>
-When set, these bindings take precedence over any bindings in the
-<a href="../../tui/TuiConfig.html" title="class in dev.tamboui.tui"><code>TuiConfig</code></a> set via <a href="#config(dev.tamboui.tui.TuiConfig)"><code>config(TuiConfig)</code></a>. When not
-called, the config's bindings are used as-is.</div>
+<div class="block">Sets the bindings to use for action matching.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>bindings</code> - the bindings</dd>

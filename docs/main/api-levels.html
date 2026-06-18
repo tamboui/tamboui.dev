@@ -881,6 +881,19 @@ column(
     .focusedBorderColor(Color.YELLOW);</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Titles can be aligned within the border. An explicit alignment overrides the CSS <code>text-align</code> property; when neither is set the title is left-aligned:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">panel("Centered", text("content"))
+    .titleCenter();          // also titleLeft(), titleRight(), titleAlignment(...)
+
+panel("Status", text("content"))
+    .bottomTitle("v1.0")
+    .bottomTitleAlignment(Alignment.RIGHT);</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="sizing"><a class="anchor" href="#sizing"></a><a class="link" href="#sizing">Sizing</a></h3>

@@ -64,6 +64,8 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#NINE_LEVELS" tabindex="0">NINE_LEVELS</a></li>
 <li><a href="#THREE_LEVELS" tabindex="0">THREE_LEVELS</a></li>
+<li><a href="#NINE_LEVELS_REVERSED" tabindex="0">NINE_LEVELS_REVERSED</a></li>
+<li><a href="#THREE_LEVELS_REVERSED" tabindex="0">THREE_LEVELS_REVERSED</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -73,6 +75,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#reversed()" tabindex="0">reversed()</a></li>
 <li><a href="#symbolForLevel(double)" tabindex="0">symbolForLevel(double)</a></li>
 <li><a href="#empty()" tabindex="0">empty()</a></li>
 <li><a href="#oneEighth()" tabindex="0">oneEighth()</a></li>
@@ -140,9 +143,19 @@ Contains Unicode block characters for different fill levels:
 <div class="block">Nine-level bar set with fine-grained fill levels.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#THREE_LEVELS" class="member-name-link">THREE_LEVELS</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#NINE_LEVELS_REVERSED" class="member-name-link">NINE_LEVELS_REVERSED</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">Nine-level reversed bar set for downward-growing bars.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></code></div>
+<div class="col-second even-row-color"><code><a href="#THREE_LEVELS" class="member-name-link">THREE_LEVELS</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Three-level bar set with coarse fill levels.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#THREE_LEVELS_REVERSED" class="member-name-link">THREE_LEVELS_REVERSED</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Three-level reversed bar set for downward-growing bars.</div>
 </div>
 </div>
 </section>
@@ -217,29 +230,34 @@ Contains Unicode block characters for different fill levels:
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the one-quarter fill symbol.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sevenEighths()" class="member-name-link">sevenEighths</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reversed()" class="member-name-link">reversed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the reversed bar set for downward-growing bars.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sevenEighths()" class="member-name-link">sevenEighths</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the seven-eighths fill symbol.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbolForLevel(double)" class="member-name-link">symbolForLevel</a><wbr>(double&nbsp;level)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#symbolForLevel(double)" class="member-name-link">symbolForLevel</a><wbr>(double&nbsp;level)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the symbol for the given fill level (0.0 to 1.0).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#threeEighths()" class="member-name-link">threeEighths</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#threeEighths()" class="member-name-link">threeEighths</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the three-eighths fill symbol.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#threeQuarters()" class="member-name-link">threeQuarters</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#threeQuarters()" class="member-name-link">threeQuarters</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the three-quarters fill symbol.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -263,7 +281,7 @@ Contains Unicode block characters for different fill levels:
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></span>&nbsp;<span class="element-name">NINE_LEVELS</span></div>
 <div class="block">Nine-level bar set with fine-grained fill levels.
-Uses: ▁▂▃▄▅▆▇█</div>
+Uses: ▁▂▃▄▅▆▇█ (fills from bottom of cell upward).</div>
 </div>
 </section>
 </li>
@@ -273,7 +291,30 @@ Uses: ▁▂▃▄▅▆▇█</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></span>&nbsp;<span class="element-name">THREE_LEVELS</span></div>
 <div class="block">Three-level bar set with coarse fill levels.
-Uses: ▄█ (empty, half, full)</div>
+Uses: ▄█ (empty, half, full; fills from bottom of cell upward).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="NINE_LEVELS_REVERSED">
+<h3>NINE_LEVELS_REVERSED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></span>&nbsp;<span class="element-name">NINE_LEVELS_REVERSED</span></div>
+<div class="block">Nine-level reversed bar set for downward-growing bars.
+Uses: ▔▀█ — fills from top of cell downward.
+<p>
+Unicode only defines upper one-eighth (▔) and upper half (▀) block characters,
+so intermediate levels are approximated to the nearest available symbol.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="THREE_LEVELS_REVERSED">
+<h3>THREE_LEVELS_REVERSED</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></span>&nbsp;<span class="element-name">THREE_LEVELS_REVERSED</span></div>
+<div class="block">Three-level reversed bar set for downward-growing bars.
+Uses: ▀█ (empty, half, full; fills from top of cell downward).</div>
 </div>
 </section>
 </li>
@@ -322,6 +363,25 @@ Uses: ▄█ (empty, half, full)</div>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="reversed()">
+<h3>reversed</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sparkline.BarSet.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.BarSet</a></span>&nbsp;<span class="element-name">reversed</span>()</div>
+<div class="block">Returns the reversed bar set for downward-growing bars.
+<p>
+The reversed set uses upper block characters that fill from the top of the cell
+downward, suitable for the bottom half of a dual sparkline. If this bar set
+is <a href="#NINE_LEVELS"><code>NINE_LEVELS</code></a>, returns <a href="#NINE_LEVELS_REVERSED"><code>NINE_LEVELS_REVERSED</code></a>; if <a href="#THREE_LEVELS"><code>THREE_LEVELS</code></a>,
+returns <a href="#THREE_LEVELS_REVERSED"><code>THREE_LEVELS_REVERSED</code></a>; otherwise returns <a href="#NINE_LEVELS_REVERSED"><code>NINE_LEVELS_REVERSED</code></a>
+as a best-effort default.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a bar set with symbols that fill from the top of the cell</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="symbolForLevel(double)">
 <h3>symbolForLevel</h3>

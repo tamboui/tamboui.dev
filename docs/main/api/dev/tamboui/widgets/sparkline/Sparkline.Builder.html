@@ -68,6 +68,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#block(dev.tamboui.widgets.block.Block)" tabindex="0">block(Block)</a></li>
 <li><a href="#barSet(dev.tamboui.widgets.sparkline.Sparkline.BarSet)" tabindex="0">barSet(Sparkline.BarSet)</a></li>
 <li><a href="#direction(dev.tamboui.widgets.sparkline.Sparkline.RenderDirection)" tabindex="0">direction(Sparkline.RenderDirection)</a></li>
+<li><a href="#showYAxis(boolean)" tabindex="0">showYAxis(boolean)</a></li>
+<li><a href="#xLabels(java.lang.String...)" tabindex="0">xLabels(String...)</a></li>
 <li><a href="#style(dev.tamboui.style.Style)" tabindex="0">style(Style)</a></li>
 <li><a href="#styleResolver(dev.tamboui.style.StylePropertyResolver)" tabindex="0">styleResolver(StylePropertyResolver)</a></li>
 <li><a href="#foreground(dev.tamboui.style.Color)" tabindex="0">foreground(Color)</a></li>
@@ -160,14 +162,24 @@ loadScripts(document, 'script');</script>
 <div class="block">Sets the maximum value for scaling.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style(dev.tamboui.style.Style)" class="member-name-link">style</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#showYAxis(boolean)" class="member-name-link">showYAxis</a><wbr>(boolean&nbsp;show)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the style for the sparkline bars.</div>
+<div class="block">Controls whether a Y-axis label is rendered on the left showing the maximum data value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleResolver(dev.tamboui.style.StylePropertyResolver)" class="member-name-link">styleResolver</a><wbr>(<a href="../../style/StylePropertyResolver.html" title="interface in dev.tamboui.style">StylePropertyResolver</a>&nbsp;resolver)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#style(dev.tamboui.style.Style)" class="member-name-link">style</a><wbr>(<a href="../../style/Style.html" title="class in dev.tamboui.style">Style</a>&nbsp;style)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the style for the sparkline bars.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleResolver(dev.tamboui.style.StylePropertyResolver)" class="member-name-link">styleResolver</a><wbr>(<a href="../../style/StylePropertyResolver.html" title="interface in dev.tamboui.style">StylePropertyResolver</a>&nbsp;resolver)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the property resolver for style-aware properties.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#xLabels(java.lang.String...)" class="member-name-link">xLabels</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;labels)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the x-axis labels rendered as a single row below the sparkline bars.</div>
 </div>
 </div>
 </div>
@@ -300,6 +312,43 @@ If not set, the maximum value in the data is used.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>direction</code> - the render direction</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="showYAxis(boolean)">
+<h3>showYAxis</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.Builder</a></span>&nbsp;<span class="element-name">showYAxis</span><wbr><span class="parameters">(boolean&nbsp;show)</span></div>
+<div class="block">Controls whether a Y-axis label is rendered on the left showing the maximum data value.
+The label column is 4 characters wide. Defaults to <code>false</code>.
+<p>
+When the sparkline area has only 1 row of height, the label appears on the same row as the bars.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>show</code> - whether to show the y-axis label</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="xLabels(java.lang.String...)">
+<h3>xLabels</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">Sparkline.Builder</a></span>&nbsp;<span class="element-name">xLabels</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;labels)</span></div>
+<div class="block">Sets the x-axis labels rendered as a single row below the sparkline bars. Labels are distributed
+evenly across the data range. The last label is right-aligned at its position so it does not
+overflow the right edge. Requires at least 2 rows of height (1 for bars + 1 for labels).
+<p>
+Example: <code>xLabels("-60s", "-45s", "-30s", "-15s", "now")</code></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>labels</code> - the labels, distributed left-to-right</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

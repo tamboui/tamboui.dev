@@ -82,6 +82,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#type(dev.tamboui.widgets.form.FieldType)" tabindex="0">type(FieldType)</a></li>
 <li><a href="#labelWidth(int)" tabindex="0">labelWidth(int)</a></li>
 <li><a href="#spacing(int)" tabindex="0">spacing(int)</a></li>
+<li><a href="#inputBeforeLabel(boolean)" tabindex="0">inputBeforeLabel(boolean)</a></li>
+<li><a href="#inputBeforeLabel()" tabindex="0">inputBeforeLabel()</a></li>
 <li><a href="#labelStyle(dev.tamboui.style.Style)" tabindex="0">labelStyle(Style)</a></li>
 <li><a href="#placeholder(java.lang.String)" tabindex="0">placeholder(String)</a></li>
 <li><a href="#rounded()" tabindex="0">rounded()</a></li>
@@ -277,6 +279,16 @@ formField("Email", FORM.textField("email"))
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handlePasteEvent(dev.tamboui.tui.event.PasteEvent)" class="member-name-link">handlePasteEvent</a><wbr>(<a href="../../tui/event/PasteEvent.html" title="class in dev.tamboui.tui.event">PasteEvent</a>&nbsp;event)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Handles a paste event on this element.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#inputBeforeLabel()" class="member-name-link">inputBeforeLabel</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the input to be displayed before the label ("[x] Label")</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#inputBeforeLabel(boolean)" class="member-name-link">inputBeforeLabel</a><wbr>(boolean&nbsp;inputBeforeLabel)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets if the input should be displayed before the label.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFocusable()" class="member-name-link">isFocusable</a>()</code></div>
@@ -605,6 +617,37 @@ formField("Email", FORM.textField("email"))
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>spacing</code> - the spacing in characters</dd>
+<dt>Returns:</dt>
+<dd>this element for chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="inputBeforeLabel(boolean)">
+<h3>inputBeforeLabel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></span>&nbsp;<span class="element-name">inputBeforeLabel</span><wbr><span class="parameters">(boolean&nbsp;inputBeforeLabel)</span></div>
+<div class="block">Sets if the input should be displayed before the label.
+
+For example, a checkbox with <code>inputBeforeLabel=false</code> (default) will render
+as "Label [x]" whereas <code>inputBeforeLabel=true</code> will render "[x] Label"</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>inputBeforeLabel</code> - true if the input should be before the label, false otherwise</dd>
+<dt>Returns:</dt>
+<dd>this element for chaining</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="inputBeforeLabel()">
+<h3>inputBeforeLabel</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FormFieldElement.html" title="class in dev.tamboui.toolkit.elements">FormFieldElement</a></span>&nbsp;<span class="element-name">inputBeforeLabel</span>()</div>
+<div class="block">Sets the input to be displayed before the label ("[x] Label")</div>
+<dl class="notes">
 <dt>Returns:</dt>
 <dd>this element for chaining</dd>
 </dl>

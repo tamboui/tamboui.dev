@@ -273,13 +273,16 @@ formField("PIN", pinState)
 <h4 id="boolean-fields-checkboxtoggle"><a class="anchor" href="#boolean-fields-checkboxtoggle"></a><a class="link" href="#boolean-fields-checkboxtoggle">Boolean Fields (Checkbox/Toggle)</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">BooleanFieldState subscribeState = new BooleanFieldState(false);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">BooleanFieldState state = new BooleanFieldState(false);
 
-// Checkbox style: [x] or [ ]
-formField("Subscribe", subscribeState);
+// Checkbox style: “Subscribe [x]” or “Subscribe [ ]”
+formField("Subscribe", state);
 
-// Toggle style: [ON] or [OFF]
-formField("Dark Mode", subscribeState, FieldType.TOGGLE);</code></pre>
+// Toggle style: “● Yes / ○ No”
+formField("Dark Mode", state, FieldType.TOGGLE);
+
+// Display the checkbox before the label “[x] Overdrive”
+formField("Overdrive", state).inputBeforeLabel(true);</code></pre>
 </div>
 </div>
 </div>

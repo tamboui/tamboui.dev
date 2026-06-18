@@ -60,12 +60,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">Method Summary</a></li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
+<li><a href="#config(dev.tamboui.tui.InlineTuiConfig)" tabindex="0">config(InlineTuiConfig)</a></li>
+<li><a href="#bindings(dev.tamboui.tui.bindings.Bindings)" tabindex="0">bindings(Bindings)</a></li>
+<li><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" tabindex="0">styleEngine(StyleEngine)</a></li>
 <li><a href="#tickRate(java.time.Duration)" tabindex="0">tickRate(Duration)</a></li>
 <li><a href="#noTick()" tabindex="0">noTick()</a></li>
 <li><a href="#pollTimeout(java.time.Duration)" tabindex="0">pollTimeout(Duration)</a></li>
 <li><a href="#clearOnClose(boolean)" tabindex="0">clearOnClose(boolean)</a></li>
-<li><a href="#bindings(dev.tamboui.tui.bindings.Bindings)" tabindex="0">bindings(Bindings)</a></li>
-<li><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" tabindex="0">styleEngine(StyleEngine)</a></li>
 <li><a href="#build()" tabindex="0">build()</a></li>
 </ol>
 </li>
@@ -120,23 +121,28 @@ loadScripts(document, 'script');</script>
 <div class="block">Configures whether to clear the display when closed.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noTick()" class="member-name-link">noTick</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#config(dev.tamboui.tui.InlineTuiConfig)" class="member-name-link">config</a><wbr>(<a href="../../tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a>&nbsp;config)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the inline TUI configuration.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noTick()" class="member-name-link">noTick</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Disables tick events.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pollTimeout(java.time.Duration)" class="member-name-link">pollTimeout</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;pollTimeout)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pollTimeout(java.time.Duration)" class="member-name-link">pollTimeout</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;pollTimeout)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the poll timeout.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine</a><wbr>(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine</a><wbr>(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the style engine for CSS styling.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRate(java.time.Duration)" class="member-name-link">tickRate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRate(java.time.Duration)" class="member-name-link">tickRate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the tick interval for animations.</div>
 </div>
 </div>
@@ -156,6 +162,60 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="config(dev.tamboui.tui.InlineTuiConfig)">
+<h3>config</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">config</span><wbr><span class="parameters">(<a href="../../tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a>&nbsp;config)</span></div>
+<div class="block">Sets the inline TUI configuration.
+<p>
+Use this to configure terminal settings (tick rate, poll timeout,
+clear-on-close, etc.). If <a href="#bindings(dev.tamboui.tui.bindings.Bindings)"><code>bindings(Bindings)</code></a> is also
+called, those bindings take precedence over bindings in the
+config. Otherwise the config's bindings are used.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>config</code> - the configuration</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bindings(dev.tamboui.tui.bindings.Bindings)">
+<h3>bindings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">bindings</span><wbr><span class="parameters">(<a href="../../tui/bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
+<div class="block">Sets the key bindings.
+<p>
+When set, these bindings take precedence over any bindings in the
+<a href="../../tui/InlineTuiConfig.html" title="class in dev.tamboui.tui"><code>InlineTuiConfig</code></a> set via <a href="#config(dev.tamboui.tui.InlineTuiConfig)"><code>config(InlineTuiConfig)</code></a>.
+When not called, the config's bindings are used as-is.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>bindings</code> - the bindings to use</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="styleEngine(dev.tamboui.css.engine.StyleEngine)">
+<h3>styleEngine</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">styleEngine</span><wbr><span class="parameters">(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</span></div>
+<div class="block">Sets the style engine for CSS styling.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>styleEngine</code> - the style engine</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="tickRate(java.time.Duration)">
 <h3>tickRate</h3>
@@ -208,36 +268,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>clearOnClose</code> - true to clear on close</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="bindings(dev.tamboui.tui.bindings.Bindings)">
-<h3>bindings</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">bindings</span><wbr><span class="parameters">(<a href="../../tui/bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
-<div class="block">Sets the key bindings.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>bindings</code> - the bindings to use</dd>
-<dt>Returns:</dt>
-<dd>this builder</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="styleEngine(dev.tamboui.css.engine.StyleEngine)">
-<h3>styleEngine</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">styleEngine</span><wbr><span class="parameters">(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</span></div>
-<div class="block">Sets the style engine for CSS styling.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>styleEngine</code> - the style engine</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

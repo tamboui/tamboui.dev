@@ -64,6 +64,10 @@ loadScripts(document, 'script');</script>
 <li><a href="#config(dev.tamboui.tui.TuiConfig)" tabindex="0">config(TuiConfig)</a></li>
 <li><a href="#bindings(dev.tamboui.tui.bindings.Bindings)" tabindex="0">bindings(Bindings)</a></li>
 <li><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" tabindex="0">styleEngine(StyleEngine)</a></li>
+<li><a href="#mouseCapture(boolean)" tabindex="0">mouseCapture(boolean)</a></li>
+<li><a href="#tickRate(java.time.Duration)" tabindex="0">tickRate(Duration)</a></li>
+<li><a href="#noTick()" tabindex="0">noTick()</a></li>
+<li><a href="#bracketedPaste(boolean)" tabindex="0">bracketedPaste(boolean)</a></li>
 <li><a href="#withAutoBindingRegistration()" tabindex="0">withAutoBindingRegistration()</a></li>
 <li><a href="#faultTolerant(boolean)" tabindex="0">faultTolerant(boolean)</a></li>
 <li><a href="#errorOutput(java.io.PrintStream)" tabindex="0">errorOutput(PrintStream)</a></li>
@@ -119,35 +123,55 @@ bindings, style engine, and auto-registration of annotated action handlers.</div
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the bindings to use for action matching.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bracketedPaste(boolean)" class="member-name-link">bracketedPaste</a><wbr>(boolean&nbsp;bracketedPaste)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Enables or disables bracketed paste mode.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Builds and returns a configured ToolkitRunner.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#config(dev.tamboui.tui.TuiConfig)" class="member-name-link">config</a><wbr>(<a href="../../tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a>&nbsp;config)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#config(dev.tamboui.tui.TuiConfig)" class="member-name-link">config</a><wbr>(<a href="../../tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a>&nbsp;config)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the TUI configuration.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#errorOutput(java.io.PrintStream)" class="member-name-link">errorOutput</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#errorOutput(java.io.PrintStream)" class="member-name-link">errorOutput</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link">PrintStream</a>&nbsp;errorOutput)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the output stream for error logging.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#faultTolerant(boolean)" class="member-name-link">faultTolerant</a><wbr>(boolean&nbsp;enabled)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#faultTolerant(boolean)" class="member-name-link">faultTolerant</a><wbr>(boolean&nbsp;enabled)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables or disables fault-tolerant rendering.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mouseCapture(boolean)" class="member-name-link">mouseCapture</a><wbr>(boolean&nbsp;mouseCapture)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Enables mouse capture.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postRenderProcessor(dev.tamboui.toolkit.app.ToolkitPostRenderProcessor)" class="member-name-link">postRenderProcessor</a><wbr>(<a href="ToolkitPostRenderProcessor.html" title="interface in dev.tamboui.toolkit.app">ToolkitPostRenderProcessor</a>&nbsp;processor)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noTick()" class="member-name-link">noTick</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds a post-render processor.</div>
+<div class="block">Disables tick events.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine</a><wbr>(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postRenderProcessor(dev.tamboui.toolkit.app.ToolkitPostRenderProcessor)" class="member-name-link">postRenderProcessor</a><wbr>(<a href="ToolkitPostRenderProcessor.html" title="interface in dev.tamboui.toolkit.app">ToolkitPostRenderProcessor</a>&nbsp;processor)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a post-render processor.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#styleEngine(dev.tamboui.css.engine.StyleEngine)" class="member-name-link">styleEngine</a><wbr>(<a href="../../css/engine/StyleEngine.html" title="class in dev.tamboui.css.engine">StyleEngine</a>&nbsp;styleEngine)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the style engine for CSS styling.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tickRate(java.time.Duration)" class="member-name-link">tickRate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the tick interval for animations.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withAutoBindingRegistration()" class="member-name-link">withAutoBindingRegistration</a>()</code></div>
@@ -194,7 +218,12 @@ when <a href="#withAutoBindingRegistration()"><code>withAutoBindingRegistration(
 <h3>config</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">config</span><wbr><span class="parameters">(<a href="../../tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a>&nbsp;config)</span></div>
-<div class="block">Sets the TUI configuration.</div>
+<div class="block">Sets the TUI configuration.
+<p>
+Use this to configure terminal settings (raw mode, alternate screen,
+tick rate, mouse capture, etc.). If <a href="#bindings(dev.tamboui.tui.bindings.Bindings)"><code>bindings(Bindings)</code></a> is
+also called, those bindings take precedence over bindings in the
+config. Otherwise the config's bindings are used.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>config</code> - the configuration</dd>
@@ -209,7 +238,11 @@ when <a href="#withAutoBindingRegistration()"><code>withAutoBindingRegistration(
 <h3>bindings</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">bindings</span><wbr><span class="parameters">(<a href="../../tui/bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;bindings)</span></div>
-<div class="block">Sets the bindings to use for action matching.</div>
+<div class="block">Sets the bindings to use for action matching.
+<p>
+When set, these bindings take precedence over any bindings in the
+<a href="../../tui/TuiConfig.html" title="class in dev.tamboui.tui"><code>TuiConfig</code></a> set via <a href="#config(dev.tamboui.tui.TuiConfig)"><code>config(TuiConfig)</code></a>. When not
+called, the config's bindings are used as-is.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>bindings</code> - the bindings</dd>
@@ -228,6 +261,64 @@ when <a href="#withAutoBindingRegistration()"><code>withAutoBindingRegistration(
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>styleEngine</code> - the style engine</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="mouseCapture(boolean)">
+<h3>mouseCapture</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">mouseCapture</span><wbr><span class="parameters">(boolean&nbsp;mouseCapture)</span></div>
+<div class="block">Enables mouse capture.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>mouseCapture</code> - true to capture mouse events</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="tickRate(java.time.Duration)">
+<h3>tickRate</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">tickRate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</span></div>
+<div class="block">Sets the tick interval for animations.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>tickRate</code> - the tick interval</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="noTick()">
+<h3>noTick</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">noTick</span>()</div>
+<div class="block">Disables tick events.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bracketedPaste(boolean)">
+<h3>bracketedPaste</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></span>&nbsp;<span class="element-name">bracketedPaste</span><wbr><span class="parameters">(boolean&nbsp;bracketedPaste)</span></div>
+<div class="block">Enables or disables bracketed paste mode.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>bracketedPaste</code> - true to enable bracketed paste</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

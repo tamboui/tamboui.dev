@@ -88,12 +88,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#resizeGracePeriod()" tabindex="0">resizeGracePeriod()</a></li>
 <li><a href="#shutdownHook()" tabindex="0">shutdownHook()</a></li>
 <li><a href="#bindings()" tabindex="0">bindings()</a></li>
+<li><a href="#withBindings(dev.tamboui.tui.bindings.Bindings)" tabindex="0">withBindings(Bindings)</a></li>
 <li><a href="#errorHandler()" tabindex="0">errorHandler()</a></li>
 <li><a href="#errorOutput()" tabindex="0">errorOutput()</a></li>
 <li><a href="#fpsOverlayEnabled()" tabindex="0">fpsOverlayEnabled()</a></li>
 <li><a href="#postRenderProcessors()" tabindex="0">postRenderProcessors()</a></li>
 <li><a href="#backend()" tabindex="0">backend()</a></li>
 <li><a href="#scheduler()" tabindex="0">scheduler()</a></li>
+<li><a href="#toBuilder()" tabindex="0">toBuilder()</a></li>
 <li><a href="#equals(java.lang.Object)" tabindex="0">equals(Object)</a></li>
 <li><a href="#hashCode()" tabindex="0">hashCode()</a></li>
 <li><a href="#toString()" tabindex="0">toString()</a></li>
@@ -305,13 +307,23 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if tick events are enabled.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withAnimation(java.time.Duration)" class="member-name-link">withAnimation</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toBuilder()" class="member-name-link">toBuilder</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a builder pre-populated with this config's values.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withAnimation(java.time.Duration)" class="member-name-link">withAnimation</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;tickRate)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a configuration suitable for animated applications.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withBindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">withBindings</a><wbr>(<a href="bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;newBindings)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a new TuiConfig identical to this one but with different bindings.</div>
 </div>
 </div>
 </div>
@@ -645,6 +657,24 @@ ticks are disabled or have a long interval.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="withBindings(dev.tamboui.tui.bindings.Bindings)">
+<h3>withBindings</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></span>&nbsp;<span class="element-name">withBindings</span><wbr><span class="parameters">(<a href="bindings/Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;newBindings)</span></div>
+<div class="block">Returns a new TuiConfig identical to this one but with different bindings.
+<p>
+This is useful when the bindings need to be changed after a config has
+been created (e.g., when a higher-level builder overrides bindings).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>newBindings</code> - the bindings to use in the new config</dd>
+<dt>Returns:</dt>
+<dd>a new TuiConfig with the specified bindings</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="errorHandler()">
 <h3>errorHandler</h3>
 <div class="horizontal-scroll">
@@ -735,6 +765,21 @@ the caller retains ownership and is responsible for its lifecycle.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the external scheduler, or null to use an internally-managed one</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="toBuilder()">
+<h3>toBuilder</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></span>&nbsp;<span class="element-name">toBuilder</span>()</div>
+<div class="block">Returns a builder pre-populated with this config's values.
+<p>
+This is useful for creating a modified copy of an existing config.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new builder initialized with this config's values</dd>
 </dl>
 </div>
 </section>

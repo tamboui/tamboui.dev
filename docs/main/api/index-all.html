@@ -1901,6 +1901,10 @@ into ANSI escape sequences and delivers them to a provided output sink.</div>
 <dd>
 <div class="block">Returns whether bracketed paste mode is enabled.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#bracketedPaste(boolean)" class="member-name-link">bracketedPaste(boolean)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Enables or disables bracketed paste mode.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#bracketedPaste(boolean)" class="member-name-link">bracketedPaste(boolean)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
 <dd>
 <div class="block">Sets whether to enable bracketed paste mode.</div>
@@ -3583,6 +3587,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/layout/cassowary/Strength.html#computeValue()" class="member-name-link">computeValue()</a> - Method in class dev.tamboui.layout.cassowary.<a href="dev/tamboui/layout/cassowary/Strength.html" title="class in dev.tamboui.layout.cassowary">Strength</a></dt>
 <dd>
 <div class="block">Computes the numeric value of this strength for use in the simplex objective.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#config(dev.tamboui.tui.InlineTuiConfig)" class="member-name-link">config(InlineTuiConfig)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Sets the inline TUI configuration.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#config(dev.tamboui.tui.TuiConfig)" class="member-name-link">config(TuiConfig)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
 <dd>
@@ -11601,6 +11609,10 @@ for dynamic pseudo-class resolution.</div>
 <dd>
 <div class="block">Returns whether mouse capture is enabled.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#mouseCapture(boolean)" class="member-name-link">mouseCapture(boolean)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Enables mouse capture.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#mouseCapture(boolean)" class="member-name-link">mouseCapture(boolean)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
 <dd>
 <div class="block">Sets whether to capture mouse events.</div>
@@ -12111,6 +12123,10 @@ for dynamic pseudo-class resolution.</div>
 <div class="block">Unhides text.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html#noTick()" class="member-name-link">noTick()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/InlineToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">InlineToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Disables tick events.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#noTick()" class="member-name-link">noTick()</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
 <dd>
 <div class="block">Disables tick events.</div>
 </dd>
@@ -18781,6 +18797,10 @@ respecting code point and grapheme cluster boundaries.</div>
 <dd>
 <div class="block">Sets the tick interval for animations.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html#tickRate(java.time.Duration)" class="member-name-link">tickRate(Duration)</a> - Method in class dev.tamboui.toolkit.app.<a href="dev/tamboui/toolkit/app/ToolkitRunner.Builder.html" title="class in dev.tamboui.toolkit.app">ToolkitRunner.Builder</a></dt>
+<dd>
+<div class="block">Sets the tick interval for animations.</div>
+</dd>
 <dt><a href="dev/tamboui/tui/InlineTuiConfig.Builder.html#tickRate(java.time.Duration)" class="member-name-link">tickRate(Duration)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.Builder.html" title="class in dev.tamboui.tui">InlineTuiConfig.Builder</a></dt>
 <dd>
 <div class="block">Sets the tick interval for animations.</div>
@@ -19090,6 +19110,14 @@ from each line.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/bindings/DefaultBindings.html#toBuilder()" class="member-name-link">toBuilder()</a> - Method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/DefaultBindings.html" title="class in dev.tamboui.tui.bindings">DefaultBindings</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#toBuilder()" class="member-name-link">toBuilder()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns a builder pre-populated with this config's values.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#toBuilder()" class="member-name-link">toBuilder()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dd>
+<div class="block">Returns a builder pre-populated with this config's values.</div>
+</dd>
 <dt><a href="dev/tamboui/backend/panama/ByteArrayBuilder.html#toByteArray()" class="member-name-link">toByteArray()</a> - Method in class dev.tamboui.backend.panama.<a href="dev/tamboui/backend/panama/ByteArrayBuilder.html" title="class in dev.tamboui.backend.panama">ByteArrayBuilder</a></dt>
 <dd>
 <div class="block">Creates a new byte array containing only the valid data.</div>
@@ -21274,6 +21302,14 @@ a <code>Block</code>-wrapped <code>Paragraph</code> for fenced code blocks, or a
 <dt><a href="dev/tamboui/inline/InlineDisplay.html#withBackend(int,dev.tamboui.terminal.Backend)" class="member-name-link">withBackend(int, Backend)</a> - Static method in class dev.tamboui.inline.<a href="dev/tamboui/inline/InlineDisplay.html" title="class in dev.tamboui.inline">InlineDisplay</a></dt>
 <dd>
 <div class="block">Creates an InlineDisplay with the specified height using an existing backend.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/InlineTuiConfig.html#withBindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">withBindings(Bindings)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/InlineTuiConfig.html" title="class in dev.tamboui.tui">InlineTuiConfig</a></dt>
+<dd>
+<div class="block">Returns a new InlineTuiConfig identical to this one but with different bindings.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#withBindings(dev.tamboui.tui.bindings.Bindings)" class="member-name-link">withBindings(Bindings)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dd>
+<div class="block">Returns a new TuiConfig identical to this one but with different bindings.</div>
 </dd>
 <dt><a href="dev/tamboui/tfx/pattern/RadialPattern.html#withCenter(float,float)" class="member-name-link">withCenter(float, float)</a> - Method in class dev.tamboui.tfx.pattern.<a href="dev/tamboui/tfx/pattern/RadialPattern.html" title="class in dev.tamboui.tfx.pattern">RadialPattern</a></dt>
 <dd>

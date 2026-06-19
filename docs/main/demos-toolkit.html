@@ -28,7 +28,7 @@
 <div id="header">
 <h1>Toolkit Demos</h1>
 <div class="details">
-<span id="revnumber">version 0.4.0-SNAPSHOT</span>
+<span id="revnumber">version 0.5.0-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -42,6 +42,7 @@
 <li><a href="#jtop">JTop</a></li>
 <li><a href="#layout">Layout</a></li>
 <li><a href="#new-year">New Year</a></li>
+<li><a href="#scrollable">Scrollable</a></li>
 <li><a href="#text-area-with-rich-formatting">Text area with rich formatting</a></li>
 <li><a href="#textarea">Textarea</a></li>
 <li><a href="#toolkit">Toolkit</a></li>
@@ -184,6 +185,20 @@ AsciinemaPlayer.create('demos/newyear-demo.cast', document.getElementById('playe
 </div>
 </div>
 <div class="sect1">
+<h2 id="scrollable"><a class="anchor" href="#scrollable"></a><a class="link" href="#scrollable">Scrollable</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo showing Scrollable viewport on a list</p>
+</div>
+<div id="player-scrollable-demo" class="demo-player"></div>
+<script>
+AsciinemaPlayer.create('demos/scrollable-demo.cast', document.getElementById('player-scrollable-demo'), {
+    autoPlay: true, terminalLineHeight: 1, loop: true, fit: 'width'
+});
+</script>
+</div>
+</div>
+<div class="sect1">
 <h2 id="text-area-with-rich-formatting"><a class="anchor" href="#text-area-with-rich-formatting"></a><a class="link" href="#text-area-with-rich-formatting">Text area with rich formatting</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -242,7 +257,7 @@ AsciinemaPlayer.create('demos/tree-demo.cast', document.getElementById('player-t
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.4.0-SNAPSHOT<br>
+Version 0.5.0-SNAPSHOT<br>
 </div>
 </div>
 <script src="_static/highlight/highlight.min.js"></script>

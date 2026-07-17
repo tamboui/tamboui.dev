@@ -74,6 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#barSet(dev.tamboui.widgets.sparkline.Sparkline.BarSet)" tabindex="0">barSet(Sparkline.BarSet)</a></li>
 <li><a href="#direction(dev.tamboui.widgets.sparkline.Sparkline.RenderDirection)" tabindex="0">direction(Sparkline.RenderDirection)</a></li>
 <li><a href="#showYAxis(boolean)" tabindex="0">showYAxis(boolean)</a></li>
+<li><a href="#yAxisFormatter(java.util.function.LongFunction)" tabindex="0">yAxisFormatter(LongFunction)</a></li>
 <li><a href="#xLabels(java.lang.String...)" tabindex="0">xLabels(String...)</a></li>
 <li><a href="#styleResolver(dev.tamboui.style.StylePropertyResolver)" tabindex="0">styleResolver(StylePropertyResolver)</a></li>
 <li><a href="#topForeground(dev.tamboui.style.Color)" tabindex="0">topForeground(Color)</a></li>
@@ -210,6 +211,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#xLabels(java.lang.String...)" class="member-name-link">xLabels</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>...&nbsp;labels)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the x-axis labels rendered as a single row below the chart body.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DualSparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">DualSparkline.Builder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#yAxisFormatter(java.util.function.LongFunction)" class="member-name-link">yAxisFormatter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/LongFunction.html" title="class or interface in java.util.function" class="external-link">LongFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;formatter)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets a custom formatter for Y-axis labels.</div>
 </div>
 </div>
 </div>
@@ -435,6 +441,22 @@ bottom rows and <code>0</code> at the centre row. Defaults to <code>false</code>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>show</code> - whether to show the y-axis labels</dd>
+<dt>Returns:</dt>
+<dd>this builder</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="yAxisFormatter(java.util.function.LongFunction)">
+<h3>yAxisFormatter</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DualSparkline.Builder.html" title="class in dev.tamboui.widgets.sparkline">DualSparkline.Builder</a></span>&nbsp;<span class="element-name">yAxisFormatter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/LongFunction.html" title="class or interface in java.util.function" class="external-link">LongFunction</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;formatter)</span></div>
+<div class="block">Sets a custom formatter for Y-axis labels. When set, used instead of the default integer format. The
+function receives the raw data value and should return a short label (up to 4 characters).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>formatter</code> - function mapping a data value to a label string</dd>
 <dt>Returns:</dt>
 <dd>this builder</dd>
 </dl>

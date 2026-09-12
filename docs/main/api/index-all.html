@@ -865,6 +865,14 @@ into ANSI escape sequences and delivers them to a provided output sink.</div>
 <dd>
 <div class="block">Backend interface for terminal operations.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#backendClassLoader()" class="member-name-link">backendClassLoader()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dd>
+<div class="block">Returns the classloader used exclusively for backend discovery, or null for the default.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#backendClassLoader(java.lang.ClassLoader)" class="member-name-link">backendClassLoader(ClassLoader)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Sets the classloader used exclusively for backend discovery.</div>
+</dd>
 <dt><a href="dev/tamboui/terminal/BackendException.html" class="type-name-link" title="class in dev.tamboui.terminal">BackendException</a> - Exception Class in <a href="dev/tamboui/terminal/package-summary.html">dev.tamboui.terminal</a></dt>
 <dd>
 <div class="block">Exception for backend errors.</div>
@@ -4071,6 +4079,10 @@ compatible with Java 8.</div>
 <dt><a href="dev/tamboui/tui/TuiRunner.html#create(dev.tamboui.tui.TuiConfig)" class="member-name-link">create(TuiConfig)</a> - Static method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui">TuiRunner</a></dt>
 <dd>
 <div class="block">Creates a TuiRunner with the specified configuration.</div>
+</dd>
+<dt><a href="dev/tamboui/terminal/BackendFactory.html#create(java.lang.ClassLoader)" class="member-name-link">create(ClassLoader)</a> - Static method in class dev.tamboui.terminal.<a href="dev/tamboui/terminal/BackendFactory.html" title="class in dev.tamboui.terminal">BackendFactory</a></dt>
+<dd>
+<div class="block">Creates a new backend instance, discovering providers using the given classloader.</div>
 </dd>
 <dt><a href="dev/tamboui/picocli/TuiCommand.html#createConfig()" class="member-name-link">createConfig()</a> - Method in class dev.tamboui.picocli.<a href="dev/tamboui/picocli/TuiCommand.html" title="class in dev.tamboui.picocli">TuiCommand</a></dt>
 <dd>
@@ -10889,6 +10901,10 @@ based on constraints.</div>
 <dt><a href="dev/tamboui/util/SafeServiceLoader.html#load(java.lang.Class)" class="member-name-link">load(Class)</a> - Static method in class dev.tamboui.util.<a href="dev/tamboui/util/SafeServiceLoader.html" title="class in dev.tamboui.util">SafeServiceLoader</a></dt>
 <dd>
 <div class="block">Loads providers for the given service, skipping broken providers and continuing to try other providers.</div>
+</dd>
+<dt><a href="dev/tamboui/util/SafeServiceLoader.html#load(java.lang.Class,java.lang.ClassLoader,java.util.function.Consumer)" class="member-name-link">load(Class, ClassLoader, Consumer)</a> - Static method in class dev.tamboui.util.<a href="dev/tamboui/util/SafeServiceLoader.html" title="class in dev.tamboui.util">SafeServiceLoader</a></dt>
+<dd>
+<div class="block">Loads providers for the given service across one or more classloaders.</div>
 </dd>
 <dt><a href="dev/tamboui/util/SafeServiceLoader.html#load(java.lang.Class,java.util.function.Consumer)" class="member-name-link">load(Class, Consumer)</a> - Static method in class dev.tamboui.util.<a href="dev/tamboui/util/SafeServiceLoader.html" title="class in dev.tamboui.util">SafeServiceLoader</a></dt>
 <dd>
@@ -20038,6 +20054,11 @@ from each line.</div>
 <dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,dev.tamboui.terminal.Backend,java.util.concurrent.ScheduledExecutorService)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, Backend, ScheduledExecutorService)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
 <div class="block">Creates a new TUI configuration with the specified options.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,dev.tamboui.terminal.Backend,java.util.concurrent.ScheduledExecutorService,java.lang.ClassLoader)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, Backend, ScheduledExecutorService, ClassLoader)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dd>
+<div class="block">Creates a new TUI configuration with the specified options, including an explicit
+classloader for backend discovery.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html" class="type-name-link" title="class in dev.tamboui.tui">TuiConfig.Builder</a> - Class in <a href="dev/tamboui/tui/package-summary.html">dev.tamboui.tui</a></dt>
 <dd>

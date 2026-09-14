@@ -5934,6 +5934,16 @@ from a shared centre axis.</div>
 <dd>
 <div class="block">Enables mouse capture.</div>
 </dd>
+<dt><a href="dev/tamboui/backend/aesh/AeshBackend.html#enableMouseCapture(boolean)" class="member-name-link">enableMouseCapture(boolean)</a> - Method in class dev.tamboui.backend.aesh.<a href="dev/tamboui/backend/aesh/AeshBackend.html" title="class in dev.tamboui.backend.aesh">AeshBackend</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/backend/jline3/JLineBackend.html#enableMouseCapture(boolean)" class="member-name-link">enableMouseCapture(boolean)</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackend.html" title="class in dev.tamboui.backend.jline3">JLineBackend</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/backend/panama/PanamaBackend.html#enableMouseCapture(boolean)" class="member-name-link">enableMouseCapture(boolean)</a> - Method in class dev.tamboui.backend.panama.<a href="dev/tamboui/backend/panama/PanamaBackend.html" title="class in dev.tamboui.backend.panama">PanamaBackend</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="dev/tamboui/terminal/Backend.html#enableMouseCapture(boolean)" class="member-name-link">enableMouseCapture(boolean)</a> - Method in interface dev.tamboui.terminal.<a href="dev/tamboui/terminal/Backend.html" title="interface in dev.tamboui.terminal">Backend</a></dt>
+<dd>
+<div class="block">Enables mouse capture, optionally including bare motion (hover) events.</div>
+</dd>
 <dt><a href="dev/tamboui/backend/aesh/AeshBackend.html#enableRawMode()" class="member-name-link">enableRawMode()</a> - Method in class dev.tamboui.backend.aesh.<a href="dev/tamboui/backend/aesh/AeshBackend.html" title="class in dev.tamboui.backend.aesh">AeshBackend</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/tamboui/backend/jline3/JLineBackend.html#enableRawMode()" class="member-name-link">enableRawMode()</a> - Method in class dev.tamboui.backend.jline3.<a href="dev/tamboui/backend/jline3/JLineBackend.html" title="class in dev.tamboui.backend.jline3">JLineBackend</a></dt>
@@ -11911,6 +11921,14 @@ for dynamic pseudo-class resolution.</div>
 <dt><a href="dev/tamboui/toolkit/element/StyledElement.html#mouseHandler" class="member-name-link">mouseHandler</a> - Variable in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a></dt>
 <dd>
 <div class="block">The mouse event handler for this element.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#mouseMotion()" class="member-name-link">mouseMotion()</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dd>
+<div class="block">Returns whether bare mouse motion (hover) capture is enabled.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.Builder.html#mouseMotion(boolean)" class="member-name-link">mouseMotion(boolean)</a> - Method in class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.Builder.html" title="class in dev.tamboui.tui">TuiConfig.Builder</a></dt>
+<dd>
+<div class="block">Sets whether to capture bare mouse motion (hover) events.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/bindings/MouseTrigger.html" class="type-name-link" title="class in dev.tamboui.tui.bindings">MouseTrigger</a> - Class in <a href="dev/tamboui/tui/bindings/package-summary.html">dev.tamboui.tui.bindings</a></dt>
 <dd>
@@ -20452,14 +20470,14 @@ from each line.</div>
 <dd>
 <div class="block">Configuration options for <a href="dev/tamboui/tui/TuiRunner.html" title="class in dev.tamboui.tui"><code>TuiRunner</code></a>.</div>
 </dd>
-<dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,dev.tamboui.terminal.Backend,java.util.concurrent.ScheduledExecutorService)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, Backend, ScheduledExecutorService)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
-<dd>
-<div class="block">Creates a new TUI configuration with the specified options.</div>
-</dd>
-<dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,dev.tamboui.terminal.Backend,java.util.concurrent.ScheduledExecutorService,java.lang.ClassLoader)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, Backend, ScheduledExecutorService, ClassLoader)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,dev.tamboui.terminal.Backend,java.util.concurrent.ScheduledExecutorService,java.lang.ClassLoader)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, Backend, ScheduledExecutorService, ClassLoader)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
 <dd>
 <div class="block">Creates a new TUI configuration with the specified options, including an explicit
 classloader for backend discovery.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/TuiConfig.html#%3Cinit%3E(boolean,boolean,boolean,boolean,boolean,java.time.Duration,java.time.Duration,java.time.Duration,boolean,dev.tamboui.tui.bindings.Bindings,dev.tamboui.tui.error.RenderErrorHandler,java.io.PrintStream,boolean,java.util.List,dev.tamboui.terminal.Backend,java.util.concurrent.ScheduledExecutorService)" class="member-name-link">TuiConfig(boolean, boolean, boolean, boolean, boolean, Duration, Duration, Duration, boolean, Bindings, RenderErrorHandler, PrintStream, boolean, List, Backend, ScheduledExecutorService)</a> - Constructor for class dev.tamboui.tui.<a href="dev/tamboui/tui/TuiConfig.html" title="class in dev.tamboui.tui">TuiConfig</a></dt>
+<dd>
+<div class="block">Creates a new TUI configuration with the specified options.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/TuiConfig.Builder.html" class="type-name-link" title="class in dev.tamboui.tui">TuiConfig.Builder</a> - Class in <a href="dev/tamboui/tui/package-summary.html">dev.tamboui.tui</a></dt>
 <dd>

@@ -10126,7 +10126,7 @@ indicating the child wants to explicitly inherit from parent.</div>
 </dd>
 <dt><a href="dev/tamboui/tui/event/MouseEvent.html#isScroll()" class="member-name-link">isScroll()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a></dt>
 <dd>
-<div class="block">Returns true if this is a scroll event.</div>
+<div class="block">Returns true if this is a scroll event (up, down, left, or right).</div>
 </dd>
 <dt><a href="dev/tamboui/style/RichTextState.html#isScrollable()" class="member-name-link">isScrollable()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/RichTextState.html" title="class in dev.tamboui.style">RichTextState</a></dt>
 <dd>
@@ -16021,6 +16021,22 @@ onto the terminal's title stack (<code>CSI 22;2t</code>).</div>
 <dd>
 <div class="block">Scroll down (mouse scroll wheel down).</div>
 </dd>
+<dt><a href="dev/tamboui/tui/event/MouseEventKind.html#SCROLL_LEFT" class="member-name-link">SCROLL_LEFT</a> - Enum constant in enum class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/MouseEventKind.html" title="enum class in dev.tamboui.tui.event">MouseEventKind</a></dt>
+<dd>
+<div class="block">Scroll wheel was scrolled left (horizontal tilt wheel or trackpad gesture).</div>
+</dd>
+<dt><a href="dev/tamboui/tui/bindings/Actions.html#SCROLL_LEFT" class="member-name-link">SCROLL_LEFT</a> - Static variable in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/Actions.html" title="class in dev.tamboui.tui.bindings">Actions</a></dt>
+<dd>
+<div class="block">Scroll left (mouse horizontal scroll wheel left or trackpad gesture).</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/MouseEventKind.html#SCROLL_RIGHT" class="member-name-link">SCROLL_RIGHT</a> - Enum constant in enum class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/MouseEventKind.html" title="enum class in dev.tamboui.tui.event">MouseEventKind</a></dt>
+<dd>
+<div class="block">Scroll wheel was scrolled right (horizontal tilt wheel or trackpad gesture).</div>
+</dd>
+<dt><a href="dev/tamboui/tui/bindings/Actions.html#SCROLL_RIGHT" class="member-name-link">SCROLL_RIGHT</a> - Static variable in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/Actions.html" title="class in dev.tamboui.tui.bindings">Actions</a></dt>
+<dd>
+<div class="block">Scroll right (mouse horizontal scroll wheel right or trackpad gesture).</div>
+</dd>
 <dt><a href="dev/tamboui/widgets/list/ScrollMode.html#SCROLL_TO_END" class="member-name-link">SCROLL_TO_END</a> - Enum constant in enum class dev.tamboui.widgets.list.<a href="dev/tamboui/widgets/list/ScrollMode.html" title="enum class in dev.tamboui.widgets.list">ScrollMode</a></dt>
 <dd>
 <div class="block">Always scroll to show the last items.</div>
@@ -16266,9 +16282,17 @@ are items below the current view.</div>
 <dd>
 <div class="block">Scrolls left by one column.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/bindings/MouseTrigger.html#scrollLeft()" class="member-name-link">scrollLeft()</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/MouseTrigger.html" title="class in dev.tamboui.tui.bindings">MouseTrigger</a></dt>
+<dd>
+<div class="block">Creates a trigger for scroll wheel left (horizontal tilt wheel or trackpad gesture).</div>
+</dd>
 <dt><a href="dev/tamboui/style/RichTextState.html#scrollLeft(int)" class="member-name-link">scrollLeft(int)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/RichTextState.html" title="class in dev.tamboui.style">RichTextState</a></dt>
 <dd>
 <div class="block">Scrolls left by the specified number of columns.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/MouseEvent.html#scrollLeft(int,int)" class="member-name-link">scrollLeft(int, int)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a></dt>
+<dd>
+<div class="block">Creates a scroll left event.</div>
 </dd>
 <dt><a href="dev/tamboui/widgets/list/ListWidget.Builder.html#scrollMode(dev.tamboui.widgets.list.ScrollMode)" class="member-name-link">scrollMode(ScrollMode)</a> - Method in class dev.tamboui.widgets.list.<a href="dev/tamboui/widgets/list/ListWidget.Builder.html" title="class in dev.tamboui.widgets.list">ListWidget.Builder</a></dt>
 <dd>
@@ -16286,9 +16310,17 @@ are items below the current view.</div>
 <dd>
 <div class="block">Scrolls right by one column.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/bindings/MouseTrigger.html#scrollRight()" class="member-name-link">scrollRight()</a> - Static method in class dev.tamboui.tui.bindings.<a href="dev/tamboui/tui/bindings/MouseTrigger.html" title="class in dev.tamboui.tui.bindings">MouseTrigger</a></dt>
+<dd>
+<div class="block">Creates a trigger for scroll wheel right (horizontal tilt wheel or trackpad gesture).</div>
+</dd>
 <dt><a href="dev/tamboui/style/RichTextState.html#scrollRight(int)" class="member-name-link">scrollRight(int)</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/RichTextState.html" title="class in dev.tamboui.style">RichTextState</a></dt>
 <dd>
 <div class="block">Scrolls right by the specified number of columns.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/MouseEvent.html#scrollRight(int,int)" class="member-name-link">scrollRight(int, int)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/MouseEvent.html" title="class in dev.tamboui.tui.event">MouseEvent</a></dt>
+<dd>
+<div class="block">Creates a scroll right event.</div>
 </dd>
 <dt><a href="dev/tamboui/style/RichTextState.html#scrollRow()" class="member-name-link">scrollRow()</a> - Method in class dev.tamboui.style.<a href="dev/tamboui/style/RichTextState.html" title="class in dev.tamboui.style">RichTextState</a></dt>
 <dd>

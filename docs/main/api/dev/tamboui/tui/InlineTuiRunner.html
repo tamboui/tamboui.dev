@@ -327,7 +327,10 @@ with the event handling capabilities of <a href="TuiRunner.html" title="class in
 <div class="block">Runs the main event loop with the given handler and renderer.
 <p>
 The event handler is called for each event (key, mouse, tick).
-The renderer is called to update the display when the handler returns true.</div>
+The renderer is called to update the display when the handler returns true.
+<p>
+The loop also ends, as if <a href="#quit()"><code>quit()</code></a> was called, when reading terminal
+input keeps failing.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>handler</code> - the event handler</dd>

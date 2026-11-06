@@ -8400,6 +8400,23 @@ for grid layouts.</div>
 <dd>
 <div class="block">Handles a mouse event.</div>
 </dd>
+<dt><a href="dev/tamboui/tui/event/TextEditing.html#handle(dev.tamboui.widgets.input.TextAreaState,dev.tamboui.tui.event.Event)" class="member-name-link">handle(TextAreaState, Event)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/TextEditing.html" title="class in dev.tamboui.tui.event">TextEditing</a></dt>
+<dd>
+<div class="block">Applies a key or paste event to a multi-line text area, moving Up and Down by logical line.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/TextEditing.html#handle(dev.tamboui.widgets.input.TextAreaState,dev.tamboui.tui.event.Event,dev.tamboui.style.Overflow)" class="member-name-link">handle(TextAreaState, Event, Overflow)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/TextEditing.html" title="class in dev.tamboui.tui.event">TextEditing</a></dt>
+<dd>
+<div class="block">Applies a key or paste event to a multi-line text area.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/TextEditing.html#handle(dev.tamboui.widgets.input.TextInputState,dev.tamboui.tui.event.Event)" class="member-name-link">handle(TextInputState, Event)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/TextEditing.html" title="class in dev.tamboui.tui.event">TextEditing</a></dt>
+<dd>
+<div class="block">Applies a key or paste event to a single-line text input.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/TextEditing.html#handle(dev.tamboui.widgets.input.TextInputState,dev.tamboui.tui.event.Event,java.util.function.IntPredicate)" class="member-name-link">handle(TextInputState, Event, IntPredicate)</a> - Static method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/TextEditing.html" title="class in dev.tamboui.tui.event">TextEditing</a></dt>
+<dd>
+<div class="block">Applies a key or paste event to a single-line text input, inserting only the characters
+<code>allowed</code> accepts, for example <code>Character::isDigit</code> for a number.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/event/EventResult.html#HANDLED" class="member-name-link">HANDLED</a> - Enum constant in enum class dev.tamboui.toolkit.event.<a href="dev/tamboui/toolkit/event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></dt>
 <dd>
 <div class="block">The event was handled and should not be propagated further.</div>
@@ -10480,6 +10497,10 @@ indicating the child wants to explicitly inherit from parent.</div>
 <dt><a href="dev/tamboui/backend/panama/unix/PlatformConstants.html#ISTRIP" class="member-name-link">ISTRIP</a> - Static variable in class dev.tamboui.backend.panama.unix.<a href="dev/tamboui/backend/panama/unix/PlatformConstants.html" title="class in dev.tamboui.backend.panama.unix">PlatformConstants</a></dt>
 <dd>
 <div class="block">Input flag: strip eighth bit off input characters.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/KeyEvent.html#isTyping()" class="member-name-link">isTyping()</a> - Method in class dev.tamboui.tui.event.<a href="dev/tamboui/tui/event/KeyEvent.html" title="class in dev.tamboui.tui.event">KeyEvent</a></dt>
+<dd>
+<div class="block">Returns true if this event represents a typed character that a text field should insert.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/event/EventResult.html#isUnhandled()" class="member-name-link">isUnhandled()</a> - Method in enum class dev.tamboui.toolkit.event.<a href="dev/tamboui/toolkit/event/EventResult.html" title="enum class in dev.tamboui.toolkit.event">EventResult</a></dt>
 <dd>
@@ -19475,6 +19496,14 @@ same spirit as a highlight.js or VS Code theme.</div>
 <dd>
 <div class="block">Tab key.</div>
 </dd>
+<dt><a href="dev/tamboui/toolkit/elements/TextAreaElement.html#tabIndents()" class="member-name-link">tabIndents()</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></dt>
+<dd>
+<div class="block">Makes the Tab key indent (insert spaces to the next tab stop) instead of moving focus.</div>
+</dd>
+<dt><a href="dev/tamboui/toolkit/elements/TextAreaElement.html#tabIndents(boolean)" class="member-name-link">tabIndents(boolean)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/TextAreaElement.html" title="class in dev.tamboui.toolkit.elements">TextAreaElement</a></dt>
+<dd>
+<div class="block">Sets whether the Tab key indents (inserts spaces to the next tab stop) or moves focus.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/Toolkit.html#table()" class="member-name-link">table()</a> - Static method in class dev.tamboui.toolkit.<a href="dev/tamboui/toolkit/Toolkit.html" title="class in dev.tamboui.toolkit">Toolkit</a></dt>
 <dd>
 <div class="block">Creates an empty table.</div>
@@ -19901,6 +19930,11 @@ same spirit as a highlight.js or VS Code theme.</div>
 <dd>
 <div class="block">One visually-wrapped row of a logical line: the character-offset range
 <code>[startCol, endCol)</code> of that line rendered on a single screen row.</div>
+</dd>
+<dt><a href="dev/tamboui/tui/event/TextEditing.html" class="type-name-link" title="class in dev.tamboui.tui.event">TextEditing</a> - Class in <a href="dev/tamboui/tui/event/package-summary.html">dev.tamboui.tui.event</a></dt>
+<dd>
+<div class="block">Applies key and paste events to a <a href="dev/tamboui/widgets/input/TextInputState.html" title="class in dev.tamboui.widgets.input"><code>TextInputState</code></a> or a <a href="dev/tamboui/widgets/input/TextAreaState.html" title="class in dev.tamboui.widgets.input"><code>TextAreaState</code></a>, the way the
+toolkit's text inputs and text areas edit them.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/elements/TextElement.html" class="type-name-link" title="class in dev.tamboui.toolkit.elements">TextElement</a> - Class in <a href="dev/tamboui/toolkit/elements/package-summary.html">dev.tamboui.toolkit.elements</a></dt>
 <dd>

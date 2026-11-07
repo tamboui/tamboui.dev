@@ -311,6 +311,10 @@ point resolves the host platform.</div>
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Loads bindings from a properties file.
 <p>
+The loaded bindings are based on the <a href="#standard()"><code>standard()</code></a> bindings. An action listed
+in the file gets exactly the triggers listed for it, replacing its standard triggers;
+actions the file does not list keep their standard triggers.
+<p>
 The file format uses standard Java properties:
 <pre><code># Navigation
 moveUp = Up, k, K
@@ -358,8 +362,9 @@ Mouse binding syntax:
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Loads bindings from an input stream containing properties.
 <p>
-The loaded bindings will be based on the standard bindings,
-with properties overriding/adding to them.</div>
+The loaded bindings are based on the <a href="#standard()"><code>standard()</code></a> bindings. An action listed
+in the properties gets exactly the triggers listed for it, replacing its standard
+triggers; actions not listed keep their standard triggers.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>input</code> - the input stream</dd>
@@ -384,7 +389,10 @@ with properties overriding/adding to them.</div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a></span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a>&nbsp;input,
  <a href="Bindings.html" title="interface in dev.tamboui.tui.bindings">Bindings</a>&nbsp;base)</span>
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Loads bindings from an input stream, starting with the given base bindings.</div>
+<div class="block">Loads bindings from an input stream, starting with the given base bindings.
+<p>
+An action listed in the properties gets exactly the triggers listed for it, replacing
+its triggers in <code>base</code>; actions not listed keep their triggers from <code>base</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>input</code> - the input stream</dd>

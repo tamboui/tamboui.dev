@@ -8451,14 +8451,17 @@ for grid layouts.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/ContainerElement.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent(KeyEvent, boolean)</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/ContainerElement.html" title="class in dev.tamboui.toolkit.element">ContainerElement</a></dt>
 <dd>
-<div class="block">Handles key events by first trying custom handlers, then forwarding to children.</div>
+<div class="block">Handles key events by first trying custom handlers, then, when this container is
+focused, forwarding to children.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/Element.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent(KeyEvent, boolean)</a> - Method in interface dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/Element.html" title="interface in dev.tamboui.toolkit.element">Element</a></dt>
 <dd>
 <div class="block">Handles a key event on this element.</div>
 </dd>
 <dt><a href="dev/tamboui/toolkit/element/StyledElement.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent(KeyEvent, boolean)</a> - Method in class dev.tamboui.toolkit.element.<a href="dev/tamboui/toolkit/element/StyledElement.html" title="class in dev.tamboui.toolkit.element">StyledElement</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Handles a key event by running the handler set with <a href="dev/tamboui/toolkit/element/StyledElement.html#onKeyEvent(dev.tamboui.toolkit.event.KeyEventHandler)"><code>StyledElement.onKeyEvent(KeyEventHandler)</code></a>, if any.</div>
+</dd>
 <dt><a href="dev/tamboui/toolkit/elements/DialogElement.html#handleKeyEvent(dev.tamboui.tui.event.KeyEvent,boolean)" class="member-name-link">handleKeyEvent(KeyEvent, boolean)</a> - Method in class dev.tamboui.toolkit.elements.<a href="dev/tamboui/toolkit/elements/DialogElement.html" title="class in dev.tamboui.toolkit.elements">DialogElement</a></dt>
 <dd>
 <div class="block">Handles key events for the dialog.</div>

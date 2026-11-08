@@ -71,7 +71,11 @@
 <li><a href="#sparkline">Sparkline</a></li>
 <li><a href="#dualsparkline">DualSparkline</a></li>
 <li><a href="#barchart">BarChart</a></li>
-<li><a href="#chart">Chart</a></li>
+<li><a href="#chart">Chart</a>
+<ul class="sectlevel3">
+<li><a href="#out-of-range-and-missing-points">Out-of-range and missing points</a></li>
+</ul>
+</li>
 <li><a href="#canvas">Canvas</a></li>
 <li><a href="#calendar">Calendar</a></li>
 </ul>
@@ -955,9 +959,16 @@ chart.render(area, buffer);</code></pre>
 </li>
 </ul>
 </div>
+<div class="sect3">
+<h4 id="out-of-range-and-missing-points"><a class="anchor" href="#out-of-range-and-missing-points"></a><a class="link" href="#out-of-range-and-missing-points">Out-of-range and missing points</a></h4>
 <div class="paragraph">
-<p>A point that falls outside the graph is not drawn, but a line to it is, up to the edge of the graph.
-A point with a NaN or infinite coordinate is not drawn at all, and a line dataset is broken there, so a missing value shows as a gap.</p>
+<p>A point outside the axis range has no marker, but a line through it still runs to the edge of the
+chart — the line is clipped at the edge, not dropped.</p>
+</div>
+<div class="paragraph">
+<p>A point with a <code>NaN</code> or infinite coordinate is skipped and breaks the line at that spot, so a missing
+value shows as a gap rather than the line falling to zero.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
